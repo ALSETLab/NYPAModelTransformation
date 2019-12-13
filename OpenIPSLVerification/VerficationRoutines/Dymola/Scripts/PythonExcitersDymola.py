@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[65]:
+# In[1]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[66]:
+# In[2]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/PythonTesting/OpenIPSL-master/Open
 print("Dymola Exciters Simulation Start...\n")
 
 
-# In[67]:
+# In[3]:
 
 
 #Creation of matrix with names, paths and variables
@@ -57,7 +57,7 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
 
-# In[68]:
+# In[4]:
 
 
 #Delete old results
@@ -69,7 +69,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[69]:
+# In[5]:
 
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
@@ -102,7 +102,11 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
-                    df_variables[var] = np.array(sim[var].values())
+                    #Change from Radians to Degrees
+                    if var == exciters['delta'][0]:
+                        df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                    else:
+                        df_variables[var] = np.array(sim[var].values())
                 print(f"{exciterName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/")
@@ -116,7 +120,11 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
-                    df_variables[var] = np.array(sim[var].values())
+                    #Change from Radians to Degrees
+                    if var == exciters['delta'][1]:
+                        df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                    else:
+                        df_variables[var] = np.array(sim[var].values())
                 print(f"{exciterName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/")

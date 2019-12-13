@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[1]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[7]:
+# In[2]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/PythonTesting/OpenIPSL-master/Open
 print("Dymola Turbine Governors Simulation Start...\n")
 
 
-# In[8]:
+# In[3]:
 
 
 #Creation of matrix with names, paths and variables
@@ -50,27 +50,27 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
                       "wSHYGP.PMECH"]}
 
 
-# In[9]:
+# In[4]:
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/')
 #Create Turbine Governors folder
-os.makedirs('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/")
+os.makedirs('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[10]:
+# In[5]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     try:
         print(f"{tgovernorName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/" + tgovernorName)
-        resultPath = f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/{tgovernorName}/" + tgovernorName 
+        dymola.cd("/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/" + tgovernorName)
+        resultPath = f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/" + tgovernorName 
         result = dymola.simulateModel(tgovernors['path'][tgovernorNumber], 
                                   stopTime=10.0,
                                   numberOfIntervals = 5000,
@@ -80,28 +80,29 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/{tgovernorName}/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{tgovernorName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/{tgovernorName}/{tgovernorName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/{tgovernorName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
                 variables = ['Time', tgovernors['delta'][0], tgovernors['pelec'][0], tgovernors['speed'][0], tgovernors['pmech'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
-                #print(variables)
-                #print(tgovernorName)
-                #print(tgovernors['path'][tgovernorNumber])
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
-                    df_variables[var] = np.array(sim[var].values())
+                    #Change from Radians to Degrees
+                    if var == tgovernors['delta'][0]:
+                        df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                    else:
+                        df_variables[var] = np.array(sim[var].values())
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
@@ -112,15 +113,16 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                 #Selecting Variables
                 variables = ['Time', tgovernors['delta'][1], tgovernors['pelec'][1], tgovernors['speed'][1], tgovernors['pmech'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
-                #print(variables)
-                #print(tgovernorName)
-                #print(tgovernors['path'][tgovernorNumber])
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
-                    df_variables[var] = np.array(sim[var].values())
+                    #Change from Radians to Degrees
+                    if var == tgovernors['delta'][1]:
+                        df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                    else:
+                        df_variables[var] = np.array(sim[var].values())
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
@@ -131,21 +133,22 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                 #Selecting Variables
                 variables = ['Time', tgovernors['delta'][2], tgovernors['pelec'][2], tgovernors['speed'][2], tgovernors['pmech'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
-                #print(variables)
-                #print(tgovernorName)
-                #print(tgovernors['path'][tgovernorNumber])
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
-                    df_variables[var] = np.array(sim[var].values())
+                    #Change from Radians to Degrees
+                    if var == tgovernors['delta'][2]:
+                        df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                    else:
+                        df_variables[var] = np.array(sim[var].values())
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
                 print("Not a GENSAL model...")
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TGovernors/{tgovernorName}/")
+            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/")
             print("Delete OK...\n")
         except:
             pass

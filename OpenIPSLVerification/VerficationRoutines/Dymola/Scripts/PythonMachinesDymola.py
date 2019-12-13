@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[50]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[6]:
+# In[51]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/PythonTesting/OpenIPSL-master/Open
 print("Dymola Machines Simulation Start...\n")
 
 
-# In[7]:
+# In[52]:
 
 
 #Creation of matrix with names, paths and variables
@@ -41,7 +41,7 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS.SPEED', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED']}
 
 
-# In[8]:
+# In[53]:
 
 
 #Delete old results
@@ -53,7 +53,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[10]:
+# In[54]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -80,7 +80,11 @@ for machineNumber, machineName in enumerate(machines['names']):
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
-                df_variables[var] = np.array(sim[var].values())
+                #Change from Radians to Degrees
+                if var == machines['delta'][machineNumber]:
+                    df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                else:
+                    df_variables[var] = np.array(sim[var].values())
             print(f"{machineName} Variables OK...")
             #Changing current directory
             os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Machines/")

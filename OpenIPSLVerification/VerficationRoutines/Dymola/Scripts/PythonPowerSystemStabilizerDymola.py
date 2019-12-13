@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# In[11]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[13]:
+# In[12]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/PythonTesting/OpenIPSL-master/Open
 print("Dymola Power System Stabilizers Simulation Start...\n")
 
 
-# In[14]:
+# In[13]:
 
 
 #Creation of matrix with names, paths and variables
@@ -42,7 +42,7 @@ psss = { 'names' : ["PSS2A","PSS2B"],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
 
-# In[15]:
+# In[14]:
 
 
 #Delete old results
@@ -54,7 +54,7 @@ for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
 
-# In[16]:
+# In[15]:
 
 
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb
@@ -85,12 +85,13 @@ for pssNumber, pssName in enumerate(psss['names']):
                 #Selecting Variables
                 variables = ['Time', psss['delta'][0], psss['pelec'][0], psss['speed'][0], psss['vothsg'][pssNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
-                #print(variables)
-                #print(tgovernorName)
-                #print(tgovernors['path'][tgovernorNumber])
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
-                    df_variables[var] = np.array(sim[var].values())
+                    #Change from Radians to Degrees
+                    if var == psss['delta'][0]:
+                        df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
+                    else:
+                        df_variables[var] = np.array(sim[var].values())
                 print(f"{pssName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/PowerSystemStabilizers/")
@@ -105,7 +106,7 @@ for pssNumber, pssName in enumerate(psss['names']):
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Turbine Power System Stabilizers Simulation OK...')
+print('Power System Stabilizers Simulation OK...')
 
 
 # In[ ]:
