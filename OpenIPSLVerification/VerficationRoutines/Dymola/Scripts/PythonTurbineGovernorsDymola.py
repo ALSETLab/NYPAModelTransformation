@@ -26,7 +26,7 @@ import shutil
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 #Setting OpenIPSL library
-dymola.openModel("/home/manuelnvro/dev/Gitted/PythonTesting/OpenIPSL-master/OpenIPSL/package.mo") 
+dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/OpenIPSL-master/OpenIPSL/package.mo") 
 print("Dymola Turbine Governors Simulation Start...\n")
 
 
@@ -54,10 +54,10 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/')
 #Create Turbine Governors folder
-os.makedirs('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
+os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/")
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
@@ -69,8 +69,8 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     try:
         print(f"{tgovernorName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/" + tgovernorName)
-        resultPath = f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/" + tgovernorName 
+        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/" + tgovernorName)
+        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/" + tgovernorName 
         result = dymola.simulateModel(tgovernors['path'][tgovernorNumber], 
                                   stopTime=10.0,
                                   numberOfIntervals = 5000,
@@ -80,14 +80,14 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{tgovernorName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/{tgovernorName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/{tgovernorName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
@@ -102,7 +102,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                         df_variables[var] = np.array(sim[var].values())
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
@@ -122,7 +122,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                         df_variables[var] = np.array(sim[var].values())
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
@@ -142,13 +142,13 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                         df_variables[var] = np.array(sim[var].values())
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
                 print("Not a GENSAL model...")
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/")
+            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/TurbineGovernors/{tgovernorName}/")
             print("Delete OK...\n")
         except:
             pass

@@ -26,7 +26,7 @@ import shutil
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 #Setting OpenIPSL library
-dymola.openModel("/home/manuelnvro/dev/Gitted/PythonTesting/OpenIPSL-master/OpenIPSL/package.mo") 
+dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/OpenIPSL-master/OpenIPSL/package.mo") 
 print("Dymola Exciters Simulation Start...\n")
 
 
@@ -61,10 +61,10 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/')
 #Create Exciters folder
-os.makedirs('/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/")
+os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/")
 for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
@@ -76,8 +76,8 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
 for exciterNumber, exciterName in enumerate(exciters['names']):
     try:
         print(f"{exciterName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/" + exciterName)
-        resultPath = f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/{exciterName}/" + exciterName 
+        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/" + exciterName)
+        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters//{exciterName}/" + exciterName 
         result = dymola.simulateModel(exciters['path'][exciterNumber], 
                                   stopTime=10.0,
                                   numberOfIntervals = 5000,
@@ -87,14 +87,14 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/{exciterName}/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/{exciterName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{exciterName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/{exciterName}/{exciterName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/{exciterName}/{exciterName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
@@ -109,7 +109,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                         df_variables[var] = np.array(sim[var].values())
                 print(f"{exciterName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/")
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
             except:
@@ -127,11 +127,11 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                         df_variables[var] = np.array(sim[var].values())
                 print(f"{exciterName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/")
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/PythonTesting/WorkingDir/Dymola/Exciters/{exciterName}/")
+            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerficationRoutines/Dymola/WorkingDir/Dymola/Exciters/{exciterName}/")
             print("Delete OK...\n")
         except:
             pass
