@@ -200,7 +200,7 @@ def outputcsv(result,Model,Type,pathname):
     elif Model == 'EXNI':
         titles = ['Time','gENROE.delta','gENROE.PELEC','eXNI.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEESGO':
-        titles = ['Time','gENSAL.delta','gENSAL.PELEC','iEEESGO.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+        titles = ['Time','gENSAL.delta','gENSAL.PELEC','iEESGO.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'HYGOV':
         titles = ['Time','gENSAL.delta','gENSAL.PELEC','hYGOV.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'GGOV':
