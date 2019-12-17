@@ -3,7 +3,7 @@ import os
 import psspy
 # ----- Loading the correct system (there are three possibilites):
 def initTest(Test,pathname):
-    if Test == 'Generators' or Test == 'Exciters' or Test == 'TurbineGov' or Test == 'PSS':
+    if Test == 'Machines' or Test == 'Exciters' or Test == 'TurbineGovernors' or Test == 'PowerSystemStabilizers':
         rawfile=os.path.join(pathname,"SMIB1L.raw")
         dyrfile=os.path.join(pathname,"SMIB1L_basic.dyr")
         return [rawfile,dyrfile]
@@ -43,12 +43,12 @@ def includeModel(Model,pathname):
         psspy.add_plant_model(1,r"1",6,r"URST5T",0,"",0,[],[],10,[0.025,0.1,0.2,1.0,1.0,1.0,10.0,-10.0,0.58,0.3])
     elif Model == 'SEXS':
         # - Load GENROE generator:
-        psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
+        psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load SEXS exciter:
         psspy.add_plant_model(1,r"1",6,r"SEXS",0,"",0,[],[],6,[0.1,1.0,100.0,0.1,-10.0,10.0])
     elif Model == 'SCRX':
         # - Load GENROE generator:
-        psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
+        psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load SCRX generator:
         psspy.add_plant_model(1,r"1",6,r"SCRX",0,"",0,[],[],8,[0.1,1.0,100.0,0.005,-10.0,10.0,0.0,0.0])
     elif Model == 'EXAC1':
@@ -136,11 +136,7 @@ def includeModel(Model,pathname):
         # - Load ESST1A exciter:
         psspy.add_plant_model(1,r"1",6,r"ESST1A",0,"",2,[0,0],["",""],18,[0.1,0.3,-0.3,2.0,10.0,0.08,0.083,300.0,0.1,7.0,-7.0,5.2,-5.2,0.38,1.0,1.0,1.0,0.0])
         # - Load PSS2A stabilizer:
-        psspy.add_plant_model(1,r"1",3,r"PSS2A",0,"",6,[0,0,3,0,5,1],["","","","","",""],17,[5.0,0.0,0.0,5.0,5.0,5.0,0.758,1.0,0.12,0.1,2.0,0.47,0.07,0.47,0.07,0.1,-0.1])
-        #psspy.change_plmod_icon(1,r"1",r"PSS2A",1,1)
-        #psspy.change_plmod_icon(1,r"1",r"PSS2A",3,3)
-        #psspy.change_plmod_icon(1,r"1",r"PSS2A",5,5)
-        #psspy.change_plmod_icon(1,r"1",r"PSS2A",6,1)
+        psspy.add_plant_model(1,r"1",3,r"PSS2A",0,"",6,[1,0,3,0,5,1],["","","","","",""],17,[5.0,0.0,0.0,5.0,5.0,5.0,0.758,1.0,0.12,0.1,2.0,0.47,0.07,0.47,0.07,0.1,-0.1])
     elif Model == 'IEEEST':
         # - Load GENROE generator:
         psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
@@ -155,10 +151,6 @@ def includeModel(Model,pathname):
         psspy.add_plant_model(1,r"1",6,r"ESST1A",0,"",2,[0,0],["",""],18,[0.1,0.3,-0.3,2.0,10.0,0.08,0.083,300.0,0.1,7.0,-7.0,5.2,-5.2,0.38,1.0,1.0,1.0,0.0])
         # - Load PSS2B stabilizer:
         psspy.add_plant_model(1,r"1",3,r"PSS2B",0,"",6,[1,0,3,0,0,0],["","","","","",""],23,[2.0,2.0,0.0,2.0,0.0,2.0,0.1564,1.0,0.0,0.0,10.0,0.25,0.03,0.15,0.015,0.0,0.0,999.0,-999.0,999.0,-999.0,0.1,-0.1])
-        #psspy.change_plmod_icon(1,r"1",r"PSS2B",1,1)
-        #psspy.change_plmod_icon(1,r"1",r"PSS2B",3,3)
-        #psspy.change_plmod_icon(1,r"1",r"PSS2B",5,0)
-        #psspy.change_plmod_icon(1,r"1",r"PSS2B",6,0)
     # - Creating output file
     outfilename = Model+'.out'
     outfile = os.path.join(pathname,outfilename)
@@ -166,66 +158,71 @@ def includeModel(Model,pathname):
 def outputcsv(result,Model,Type,pathname):
     import dyntools, csv
     if Model == "GENSAL":
-        titles = ['Time(s)',' gENSAL.delta',' gENSAL.PELEC',' gENSAL.PMECH',' gENSAL.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENSAL.delta','gENSAL.PELEC','gENSAL.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == "GENSAE":
-        titles = ['Time(s)',' gENSAE.delta',' gENSAE.PELEC',' gENSAE.PMECH',' gENSAE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENSAE.delta','gENSAE.PELEC','gENSAE.PMECH','gENSAE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == "GENROU":
-        titles = ['Time(s)',' gENROU.delta',' gENROU.PELEC',' gENROU.PMECH',' gENROU.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROU.delta','gENROU.PELEC','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == "GENROE":
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'EXAC2':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eXAC2_1.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eXAC2.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ESAC2A':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' eSAC2A.EFD',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROU.delta','gENROU.PELEC','eSAC2A.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ESST4B':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' eSST4B.EFD',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROU.delta','gENROU.PELEC','eSST4B.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'URST5T':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' uRST5T.EFD',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','generator.delta','generator.PELEC','uRST5T.EFD','generator.PMECH','generator.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'SEXS':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' sEXS.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROU.delta','gENROU.PELEC','sEXS.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'SCRX':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' sCRX.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROU.delta','gENROU.PELEC','sCRX.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'EXAC1':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eXAC1_1.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eXAC1.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'EXST1':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eXST1_1.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eXST1.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ESST1A':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eSST1A.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eSST1A.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEEEX1':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' iEEEX1_1.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','iEEEX1.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ESAC1A':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eSAC1A.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eSAC1A.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ESDC1A':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eSDC1A.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eSDC1A.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ESDC2A':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eSDC2A.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eSDC2A.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEEET2':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' iEEET2_1.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','iEEET2.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'ST5B':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' sT5B.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','sT5B.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEEET1':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' iEEET2_1.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','iEEET1.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'EXNI':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' eXNI.EFD',' gENROE.PMECH',' gENROE.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eXNI.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEESGO':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENSAL.delta','gENSAL.PELEC','iEEESGO.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'HYGOV':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENSAL.delta','gENSAL.PELEC','hYGOV.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'GGOV':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROU.delta','gENROU.PELEC','gGOV.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'TGOV1':
-        titles = ['Time(s)',' generator.delta',' generator.PELEC',' generator.PMECH',' generator.SPEED',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','tGOV1.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'PSS2A':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' gENROE.PMECH',' gENROE.SPEED',' pSS2A.VOTHSG',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','gENROE.PMECH','gENROE.SPEED','pSS2A.VOTHSG','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEEEST':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' gENROE.PMECH',' gENROE.SPEED',' iEEEST.VOTHSG',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','gENROE.PMECH','gENROE.SPEED','iEEEST.VOTHSG','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'PSS2B':
-        titles = ['Time(s)',' gENROE.delta',' gENROE.PELEC',' gENROE.PMECH',' gENROE.SPEED',' pSS2B.VOTHSG',' GEN1.V',' LOAD.V',' GEN2.V',' FAULT.V']
+        titles = ['Time','gENROE.delta','gENROE.PELEC','gENROE.PMECH','gENROE.SPEED','pSS2B.VOTHSG','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     # - Creating output file
     outfilename_csvu = Model+'u.csv'
     outfilename_csv = Model+'.csv'
-    if Type == 'Generators' or Type == 'TurbineGov':
+    if Type == 'Machines':
         csvpath = os.path.join(pathname,Type)
+        outfilename = os.path.join(csvpath,outfilename_csv)
+        outfilenameu = os.path.join(csvpath,outfilename_csvu)
+        result.csvout(channels=[1,3,7,9,11,12,13,14], csvfile=outfilenameu)
+    elif Type == 'TurbineGovernors':
+        csvpath= os.path.join(pathname,Type)
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,7,9,11,12,13,14], csvfile=outfilenameu)
@@ -234,13 +231,13 @@ def outputcsv(result,Model,Type,pathname):
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,5,7,9,11,12,13,14], csvfile=outfilenameu)
-    elif Type == 'PSS':
+    elif Type == 'PowerSystemStabilizers':
         csvpath = os.path.join(pathname,Type)
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,7,9,11,13,14,15,16], csvfile=outfilenameu)
     with open(outfilenameu, 'rb') as inp, open(outfilename, 'wb') as out:
-        writer = csv.writer(out)
+        writer = csv.writer(out, delimiter = ",")
         count = 0
         for row in csv.reader(inp):
             if row[0] != '0' or count != 0:
