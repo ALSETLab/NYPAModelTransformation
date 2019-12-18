@@ -120,7 +120,7 @@ for item in simulationtype:
                 resultfilename = os.path.join(pathname,test+".out")
                 os.remove(resultfilename)
                 # Deleting the .csv file without editions:
-                folderpath = os.path.join(pathname,item)
+                folderpath = os.path.join(pathname,'WorkingDir/'+item)
                 csvufile = os.path.join(folderpath,test+"u.csv")
                 os.remove(csvufile)
                 # Closing PSSE (guarantee that every simulation start from scratch)

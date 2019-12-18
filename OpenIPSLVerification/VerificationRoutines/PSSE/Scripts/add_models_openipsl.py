@@ -25,7 +25,7 @@ def includeModel(Model,pathname):
         # - Load GENROE generator:
         psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load EXAC2 exciter:
-        psspy.add_plant_model(1,r"1",6,r"EXAC2",0,"",0,[],[],17,[0.004,0.004,0.004,400.0,0.02,9.0,-5.43,0.8,0.03,1.0,0.2,0.48,1.0,5.25,0.03,7.0,0.1])
+        psspy.add_plant_model(1,r"1",6,r"EXAC2",0,"",0,[],[],23,[0.005,0.005,0.005,400.0,0.02,9.0,-5.34,2.0,4.0,-4.0,0.8,1.0,2.0,0.03,1.0,0.2,0.48,1.0,10.0,5.25,0.03,7.0,0.1])
     elif Model == 'ESAC2A':
         # - Load GENROU generator:
         psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
@@ -217,22 +217,22 @@ def outputcsv(result,Model,Type,pathname):
     outfilename_csvu = Model+'u.csv'
     outfilename_csv = Model+'.csv'
     if Type == 'Machines':
-        csvpath = os.path.join(pathname,Type)
+        csvpath = os.path.join(pathname,'WorkingDir/'+Type)
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,7,9,11,12,13,14], csvfile=outfilenameu)
     elif Type == 'TurbineGovernors':
-        csvpath= os.path.join(pathname,Type)
+        csvpath= os.path.join(pathname,'WorkingDir/'+Type)
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,7,9,11,12,13,14], csvfile=outfilenameu)
     elif Type == 'Exciters':
-        csvpath = os.path.join(pathname,Type)
+        csvpath = os.path.join(pathname,'WorkingDir/'+Type)
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,5,7,9,11,12,13,14], csvfile=outfilenameu)
     elif Type == 'PowerSystemStabilizers':
-        csvpath = os.path.join(pathname,Type)
+        csvpath = os.path.join(pathname,'WorkingDir/'+Type)
         outfilename = os.path.join(csvpath,outfilename_csv)
         outfilenameu = os.path.join(csvpath,outfilename_csvu)
         result.csvout(channels=[1,3,7,9,11,13,14,15,16], csvfile=outfilenameu)
