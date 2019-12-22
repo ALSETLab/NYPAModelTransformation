@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[30]:
+# In[1]:
 
 
 import platform
@@ -14,13 +14,13 @@ import os
 import shutil
 
 
-# In[198]:
+# In[ ]:
 
 
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[31]:
+# In[2]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVe
 print("Dymola Machines Simulation Start...\n")
 
 
-# In[32]:
+# In[3]:
 
 
 #Creation of matrix with names, paths and variables
@@ -40,10 +40,11 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
                       "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Machines.PSSE.CSVGN1"],
             'delta' : ['gENROU.delta', 'gENSAL.delta', 'gENCLS.delta', 'gENROE.delta', 'gENSAE.delta', 'cSVGN1.delta'],
            'pelec' : ['gENROU.PELEC', 'gENSAL.PELEC', 'gENCLS.PELEC', 'gENROE.PELEC', 'gENSAE.PELEC', 'cSVGN1.PELEC'],
-           'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS.SPEED', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED']}
+           'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS.SPEED', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
+           'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS.PMECH', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[33]:
+# In[4]:
 
 
 #Delete old results
@@ -55,7 +56,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[ ]:
+# In[7]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -78,7 +79,7 @@ for machineNumber, machineName in enumerate(machines['names']):
             #Selecting Result File
             sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Machines/{machineName}/{machineName}.mat")
             #Selecting Variables
-            variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+            variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['pmech'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
@@ -86,7 +87,12 @@ for machineNumber, machineName in enumerate(machines['names']):
                 if var == machines['delta'][machineNumber]:
                     df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                 else:
-                    df_variables[var] = np.array(sim[var].values())
+                    #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
+                    try:
+                        df_variables[var] = np.array(sim[var].values())
+                    except:
+                        first = np.array(sim[var].values())
+                        df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
             print(f"{machineName} Variables OK...")
             #Changing current directory
             os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Machines/")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[11]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[4]:
+# In[12]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVe
 print("Dymola Power System Stabilizers Simulation Start...\n")
 
 
-# In[8]:
+# In[13]:
 
 
 #Creation of matrix with names, paths and variables
@@ -38,11 +38,12 @@ psss = { 'names' : ["PSS2A","PSS2B"],
             'path' : ["OpenIPSL.Examples.Controls.PSSE.PSS.PSS2A","OpenIPSL.Examples.Controls.PSSE.PSS.PSS2B"],
             'delta' : ['gENROE.delta'],
            'pelec' : ['gENROE.PELEC'],
+            'pmech' : ['gENROE.PMECH'],
             'speed': ['gENROE.SPEED'],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
 
-# In[12]:
+# In[14]:
 
 
 #Delete old results
@@ -54,7 +55,7 @@ for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
 
-# In[13]:
+# In[15]:
 
 
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb
@@ -83,7 +84,7 @@ for pssNumber, pssName in enumerate(psss['names']):
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
-                variables = ['Time', psss['delta'][0], psss['pelec'][0], psss['speed'][0], psss['vothsg'][pssNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+                variables = ['Time', psss['delta'][0], psss['pelec'][0], psss['pmech'][0], psss['speed'][0], psss['vothsg'][pssNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
@@ -91,7 +92,12 @@ for pssNumber, pssName in enumerate(psss['names']):
                     if var == psss['delta'][0]:
                         df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                     else:
-                        df_variables[var] = np.array(sim[var].values())
+                        #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
+                        try:
+                            df_variables[var] = np.array(sim[var].values())
+                        except:
+                            first = np.array(sim[var].values())
+                            df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{pssName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/")

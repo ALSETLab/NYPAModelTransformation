@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[24]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[2]:
+# In[25]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVe
 print("Dymola Turbine Governors Simulation Start...\n")
 
 
-# In[3]:
+# In[26]:
 
 
 #Creation of matrix with names, paths and variables
@@ -44,13 +44,14 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
                       "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP"],
             'delta' : ['gENROU.delta', 'gENROE.delta', 'gENSAL.delta' ],
            'pelec' : ['gENROU.PELEC', 'gENROE.PELEC', 'gENSAL.PELEC'],
+            'pmech' : ['gENROU.PMECH', 'gENROE.PMECH', 'gENSAL.PMECH'],
             'speed': ['gENROU.SPEED', 'gENROE.SPEED', 'gENSAL.SPEED'],
-           'pmech' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEG1.PMECH", 
+           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEG1.PMECH", 
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
 
-# In[4]:
+# In[27]:
 
 
 #Delete old results
@@ -62,7 +63,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[5]:
+# In[28]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
@@ -91,7 +92,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
-                variables = ['Time', tgovernors['delta'][0], tgovernors['pelec'][0], tgovernors['speed'][0], tgovernors['pmech'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+                variables = ['Time', tgovernors['delta'][0], tgovernors['pelec'][0], tgovernors['pmech'][0], tgovernors['speed'][0], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
@@ -99,7 +100,12 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                     if var == tgovernors['delta'][0]:
                         df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                     else:
-                        df_variables[var] = np.array(sim[var].values())
+                        #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
+                        try:
+                            df_variables[var] = np.array(sim[var].values())
+                        except:
+                            first = np.array(sim[var].values())
+                            df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")
@@ -111,7 +117,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                 print('Not a GENROU model...')
                 print('Verifying if it is a GENROE model...')
                 #Selecting Variables
-                variables = ['Time', tgovernors['delta'][1], tgovernors['pelec'][1], tgovernors['speed'][1], tgovernors['pmech'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+                variables = ['Time', tgovernors['delta'][1], tgovernors['pelec'][1], tgovernors['pmech'][1], tgovernors['speed'][1], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
@@ -119,7 +125,12 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                     if var == tgovernors['delta'][1]:
                         df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                     else:
-                        df_variables[var] = np.array(sim[var].values())
+                        #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
+                        try:
+                            df_variables[var] = np.array(sim[var].values())
+                        except:
+                            first = np.array(sim[var].values())
+                            df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")
@@ -131,7 +142,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                 print('Not a GENROE model...')
                 print('Verifying if it is a GENSAL model...')
                 #Selecting Variables
-                variables = ['Time', tgovernors['delta'][2], tgovernors['pelec'][2], tgovernors['speed'][2], tgovernors['pmech'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+                variables = ['Time', tgovernors['delta'][2], tgovernors['pelec'][2], tgovernors['pmech'][2], tgovernors['speed'][2], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
@@ -139,7 +150,12 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                     if var == tgovernors['delta'][2]:
                         df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                     else:
-                        df_variables[var] = np.array(sim[var].values())
+                        #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
+                        try:
+                            df_variables[var] = np.array(sim[var].values())
+                        except:
+                            first = np.array(sim[var].values())
+                            df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
                 os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")

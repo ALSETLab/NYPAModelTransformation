@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[7]:
 
 
 import platform
@@ -46,7 +46,7 @@ except:
     print('Error in Machines Testing...')
 
 
-# In[ ]:
+# In[6]:
 
 
 #Run Turbine Governors
@@ -59,14 +59,14 @@ except:
     print('Error in Turbine Governors Testing...')
 
 
-# In[5]:
+# In[8]:
 
 
 #Run Power System Stabilizer
 print('---------------------------------------------------------- Power System Stabilizers Testing ----------------------------------------------------------')
 try:
     os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/")
-    exec(open("PythonPowerSystemStabilizerDymola.py").read())
+    exec(open("PythonPowerSystemStabilizersDymola.py").read())
     print('Power System Stabilizer Testing OK...')
 except:
     print('Error in Power System Stabilizer Testing...')
