@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[23]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[2]:
+# In[24]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVe
 print("Dymola Machines Simulation Start...\n")
 
 
-# In[3]:
+# In[25]:
 
 
 #Creation of matrix with names, paths and variables
@@ -44,7 +44,7 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS.PMECH', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[4]:
+# In[26]:
 
 
 #Delete old results
@@ -56,7 +56,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[7]:
+# In[27]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -67,6 +67,8 @@ for machineNumber, machineName in enumerate(machines['names']):
         resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Machines/{machineName}/" + machineName
         result = dymola.simulateModel(machines['path'][machineNumber], 
                                 stopTime=10.0,
+                                method="Rkfix2",
+                                tolerance=1e-06,
                                 numberOfIntervals = 5000,
                                 resultFile = resultPath)
         if not result:

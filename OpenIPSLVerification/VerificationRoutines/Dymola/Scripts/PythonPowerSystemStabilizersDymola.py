@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
+# In[16]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[12]:
+# In[17]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVe
 print("Dymola Power System Stabilizers Simulation Start...\n")
 
 
-# In[13]:
+# In[18]:
 
 
 #Creation of matrix with names, paths and variables
@@ -43,7 +43,7 @@ psss = { 'names' : ["PSS2A","PSS2B"],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
 
-# In[14]:
+# In[19]:
 
 
 #Delete old results
@@ -55,7 +55,7 @@ for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
 
-# In[15]:
+# In[20]:
 
 
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb
@@ -65,9 +65,11 @@ for pssNumber, pssName in enumerate(psss['names']):
         dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/" + pssName)
         resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/{pssName}/" + pssName 
         result = dymola.simulateModel(psss['path'][pssNumber], 
-                                  stopTime=10.0,
-                                  numberOfIntervals = 5000,
-                                  resultFile = resultPath)
+                                stopTime=10.0,
+                                method="Rkfix2",
+                                tolerance=1e-06,
+                                numberOfIntervals = 5000,
+                                resultFile = resultPath)
         if not result:
             print("Simulation failed or model was not found. Below is the translation log:\n")
             log = dymola.getLastErrorLog()

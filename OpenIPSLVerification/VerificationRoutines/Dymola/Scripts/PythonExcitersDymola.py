@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[6]:
 
 
 import platform
@@ -20,7 +20,7 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[2]:
+# In[7]:
 
 
 #Setting Dymola Interface
@@ -30,7 +30,7 @@ dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVe
 print("Dymola Exciters Simulation Start...\n")
 
 
-# In[3]:
+# In[8]:
 
 
 #Creation of matrix with names, paths and variables
@@ -58,7 +58,7 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
 
-# In[4]:
+# In[9]:
 
 
 #Delete old results
@@ -70,7 +70,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[5]:
+# In[11]:
 
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
@@ -80,9 +80,11 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
         dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Exciters/" + exciterName)
         resultPath = f"//home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Exciters/{exciterName}/" + exciterName 
         result = dymola.simulateModel(exciters['path'][exciterNumber], 
-                                  stopTime=10.0,
-                                  numberOfIntervals = 5000,
-                                  resultFile = resultPath)
+                                stopTime=10.0,
+                                method="Rkfix2",
+                                tolerance=1e-06,
+                                numberOfIntervals = 5000,
+                                resultFile = resultPath)
         if not result:
             print("Simulation failed or model was not found. Below is the translation log:\n")
             log = dymola.getLastErrorLog()
