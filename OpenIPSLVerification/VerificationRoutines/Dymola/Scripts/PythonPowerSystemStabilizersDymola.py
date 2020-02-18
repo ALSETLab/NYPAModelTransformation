@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[16]:
+# In[1]:
 
 
 import platform
@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
+import git
 
 
 # In[ ]:
@@ -20,17 +21,27 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[17]:
+# In[2]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
+
+
+# In[3]:
+
+
+#Deleting old OpenIPSL library version
+shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
+#Pulling latest OpenIPSL library version
+print('Pulling latest OpenIPSL library version...\n')
+git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
 #Setting OpenIPSL library
-dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL-master/OpenIPSL/package.mo") 
-print("Dymola Power System Stabilizers Simulation Start...\n")
+dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
+print("Dymola Power System Stabilitzers Simulation Start...\n")
 
 
-# In[18]:
+# In[4]:
 
 
 #Creation of matrix with names, paths and variables
@@ -43,7 +54,7 @@ psss = { 'names' : ["PSS2A","PSS2B"],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
 
-# In[19]:
+# In[5]:
 
 
 #Delete old results
@@ -55,7 +66,7 @@ for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
 
-# In[20]:
+# In[6]:
 
 
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb

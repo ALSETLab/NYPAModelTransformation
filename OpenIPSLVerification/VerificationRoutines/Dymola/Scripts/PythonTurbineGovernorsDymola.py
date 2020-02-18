@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[29]:
+# In[1]:
 
 
 import platform
@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
+import git
 
 
 # In[ ]:
@@ -20,17 +21,27 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[30]:
+# In[2]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
+
+
+# In[3]:
+
+
+#Deleting old OpenIPSL library version
+shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
+#Pulling latest OpenIPSL library version
+print('Pulling latest OpenIPSL library version...\n')
+git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
 #Setting OpenIPSL library
-dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL-master/OpenIPSL/package.mo") 
+dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
 print("Dymola Turbine Governors Simulation Start...\n")
 
 
-# In[31]:
+# In[4]:
 
 
 #Creation of matrix with names, paths and variables
@@ -51,7 +62,7 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
                       "wSHYGP.PMECH"]}
 
 
-# In[32]:
+# In[5]:
 
 
 #Delete old results
@@ -63,7 +74,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[33]:
+# In[6]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
