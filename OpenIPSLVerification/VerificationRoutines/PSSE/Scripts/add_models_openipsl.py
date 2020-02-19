@@ -9,7 +9,10 @@ def initTest(Test,pathname):
         return [rawfile,dyrfile]
 # ----- Loading models for each test and creating outfile:        
 def includeModel(Model,pathname):
-    if Model == "GENSAL":
+    if Model == "GENCLS":
+        # - Load GENCLS generator:
+        psspy.add_plant_model(1,r"1",1,r"GENCLS",0,"",0,[],[],2,[6.0,0.0])
+    elif Model == "GENSAL":
         # - Load GENSAL generator:
         psspy.add_plant_model(1,r"1",1,r"GENSAL",0,"",0,[],[],12,[5.0,0.07,0.09,4.28,0.0,1.84,1.75,0.41,0.2,0.12,0.11,0.39])
     elif Model == "GENSAE":
@@ -157,7 +160,9 @@ def includeModel(Model,pathname):
     return outfile
 def outputcsv(result,Model,Type,pathname):
     import dyntools, csv
-    if Model == "GENSAL":
+    if Model == "GENCLS":
+        titles = ['Time','gENCLS.delta','gENCLS.PELEC','gENCLS.PMECH','gENCLS.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == "GENSAL":
         titles = ['Time','gENSAL.delta','gENSAL.PELEC','gENSAL.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == "GENSAE":
         titles = ['Time','gENSAE.delta','gENSAE.PELEC','gENSAE.PMECH','gENSAE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
