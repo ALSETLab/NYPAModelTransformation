@@ -94,22 +94,22 @@ for item in simulationtype:
                         psspy.chsb(0,1,[-1,-1,-1,1,13,0])
                 # Preparing for dynamic simulation:
                 psspy.strt_2([0,0],outfile)
-                # Setting time step equal to 5ms (tolerance of 1e-6):
-                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.001,_f,_f,_f,_f,_f])
+                # Setting time step equal to 2ms (tolerance of 1e-6):
+                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.002,_f,_f,_f,_f,_f])
                 # Running dynamic simulation from 0 to 2:
                 psspy.run(0,2.0,10,1,0)
                 # Stopping simulation and including fault at bus 22:
                 psspy.dist_bus_fault(22,1,100.0,[0.0,-0.2E+10])
-                # Setting time step equal to 1ms during the fault (tolerance of 1e-6):
-                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.001,_f,_f,_f,_f,_f])
+                # Setting time step equal to 0.1ms during the fault (tolerance of 1e-6):
+                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.0001,_f,_f,_f,_f,_f])
                 # Running dynamic simulation from 2 to 2.15:
                 psspy.run(0,2.15,10,1,0)
                 # Stopping simulation and clearing fault:
                 psspy.dist_clear_fault(1)
                 # Running dynamic simulation from 2.15 to 5:
                 psspy.run(0,5.0,10,1,0)
-                # Setting time step back to 5ms (tolerance of 1e-6):
-                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.001,_f,_f,_f,_f,_f])
+                # Setting time step back to 2ms (tolerance of 1e-6):
+                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.002,_f,_f,_f,_f,_f])
                 # Running dynamic simulation from 5 to 10:
                 psspy.run(0,10.0,10,1,0)
                 # Preparing to export the outfile:
