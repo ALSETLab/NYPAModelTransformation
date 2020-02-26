@@ -66,10 +66,10 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/')
 #Create Turbine Governors folder
-os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")
+os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/")
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
@@ -80,9 +80,9 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     try:
-        print(f"{tgovernorName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/" + tgovernorName)
-        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/{tgovernorName}/" + tgovernorName 
+        print(f"Fault {tgovernorName} Simulation Start...")
+        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/" + tgovernorName)
+        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/{tgovernorName}/" + tgovernorName 
         result = dymola.simulateModel(tgovernors['path'][tgovernorNumber], 
                                 stopTime=10.0,
                                 method="Rkfix2",
@@ -94,14 +94,14 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/{tgovernorName}/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/{tgovernorName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{tgovernorName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/{tgovernorName}/{tgovernorName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/{tgovernorName}/{tgovernorName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
@@ -121,7 +121,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
@@ -146,7 +146,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
@@ -171,19 +171,19 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{tgovernorName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/")
                 df_variables.to_csv(f'{tgovernorName}.csv', index = False)          
                 print(f"{tgovernorName} Write OK...")
             except:
                 print("Not a GENSAL model...")
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/TurbineGovernors/{tgovernorName}/")
+            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/{tgovernorName}/")
             print("Delete OK...\n")
         except:
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Turbine Governor Examples Simulation OK...')
+print('Fault Turbine Governor Examples Simulation OK...')
 
 
 # In[ ]:

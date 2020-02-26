@@ -38,7 +38,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
 #Setting OpenIPSL library
 dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
-print("Dymola Power System Stabilitzers Simulation Start...\n")
+print("Fault Dymola Power System Stabilitzers Simulation Start...\n")
 
 
 # In[4]:
@@ -58,10 +58,10 @@ psss = { 'names' : ["PSS2A","PSS2B"],
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/')
 #Create Power System Stabilizers folder
-os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/")
+os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/")
 for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
@@ -72,9 +72,9 @@ for pssNumber, pssName in enumerate(psss['names']):
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb
 for pssNumber, pssName in enumerate(psss['names']):
     try:
-        print(f"{pssName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/" + pssName)
-        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/{pssName}/" + pssName 
+        print(f"Fault {pssName} Simulation Start...")
+        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/" + pssName)
+        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/{pssName}/" + pssName 
         result = dymola.simulateModel(psss['path'][pssNumber], 
                                 stopTime=10.0,
                                 method="Rkfix2",
@@ -86,14 +86,14 @@ for pssNumber, pssName in enumerate(psss['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/{pssName}/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/{pssName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{pssName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/{pssName}/{pssName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/{pssName}/{pssName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
@@ -113,19 +113,19 @@ for pssNumber, pssName in enumerate(psss['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{pssName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/")
                 df_variables.to_csv(f'{pssName}.csv', index = False)          
                 print(f"{pssName} Write OK...")
             except:
                 print("Check generator model of the example model...")
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/PowerSystemStabilizers/{pssName}/")
+            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/PowerSystemStabilizers/{pssName}/")
             print("Delete OK...\n")
         except:
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Power System Stabilizers Simulation OK...')
+print('Fault Power System Stabilizers Simulation OK...')
 
 
 # In[ ]:
