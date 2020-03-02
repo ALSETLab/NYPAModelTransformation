@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[18]:
+# In[1]:
 
 
 import platform
@@ -15,33 +15,34 @@ import shutil
 import git
 
 
-# In[ ]:
+# In[2]:
 
 
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[19]:
+# In[2]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[20]:
+# In[3]:
 
 
 #Deleting old OpenIPSL library version
-shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
+#shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
 #Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
+##print('Pulling latest OpenIPSL library version...\n')
+##git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
 #Setting OpenIPSL library
-dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
-print("Dymola Fault Machines Simulation Start...\n")
+##dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
+dymola.openModel("/home/manuelnvro/Desktop/OpenIPSL/OpenIPSL/package.mo")
+print("Load Variation Dymola Machines Simulation Start...\n")
 
 
-# In[21]:
+# In[4]:
 
 
 #Creation of matrix with names, paths and variables
@@ -55,33 +56,41 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS.PMECH', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[23]:
+# In[6]:
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/')
 #Create Exciters folder
-os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines")
+os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/")
 for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[24]:
+# In[7]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for machineNumber, machineName in enumerate(machines['names']):
     try:
-        print(f"Fault {machineName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/" + machineName)
-        resultPath = f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/{machineName}/" + machineName
+        print(f"Load Variation {machineName} Simulation Start...")
+        print("Editing SMIB Partial Model for Load Variation Testing...")
+        resultPath = f"//home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/{machineName}/" + machineName
+        dymola.translateModel(machines['path'][machineNumber])
+        #Get rid of the Fault
+        dymola.ExecuteCommand("pwFault.t1 = 20;")
+        dymola.ExecuteCommand("pwFault.t2 = 20.15;")
+        #Adjust Load Variation
+        dymola.ExecuteCommand("constantLoad.d_P = 1;")
+        dymola.ExecuteCommand("constantLoad.t1 = 0.5;")
+        dymola.ExecuteCommand("constantLoad.d_t = 20;")
         result = dymola.simulateModel(machines['path'][machineNumber], 
-                                stopTime=10.0,
-                                method="Rkfix2",
-                                tolerance=1e-06,
-                                numberOfIntervals = 5000,
-                                resultFile = resultPath)
+                                      stopTime=10.0, 
+                                      method="Rkfix2", 
+                                      tolerance=1e-06, 
+                                      numberOfIntervals = 5000, 
+                                      resultFile = resultPath) 
         if not result:
             print("Simulation failed or model was not found. Below is the translation log:\n")
             log = dymola.getLastErrorLog()
@@ -90,7 +99,7 @@ for machineNumber, machineName in enumerate(machines['names']):
             print(f"{machineName} Simulation OK...")
             print(".csv Writing Start...")
             #Selecting Result File
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/{machineName}/{machineName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/{machineName}/{machineName}.mat")
             #Selecting Variables
             variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['pmech'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
@@ -108,21 +117,16 @@ for machineNumber, machineName in enumerate(machines['names']):
                         df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
             print(f"{machineName} Variables OK...")
             #Changing current directory
-            os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/")
+            os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/")
             df_variables.to_csv(f'{machineName}.csv', index = False)          
             print(f"{machineName} Write OK...")       
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/{machineName}/")
-            print("Delete OK...\n")
+            pass
+            #shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Machines/{machineName}/")
+            #print("Delete OK...\n")
         except:
             pass          
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Fault Machine Examples Simulation OK...')
-
-
-# In[ ]:
-
-
-
+print('Load Variation Machine Examples Simulation OK...')
 

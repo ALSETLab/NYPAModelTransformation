@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import platform
@@ -20,56 +20,56 @@ import shutil
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
 
 
-# In[3]:
+# In[2]:
 
 
 #Run Exciters
-print('---------------------------------------------------------- Fault Exciters Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Load Variation Exciters Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
-    exec(open("FaultExcitersDymola.py").read())
-    print('Fault Exciters Testing OK...')
+    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/")
+    exec(open("LoadVariationExcitersDymola.py").read())
+    print('Load Variation Exciters Testing OK...')
 except:
-    print('Error in Fault Exciters Testing...')
+    print('Error in Load Variation Exciters Testing...')
 
 
 # In[3]:
 
 
 #Run Machines
-print('---------------------------------------------------------- Fault Machines Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Load Variation Machines Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
-    exec(open("FaultMachinesDymola.py").read())
-    print('Fault Machines Testing OK...')
+    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/")
+    exec(open("LoadVariationMachinesDymola.py").read())
+    print('Load Variation Machines Testing OK...')
 except:
-    print('Fault Error in Machines Testing...')
+    print('Load Variation Error in Machines Testing...')
 
 
 # In[6]:
 
 
 #Run Turbine Governors
-print('---------------------------------------------------------- Fault Turbine Governors Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Load Variation Turbine Governors Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
-    exec(open("FaultTurbineGovernorsDymola.py").read())
-    print('Fault Turbine Governors Testing OK...')
+    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/")
+    exec(open("LoadVariationTurbineGovernorsDymola.py").read())
+    print('Load Variation Turbine Governors Testing OK...')
 except:
-    print('Error in Fault Turbine Governors Testing...')
+    print('Error in Load Variation Turbine Governors Testing...')
 
 
 # In[8]:
 
 
 #Run Power System Stabilizer
-print('---------------------------------------------------------- Fault Power System Stabilizers Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Load Variation Power System Stabilizers Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
-    exec(open("FaultPowerSystemStabilizersDymola.py").read())
-    print('Fault Power System Stabilizer Testing OK...')
+    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/")
+    exec(open("LoadVariationPowerSystemStabilizersDymola.py").read())
+    print('Load Variation Power System Stabilizer Testing OK...')
 except:
-    print('Error in Fault Power System Stabilizer Testing...')
+    print('Error in Load Variation Power System Stabilizer Testing...')
 
 
 # In[ ]:

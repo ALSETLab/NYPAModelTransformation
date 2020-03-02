@@ -32,13 +32,14 @@ dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
 #Deleting old OpenIPSL library version
-shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
+#shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
 #Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
+##print('Pulling latest OpenIPSL library version...\n')
+##git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
 #Setting OpenIPSL library
-dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
-print("Fault Dymola Exciters Simulation Start...\n")
+##dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
+dymola.openModel("/home/manuelnvro/Desktop/OpenIPSL/OpenIPSL/package.mo")
+print("Load Variation Dymola Exciters Simulation Start...\n")
 
 
 # In[4]:
@@ -69,27 +70,36 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
 
-# In[5]:
+# In[6]:
 
 
 #Delete old results
-shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/')
+shutil.rmtree('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/')
 #Create Exciters folder
-os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/')
-os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/")
+os.makedirs('/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/')
+os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/")
 for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[6]:
+# In[7]:
 
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
 for exciterNumber, exciterName in enumerate(exciters['names']):
     try:
-        print(f"Fault {exciterName} Simulation Start...")
-        dymola.cd("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/" + exciterName)
-        resultPath = f"//home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/{exciterName}/" + exciterName 
+        print(f"Load Variation {exciterName} Simulation Start...")
+        print(f"Load Variation {exciterName} Simulation Start...")
+        print("Editing SMIB Partial Model for Load Variation Testing...")
+        resultPath = f"//home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/{exciterName}/" + exciterName
+        dymola.translateModel(exciters['path'][exciterNumber])
+        #Get rid of the Fault
+        dymola.ExecuteCommand("pwFault.t1 = 20;")
+        dymola.ExecuteCommand("pwFault.t2 = 20.15;")
+        #Adjust Load Variation
+        dymola.ExecuteCommand("constantLoad.d_P = 1;")
+        dymola.ExecuteCommand("constantLoad.t1 = 0.5;")
+        dymola.ExecuteCommand("constantLoad.d_t = 20;")
         result = dymola.simulateModel(exciters['path'][exciterNumber], 
                                 stopTime=10.0,
                                 method="Rkfix2",
@@ -101,14 +111,14 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/{exciterName}/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/{exciterName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{exciterName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/{exciterName}/{exciterName}.mat")
+            sim = SimRes(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/{exciterName}/{exciterName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
@@ -128,7 +138,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{exciterName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/")
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
             except:
@@ -151,12 +161,13 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{exciterName} Variables OK...")
                 #Changing current directory
-                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/")
+                os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/")
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Exciters/{exciterName}/")
-            print("Delete OK...\n")
+            pass
+            #shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/Exciters/{exciterName}/")
+            #print("Delete OK...\n")
         except:
             pass
     except DymolaException as ex:
