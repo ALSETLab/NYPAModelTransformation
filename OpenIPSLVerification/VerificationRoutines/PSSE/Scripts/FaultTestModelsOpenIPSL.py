@@ -1,7 +1,7 @@
 # ==========================================================================      
 # Author: marcelofcastro    
 # Description: Code to automatically simulate in PSSE all the tests from
-# OpenIPSL.
+# OpenIPSL for Fault Event.
 # ==========================================================================
 # ----- Init. libraries and commands:
 import sys,os
@@ -62,7 +62,7 @@ for item in simulationtype:
                 psspy.dyre_new([1,1,1,1],dyrfile,"","","")
                 # Naming the outfile:
                 outfile = add_models_openipsl.includeModel(test,pathname)
-                # Definin output channels:
+                # Defining output channels:
                 if item == 'Machines':
                         psspy.chsb(0,1,[-1,-1,-1,1,1,0])
                         psspy.chsb(0,1,[-1,-1,-1,1,2,0])
@@ -109,12 +109,12 @@ for item in simulationtype:
                 psspy.dist_clear_fault(1)
                 # Running dynamic simulation from 2.15 to 2.20:
                 psspy.run(0,2.25,10,1,0)
-                # Setting time step equal to 1ms during the fault (tolerance of 1e-6):
+                # Setting time step equal to 1ms after fault (tolerance of 1e-6):
                 psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.001,_f,_f,_f,_f,_f])
                 # Running dynamic simulation from 2.20 to 5:
                 psspy.run(0,5.0,10,1,0)
-                # Setting time step back to 5ms (tolerance of 1e-6):
-                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.005,_f,_f,_f,_f,_f])
+                # Setting time step to 2ms (tolerance of 1e-6):
+                psspy.dynamics_solution_param_2([_i,_i,_i,_i,_i,_i,_i,_i],[_f,0.000001, 0.002,_f,_f,_f,_f,_f])
                 # Running dynamic simulation from 5 to 10:
                 psspy.run(0,10.0,10,1,0)
                 # Preparing to export the outfile:
