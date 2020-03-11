@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[2]:
+# In[ ]:
 
 
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
@@ -28,21 +28,46 @@ import git
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[3]:
+# In[15]:
 
 
 #Deleting old OpenIPSL library version
-#shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
+shutil.rmtree(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/")
 #Pulling latest OpenIPSL library version
-##print('Pulling latest OpenIPSL library version...\n')
-##git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
+print('Pulling latest OpenIPSL library version...\n')
+git.Git("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/").clone("https://github.com/marcelofcastro/OpenIPSL.git")
 #Setting OpenIPSL library
-##dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
-dymola.openModel("/home/manuelnvro/Desktop/OpenIPSL/OpenIPSL/package.mo")
+dymola.openModel("/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo") 
 print("Load Variation Dymola Machines Simulation Start...\n")
 
 
-# In[4]:
+# In[16]:
+
+
+#Adding Auxiliary Files
+LoadVariationSource = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
+LoadVariationDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
+LoadVariationDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
+PowerFaultSource = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/PwFault.mo"
+PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
+PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
+try:
+    print('Deleting Auxiliary Models')
+    os.chdir(LoadVariationDestinationPath)
+    os.remove("Load_variation.mo")
+    os.chdir(PowerFaultDestinationPath)
+    os.remove("PwFault.mo")
+except: 
+    print('Error Deleting Auxiliar Models...')
+try:
+    print('Adding Auxiliary models...')
+    os.system('cp '+PowerFaultSource+' '+PowerFaultDestination)
+    os.system('cp '+LoadVariationSource+' '+LoadVariationDestination)
+except:
+    print('Error Adding Auxiliary Models...')
+
+
+# In[ ]:
 
 
 #Creation of matrix with names, paths and variables
@@ -56,7 +81,7 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS.PMECH', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[6]:
+# In[ ]:
 
 
 #Delete old results
@@ -68,7 +93,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[7]:
+# In[ ]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
