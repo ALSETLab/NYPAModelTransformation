@@ -54,7 +54,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
 #Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"") 
-print("Load Variation Dymola Machines Simulation Start...\n")
+print("Load Variation Dymola Power System Stabilizers Simulation Start...\n")
 
 
 # In[15]:
