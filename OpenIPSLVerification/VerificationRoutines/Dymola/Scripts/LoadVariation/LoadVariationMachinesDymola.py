@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[53]:
+# In[9]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[54]:
+# In[10]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[55]:
+# In[11]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[56]:
+# In[12]:
 
 
 #Deleting old OpenIPSL library version
@@ -54,7 +54,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
 
 
-# In[57]:
+# In[13]:
 
 
 #Adding Auxiliary Files
@@ -77,30 +77,21 @@ dymola.openModel(""+OpenIPSLPackage+"")
 print("Load Variation Dymola Machines Simulation Start...\n")
 
 
-# In[58]:
+# In[14]:
 
 
 #Creation of matrix with names, paths and variables
-machines = { 'names' : ["GENROU","GENSAL", "GENROE", "GENSAE", "CSVGN1"],
+machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1"],
             'path' : ["OpenIPSL.Examples.Machines.PSSE.GENROU", "OpenIPSL.Examples.Machines.PSSE.GENSAL",
-                      "OpenIPSL.Examples.Machines.PSSE.GENROE", 
+                      "OpenIPSL.Examples.Machines.PSSE.GENCLS", "OpenIPSL.Examples.Machines.PSSE.GENROE", 
                       "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Machines.PSSE.CSVGN1"],
-            'delta' : ['gENROU.delta', 'gENSAL.delta', 'gENROE.delta', 'gENSAE.delta', 'cSVGN1.delta'],
-           'pelec' : ['gENROU.PELEC', 'gENSAL.PELEC', 'gENROE.PELEC', 'gENSAE.PELEC', 'cSVGN1.PELEC'],
-           'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
-           'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
-#machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1"],
-#            'path' : ["OpenIPSL.Examples.Machines.PSSE.GENROU", "OpenIPSL.Examples.Machines.PSSE.GENSAL",
-#                      "OpenIPSL.Examples.Machines.PSSE.GENCLS", "OpenIPSL.Examples.Machines.PSSE.GENROE", 
-#                      "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Machines.PSSE.CSVGN1"],
-#            'delta' : ['gENROU.delta', 'gENSAL.delta', 'gENCLS.delta', 'gENROE.delta', 'gENSAE.delta', 'cSVGN1.delta'],
-#           'pelec' : ['gENROU.PELEC', 'gENSAL.PELEC', 'gENCLS.PELEC', 'gENROE.PELEC', 'gENSAE.PELEC', 'cSVGN1.PELEC'],
-#           'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS.SPEED', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
-#           'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS.PMECH', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
-print("Add GENCLS after you know what to do")
+            'delta' : ['gENROU.delta', 'gENSAL.delta', 'gENCLS2.delta', 'gENROE.delta', 'gENSAE.delta', 'cSVGN1.delta'],
+           'pelec' : ['gENROU.PELEC', 'gENSAL.PELEC', 'gENCLS2.P', 'gENROE.PELEC', 'gENSAE.PELEC', 'cSVGN1.PELEC'],
+           'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS2.omega', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
+           'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[59]:
+# In[18]:
 
 
 #Delete old results
@@ -112,7 +103,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[60]:
+# In[19]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
