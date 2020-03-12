@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[9]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[2]:
+# In[10]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -26,7 +26,7 @@ GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
 OpenIPSLPackage = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo"
 Dymola = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/"
 #Working Directory
-FTurbineGovernorsWorkingDir = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/Machines/"
+FTurbineGovernorsWorkingDir = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/Fault/TurbineGovernors/"
 #Load Variation Folder Locations
 LoadVariationSource = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
 LoadVariationDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[3]:
+# In[11]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[4]:
+# In[12]:
 
 
 #Deleting old OpenIPSL library version
@@ -57,7 +57,7 @@ dymola.openModel(""+OpenIPSLPackage+"")
 print("Fault Dymola Turbine Governors Simulation Start...\n")
 
 
-# In[5]:
+# In[13]:
 
 
 #Creation of matrix with names, paths and variables
@@ -78,7 +78,7 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
                       "wSHYGP.PMECH"]}
 
 
-# In[6]:
+# In[14]:
 
 
 #Delete old results
@@ -90,7 +90,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[8]:
+# In[16]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
@@ -193,7 +193,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             except:
                 print("Not a GENSAL model...")
         try:
-            shutil.rmtree(FExcitersWorkingDir+f"{tgovernorName}/")
+            shutil.rmtree(FTurbineGovernorsWorkingDir+f"{tgovernorName}/")
             print("Delete OK...\n")
         except:
             pass
