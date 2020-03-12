@@ -52,9 +52,6 @@ shutil.rmtree(f""+OpenIPSL+"")
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
-dymola.openModel(""+OpenIPSLPackage+"") 
-print("Load Variation Dymola Turbine Governors Simulation Start...\n")
 
 
 # In[5]:
@@ -75,6 +72,9 @@ try:
     os.system('cp '+LoadVariationSource+' '+LoadVariationDestination)
 except:
     print('Error Adding Auxiliary Models...\n')
+#Opening OpenIPSL library
+dymola.openModel(""+OpenIPSLPackage+"") 
+print("Load Variation Dymola Turbine Governors Simulation Start...\n")
 
 
 # In[6]:
@@ -98,7 +98,7 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", 
                       "wSHYGP.PMECH"]}
 
 
-# In[15]:
+# In[7]:
 
 
 #Delete old results
@@ -113,7 +113,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[16]:
+# In[8]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
@@ -231,10 +231,4 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Load Variation Turbine Governor Examples Simulation OK...')
-
-
-# In[12]:
-
-
-
 

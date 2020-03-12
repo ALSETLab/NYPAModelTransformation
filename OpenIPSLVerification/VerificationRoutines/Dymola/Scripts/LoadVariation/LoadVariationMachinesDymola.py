@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[53]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[10]:
+# In[54]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[11]:
+# In[55]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[12]:
+# In[56]:
 
 
 #Deleting old OpenIPSL library version
@@ -52,12 +52,9 @@ shutil.rmtree(f""+OpenIPSL+"")
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
-dymola.openModel(""+OpenIPSLPackage+"") 
-print("Load Variation Dymola Machines Simulation Start...\n")
 
 
-# In[13]:
+# In[57]:
 
 
 #Adding Auxiliary Files
@@ -75,9 +72,12 @@ try:
     os.system('cp '+LoadVariationSource+' '+LoadVariationDestination)
 except:
     print('Error Adding Auxiliary Models...\n')
+#Opening OpenIPSL library
+dymola.openModel(""+OpenIPSLPackage+"") 
+print("Load Variation Dymola Machines Simulation Start...\n")
 
 
-# In[14]:
+# In[58]:
 
 
 #Creation of matrix with names, paths and variables
@@ -100,7 +100,7 @@ machines = { 'names' : ["GENROU","GENSAL", "GENROE", "GENSAE", "CSVGN1"],
 print("Add GENCLS after you know what to do")
 
 
-# In[15]:
+# In[59]:
 
 
 #Delete old results
@@ -112,7 +112,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[17]:
+# In[60]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file

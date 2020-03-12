@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
+# In[1]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[12]:
+# In[2]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[13]:
+# In[3]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[14]:
+# In[4]:
 
 
 #Deleting old OpenIPSL library version
@@ -52,12 +52,9 @@ shutil.rmtree(f""+OpenIPSL+"")
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
-dymola.openModel(""+OpenIPSLPackage+"") 
-print("Load Variation Dymola Power System Stabilizers Simulation Start...\n")
 
 
-# In[15]:
+# In[5]:
 
 
 #Adding Auxiliary Files
@@ -75,9 +72,12 @@ try:
     os.system('cp '+LoadVariationSource+' '+LoadVariationDestination)
 except:
     print('Error Adding Auxiliary Models...\n')
+#Setting OpenIPSL library
+dymola.openModel(""+OpenIPSLPackage+"") 
+print("Load Variation Dymola Power System Stabilizers Simulation Start...\n")
 
 
-# In[17]:
+# In[6]:
 
 
 #Creation of matrix with names, paths and variables
@@ -90,7 +90,7 @@ psss = { 'names' : ["PSS2A","PSS2B"],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
 
-# In[18]:
+# In[7]:
 
 
 #Delete old results
@@ -102,7 +102,7 @@ for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
 
-# In[19]:
+# In[8]:
 
 
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb
@@ -163,7 +163,6 @@ for pssNumber, pssName in enumerate(psss['names']):
             except:
                 print("Check generator model of the example model...")
         try:
-            pass
             shutil.rmtree(LVPowerSystemStabilizerWorkingDir+f"{pssName}/")
             print("Delete OK...\n")
         except:

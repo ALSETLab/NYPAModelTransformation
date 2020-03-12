@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[18]:
+# In[10]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[19]:
+# In[11]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[20]:
+# In[12]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[21]:
+# In[13]:
 
 
 #Deleting old OpenIPSL library version
@@ -52,12 +52,9 @@ shutil.rmtree(f""+OpenIPSL+"")
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
-dymola.openModel(""+OpenIPSLPackage+"") 
-print("Load Variation Dymola Exciters Simulation Start...\n")
 
 
-# In[22]:
+# In[14]:
 
 
 #Adding Auxiliary Files
@@ -75,9 +72,12 @@ try:
     os.system('cp '+LoadVariationSource+' '+LoadVariationDestination)
 except:
     print('Error Adding Auxiliary Models...\n')
+#Opening OpenIPSL library
+dymola.openModel(""+OpenIPSLPackage+"") 
+print("Load Variation Dymola Exciters Simulation Start...\n")
 
 
-# In[23]:
+# In[15]:
 
 
 #Creation of matrix with names, paths and variables
@@ -105,7 +105,7 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
 
-# In[24]:
+# In[16]:
 
 
 #Delete old results
@@ -117,7 +117,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[25]:
+# In[ ]:
 
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
@@ -200,7 +200,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            pass
             shutil.rmtree(LVExcitersWorkingDir+f"{exciterName}/")
             print("Delete OK...\n")
         except:
