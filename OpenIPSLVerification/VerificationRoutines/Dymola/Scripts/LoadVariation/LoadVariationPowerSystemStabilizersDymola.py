@@ -171,3 +171,16 @@ for pssNumber, pssName in enumerate(psss['names']):
         print("Error: " + str(ex))
 print('Fault Power System Stabilizers Simulation OK...')
 
+
+# In[ ]:
+
+
+try:
+    print("Closing Dymola...")
+    dymola.close()
+    print("Dymola Close OK...")
+except:
+    print("Dymola closing error. Below is the log:")
+    log = dymola.getLastErrorLog()
+    print(log)
+

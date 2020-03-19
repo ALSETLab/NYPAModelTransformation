@@ -81,19 +81,19 @@ print("Load Variation Dymola Turbine Governors Simulation Start...\n")
 
 
 #Creation of matrix with names, paths and variables
-tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", "IEESGO", "TGOV1", "WEHGOV", 
+tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1", "IEESGO", "TGOV1", "WEHGOV", 
                             "WESGOV", "WSHYDD", "WSHYGP"],
             'path' : ["OpenIPSL.Examples.Controls.PSSE.TG.BBGOV1","OpenIPSL.Examples.Controls.PSSE.TG.GAST",
                       "OpenIPSL.Examples.Controls.PSSE.TG.GAST2A", "OpenIPSL.Examples.Controls.PSSE.TG.GGOV1", "OpenIPSL.Examples.Controls.PSSE.TG.HYGOV", 
-                      "OpenIPSL.Examples.Controls.PSSE.TG.IEEG1", "OpenIPSL.Examples.Controls.PSSE.TG.IEESGO",
+                      "OpenIPSL.Examples.Controls.PSSE.TG.IEEEG1", "OpenIPSL.Examples.Controls.PSSE.TG.IEESGO",
                       "OpenIPSL.Examples.Controls.PSSE.TG.TGOV1", "OpenIPSL.Examples.Controls.PSSE.TG.WEHGOV", 
                       "OpenIPSL.Examples.Controls.PSSE.TG.WESGOV", "OpenIPSL.Examples.Controls.PSSE.TG.WSHYDD", 
-                      "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP"],
+                      "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP", "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP"],
             'delta' : ['gENROU.delta', 'gENROE.delta', 'gENSAL.delta' ],
            'pelec' : ['gENROU.PELEC', 'gENROE.PELEC', 'gENSAL.PELEC'],
             'pmech' : ['gENROU.PMECH', 'gENROE.PMECH', 'gENSAL.PMECH'],
             'speed': ['gENROU.SPEED', 'gENROE.SPEED', 'gENSAL.SPEED'],
-           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEG1.PMECH", 
+           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH", 
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
@@ -231,4 +231,17 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Load Variation Turbine Governor Examples Simulation OK...')
+
+
+# In[ ]:
+
+
+try:
+    print("Closing Dymola...")
+    dymola.close()
+    print("Dymola Close OK...")
+except:
+    print("Dymola closing error. Below is the log:")
+    log = dymola.getLastErrorLog()
+    print(log)
 
