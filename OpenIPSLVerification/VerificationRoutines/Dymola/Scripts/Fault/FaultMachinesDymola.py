@@ -83,7 +83,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[ ]:
+# In[8]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -140,5 +140,12 @@ print('Fault Machine Examples Simulation OK...')
 # In[ ]:
 
 
-
+try:
+    print("Closing Dymola...")
+    dymola.close()
+    print("Dymola Close OK...")
+except:
+    print("Dymola closing error. Below is the log:")
+    log = dymola.getLastErrorLog()
+    print(log)
 

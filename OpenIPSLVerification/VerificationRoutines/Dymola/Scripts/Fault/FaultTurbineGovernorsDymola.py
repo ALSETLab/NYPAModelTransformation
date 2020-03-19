@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[10]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[10]:
+# In[11]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[11]:
+# In[12]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[12]:
+# In[13]:
 
 
 #Deleting old OpenIPSL library version
@@ -57,40 +57,40 @@ dymola.openModel(""+OpenIPSLPackage+"")
 print("Fault Dymola Turbine Governors Simulation Start...\n")
 
 
-# In[13]:
+# In[14]:
 
 
 #Creation of matrix with names, paths and variables
-tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEG1", "IEESGO", "TGOV1", "WEHGOV", 
+tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1", "IEESGO", "TGOV1", "WEHGOV", 
                             "WESGOV", "WSHYDD", "WSHYGP"],
             'path' : ["OpenIPSL.Examples.Controls.PSSE.TG.BBGOV1","OpenIPSL.Examples.Controls.PSSE.TG.GAST",
                       "OpenIPSL.Examples.Controls.PSSE.TG.GAST2A", "OpenIPSL.Examples.Controls.PSSE.TG.GGOV1", "OpenIPSL.Examples.Controls.PSSE.TG.HYGOV", 
-                      "OpenIPSL.Examples.Controls.PSSE.TG.IEEG1", "OpenIPSL.Examples.Controls.PSSE.TG.IEESGO",
+                      "OpenIPSL.Examples.Controls.PSSE.TG.IEEEG1", "OpenIPSL.Examples.Controls.PSSE.TG.IEESGO",
                       "OpenIPSL.Examples.Controls.PSSE.TG.TGOV1", "OpenIPSL.Examples.Controls.PSSE.TG.WEHGOV", 
                       "OpenIPSL.Examples.Controls.PSSE.TG.WESGOV", "OpenIPSL.Examples.Controls.PSSE.TG.WSHYDD", 
-                      "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP"],
+                      "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP", "OpenIPSL.Examples.Controls.PSSE.TG.WSHYGP"],
             'delta' : ['gENROU.delta', 'gENROE.delta', 'gENSAL.delta' ],
            'pelec' : ['gENROU.PELEC', 'gENROE.PELEC', 'gENSAL.PELEC'],
             'pmech' : ['gENROU.PMECH', 'gENROE.PMECH', 'gENSAL.PMECH'],
             'speed': ['gENROU.SPEED', 'gENROE.SPEED', 'gENSAL.SPEED'],
-           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEG1.PMECH", 
+           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH", 
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
 
-# In[14]:
+# In[15]:
 
 
 #Delete old results
 shutil.rmtree(''+FTurbineGovernorsWorkingDir+'')
-#Create Exciters folder
+#Create folder
 os.makedirs(''+FTurbineGovernorsWorkingDir+'')
 os.chdir(f""+FTurbineGovernorsWorkingDir+"")
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[16]:
+# In[18]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
@@ -205,5 +205,12 @@ print('Fault Turbine Governor Examples Simulation OK...')
 # In[ ]:
 
 
-
+try:
+    print("Closing Dymola...")
+    dymola.close()
+    print("Dymola Close OK...")
+except:
+    print("Dymola closing error. Below is the log:")
+    log = dymola.getLastErrorLog()
+    print(log)
 
