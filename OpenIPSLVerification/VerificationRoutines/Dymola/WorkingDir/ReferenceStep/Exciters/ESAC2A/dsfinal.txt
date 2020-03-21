@@ -534,8 +534,8 @@ eSAC2A.Vref_step.height
 eSAC2A.Vref_step.y
 eSAC2A.Vref_step.offset
 eSAC2A.Vref_step.startTime
-eSAC2A.add.k1
-eSAC2A.add.k2
+eSAC2A.add7.k1
+eSAC2A.add7.k2
 eSAC2A.dV
 eSAC2A.t
 eSAC2A.Efd0
@@ -1544,9 +1544,9 @@ double initialValue(576,6)
  -2  5.0000000000000000E-01       0                       0                
   6   256   # eSAC2A.Vref_step.startTime
  -1       1                       0                       0                
-  1   280   # eSAC2A.add.k1
+  1   280   # eSAC2A.add7.k1
  -1       1                       0                       0                
-  1   280   # eSAC2A.add.k2
+  1   280   # eSAC2A.add7.k2
  -1  2.0000000000000000E-02       0                       0                
   1   280   # eSAC2A.dV
  -1  5.0000000000000000E-01       0                       0                

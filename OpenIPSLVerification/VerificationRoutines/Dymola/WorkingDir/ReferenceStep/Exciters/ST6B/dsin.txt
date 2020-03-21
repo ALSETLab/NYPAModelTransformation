@@ -531,8 +531,8 @@ sEXS.Vref_step.height
 sEXS.Vref_step.y
 sEXS.Vref_step.offset
 sEXS.Vref_step.startTime
-sEXS.add.k1
-sEXS.add.k2
+sEXS.add7.k1
+sEXS.add7.k2
 sEXS.dV
 sEXS.t
 sEXS.Efd0
@@ -1014,8 +1014,8 @@ double initialValue(481,6)
   0       0                  0  0  6   320   # sEXS.Vref_step.y
  -1       0                  0  0  1   280   # sEXS.Vref_step.offset
   0       0                  0  0  6   256   # sEXS.Vref_step.startTime
- -1       1                  0  0  1   280   # sEXS.add.k1
- -1       1                  0  0  1   280   # sEXS.add.k2
+ -1       1                  0  0  1   280   # sEXS.add7.k1
+ -1       1                  0  0  1   280   # sEXS.add7.k2
  -1  2.0000000000000000E-02  0  0  1   280   # sEXS.dV
  -1  5.0000000000000000E-01  0  0  1   280   # sEXS.t
   0       0                  0  0  6  1280   # sEXS.Efd0

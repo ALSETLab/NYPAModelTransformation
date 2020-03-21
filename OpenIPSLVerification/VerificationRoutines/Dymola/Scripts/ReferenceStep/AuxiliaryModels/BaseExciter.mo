@@ -42,7 +42,7 @@ partial model BaseExciter
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   Modelica.Blocks.Sources.Step Vref_step(height=V_REF*dV, startTime=t)
     annotation (Placement(transformation(extent={{-140,60},{-120,80}})));
-  Modelica.Blocks.Math.Add add
+  Modelica.Blocks.Math.Add add7
     annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
   //Parameters of the voltage reference step
   parameter Modelica.SIunits.PerUnit dV=0 "Voltage reference step";
@@ -65,11 +65,11 @@ initial equation
   Efd0 = EFD0;
   ECOMP0 = ECOMP;
 equation
-  connect(Vref_step.y, add.u1) annotation (Line(points={{-119,70},{-110,70},{-110,
+  connect(Vref_step.y, add7.u1) annotation (Line(points={{-119,70},{-110,70},{-110,
           56},{-102,56}}, color={0,0,127}));
-  connect(VoltageReference.y, add.u2) annotation (Line(points={{-149,50},{-126,50},
+  connect(VoltageReference.y, add7.u2) annotation (Line(points={{-149,50},{-126,50},
           {-126,44},{-102,44}}, color={0,0,127}));
-  connect(add.y, DiffV.u1) annotation (Line(points={{-79,50},{-70,50},{-70,24},{
+  connect(add7.y, DiffV.u1) annotation (Line(points={{-79,50},{-70,50},{-70,24},{
           -130,24},{-130,6},{-122,6}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),

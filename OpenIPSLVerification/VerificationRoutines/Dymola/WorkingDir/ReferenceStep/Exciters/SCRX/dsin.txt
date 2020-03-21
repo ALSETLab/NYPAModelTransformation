@@ -532,8 +532,8 @@ sCRX.Vref_step.height
 sCRX.Vref_step.y
 sCRX.Vref_step.offset
 sCRX.Vref_step.startTime
-sCRX.add.k1
-sCRX.add.k2
+sCRX.add7.k1
+sCRX.add7.k2
 sCRX.dV
 sCRX.t
 sCRX.Efd0
@@ -1025,8 +1025,8 @@ double initialValue(491,6)
   0       0                  0  0  6   320   # sCRX.Vref_step.y
  -1       0                  0  0  1   280   # sCRX.Vref_step.offset
   0       0                  0  0  6   256   # sCRX.Vref_step.startTime
- -1       1                  0  0  1   280   # sCRX.add.k1
- -1       1                  0  0  1   280   # sCRX.add.k2
+ -1       1                  0  0  1   280   # sCRX.add7.k1
+ -1       1                  0  0  1   280   # sCRX.add7.k2
  -1  2.0000000000000000E-02  0  0  1   280   # sCRX.dV
  -1  5.0000000000000000E-01  0  0  1   280   # sCRX.t
   0       0                  0  0  6  1280   # sCRX.Efd0

@@ -531,8 +531,8 @@ iEEET1.Vref_step.height
 iEEET1.Vref_step.y
 iEEET1.Vref_step.offset
 iEEET1.Vref_step.startTime
-iEEET1.add.k1
-iEEET1.add.k2
+iEEET1.add7.k1
+iEEET1.add7.k2
 iEEET1.dV
 iEEET1.t
 iEEET1.Efd0
@@ -1477,9 +1477,9 @@ double initialValue(515,6)
   0       0                       0                       0                
   6   256   # iEEET1.Vref_step.startTime
  -1       1                       0                       0                
-  1   280   # iEEET1.add.k1
+  1   280   # iEEET1.add7.k1
  -1       1                       0                       0                
-  1   280   # iEEET1.add.k2
+  1   280   # iEEET1.add7.k2
  -1  2.0000000000000000E-02       0                       0                
   1   280   # iEEET1.dV
  -1  5.0000000000000000E-01       0                       0                

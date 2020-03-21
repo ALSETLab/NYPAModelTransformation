@@ -532,8 +532,8 @@ eXAC1.Vref_step.height
 eXAC1.Vref_step.y
 eXAC1.Vref_step.offset
 eXAC1.Vref_step.startTime
-eXAC1.add.k1
-eXAC1.add.k2
+eXAC1.add7.k1
+eXAC1.add7.k2
 eXAC1.dV
 eXAC1.t
 eXAC1.Efd0
@@ -1516,9 +1516,9 @@ double initialValue(552,6)
  -2  5.0000000000000000E-01       0                       0                
   6   256   # eXAC1.Vref_step.startTime
  -1       1                       0                       0                
-  1   280   # eXAC1.add.k1
+  1   280   # eXAC1.add7.k1
  -1       1                       0                       0                
-  1   280   # eXAC1.add.k2
+  1   280   # eXAC1.add7.k2
  -1  2.0000000000000000E-02       0                       0                
   1   280   # eXAC1.dV
  -1  5.0000000000000000E-01       0                       0                
