@@ -124,7 +124,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
 for exciterNumber, exciterName in enumerate(exciters['names']):
     try:
         print(f"Load Variation {exciterName} Simulation Start...")
-        print(f"Load Variation {exciterName} Simulation Start...")
         print("Editing SMIB Partial Model for Load Variation Testing...")
         resultPath = "/"+LVExcitersWorkingDir+f"{exciterName}/" + exciterName
         dymola.translateModel(exciters['path'][exciterNumber])
@@ -206,7 +205,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Load Variation Exciter Examples Simulation OK...')
+print('Load Variation Dymola Exciter Examples Simulation OK...')
 
 
 # In[ ]:

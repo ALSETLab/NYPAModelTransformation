@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import platform
@@ -14,66 +14,80 @@ import os
 import shutil
 
 
-# In[ ]:
+# In[2]:
 
 
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
+Fault = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/"
 
 
 # In[3]:
 
 
 #Run Exciters
-print('---------------------------------------------------------- Fault Exciters Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Fault Dymola Exciters Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
+    os.chdir(f""+Fault+"")
     exec(open("FaultExcitersDymola.py").read())
-    print('Fault Exciters Testing OK...')
+    print('Fault Dymola Exciters Testing OK...')
 except:
-    print('Error in Fault Exciters Testing...')
+    print('Error in Fault Dymola Exciters Testing...')
 
 
-# In[3]:
+# In[4]:
 
 
 #Run Machines
-print('---------------------------------------------------------- Fault Machines Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Fault Dymola Machines Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
+    os.chdir(f""+Fault+"")
     exec(open("FaultMachinesDymola.py").read())
-    print('Fault Machines Testing OK...')
+    print('Fault Dymola Machines Testing OK...')
 except:
-    print('Fault Error in Machines Testing...')
+    print('Error in Fault Dymola in Machines Testing...')
 
 
-# In[6]:
+# In[5]:
 
 
 #Run Turbine Governors
-print('---------------------------------------------------------- Fault Turbine Governors Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Fault Dymola Turbine Governors Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
+    os.chdir(f""+Fault+"")
     exec(open("FaultTurbineGovernorsDymola.py").read())
-    print('Fault Turbine Governors Testing OK...')
+    print('Fault Dymola Turbine Governors Testing OK...')
 except:
-    print('Error in Fault Turbine Governors Testing...')
+    print('Error in Fault Dymola Turbine Governors Testing...')
 
 
 # In[8]:
 
 
 #Run Power System Stabilizer
-print('---------------------------------------------------------- Fault Power System Stabilizers Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Fault Dymola Power System Stabilizers Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/")
+    os.chdir(f""+Fault+"")
     exec(open("FaultPowerSystemStabilizersDymola.py").read())
-    print('Fault Power System Stabilizer Testing OK...')
+    print('Fault Dymola Power System Stabilizer Testing OK...')
 except:
-    print('Error in Fault Power System Stabilizer Testing...')
+    print('Error in Fault Dymola Power System Stabilizer Testing...')
+
+
+# In[6]:
+
+
+#Run Wind Turbines
+print('---------------------------------------------------------- Fault Dymola Wind Turbines Testing ----------------------------------------------------------')
+try:
+    os.chdir(f""+Fault+"")
+    exec(open("FaultWindTurbinesDymola.py").read())
+    print('Fault Dymola Wind Turbines Testing OK...')
+except:
+    print('Error in Fault Dymola Wind Turbines Testing...')
 
 
 # In[ ]:
 
 
-print('---------------------------------------------------------- End of All Fault Simulations ----------------------------------------------------------')
+print('---------------------------------------------------------- End of All Fault Dymola Simulations ----------------------------------------------------------')
 

@@ -14,62 +14,52 @@ import os
 import shutil
 
 
-# In[ ]:
+# In[9]:
 
 
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
+Fault = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/"
+LoadVariation = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/"
+ReferenceStep = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/ReferenceStep/"
 
 
-# In[4]:
+# In[ ]:
 
 
 #Run Exciters
-print('---------------------------------------------------------- Exciters Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Fault Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/")
-    exec(open("PythonExcitersDymola.py").read())
-    print('Exciters Testing OK...')
+    os.chdir(f""+Fault+"")
+    exec(open("FaultRunAllDymola.py").read())
+    print('Fault Testing OK...')
 except:
-    print('Error in Exciters Testing...')
+    print('Error in Fault Testing...')
 
 
 # In[3]:
 
 
 #Run Machines
-print('---------------------------------------------------------- Machines Testing ----------------------------------------------------------')
+print('---------------------------------------------------------- Load Variation Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/")
-    exec(open("PythonMachinesDymola.py").read())
-    print('Machines Testing OK...')
+    os.chdir(f""+LoadVariation+"")
+    exec(open("LoadVariationRunAllDymola.py").read())
+    print('Load Variation Testing OK...')
 except:
-    print('Error in Machines Testing...')
+    print('Error in Load Variation Testing...')
 
 
-# In[6]:
+# In[ ]:
 
 
-#Run Turbine Governors
-print('---------------------------------------------------------- Turbine Governors Testing ----------------------------------------------------------')
+#Run Exciters
+print('---------------------------------------------------------- Reference Step Testing ----------------------------------------------------------')
 try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/")
-    exec(open("PythonTurbineGovernorsDymola.py").read())
-    print('Turbine Governors Testing OK...')
+    os.chdir(f""+ReferenceStep+"")
+    exec(open("ReferenceStepRunAllDymola.py").read())
+    print('Reference Step Testing OK...')
 except:
-    print('Error in Turbine Governors Testing...')
-
-
-# In[8]:
-
-
-#Run Power System Stabilizer
-print('---------------------------------------------------------- Power System Stabilizers Testing ----------------------------------------------------------')
-try:
-    os.chdir(f"/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/")
-    exec(open("PythonPowerSystemStabilizersDymola.py").read())
-    print('Power System Stabilizer Testing OK...')
-except:
-    print('Error in Power System Stabilizer Testing...')
+    print('Error in Reference Step Testing...')
 
 
 # In[ ]:

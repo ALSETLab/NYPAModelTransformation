@@ -230,7 +230,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Load Variation Turbine Governor Examples Simulation OK...')
+print('Load Variation Dymola Turbine Governor Examples Simulation OK...')
 
 
 # In[ ]:

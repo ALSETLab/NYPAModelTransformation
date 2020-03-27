@@ -141,7 +141,7 @@ for pssNumber, pssName in enumerate(psss['names']):
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Fault Power System Stabilizers Simulation OK...')
+print('Fault Dymola Power System Stabilizers Simulation OK...')
 
 
 # In[ ]:

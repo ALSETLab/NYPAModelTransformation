@@ -84,7 +84,6 @@ except:
     print('Error Adding Auxiliary Models...\n')
 #Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"") 
-print("Reference Step Dymola Exciters Simulation Start...\n")
 
 
 # In[6]:
@@ -139,7 +138,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
 #For loop that will iterate between exciters, simulate, and create the .csv file
 for exciterNumber, exciterName in enumerate(exciters['names']):
     try:
-        print(f"Fault {exciterName} Simulation Start...")
+        print(f"Reference Step {exciterName} Simulation Start...")
         dymola.cd(""+ RSExcitersWorkingDir + exciterName)
         resultPath = "/"+RSExcitersWorkingDir+f"{exciterName}/" + exciterName 
         dymola.translateModel(exciters['path'][exciterNumber])
@@ -218,14 +217,13 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            pass
-            #shutil.rmtree(RSExcitersWorkingDir+f"{exciterName}/")
-            #print("Delete OK...\n")
+            shutil.rmtree(RSExcitersWorkingDir+f"{exciterName}/")
+            print("Delete OK...\n")
         except:
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Fault Exciter Examples Simulation OK...')
+print('Reference Step Dymola Exciter Examples Simulation OK...')
 
 
 # In[ ]:

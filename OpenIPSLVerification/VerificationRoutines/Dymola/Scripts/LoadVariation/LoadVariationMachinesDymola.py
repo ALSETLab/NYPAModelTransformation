@@ -162,7 +162,7 @@ for machineNumber, machineName in enumerate(machines['names']):
             pass          
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Load Variation Machine Examples Simulation OK...')
+print('Load Variation Dymola Machine Examples Simulation OK...')
 
 
 # In[ ]:

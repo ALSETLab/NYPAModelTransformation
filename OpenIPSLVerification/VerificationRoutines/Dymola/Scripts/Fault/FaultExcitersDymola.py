@@ -177,7 +177,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
             pass
     except DymolaException as ex:
         print("Error: " + str(ex))
-print('Fault Exciter Examples Simulation OK...')
+print('Fault Dymola Exciter Examples Simulation OK...')
 
 
 # In[ ]:
