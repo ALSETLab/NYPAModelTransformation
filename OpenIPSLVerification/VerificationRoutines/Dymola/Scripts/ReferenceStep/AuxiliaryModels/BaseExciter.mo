@@ -40,7 +40,7 @@ partial model BaseExciter
     annotation (Placement(transformation(extent={{-170,40},{-150,60}})));
   Modelica.Blocks.Math.Add DiffV(k2=-1)
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  Modelica.Blocks.Sources.Step Vref_step(height=V_REF*dV, startTime=t)
+  Modelica.Blocks.Sources.Step Vref_step(height=dV, startTime=t)
     annotation (Placement(transformation(extent={{-140,60},{-120,80}})));
   Modelica.Blocks.Math.Add add7
     annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
