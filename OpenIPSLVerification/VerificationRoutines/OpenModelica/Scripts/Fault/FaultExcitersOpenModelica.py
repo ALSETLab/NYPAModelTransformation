@@ -151,11 +151,11 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                     except:
                         first = np.array(sim[var].values())
                         df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
-        print(f"{exciterName} Variables OK...")
-        #Changing current directory
-        os.chdir(f""+FExcitersWorkingDir+"")
-        df_variables.to_csv(f'{exciterName}.csv', index = False)          
-        print(f"{exciterName} Write OK...")
+            print(f"{exciterName} Variables OK...")
+            #Changing current directory
+            os.chdir(f""+FExcitersWorkingDir+"")
+            df_variables.to_csv(f'{exciterName}.csv', index = False)          
+            print(f"{exciterName} Write OK...")
     except:
         print(f"{exciterName} variable error...\n")
     shutil.rmtree(""+FExcitersWorkingDir+f"{exciterName}/")
