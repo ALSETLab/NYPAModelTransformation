@@ -1,10 +1,10 @@
 within OpenIPSL.Electrical.Loads.PSSE;
 model Load_variation "PSS/E Load with variation"
   extends BaseClasses.baseLoad;
-  parameter Real d_P "Active Load Variation (pu)"
+  parameter Real d_P = 1 "Active Load Variation (pu)"
                                                  annotation(Evaluate=false);
-  parameter Modelica.SIunits.Time t1 "Time of Load Variation" annotation(Evaluate=false);
-  parameter Modelica.SIunits.Time d_t "Time duration of load variation" annotation(Evaluate=false);
+  parameter Modelica.SIunits.Time t1 = 0.5 "Time of Load Variation" annotation(Evaluate=false);
+  parameter Modelica.SIunits.Time d_t = 20 "Time duration of load variation" annotation(Evaluate=false);
 protected
   parameter Real PF=if q0 == 0 then 1 else p0/q0;
   parameter Real d_Q=(p0 + d_P)/PF - q0;

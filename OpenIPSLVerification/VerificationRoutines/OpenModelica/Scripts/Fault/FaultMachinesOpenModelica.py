@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[34]:
+# In[1]:
 
 
 from OMPython import OMCSessionZMQ
@@ -14,7 +14,7 @@ import shutil
 import git
 
 
-# In[36]:
+# In[3]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -36,14 +36,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[37]:
+# In[4]:
 
 
 print(omc.sendExpression("getVersion()"))
 print("Open Modelica Machines Simulation Start...")
 
 
-# In[38]:
+# In[4]:
 
 
 #Deleting old OpenIPSL library version
@@ -53,7 +53,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
 
 
-# In[39]:
+# In[5]:
 
 
 #Creation of matrix with names, paths and variables
@@ -67,7 +67,7 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[40]:
+# In[10]:
 
 
 #Delete old results
@@ -79,7 +79,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[41]:
+# In[11]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file

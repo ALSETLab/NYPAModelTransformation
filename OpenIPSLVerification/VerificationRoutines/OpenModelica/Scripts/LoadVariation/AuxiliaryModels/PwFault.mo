@@ -1,12 +1,13 @@
-within OpenIPSL.Electrical.Events;
+within ;
 model PwFault "Transitory short-circuit on a node. Shunt impedance connected only during a specified interval of time.
               Developed by AIA. 2014/12/16"
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-80,
             -10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   parameter Real R "Resistance (pu)";
   parameter Real X "Reactance (pu)";
-  parameter Real t1 "Start time of the fault (s)" annotation(Evaluate=false);
-  parameter Real t2 "End time of the fault (s)" annotation(Evaluate=false);
+  parameter Real t1 = 20
+                        "Start time of the fault (s)" annotation(Evaluate=false);
+  parameter Real t2 = 20.15 "End time of the fault (s)" annotation(Evaluate=false);
   import Modelica.Constants.eps;
 protected
   parameter Boolean ground=abs(R) < eps and abs(X) < eps;
