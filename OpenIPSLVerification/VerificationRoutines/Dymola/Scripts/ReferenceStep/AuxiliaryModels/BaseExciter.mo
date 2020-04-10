@@ -1,4 +1,4 @@
-within ;
+within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
 partial model BaseExciter
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(
         transformation(
