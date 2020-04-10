@@ -14,7 +14,7 @@ import shutil
 import git
 
 
-# In[3]:
+# In[2]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -36,7 +36,7 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[4]:
+# In[3]:
 
 
 print(omc.sendExpression("getVersion()"))
@@ -67,7 +67,7 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[10]:
+# In[6]:
 
 
 #Delete old results
@@ -79,7 +79,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[11]:
+# In[7]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -87,7 +87,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     print(f"Fault {machineName} Simulation Start...")
     try:
         omc.sendExpression(f"cd(\"{FMachinesWorkingDir}" + machineName +"\")")
-        omc.sendExpression(f"loadFile(\"/home/manuelnvro/dev/Gitted/OpenIPSL/OpenIPSL/package.mo\")")
+        omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
         omc.sendExpression("instantiateModel(OpenIPSL)")
         omc.sendExpression(f"simulate(OpenIPSL.Examples.Machines.PSSE.{machineName}, stopTime=10.0,method=\"rungekutta\",numberOfIntervals=5000,tolerance=1e-06)")
         sim = SimRes(""+FMachinesWorkingDir+f"{machineName}/OpenIPSL.Examples.Machines.PSSE.{machineName}_res.mat")

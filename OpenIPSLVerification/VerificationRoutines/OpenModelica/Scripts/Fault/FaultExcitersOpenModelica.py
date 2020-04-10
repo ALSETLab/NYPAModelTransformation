@@ -53,7 +53,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
 
 
-# In[5]:
+# In[4]:
 
 
 #Creation of matrix with names, paths and variables
@@ -81,7 +81,7 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
 
-# In[6]:
+# In[5]:
 
 
 #Delete old results
@@ -93,7 +93,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[ ]:
+# In[6]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -101,7 +101,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     print(f"Fault {exciterName} Simulation Start...")
     try:
         omc.sendExpression(f"cd(\"{FExcitersWorkingDir}" + exciterName +"\")")
-        omc.sendExpression(f"loadFile(\"/home/manuelnvro/dev/Gitted/OpenIPSL/OpenIPSL/package.mo\")")
+        omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
         omc.sendExpression("instantiateModel(OpenIPSL)")
         omc.sendExpression(f"simulate(OpenIPSL.Examples.Controls.PSSE.ES.{exciterName}, stopTime=10.0,method=\"rungekutta\",numberOfIntervals=5000,tolerance=1e-06)")
         sim = SimRes(""+FExcitersWorkingDir+f"{exciterName}/OpenIPSL.Examples.Controls.PSSE.ES.{exciterName}_res.mat")

@@ -94,11 +94,10 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     print(f"Fault {tgovernorName} Simulation Start...")
     try:
         omc.sendExpression(f"cd(\"{FTurbineGovernorsWorkingDir}" + tgovernorName +"\")")
-        omc.sendExpression(f"loadFile(\"/home/manuelnvro/dev/Gitted/OpenIPSL/OpenIPSL/package.mo\")")
+        omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
         omc.sendExpression("instantiateModel(OpenIPSL)")
         omc.sendExpression(f"simulate(OpenIPSL.Examples.Controls.PSSE.TG.{tgovernorName}, stopTime=10.0,method=\"rungekutta\",numberOfIntervals=5000,tolerance=1e-06)")
         sim = SimRes(""+FTurbineGovernorsWorkingDir+f"{tgovernorName}/OpenIPSL.Examples.Controls.PSSE.TG.{tgovernorName}_res.mat")
-        print(sim)
         print(f"{tgovernorName} Simulation Finished...")
     except:
         print(f"{tgovernorName} simulation error or model not found...")
