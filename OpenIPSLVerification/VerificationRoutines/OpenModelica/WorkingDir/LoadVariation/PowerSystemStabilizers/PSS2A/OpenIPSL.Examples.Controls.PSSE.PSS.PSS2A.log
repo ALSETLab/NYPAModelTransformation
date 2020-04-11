@@ -1,0 +1,2 @@
+assert            | debug   | division by zero at time 0, (a=-1106.787714135276) / (b=0), where divisor b expression is: if abs(pSS2A.Leadlag2.T1 - pSS2A.Leadlag2.T2) < 1e-15 then pSS2A.Leadlag2.K else 0.0
+assert            | info    | simulation terminated by an assertion at initialization

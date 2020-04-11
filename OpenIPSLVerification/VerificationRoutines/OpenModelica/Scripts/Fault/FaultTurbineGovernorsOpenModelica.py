@@ -40,7 +40,7 @@ PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/Ope
 
 
 print(omc.sendExpression("getVersion()"))
-print("Open Modelica Exciters Simulation Start...")
+print("Open Modelica Simulation Start...")
 
 
 # In[4]:
@@ -183,7 +183,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         print(f"{tgovernorName} variable error...\n")
     shutil.rmtree(""+FTurbineGovernorsWorkingDir+f"{tgovernorName}/")
     print("Delete OK...\n")        
-print('Fault Exciter Examples Open Modelica Simulation OK...')
+print('Fault Turbine Governors Examples Open Modelica Simulation OK...')
 
 
 # In[ ]:
