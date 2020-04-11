@@ -45,8 +45,8 @@ partial model BaseExciter
   Modelica.Blocks.Math.Add add7
     annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
   //Parameters of the voltage reference step
-  parameter Modelica.SIunits.PerUnit dV=0 "Voltage reference step";
-  parameter Modelica.SIunits.Time t=0
+  parameter Modelica.SIunits.PerUnit dV=0.02 "Voltage reference step";
+  parameter Modelica.SIunits.Time t=0.5
     "Application time of the voltage reference step";
 protected
   parameter Real Efd0(fixed=false);
