@@ -77,7 +77,7 @@ dymola.openModel(""+OpenIPSLPackage+"")
 print("Load Variation Dymola Turbine Governors Simulation Start...\n")
 
 
-# In[6]:
+# In[7]:
 
 
 #Creation of matrix with names, paths and variables
@@ -93,12 +93,12 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1",
            'pelec' : ['gENROU.PELEC', 'gENROE.PELEC', 'gENSAL.PELEC'],
             'pmech' : ['gENROU.PMECH', 'gENROE.PMECH', 'gENSAL.PMECH'],
             'speed': ['gENROU.SPEED', 'gENROE.SPEED', 'gENSAL.SPEED'],
-           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH", 
+           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH_HP", 
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
 
-# In[7]:
+# In[8]:
 
 
 #Delete old results
@@ -113,7 +113,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[8]:
+# In[9]:
 
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
