@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[13]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[2]:
+# In[14]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -37,14 +37,14 @@ PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation
 PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 
-# In[3]:
+# In[15]:
 
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
 
 
-# In[4]:
+# In[19]:
 
 
 #Deleting old OpenIPSL library version
@@ -57,21 +57,21 @@ dymola.openModel(""+OpenIPSLPackage+"")
 print("Fault Dymola Machines Simulation Start...\n")
 
 
-# In[6]:
+# In[20]:
 
 
 #Creation of matrix with names, paths and variables
 machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1"],
             'path' : ["OpenIPSL.Examples.Machines.PSSE.GENROU", "OpenIPSL.Examples.Machines.PSSE.GENSAL",
                       "OpenIPSL.Examples.Machines.PSSE.GENCLS", "OpenIPSL.Examples.Machines.PSSE.GENROE", 
-                      "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Machines.PSSE.CSVGN1"],
+                      "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Banks.PSSE.CSVGN1"],
             'delta' : ['gENROU.delta', 'gENSAL.delta', 'gENCLS2.delta', 'gENROE.delta', 'gENSAE.delta', 'cSVGN1.delta'],
            'pelec' : ['gENROU.PELEC', 'gENSAL.PELEC', 'gENCLS2.P', 'gENROE.PELEC', 'gENSAE.PELEC', 'cSVGN1.PELEC'],
            'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS2.omega', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[7]:
+# In[21]:
 
 
 #Delete old results
@@ -83,7 +83,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[8]:
+# In[28]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -92,12 +92,21 @@ for machineNumber, machineName in enumerate(machines['names']):
         print(f"Fault {machineName} Simulation Start...")
         dymola.cd(""+ FMachinesWorkingDir + machineName)
         resultPath = "/"+FMachinesWorkingDir+f"{machineName}/" + machineName
-        result = dymola.simulateModel(machines['path'][machineNumber], 
-                                stopTime=10.0,
-                                method="Rkfix2",
-                                tolerance=1e-06,
-                                numberOfIntervals = 5000,
-                                resultFile = resultPath)
+        #Changing the solver if it is CSVGN1
+        if machineName == 'CSVGN1':
+            result = dymola.simulateModel(machines['path'][machineNumber], 
+                                    stopTime=10.0,
+                                    method="dassl",
+                                    tolerance=1e-4,
+                                    numberOfIntervals = 500,
+                                    resultFile = resultPath)
+        else:
+            result = dymola.simulateModel(machines['path'][machineNumber], 
+                                    stopTime=10.0,
+                                    method="Rkfix2",
+                                    tolerance=1e-06,
+                                    numberOfIntervals = 5000,
+                                    resultFile = resultPath)
         if not result:
             print("Simulation failed or model was not found. Below is the translation log:\n")
             log = dymola.getLastErrorLog()
@@ -107,8 +116,11 @@ for machineNumber, machineName in enumerate(machines['names']):
             print(".csv Writing Start...")
             #Selecting Result File
             sim = SimRes(""+FMachinesWorkingDir+f"{machineName}/{machineName}.mat")
-            #Selecting Variables
-            variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['pmech'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+            #Selecting Variables and discerning if it is CSVGN1
+            if machineName == 'CSVGN1':
+                variables = ['Time', 'cSVGN1.Q', 'GEN1.V', 'LOAD.V', 'GEN2.V', 'SHUNT.V', 'FAULT.V' ]
+            else:
+                variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['pmech'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
