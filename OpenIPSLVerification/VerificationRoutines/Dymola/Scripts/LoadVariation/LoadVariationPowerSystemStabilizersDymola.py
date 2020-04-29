@@ -121,7 +121,7 @@ for pssNumber, pssName in enumerate(psss['names']):
         dymola.ExecuteCommand("constantLoad.d_t = 20;")
         result = dymola.simulateModel(psss['path'][pssNumber], 
                                 stopTime=10.0,
-                                method="Rkfix2",
+                                method="dassl",
                                 tolerance=1e-06,
                                 numberOfIntervals = 5000,
                                 resultFile = resultPath)
