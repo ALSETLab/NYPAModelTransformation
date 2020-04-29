@@ -61,7 +61,7 @@ print("Fault Dymola Wind Turbine Simulation Start...\n")
 
 
 #Creation of matrix with names, paths and variables
-wturbines = { 'names' : ["WT4E1","WT4G1"],
+wturbines = { 'names' : ["WT4G1","WT4E1"],
             'path' : ["OpenIPSL.Examples.Wind.PSSE.WT4G.WT4G1","OpenIPSL.Examples.Wind.PSSE.WT4G.WT4E1"],
             'p' : ['wT4G1.P', 'wT4E1.P'],
            'q' : ['wT4G1.Q', 'wT4E1.Q']}
@@ -107,7 +107,10 @@ for wturbineNumber, wturbineName in enumerate(wturbines['names']):
             print(f"{wturbineName} Simulation OK...")
             print(".csv Writing Start...") 
             sim = SimRes(""+FWindTurbinesWorkingDir+f"{wturbineName}/{wturbineName}.mat")
-            variables = ['Time', wturbines['p'][wturbineNumber], wturbines['q'][wturbineNumber], 'GEN1.V', 'FAULT.V', 'GEN2.V']
+            if wturbineName == 'WT4E1':
+                variables = ['Time', wturbines['p'][wturbineNumber], wturbines['q'][wturbineNumber], 'wT4G1.P', 'wT4G1.Q', 'GEN1.V', 'FAULT.V', 'GEN2.V']
+            else:
+                variables = ['Time', wturbines['p'][wturbineNumber], wturbines['q'][wturbineNumber], 'GEN1.V', 'FAULT.V', 'GEN2.V']
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
