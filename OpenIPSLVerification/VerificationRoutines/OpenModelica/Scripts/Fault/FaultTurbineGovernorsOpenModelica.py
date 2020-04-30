@@ -138,7 +138,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
                 #Change from Radians to Degrees
-                if var == tgovernors['delta'][0]:
+                if var == tgovernors['delta'][1]:
                     df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                 else:
                     #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
@@ -163,7 +163,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
                 #Change from Radians to Degrees
-                if var == tgovernors['delta'][0]:
+                if var == tgovernors['delta'][2]:
                     df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                 else:
                     #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
