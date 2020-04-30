@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[14]:
 
 
 from OMPython import OMCSessionZMQ
@@ -72,7 +72,7 @@ try:
     os.system('cp '+SMIBPartialSource+' '+SMIBPartialDestination)
 except:
     print('Error Adding Auxiliary Models...\n') 
-print("Load Variation Open Modelica Machines Simulation Start...\n")
+print("Load Variation Open Modelica Turbine Governors Simulation Start...\n")
 
 
 # In[11]:
@@ -113,7 +113,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
-    print(f"Fault {tgovernorName} Simulation Start...")
+    print(f"Load Variation {tgovernorName} Simulation Start...")
     try:
         omc.sendExpression(f"cd(\"{LVTurbineGovernorsWorkingDir}" + tgovernorName +"\")")
         omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
@@ -129,7 +129,6 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         try:
             print('Verifying if it is a GENROU model...')
             #Selecting Variables
-            print(tgovernors['delta'][0])
             variables = ['Time', tgovernors['delta'][0], tgovernors['pelec'][0], tgovernors['pmech'][0], tgovernors['speed'][0], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
@@ -154,13 +153,12 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         try:    
             print('Verifying if it is a GENROE model...')
             #Selecting Variables
-            print(tgovernors['delta'][1])
             variables = ['Time', tgovernors['delta'][1], tgovernors['pelec'][1], tgovernors['pmech'][1], tgovernors['speed'][1], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
                 #Change from Radians to Degrees
-                if var == tgovernors['delta'][0]:
+                if var == tgovernors['delta'][1]:
                     df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                 else:
                     #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
@@ -179,13 +177,12 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         try:
             print('Verifying if it is a GENSAL model...')
             #Selecting Variables
-            print(tgovernors['delta'][2])
             variables = ['Time', tgovernors['delta'][2], tgovernors['pelec'][2], tgovernors['pmech'][2], tgovernors['speed'][2], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
                 df_variables.drop(var, axis = 1, inplace = True)
                 #Change from Radians to Degrees
-                if var == tgovernors['delta'][0]:
+                if var == tgovernors['delta'][2]:
                     df_variables[var] = np.array(sim[var].values()*(180/np.pi))    
                 else:
                     #check if a variable does not change during the simulation and then and make a ones array and multiply by the value
@@ -205,7 +202,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         print(f"{tgovernorName} variable error...\n")
     shutil.rmtree(""+LVTurbineGovernorsWorkingDir+f"{tgovernorName}/")
     print("Delete OK...\n")        
-print('Fault Exciter Examples Open Modelica Simulation OK...')
+print('Load Variation Turbine Governor Examples Open Modelica Simulation OK...')
 
 
 # In[ ]:
