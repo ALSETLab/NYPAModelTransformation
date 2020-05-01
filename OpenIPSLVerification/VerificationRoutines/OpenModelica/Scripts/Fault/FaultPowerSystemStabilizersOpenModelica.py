@@ -88,7 +88,7 @@ for pssNumber, pssName in enumerate(psss['names']):
         omc.sendExpression(f"cd(\"{FPowerSystemStabilizersWorkingDir}" + pssName +"\")")
         omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
         omc.sendExpression("instantiateModel(OpenIPSL)")
-        omc.sendExpression(f"simulate(OpenIPSL.Examples.Controls.PSSE.PSS.{pssName}, stopTime=10.0,method=\"rungekutta\",numberOfIntervals=5000,tolerance=1e-06)")
+        omc.sendExpression(f"simulate(OpenIPSL.Examples.Controls.PSSE.PSS.{pssName}, stopTime=10.0,method=\"dassl\",numberOfIntervals=5000,tolerance=1e-06)")
         sim = SimRes(""+FPowerSystemStabilizersWorkingDir+f"{pssName}/OpenIPSL.Examples.Controls.PSSE.PSS.{pssName}_res.mat")
         print(f"{pssName} Simulation Finished...")
     except:
