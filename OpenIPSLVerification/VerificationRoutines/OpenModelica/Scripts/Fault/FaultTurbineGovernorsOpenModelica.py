@@ -69,12 +69,12 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1",
            'pelec' : ['gENROU.PELEC', 'gENROE.PELEC', 'gENSAL.PELEC'],
             'pmech' : ['gENROU.PMECH', 'gENROE.PMECH', 'gENSAL.PMECH'],
             'speed': ['gENROU.SPEED', 'gENROE.SPEED', 'gENSAL.SPEED'],
-           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH", 
+           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH_HP", 
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
 
-# In[33]:
+# In[13]:
 
 
 #Delete old results
@@ -86,7 +86,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[34]:
+# In[14]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -107,7 +107,6 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         try:
             print('Verifying if it is a GENROU model...')
             #Selecting Variables
-            print(tgovernors['delta'][0])
             variables = ['Time', tgovernors['delta'][0], tgovernors['pelec'][0], tgovernors['pmech'][0], tgovernors['speed'][0], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
@@ -132,7 +131,6 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         try:    
             print('Verifying if it is a GENROE model...')
             #Selecting Variables
-            print(tgovernors['delta'][1])
             variables = ['Time', tgovernors['delta'][1], tgovernors['pelec'][1], tgovernors['pmech'][1], tgovernors['speed'][1], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
@@ -157,7 +155,6 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
         try:
             print('Verifying if it is a GENSAL model...')
             #Selecting Variables
-            print(tgovernors['delta'][2])
             variables = ['Time', tgovernors['delta'][2], tgovernors['pelec'][2], tgovernors['pmech'][2], tgovernors['speed'][2], tgovernors['pmechgov'][tgovernorNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
             df_variables = pd.DataFrame([], columns = variables)
             for var in variables:
@@ -182,11 +179,11 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     except:
         print(f"{tgovernorName} variable error...\n")
     shutil.rmtree(""+FTurbineGovernorsWorkingDir+f"{tgovernorName}/")
-    print("Delete OK...\n")        
+    print("Delete OK...\n")
 print('Fault Turbine Governors Examples Open Modelica Simulation OK...')
 
 
-# In[ ]:
+# In[8]:
 
 
 try:

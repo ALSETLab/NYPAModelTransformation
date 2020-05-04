@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[14]:
+# In[1]:
 
 
 from OMPython import OMCSessionZMQ
@@ -14,7 +14,7 @@ import shutil
 import git
 
 
-# In[7]:
+# In[2]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -40,14 +40,14 @@ SMIBPartialDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformatio
 SMIBPartialDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
 
 
-# In[8]:
+# In[3]:
 
 
 print(omc.sendExpression("getVersion()"))
 print("Open Modelica Exciters Simulation Start...")
 
 
-# In[9]:
+# In[4]:
 
 
 #Deleting old OpenIPSL library version
@@ -57,7 +57,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
 
 
-# In[10]:
+# In[5]:
 
 
 #Adding Auxiliary Files
@@ -75,7 +75,7 @@ except:
 print("Load Variation Open Modelica Turbine Governors Simulation Start...\n")
 
 
-# In[11]:
+# In[6]:
 
 
 #Creation of matrix with names, paths and variables
@@ -91,12 +91,12 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1",
            'pelec' : ['gENROU.PELEC', 'gENROE.PELEC', 'gENSAL.PELEC'],
             'pmech' : ['gENROU.PMECH', 'gENROE.PMECH', 'gENSAL.PMECH'],
             'speed': ['gENROU.SPEED', 'gENROE.SPEED', 'gENSAL.SPEED'],
-           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH", 
+           'pmechgov' : ["bBGOV1.PMECH","gAST.PMECH", "gAST2A.PMECH", "gGOV1.PMECH", "hYGOV.PMECH", "iEEEG1.PMECH_HP", 
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
 
-# In[12]:
+# In[7]:
 
 
 #Delete old results
@@ -108,7 +108,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
 
 
-# In[13]:
+# In[8]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -205,7 +205,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
 print('Load Variation Turbine Governor Examples Open Modelica Simulation OK...')
 
 
-# In[ ]:
+# In[9]:
 
 
 try:
