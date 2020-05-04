@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[27]:
+# In[17]:
 
 
 from OMPython import OMCSessionZMQ
@@ -14,7 +14,7 @@ import shutil
 import git
 
 
-# In[28]:
+# In[18]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -40,14 +40,14 @@ SMIBPartialDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformatio
 SMIBPartialDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
 
 
-# In[29]:
+# In[19]:
 
 
 print(omc.sendExpression("getVersion()"))
 print("Open Modelica Machines Simulation Start...")
 
 
-# In[30]:
+# In[4]:
 
 
 #Deleting old OpenIPSL library version
@@ -57,7 +57,7 @@ print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
 
 
-# In[31]:
+# In[20]:
 
 
 #Adding Auxiliary Files
@@ -75,21 +75,21 @@ except:
 print("Load Variation Open Modelica Machines Simulation Start...\n")
 
 
-# In[32]:
+# In[21]:
 
 
 #Creation of matrix with names, paths and variables
 machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1"],
             'path' : ["OpenIPSL.Examples.Machines.PSSE.GENROU", "OpenIPSL.Examples.Machines.PSSE.GENSAL",
                       "OpenIPSL.Examples.Machines.PSSE.GENCLS", "OpenIPSL.Examples.Machines.PSSE.GENROE", 
-                      "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Machines.PSSE.CSVGN1"],
+                      "OpenIPSL.Examples.Machines.PSSE.GENSAE", "OpenIPSL.Examples.Banks.PSSE.CSVGN1"],
             'delta' : ['gENROU.delta', 'gENSAL.delta', 'gENCLS2.delta', 'gENROE.delta', 'gENSAE.delta', 'cSVGN1.delta'],
            'pelec' : ['gENROU.PELEC', 'gENSAL.PELEC', 'gENCLS2.P', 'gENROE.PELEC', 'gENSAE.PELEC', 'cSVGN1.PELEC'],
            'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS2.omega', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
 
-# In[33]:
+# In[22]:
 
 
 #Delete old results
@@ -101,7 +101,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
 
 
-# In[34]:
+# In[23]:
 
 
 #For loop that will iterate between machines, simulate, and create the .csv file
@@ -111,14 +111,21 @@ for machineNumber, machineName in enumerate(machines['names']):
         omc.sendExpression(f"cd(\"{LVMachinesWorkingDir}" + machineName +"\")")
         omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
         omc.sendExpression("instantiateModel(OpenIPSL)")
-        omc.sendExpression(f"simulate(OpenIPSL.Examples.Machines.PSSE.{machineName}, stopTime=10.0,method=\"rungekutta\",numberOfIntervals=5000,tolerance=1e-06)")
-        sim = SimRes(""+LVMachinesWorkingDir+f"{machineName}/OpenIPSL.Examples.Machines.PSSE.{machineName}_res.mat")
+        if machineName == 'CSVGN1':
+            omc.sendExpression(f"simulate(OpenIPSL.Examples.Banks.PSSE.{machineName}, stopTime=10.0,method=\"dassl\",numberOfIntervals=500,tolerance=1e-04)")
+            sim = SimRes(""+LVMachinesWorkingDir+f"{machineName}/OpenIPSL.Examples.Banks.PSSE.{machineName}_res.mat")
+        else:
+            omc.sendExpression(f"simulate(OpenIPSL.Examples.Machines.PSSE.{machineName}, stopTime=10.0,method=\"rungekutta\",numberOfIntervals=5000,tolerance=1e-06)")
+            sim = SimRes(""+LVMachinesWorkingDir+f"{machineName}/OpenIPSL.Examples.Machines.PSSE.{machineName}_res.mat")
         print(f"{machineName} Simulation Finished...")
     except:
         print(f"{machineName} simulation error or model not found...")
     try:
         print(".csv Writing Start...")
-        variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['pmech'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+        if machineName == 'CSVGN1':
+            variables = ['Time', 'cSVGN1.Q', 'GEN1.V', 'LOAD.V', 'GEN2.V', 'SHUNT.V', 'FAULT.V' ]
+        else:
+            variables = ['Time', machines['delta'][machineNumber], machines['pelec'][machineNumber], machines['pmech'][machineNumber], machines['speed'][machineNumber], 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
         df_variables = pd.DataFrame([], columns = variables)
         for var in variables:
             df_variables.drop(var, axis = 1, inplace = True)
@@ -147,7 +154,7 @@ for machineNumber, machineName in enumerate(machines['names']):
 print('Fault Machine Examples Open Modelica Simulation OK...')
 
 
-# In[ ]:
+# In[9]:
 
 
 try:
