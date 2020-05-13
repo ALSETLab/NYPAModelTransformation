@@ -41,7 +41,7 @@ PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/Ope
 
 
 #Setting Dymola Interface
-dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
+dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
 
 
 # In[4]:
@@ -202,7 +202,7 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
 print('Fault Dymola Turbine Governor Examples Simulation OK...')
 
 
-# In[ ]:
+# In[8]:
 
 
 try:

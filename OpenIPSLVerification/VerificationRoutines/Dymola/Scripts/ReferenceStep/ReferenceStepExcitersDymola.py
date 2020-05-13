@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[20]:
+# In[1]:
 
 
 import platform
@@ -15,7 +15,7 @@ import shutil
 import git
 
 
-# In[21]:
+# In[2]:
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
@@ -41,14 +41,14 @@ ReferenceStepDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformat
 ReferenceStepDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Controls/PSSE/ES/BaseClasses/BaseExciter.mo"
 
 
-# In[22]:
+# In[3]:
 
 
 #Setting Dymola Interface
-dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
+dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
 
 
-# In[23]:
+# In[6]:
 
 
 #Deleting old OpenIPSL library version
@@ -61,7 +61,7 @@ dymola.openModel(""+OpenIPSLPackage+"")
 print("Reference Step Dymola Exciters Simulation Start...\n")
 
 
-# In[24]:
+# In[7]:
 
 
 #Adding Auxiliary Files
@@ -86,7 +86,7 @@ except:
 dymola.openModel(""+OpenIPSLPackage+"") 
 
 
-# In[6]:
+# In[8]:
 
 
 #Creation of matrix with names, paths and variables
@@ -120,7 +120,7 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.t", "iEEET5.t", "rEXSYS.t", "sCRX.t", "sEXS.t", "sT6B.t"]}
 
 
-# In[8]:
+# In[9]:
 
 
 #Delete old results
@@ -132,7 +132,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[9]:
+# In[10]:
 
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
@@ -217,8 +217,9 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            shutil.rmtree(RSExcitersWorkingDir+f"{exciterName}/")
-            print("Delete OK...\n")
+            #shutil.rmtree(RSExcitersWorkingDir+f"{exciterName}/")
+            #print("Delete OK...\n")
+            pass
         except:
             pass
     except DymolaException as ex:

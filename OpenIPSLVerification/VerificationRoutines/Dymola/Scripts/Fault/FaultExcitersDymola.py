@@ -41,7 +41,7 @@ PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/Ope
 
 
 #Setting Dymola Interface
-dymola = DymolaInterface("/opt/dymola-2020-x86_64/bin64/dymola.sh")
+dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
 
 
 # In[4]:
@@ -85,7 +85,7 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
 
-# In[7]:
+# In[6]:
 
 
 #Delete old results
@@ -97,7 +97,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
 
 
-# In[8]:
+# In[7]:
 
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
@@ -152,6 +152,8 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 print('Verifying if it is a GENROE model...')
                 #Selecting Variables
                 variables = ['Time', exciters['delta'][1], exciters['pelec'][1], exciters['pmech'][1], exciters['speed'][1],exciters['efd'][exciterNumber] , 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
+                print(variables)
+                print(exciterNumber)
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
@@ -180,7 +182,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
 print('Fault Dymola Exciter Examples Simulation OK...')
 
 
-# In[ ]:
+# In[8]:
 
 
 try:
