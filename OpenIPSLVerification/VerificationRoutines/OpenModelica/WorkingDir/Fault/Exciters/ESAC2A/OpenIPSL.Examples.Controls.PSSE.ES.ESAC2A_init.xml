@@ -9,11 +9,11 @@
 
   OPENMODELICAHOME                    = "/usr/bin/.."
 
-  guid                                = "{25cecd9c-39e5-46e1-aab8-3a30ac52e2c0}"
+  guid                                = "{eab6e997-147a-4c05-85bc-7ab86c99d430}"
 
   description                         = "SMIB model example of GENROU with Excitation System ESAC2A"
   generationTool                      = "OpenModelica Compiler OpenModelica 1.15.0~dev-49-gb315f0e"
-  generationDateAndTime               = "2020-05-13T10:26:33Z"
+  generationDateAndTime               = "2020-05-13T11:54:40Z"
 
   variableNamingConvention            = "structured"
 

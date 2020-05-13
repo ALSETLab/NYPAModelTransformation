@@ -5388,8 +5388,8 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESAC2A_initialNonLinearSystem(int nNonLi
   nonLinearSystemData[2].mixedSystem = 1;
   nonLinearSystemData[2].residualFunc = residualFunc895;
   nonLinearSystemData[2].strictTearingFunctionCall = NULL;
-  nonLinearSystemData[2].analyticalJacobianColumn = OpenIPSL_Examples_Controls_PSSE_ES_ESAC2A_functionJacNLSJac2_column;
-  nonLinearSystemData[2].initialAnalyticalJacobian = OpenIPSL_Examples_Controls_PSSE_ES_ESAC2A_initialAnalyticJacobianNLSJac2;
+  nonLinearSystemData[2].analyticalJacobianColumn = OpenIPSL_Examples_Controls_PSSE_ES_ESAC2A_functionJacNLSJac11_column;
+  nonLinearSystemData[2].initialAnalyticalJacobian = OpenIPSL_Examples_Controls_PSSE_ES_ESAC2A_initialAnalyticJacobianNLSJac11;
   nonLinearSystemData[2].jacobianIndex = 0 /*jacInx*/;
   nonLinearSystemData[2].initializeStaticNLSData = initializeStaticDataNLS895;
   nonLinearSystemData[2].getIterationVars = getIterationVarsNLS895;

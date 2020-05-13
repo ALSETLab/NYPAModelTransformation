@@ -1675,7 +1675,7 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESAC2A_setupDataStruc(DATA *data, thread
   data->modelData->modelFilePrefix = "OpenIPSL.Examples.Controls.PSSE.ES.ESAC2A";
   data->modelData->resultFileName = NULL;
   data->modelData->modelDir = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/Controls/PSSE/ES";
-  data->modelData->modelGUID = "{25cecd9c-39e5-46e1-aab8-3a30ac52e2c0}";
+  data->modelData->modelGUID = "{eab6e997-147a-4c05-85bc-7ab86c99d430}";
   #if defined(OPENMODELICA_XML_FROM_FILE_AT_RUNTIME)
   data->modelData->initXMLData = NULL;
   data->modelData->modelDataXml.infoXMLData = NULL;

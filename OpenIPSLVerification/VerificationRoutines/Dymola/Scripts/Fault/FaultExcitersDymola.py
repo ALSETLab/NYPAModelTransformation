@@ -152,8 +152,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 print('Verifying if it is a GENROE model...')
                 #Selecting Variables
                 variables = ['Time', exciters['delta'][1], exciters['pelec'][1], exciters['pmech'][1], exciters['speed'][1],exciters['efd'][exciterNumber] , 'GEN1.V', 'LOAD.V', 'GEN2.V', 'FAULT.V' ]
-                print(variables)
-                print(exciterNumber)
                 df_variables = pd.DataFrame([], columns = variables)
                 for var in variables:
                     df_variables.drop(var, axis = 1, inplace = True)
