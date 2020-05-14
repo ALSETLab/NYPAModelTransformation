@@ -72,22 +72,5 @@ try:
 except:
     print('Error in Load Variation Open Modelica Power System Stabilizer Testing...')
 
-
-# In[6]:
-
-
-#Run Wind Turbines
-print('---------------------------------------------------------- Load Variation Open Modelica Wind Turbines Testing ----------------------------------------------------------')
-try:
-    os.chdir(f""+LoadVariation+"")
-    exec(open("LoadVariationWindTurbinesOpenModelica.py").read())
-    print('Load Variation Open Modelica Wind Turbines Testing OK...')
-except:
-    print('Error in Load Variation Open Modelica Wind Turbines Testing...')
-
-
-# In[ ]:
-
-
 print('---------------------------------------------------------- End of All Load Variation Open Modelica Simulations ----------------------------------------------------------')
 

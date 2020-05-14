@@ -48,17 +48,20 @@ BaseExciterDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/Op
 
 
 print(omc.sendExpression("getVersion()"))
-print("Open Modelica Exciters Simulation Start...")
 
 
 # In[23]:
 
 
 #Deleting old OpenIPSL library version
-shutil.rmtree(f""+OpenIPSL+"")
+try:
+    shutil.rmtree(f""+OpenIPSL+"")
+except:
+    pass
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
+print("Reference Step Open Modelica Exciters Simulation Start...\n")
 
 
 # In[24]:

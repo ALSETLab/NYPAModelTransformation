@@ -40,17 +40,19 @@ PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/Ope
 
 
 print(omc.sendExpression("getVersion()"))
-print("Open Modelica Power System Stabilizers Simulation Start...")
-
 
 # In[ ]:
 
 
 #Deleting old OpenIPSL library version
-shutil.rmtree(f""+OpenIPSL+"")
+try:
+    shutil.rmtree(f""+OpenIPSL+"")
+except:
+    pass
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
+print("Fault Open Modelica Power System Stabilizers Simulation Start...\n")
 
 
 # In[4]:
