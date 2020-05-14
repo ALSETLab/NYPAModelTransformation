@@ -48,7 +48,10 @@ dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
 
 
 #Deleting old OpenIPSL library version
-shutil.rmtree(f""+OpenIPSL+"")
+try:
+    shutil.rmtree(f""+OpenIPSL+"")
+except:
+    pass
 #Pulling latest OpenIPSL library version
 print('Pulling latest OpenIPSL library version...\n')
 git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
