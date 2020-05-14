@@ -217,9 +217,8 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            #shutil.rmtree(RSExcitersWorkingDir+f"{exciterName}/")
-            #print("Delete OK...\n")
-            pass
+            shutil.rmtree(RSExcitersWorkingDir+f"{exciterName}/")
+            print("Delete OK...\n")
         except:
             pass
     except DymolaException as ex:
