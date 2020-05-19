@@ -38,6 +38,10 @@ PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/Ope
 SMIBPartialSource = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
 SMIBPartialDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
 SMIBPartialDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
+# SMIB 2 Partial Folder Location
+SMIBPartial2Source = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/SMIBpartial2.mo"
+SMIBPartial2DestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
+SMIBPartial2Destination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial2.mo"
 
 
 # In[19]:
@@ -62,23 +66,23 @@ print("Fault Open Modelica Machines Simulation Start...\n")
 
 # In[20]:
 
-
 #Adding Auxiliary Files
 try:
     print('Deleting Auxiliary Models')
     os.chdir(SMIBPartialDestinationPath)
     os.remove("SMIBpartial.mo")
-except: 
+    os.chdir(SMIBPartial2DestinationPath)
+    os.remove("SMIBpartial2.mo")
+except:
     print('Error Deleting Auxiliar Models...')
 try:
     print('Adding Auxiliary models...')
     os.system('cp '+SMIBPartialSource+' '+SMIBPartialDestination)
+    os.system('cp ' + SMIBPartial2Source + ' ' + SMIBPartial2Destination)
 except:
-    print('Error Adding Auxiliary Models...\n') 
+    print('Error Adding Auxiliary Models...\n')
 print("Load Variation Open Modelica Machines Simulation Start...\n")
 
-
-# In[21]:
 
 
 #Creation of matrix with names, paths and variables
@@ -109,7 +113,7 @@ for machineNumber, machineName in enumerate(machines['names']):
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for machineNumber, machineName in enumerate(machines['names']):
-    print(f"Fault {machineName} Simulation Start...")
+    print(f"Load Variation {machineName} Simulation Start...")
     try:
         omc.sendExpression(f"cd(\"{LVMachinesWorkingDir}" + machineName +"\")")
         omc.sendExpression(f"loadFile(\"{OpenIPSLPackage}\")")
@@ -122,7 +126,10 @@ for machineNumber, machineName in enumerate(machines['names']):
             sim = SimRes(""+LVMachinesWorkingDir+f"{machineName}/OpenIPSL.Examples.Machines.PSSE.{machineName}_res.mat")
         print(f"{machineName} Simulation Finished...")
     except:
-        print(f"{machineName} simulation error or model not found...")
+        print(f"{machineName} simulation error or model not found...\n")
+        #failMsg = omc.sendExpression("getErrorString()")
+        #print(failMsg)
+
     try:
         print(".csv Writing Start...")
         if machineName == 'CSVGN1':
@@ -150,11 +157,11 @@ for machineNumber, machineName in enumerate(machines['names']):
     except:
         print(f"{machineName} variable error... \n")       
     try:
-        shutil.rmtree(""+LVMachinesWorkingDir+f"{machineName}/")
+        #shutil.rmtree(""+LVMachinesWorkingDir+f"{machineName}/")
         print("Delete OK...\n")
     except:
         print("Error...\n")          
-print('Fault Machine Examples Open Modelica Simulation OK...')
+print('Load Variation Machine Examples Open Modelica Simulation OK...')
 
 
 # In[9]:

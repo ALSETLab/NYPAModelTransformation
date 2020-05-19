@@ -110,7 +110,13 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
         sim = SimRes(""+FExcitersWorkingDir+f"{exciterName}/OpenIPSL.Examples.Controls.PSSE.ES.{exciterName}_res.mat")
         print(f"{exciterName} Simulation Finished...")
     except:
-        print(f"{exciterName} simulation error or model not found...")
+        print(f"{exciterName} simulation error or model not found...\n")
+        # To get error message use this script
+        #try:
+        #    failMsg = omc.sendExpression("getErrorString()")
+        #    print(failMsg)
+        #except:
+        #    pass
     try:
         #Selecting Variables
         print(".csv Writing Start...") 
