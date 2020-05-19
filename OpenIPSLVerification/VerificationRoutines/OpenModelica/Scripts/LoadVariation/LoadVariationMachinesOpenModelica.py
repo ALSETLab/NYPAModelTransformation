@@ -157,7 +157,7 @@ for machineNumber, machineName in enumerate(machines['names']):
     except:
         print(f"{machineName} variable error... \n")       
     try:
-        #shutil.rmtree(""+LVMachinesWorkingDir+f"{machineName}/")
+        shutil.rmtree(""+LVMachinesWorkingDir+f"{machineName}/")
         print("Delete OK...\n")
     except:
         print("Error...\n")          
