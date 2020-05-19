@@ -93,7 +93,9 @@ for wturbineNumber, wturbineName in enumerate(wturbines['names']):
         sim = SimRes(""+FWindTurbinesWorkingDir+f"{wturbineName}/OpenIPSL.Examples.Wind.PSSE.WT4G.{wturbineName}_res.mat")
         print(f"{wturbineName} Simulation Finished...")
     except:
-        print(f"{wturbineName} simulation error or model not found...")
+        print(f"{wturbineName} simulation error or model not found...\n")
+        failMsg = omc.sendExpression("getErrorString()")
+        print(failMsg)
     try:
         print(f"{wturbineName} Simulation OK...")
         print(".csv Writing Start...")    
@@ -113,7 +115,7 @@ for wturbineNumber, wturbineName in enumerate(wturbines['names']):
     except:
         print('Variable Error...\n')
     try:
-        shutil.rmtree(""+FWindTurbinesWorkingDir+f"{wturbineName}/")
+        #shutil.rmtree(""+FWindTurbinesWorkingDir+f"{wturbineName}/")
         print("Delete OK...\n")
     except:
         print('Delete Error...\n')        

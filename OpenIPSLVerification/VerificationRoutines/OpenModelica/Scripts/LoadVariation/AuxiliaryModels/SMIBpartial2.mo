@@ -46,8 +46,8 @@ partial model SMIBpartial2 "SMIB system with one load and one additional bus mad
     Q_0=10000000,
     v_0=0.9940152) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
-    t1=2,
-    t2=2.15,
+    t1=20,
+    t2=20.15,
     R=0,
     X=0) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
