@@ -1,6 +1,6 @@
 # Verification of OpenIPSL models
 
-## General Information
+### General Information
 This part of the repository is concerned with the files needed to perform the verification of OpenIPSL models.
 The verification is carried through the comparison of the CSV result files. The results are obtained from three software packages: PSSE, Dymola and OpenModelica. 
 - PSSE results serve as base for comparison.
