@@ -1,0 +1,7 @@
+EventType = ['Fault','LoadVariation','ReferenceStep']
+ModelClass = ['Machines','Exciters','TurbineGovernors','PowerSystemStabilizers','Wind','ShuntElement','SeriesElement']
+MachExamples = ['GENCLS','GENSAL','GENSAE','GENROU','GENROE','CSVGN1']
+EsysExamples = ['EXAC2','ESAC2A','ESST4B','URST5T','SEXS','SCRX','EXAC1','EXST1','ESST1A','IEEEX1','ESAC1A','ESDC1A','ESDC2A','IEEET2','ST5B','IEEET1','EXNI']
+TGovExamples = ['IEESGO','HYGOV','GGOV','TGOV1','GAST','IEEEG1']
+PsstExamples = ['PSS2A','IEEEST','PSS2B']
+WindExamples = ['WT4G1','WT4E1']
