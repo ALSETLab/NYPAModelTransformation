@@ -8,7 +8,7 @@
   - FaultTestModelsOpenIPSL.py: Routine to perform Fault event on tested models.
   - LoadVariationTestModelsOpenIPSL.py: Routine to perform Load Variation event on tested models.
   - RefStepTestModelsOpenIPSL.py: Routine to perform Reference Step event on tested models.
- - In addition, in LegacyScripts folder you will find two other files:
+- In addition, in LegacyScripts folder you will find two other files:
   - SMIB1L.raw: PSSE .raw file containing parameters of the single-machine infinite-bus test system.
   - SMIB1L_basic.dyr: PSSE .dyr file containing parameters of the dynamic machine model of the infinite-bus. 
 
