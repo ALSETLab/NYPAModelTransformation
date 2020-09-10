@@ -16,7 +16,7 @@ There are three different tests that are performed on both PSS/E and Modelica. T
 
 - Fault - Three phase fault applied to the bus FAULT.  This test intends to check the dynamic behavior of the Modelica models against the reference models in PSS@E. The main idea is to verify the correspondence of the fast dynamics and non-linearities of the models between the two tools.
 
-![Fault Characteristics](NYPAModelTransformation/OpenIPSLVerification/figures/faultcharacteristics.png)
+![Fault Characteristics](OpenIPSLVerification/figures/faultcharacteristics.png)
 
 ![Fault Diagram](NYPAModelTransformation/OpenIPSLVerification/figures/faultdiagram.png)
 
