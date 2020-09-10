@@ -72,16 +72,16 @@ Results are all time series of the selected variables that will be compared to P
 
 ## How to cusotmize?
 In order to change the code here are a few examples:
-	- Adding a new model:
-	- Adding a new test:
-	- Running a single model;
-	- Keeping **all** of the restuls from the simulations (not just the '.csv' files).
-	- Running a single model:
+	- Adding a new model - first the model needs to be added to the OpenIpsl  library and repository. Then the path and name (spelling counts!) must be added to the name, path and 	applicable variables to the name matrix of **each** of the '.py' scripts for **all** tests. an example of adding an exciter is shown below;
+	![Adding Exciter](figures/addingmodel.png)
+	- Running a single model - the best way is to manually run it using Dymola, OpenModelica and PSS/E.
+	- Keeping **all** of the restuls from the simulations (not just the '.csv' files) - this is done by deleting the 'shutil...' delete comand at the end of each simulation. This is 	  done by finding the bottom of the for loop and commenting out the lines below for **each** of the '.py' scripts for which you want to keep the restuls.
+	![Keeping Results](figures/keepingresults.png)
 
 ## Troubleshooting
 Some of the most common issues are:
 - The 'OpenIPSL folder cannot be found' - this can be fixed by creating a folder 'OpenIPSL' at this directory: '../NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/..'.
-- 'Model error or not foud', this happens when a model is 
+- 'Simulation failed or model was not found', this happens when a model is either missing or the Modelica simulation has failed. 
 
 
 ## Further Development
