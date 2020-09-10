@@ -18,18 +18,18 @@ There are three different tests that are performed on both PSS/E and Modelica. T
 
 ![Fault Characteristics](figures/faultcharacteristics.png)
 
-![Fault Diagram](OpenIPSLVerification/figures/faultdiagram.png)
+![Fault Diagram](figures/faultdiagram.png)
 
 
 - Load Variation - Variation of the Load in the system at Load Bus. This test intends to verify the similar behavior between the models developed in Modelica and PSS@E focusing on testing the slow dynamics of the systems.
 
-![Load Variation Characteristics](OpenIPSLVerification/figures/loadvariationcharacteristics.png)
+![Load Variation Characteristics](figures/loadvariationcharacteristics.png)
 
-![Load Variation Diagram](OpenIPSLVerification/figures/loadvariationdiagram.png)
+![Load Variation Diagram](figures/loadvariationdiagram.png)
 
 - Reference Step - Step in the Exciter voltage reference. The implementation of this test in Modelica has been performed by modifying the existing base class of the Exciter model. This test intends to validate the Modelica models against PSS@E checking the dynamic behavior, in particular in the saturation region of the components, that is determined by this type of event. 
 
-![Refernce Step Characteristics](OpenIPSLVerification/figures/referencestepcharacteristics.png)
+![Refernce Step Characteristics](figures/referencestepcharacteristics.png)
 
 ## Auxiliary Models
 The folder 'Auxiliary Models' [here](), has the purpose to change the SMIB model in order to be able to create the following two tests: Load Variation and Reference Step.
@@ -59,7 +59,10 @@ Once selected the appropiate script, you can:
 The terminal will display the progress of the process, the results will be outputted to the WorkingDir folder. 
 
 ## User Interface
-The interface is a simple text based interface. However, it is really useful to diplay progres, and possible errors in verfications of 
+The interface is a simple text based interface. However, it is really useful to diplay progres, and possible errors in verfications of the models. A sample interface is shown below;
+
+![Console](figures/console.png)
+
 
 ## Results
 All of the results can be found in the 'WorkingDir' folder. The results are separated by:
@@ -89,8 +92,8 @@ Further development of the scripts/verification routines can be done by creating
 - OpenIPSL folder is updated **every** time that a verification script is run.
 - Results folder is updated **every** time that a verification script is run.
 - The scripts were run mostly on an Ubuntu 18.04 LTS machine.
-- The scripts were run using latest version of OpenIPSL found [here]().
-- The scripts were run using Dymola version [here]().
-- The scripts were run using OpenModelica version found [here]().
+- The scripts were run using latest version of OpenIPSL found [here](https://github.com/OpenIPSL/OpenIPSL).
+- The scripts were run using Dymola version 2020x.
+- The scripts were run using OpenModelica version 1.16.
 - The scripts were run using Python 3.7.0. 
 - Auxiliary models are Modelica models.
