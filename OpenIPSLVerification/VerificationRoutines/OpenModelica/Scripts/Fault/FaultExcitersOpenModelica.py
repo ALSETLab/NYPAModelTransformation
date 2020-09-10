@@ -167,7 +167,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
             print(f"{exciterName} Write OK...")
     except:
         print(f"{exciterName} variable error...\n")
-    shutil.rmtree(""+FExcitersWorkingDir+f"{exciterName}/")
+    #shutil.rmtree(""+FExcitersWorkingDir+f"{exciterName}/")
     print("Delete OK...\n")        
 print('Fault Exciter Examples Open Modelica Simulation OK...')
 

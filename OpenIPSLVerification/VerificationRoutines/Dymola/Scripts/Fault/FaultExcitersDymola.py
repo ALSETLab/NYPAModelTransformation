@@ -174,7 +174,7 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
                 df_variables.to_csv(f'{exciterName}.csv', index = False)          
                 print(f"{exciterName} Write OK...")
         try:
-            shutil.rmtree(FExcitersWorkingDir+f"{exciterName}/")
+            #shutil.rmtree(FExcitersWorkingDir+f"{exciterName}/")
             print("Delete OK...\n")
         except:
             pass
