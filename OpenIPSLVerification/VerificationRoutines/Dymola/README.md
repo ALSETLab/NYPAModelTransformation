@@ -18,18 +18,18 @@ There are three different tests that are performed on both PSS/E and Modelica. T
 
 ![Fault Characteristics](OpenIPSLVerification/figures/faultcharacteristics.png)
 
-![Fault Diagram](NYPAModelTransformation/OpenIPSLVerification/figures/faultdiagram.png)
+![Fault Diagram](OpenIPSLVerification/figures/faultdiagram.png)
 
 
 - Load Variation - Variation of the Load in the system at Load Bus. This test intends to verify the similar behavior between the models developed in Modelica and PSS@E focusing on testing the slow dynamics of the systems.
 
-![Load Variation Characteristics](NYPAModelTransformation/OpenIPSLVerification/figures/loadvariationcharacteristics.png)
+![Load Variation Characteristics](OpenIPSLVerification/figures/loadvariationcharacteristics.png)
 
-![Load Variation Diagram](NYPAModelTransformation/OpenIPSLVerification/figures/loadvariationdiagram.png)
+![Load Variation Diagram](OpenIPSLVerification/figures/loadvariationdiagram.png)
 
 - Reference Step - Step in the Exciter voltage reference. The implementation of this test in Modelica has been performed by modifying the existing base class of the Exciter model. This test intends to validate the Modelica models against PSS@E checking the dynamic behavior, in particular in the saturation region of the components, that is determined by this type of event. 
 
-![Refernce Step Characteristics](NYPAModelTransformation/OpenIPSLVerification/figures/referencestepcharacteristics.png)
+![Refernce Step Characteristics](OpenIPSLVerification/figures/referencestepcharacteristics.png)
 
 ## Auxiliary Models
 The folder 'Auxiliary Models' [here](), has the purpose to change the SMIB model in order to be able to create the following two tests: Load Variation and Reference Step.
@@ -59,6 +59,7 @@ Once selected the appropiate script, you can:
 The terminal will display the progress of the process, the results will be outputted to the WorkingDir folder. 
 
 ## User Interface
+The interface is a simple text based interface. However, it is really useful to diplay progres, and possible errors in verfications of 
 
 ## Results
 All of the results can be found in the 'WorkingDir' folder. The results are separated by:
@@ -77,6 +78,7 @@ In order to change the code here are a few examples:
 ## Troubleshooting
 Some of the most common issues are:
 - The 'OpenIPSL folder cannot be found' - this can be fixed by creating a folder 'OpenIPSL' at this directory: '../NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/..'.
+- 'Model error or not foud', this happens when a model is 
 
 
 ## Further Development
