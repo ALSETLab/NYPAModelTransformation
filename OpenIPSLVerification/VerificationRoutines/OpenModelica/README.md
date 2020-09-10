@@ -1,6 +1,6 @@
-# Dymola Python Testing Scripts
+# Open Modelica Python Testing Scripts
 
-This folder contains the Python scripts that will the Python scripts that verify the Dymola-developed OpenIPSL Modelica models against their PSS/E counter parts. The scripts have various options and all of the results are automatically outputted to the result directory.
+This folder contains the Python scripts that will the Python scripts that verify the Open Modelica-developed OpenIPSL Modelica models against their PSS/E counter parts. The scripts have various options and all of the results are automatically outputted to the result directory.
 
 ## Folder Structure
 This folder contains 3 main subfolders:
@@ -36,26 +36,26 @@ The folder 'Auxiliary Models' [here](), has the purpose to change the SMIB model
 
 ## How to run?
 There are a few different scripts that can be run: 
-1. [Dymola - Fault - Exciters](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/FaultExcitersDymola.py).
-2. [Dymola - Fault - Machines](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/FaultMachinesDymola.py).
-3. [Dymola - Fault - Power Systems Stabilizers](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/FaultPowerSystemStabilizersDymola.py).
-4. [Dymola - Fault - Turbine Governors](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/FaultturbineGovernorsDymola.py).
-5. [Dymola - Fault - Wind Turbines](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/FaultwindTurbinessDymola.py).
-6. [Dymola - Fault - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/FaultRunAllDymola.py).
-7. [Dymola - Load Variation - Exciters](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/LoadVariationExcitersDymola.py).
-8. [Dymola - Load Variation - Machines](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/LoadVariationMachinesDymola.py).
-9. [Dymola - Load Variation - Power Systems Stabilizers](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/LoadVariationPowerSystemsStabilizersDymola.py).
-10. [Dymola - Load Variation - Turbine Governors](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/LoadVariationTurbineGovernorsDymola.py).
-11. [Dymola - Load Variation - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/LoadVariationRunAllDymola.py).
-12. [Dymola - Step Reference - Exciters](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/ReferenceStep/ReferenceStepExcitersDymola.py).
-13. [Dymola - Step Reference - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/ReferenceStep/ReferenceStepRunAllDymola.py).
-14. [Dymola - All Tests - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/PythonRunAllDymola.py).
+1. [Open Modelica - Fault - Exciters](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/FaultExcitersOpenModelica.py).
+2. [Open Modelica - Fault - Machines](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/FaultMachinesOpenModelica.py).
+3. [Open Modelica - Fault - Power Systems Stabilizers](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/FaultPowerSystemStabilizersOpenModelica.py).
+4. [DymoOpen Modelicala - Fault - Turbine Governors](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/FaultturbineGovernorsOpenModelica.py).
+5. [Open Modelica - Fault - Wind Turbines](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/FaultwindTurbinessOpenModelica.py).
+6. [Open Modelica - Fault - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/FaultRunAllOpenModelica.py).
+7. [Open Modelica - Load Variation - Exciters](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/LoadVariationExcitersOpenModelica.py).
+8. [Open Modelica - Load Variation - Machines](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/LoadVariationMachinesOpenModelica.py).
+9. [Open Modelica - Load Variation - Power Systems Stabilizers](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/LoadVariationPowerSystemsStabilizersOpenModelica.py).
+10. [Open Modelica - Load Variation - Turbine Governors](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/LoadVariationTurbineGovernorsOpenModelica.py).
+11. [Open Modelica - Load Variation - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/LoadVariationRunAllOpenModelica.py).
+12. [Open Modelica - Step Reference - Exciters](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/ReferenceStep/ReferenceStepExcitersOpenModelica.py).
+13. [Open Modelica - Step Reference - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/ReferenceStep/ReferenceStepRunAllOpenModelica.py).
+14. [Open Modelica - All Tests - All Models](https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/PythonRunAllOpenModelica.py).
 
 Once selected the appropiate script, you can:
 - Use a Python IDE (PyCharm, Spyder, etc) and run the desired '.py' script. 
 - User Terminal:
-	1. Navigate to the desired script location (i.e. '../NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/..').
-	2. Write the command: python FaultExcitersDymola.py
+	1. Navigate to the desired script location (i.e. '../NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/..').
+	2. Write the command: python FaultExcitersOpenModelica.py
 The terminal will display the progress of the process, the results will be outputted to the WorkingDir folder. 
 
 ## User Interface
