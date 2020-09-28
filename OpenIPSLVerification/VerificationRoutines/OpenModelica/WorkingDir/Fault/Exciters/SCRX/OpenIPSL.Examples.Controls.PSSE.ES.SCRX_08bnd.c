@@ -1147,14 +1147,14 @@ static void OpenIPSL_Examples_Controls_PSSE_ES_SCRX_eqFunction_375(DATA *data, t
 /*
 equation index: 376
 type: SIMPLE_ASSIGN
-gENROU.efd0 = gENROU.PSIppd0 * (1.0 + gENROU.dsat) + gENROU.id0 * (gENROU.Xpd - gENROU.Xpp + gENROU.Xd - gENROU.Xpd)
+gENROU.efd0 = gENROU.PSIppd0 * (1.0 + gENROU.dsat) + gENROU.id0 * (gENROU.Xd - gENROU.Xpp)
 */
 OMC_DISABLE_OPT
 static void OpenIPSL_Examples_Controls_PSSE_ES_SCRX_eqFunction_376(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,376};
-  data->simulationInfo->realParameter[176] /* gENROU.efd0 PARAM */ = (data->simulationInfo->realParameter[138] /* gENROU.PSIppd0 PARAM */) * (1.0 + data->simulationInfo->realParameter[175] /* gENROU.dsat PARAM */) + (data->simulationInfo->realParameter[178] /* gENROU.id0 PARAM */) * (data->simulationInfo->realParameter[158] /* gENROU.Xpd PARAM */ - data->simulationInfo->realParameter[159] /* gENROU.Xpp PARAM */ + data->simulationInfo->realParameter[156] /* gENROU.Xd PARAM */ - data->simulationInfo->realParameter[158] /* gENROU.Xpd PARAM */);
+  data->simulationInfo->realParameter[176] /* gENROU.efd0 PARAM */ = (data->simulationInfo->realParameter[138] /* gENROU.PSIppd0 PARAM */) * (1.0 + data->simulationInfo->realParameter[175] /* gENROU.dsat PARAM */) + (data->simulationInfo->realParameter[178] /* gENROU.id0 PARAM */) * (data->simulationInfo->realParameter[156] /* gENROU.Xd PARAM */ - data->simulationInfo->realParameter[159] /* gENROU.Xpp PARAM */);
   TRACE_POP
 }
 
@@ -2070,7 +2070,7 @@ static void OpenIPSL_Examples_Controls_PSSE_ES_SCRX_eqFunction_459(DATA *data, t
   modelica_real tmp16;
   tmp15 = data->simulationInfo->realParameter[189] /* gENROU.vr0 PARAM */;
   tmp16 = data->simulationInfo->realParameter[188] /* gENROU.vi0 PARAM */;
-  data->simulationInfo->realParameter[179] /* gENROU.ii0 PARAM */ = DIVISION_SIM((data->simulationInfo->realParameter[106] /* gENROU.CoB PARAM */) * ((data->simulationInfo->realParameter[184] /* gENROU.q0 PARAM */) * (data->simulationInfo->realParameter[189] /* gENROU.vr0 PARAM */) - ((data->simulationInfo->realParameter[182] /* gENROU.p0 PARAM */) * (data->simulationInfo->realParameter[188] /* gENROU.vi0 PARAM */))),(tmp15 * tmp15) + (tmp16 * tmp16),"gENROU.vr0 ^ 2.0 + gENROU.vi0 ^ 2.0",equationIndexes);
+  data->simulationInfo->realParameter[179] /* gENROU.ii0 PARAM */ = (data->simulationInfo->realParameter[106] /* gENROU.CoB PARAM */) * (DIVISION_SIM((data->simulationInfo->realParameter[184] /* gENROU.q0 PARAM */) * (data->simulationInfo->realParameter[189] /* gENROU.vr0 PARAM */) - ((data->simulationInfo->realParameter[182] /* gENROU.p0 PARAM */) * (data->simulationInfo->realParameter[188] /* gENROU.vi0 PARAM */)),(tmp15 * tmp15) + (tmp16 * tmp16),"gENROU.vr0 ^ 2.0 + gENROU.vi0 ^ 2.0",equationIndexes));
   TRACE_POP
 }
 
@@ -3030,7 +3030,7 @@ static void OpenIPSL_Examples_Controls_PSSE_ES_SCRX_eqFunction_552(DATA *data, t
       tmp35 = modelica_integer_to_modelica_string_format(data->simulationInfo->integerParameter[5] /* sCRX.imLeadLag.TF.initType PARAM */, (modelica_string) mmc_strings_len1[100]);
       tmpMeta[0] = stringAppend(MMC_REFSTRINGLIT(tmp34),tmp35);
       {
-        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo",1279,5,1282,31,1};
+        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo",1166,5,1169,31,1};
         omc_assert_warning(info, "The following assertion has been violated %sat time %f\nsCRX.imLeadLag.TF.initType >= Modelica.Blocks.Types.Init.NoInit and sCRX.imLeadLag.TF.initType <= Modelica.Blocks.Types.Init.InitialOutput", initial() ? "during initialization " : "", data->localData[0]->timeValue);
         omc_assert_warning_withEquationIndexes(info, equationIndexes, MMC_STRINGDATA(tmpMeta[0]));
       }

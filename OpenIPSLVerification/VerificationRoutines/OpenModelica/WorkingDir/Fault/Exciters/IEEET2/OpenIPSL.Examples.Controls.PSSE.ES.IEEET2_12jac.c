@@ -5,33 +5,33 @@
 /* dynamic equations */
 
 /*
-equation index: 226
+equation index: 224
 type: SIMPLE_ASSIGN
 constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 = (pwLine1.vs.re * pwLine1.vs.re.SeedNLSJac35 + pwLine1.vs.im * pwLine1.vs.im.SeedNLSJac35) / sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_226(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
+void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_224(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
-  const int equationIndexes[2] = {1,226};
+  const int equationIndexes[2] = {1,224};
   modelica_real tmp0;
   modelica_real tmp1;
-  tmp0 = data->localData[0]->realVars[124] /* pwLine1.vs.re variable */;
-  tmp1 = data->localData[0]->realVars[123] /* pwLine1.vs.im variable */;
-  jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = DIVISION((data->localData[0]->realVars[124] /* pwLine1.vs.re variable */) * (jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) + (data->localData[0]->realVars[123] /* pwLine1.vs.im variable */) * (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */),sqrt((tmp0 * tmp0) + (tmp1 * tmp1)),"sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)");
+  tmp0 = data->localData[0]->realVars[123] /* pwLine1.vs.re variable */;
+  tmp1 = data->localData[0]->realVars[122] /* pwLine1.vs.im variable */;
+  jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = DIVISION((data->localData[0]->realVars[123] /* pwLine1.vs.re variable */) * (jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) + (data->localData[0]->realVars[122] /* pwLine1.vs.im variable */) * (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */),sqrt((tmp0 * tmp0) + (tmp1 * tmp1)),"sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)");
   TRACE_POP
 }
 
 /*
-equation index: 227
+equation index: 225
 type: SIMPLE_ASSIGN
-constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * (constantLoad.v ^ (-1.0 + constantLoad.b2) * (-exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2)) * constantLoad.a2 * (if noEvent(constantLoad.v == 0.0) then 0.0 else constantLoad.v ^ (constantLoad.b2 - 1.0) * constantLoad.b2 * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35) + (if noEvent(constantLoad.v == 0.0) then 0.0 else constantLoad.v ^ (-1.0 + constantLoad.b2 - 1.0) * (-1.0 + constantLoad.b2) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2)) else 0.0
+constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * (constantLoad.v ^ (-1.0 + constantLoad.b2) * (-exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2)) * constantLoad.a2 * constantLoad.b2 * constantLoad.v ^ (constantLoad.b2 - 1.0) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + (if noEvent(constantLoad.v == 0.0) then 0.0 else constantLoad.v ^ (-1.0 + constantLoad.b2 - 1.0) * (-1.0 + constantLoad.b2) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2)) else 0.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_227(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
+void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_225(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
-  const int equationIndexes[2] = {1,227};
+  const int equationIndexes[2] = {1,225};
   modelica_boolean tmp2;
   modelica_real tmp3;
   modelica_real tmp4;
@@ -47,36 +47,34 @@ void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_227(DATA *data, thread
   modelica_real tmp14;
   modelica_real tmp15;
   modelica_real tmp16;
+  modelica_real tmp17;
   modelica_real tmp18;
   modelica_real tmp19;
   modelica_real tmp20;
   modelica_real tmp21;
   modelica_real tmp22;
   modelica_real tmp23;
-  modelica_real tmp24;
-  modelica_boolean tmp25;
+  modelica_real tmp25;
   modelica_real tmp26;
+  modelica_real tmp27;
   modelica_real tmp28;
   modelica_real tmp29;
   modelica_real tmp30;
   modelica_real tmp31;
-  modelica_real tmp32;
+  modelica_boolean tmp32;
   modelica_real tmp33;
   modelica_real tmp34;
-  modelica_boolean tmp35;
+  modelica_real tmp35;
   modelica_real tmp36;
   modelica_real tmp37;
   modelica_real tmp38;
   modelica_real tmp39;
   modelica_real tmp40;
-  modelica_real tmp41;
+  modelica_boolean tmp41;
   modelica_real tmp42;
-  modelica_real tmp43;
-  modelica_boolean tmp44;
-  modelica_real tmp45;
   RELATIONHYSTERESIS(tmp2, data->localData[0]->realVars[55] /* constantLoad.v variable */, 0.5, 7, Less);
-  tmp44 = (modelica_boolean)tmp2;
-  if(tmp44)
+  tmp41 = (modelica_boolean)tmp2;
+  if(tmp41)
   {
     tmp3 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
     tmp4 = -1.0 + data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */;
@@ -176,188 +174,212 @@ void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_227(DATA *data, thread
     if(isnan(tmp12) || isinf(tmp12))
     {
       throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp10, tmp11);
-    }tmp25 = (modelica_boolean)(data->localData[0]->realVars[55] /* constantLoad.v variable */ == 0.0);
-    if(tmp25)
+    }tmp17 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
+    tmp18 = data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */ - 1.0;
+    if(tmp17 < 0.0 && tmp18 != 0.0)
     {
-      tmp26 = 0.0;
-    }
-    else
-    {
-      tmp18 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
-      tmp19 = data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */ - 1.0;
-      if(tmp18 < 0.0 && tmp19 != 0.0)
+      tmp20 = modf(tmp18, &tmp21);
+      
+      if(tmp20 > 0.5)
       {
-        tmp21 = modf(tmp19, &tmp22);
-        
-        if(tmp21 > 0.5)
+        tmp20 -= 1.0;
+        tmp21 += 1.0;
+      }
+      else if(tmp20 < -0.5)
+      {
+        tmp20 += 1.0;
+        tmp21 -= 1.0;
+      }
+      
+      if(fabs(tmp20) < 1e-10)
+        tmp19 = pow(tmp17, tmp21);
+      else
+      {
+        tmp23 = modf(1.0/tmp18, &tmp22);
+        if(tmp23 > 0.5)
         {
-          tmp21 -= 1.0;
+          tmp23 -= 1.0;
           tmp22 += 1.0;
         }
-        else if(tmp21 < -0.5)
+        else if(tmp23 < -0.5)
         {
-          tmp21 += 1.0;
+          tmp23 += 1.0;
           tmp22 -= 1.0;
         }
-        
-        if(fabs(tmp21) < 1e-10)
-          tmp20 = pow(tmp18, tmp22);
-        else
+        if(fabs(tmp23) < 1e-10 && ((unsigned long)tmp22 & 1))
         {
-          tmp24 = modf(1.0/tmp19, &tmp23);
-          if(tmp24 > 0.5)
-          {
-            tmp24 -= 1.0;
-            tmp23 += 1.0;
-          }
-          else if(tmp24 < -0.5)
-          {
-            tmp24 += 1.0;
-            tmp23 -= 1.0;
-          }
-          if(fabs(tmp24) < 1e-10 && ((unsigned long)tmp23 & 1))
-          {
-            tmp20 = -pow(-tmp18, tmp21)*pow(tmp18, tmp22);
-          }
-          else
-          {
-            throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp18, tmp19);
-          }
-        }
-      }
-      else
-      {
-        tmp20 = pow(tmp18, tmp19);
-      }
-      if(isnan(tmp20) || isinf(tmp20))
-      {
-        throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp18, tmp19);
-      }
-      tmp26 = (tmp20) * ((data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */));
-    }
-    tmp35 = (modelica_boolean)(data->localData[0]->realVars[55] /* constantLoad.v variable */ == 0.0);
-    if(tmp35)
-    {
-      tmp36 = 0.0;
-    }
-    else
-    {
-      tmp28 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
-      tmp29 = -1.0 + data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */ - 1.0;
-      if(tmp28 < 0.0 && tmp29 != 0.0)
-      {
-        tmp31 = modf(tmp29, &tmp32);
-        
-        if(tmp31 > 0.5)
-        {
-          tmp31 -= 1.0;
-          tmp32 += 1.0;
-        }
-        else if(tmp31 < -0.5)
-        {
-          tmp31 += 1.0;
-          tmp32 -= 1.0;
-        }
-        
-        if(fabs(tmp31) < 1e-10)
-          tmp30 = pow(tmp28, tmp32);
-        else
-        {
-          tmp34 = modf(1.0/tmp29, &tmp33);
-          if(tmp34 > 0.5)
-          {
-            tmp34 -= 1.0;
-            tmp33 += 1.0;
-          }
-          else if(tmp34 < -0.5)
-          {
-            tmp34 += 1.0;
-            tmp33 -= 1.0;
-          }
-          if(fabs(tmp34) < 1e-10 && ((unsigned long)tmp33 & 1))
-          {
-            tmp30 = -pow(-tmp28, tmp31)*pow(tmp28, tmp32);
-          }
-          else
-          {
-            throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp28, tmp29);
-          }
-        }
-      }
-      else
-      {
-        tmp30 = pow(tmp28, tmp29);
-      }
-      if(isnan(tmp30) || isinf(tmp30))
-      {
-        throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp28, tmp29);
-      }
-      tmp36 = (tmp30) * ((-1.0 + data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */));
-    }
-    tmp37 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
-    tmp38 = data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */;
-    if(tmp37 < 0.0 && tmp38 != 0.0)
-    {
-      tmp40 = modf(tmp38, &tmp41);
-      
-      if(tmp40 > 0.5)
-      {
-        tmp40 -= 1.0;
-        tmp41 += 1.0;
-      }
-      else if(tmp40 < -0.5)
-      {
-        tmp40 += 1.0;
-        tmp41 -= 1.0;
-      }
-      
-      if(fabs(tmp40) < 1e-10)
-        tmp39 = pow(tmp37, tmp41);
-      else
-      {
-        tmp43 = modf(1.0/tmp38, &tmp42);
-        if(tmp43 > 0.5)
-        {
-          tmp43 -= 1.0;
-          tmp42 += 1.0;
-        }
-        else if(tmp43 < -0.5)
-        {
-          tmp43 += 1.0;
-          tmp42 -= 1.0;
-        }
-        if(fabs(tmp43) < 1e-10 && ((unsigned long)tmp42 & 1))
-        {
-          tmp39 = -pow(-tmp37, tmp40)*pow(tmp37, tmp41);
+          tmp19 = -pow(-tmp17, tmp20)*pow(tmp17, tmp21);
         }
         else
         {
-          throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp37, tmp38);
+          throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp17, tmp18);
         }
       }
     }
     else
     {
-      tmp39 = pow(tmp37, tmp38);
+      tmp19 = pow(tmp17, tmp18);
     }
-    if(isnan(tmp39) || isinf(tmp39))
+    if(isnan(tmp19) || isinf(tmp19))
     {
-      throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp37, tmp38);
+      throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp17, tmp18);
+    }tmp32 = (modelica_boolean)(data->localData[0]->realVars[55] /* constantLoad.v variable */ == 0.0);
+    if(tmp32)
+    {
+      tmp33 = 0.0;
     }
-    tmp45 = (data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */) * ((data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */) * ((tmp5) * (((-exp(((-data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */)) * (tmp12)))) * ((data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */) * (tmp26))) + (tmp36) * (exp(((-data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */)) * (tmp39)))));
+    else
+    {
+      tmp25 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
+      tmp26 = -1.0 + data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */ - 1.0;
+      if(tmp25 < 0.0 && tmp26 != 0.0)
+      {
+        tmp28 = modf(tmp26, &tmp29);
+        
+        if(tmp28 > 0.5)
+        {
+          tmp28 -= 1.0;
+          tmp29 += 1.0;
+        }
+        else if(tmp28 < -0.5)
+        {
+          tmp28 += 1.0;
+          tmp29 -= 1.0;
+        }
+        
+        if(fabs(tmp28) < 1e-10)
+          tmp27 = pow(tmp25, tmp29);
+        else
+        {
+          tmp31 = modf(1.0/tmp26, &tmp30);
+          if(tmp31 > 0.5)
+          {
+            tmp31 -= 1.0;
+            tmp30 += 1.0;
+          }
+          else if(tmp31 < -0.5)
+          {
+            tmp31 += 1.0;
+            tmp30 -= 1.0;
+          }
+          if(fabs(tmp31) < 1e-10 && ((unsigned long)tmp30 & 1))
+          {
+            tmp27 = -pow(-tmp25, tmp28)*pow(tmp25, tmp29);
+          }
+          else
+          {
+            throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp25, tmp26);
+          }
+        }
+      }
+      else
+      {
+        tmp27 = pow(tmp25, tmp26);
+      }
+      if(isnan(tmp27) || isinf(tmp27))
+      {
+        throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp25, tmp26);
+      }
+      tmp33 = (tmp27) * ((-1.0 + data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */));
+    }
+    tmp34 = data->localData[0]->realVars[55] /* constantLoad.v variable */;
+    tmp35 = data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */;
+    if(tmp34 < 0.0 && tmp35 != 0.0)
+    {
+      tmp37 = modf(tmp35, &tmp38);
+      
+      if(tmp37 > 0.5)
+      {
+        tmp37 -= 1.0;
+        tmp38 += 1.0;
+      }
+      else if(tmp37 < -0.5)
+      {
+        tmp37 += 1.0;
+        tmp38 -= 1.0;
+      }
+      
+      if(fabs(tmp37) < 1e-10)
+        tmp36 = pow(tmp34, tmp38);
+      else
+      {
+        tmp40 = modf(1.0/tmp35, &tmp39);
+        if(tmp40 > 0.5)
+        {
+          tmp40 -= 1.0;
+          tmp39 += 1.0;
+        }
+        else if(tmp40 < -0.5)
+        {
+          tmp40 += 1.0;
+          tmp39 -= 1.0;
+        }
+        if(fabs(tmp40) < 1e-10 && ((unsigned long)tmp39 & 1))
+        {
+          tmp36 = -pow(-tmp34, tmp37)*pow(tmp34, tmp38);
+        }
+        else
+        {
+          throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp34, tmp35);
+        }
+      }
+    }
+    else
+    {
+      tmp36 = pow(tmp34, tmp35);
+    }
+    if(isnan(tmp36) || isinf(tmp36))
+    {
+      throwStreamPrint(threadData, "%s:%d: Invalid root: (%g)^(%g)", __FILE__, __LINE__, tmp34, tmp35);
+    }
+    tmp42 = (data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */) * ((data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */) * ((tmp5) * (((-exp(((-data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */)) * (tmp12)))) * ((data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */) * (((data->simulationInfo->realParameter[64] /* constantLoad.b2 PARAM */) * (tmp19)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)))) + (tmp33) * (exp(((-data->simulationInfo->realParameter[58] /* constantLoad.a2 PARAM */)) * (tmp36)))));
   }
   else
   {
-    tmp45 = 0.0;
+    tmp42 = 0.0;
   }
-  jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = tmp45;
+  jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = tmp42;
+  TRACE_POP
+}
+
+/*
+equation index: 226
+type: SIMPLE_ASSIGN
+constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a1 * (-sin(constantLoad.v * constantLoad.wp)) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.wp + constantLoad.b1 * cos(constantLoad.v * constantLoad.wp) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.wp else 0.0
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_226(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
+{
+  TRACE_PUSH
+  const int clockIndex = 0;
+  const int equationIndexes[2] = {1,226};
+  modelica_boolean tmp43;
+  RELATIONHYSTERESIS(tmp43, data->localData[0]->realVars[55] /* constantLoad.v variable */, data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */, 6, Less);
+  jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (tmp43?(data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (((-sin((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */)))) * ((jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * ((cos((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) * ((jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):0.0);
+  TRACE_POP
+}
+
+/*
+equation index: 227
+type: SIMPLE_ASSIGN
+constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.S_I.im * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.im * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.S_I.im * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.im * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.S_P.im
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_227(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
+{
+  TRACE_PUSH
+  const int clockIndex = 0;
+  const int equationIndexes[2] = {1,227};
+  modelica_boolean tmp44;
+  modelica_boolean tmp45;
+  RELATIONHYSTERESIS(tmp44, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */, 4, GreaterEq);
+  RELATIONHYSTERESIS(tmp45, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */ + data->simulationInfo->realParameter[67] /* constantLoad.d_t PARAM */, 5, LessEq);
+  jacobian->tmpVars[3] /* constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((tmp44 && tmp45)?(data->simulationInfo->realParameter[40] /* constantLoad.S_I.im PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[44] /* constantLoad.S_Y.im PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[42] /* constantLoad.S_P.im PARAM */ + data->simulationInfo->realParameter[66] /* constantLoad.d_Q PARAM */):(data->simulationInfo->realParameter[40] /* constantLoad.S_I.im PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[44] /* constantLoad.S_Y.im PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[42] /* constantLoad.S_P.im PARAM */));
   TRACE_POP
 }
 
 /*
 equation index: 228
 type: SIMPLE_ASSIGN
-constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a1 * (-sin(constantLoad.v * constantLoad.wp)) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.wp + constantLoad.b1 * cos(constantLoad.v * constantLoad.wp) * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.wp else 0.0
+constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35 = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.S_I.re * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.re * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.S_I.re * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.re * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.S_P.re
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_228(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
@@ -365,766 +387,732 @@ void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_228(DATA *data, thread
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,228};
   modelica_boolean tmp46;
-  RELATIONHYSTERESIS(tmp46, data->localData[0]->realVars[55] /* constantLoad.v variable */, data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */, 6, Less);
-  jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (tmp46?(data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (((-sin((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */)))) * ((jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * ((cos((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) * ((jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):0.0);
+  modelica_boolean tmp47;
+  RELATIONHYSTERESIS(tmp46, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */, 4, GreaterEq);
+  RELATIONHYSTERESIS(tmp47, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */ + data->simulationInfo->realParameter[67] /* constantLoad.d_t PARAM */, 5, LessEq);
+  jacobian->tmpVars[4] /* constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((tmp46 && tmp47)?(data->simulationInfo->realParameter[41] /* constantLoad.S_I.re PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[45] /* constantLoad.S_Y.re PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[43] /* constantLoad.S_P.re PARAM */ + data->simulationInfo->realParameter[65] /* constantLoad.d_P PARAM */):(data->simulationInfo->realParameter[41] /* constantLoad.S_I.re PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[45] /* constantLoad.S_Y.re PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[43] /* constantLoad.S_P.re PARAM */));
   TRACE_POP
 }
 
 /*
 equation index: 229
 type: SIMPLE_ASSIGN
-constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.S_I.im * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.im * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.S_I.im * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.im * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.S_P.im
+gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35 = (-gENROE.Xppq) * gENROE.iq.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_229(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,229};
-  modelica_boolean tmp47;
-  modelica_boolean tmp48;
-  RELATIONHYSTERESIS(tmp47, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */, 4, GreaterEq);
-  RELATIONHYSTERESIS(tmp48, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */ + data->simulationInfo->realParameter[67] /* constantLoad.d_t PARAM */, 5, LessEq);
-  jacobian->tmpVars[3] /* constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((tmp47 && tmp48)?(data->simulationInfo->realParameter[40] /* constantLoad.S_I.im PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[44] /* constantLoad.S_Y.im PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[42] /* constantLoad.S_P.im PARAM */ + data->simulationInfo->realParameter[66] /* constantLoad.d_Q PARAM */):(data->simulationInfo->realParameter[40] /* constantLoad.S_I.im PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[44] /* constantLoad.S_Y.im PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[42] /* constantLoad.S_P.im PARAM */));
+  jacobian->tmpVars[5] /* gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((-data->simulationInfo->realParameter[159] /* gENROE.Xppq PARAM */)) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */);
   TRACE_POP
 }
 
 /*
 equation index: 230
 type: SIMPLE_ASSIGN
-constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35 = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.S_I.re * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.re * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.S_I.re * (constantLoad.kI * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.v) + constantLoad.S_Y.re * 2.0 * constantLoad.v * constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 + constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 * constantLoad.S_P.re
+pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 = ($cse6 * gENROE.iq.SeedNLSJac35 - $cse7 * gENROE.id.SeedNLSJac35) * gENROE.CoB
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_230(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,230};
-  modelica_boolean tmp49;
-  modelica_boolean tmp50;
-  RELATIONHYSTERESIS(tmp49, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */, 4, GreaterEq);
-  RELATIONHYSTERESIS(tmp50, data->localData[0]->timeValue, data->simulationInfo->realParameter[73] /* constantLoad.t1 PARAM */ + data->simulationInfo->realParameter[67] /* constantLoad.d_t PARAM */, 5, LessEq);
-  jacobian->tmpVars[4] /* constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((tmp49 && tmp50)?(data->simulationInfo->realParameter[41] /* constantLoad.S_I.re PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[45] /* constantLoad.S_Y.re PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[43] /* constantLoad.S_P.re PARAM */ + data->simulationInfo->realParameter[65] /* constantLoad.d_P PARAM */):(data->simulationInfo->realParameter[41] /* constantLoad.S_I.re PARAM */) * ((data->localData[0]->realVars[51] /* constantLoad.kI variable */) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (jacobian->tmpVars[1] /* constantLoad.kI.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) + (data->simulationInfo->realParameter[45] /* constantLoad.S_Y.re PARAM */) * (((2.0) * (data->localData[0]->realVars[55] /* constantLoad.v variable */)) * (jacobian->tmpVars[0] /* constantLoad.v.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) + (jacobian->tmpVars[2] /* constantLoad.kP.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[43] /* constantLoad.S_P.re PARAM */));
+  jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */))) * (data->simulationInfo->realParameter[104] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 
 /*
 equation index: 231
 type: SIMPLE_ASSIGN
-gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35 = (-gENROE.Xppq) * gENROE.iq.SeedNLSJac35
+pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 = ($cse7 * gENROE.iq.SeedNLSJac35 + $cse6 * gENROE.id.SeedNLSJac35) * gENROE.CoB
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_231(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,231};
-  jacobian->tmpVars[5] /* gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((-data->simulationInfo->realParameter[159] /* gENROE.Xppq PARAM */)) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */);
+  jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */) + (data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[104] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 
 /*
 equation index: 232
 type: SIMPLE_ASSIGN
-pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 = ($cse6 * gENROE.iq.SeedNLSJac35 - $cse7 * gENROE.id.SeedNLSJac35) * gENROE.CoB
+gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 = (-gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35) - gENROE.R_a * gENROE.id.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_232(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,232};
-  jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */))) * (data->simulationInfo->realParameter[104] /* gENROE.CoB PARAM */);
+  jacobian->tmpVars[8] /* gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->tmpVars[5] /* gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - ((data->simulationInfo->realParameter[141] /* gENROE.R_a PARAM */) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */));
   TRACE_POP
 }
 
 /*
 equation index: 233
 type: SIMPLE_ASSIGN
-pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 = ($cse7 * gENROE.iq.SeedNLSJac35 + $cse6 * gENROE.id.SeedNLSJac35) * gENROE.CoB
+gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 = (-gENROE.Xppd) * gENROE.id.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_233(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,233};
-  jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */) + (data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[104] /* gENROE.CoB PARAM */);
+  jacobian->tmpVars[9] /* gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((-data->simulationInfo->realParameter[158] /* gENROE.Xppd PARAM */)) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */);
   TRACE_POP
 }
 
 /*
 equation index: 234
 type: SIMPLE_ASSIGN
-gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 = (-gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35) - gENROE.R_a * gENROE.id.SeedNLSJac35
+gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 = gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 - gENROE.R_a * gENROE.iq.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_234(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,234};
-  jacobian->tmpVars[8] /* gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->tmpVars[5] /* gENROE.PSIq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - ((data->simulationInfo->realParameter[141] /* gENROE.R_a PARAM */) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */));
+  jacobian->tmpVars[10] /* gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = jacobian->tmpVars[9] /* gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->simulationInfo->realParameter[141] /* gENROE.R_a PARAM */) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */));
   TRACE_POP
 }
 
 /*
 equation index: 235
 type: SIMPLE_ASSIGN
-gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 = (-gENROE.Xppd) * gENROE.id.SeedNLSJac35
+pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 = $cse6 * gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 - $cse7 * gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_235(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,235};
-  jacobian->tmpVars[9] /* gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((-data->simulationInfo->realParameter[158] /* gENROE.Xppd PARAM */)) * (jacobian->seedVars[16] /* gENROE.id.SeedNLSJac35 SEED_VAR */);
+  jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->tmpVars[10] /* gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->tmpVars[8] /* gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */));
   TRACE_POP
 }
 
 /*
 equation index: 236
 type: SIMPLE_ASSIGN
-gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 = gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 - gENROE.R_a * gENROE.iq.SeedNLSJac35
+pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 = $cse6 * gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 + $cse7 * gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_236(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,236};
-  jacobian->tmpVars[10] /* gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = jacobian->tmpVars[9] /* gENROE.PSId.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->simulationInfo->realParameter[141] /* gENROE.R_a PARAM */) * (jacobian->seedVars[17] /* gENROE.iq.SeedNLSJac35 SEED_VAR */));
+  jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->tmpVars[8] /* gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->tmpVars[10] /* gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */);
   TRACE_POP
 }
 
 /*
 equation index: 237
 type: SIMPLE_ASSIGN
-pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 = $cse6 * gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 - $cse7 * gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35
+gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35 = ($cse2 * gENCLS.id.SeedNLSJac35 - $cse1 * gENCLS.iq.SeedNLSJac35) * gENCLS.CoB
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_237(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,237};
-  jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->tmpVars[10] /* gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->tmpVars[8] /* gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */));
+  jacobian->tmpVars[13] /* gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((data->localData[0]->realVars[27] /* $cse2 variable */) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */) - ((data->localData[0]->realVars[26] /* $cse1 variable */) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */))) * (data->simulationInfo->realParameter[78] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 
 /*
 equation index: 238
 type: SIMPLE_ASSIGN
-pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 = $cse6 * gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 + $cse7 * gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35
+gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35 = ((-$cse1) * gENCLS.id.SeedNLSJac35 - $cse2 * gENCLS.iq.SeedNLSJac35) * gENCLS.CoB
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_238(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,238};
-  jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (jacobian->tmpVars[8] /* gENROE.ud.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (data->localData[0]->realVars[31] /* $cse7 variable */) * (jacobian->tmpVars[10] /* gENROE.uq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */);
+  jacobian->tmpVars[14] /* gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (((-data->localData[0]->realVars[26] /* $cse1 variable */)) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */) - ((data->localData[0]->realVars[27] /* $cse2 variable */) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */))) * (data->simulationInfo->realParameter[78] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 
 /*
 equation index: 239
 type: SIMPLE_ASSIGN
-gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35 = ($cse2 * gENCLS.id.SeedNLSJac35 - $cse1 * gENCLS.iq.SeedNLSJac35) * gENCLS.CoB
+gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 = (-gENCLS.R_a) * gENCLS.iq.SeedNLSJac35 - gENCLS.X_d * gENCLS.id.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_239(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,239};
-  jacobian->tmpVars[13] /* gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((data->localData[0]->realVars[27] /* $cse2 variable */) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */) - ((data->localData[0]->realVars[26] /* $cse1 variable */) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */))) * (data->simulationInfo->realParameter[78] /* gENCLS.CoB PARAM */);
+  jacobian->tmpVars[15] /* gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((-data->simulationInfo->realParameter[84] /* gENCLS.R_a PARAM */)) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */) - ((data->simulationInfo->realParameter[87] /* gENCLS.X_d PARAM */) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */));
   TRACE_POP
 }
 
 /*
 equation index: 240
 type: SIMPLE_ASSIGN
-gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35 = ((-$cse1) * gENCLS.id.SeedNLSJac35 - $cse2 * gENCLS.iq.SeedNLSJac35) * gENCLS.CoB
+gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 = gENCLS.X_d * gENCLS.iq.SeedNLSJac35 - gENCLS.R_a * gENCLS.id.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_240(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,240};
-  jacobian->tmpVars[14] /* gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (((-data->localData[0]->realVars[26] /* $cse1 variable */)) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */) - ((data->localData[0]->realVars[27] /* $cse2 variable */) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */))) * (data->simulationInfo->realParameter[78] /* gENCLS.CoB PARAM */);
+  jacobian->tmpVars[16] /* gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (data->simulationInfo->realParameter[87] /* gENCLS.X_d PARAM */) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */) - ((data->simulationInfo->realParameter[84] /* gENCLS.R_a PARAM */) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */));
   TRACE_POP
 }
 
 /*
 equation index: 241
 type: SIMPLE_ASSIGN
-gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 = (-gENCLS.R_a) * gENCLS.iq.SeedNLSJac35 - gENCLS.X_d * gENCLS.id.SeedNLSJac35
+pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine1.ir.im.SeedNLSJac35) - gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_241(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,241};
-  jacobian->tmpVars[15] /* gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = ((-data->simulationInfo->realParameter[84] /* gENCLS.R_a PARAM */)) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */) - ((data->simulationInfo->realParameter[87] /* gENCLS.X_d PARAM */) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */));
+  jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */) - jacobian->tmpVars[13] /* gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 242
 type: SIMPLE_ASSIGN
-gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 = gENCLS.X_d * gENCLS.iq.SeedNLSJac35 - gENCLS.R_a * gENCLS.id.SeedNLSJac35
+pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine1.ir.re.SeedNLSJac35) - gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_242(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,242};
-  jacobian->tmpVars[16] /* gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (data->simulationInfo->realParameter[87] /* gENCLS.X_d PARAM */) * (jacobian->seedVars[13] /* gENCLS.iq.SeedNLSJac35 SEED_VAR */) - ((data->simulationInfo->realParameter[84] /* gENCLS.R_a PARAM */) * (jacobian->seedVars[12] /* gENCLS.id.SeedNLSJac35 SEED_VAR */));
+  jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */) - jacobian->tmpVars[14] /* gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 243
 type: SIMPLE_ASSIGN
-pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine1.ir.im.SeedNLSJac35) - gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35
+pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine.ir.re.SeedNLSJac35) - pwLine3.is.re.SeedNLSJac35 - constantLoad.p.ir.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_243(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,243};
-  jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */) - jacobian->tmpVars[13] /* gENCLS.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+  jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[8] /* constantLoad.p.ir.SeedNLSJac35 SEED_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 244
 type: SIMPLE_ASSIGN
-pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine1.ir.re.SeedNLSJac35) - gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35
+pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine.ir.im.SeedNLSJac35) - pwLine3.is.im.SeedNLSJac35 - constantLoad.p.ii.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_244(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,244};
-  jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */) - jacobian->tmpVars[14] /* gENCLS.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+  jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[9] /* constantLoad.p.ii.SeedNLSJac35 SEED_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 245
 type: SIMPLE_ASSIGN
-pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine.ir.re.SeedNLSJac35) - pwLine3.is.re.SeedNLSJac35 - constantLoad.p.ir.SeedNLSJac35
+pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine3.ir.im.SeedNLSJac35) - pwLine4.is.im.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_245(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,245};
-  jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[8] /* constantLoad.p.ir.SeedNLSJac35 SEED_VAR */;
+  jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 246
 type: SIMPLE_ASSIGN
-pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine.ir.im.SeedNLSJac35) - pwLine3.is.im.SeedNLSJac35 - constantLoad.p.ii.SeedNLSJac35
+pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine3.ir.re.SeedNLSJac35) - pwLine4.is.re.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_246(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,246};
-  jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[9] /* constantLoad.p.ii.SeedNLSJac35 SEED_VAR */;
+  jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 247
 type: SIMPLE_ASSIGN
-pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine3.ir.im.SeedNLSJac35) - pwLine4.is.im.SeedNLSJac35
+$res_NLSJac35_1.$pDERNLSJac35.dummyVarNLSJac35 = $cse2 * gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 + $cse1 * gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vr.re.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_247(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,247};
-  jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */;
+  jacobian->resultVars[0] /* $res_NLSJac35_1.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[27] /* $cse2 variable */) * (jacobian->tmpVars[15] /* gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (data->localData[0]->realVars[26] /* $cse1 variable */) * (jacobian->tmpVars[16] /* gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 248
 type: SIMPLE_ASSIGN
-pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 = (-pwLine3.ir.re.SeedNLSJac35) - pwLine4.is.re.SeedNLSJac35
+$res_NLSJac35_2.$pDERNLSJac35.dummyVarNLSJac35 = pwLine1.vs.im * constantLoad.p.ir.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * constantLoad.p.ir + (-pwLine1.vs.re.SeedNLSJac35) * constantLoad.p.ii - constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vs.re * constantLoad.p.ii.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_248(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,248};
-  jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ = (-jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */) - jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */;
+  jacobian->resultVars[1] /* $res_NLSJac35_2.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[122] /* pwLine1.vs.im variable */) * (jacobian->seedVars[8] /* constantLoad.p.ir.SeedNLSJac35 SEED_VAR */) + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - jacobian->tmpVars[3] /* constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->localData[0]->realVars[123] /* pwLine1.vs.re variable */) * (jacobian->seedVars[9] /* constantLoad.p.ii.SeedNLSJac35 SEED_VAR */));
   TRACE_POP
 }
 
 /*
 equation index: 249
 type: SIMPLE_ASSIGN
-$res1.$pDERNLSJac35.dummyVarNLSJac35 = $cse2 * gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 + $cse1 * gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vr.re.SeedNLSJac35
+$res_NLSJac35_3.$pDERNLSJac35.dummyVarNLSJac35 = pwLine1.vs.im * constantLoad.p.ii.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * constantLoad.p.ii + pwLine1.vs.re * constantLoad.p.ir.SeedNLSJac35 + pwLine1.vs.re.SeedNLSJac35 * constantLoad.p.ir - constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_249(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,249};
-  jacobian->resultVars[0] /* $res1.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[27] /* $cse2 variable */) * (jacobian->tmpVars[15] /* gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + (data->localData[0]->realVars[26] /* $cse1 variable */) * (jacobian->tmpVars[16] /* gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */;
+  jacobian->resultVars[2] /* $res_NLSJac35_3.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[122] /* pwLine1.vs.im variable */) * (jacobian->seedVars[9] /* constantLoad.p.ii.SeedNLSJac35 SEED_VAR */) + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[123] /* pwLine1.vs.re variable */) * (jacobian->seedVars[8] /* constantLoad.p.ir.SeedNLSJac35 SEED_VAR */) + (jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - jacobian->tmpVars[4] /* constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 250
 type: SIMPLE_ASSIGN
-$res2.$pDERNLSJac35.dummyVarNLSJac35 = pwLine1.vs.im * constantLoad.p.ir.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * constantLoad.p.ir + (-pwLine1.vs.re.SeedNLSJac35) * constantLoad.p.ii - constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vs.re * constantLoad.p.ii.SeedNLSJac35
+$res_NLSJac35_4.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.is.im.SeedNLSJac35 else pwLine1.vs.im.SeedNLSJac35 - pwLine3.vr.im.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.is.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine3.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.re) + pwLine3.Z.im * (pwLine3.is.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine3.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_250(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,250};
-  jacobian->resultVars[1] /* $res2.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[123] /* pwLine1.vs.im variable */) * (jacobian->seedVars[8] /* constantLoad.p.ir.SeedNLSJac35 SEED_VAR */) + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - jacobian->tmpVars[3] /* constantLoad.Q.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->localData[0]->realVars[124] /* pwLine1.vs.re variable */) * (jacobian->seedVars[9] /* constantLoad.p.ii.SeedNLSJac35 SEED_VAR */));
+  modelica_boolean tmp48;
+  modelica_boolean tmp49;
+  RELATIONHYSTERESIS(tmp48, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
+  RELATIONHYSTERESIS(tmp49, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
+  jacobian->resultVars[3] /* $res_NLSJac35_4.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp48 && tmp49)?jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 251
 type: SIMPLE_ASSIGN
-$res3.$pDERNLSJac35.dummyVarNLSJac35 = pwLine1.vs.im * constantLoad.p.ii.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * constantLoad.p.ii + pwLine1.vs.re * constantLoad.p.ir.SeedNLSJac35 + pwLine1.vs.re.SeedNLSJac35 * constantLoad.p.ir - constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35
+$res_NLSJac35_5.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.is.re.SeedNLSJac35 else pwLine1.vs.re.SeedNLSJac35 - pwLine3.vr.re.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.is.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine3.Y.re) - pwLine3.Z.im * (pwLine3.is.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine3.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_251(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,251};
-  jacobian->resultVars[2] /* $res3.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[123] /* pwLine1.vs.im variable */) * (jacobian->seedVars[9] /* constantLoad.p.ii.SeedNLSJac35 SEED_VAR */) + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[124] /* pwLine1.vs.re variable */) * (jacobian->seedVars[8] /* constantLoad.p.ir.SeedNLSJac35 SEED_VAR */) + (jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - jacobian->tmpVars[4] /* constantLoad.P.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+  modelica_boolean tmp50;
+  modelica_boolean tmp51;
+  RELATIONHYSTERESIS(tmp50, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
+  RELATIONHYSTERESIS(tmp51, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
+  jacobian->resultVars[4] /* $res_NLSJac35_5.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp50 && tmp51)?jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 252
 type: SIMPLE_ASSIGN
-$res4.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.is.im.SeedNLSJac35 else pwLine1.vs.im.SeedNLSJac35 - pwLine3.vr.im.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.is.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine3.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.re) + pwLine3.Z.im * (pwLine3.is.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine3.Y.re))
+$res_NLSJac35_6.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.is.re.SeedNLSJac35 else pwLine3.vr.re.SeedNLSJac35 - pwLine1.vr.re.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.is.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine4.Y.re) - pwLine4.Z.im * (pwLine4.is.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_252(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,252};
-  modelica_boolean tmp51;
   modelica_boolean tmp52;
-  RELATIONHYSTERESIS(tmp51, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
-  RELATIONHYSTERESIS(tmp52, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
-  jacobian->resultVars[3] /* $res4.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp51 && tmp52)?jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */)))));
+  modelica_boolean tmp53;
+  RELATIONHYSTERESIS(tmp52, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
+  RELATIONHYSTERESIS(tmp53, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
+  jacobian->resultVars[5] /* $res_NLSJac35_6.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp52 && tmp53)?jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 253
 type: SIMPLE_ASSIGN
-$res5.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.is.re.SeedNLSJac35 else pwLine1.vs.re.SeedNLSJac35 - pwLine3.vr.re.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.is.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine3.Y.re) - pwLine3.Z.im * (pwLine3.is.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine3.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine3.Y.re))
+$res_NLSJac35_7.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.is.im.SeedNLSJac35 else pwLine3.vr.im.SeedNLSJac35 - pwLine1.vr.im.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.is.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.re) + pwLine4.Z.im * (pwLine4.is.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine4.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_253(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,253};
-  modelica_boolean tmp53;
   modelica_boolean tmp54;
-  RELATIONHYSTERESIS(tmp53, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
-  RELATIONHYSTERESIS(tmp54, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
-  jacobian->resultVars[4] /* $res5.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp53 && tmp54)?jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[7] /* pwLine3.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[5] /* pwLine3.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))))));
+  modelica_boolean tmp55;
+  RELATIONHYSTERESIS(tmp54, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
+  RELATIONHYSTERESIS(tmp55, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
+  jacobian->resultVars[6] /* $res_NLSJac35_7.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp54 && tmp55)?jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 254
 type: SIMPLE_ASSIGN
-$res6.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.is.re.SeedNLSJac35 else pwLine3.vr.re.SeedNLSJac35 - pwLine1.vr.re.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.is.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine4.Y.re) - pwLine4.Z.im * (pwLine4.is.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.re))
+$res_NLSJac35_8.$pDERNLSJac35.dummyVarNLSJac35 = if time < pwFault.t1 then pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 else if time < pwFault.t2 and pwFault.ground then pwLine3.vr.re.SeedNLSJac35 else if time < pwFault.t2 then pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 - (pwFault.R * pwLine3.vr.im.SeedNLSJac35 - pwFault.X * pwLine3.vr.re.SeedNLSJac35) * (pwFault.X ^ 2.0 + pwFault.R ^ 2.0) / (pwFault.X ^ 2.0 + pwFault.R ^ 2.0) ^ 2.0 else pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_254(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,254};
-  modelica_boolean tmp55;
   modelica_boolean tmp56;
-  RELATIONHYSTERESIS(tmp55, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
-  RELATIONHYSTERESIS(tmp56, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
-  jacobian->resultVars[5] /* $res6.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp55 && tmp56)?jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))))));
+  modelica_boolean tmp57;
+  modelica_boolean tmp58;
+  modelica_real tmp59;
+  modelica_real tmp60;
+  modelica_real tmp61;
+  modelica_real tmp62;
+  modelica_real tmp63;
+  modelica_boolean tmp64;
+  modelica_real tmp65;
+  modelica_boolean tmp66;
+  modelica_real tmp67;
+  modelica_boolean tmp68;
+  modelica_real tmp69;
+  RELATIONHYSTERESIS(tmp56, data->localData[0]->timeValue, data->simulationInfo->realParameter[268] /* pwFault.t1 PARAM */, 12, Less);
+  tmp68 = (modelica_boolean)tmp56;
+  if(tmp68)
+  {
+    tmp69 = jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+  }
+  else
+  {
+    RELATIONHYSTERESIS(tmp57, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
+    tmp66 = (modelica_boolean)(tmp57 && data->simulationInfo->booleanParameter[64] /* pwFault.ground PARAM */);
+    if(tmp66)
+    {
+      tmp67 = jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */;
+    }
+    else
+    {
+      RELATIONHYSTERESIS(tmp58, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
+      tmp64 = (modelica_boolean)tmp58;
+      if(tmp64)
+      {
+        tmp59 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
+        tmp60 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
+        tmp61 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
+        tmp62 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
+        tmp63 = (tmp61 * tmp61) + (tmp62 * tmp62);
+        tmp65 = jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - (DIVISION(((data->simulationInfo->realParameter[266] /* pwFault.R PARAM */) * (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) - ((data->simulationInfo->realParameter[267] /* pwFault.X PARAM */) * (jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */))) * ((tmp59 * tmp59) + (tmp60 * tmp60)),(tmp63 * tmp63),"(pwFault.X ^ 2.0 + pwFault.R ^ 2.0) ^ 2.0"));
+      }
+      else
+      {
+        tmp65 = jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+      }
+      tmp67 = tmp65;
+    }
+    tmp69 = tmp67;
+  }
+  jacobian->resultVars[7] /* $res_NLSJac35_8.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = tmp69;
   TRACE_POP
 }
 
 /*
 equation index: 255
 type: SIMPLE_ASSIGN
-$res7.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.is.im.SeedNLSJac35 else pwLine3.vr.im.SeedNLSJac35 - pwLine1.vr.im.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.is.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.re) + pwLine4.Z.im * (pwLine4.is.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine4.Y.re))
+$res_NLSJac35_9.$pDERNLSJac35.dummyVarNLSJac35 = if time < pwFault.t1 then pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 else if time < pwFault.t2 and pwFault.ground then pwLine3.vr.im.SeedNLSJac35 else if time < pwFault.t2 then pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 - (pwFault.R * pwLine3.vr.re.SeedNLSJac35 + pwFault.X * pwLine3.vr.im.SeedNLSJac35) * (pwFault.R ^ 2.0 + pwFault.X ^ 2.0) / (pwFault.R ^ 2.0 + pwFault.X ^ 2.0) ^ 2.0 else pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_255(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,255};
-  modelica_boolean tmp57;
-  modelica_boolean tmp58;
-  RELATIONHYSTERESIS(tmp57, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
-  RELATIONHYSTERESIS(tmp58, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
-  jacobian->resultVars[6] /* $res7.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp57 && tmp58)?jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->seedVars[3] /* pwLine4.is.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->seedVars[1] /* pwLine4.is.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */)))));
+  modelica_boolean tmp70;
+  modelica_boolean tmp71;
+  modelica_boolean tmp72;
+  modelica_real tmp73;
+  modelica_real tmp74;
+  modelica_real tmp75;
+  modelica_real tmp76;
+  modelica_real tmp77;
+  modelica_boolean tmp78;
+  modelica_real tmp79;
+  modelica_boolean tmp80;
+  modelica_real tmp81;
+  modelica_boolean tmp82;
+  modelica_real tmp83;
+  RELATIONHYSTERESIS(tmp70, data->localData[0]->timeValue, data->simulationInfo->realParameter[268] /* pwFault.t1 PARAM */, 12, Less);
+  tmp82 = (modelica_boolean)tmp70;
+  if(tmp82)
+  {
+    tmp83 = jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+  }
+  else
+  {
+    RELATIONHYSTERESIS(tmp71, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
+    tmp80 = (modelica_boolean)(tmp71 && data->simulationInfo->booleanParameter[64] /* pwFault.ground PARAM */);
+    if(tmp80)
+    {
+      tmp81 = jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */;
+    }
+    else
+    {
+      RELATIONHYSTERESIS(tmp72, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
+      tmp78 = (modelica_boolean)tmp72;
+      if(tmp78)
+      {
+        tmp73 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
+        tmp74 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
+        tmp75 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
+        tmp76 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
+        tmp77 = (tmp75 * tmp75) + (tmp76 * tmp76);
+        tmp79 = jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - (DIVISION(((data->simulationInfo->realParameter[266] /* pwFault.R PARAM */) * (jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) + (data->simulationInfo->realParameter[267] /* pwFault.X PARAM */) * (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */)) * ((tmp73 * tmp73) + (tmp74 * tmp74)),(tmp77 * tmp77),"(pwFault.R ^ 2.0 + pwFault.X ^ 2.0) ^ 2.0"));
+      }
+      else
+      {
+        tmp79 = jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
+      }
+      tmp81 = tmp79;
+    }
+    tmp83 = tmp81;
+  }
+  jacobian->resultVars[8] /* $res_NLSJac35_9.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = tmp83;
   TRACE_POP
 }
 
 /*
 equation index: 256
 type: SIMPLE_ASSIGN
-$res8.$pDERNLSJac35.dummyVarNLSJac35 = if time < pwFault.t1 then pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 else if time < pwFault.t2 and pwFault.ground then pwLine3.vr.re.SeedNLSJac35 else if time < pwFault.t2 then pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 - (pwFault.R * pwLine3.vr.im.SeedNLSJac35 - pwFault.X * pwLine3.vr.re.SeedNLSJac35) * (pwFault.X ^ 2.0 + pwFault.R ^ 2.0) / (pwFault.X ^ 2.0 + pwFault.R ^ 2.0) ^ 2.0 else pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35
+$res_NLSJac35_10.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.ir.re.SeedNLSJac35 else pwLine3.vr.re.SeedNLSJac35 - pwLine1.vs.re.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.ir.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine3.Y.re) - pwLine3.Z.im * (pwLine3.ir.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine3.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_256(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,256};
-  modelica_boolean tmp59;
-  modelica_boolean tmp60;
-  modelica_boolean tmp61;
-  modelica_real tmp62;
-  modelica_real tmp63;
-  modelica_real tmp64;
-  modelica_real tmp65;
-  modelica_real tmp66;
-  modelica_boolean tmp67;
-  modelica_real tmp68;
-  modelica_boolean tmp69;
-  modelica_real tmp70;
-  modelica_boolean tmp71;
-  modelica_real tmp72;
-  RELATIONHYSTERESIS(tmp59, data->localData[0]->timeValue, data->simulationInfo->realParameter[268] /* pwFault.t1 PARAM */, 12, Less);
-  tmp71 = (modelica_boolean)tmp59;
-  if(tmp71)
-  {
-    tmp72 = jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
-  }
-  else
-  {
-    RELATIONHYSTERESIS(tmp60, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
-    tmp69 = (modelica_boolean)(tmp60 && data->simulationInfo->booleanParameter[66] /* pwFault.ground PARAM */);
-    if(tmp69)
-    {
-      tmp70 = jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */;
-    }
-    else
-    {
-      RELATIONHYSTERESIS(tmp61, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
-      tmp67 = (modelica_boolean)tmp61;
-      if(tmp67)
-      {
-        tmp62 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
-        tmp63 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
-        tmp64 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
-        tmp65 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
-        tmp66 = (tmp64 * tmp64) + (tmp65 * tmp65);
-        tmp68 = jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - (DIVISION(((data->simulationInfo->realParameter[266] /* pwFault.R PARAM */) * (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) - ((data->simulationInfo->realParameter[267] /* pwFault.X PARAM */) * (jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */))) * ((tmp62 * tmp62) + (tmp63 * tmp63)),(tmp66 * tmp66),"(pwFault.X ^ 2.0 + pwFault.R ^ 2.0) ^ 2.0"));
-      }
-      else
-      {
-        tmp68 = jacobian->tmpVars[21] /* pwFault.p.ii.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
-      }
-      tmp70 = tmp68;
-    }
-    tmp72 = tmp70;
-  }
-  jacobian->resultVars[7] /* $res8.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = tmp72;
+  modelica_boolean tmp84;
+  modelica_boolean tmp85;
+  RELATIONHYSTERESIS(tmp84, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
+  RELATIONHYSTERESIS(tmp85, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
+  jacobian->resultVars[9] /* $res_NLSJac35_10.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp84 && tmp85)?jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 257
 type: SIMPLE_ASSIGN
-$res9.$pDERNLSJac35.dummyVarNLSJac35 = if time < pwFault.t1 then pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 else if time < pwFault.t2 and pwFault.ground then pwLine3.vr.im.SeedNLSJac35 else if time < pwFault.t2 then pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 - (pwFault.R * pwLine3.vr.re.SeedNLSJac35 + pwFault.X * pwLine3.vr.im.SeedNLSJac35) * (pwFault.R ^ 2.0 + pwFault.X ^ 2.0) / (pwFault.R ^ 2.0 + pwFault.X ^ 2.0) ^ 2.0 else pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35
+$res_NLSJac35_11.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.ir.im.SeedNLSJac35 else pwLine3.vr.im.SeedNLSJac35 - pwLine1.vs.im.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.ir.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine3.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.re) + pwLine3.Z.im * (pwLine3.ir.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine3.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_257(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,257};
-  modelica_boolean tmp73;
-  modelica_boolean tmp74;
-  modelica_boolean tmp75;
-  modelica_real tmp76;
-  modelica_real tmp77;
-  modelica_real tmp78;
-  modelica_real tmp79;
-  modelica_real tmp80;
-  modelica_boolean tmp81;
-  modelica_real tmp82;
-  modelica_boolean tmp83;
-  modelica_real tmp84;
-  modelica_boolean tmp85;
-  modelica_real tmp86;
-  RELATIONHYSTERESIS(tmp73, data->localData[0]->timeValue, data->simulationInfo->realParameter[268] /* pwFault.t1 PARAM */, 12, Less);
-  tmp85 = (modelica_boolean)tmp73;
-  if(tmp85)
-  {
-    tmp86 = jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
-  }
-  else
-  {
-    RELATIONHYSTERESIS(tmp74, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
-    tmp83 = (modelica_boolean)(tmp74 && data->simulationInfo->booleanParameter[66] /* pwFault.ground PARAM */);
-    if(tmp83)
-    {
-      tmp84 = jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */;
-    }
-    else
-    {
-      RELATIONHYSTERESIS(tmp75, data->localData[0]->timeValue, data->simulationInfo->realParameter[269] /* pwFault.t2 PARAM */, 13, Less);
-      tmp81 = (modelica_boolean)tmp75;
-      if(tmp81)
-      {
-        tmp76 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
-        tmp77 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
-        tmp78 = data->simulationInfo->realParameter[266] /* pwFault.R PARAM */;
-        tmp79 = data->simulationInfo->realParameter[267] /* pwFault.X PARAM */;
-        tmp80 = (tmp78 * tmp78) + (tmp79 * tmp79);
-        tmp82 = jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - (DIVISION(((data->simulationInfo->realParameter[266] /* pwFault.R PARAM */) * (jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) + (data->simulationInfo->realParameter[267] /* pwFault.X PARAM */) * (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */)) * ((tmp76 * tmp76) + (tmp77 * tmp77)),(tmp80 * tmp80),"(pwFault.R ^ 2.0 + pwFault.X ^ 2.0) ^ 2.0"));
-      }
-      else
-      {
-        tmp82 = jacobian->tmpVars[22] /* pwFault.p.ir.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */;
-      }
-      tmp84 = tmp82;
-    }
-    tmp86 = tmp84;
-  }
-  jacobian->resultVars[8] /* $res9.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = tmp86;
+  modelica_boolean tmp86;
+  modelica_boolean tmp87;
+  RELATIONHYSTERESIS(tmp86, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
+  RELATIONHYSTERESIS(tmp87, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
+  jacobian->resultVars[10] /* $res_NLSJac35_11.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp86 && tmp87)?jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 258
 type: SIMPLE_ASSIGN
-$res10.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.ir.re.SeedNLSJac35 else pwLine3.vr.re.SeedNLSJac35 - pwLine1.vs.re.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.ir.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine3.Y.re) - pwLine3.Z.im * (pwLine3.ir.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine3.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.re))
+$res_NLSJac35_12.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.ir.im.SeedNLSJac35 else pwLine1.vs.im.SeedNLSJac35 - pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 - (pwLine.Z.re * (pwLine.ir.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.re) + pwLine.Z.im * (pwLine.ir.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_258(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,258};
-  modelica_boolean tmp87;
   modelica_boolean tmp88;
-  RELATIONHYSTERESIS(tmp87, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
-  RELATIONHYSTERESIS(tmp88, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
-  jacobian->resultVars[9] /* $res10.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp87 && tmp88)?jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))))));
+  modelica_boolean tmp89;
+  RELATIONHYSTERESIS(tmp88, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
+  RELATIONHYSTERESIS(tmp89, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
+  jacobian->resultVars[11] /* $res_NLSJac35_12.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp88 && tmp89)?jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 259
 type: SIMPLE_ASSIGN
-$res11.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine3.t1 and time < pwLine3.t2 then pwLine3.ir.im.SeedNLSJac35 else pwLine3.vr.im.SeedNLSJac35 - pwLine1.vs.im.SeedNLSJac35 - (pwLine3.Z.re * (pwLine3.ir.im.SeedNLSJac35 + (-pwLine3.vr.re.SeedNLSJac35) * pwLine3.Y.im - pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.re) + pwLine3.Z.im * (pwLine3.ir.re.SeedNLSJac35 + pwLine3.vr.im.SeedNLSJac35 * pwLine3.Y.im - pwLine3.vr.re.SeedNLSJac35 * pwLine3.Y.re))
+$res_NLSJac35_13.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 else pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vs.re.SeedNLSJac35 - (pwLine.Z.re * (pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.im - pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re) - pwLine.Z.im * (pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35) * pwLine.Y.im - pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_259(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,259};
-  modelica_boolean tmp89;
   modelica_boolean tmp90;
-  RELATIONHYSTERESIS(tmp89, data->localData[0]->timeValue, data->simulationInfo->realParameter[301] /* pwLine3.t1 PARAM */, 8, GreaterEq);
-  RELATIONHYSTERESIS(tmp90, data->localData[0]->timeValue, data->simulationInfo->realParameter[302] /* pwLine3.t2 PARAM */, 9, Less);
-  jacobian->resultVars[10] /* $res11.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp89 && tmp90)?jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[300] /* pwLine3.Z.re PARAM */) * (jacobian->seedVars[2] /* pwLine3.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[299] /* pwLine3.Z.im PARAM */) * (jacobian->seedVars[0] /* pwLine3.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[297] /* pwLine3.Y.im PARAM */) - ((jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[298] /* pwLine3.Y.re PARAM */)))));
+  modelica_boolean tmp91;
+  RELATIONHYSTERESIS(tmp90, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
+  RELATIONHYSTERESIS(tmp91, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
+  jacobian->resultVars[12] /* $res_NLSJac35_13.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp90 && tmp91)?jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 260
 type: SIMPLE_ASSIGN
-$res12.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.ir.im.SeedNLSJac35 else pwLine1.vs.im.SeedNLSJac35 - pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 - (pwLine.Z.re * (pwLine.ir.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.re) + pwLine.Z.im * (pwLine.ir.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine.Y.re))
+$res_NLSJac35_14.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 else pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vs.im.SeedNLSJac35 - (pwLine.Z.re * (pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35) * pwLine.Y.im - pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re) + pwLine.Z.im * (pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.im - pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_260(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,260};
-  modelica_boolean tmp91;
   modelica_boolean tmp92;
-  RELATIONHYSTERESIS(tmp91, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
-  RELATIONHYSTERESIS(tmp92, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
-  jacobian->resultVars[11] /* $res12.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp91 && tmp92)?jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */)))));
+  modelica_boolean tmp93;
+  RELATIONHYSTERESIS(tmp92, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
+  RELATIONHYSTERESIS(tmp93, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
+  jacobian->resultVars[13] /* $res_NLSJac35_14.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp92 && tmp93)?jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 261
 type: SIMPLE_ASSIGN
-$res13.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 else pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vs.re.SeedNLSJac35 - (pwLine.Z.re * (pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.im - pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re) - pwLine.Z.im * (pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35) * pwLine.Y.im - pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re))
+$res_NLSJac35_15.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vs.re.SeedNLSJac35 - pwLine1.vr.re.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine1.Y.re) - pwLine1.Z.im * (pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_261(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,261};
-  modelica_boolean tmp93;
   modelica_boolean tmp94;
-  RELATIONHYSTERESIS(tmp93, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
-  RELATIONHYSTERESIS(tmp94, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
-  jacobian->resultVars[12] /* $res13.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp93 && tmp94)?jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))))));
+  modelica_boolean tmp95;
+  RELATIONHYSTERESIS(tmp94, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
+  RELATIONHYSTERESIS(tmp95, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
+  jacobian->resultVars[14] /* $res_NLSJac35_15.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp94 && tmp95)?jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 262
 type: SIMPLE_ASSIGN
-$res14.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 else pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vs.im.SeedNLSJac35 - (pwLine.Z.re * (pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35) * pwLine.Y.im - pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re) + pwLine.Z.im * (pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.im - pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 * pwLine.Y.re))
+$res_NLSJac35_16.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.ir.re.SeedNLSJac35 else pwLine1.vs.re.SeedNLSJac35 - pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 - (pwLine.Z.re * (pwLine.ir.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine.Y.re) - pwLine.Z.im * (pwLine.ir.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_262(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,262};
-  modelica_boolean tmp95;
   modelica_boolean tmp96;
-  RELATIONHYSTERESIS(tmp95, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
-  RELATIONHYSTERESIS(tmp96, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
-  jacobian->resultVars[13] /* $res14.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp95 && tmp96)?jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->tmpVars[6] /* pwLine.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->tmpVars[7] /* pwLine.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->tmpVars[11] /* pwLine.vs.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */)))));
+  modelica_boolean tmp97;
+  RELATIONHYSTERESIS(tmp96, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
+  RELATIONHYSTERESIS(tmp97, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
+  jacobian->resultVars[15] /* $res_NLSJac35_16.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp96 && tmp97)?jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 263
 type: SIMPLE_ASSIGN
-$res15.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vs.re.SeedNLSJac35 - pwLine1.vr.re.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine1.Y.re) - pwLine1.Z.im * (pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.re))
+$res_NLSJac35_17.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vs.im.SeedNLSJac35 - pwLine1.vr.im.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.re) + pwLine1.Z.im * (pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine1.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_263(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,263};
-  modelica_boolean tmp97;
   modelica_boolean tmp98;
-  RELATIONHYSTERESIS(tmp97, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
-  RELATIONHYSTERESIS(tmp98, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
-  jacobian->resultVars[14] /* $res15.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp97 && tmp98)?jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))))));
+  modelica_boolean tmp99;
+  RELATIONHYSTERESIS(tmp98, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
+  RELATIONHYSTERESIS(tmp99, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
+  jacobian->resultVars[16] /* $res_NLSJac35_17.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp98 && tmp99)?jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 264
 type: SIMPLE_ASSIGN
-$res16.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine.t1 and time < pwLine.t2 then pwLine.ir.re.SeedNLSJac35 else pwLine1.vs.re.SeedNLSJac35 - pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 - (pwLine.Z.re * (pwLine.ir.re.SeedNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine.Y.re) - pwLine.Z.im * (pwLine.ir.im.SeedNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine.Y.re))
+$res_NLSJac35_18.$pDERNLSJac35.dummyVarNLSJac35 = $cse1 * gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 + (-$cse2) * gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vr.im.SeedNLSJac35
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_264(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,264};
-  modelica_boolean tmp99;
-  modelica_boolean tmp100;
-  RELATIONHYSTERESIS(tmp99, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine.t1 PARAM */, 0, GreaterEq);
-  RELATIONHYSTERESIS(tmp100, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine.t2 PARAM */, 1, Less);
-  jacobian->resultVars[15] /* $res16.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp99 && tmp100)?jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - jacobian->tmpVars[12] /* pwLine.vs.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ - ((data->simulationInfo->realParameter[278] /* pwLine.Z.re PARAM */) * (jacobian->seedVars[6] /* pwLine.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[277] /* pwLine.Z.im PARAM */) * (jacobian->seedVars[4] /* pwLine.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[275] /* pwLine.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[276] /* pwLine.Y.re PARAM */))))));
+  jacobian->resultVars[17] /* $res_NLSJac35_18.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[26] /* $cse1 variable */) * (jacobian->tmpVars[15] /* gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + ((-data->localData[0]->realVars[27] /* $cse2 variable */)) * (jacobian->tmpVars[16] /* gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */;
   TRACE_POP
 }
 
 /*
 equation index: 265
 type: SIMPLE_ASSIGN
-$res17.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vs.im.SeedNLSJac35 - pwLine1.vr.im.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vs.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.re) + pwLine1.Z.im * (pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vs.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vs.re.SeedNLSJac35 * pwLine1.Y.re))
+$res_NLSJac35_19.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vr.re.SeedNLSJac35 - pwLine3.vr.re.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine4.Y.re) - pwLine4.Z.im * (pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_265(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,265};
+  modelica_boolean tmp100;
   modelica_boolean tmp101;
-  modelica_boolean tmp102;
-  RELATIONHYSTERESIS(tmp101, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
-  RELATIONHYSTERESIS(tmp102, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
-  jacobian->resultVars[16] /* $res17.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp101 && tmp102)?jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->tmpVars[20] /* pwLine1.is.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->tmpVars[19] /* pwLine1.is.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */)))));
+  RELATIONHYSTERESIS(tmp100, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
+  RELATIONHYSTERESIS(tmp101, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
+  jacobian->resultVars[18] /* $res_NLSJac35_19.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp100 && tmp101)?jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 266
 type: SIMPLE_ASSIGN
-$res18.$pDERNLSJac35.dummyVarNLSJac35 = $cse1 * gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 + (-$cse2) * gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 - pwLine1.vr.im.SeedNLSJac35
+$res_NLSJac35_20.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vr.im.SeedNLSJac35 - pwLine3.vr.im.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.re) + pwLine4.Z.im * (pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine4.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_266(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,266};
-  jacobian->resultVars[17] /* $res18.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = (data->localData[0]->realVars[26] /* $cse1 variable */) * (jacobian->tmpVars[15] /* gENCLS.vq.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) + ((-data->localData[0]->realVars[27] /* $cse2 variable */)) * (jacobian->tmpVars[16] /* gENCLS.vd.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */) - jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */;
+  modelica_boolean tmp102;
+  modelica_boolean tmp103;
+  RELATIONHYSTERESIS(tmp102, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
+  RELATIONHYSTERESIS(tmp103, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
+  jacobian->resultVars[19] /* $res_NLSJac35_20.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp102 && tmp103)?jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */)))));
   TRACE_POP
 }
 
 /*
 equation index: 267
 type: SIMPLE_ASSIGN
-$res19.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vr.re.SeedNLSJac35 - pwLine3.vr.re.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine4.Y.re) - pwLine4.Z.im * (pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.re))
+$res_NLSJac35_21.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.ir.re.SeedNLSJac35 else pwLine1.vr.re.SeedNLSJac35 - pwLine1.vs.re.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.ir.re.SeedNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine1.Y.re) - pwLine1.Z.im * (pwLine1.ir.im.SeedNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_267(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,267};
-  modelica_boolean tmp103;
   modelica_boolean tmp104;
-  RELATIONHYSTERESIS(tmp103, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
-  RELATIONHYSTERESIS(tmp104, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
-  jacobian->resultVars[18] /* $res19.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp103 && tmp104)?jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[21] /* pwLine3.vr.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))))));
+  modelica_boolean tmp105;
+  RELATIONHYSTERESIS(tmp104, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
+  RELATIONHYSTERESIS(tmp105, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
+  jacobian->resultVars[20] /* $res_NLSJac35_21.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp104 && tmp105)?jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))))));
   TRACE_POP
 }
 
 /*
 equation index: 268
 type: SIMPLE_ASSIGN
-$res20.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine4.t1 and time < pwLine4.t2 then pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 else pwLine1.vr.im.SeedNLSJac35 - pwLine3.vr.im.SeedNLSJac35 - (pwLine4.Z.re * (pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine4.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.re) + pwLine4.Z.im * (pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine4.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine4.Y.re))
+$res_NLSJac35_22.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.ir.im.SeedNLSJac35 else pwLine1.vr.im.SeedNLSJac35 - pwLine1.vs.im.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.ir.im.SeedNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.re) + pwLine1.Z.im * (pwLine1.ir.re.SeedNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine1.Y.re))
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_268(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,268};
-  modelica_boolean tmp105;
   modelica_boolean tmp106;
-  RELATIONHYSTERESIS(tmp105, data->localData[0]->timeValue, data->simulationInfo->realParameter[312] /* pwLine4.t1 PARAM */, 10, GreaterEq);
-  RELATIONHYSTERESIS(tmp106, data->localData[0]->timeValue, data->simulationInfo->realParameter[313] /* pwLine4.t2 PARAM */, 11, Less);
-  jacobian->resultVars[19] /* $res20.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp105 && tmp106)?jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */:jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[20] /* pwLine3.vr.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[311] /* pwLine4.Z.re PARAM */) * (jacobian->tmpVars[17] /* pwLine4.ir.im.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[310] /* pwLine4.Z.im PARAM */) * (jacobian->tmpVars[18] /* pwLine4.ir.re.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_DIFF_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[308] /* pwLine4.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[309] /* pwLine4.Y.re PARAM */)))));
-  TRACE_POP
-}
-
-/*
-equation index: 269
-type: SIMPLE_ASSIGN
-$res21.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.ir.re.SeedNLSJac35 else pwLine1.vr.re.SeedNLSJac35 - pwLine1.vs.re.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.ir.re.SeedNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine1.Y.re) - pwLine1.Z.im * (pwLine1.ir.im.SeedNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.re))
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_269(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
-{
-  TRACE_PUSH
-  const int clockIndex = 0;
-  const int equationIndexes[2] = {1,269};
   modelica_boolean tmp107;
-  modelica_boolean tmp108;
-  RELATIONHYSTERESIS(tmp107, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
-  RELATIONHYSTERESIS(tmp108, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
-  jacobian->resultVars[20] /* $res21.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp107 && tmp108)?jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[18] /* pwLine1.vs.re.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))))));
-  TRACE_POP
-}
-
-/*
-equation index: 270
-type: SIMPLE_ASSIGN
-$res22.$pDERNLSJac35.dummyVarNLSJac35 = if time >= pwLine1.t1 and time < pwLine1.t2 then pwLine1.ir.im.SeedNLSJac35 else pwLine1.vr.im.SeedNLSJac35 - pwLine1.vs.im.SeedNLSJac35 - (pwLine1.Z.re * (pwLine1.ir.im.SeedNLSJac35 + (-pwLine1.vr.re.SeedNLSJac35) * pwLine1.Y.im - pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.re) + pwLine1.Z.im * (pwLine1.ir.re.SeedNLSJac35 + pwLine1.vr.im.SeedNLSJac35 * pwLine1.Y.im - pwLine1.vr.re.SeedNLSJac35 * pwLine1.Y.re))
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_270(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
-{
-  TRACE_PUSH
-  const int clockIndex = 0;
-  const int equationIndexes[2] = {1,270};
-  modelica_boolean tmp109;
-  modelica_boolean tmp110;
-  RELATIONHYSTERESIS(tmp109, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
-  RELATIONHYSTERESIS(tmp110, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
-  jacobian->resultVars[21] /* $res22.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp109 && tmp110)?jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */)))));
+  RELATIONHYSTERESIS(tmp106, data->localData[0]->timeValue, data->simulationInfo->realParameter[290] /* pwLine1.t1 PARAM */, 2, GreaterEq);
+  RELATIONHYSTERESIS(tmp107, data->localData[0]->timeValue, data->simulationInfo->realParameter[291] /* pwLine1.t2 PARAM */, 3, Less);
+  jacobian->resultVars[21] /* $res_NLSJac35_22.$pDERNLSJac35.dummyVarNLSJac35 JACOBIAN_VAR */ = ((tmp106 && tmp107)?jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */:jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */ - jacobian->seedVars[19] /* pwLine1.vs.im.SeedNLSJac35 SEED_VAR */ - ((data->simulationInfo->realParameter[289] /* pwLine1.Z.re PARAM */) * (jacobian->seedVars[11] /* pwLine1.ir.im.SeedNLSJac35 SEED_VAR */ + ((-jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */)) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[288] /* pwLine1.Z.im PARAM */) * (jacobian->seedVars[10] /* pwLine1.ir.re.SeedNLSJac35 SEED_VAR */ + (jacobian->seedVars[15] /* pwLine1.vr.im.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[286] /* pwLine1.Y.im PARAM */) - ((jacobian->seedVars[14] /* pwLine1.vr.re.SeedNLSJac35 SEED_VAR */) * (data->simulationInfo->realParameter[287] /* pwLine1.Y.re PARAM */)))));
   TRACE_POP
 }
 
@@ -1147,6 +1135,8 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_functionJacNLSJac35_column(void* i
 
   DATA* data = ((DATA*)inData);
   int index = OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_INDEX_JAC_NLSJac35;
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_224(data, threadData, jacobian, parentJacobian);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_225(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_226(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_227(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_228(data, threadData, jacobian, parentJacobian);
@@ -1190,8 +1180,6 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_functionJacNLSJac35_column(void* i
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_266(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_267(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_268(data, threadData, jacobian, parentJacobian);
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_269(data, threadData, jacobian, parentJacobian);
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_270(data, threadData, jacobian, parentJacobian);
   TRACE_POP
   return 0;
 }
@@ -1199,88 +1187,88 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_functionJacNLSJac35_column(void* i
 /* dynamic equations */
 
 /*
-equation index: 297
+equation index: 295
 type: SIMPLE_ASSIGN
 iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36 = if abs(iEEET2.simpleLag.T) <= 1e-15 then iEEET2.derivativeLag.y.SeedNLSJac36 * iEEET2.simpleLag.K else 0.0
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_295(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
+{
+  TRACE_PUSH
+  const int clockIndex = 0;
+  const int equationIndexes[2] = {1,295};
+  modelica_boolean tmp108;
+  tmp108 = LessEq(fabs(data->simulationInfo->realParameter[255] /* iEEET2.simpleLag.T PARAM */),1e-15);
+  jacobian->tmpVars[0] /* iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */ = (tmp108?(jacobian->seedVars[0] /* iEEET2.derivativeLag.y.SeedNLSJac36 SEED_VAR */) * (data->simulationInfo->realParameter[254] /* iEEET2.simpleLag.K PARAM */):0.0);
+  TRACE_POP
+}
+
+/*
+equation index: 296
+type: SIMPLE_ASSIGN
+iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 = iEEET2.add.k2 * iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_296(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
+{
+  TRACE_PUSH
+  const int clockIndex = 0;
+  const int equationIndexes[2] = {1,296};
+  jacobian->tmpVars[1] /* iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */ = (data->simulationInfo->realParameter[229] /* iEEET2.add.k2 PARAM */) * (jacobian->tmpVars[0] /* iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */);
+  TRACE_POP
+}
+
+/*
+equation index: 297
+type: SIMPLE_ASSIGN
+iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 = if abs(iEEET2.simpleLagLim.T) <= 1e-15 then if noEvent(min(iEEET2.add.y * iEEET2.simpleLagLim.K, iEEET2.simpleLagLim.outMax) > iEEET2.simpleLagLim.outMin) then if noEvent(iEEET2.add.y * iEEET2.simpleLagLim.K < iEEET2.simpleLagLim.outMax) then iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 * iEEET2.simpleLagLim.K else 0.0 else 0.0 else 0.0
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_297(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,297};
+  modelica_boolean tmp109;
+  modelica_boolean tmp110;
   modelica_boolean tmp111;
-  tmp111 = LessEq(fabs(data->simulationInfo->realParameter[255] /* iEEET2.simpleLag.T PARAM */),1e-15);
-  jacobian->tmpVars[0] /* iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */ = (tmp111?(jacobian->seedVars[0] /* iEEET2.derivativeLag.y.SeedNLSJac36 SEED_VAR */) * (data->simulationInfo->realParameter[254] /* iEEET2.simpleLag.K PARAM */):0.0);
+  modelica_boolean tmp112;
+  modelica_real tmp113;
+  modelica_boolean tmp114;
+  modelica_real tmp115;
+  tmp109 = LessEq(fabs(data->simulationInfo->realParameter[260] /* iEEET2.simpleLagLim.T PARAM */),1e-15);
+  tmp114 = (modelica_boolean)tmp109;
+  if(tmp114)
+  {
+    tmp110 = Greater(fmin((data->localData[0]->realVars[92] /* iEEET2.add.y variable */) * (data->simulationInfo->realParameter[259] /* iEEET2.simpleLagLim.K PARAM */),data->simulationInfo->realParameter[263] /* iEEET2.simpleLagLim.outMax PARAM */),data->simulationInfo->realParameter[264] /* iEEET2.simpleLagLim.outMin PARAM */);
+    tmp112 = (modelica_boolean)tmp110;
+    if(tmp112)
+    {
+      tmp111 = Less((data->localData[0]->realVars[92] /* iEEET2.add.y variable */) * (data->simulationInfo->realParameter[259] /* iEEET2.simpleLagLim.K PARAM */),data->simulationInfo->realParameter[263] /* iEEET2.simpleLagLim.outMax PARAM */);
+      tmp113 = (tmp111?(jacobian->tmpVars[1] /* iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[259] /* iEEET2.simpleLagLim.K PARAM */):0.0);
+    }
+    else
+    {
+      tmp113 = 0.0;
+    }
+    tmp115 = tmp113;
+  }
+  else
+  {
+    tmp115 = 0.0;
+  }
+  jacobian->tmpVars[2] /* iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */ = tmp115;
   TRACE_POP
 }
 
 /*
 equation index: 298
 type: SIMPLE_ASSIGN
-iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 = iEEET2.add.k2 * iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36
+$res_NLSJac36_1.$pDERNLSJac36.dummyVarNLSJac36 = 0.06 * iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 / iEEET2.derivativeLag.T - iEEET2.derivativeLag.y.SeedNLSJac36
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_298(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
 {
   TRACE_PUSH
   const int clockIndex = 0;
   const int equationIndexes[2] = {1,298};
-  jacobian->tmpVars[1] /* iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */ = (data->simulationInfo->realParameter[229] /* iEEET2.add.k2 PARAM */) * (jacobian->tmpVars[0] /* iEEET2.add.u2.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */);
-  TRACE_POP
-}
-
-/*
-equation index: 299
-type: SIMPLE_ASSIGN
-iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 = if abs(iEEET2.simpleLagLim.T) <= 1e-15 then if noEvent(min(iEEET2.add.y * iEEET2.simpleLagLim.K, iEEET2.simpleLagLim.outMax) > iEEET2.simpleLagLim.outMin) then if noEvent(iEEET2.add.y * iEEET2.simpleLagLim.K < iEEET2.simpleLagLim.outMax) then iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 * iEEET2.simpleLagLim.K else 0.0 else 0.0 else 0.0
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_299(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
-{
-  TRACE_PUSH
-  const int clockIndex = 0;
-  const int equationIndexes[2] = {1,299};
-  modelica_boolean tmp112;
-  modelica_boolean tmp113;
-  modelica_boolean tmp114;
-  modelica_boolean tmp115;
-  modelica_real tmp116;
-  modelica_boolean tmp117;
-  modelica_real tmp118;
-  tmp112 = LessEq(fabs(data->simulationInfo->realParameter[260] /* iEEET2.simpleLagLim.T PARAM */),1e-15);
-  tmp117 = (modelica_boolean)tmp112;
-  if(tmp117)
-  {
-    tmp113 = Greater(fmin((data->localData[0]->realVars[92] /* iEEET2.add.y variable */) * (data->simulationInfo->realParameter[259] /* iEEET2.simpleLagLim.K PARAM */),data->simulationInfo->realParameter[263] /* iEEET2.simpleLagLim.outMax PARAM */),data->simulationInfo->realParameter[264] /* iEEET2.simpleLagLim.outMin PARAM */);
-    tmp115 = (modelica_boolean)tmp113;
-    if(tmp115)
-    {
-      tmp114 = Less((data->localData[0]->realVars[92] /* iEEET2.add.y variable */) * (data->simulationInfo->realParameter[259] /* iEEET2.simpleLagLim.K PARAM */),data->simulationInfo->realParameter[263] /* iEEET2.simpleLagLim.outMax PARAM */);
-      tmp116 = (tmp114?(jacobian->tmpVars[1] /* iEEET2.add.y.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */) * (data->simulationInfo->realParameter[259] /* iEEET2.simpleLagLim.K PARAM */):0.0);
-    }
-    else
-    {
-      tmp116 = 0.0;
-    }
-    tmp118 = tmp116;
-  }
-  else
-  {
-    tmp118 = 0.0;
-  }
-  jacobian->tmpVars[2] /* iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */ = tmp118;
-  TRACE_POP
-}
-
-/*
-equation index: 300
-type: SIMPLE_ASSIGN
-$res1.$pDERNLSJac36.dummyVarNLSJac36 = 0.06 * iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 / iEEET2.derivativeLag.T - iEEET2.derivativeLag.y.SeedNLSJac36
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_300(DATA *data, threadData_t *threadData, ANALYTIC_JACOBIAN *jacobian, ANALYTIC_JACOBIAN *parentJacobian)
-{
-  TRACE_PUSH
-  const int clockIndex = 0;
-  const int equationIndexes[2] = {1,300};
-  jacobian->resultVars[0] /* $res1.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_VAR */ = (0.06) * (DIVISION(jacobian->tmpVars[2] /* iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */,data->simulationInfo->realParameter[234] /* iEEET2.derivativeLag.T PARAM */,"iEEET2.derivativeLag.T")) - jacobian->seedVars[0] /* iEEET2.derivativeLag.y.SeedNLSJac36 SEED_VAR */;
+  jacobian->resultVars[0] /* $res_NLSJac36_1.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_VAR */ = (0.06) * (DIVISION(jacobian->tmpVars[2] /* iEEET2.derivativeLag.u.$pDERNLSJac36.dummyVarNLSJac36 JACOBIAN_DIFF_VAR */,data->simulationInfo->realParameter[234] /* iEEET2.derivativeLag.T PARAM */,"iEEET2.derivativeLag.T")) - jacobian->seedVars[0] /* iEEET2.derivativeLag.y.SeedNLSJac36 SEED_VAR */;
   TRACE_POP
 }
 
@@ -1303,10 +1291,10 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_functionJacNLSJac36_column(void* i
 
   DATA* data = ((DATA*)inData);
   int index = OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_INDEX_JAC_NLSJac36;
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_295(data, threadData, jacobian, parentJacobian);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_296(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_297(data, threadData, jacobian, parentJacobian);
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_298(data, threadData, jacobian, parentJacobian);
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_299(data, threadData, jacobian, parentJacobian);
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_300(data, threadData, jacobian, parentJacobian);
   TRACE_POP
   return 0;
 }

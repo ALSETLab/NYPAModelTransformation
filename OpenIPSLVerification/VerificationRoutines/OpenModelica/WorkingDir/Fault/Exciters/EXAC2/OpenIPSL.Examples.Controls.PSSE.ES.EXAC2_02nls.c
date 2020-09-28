@@ -8,30 +8,30 @@ extern "C" {
 /* inner equations */
 
 /*
-equation index: 799
+equation index: 375
 type: SIMPLE_ASSIGN
 constantLoad.v = sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_799(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_375(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,799};
+  const int equationIndexes[2] = {1,375};
   modelica_real tmp0;
   modelica_real tmp1;
-  tmp0 = data->localData[0]->realVars[136] /* pwLine1.vs.re variable */;
-  tmp1 = data->localData[0]->realVars[135] /* pwLine1.vs.im variable */;
+  tmp0 = data->localData[0]->realVars[135] /* pwLine1.vs.re variable */;
+  tmp1 = data->localData[0]->realVars[134] /* pwLine1.vs.im variable */;
   data->localData[0]->realVars[55] /* constantLoad.v variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
   TRACE_POP
 }
 /*
-equation index: 800
+equation index: 376
 type: SIMPLE_ASSIGN
 constantLoad.kI = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * constantLoad.v ^ (-1.0 + constantLoad.b2) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_800(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_376(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,800};
+  const int equationIndexes[2] = {1,376};
   modelica_boolean tmp0;
   modelica_real tmp1;
   modelica_real tmp2;
@@ -162,28 +162,28 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_800(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 801
+equation index: 377
 type: SIMPLE_ASSIGN
 constantLoad.kP = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a0 + constantLoad.a1 * cos(constantLoad.v * constantLoad.wp) + constantLoad.b1 * sin(constantLoad.v * constantLoad.wp) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_801(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_377(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,801};
+  const int equationIndexes[2] = {1,377};
   modelica_boolean tmp0;
   RELATIONHYSTERESIS(tmp0, data->localData[0]->realVars[55] /* constantLoad.v variable */, data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */, 13, Less);
   data->localData[0]->realVars[52] /* constantLoad.kP variable */ = (tmp0?data->simulationInfo->realParameter[56] /* constantLoad.a0 PARAM */ + (data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (cos((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * (sin((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):1.0);
   TRACE_POP
 }
 /*
-equation index: 802
+equation index: 378
 type: SIMPLE_ASSIGN
 constantLoad.Q = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_802(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_378(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,802};
+  const int equationIndexes[2] = {1,378};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -207,14 +207,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_802(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 803
+equation index: 379
 type: SIMPLE_ASSIGN
 constantLoad.P = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_803(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_379(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,803};
+  const int equationIndexes[2] = {1,379};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -238,228 +238,228 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_803(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 804
+equation index: 380
 type: SIMPLE_ASSIGN
 gENROE.PSIq = (-gENROE.PSIppq) - gENROE.Xppq * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_804(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_380(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,804};
-  data->localData[0]->realVars[103] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[102] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[275] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */));
+  const int equationIndexes[2] = {1,380};
+  data->localData[0]->realVars[102] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[275] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 805
+equation index: 381
 type: SIMPLE_ASSIGN
 pwLine.is.re = ($cse7 * gENROE.iq - (-$cse6) * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_805(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_381(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,805};
-  data->localData[0]->realVars[122] /* pwLine.is.re variable */ = ((data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) - (((-data->localData[0]->realVars[30] /* $cse6 variable */)) * (data->localData[0]->realVars[109] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  const int equationIndexes[2] = {1,381};
+  data->localData[0]->realVars[121] /* pwLine.is.re variable */ = ((data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - (((-data->localData[0]->realVars[30] /* $cse6 variable */)) * (data->localData[0]->realVars[108] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 806
+equation index: 382
 type: SIMPLE_ASSIGN
 pwLine.is.im = ($cse6 * gENROE.iq - $cse7 * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_806(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_382(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,806};
-  data->localData[0]->realVars[121] /* pwLine.is.im variable */ = ((data->localData[0]->realVars[30] /* $cse6 variable */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[109] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  const int equationIndexes[2] = {1,382};
+  data->localData[0]->realVars[120] /* pwLine.is.im variable */ = ((data->localData[0]->realVars[30] /* $cse6 variable */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[108] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 807
+equation index: 383
 type: SIMPLE_ASSIGN
 gENROE.ud = (-gENROE.PSIq) - gENROE.R_a * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_807(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_383(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,807};
-  data->localData[0]->realVars[111] /* gENROE.ud variable */ = (-data->localData[0]->realVars[103] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */));
+  const int equationIndexes[2] = {1,383};
+  data->localData[0]->realVars[110] /* gENROE.ud variable */ = (-data->localData[0]->realVars[102] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 808
+equation index: 384
 type: SIMPLE_ASSIGN
 gENROE.PSId = gENROE.PSIppd - gENROE.Xppd * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_808(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_384(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,808};
-  data->localData[0]->realVars[99] /* gENROE.PSId variable */ = data->localData[0]->realVars[101] /* gENROE.PSIppd variable */ - ((data->simulationInfo->realParameter[274] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */));
+  const int equationIndexes[2] = {1,384};
+  data->localData[0]->realVars[98] /* gENROE.PSId variable */ = data->localData[0]->realVars[100] /* gENROE.PSIppd variable */ - ((data->simulationInfo->realParameter[274] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 809
+equation index: 385
 type: SIMPLE_ASSIGN
 gENROE.uq = gENROE.PSId - gENROE.R_a * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_809(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_385(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,809};
-  data->localData[0]->realVars[112] /* gENROE.uq variable */ = data->localData[0]->realVars[99] /* gENROE.PSId variable */ - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */));
+  const int equationIndexes[2] = {1,385};
+  data->localData[0]->realVars[111] /* gENROE.uq variable */ = data->localData[0]->realVars[98] /* gENROE.PSId variable */ - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 810
+equation index: 386
 type: SIMPLE_ASSIGN
 pwLine.vs.re = $cse6 * gENROE.ud + $cse7 * gENROE.uq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_810(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_386(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,810};
-  data->localData[0]->realVars[124] /* pwLine.vs.re variable */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (data->localData[0]->realVars[111] /* gENROE.ud variable */) + (data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[112] /* gENROE.uq variable */);
+  const int equationIndexes[2] = {1,386};
+  data->localData[0]->realVars[123] /* pwLine.vs.re variable */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (data->localData[0]->realVars[110] /* gENROE.ud variable */) + (data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[111] /* gENROE.uq variable */);
   TRACE_POP
 }
 /*
-equation index: 811
+equation index: 387
 type: SIMPLE_ASSIGN
 pwLine.vs.im = $cse6 * gENROE.uq - $cse7 * gENROE.ud
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_811(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_387(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,811};
-  data->localData[0]->realVars[123] /* pwLine.vs.im variable */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (data->localData[0]->realVars[112] /* gENROE.uq variable */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[111] /* gENROE.ud variable */));
+  const int equationIndexes[2] = {1,387};
+  data->localData[0]->realVars[122] /* pwLine.vs.im variable */ = (data->localData[0]->realVars[30] /* $cse6 variable */) * (data->localData[0]->realVars[111] /* gENROE.uq variable */) - ((data->localData[0]->realVars[31] /* $cse7 variable */) * (data->localData[0]->realVars[110] /* gENROE.ud variable */));
   TRACE_POP
 }
 /*
-equation index: 812
+equation index: 388
 type: SIMPLE_ASSIGN
 gENCLS.p.ir = ((-$cse1) * gENCLS.id - $cse2 * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_812(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_388(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,812};
-  data->localData[0]->realVars[93] /* gENCLS.p.ir variable */ = (((-data->localData[0]->realVars[26] /* $cse1 variable */)) * (data->localData[0]->realVars[89] /* gENCLS.id variable */) - ((data->localData[0]->realVars[27] /* $cse2 variable */) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
+  const int equationIndexes[2] = {1,388};
+  data->localData[0]->realVars[92] /* gENCLS.p.ir variable */ = (((-data->localData[0]->realVars[26] /* $cse1 variable */)) * (data->localData[0]->realVars[88] /* gENCLS.id variable */) - ((data->localData[0]->realVars[27] /* $cse2 variable */) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 813
+equation index: 389
 type: SIMPLE_ASSIGN
 gENCLS.p.ii = ($cse2 * gENCLS.id - $cse1 * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_813(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_389(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,813};
-  data->localData[0]->realVars[92] /* gENCLS.p.ii variable */ = ((data->localData[0]->realVars[27] /* $cse2 variable */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */) - ((data->localData[0]->realVars[26] /* $cse1 variable */) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
+  const int equationIndexes[2] = {1,389};
+  data->localData[0]->realVars[91] /* gENCLS.p.ii variable */ = ((data->localData[0]->realVars[27] /* $cse2 variable */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */) - ((data->localData[0]->realVars[26] /* $cse1 variable */) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 814
+equation index: 390
 type: SIMPLE_ASSIGN
 gENCLS.vd = gENCLS.X_d * gENCLS.iq - gENCLS.R_a * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_814(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_390(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,814};
-  data->localData[0]->realVars[94] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */));
+  const int equationIndexes[2] = {1,390};
+  data->localData[0]->realVars[93] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 815
+equation index: 391
 type: SIMPLE_ASSIGN
 gENCLS.vq = gENCLS.eq + (-gENCLS.R_a) * gENCLS.iq - gENCLS.X_d * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_815(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_391(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,815};
-  data->localData[0]->realVars[95] /* gENCLS.vq variable */ = data->localData[0]->realVars[6] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */));
+  const int equationIndexes[2] = {1,391};
+  data->localData[0]->realVars[94] /* gENCLS.vq variable */ = data->localData[0]->realVars[6] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 816
+equation index: 392
 type: SIMPLE_ASSIGN
 pwLine4.ir.im = (-pwLine1.ir.im) - gENCLS.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_816(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_392(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,816};
-  data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[129] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[92] /* gENCLS.p.ii variable */;
+  const int equationIndexes[2] = {1,392};
+  data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[128] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[91] /* gENCLS.p.ii variable */;
   TRACE_POP
 }
 /*
-equation index: 817
+equation index: 393
 type: SIMPLE_ASSIGN
 pwLine4.ir.re = (-pwLine1.ir.re) - gENCLS.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_817(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_393(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,817};
-  data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[130] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[93] /* gENCLS.p.ir variable */;
+  const int equationIndexes[2] = {1,393};
+  data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[129] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[92] /* gENCLS.p.ir variable */;
   TRACE_POP
 }
 /*
-equation index: 818
+equation index: 394
 type: SIMPLE_ASSIGN
 pwFault.p.ir = (-pwLine3.ir.re) - pwLine4.is.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_818(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_394(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,818};
-  data->localData[0]->realVars[114] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[142] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[154] /* pwLine4.is.re variable */;
+  const int equationIndexes[2] = {1,394};
+  data->localData[0]->realVars[113] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[141] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[153] /* pwLine4.is.re variable */;
   TRACE_POP
 }
 /*
-equation index: 819
+equation index: 395
 type: SIMPLE_ASSIGN
 pwFault.p.ii = (-pwLine3.ir.im) - pwLine4.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_819(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_395(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,819};
-  data->localData[0]->realVars[113] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[141] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[153] /* pwLine4.is.im variable */;
+  const int equationIndexes[2] = {1,395};
+  data->localData[0]->realVars[112] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[140] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[152] /* pwLine4.is.im variable */;
   TRACE_POP
 }
 /*
-equation index: 820
+equation index: 396
 type: SIMPLE_ASSIGN
 pwLine.ir.im = (-pwLine1.is.im) - pwLine3.is.im - constantLoad.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_820(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_396(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,820};
-  data->localData[0]->realVars[119] /* pwLine.ir.im variable */ = (-data->localData[0]->realVars[131] /* pwLine1.is.im variable */) - data->localData[0]->realVars[143] /* pwLine3.is.im variable */ - data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
+  const int equationIndexes[2] = {1,396};
+  data->localData[0]->realVars[118] /* pwLine.ir.im variable */ = (-data->localData[0]->realVars[130] /* pwLine1.is.im variable */) - data->localData[0]->realVars[142] /* pwLine3.is.im variable */ - data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
   TRACE_POP
 }
 /*
-equation index: 821
+equation index: 397
 type: SIMPLE_ASSIGN
 pwLine.ir.re = (-pwLine1.is.re) - pwLine3.is.re - constantLoad.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_821(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_397(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,821};
-  data->localData[0]->realVars[120] /* pwLine.ir.re variable */ = (-data->localData[0]->realVars[132] /* pwLine1.is.re variable */) - data->localData[0]->realVars[144] /* pwLine3.is.re variable */ - data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
+  const int equationIndexes[2] = {1,397};
+  data->localData[0]->realVars[119] /* pwLine.ir.re variable */ = (-data->localData[0]->realVars[131] /* pwLine1.is.re variable */) - data->localData[0]->realVars[143] /* pwLine3.is.re variable */ - data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
   TRACE_POP
 }
 
-void residualFunc889(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc465(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,889};
+  const int equationIndexes[2] = {1,465};
   int i;
   modelica_boolean tmp0;
   modelica_boolean tmp1;
@@ -524,126 +524,126 @@ void residualFunc889(void** dataIn, const double* xloc, double* res, const int* 
       return;
     }
   }
-  data->localData[0]->realVars[132] /* pwLine1.is.re variable */ = xloc[0];
+  data->localData[0]->realVars[131] /* pwLine1.is.re variable */ = xloc[0];
   data->localData[0]->realVars[54] /* constantLoad.p.ir variable */ = xloc[1];
-  data->localData[0]->realVars[131] /* pwLine1.is.im variable */ = xloc[2];
+  data->localData[0]->realVars[130] /* pwLine1.is.im variable */ = xloc[2];
   data->localData[0]->realVars[53] /* constantLoad.p.ii variable */ = xloc[3];
-  data->localData[0]->realVars[153] /* pwLine4.is.im variable */ = xloc[4];
-  data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ = xloc[5];
-  data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ = xloc[6];
-  data->localData[0]->realVars[154] /* pwLine4.is.re variable */ = xloc[7];
-  data->localData[0]->realVars[143] /* pwLine3.is.im variable */ = xloc[8];
-  data->localData[0]->realVars[144] /* pwLine3.is.re variable */ = xloc[9];
-  data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ = xloc[10];
-  data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ = xloc[11];
-  data->localData[0]->realVars[90] /* gENCLS.iq variable */ = xloc[12];
-  data->localData[0]->realVars[89] /* gENCLS.id variable */ = xloc[13];
-  data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ = xloc[14];
-  data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ = xloc[15];
-  data->localData[0]->realVars[109] /* gENROE.id variable */ = xloc[16];
-  data->localData[0]->realVars[110] /* gENROE.iq variable */ = xloc[17];
-  data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ = xloc[18];
-  data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ = xloc[19];
-  data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ = xloc[20];
-  data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ = xloc[21];
+  data->localData[0]->realVars[152] /* pwLine4.is.im variable */ = xloc[4];
+  data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ = xloc[5];
+  data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ = xloc[6];
+  data->localData[0]->realVars[153] /* pwLine4.is.re variable */ = xloc[7];
+  data->localData[0]->realVars[142] /* pwLine3.is.im variable */ = xloc[8];
+  data->localData[0]->realVars[143] /* pwLine3.is.re variable */ = xloc[9];
+  data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ = xloc[10];
+  data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ = xloc[11];
+  data->localData[0]->realVars[89] /* gENCLS.iq variable */ = xloc[12];
+  data->localData[0]->realVars[88] /* gENCLS.id variable */ = xloc[13];
+  data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ = xloc[14];
+  data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ = xloc[15];
+  data->localData[0]->realVars[108] /* gENROE.id variable */ = xloc[16];
+  data->localData[0]->realVars[109] /* gENROE.iq variable */ = xloc[17];
+  data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ = xloc[18];
+  data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ = xloc[19];
+  data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ = xloc[20];
+  data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ = xloc[21];
   /* backup outputs */
   /* pre body */
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_799(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_375(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_800(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_376(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_801(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_377(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_802(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_378(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_803(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_379(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_804(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_380(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_805(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_381(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_806(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_382(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_807(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_383(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_808(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_384(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_809(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_385(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_810(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_386(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_811(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_387(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_812(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_388(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_813(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_389(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_814(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_390(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_815(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_391(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_816(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_392(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_817(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_393(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_818(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_394(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_819(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_395(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_820(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_396(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_821(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_397(data, threadData);
   /* body */
-  res[0] = (data->localData[0]->realVars[27] /* $cse2 variable */) * (data->localData[0]->realVars[95] /* gENCLS.vq variable */) + (data->localData[0]->realVars[26] /* $cse1 variable */) * (data->localData[0]->realVars[94] /* gENCLS.vd variable */) - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */;
+  res[0] = (data->localData[0]->realVars[27] /* $cse2 variable */) * (data->localData[0]->realVars[94] /* gENCLS.vq variable */) + (data->localData[0]->realVars[26] /* $cse1 variable */) * (data->localData[0]->realVars[93] /* gENCLS.vd variable */) - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
 
   RELATIONHYSTERESIS(tmp0, data->localData[0]->timeValue, data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */, 0, GreaterEq);
   RELATIONHYSTERESIS(tmp1, data->localData[0]->timeValue, data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */, 1, Less);
-  res[1] = ((tmp0 && tmp1)?data->localData[0]->realVars[119] /* pwLine.ir.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[123] /* pwLine.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[120] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
+  res[1] = ((tmp0 && tmp1)?data->localData[0]->realVars[118] /* pwLine.ir.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[122] /* pwLine.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp2, data->localData[0]->timeValue, data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */, 5, GreaterEq);
   RELATIONHYSTERESIS(tmp3, data->localData[0]->timeValue, data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */, 6, Less);
-  res[2] = ((tmp2 && tmp3)?data->localData[0]->realVars[143] /* pwLine3.is.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
+  res[2] = ((tmp2 && tmp3)?data->localData[0]->realVars[142] /* pwLine3.is.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp4, data->localData[0]->timeValue, data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */, 5, GreaterEq);
   RELATIONHYSTERESIS(tmp5, data->localData[0]->timeValue, data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */, 6, Less);
-  res[3] = ((tmp4 && tmp5)?data->localData[0]->realVars[144] /* pwLine3.is.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
+  res[3] = ((tmp4 && tmp5)?data->localData[0]->realVars[143] /* pwLine3.is.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp6, data->localData[0]->timeValue, data->simulationInfo->realParameter[307] /* pwFault.t1 PARAM */, 9, Less);
   tmp15 = (modelica_boolean)tmp6;
   if(tmp15)
   {
-    tmp16 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */;
+    tmp16 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */;
   }
   else
   {
     RELATIONHYSTERESIS(tmp7, data->localData[0]->timeValue, data->simulationInfo->realParameter[308] /* pwFault.t2 PARAM */, 10, Less);
-    tmp13 = (modelica_boolean)(tmp7 && data->simulationInfo->booleanParameter[70] /* pwFault.ground PARAM */);
+    tmp13 = (modelica_boolean)(tmp7 && data->simulationInfo->booleanParameter[68] /* pwFault.ground PARAM */);
     if(tmp13)
     {
-      tmp14 = data->localData[0]->realVars[145] /* pwLine3.vr.im variable */;
+      tmp14 = data->localData[0]->realVars[144] /* pwLine3.vr.im variable */;
     }
     else
     {
@@ -653,11 +653,11 @@ void residualFunc889(void** dataIn, const double* xloc, double* res, const int* 
       {
         tmp9 = data->simulationInfo->realParameter[305] /* pwFault.R PARAM */;
         tmp10 = data->simulationInfo->realParameter[306] /* pwFault.X PARAM */;
-        tmp12 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) + (data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */),(tmp9 * tmp9) + (tmp10 * tmp10),"pwFault.R ^ 2.0 + pwFault.X ^ 2.0",equationIndexes));
+        tmp12 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) + (data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */),(tmp9 * tmp9) + (tmp10 * tmp10),"pwFault.R ^ 2.0 + pwFault.X ^ 2.0",equationIndexes));
       }
       else
       {
-        tmp12 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */;
+        tmp12 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */;
       }
       tmp14 = tmp12;
     }
@@ -669,15 +669,15 @@ void residualFunc889(void** dataIn, const double* xloc, double* res, const int* 
   tmp26 = (modelica_boolean)tmp17;
   if(tmp26)
   {
-    tmp27 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */;
+    tmp27 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */;
   }
   else
   {
     RELATIONHYSTERESIS(tmp18, data->localData[0]->timeValue, data->simulationInfo->realParameter[308] /* pwFault.t2 PARAM */, 10, Less);
-    tmp24 = (modelica_boolean)(tmp18 && data->simulationInfo->booleanParameter[70] /* pwFault.ground PARAM */);
+    tmp24 = (modelica_boolean)(tmp18 && data->simulationInfo->booleanParameter[68] /* pwFault.ground PARAM */);
     if(tmp24)
     {
-      tmp25 = data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - 1e-10;
+      tmp25 = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - 1e-10;
     }
     else
     {
@@ -687,11 +687,11 @@ void residualFunc889(void** dataIn, const double* xloc, double* res, const int* 
       {
         tmp20 = data->simulationInfo->realParameter[306] /* pwFault.X PARAM */;
         tmp21 = data->simulationInfo->realParameter[305] /* pwFault.R PARAM */;
-        tmp23 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) - ((data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)),(tmp20 * tmp20) + (tmp21 * tmp21),"pwFault.X ^ 2.0 + pwFault.R ^ 2.0",equationIndexes));
+        tmp23 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) - ((data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)),(tmp20 * tmp20) + (tmp21 * tmp21),"pwFault.X ^ 2.0 + pwFault.R ^ 2.0",equationIndexes));
       }
       else
       {
-        tmp23 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */;
+        tmp23 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */;
       }
       tmp25 = tmp23;
     }
@@ -701,65 +701,65 @@ void residualFunc889(void** dataIn, const double* xloc, double* res, const int* 
 
   RELATIONHYSTERESIS(tmp28, data->localData[0]->timeValue, data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */, 5, GreaterEq);
   RELATIONHYSTERESIS(tmp29, data->localData[0]->timeValue, data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */, 6, Less);
-  res[6] = ((tmp28 && tmp29)?data->localData[0]->realVars[142] /* pwLine3.ir.re variable */:data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
+  res[6] = ((tmp28 && tmp29)?data->localData[0]->realVars[141] /* pwLine3.ir.re variable */:data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp30, data->localData[0]->timeValue, data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */, 5, GreaterEq);
   RELATIONHYSTERESIS(tmp31, data->localData[0]->timeValue, data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */, 6, Less);
-  res[7] = ((tmp30 && tmp31)?data->localData[0]->realVars[141] /* pwLine3.ir.im variable */:data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
+  res[7] = ((tmp30 && tmp31)?data->localData[0]->realVars[140] /* pwLine3.ir.im variable */:data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp32, data->localData[0]->timeValue, data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */, 0, GreaterEq);
   RELATIONHYSTERESIS(tmp33, data->localData[0]->timeValue, data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */, 1, Less);
-  res[8] = ((tmp32 && tmp33)?data->localData[0]->realVars[121] /* pwLine.is.im variable */:data->localData[0]->realVars[123] /* pwLine.vs.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[124] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[122] /* pwLine.is.re variable */ + (data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[124] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
+  res[8] = ((tmp32 && tmp33)?data->localData[0]->realVars[120] /* pwLine.is.im variable */:data->localData[0]->realVars[122] /* pwLine.vs.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[123] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */ + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp34, data->localData[0]->timeValue, data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */, 0, GreaterEq);
   RELATIONHYSTERESIS(tmp35, data->localData[0]->timeValue, data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */, 1, Less);
-  res[9] = ((tmp34 && tmp35)?data->localData[0]->realVars[122] /* pwLine.is.re variable */:data->localData[0]->realVars[124] /* pwLine.vs.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[122] /* pwLine.is.re variable */ + (data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[124] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[124] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
+  res[9] = ((tmp34 && tmp35)?data->localData[0]->realVars[121] /* pwLine.is.re variable */:data->localData[0]->realVars[123] /* pwLine.vs.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */ + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[123] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
 
-  res[10] = (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - data->localData[0]->realVars[49] /* constantLoad.Q variable */;
+  res[10] = (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - data->localData[0]->realVars[49] /* constantLoad.Q variable */;
 
-  res[11] = (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - data->localData[0]->realVars[48] /* constantLoad.P variable */;
+  res[11] = (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - data->localData[0]->realVars[48] /* constantLoad.P variable */;
 
   RELATIONHYSTERESIS(tmp36, data->localData[0]->timeValue, data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */, 0, GreaterEq);
   RELATIONHYSTERESIS(tmp37, data->localData[0]->timeValue, data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */, 1, Less);
-  res[12] = ((tmp36 && tmp37)?data->localData[0]->realVars[120] /* pwLine.ir.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[124] /* pwLine.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[120] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
+  res[12] = ((tmp36 && tmp37)?data->localData[0]->realVars[119] /* pwLine.ir.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[123] /* pwLine.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp38, data->localData[0]->timeValue, data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */, 11, GreaterEq);
   RELATIONHYSTERESIS(tmp39, data->localData[0]->timeValue, data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */, 12, Less);
-  res[13] = ((tmp38 && tmp39)?data->localData[0]->realVars[131] /* pwLine1.is.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[132] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
+  res[13] = ((tmp38 && tmp39)?data->localData[0]->realVars[130] /* pwLine1.is.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp40, data->localData[0]->timeValue, data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */, 11, GreaterEq);
   RELATIONHYSTERESIS(tmp41, data->localData[0]->timeValue, data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */, 12, Less);
-  res[14] = ((tmp40 && tmp41)?data->localData[0]->realVars[132] /* pwLine1.is.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[132] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
+  res[14] = ((tmp40 && tmp41)?data->localData[0]->realVars[131] /* pwLine1.is.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp42, data->localData[0]->timeValue, data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */, 7, GreaterEq);
   RELATIONHYSTERESIS(tmp43, data->localData[0]->timeValue, data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */, 8, Less);
-  res[15] = ((tmp42 && tmp43)?data->localData[0]->realVars[154] /* pwLine4.is.re variable */:data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[154] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
+  res[15] = ((tmp42 && tmp43)?data->localData[0]->realVars[153] /* pwLine4.is.re variable */:data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp44, data->localData[0]->timeValue, data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */, 7, GreaterEq);
   RELATIONHYSTERESIS(tmp45, data->localData[0]->timeValue, data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */, 8, Less);
-  res[16] = ((tmp44 && tmp45)?data->localData[0]->realVars[153] /* pwLine4.is.im variable */:data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[154] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
+  res[16] = ((tmp44 && tmp45)?data->localData[0]->realVars[152] /* pwLine4.is.im variable */:data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp46, data->localData[0]->timeValue, data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */, 7, GreaterEq);
   RELATIONHYSTERESIS(tmp47, data->localData[0]->timeValue, data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */, 8, Less);
-  res[17] = ((tmp46 && tmp47)?data->localData[0]->realVars[151] /* pwLine4.ir.im variable */:data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
+  res[17] = ((tmp46 && tmp47)?data->localData[0]->realVars[150] /* pwLine4.ir.im variable */:data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
 
   RELATIONHYSTERESIS(tmp48, data->localData[0]->timeValue, data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */, 7, GreaterEq);
   RELATIONHYSTERESIS(tmp49, data->localData[0]->timeValue, data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */, 8, Less);
-  res[18] = ((tmp48 && tmp49)?data->localData[0]->realVars[152] /* pwLine4.ir.re variable */:data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
+  res[18] = ((tmp48 && tmp49)?data->localData[0]->realVars[151] /* pwLine4.ir.re variable */:data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp50, data->localData[0]->timeValue, data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */, 11, GreaterEq);
   RELATIONHYSTERESIS(tmp51, data->localData[0]->timeValue, data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */, 12, Less);
-  res[19] = ((tmp50 && tmp51)?data->localData[0]->realVars[130] /* pwLine1.ir.re variable */:data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
+  res[19] = ((tmp50 && tmp51)?data->localData[0]->realVars[129] /* pwLine1.ir.re variable */:data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
 
   RELATIONHYSTERESIS(tmp52, data->localData[0]->timeValue, data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */, 11, GreaterEq);
   RELATIONHYSTERESIS(tmp53, data->localData[0]->timeValue, data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */, 12, Less);
-  res[20] = ((tmp52 && tmp53)?data->localData[0]->realVars[129] /* pwLine1.ir.im variable */:data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
+  res[20] = ((tmp52 && tmp53)?data->localData[0]->realVars[128] /* pwLine1.ir.im variable */:data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
 
-  res[21] = (data->localData[0]->realVars[26] /* $cse1 variable */) * (data->localData[0]->realVars[95] /* gENCLS.vq variable */) + ((-data->localData[0]->realVars[27] /* $cse2 variable */)) * (data->localData[0]->realVars[94] /* gENCLS.vd variable */) - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */;
+  res[21] = (data->localData[0]->realVars[26] /* $cse1 variable */) * (data->localData[0]->realVars[94] /* gENCLS.vq variable */) + ((-data->localData[0]->realVars[27] /* $cse2 variable */)) * (data->localData[0]->realVars[93] /* gENCLS.vd variable */) - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */;
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS889(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS465(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+22] = {0,4,4,4,4,3,3,3,3,4,4,4,4,4,4,7,7,4,4,8,11,11,8};
@@ -806,172 +806,172 @@ void initializeSparsePatternNLS889(NONLINEAR_SYSTEM_DATA* inSysData)
   inSysData->sparsePattern->colorCols[6] = 10;
   inSysData->sparsePattern->colorCols[10] = 10;
 }
-void initializeStaticDataNLS889(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS465(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
   int i=0;
   /* static nls data for pwLine1.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[132].attribute /* pwLine1.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[132].attribute /* pwLine1.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[132].attribute /* pwLine1.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[131].attribute /* pwLine1.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[131].attribute /* pwLine1.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[131].attribute /* pwLine1.is.re */.max;
   /* static nls data for constantLoad.p.ir */
   sysData->nominal[i] = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.min;
   sysData->max[i++]   = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.max;
   /* static nls data for pwLine1.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.max;
   /* static nls data for constantLoad.p.ii */
   sysData->nominal[i] = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.min;
   sysData->max[i++]   = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.max;
   /* static nls data for pwLine4.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.max;
   /* static nls data for pwLine3.ir.im */
-  sysData->nominal[i] = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.max;
   /* static nls data for pwLine3.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.max;
   /* static nls data for pwLine4.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.max;
   /* static nls data for pwLine3.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.max;
   /* static nls data for pwLine3.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.max;
   /* static nls data for pwLine1.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.max;
   /* static nls data for pwLine1.ir.im */
-  sysData->nominal[i] = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.max;
   /* static nls data for gENCLS.iq */
-  sysData->nominal[i] = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.max;
   /* static nls data for gENCLS.id */
-  sysData->nominal[i] = data->modelData->realVarsData[89].attribute /* gENCLS.id */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[89].attribute /* gENCLS.id */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[89].attribute /* gENCLS.id */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[88].attribute /* gENCLS.id */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[88].attribute /* gENCLS.id */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[88].attribute /* gENCLS.id */.max;
   /* static nls data for pwLine1.vr.im */
-  sysData->nominal[i] = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.max;
   /* static nls data for pwLine1.vr.re */
-  sysData->nominal[i] = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.max;
   /* static nls data for gENROE.id */
-  sysData->nominal[i] = data->modelData->realVarsData[109].attribute /* gENROE.id */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[109].attribute /* gENROE.id */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[109].attribute /* gENROE.id */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[108].attribute /* gENROE.id */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[108].attribute /* gENROE.id */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[108].attribute /* gENROE.id */.max;
   /* static nls data for gENROE.iq */
-  sysData->nominal[i] = data->modelData->realVarsData[110].attribute /* gENROE.iq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[110].attribute /* gENROE.iq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[110].attribute /* gENROE.iq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[109].attribute /* gENROE.iq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[109].attribute /* gENROE.iq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[109].attribute /* gENROE.iq */.max;
   /* static nls data for pwLine3.vr.im */
-  sysData->nominal[i] = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.max;
   /* static nls data for pwLine1.vs.re */
-  sysData->nominal[i] = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.max;
   /* static nls data for pwLine1.vs.im */
-  sysData->nominal[i] = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.max;
   /* static nls data for pwLine3.vr.re */
-  sysData->nominal[i] = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS889(sysData);
+  initializeSparsePatternNLS465(sysData);
 }
 
-void getIterationVarsNLS889(struct DATA *inData, double *array)
+void getIterationVarsNLS465(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
-  array[0] = data->localData[0]->realVars[132] /* pwLine1.is.re variable */;
+  array[0] = data->localData[0]->realVars[131] /* pwLine1.is.re variable */;
   array[1] = data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
-  array[2] = data->localData[0]->realVars[131] /* pwLine1.is.im variable */;
+  array[2] = data->localData[0]->realVars[130] /* pwLine1.is.im variable */;
   array[3] = data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
-  array[4] = data->localData[0]->realVars[153] /* pwLine4.is.im variable */;
-  array[5] = data->localData[0]->realVars[141] /* pwLine3.ir.im variable */;
-  array[6] = data->localData[0]->realVars[142] /* pwLine3.ir.re variable */;
-  array[7] = data->localData[0]->realVars[154] /* pwLine4.is.re variable */;
-  array[8] = data->localData[0]->realVars[143] /* pwLine3.is.im variable */;
-  array[9] = data->localData[0]->realVars[144] /* pwLine3.is.re variable */;
-  array[10] = data->localData[0]->realVars[130] /* pwLine1.ir.re variable */;
-  array[11] = data->localData[0]->realVars[129] /* pwLine1.ir.im variable */;
-  array[12] = data->localData[0]->realVars[90] /* gENCLS.iq variable */;
-  array[13] = data->localData[0]->realVars[89] /* gENCLS.id variable */;
-  array[14] = data->localData[0]->realVars[133] /* pwLine1.vr.im variable */;
-  array[15] = data->localData[0]->realVars[134] /* pwLine1.vr.re variable */;
-  array[16] = data->localData[0]->realVars[109] /* gENROE.id variable */;
-  array[17] = data->localData[0]->realVars[110] /* gENROE.iq variable */;
-  array[18] = data->localData[0]->realVars[145] /* pwLine3.vr.im variable */;
-  array[19] = data->localData[0]->realVars[136] /* pwLine1.vs.re variable */;
-  array[20] = data->localData[0]->realVars[135] /* pwLine1.vs.im variable */;
-  array[21] = data->localData[0]->realVars[146] /* pwLine3.vr.re variable */;
+  array[4] = data->localData[0]->realVars[152] /* pwLine4.is.im variable */;
+  array[5] = data->localData[0]->realVars[140] /* pwLine3.ir.im variable */;
+  array[6] = data->localData[0]->realVars[141] /* pwLine3.ir.re variable */;
+  array[7] = data->localData[0]->realVars[153] /* pwLine4.is.re variable */;
+  array[8] = data->localData[0]->realVars[142] /* pwLine3.is.im variable */;
+  array[9] = data->localData[0]->realVars[143] /* pwLine3.is.re variable */;
+  array[10] = data->localData[0]->realVars[129] /* pwLine1.ir.re variable */;
+  array[11] = data->localData[0]->realVars[128] /* pwLine1.ir.im variable */;
+  array[12] = data->localData[0]->realVars[89] /* gENCLS.iq variable */;
+  array[13] = data->localData[0]->realVars[88] /* gENCLS.id variable */;
+  array[14] = data->localData[0]->realVars[132] /* pwLine1.vr.im variable */;
+  array[15] = data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
+  array[16] = data->localData[0]->realVars[108] /* gENROE.id variable */;
+  array[17] = data->localData[0]->realVars[109] /* gENROE.iq variable */;
+  array[18] = data->localData[0]->realVars[144] /* pwLine3.vr.im variable */;
+  array[19] = data->localData[0]->realVars[135] /* pwLine1.vs.re variable */;
+  array[20] = data->localData[0]->realVars[134] /* pwLine1.vs.im variable */;
+  array[21] = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */;
 }
 
 
 /* inner equations */
 
 /*
-equation index: 654
+equation index: 230
 type: SIMPLE_ASSIGN
 constantLoad.v = sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_654(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_230(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,654};
+  const int equationIndexes[2] = {1,230};
   modelica_real tmp0;
   modelica_real tmp1;
-  tmp0 = data->localData[0]->realVars[136] /* pwLine1.vs.re variable */;
-  tmp1 = data->localData[0]->realVars[135] /* pwLine1.vs.im variable */;
+  tmp0 = data->localData[0]->realVars[135] /* pwLine1.vs.re variable */;
+  tmp1 = data->localData[0]->realVars[134] /* pwLine1.vs.im variable */;
   data->localData[0]->realVars[55] /* constantLoad.v variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
   TRACE_POP
 }
 /*
-equation index: 655
+equation index: 231
 type: SIMPLE_ASSIGN
 constantLoad.kP = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a0 + constantLoad.a1 * cos(constantLoad.v * constantLoad.wp) + constantLoad.b1 * sin(constantLoad.v * constantLoad.wp) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_655(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_231(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,655};
+  const int equationIndexes[2] = {1,231};
   modelica_boolean tmp0;
   tmp0 = Less(data->localData[0]->realVars[55] /* constantLoad.v variable */,data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */);
   data->localData[0]->realVars[52] /* constantLoad.kP variable */ = (tmp0?data->simulationInfo->realParameter[56] /* constantLoad.a0 PARAM */ + (data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (cos((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * (sin((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):1.0);
   TRACE_POP
 }
 /*
-equation index: 656
+equation index: 232
 type: SIMPLE_ASSIGN
 constantLoad.kI = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * constantLoad.v ^ (-1.0 + constantLoad.b2) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_656(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_232(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,656};
+  const int equationIndexes[2] = {1,232};
   modelica_boolean tmp0;
   modelica_real tmp1;
   modelica_real tmp2;
@@ -1102,14 +1102,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_656(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 657
+equation index: 233
 type: SIMPLE_ASSIGN
 constantLoad.Q = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_657(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_233(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,657};
+  const int equationIndexes[2] = {1,233};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -1133,14 +1133,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_657(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 658
+equation index: 234
 type: SIMPLE_ASSIGN
 constantLoad.P = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_658(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_234(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,658};
+  const int equationIndexes[2] = {1,234};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -1164,268 +1164,268 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_658(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 659
+equation index: 235
 type: SIMPLE_ASSIGN
 pwLine.is.re = (cos(gENROE.delta) * gENROE.iq - (-sin(gENROE.delta)) * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_659(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_235(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,659};
-  data->localData[0]->realVars[122] /* pwLine.is.re variable */ = ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) - (((-sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */))) * (data->localData[0]->realVars[109] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  const int equationIndexes[2] = {1,235};
+  data->localData[0]->realVars[121] /* pwLine.is.re variable */ = ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - (((-sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */))) * (data->localData[0]->realVars[108] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 660
+equation index: 236
 type: SIMPLE_ASSIGN
 pwLine.is.im = (sin(gENROE.delta) * gENROE.iq - cos(gENROE.delta) * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_660(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_236(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,660};
-  data->localData[0]->realVars[121] /* pwLine.is.im variable */ = ((sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[109] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  const int equationIndexes[2] = {1,236};
+  data->localData[0]->realVars[120] /* pwLine.is.im variable */ = ((sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[108] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 661
+equation index: 237
 type: SIMPLE_ASSIGN
 gENROE.PSIq = (-gENROE.PSIppq) - gENROE.Xppq * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_661(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_237(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,661};
-  data->localData[0]->realVars[103] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[102] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[275] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */));
+  const int equationIndexes[2] = {1,237};
+  data->localData[0]->realVars[102] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[275] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 662
+equation index: 238
 type: SIMPLE_ASSIGN
 gENROE.ud = (-gENROE.PSIq) - gENROE.R_a * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_662(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_238(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,662};
-  data->localData[0]->realVars[111] /* gENROE.ud variable */ = (-data->localData[0]->realVars[103] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */));
+  const int equationIndexes[2] = {1,238};
+  data->localData[0]->realVars[110] /* gENROE.ud variable */ = (-data->localData[0]->realVars[102] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 663
+equation index: 239
 type: SIMPLE_ASSIGN
 pwLine.vs.re = sin(gENROE.delta) * gENROE.ud + cos(gENROE.delta) * gENROE.uq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_663(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_239(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,663};
-  data->localData[0]->realVars[124] /* pwLine.vs.re variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.ud variable */) + (cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[112] /* gENROE.uq variable */);
+  const int equationIndexes[2] = {1,239};
+  data->localData[0]->realVars[123] /* pwLine.vs.re variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.ud variable */) + (cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.uq variable */);
   TRACE_POP
 }
 /*
-equation index: 664
+equation index: 240
 type: SIMPLE_ASSIGN
 pwLine.vs.im = sin(gENROE.delta) * gENROE.uq - cos(gENROE.delta) * gENROE.ud
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_664(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_240(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,664};
-  data->localData[0]->realVars[123] /* pwLine.vs.im variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[112] /* gENROE.uq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.ud variable */));
+  const int equationIndexes[2] = {1,240};
+  data->localData[0]->realVars[122] /* pwLine.vs.im variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.uq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.ud variable */));
   TRACE_POP
 }
 /*
-equation index: 665
+equation index: 241
 type: SIMPLE_ASSIGN
 gENROE.PSId = gENROE.uq + gENROE.R_a * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_665(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_241(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,665};
-  data->localData[0]->realVars[99] /* gENROE.PSId variable */ = data->localData[0]->realVars[112] /* gENROE.uq variable */ + (data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */);
+  const int equationIndexes[2] = {1,241};
+  data->localData[0]->realVars[98] /* gENROE.PSId variable */ = data->localData[0]->realVars[111] /* gENROE.uq variable */ + (data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */);
   TRACE_POP
 }
 /*
-equation index: 666
+equation index: 242
 type: SIMPLE_ASSIGN
 gENROE.PSIppd = gENROE.PSId + gENROE.Xppd * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_666(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_242(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,666};
-  data->localData[0]->realVars[101] /* gENROE.PSIppd variable */ = data->localData[0]->realVars[99] /* gENROE.PSId variable */ + (data->simulationInfo->realParameter[274] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */);
+  const int equationIndexes[2] = {1,242};
+  data->localData[0]->realVars[100] /* gENROE.PSIppd variable */ = data->localData[0]->realVars[98] /* gENROE.PSId variable */ + (data->simulationInfo->realParameter[274] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */);
   TRACE_POP
 }
 /*
-equation index: 667
+equation index: 243
 type: SIMPLE_ASSIGN
 gENROE.PSIpp = sqrt(gENROE.PSIppd ^ 2.0 + gENROE.PSIppq ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_667(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_243(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,667};
+  const int equationIndexes[2] = {1,243};
   modelica_real tmp0;
   modelica_real tmp1;
-  tmp0 = data->localData[0]->realVars[101] /* gENROE.PSIppd variable */;
-  tmp1 = data->localData[0]->realVars[102] /* gENROE.PSIppq variable */;
-  data->localData[0]->realVars[100] /* gENROE.PSIpp variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
+  tmp0 = data->localData[0]->realVars[100] /* gENROE.PSIppd variable */;
+  tmp1 = data->localData[0]->realVars[101] /* gENROE.PSIppq variable */;
+  data->localData[0]->realVars[99] /* gENROE.PSIpp variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
   TRACE_POP
 }
 /*
-equation index: 668
+equation index: 244
 type: SIMPLE_ASSIGN
 gENROE.PSIkq = ((gENROE.Epd + (gENROE.Xpq - gENROE.Xl) * gENROE.iq) * gENROE.K1q + gENROE.Epd + gENROE.iq * (gENROE.Xpq - gENROE.Xq) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppq * (gENROE.Xq - gENROE.Xl) / (gENROE.Xd - gENROE.Xl) - gENROE.XaqIlq) / gENROE.K1q
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_668(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_244(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,668};
-  data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */)) * (data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */) + data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[110] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[100] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * ((data->localData[0]->realVars[102] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes))) - data->localData[0]->realVars[106] /* gENROE.XaqIlq variable */,data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */,"gENROE.K1q",equationIndexes);
+  const int equationIndexes[2] = {1,244};
+  data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */)) * (data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */) + data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[109] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[99] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * ((data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes))) - data->localData[0]->realVars[105] /* gENROE.XaqIlq variable */,data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */,"gENROE.K1q",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 669
+equation index: 245
 type: SIMPLE_ASSIGN
 gENROE.PSIkd = ((gENROE.Epq + (gENROE.Xl - gENROE.Xpd) * gENROE.id) * gENROE.K1d + gENROE.Epq + gENROE.id * (gENROE.Xd - gENROE.Xpd) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppd - eXAC2.XADIFD) / gENROE.K1d
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_669(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_245(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,669};
-  data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */)) * (data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */) + data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->localData[0]->realVars[109] /* gENROE.id variable */) * (data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[100] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * (data->localData[0]->realVars[101] /* gENROE.PSIppd variable */) - data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */,data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */,"gENROE.K1d",equationIndexes);
+  const int equationIndexes[2] = {1,245};
+  data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */)) * (data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */) + data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->localData[0]->realVars[108] /* gENROE.id variable */) * (data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[99] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * (data->localData[0]->realVars[100] /* gENROE.PSIppd variable */) - data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */,data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */,"gENROE.K1d",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 670
+equation index: 246
 type: SIMPLE_ASSIGN
 gENCLS.p.ir = ((-sin(gENCLS.delta)) * gENCLS.id - cos(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_670(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_246(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,670};
-  data->localData[0]->realVars[93] /* gENCLS.p.ir variable */ = (((-sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[89] /* gENCLS.id variable */) - ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
+  const int equationIndexes[2] = {1,246};
+  data->localData[0]->realVars[92] /* gENCLS.p.ir variable */ = (((-sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[88] /* gENCLS.id variable */) - ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 671
+equation index: 247
 type: SIMPLE_ASSIGN
 gENCLS.p.ii = (cos(gENCLS.delta) * gENCLS.id - sin(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_671(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_247(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,671};
-  data->localData[0]->realVars[92] /* gENCLS.p.ii variable */ = ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[89] /* gENCLS.id variable */) - ((sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
+  const int equationIndexes[2] = {1,247};
+  data->localData[0]->realVars[91] /* gENCLS.p.ii variable */ = ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[88] /* gENCLS.id variable */) - ((sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 672
+equation index: 248
 type: SIMPLE_ASSIGN
 gENCLS.vq = gENCLS.eq + (-gENCLS.R_a) * gENCLS.iq - gENCLS.X_d * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_672(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_248(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,672};
-  data->localData[0]->realVars[95] /* gENCLS.vq variable */ = data->localData[0]->realVars[6] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */));
+  const int equationIndexes[2] = {1,248};
+  data->localData[0]->realVars[94] /* gENCLS.vq variable */ = data->localData[0]->realVars[6] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 673
+equation index: 249
 type: SIMPLE_ASSIGN
 gENCLS.vd = gENCLS.X_d * gENCLS.iq - gENCLS.R_a * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_673(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_249(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,673};
-  data->localData[0]->realVars[94] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */));
+  const int equationIndexes[2] = {1,249};
+  data->localData[0]->realVars[93] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 674
+equation index: 250
 type: SIMPLE_ASSIGN
 pwLine4.ir.im = (-pwLine1.ir.im) - gENCLS.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_674(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_250(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,674};
-  data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[129] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[92] /* gENCLS.p.ii variable */;
+  const int equationIndexes[2] = {1,250};
+  data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[128] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[91] /* gENCLS.p.ii variable */;
   TRACE_POP
 }
 /*
-equation index: 675
+equation index: 251
 type: SIMPLE_ASSIGN
 pwLine4.ir.re = (-pwLine1.ir.re) - gENCLS.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_675(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_251(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,675};
-  data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[130] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[93] /* gENCLS.p.ir variable */;
+  const int equationIndexes[2] = {1,251};
+  data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[129] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[92] /* gENCLS.p.ir variable */;
   TRACE_POP
 }
 /*
-equation index: 676
+equation index: 252
 type: SIMPLE_ASSIGN
 pwFault.p.ir = (-pwLine3.ir.re) - pwLine4.is.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_676(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_252(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,676};
-  data->localData[0]->realVars[114] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[142] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[154] /* pwLine4.is.re variable */;
+  const int equationIndexes[2] = {1,252};
+  data->localData[0]->realVars[113] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[141] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[153] /* pwLine4.is.re variable */;
   TRACE_POP
 }
 /*
-equation index: 677
+equation index: 253
 type: SIMPLE_ASSIGN
 pwFault.p.ii = (-pwLine3.ir.im) - pwLine4.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_677(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_253(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,677};
-  data->localData[0]->realVars[113] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[141] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[153] /* pwLine4.is.im variable */;
+  const int equationIndexes[2] = {1,253};
+  data->localData[0]->realVars[112] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[140] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[152] /* pwLine4.is.im variable */;
   TRACE_POP
 }
 /*
-equation index: 678
+equation index: 254
 type: SIMPLE_ASSIGN
 pwLine.ir.im = (-pwLine1.is.im) - pwLine3.is.im - constantLoad.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_678(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_254(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,678};
-  data->localData[0]->realVars[119] /* pwLine.ir.im variable */ = (-data->localData[0]->realVars[131] /* pwLine1.is.im variable */) - data->localData[0]->realVars[143] /* pwLine3.is.im variable */ - data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
+  const int equationIndexes[2] = {1,254};
+  data->localData[0]->realVars[118] /* pwLine.ir.im variable */ = (-data->localData[0]->realVars[130] /* pwLine1.is.im variable */) - data->localData[0]->realVars[142] /* pwLine3.is.im variable */ - data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
   TRACE_POP
 }
 /*
-equation index: 679
+equation index: 255
 type: SIMPLE_ASSIGN
 pwLine1.is.re = (-pwLine.ir.re) - pwLine3.is.re - constantLoad.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_679(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_255(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,679};
-  data->localData[0]->realVars[132] /* pwLine1.is.re variable */ = (-data->localData[0]->realVars[120] /* pwLine.ir.re variable */) - data->localData[0]->realVars[144] /* pwLine3.is.re variable */ - data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
+  const int equationIndexes[2] = {1,255};
+  data->localData[0]->realVars[131] /* pwLine1.is.re variable */ = (-data->localData[0]->realVars[119] /* pwLine.ir.re variable */) - data->localData[0]->realVars[143] /* pwLine3.is.re variable */ - data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
   TRACE_POP
 }
 
-void residualFunc706(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc282(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,706};
+  const int equationIndexes[2] = {1,282};
   int i;
   modelica_boolean tmp0;
   modelica_boolean tmp1;
@@ -1490,125 +1490,125 @@ void residualFunc706(void** dataIn, const double* xloc, double* res, const int* 
       return;
     }
   }
-  data->localData[0]->realVars[120] /* pwLine.ir.re variable */ = xloc[0];
+  data->localData[0]->realVars[119] /* pwLine.ir.re variable */ = xloc[0];
   data->localData[0]->realVars[54] /* constantLoad.p.ir variable */ = xloc[1];
-  data->localData[0]->realVars[131] /* pwLine1.is.im variable */ = xloc[2];
+  data->localData[0]->realVars[130] /* pwLine1.is.im variable */ = xloc[2];
   data->localData[0]->realVars[53] /* constantLoad.p.ii variable */ = xloc[3];
-  data->localData[0]->realVars[144] /* pwLine3.is.re variable */ = xloc[4];
-  data->localData[0]->realVars[143] /* pwLine3.is.im variable */ = xloc[5];
-  data->localData[0]->realVars[153] /* pwLine4.is.im variable */ = xloc[6];
-  data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ = xloc[7];
-  data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ = xloc[8];
-  data->localData[0]->realVars[154] /* pwLine4.is.re variable */ = xloc[9];
-  data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ = xloc[10];
-  data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ = xloc[11];
-  data->localData[0]->realVars[90] /* gENCLS.iq variable */ = xloc[12];
-  data->localData[0]->realVars[89] /* gENCLS.id variable */ = xloc[13];
+  data->localData[0]->realVars[143] /* pwLine3.is.re variable */ = xloc[4];
+  data->localData[0]->realVars[142] /* pwLine3.is.im variable */ = xloc[5];
+  data->localData[0]->realVars[152] /* pwLine4.is.im variable */ = xloc[6];
+  data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ = xloc[7];
+  data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ = xloc[8];
+  data->localData[0]->realVars[153] /* pwLine4.is.re variable */ = xloc[9];
+  data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ = xloc[10];
+  data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ = xloc[11];
+  data->localData[0]->realVars[89] /* gENCLS.iq variable */ = xloc[12];
+  data->localData[0]->realVars[88] /* gENCLS.id variable */ = xloc[13];
   data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ = xloc[14];
   data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ = xloc[15];
-  data->localData[0]->realVars[112] /* gENROE.uq variable */ = xloc[16];
-  data->localData[0]->realVars[102] /* gENROE.PSIppq variable */ = xloc[17];
-  data->localData[0]->realVars[110] /* gENROE.iq variable */ = xloc[18];
-  data->localData[0]->realVars[109] /* gENROE.id variable */ = xloc[19];
-  data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ = xloc[20];
-  data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ = xloc[21];
-  data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ = xloc[22];
-  data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ = xloc[23];
-  data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ = xloc[24];
-  data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ = xloc[25];
+  data->localData[0]->realVars[111] /* gENROE.uq variable */ = xloc[16];
+  data->localData[0]->realVars[101] /* gENROE.PSIppq variable */ = xloc[17];
+  data->localData[0]->realVars[109] /* gENROE.iq variable */ = xloc[18];
+  data->localData[0]->realVars[108] /* gENROE.id variable */ = xloc[19];
+  data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ = xloc[20];
+  data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ = xloc[21];
+  data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ = xloc[22];
+  data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ = xloc[23];
+  data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ = xloc[24];
+  data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ = xloc[25];
   /* backup outputs */
   /* pre body */
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_654(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_230(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_655(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_231(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_656(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_232(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_657(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_233(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_658(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_234(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_659(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_235(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_660(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_236(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_661(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_237(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_662(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_238(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_663(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_239(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_664(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_240(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_665(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_241(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_666(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_242(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_667(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_243(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_668(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_244(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_669(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_245(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_670(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_246(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_671(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_247(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_672(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_248(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_673(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_249(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_674(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_250(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_675(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_251(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_676(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_252(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_677(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_253(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_678(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_254(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_679(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_255(data, threadData);
   /* body */
   tmp0 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[307] /* pwFault.t1 PARAM */);
   tmp9 = (modelica_boolean)tmp0;
   if(tmp9)
   {
-    tmp10 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */;
+    tmp10 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */;
   }
   else
   {
     tmp1 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[308] /* pwFault.t2 PARAM */);
-    tmp7 = (modelica_boolean)(tmp1 && data->simulationInfo->booleanParameter[70] /* pwFault.ground PARAM */);
+    tmp7 = (modelica_boolean)(tmp1 && data->simulationInfo->booleanParameter[68] /* pwFault.ground PARAM */);
     if(tmp7)
     {
-      tmp8 = data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - 1e-10;
+      tmp8 = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - 1e-10;
     }
     else
     {
@@ -1618,11 +1618,11 @@ void residualFunc706(void** dataIn, const double* xloc, double* res, const int* 
       {
         tmp3 = data->simulationInfo->realParameter[306] /* pwFault.X PARAM */;
         tmp4 = data->simulationInfo->realParameter[305] /* pwFault.R PARAM */;
-        tmp6 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) - ((data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)),(tmp3 * tmp3) + (tmp4 * tmp4),"pwFault.X ^ 2.0 + pwFault.R ^ 2.0",equationIndexes));
+        tmp6 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) - ((data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)),(tmp3 * tmp3) + (tmp4 * tmp4),"pwFault.X ^ 2.0 + pwFault.R ^ 2.0",equationIndexes));
       }
       else
       {
-        tmp6 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */;
+        tmp6 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */;
       }
       tmp8 = tmp6;
     }
@@ -1634,15 +1634,15 @@ void residualFunc706(void** dataIn, const double* xloc, double* res, const int* 
   tmp20 = (modelica_boolean)tmp11;
   if(tmp20)
   {
-    tmp21 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */;
+    tmp21 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */;
   }
   else
   {
     tmp12 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[308] /* pwFault.t2 PARAM */);
-    tmp18 = (modelica_boolean)(tmp12 && data->simulationInfo->booleanParameter[70] /* pwFault.ground PARAM */);
+    tmp18 = (modelica_boolean)(tmp12 && data->simulationInfo->booleanParameter[68] /* pwFault.ground PARAM */);
     if(tmp18)
     {
-      tmp19 = data->localData[0]->realVars[145] /* pwLine3.vr.im variable */;
+      tmp19 = data->localData[0]->realVars[144] /* pwLine3.vr.im variable */;
     }
     else
     {
@@ -1652,11 +1652,11 @@ void residualFunc706(void** dataIn, const double* xloc, double* res, const int* 
       {
         tmp14 = data->simulationInfo->realParameter[305] /* pwFault.R PARAM */;
         tmp15 = data->simulationInfo->realParameter[306] /* pwFault.X PARAM */;
-        tmp17 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) + (data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */),(tmp14 * tmp14) + (tmp15 * tmp15),"pwFault.R ^ 2.0 + pwFault.X ^ 2.0",equationIndexes));
+        tmp17 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) + (data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */),(tmp14 * tmp14) + (tmp15 * tmp15),"pwFault.R ^ 2.0 + pwFault.X ^ 2.0",equationIndexes));
       }
       else
       {
-        tmp17 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */;
+        tmp17 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */;
       }
       tmp19 = tmp17;
     }
@@ -1666,87 +1666,87 @@ void residualFunc706(void** dataIn, const double* xloc, double* res, const int* 
 
   tmp22 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp23 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[2] = ((tmp22 && tmp23)?data->localData[0]->realVars[154] /* pwLine4.is.re variable */:data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[154] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
+  res[2] = ((tmp22 && tmp23)?data->localData[0]->realVars[153] /* pwLine4.is.re variable */:data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
 
-  res[3] = (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[95] /* gENCLS.vq variable */) + ((-cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[94] /* gENCLS.vd variable */) - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */;
+  res[3] = (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENCLS.vq variable */) + ((-cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[93] /* gENCLS.vd variable */) - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */;
 
   tmp24 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp25 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[4] = ((tmp24 && tmp25)?data->localData[0]->realVars[153] /* pwLine4.is.im variable */:data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[154] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
+  res[4] = ((tmp24 && tmp25)?data->localData[0]->realVars[152] /* pwLine4.is.im variable */:data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
 
   tmp26 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp27 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[5] = ((tmp26 && tmp27)?data->localData[0]->realVars[152] /* pwLine4.ir.re variable */:data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
+  res[5] = ((tmp26 && tmp27)?data->localData[0]->realVars[151] /* pwLine4.ir.re variable */:data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
 
   tmp28 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp29 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[6] = ((tmp28 && tmp29)?data->localData[0]->realVars[151] /* pwLine4.ir.im variable */:data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
+  res[6] = ((tmp28 && tmp29)?data->localData[0]->realVars[150] /* pwLine4.ir.im variable */:data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
 
   tmp30 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp31 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[7] = ((tmp30 && tmp31)?data->localData[0]->realVars[144] /* pwLine3.is.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
+  res[7] = ((tmp30 && tmp31)?data->localData[0]->realVars[143] /* pwLine3.is.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
 
   tmp32 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp33 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[8] = ((tmp32 && tmp33)?data->localData[0]->realVars[143] /* pwLine3.is.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
+  res[8] = ((tmp32 && tmp33)?data->localData[0]->realVars[142] /* pwLine3.is.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
 
   tmp34 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp35 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[9] = ((tmp34 && tmp35)?data->localData[0]->realVars[141] /* pwLine3.ir.im variable */:data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
+  res[9] = ((tmp34 && tmp35)?data->localData[0]->realVars[140] /* pwLine3.ir.im variable */:data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
 
   tmp36 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp37 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[10] = ((tmp36 && tmp37)?data->localData[0]->realVars[142] /* pwLine3.ir.re variable */:data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
+  res[10] = ((tmp36 && tmp37)?data->localData[0]->realVars[141] /* pwLine3.ir.re variable */:data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
 
-  res[11] = (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - data->localData[0]->realVars[49] /* constantLoad.Q variable */;
+  res[11] = (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - data->localData[0]->realVars[49] /* constantLoad.Q variable */;
 
-  res[12] = (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - data->localData[0]->realVars[48] /* constantLoad.P variable */;
+  res[12] = (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - data->localData[0]->realVars[48] /* constantLoad.P variable */;
 
   tmp38 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp39 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[13] = ((tmp38 && tmp39)?data->localData[0]->realVars[131] /* pwLine1.is.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[132] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
+  res[13] = ((tmp38 && tmp39)?data->localData[0]->realVars[130] /* pwLine1.is.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
 
   tmp40 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp41 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[14] = ((tmp40 && tmp41)?data->localData[0]->realVars[132] /* pwLine1.is.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[132] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
+  res[14] = ((tmp40 && tmp41)?data->localData[0]->realVars[131] /* pwLine1.is.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
 
-  res[15] = (cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[95] /* gENCLS.vq variable */) + (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENCLS.vd variable */) - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */;
+  res[15] = (cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENCLS.vq variable */) + (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[93] /* gENCLS.vd variable */) - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
 
   tmp42 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp43 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[16] = ((tmp42 && tmp43)?data->localData[0]->realVars[130] /* pwLine1.ir.re variable */:data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
+  res[16] = ((tmp42 && tmp43)?data->localData[0]->realVars[129] /* pwLine1.ir.re variable */:data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
 
   tmp44 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp45 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[17] = ((tmp44 && tmp45)?data->localData[0]->realVars[129] /* pwLine1.ir.im variable */:data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
+  res[17] = ((tmp44 && tmp45)?data->localData[0]->realVars[128] /* pwLine1.ir.im variable */:data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
 
-  res[18] = (data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[240] /* gENROE.K4d PARAM */) + (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */) * (data->simulationInfo->realParameter[238] /* gENROE.K3d PARAM */) - data->localData[0]->realVars[101] /* gENROE.PSIppd variable */;
+  res[18] = (data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[240] /* gENROE.K4d PARAM */) + (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */) * (data->simulationInfo->realParameter[238] /* gENROE.K3d PARAM */) - data->localData[0]->realVars[100] /* gENROE.PSIppd variable */;
 
-  res[19] = data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */) + (-data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) - ((data->localData[0]->realVars[22] /* der(gENROE.PSIkd) STATE_DER */) * (data->simulationInfo->realParameter[264] /* gENROE.Tppd0 PARAM */));
+  res[19] = data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */) + (-data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) - ((data->localData[0]->realVars[22] /* der(gENROE.PSIkd) STATE_DER */) * (data->simulationInfo->realParameter[264] /* gENROE.Tppd0 PARAM */));
 
   tmp46 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp47 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[20] = ((tmp46 && tmp47)?data->localData[0]->realVars[122] /* pwLine.is.re variable */:data->localData[0]->realVars[124] /* pwLine.vs.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[122] /* pwLine.is.re variable */ + (data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[124] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[124] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
+  res[20] = ((tmp46 && tmp47)?data->localData[0]->realVars[121] /* pwLine.is.re variable */:data->localData[0]->realVars[123] /* pwLine.vs.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */ + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[123] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
 
   tmp48 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp49 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[21] = ((tmp48 && tmp49)?data->localData[0]->realVars[121] /* pwLine.is.im variable */:data->localData[0]->realVars[123] /* pwLine.vs.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[124] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[122] /* pwLine.is.re variable */ + (data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[124] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
+  res[21] = ((tmp48 && tmp49)?data->localData[0]->realVars[120] /* pwLine.is.im variable */:data->localData[0]->realVars[122] /* pwLine.vs.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[123] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */ + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
 
   tmp50 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp51 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[22] = ((tmp50 && tmp51)?data->localData[0]->realVars[120] /* pwLine.ir.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[124] /* pwLine.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[120] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
+  res[22] = ((tmp50 && tmp51)?data->localData[0]->realVars[119] /* pwLine.ir.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[123] /* pwLine.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
 
   tmp52 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp53 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[23] = ((tmp52 && tmp53)?data->localData[0]->realVars[119] /* pwLine.ir.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[123] /* pwLine.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[120] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
+  res[23] = ((tmp52 && tmp53)?data->localData[0]->realVars[118] /* pwLine.ir.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[122] /* pwLine.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
 
-  res[24] = data->localData[0]->realVars[102] /* gENROE.PSIppq variable */ - ((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */) * (data->simulationInfo->realParameter[239] /* gENROE.K3q PARAM */)) - ((data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) * (data->simulationInfo->realParameter[241] /* gENROE.K4q PARAM */));
+  res[24] = data->localData[0]->realVars[101] /* gENROE.PSIppq variable */ - ((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */) * (data->simulationInfo->realParameter[239] /* gENROE.K3q PARAM */)) - ((data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) * (data->simulationInfo->realParameter[241] /* gENROE.K4q PARAM */));
 
-  res[25] = data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) + (-data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) - ((data->localData[0]->realVars[23] /* der(gENROE.PSIkq) STATE_DER */) * (data->simulationInfo->realParameter[265] /* gENROE.Tppq0 PARAM */));
+  res[25] = data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) + (-data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) - ((data->localData[0]->realVars[23] /* der(gENROE.PSIkq) STATE_DER */) * (data->simulationInfo->realParameter[265] /* gENROE.Tppq0 PARAM */));
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS706(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS282(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+26] = {0,4,4,4,4,4,4,3,3,3,3,4,4,4,4,2,2,8,8,8,8,7,7,11,11,8,8};
@@ -1797,67 +1797,67 @@ void initializeSparsePatternNLS706(NONLINEAR_SYSTEM_DATA* inSysData)
   inSysData->sparsePattern->colorCols[14] = 10;
   inSysData->sparsePattern->colorCols[15] = 10;
 }
-void initializeStaticDataNLS706(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS282(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
   int i=0;
   /* static nls data for pwLine.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[120].attribute /* pwLine.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[120].attribute /* pwLine.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[120].attribute /* pwLine.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[119].attribute /* pwLine.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[119].attribute /* pwLine.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[119].attribute /* pwLine.ir.re */.max;
   /* static nls data for constantLoad.p.ir */
   sysData->nominal[i] = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.min;
   sysData->max[i++]   = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.max;
   /* static nls data for pwLine1.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.max;
   /* static nls data for constantLoad.p.ii */
   sysData->nominal[i] = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.min;
   sysData->max[i++]   = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.max;
   /* static nls data for pwLine3.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.max;
   /* static nls data for pwLine3.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.max;
   /* static nls data for pwLine4.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.max;
   /* static nls data for pwLine3.ir.im */
-  sysData->nominal[i] = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.max;
   /* static nls data for pwLine3.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.max;
   /* static nls data for pwLine4.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.max;
   /* static nls data for pwLine1.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.max;
   /* static nls data for pwLine1.ir.im */
-  sysData->nominal[i] = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.max;
   /* static nls data for gENCLS.iq */
-  sysData->nominal[i] = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.max;
   /* static nls data for gENCLS.id */
-  sysData->nominal[i] = data->modelData->realVarsData[89].attribute /* gENCLS.id */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[89].attribute /* gENCLS.id */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[89].attribute /* gENCLS.id */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[88].attribute /* gENCLS.id */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[88].attribute /* gENCLS.id */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[88].attribute /* gENCLS.id */.max;
   /* static nls data for gENROE.Epq */
   sysData->nominal[i] = data->modelData->realVarsData[8].attribute /* gENROE.Epq */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[8].attribute /* gENROE.Epq */.min;
@@ -1867,202 +1867,202 @@ void initializeStaticDataNLS706(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[7].attribute /* gENROE.Epd */.min;
   sysData->max[i++]   = data->modelData->realVarsData[7].attribute /* gENROE.Epd */.max;
   /* static nls data for gENROE.uq */
-  sysData->nominal[i] = data->modelData->realVarsData[112].attribute /* gENROE.uq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[112].attribute /* gENROE.uq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[112].attribute /* gENROE.uq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[111].attribute /* gENROE.uq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[111].attribute /* gENROE.uq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[111].attribute /* gENROE.uq */.max;
   /* static nls data for gENROE.PSIppq */
-  sysData->nominal[i] = data->modelData->realVarsData[102].attribute /* gENROE.PSIppq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[102].attribute /* gENROE.PSIppq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[102].attribute /* gENROE.PSIppq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[101].attribute /* gENROE.PSIppq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[101].attribute /* gENROE.PSIppq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[101].attribute /* gENROE.PSIppq */.max;
   /* static nls data for gENROE.iq */
-  sysData->nominal[i] = data->modelData->realVarsData[110].attribute /* gENROE.iq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[110].attribute /* gENROE.iq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[110].attribute /* gENROE.iq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[109].attribute /* gENROE.iq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[109].attribute /* gENROE.iq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[109].attribute /* gENROE.iq */.max;
   /* static nls data for gENROE.id */
-  sysData->nominal[i] = data->modelData->realVarsData[109].attribute /* gENROE.id */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[109].attribute /* gENROE.id */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[109].attribute /* gENROE.id */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[108].attribute /* gENROE.id */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[108].attribute /* gENROE.id */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[108].attribute /* gENROE.id */.max;
   /* static nls data for pwLine1.vr.re */
-  sysData->nominal[i] = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.max;
   /* static nls data for pwLine1.vr.im */
-  sysData->nominal[i] = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.max;
   /* static nls data for pwLine1.vs.im */
-  sysData->nominal[i] = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.max;
   /* static nls data for pwLine1.vs.re */
-  sysData->nominal[i] = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.max;
   /* static nls data for pwLine3.vr.im */
-  sysData->nominal[i] = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.max;
   /* static nls data for pwLine3.vr.re */
-  sysData->nominal[i] = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS706(sysData);
+  initializeSparsePatternNLS282(sysData);
 }
 
-void getIterationVarsNLS706(struct DATA *inData, double *array)
+void getIterationVarsNLS282(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
-  array[0] = data->localData[0]->realVars[120] /* pwLine.ir.re variable */;
+  array[0] = data->localData[0]->realVars[119] /* pwLine.ir.re variable */;
   array[1] = data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
-  array[2] = data->localData[0]->realVars[131] /* pwLine1.is.im variable */;
+  array[2] = data->localData[0]->realVars[130] /* pwLine1.is.im variable */;
   array[3] = data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
-  array[4] = data->localData[0]->realVars[144] /* pwLine3.is.re variable */;
-  array[5] = data->localData[0]->realVars[143] /* pwLine3.is.im variable */;
-  array[6] = data->localData[0]->realVars[153] /* pwLine4.is.im variable */;
-  array[7] = data->localData[0]->realVars[141] /* pwLine3.ir.im variable */;
-  array[8] = data->localData[0]->realVars[142] /* pwLine3.ir.re variable */;
-  array[9] = data->localData[0]->realVars[154] /* pwLine4.is.re variable */;
-  array[10] = data->localData[0]->realVars[130] /* pwLine1.ir.re variable */;
-  array[11] = data->localData[0]->realVars[129] /* pwLine1.ir.im variable */;
-  array[12] = data->localData[0]->realVars[90] /* gENCLS.iq variable */;
-  array[13] = data->localData[0]->realVars[89] /* gENCLS.id variable */;
+  array[4] = data->localData[0]->realVars[143] /* pwLine3.is.re variable */;
+  array[5] = data->localData[0]->realVars[142] /* pwLine3.is.im variable */;
+  array[6] = data->localData[0]->realVars[152] /* pwLine4.is.im variable */;
+  array[7] = data->localData[0]->realVars[140] /* pwLine3.ir.im variable */;
+  array[8] = data->localData[0]->realVars[141] /* pwLine3.ir.re variable */;
+  array[9] = data->localData[0]->realVars[153] /* pwLine4.is.re variable */;
+  array[10] = data->localData[0]->realVars[129] /* pwLine1.ir.re variable */;
+  array[11] = data->localData[0]->realVars[128] /* pwLine1.ir.im variable */;
+  array[12] = data->localData[0]->realVars[89] /* gENCLS.iq variable */;
+  array[13] = data->localData[0]->realVars[88] /* gENCLS.id variable */;
   array[14] = data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */;
   array[15] = data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */;
-  array[16] = data->localData[0]->realVars[112] /* gENROE.uq variable */;
-  array[17] = data->localData[0]->realVars[102] /* gENROE.PSIppq variable */;
-  array[18] = data->localData[0]->realVars[110] /* gENROE.iq variable */;
-  array[19] = data->localData[0]->realVars[109] /* gENROE.id variable */;
-  array[20] = data->localData[0]->realVars[134] /* pwLine1.vr.re variable */;
-  array[21] = data->localData[0]->realVars[133] /* pwLine1.vr.im variable */;
-  array[22] = data->localData[0]->realVars[135] /* pwLine1.vs.im variable */;
-  array[23] = data->localData[0]->realVars[136] /* pwLine1.vs.re variable */;
-  array[24] = data->localData[0]->realVars[145] /* pwLine3.vr.im variable */;
-  array[25] = data->localData[0]->realVars[146] /* pwLine3.vr.re variable */;
+  array[16] = data->localData[0]->realVars[111] /* gENROE.uq variable */;
+  array[17] = data->localData[0]->realVars[101] /* gENROE.PSIppq variable */;
+  array[18] = data->localData[0]->realVars[109] /* gENROE.iq variable */;
+  array[19] = data->localData[0]->realVars[108] /* gENROE.id variable */;
+  array[20] = data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
+  array[21] = data->localData[0]->realVars[132] /* pwLine1.vr.im variable */;
+  array[22] = data->localData[0]->realVars[134] /* pwLine1.vs.im variable */;
+  array[23] = data->localData[0]->realVars[135] /* pwLine1.vs.re variable */;
+  array[24] = data->localData[0]->realVars[144] /* pwLine3.vr.im variable */;
+  array[25] = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */;
 }
 
 
 /* inner equations */
 
 /*
-equation index: 617
+equation index: 193
 type: SIMPLE_ASSIGN
 eXAC2.rectifierCommutationVoltageDrop.division.u1 = eXAC2.rectifierCommutationVoltageDrop.gain2.k * eXAC2.XADIFD
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_617(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_193(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,617};
+  const int equationIndexes[2] = {1,193};
   data->localData[0]->realVars[77] /* eXAC2.rectifierCommutationVoltageDrop.division.u1 variable */ = (data->simulationInfo->realParameter[173] /* eXAC2.rectifierCommutationVoltageDrop.gain2.k PARAM */) * (data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */);
   TRACE_POP
 }
 /*
-equation index: 618
+equation index: 194
 type: SIMPLE_ASSIGN
 eXAC2.EFD = eXAC2.XADIFD + $DER.gENROE.Epq * gENROE.Tpd0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_618(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_194(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,618};
+  const int equationIndexes[2] = {1,194};
   data->localData[0]->realVars[62] /* eXAC2.EFD variable */ = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */ + (data->localData[0]->realVars[21] /* der(gENROE.Epq) STATE_DER */) * (data->simulationInfo->realParameter[263] /* gENROE.Tpd0 PARAM */);
   TRACE_POP
 }
 /*
-equation index: 619
+equation index: 195
 type: SIMPLE_ASSIGN
 eXAC2.Ifd0 = eXAC2.XADIFD
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_619(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_195(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,619};
+  const int equationIndexes[2] = {1,195};
   data->simulationInfo->realParameter[87] /* eXAC2.Ifd0 PARAM */ = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */;
   TRACE_POP
 }
 /*
-equation index: 620
+equation index: 196
 type: SIMPLE_ASSIGN
 eXAC2.VE0 = OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX(eXAC2.K_C, eXAC2.Efd0, eXAC2.Ifd0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_620(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_196(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,620};
+  const int equationIndexes[2] = {1,196};
   data->simulationInfo->realParameter[110] /* eXAC2.VE0 PARAM */ = omc_OpenIPSL_Electrical_Controls_PSSE_ES_BaseClasses_invFEX(threadData, data->simulationInfo->realParameter[90] /* eXAC2.K_C PARAM */, data->simulationInfo->realParameter[86] /* eXAC2.Efd0 PARAM */, data->simulationInfo->realParameter[87] /* eXAC2.Ifd0 PARAM */);
   TRACE_POP
 }
 /*
-equation index: 621
+equation index: 197
 type: SIMPLE_ASSIGN
 eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 = eXAC2.VE0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_621(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_197(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,621};
+  const int equationIndexes[2] = {1,197};
   data->simulationInfo->realParameter[176] /* eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 PARAM */ = data->simulationInfo->realParameter[110] /* eXAC2.VE0 PARAM */;
   TRACE_POP
 }
 /*
-equation index: 622
+equation index: 198
 type: SIMPLE_ASSIGN
 eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start = eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_622(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_198(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,622};
+  const int equationIndexes[2] = {1,198};
   data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */ = data->simulationInfo->realParameter[176] /* eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 PARAM */;
   TRACE_POP
 }
 /*
-equation index: 623
+equation index: 199
 type: SIMPLE_ASSIGN
 $START.eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y = eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_623(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_199(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,623};
+  const int equationIndexes[2] = {1,199};
   data->modelData->realVarsData[4].attribute /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */.start = data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */;
     data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */ = data->modelData->realVarsData[4].attribute /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */.start;
     infoStreamPrint(LOG_INIT_V, 0, "updated start value: %s(start=%g)", data->modelData->realVarsData[4].info /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y */.name, (modelica_real) data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 624
+equation index: 200
 type: SIMPLE_ASSIGN
 eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y = eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_624(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_200(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,624};
+  const int equationIndexes[2] = {1,200};
   data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */ = data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */;
   TRACE_POP
 }
 /*
-equation index: 625
+equation index: 201
 type: SIMPLE_ASSIGN
 eXAC2.rectifierCommutationVoltageDrop.division.y = eXAC2.rectifierCommutationVoltageDrop.division.u1 / eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_625(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_201(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,625};
+  const int equationIndexes[2] = {1,201};
   data->localData[0]->realVars[78] /* eXAC2.rectifierCommutationVoltageDrop.division.y variable */ = DIVISION_SIM(data->localData[0]->realVars[77] /* eXAC2.rectifierCommutationVoltageDrop.division.u1 variable */,data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */,"eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 626
+equation index: 202
 type: SIMPLE_ASSIGN
 eXAC2.rectifierCommutationVoltageDrop.fEX.y = if eXAC2.rectifierCommutationVoltageDrop.division.y <= 0.0 then 1.0 else if eXAC2.rectifierCommutationVoltageDrop.division.y > 0.0 and eXAC2.rectifierCommutationVoltageDrop.division.y <= 0.433 then 1.0 + (-0.577) * eXAC2.rectifierCommutationVoltageDrop.division.y else if eXAC2.rectifierCommutationVoltageDrop.division.y > 0.433 and eXAC2.rectifierCommutationVoltageDrop.division.y < 0.75 then sqrt(0.75 - eXAC2.rectifierCommutationVoltageDrop.division.y ^ 2.0) else if eXAC2.rectifierCommutationVoltageDrop.division.y >= 0.75 and eXAC2.rectifierCommutationVoltageDrop.division.y <= 1.0 then 1.732 * (1.0 - eXAC2.rectifierCommutationVoltageDrop.division.y) else 0.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_626(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_202(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,626};
+  const int equationIndexes[2] = {1,202};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_boolean tmp2;
@@ -2124,12 +2124,12 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_626(DATA *data, threadD
   TRACE_POP
 }
 
-void residualFunc628(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc204(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,628};
+  const int equationIndexes[2] = {1,204};
   int i;
   /* iteration variables */
   for (i=0; i<1; i++) {
@@ -2144,40 +2144,40 @@ void residualFunc628(void** dataIn, const double* xloc, double* res, const int* 
   /* backup outputs */
   /* pre body */
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_617(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_193(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_618(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_194(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_619(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_195(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_620(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_196(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_621(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_197(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_622(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_198(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_623(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_199(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_624(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_200(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_625(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_201(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_626(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_202(data, threadData);
   /* body */
   res[0] = (data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */) * (data->localData[0]->realVars[79] /* eXAC2.rectifierCommutationVoltageDrop.fEX.y variable */) - data->localData[0]->realVars[62] /* eXAC2.EFD variable */;
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS628(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS204(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+1] = {0,1};
@@ -2203,7 +2203,7 @@ void initializeSparsePatternNLS628(NONLINEAR_SYSTEM_DATA* inSysData)
   /* write color array */
   inSysData->sparsePattern->colorCols[0] = 1;
 }
-void initializeStaticDataNLS628(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS204(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
@@ -2213,10 +2213,10 @@ void initializeStaticDataNLS628(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[64].attribute /* eXAC2.XADIFD */.min;
   sysData->max[i++]   = data->modelData->realVarsData[64].attribute /* eXAC2.XADIFD */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS628(sysData);
+  initializeSparsePatternNLS204(sysData);
 }
 
-void getIterationVarsNLS628(struct DATA *inData, double *array)
+void getIterationVarsNLS204(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
   array[0] = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */;
@@ -2226,44 +2226,44 @@ void getIterationVarsNLS628(struct DATA *inData, double *array)
 /* inner equations */
 
 /*
-equation index: 53
+equation index: 51
 type: SIMPLE_ASSIGN
 constantLoad.v = sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_53(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_51(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,53};
+  const int equationIndexes[2] = {1,51};
   modelica_real tmp0;
   modelica_real tmp1;
-  tmp0 = data->localData[0]->realVars[136] /* pwLine1.vs.re variable */;
-  tmp1 = data->localData[0]->realVars[135] /* pwLine1.vs.im variable */;
+  tmp0 = data->localData[0]->realVars[135] /* pwLine1.vs.re variable */;
+  tmp1 = data->localData[0]->realVars[134] /* pwLine1.vs.im variable */;
   data->localData[0]->realVars[55] /* constantLoad.v variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
   TRACE_POP
 }
 /*
-equation index: 54
+equation index: 52
 type: SIMPLE_ASSIGN
 constantLoad.kP = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a0 + constantLoad.a1 * cos(constantLoad.v * constantLoad.wp) + constantLoad.b1 * sin(constantLoad.v * constantLoad.wp) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_54(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_52(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,54};
+  const int equationIndexes[2] = {1,52};
   modelica_boolean tmp0;
   tmp0 = Less(data->localData[0]->realVars[55] /* constantLoad.v variable */,data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */);
   data->localData[0]->realVars[52] /* constantLoad.kP variable */ = (tmp0?data->simulationInfo->realParameter[56] /* constantLoad.a0 PARAM */ + (data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (cos((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * (sin((data->localData[0]->realVars[55] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):1.0);
   TRACE_POP
 }
 /*
-equation index: 55
+equation index: 53
 type: SIMPLE_ASSIGN
 constantLoad.kI = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * constantLoad.v ^ (-1.0 + constantLoad.b2) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_55(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_53(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,55};
+  const int equationIndexes[2] = {1,53};
   modelica_boolean tmp0;
   modelica_real tmp1;
   modelica_real tmp2;
@@ -2394,14 +2394,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_55(DATA *data, threadDa
   TRACE_POP
 }
 /*
-equation index: 56
+equation index: 54
 type: SIMPLE_ASSIGN
 constantLoad.Q = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_56(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_54(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,56};
+  const int equationIndexes[2] = {1,54};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -2425,14 +2425,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_56(DATA *data, threadDa
   TRACE_POP
 }
 /*
-equation index: 57
+equation index: 55
 type: SIMPLE_ASSIGN
 constantLoad.P = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_57(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_55(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,57};
+  const int equationIndexes[2] = {1,55};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -2456,268 +2456,268 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_57(DATA *data, threadDa
   TRACE_POP
 }
 /*
-equation index: 58
+equation index: 56
 type: SIMPLE_ASSIGN
 pwLine.is.re = (cos(gENROE.delta) * gENROE.iq - (-sin(gENROE.delta)) * gENROE.id) * gENROE.CoB
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_56(DATA *data, threadData_t *threadData)
+{
+  TRACE_PUSH
+  const int equationIndexes[2] = {1,56};
+  data->localData[0]->realVars[121] /* pwLine.is.re variable */ = ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - (((-sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */))) * (data->localData[0]->realVars[108] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  TRACE_POP
+}
+/*
+equation index: 57
+type: SIMPLE_ASSIGN
+pwLine.is.im = (sin(gENROE.delta) * gENROE.iq - cos(gENROE.delta) * gENROE.id) * gENROE.CoB
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_57(DATA *data, threadData_t *threadData)
+{
+  TRACE_PUSH
+  const int equationIndexes[2] = {1,57};
+  data->localData[0]->realVars[120] /* pwLine.is.im variable */ = ((sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[108] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  TRACE_POP
+}
+/*
+equation index: 58
+type: SIMPLE_ASSIGN
+gENROE.PSIq = (-gENROE.PSIppq) - gENROE.Xppq * gENROE.iq
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_58(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,58};
-  data->localData[0]->realVars[122] /* pwLine.is.re variable */ = ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) - (((-sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */))) * (data->localData[0]->realVars[109] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  data->localData[0]->realVars[102] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[275] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
 equation index: 59
 type: SIMPLE_ASSIGN
-pwLine.is.im = (sin(gENROE.delta) * gENROE.iq - cos(gENROE.delta) * gENROE.id) * gENROE.CoB
+gENROE.ud = (-gENROE.PSIq) - gENROE.R_a * gENROE.id
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_59(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,59};
-  data->localData[0]->realVars[121] /* pwLine.is.im variable */ = ((sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[109] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[220] /* gENROE.CoB PARAM */);
+  data->localData[0]->realVars[110] /* gENROE.ud variable */ = (-data->localData[0]->realVars[102] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
 equation index: 60
 type: SIMPLE_ASSIGN
-gENROE.PSIq = (-gENROE.PSIppq) - gENROE.Xppq * gENROE.iq
+pwLine.vs.re = sin(gENROE.delta) * gENROE.ud + cos(gENROE.delta) * gENROE.uq
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_60(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,60};
-  data->localData[0]->realVars[103] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[102] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[275] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */));
+  data->localData[0]->realVars[123] /* pwLine.vs.re variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.ud variable */) + (cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.uq variable */);
   TRACE_POP
 }
 /*
 equation index: 61
 type: SIMPLE_ASSIGN
-gENROE.ud = (-gENROE.PSIq) - gENROE.R_a * gENROE.id
+pwLine.vs.im = sin(gENROE.delta) * gENROE.uq - cos(gENROE.delta) * gENROE.ud
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_61(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,61};
-  data->localData[0]->realVars[111] /* gENROE.ud variable */ = (-data->localData[0]->realVars[103] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */));
+  data->localData[0]->realVars[122] /* pwLine.vs.im variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.uq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[110] /* gENROE.ud variable */));
   TRACE_POP
 }
 /*
 equation index: 62
 type: SIMPLE_ASSIGN
-pwLine.vs.re = sin(gENROE.delta) * gENROE.ud + cos(gENROE.delta) * gENROE.uq
+gENROE.PSId = gENROE.uq + gENROE.R_a * gENROE.iq
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_62(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,62};
-  data->localData[0]->realVars[124] /* pwLine.vs.re variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.ud variable */) + (cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[112] /* gENROE.uq variable */);
+  data->localData[0]->realVars[98] /* gENROE.PSId variable */ = data->localData[0]->realVars[111] /* gENROE.uq variable */ + (data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */);
   TRACE_POP
 }
 /*
 equation index: 63
 type: SIMPLE_ASSIGN
-pwLine.vs.im = sin(gENROE.delta) * gENROE.uq - cos(gENROE.delta) * gENROE.ud
+gENROE.PSIppd = gENROE.PSId + gENROE.Xppd * gENROE.id
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_63(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,63};
-  data->localData[0]->realVars[123] /* pwLine.vs.im variable */ = (sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[112] /* gENROE.uq variable */) - ((cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[111] /* gENROE.ud variable */));
+  data->localData[0]->realVars[100] /* gENROE.PSIppd variable */ = data->localData[0]->realVars[98] /* gENROE.PSId variable */ + (data->simulationInfo->realParameter[274] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */);
   TRACE_POP
 }
 /*
 equation index: 64
 type: SIMPLE_ASSIGN
-gENROE.PSId = gENROE.uq + gENROE.R_a * gENROE.iq
+gENROE.PSIpp = sqrt(gENROE.PSIppd ^ 2.0 + gENROE.PSIppq ^ 2.0)
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_64(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,64};
-  data->localData[0]->realVars[99] /* gENROE.PSId variable */ = data->localData[0]->realVars[112] /* gENROE.uq variable */ + (data->simulationInfo->realParameter[257] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */);
+  modelica_real tmp0;
+  modelica_real tmp1;
+  tmp0 = data->localData[0]->realVars[100] /* gENROE.PSIppd variable */;
+  tmp1 = data->localData[0]->realVars[101] /* gENROE.PSIppq variable */;
+  data->localData[0]->realVars[99] /* gENROE.PSIpp variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
   TRACE_POP
 }
 /*
 equation index: 65
 type: SIMPLE_ASSIGN
-gENROE.PSIppd = gENROE.PSId + gENROE.Xppd * gENROE.id
+gENROE.PSIkq = ((gENROE.Epd + (gENROE.Xpq - gENROE.Xl) * gENROE.iq) * gENROE.K1q + gENROE.Epd + gENROE.iq * (gENROE.Xpq - gENROE.Xq) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppq * (gENROE.Xq - gENROE.Xl) / (gENROE.Xd - gENROE.Xl) - gENROE.XaqIlq) / gENROE.K1q
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_65(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,65};
-  data->localData[0]->realVars[101] /* gENROE.PSIppd variable */ = data->localData[0]->realVars[99] /* gENROE.PSId variable */ + (data->simulationInfo->realParameter[274] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */);
+  data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */)) * (data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */) + data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[109] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[99] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * ((data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes))) - data->localData[0]->realVars[105] /* gENROE.XaqIlq variable */,data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */,"gENROE.K1q",equationIndexes);
   TRACE_POP
 }
 /*
 equation index: 66
 type: SIMPLE_ASSIGN
-gENROE.PSIpp = sqrt(gENROE.PSIppd ^ 2.0 + gENROE.PSIppq ^ 2.0)
+gENROE.PSIkd = ((gENROE.Epq + (gENROE.Xl - gENROE.Xpd) * gENROE.id) * gENROE.K1d + gENROE.Epq + gENROE.id * (gENROE.Xd - gENROE.Xpd) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppd - eXAC2.XADIFD) / gENROE.K1d
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_66(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,66};
-  modelica_real tmp0;
-  modelica_real tmp1;
-  tmp0 = data->localData[0]->realVars[101] /* gENROE.PSIppd variable */;
-  tmp1 = data->localData[0]->realVars[102] /* gENROE.PSIppq variable */;
-  data->localData[0]->realVars[100] /* gENROE.PSIpp variable */ = sqrt((tmp0 * tmp0) + (tmp1 * tmp1));
+  data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */)) * (data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */) + data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->localData[0]->realVars[108] /* gENROE.id variable */) * (data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[99] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * (data->localData[0]->realVars[100] /* gENROE.PSIppd variable */) - data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */,data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */,"gENROE.K1d",equationIndexes);
   TRACE_POP
 }
 /*
 equation index: 67
 type: SIMPLE_ASSIGN
-gENROE.PSIkq = ((gENROE.Epd + (gENROE.Xpq - gENROE.Xl) * gENROE.iq) * gENROE.K1q + gENROE.Epd + gENROE.iq * (gENROE.Xpq - gENROE.Xq) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppq * (gENROE.Xq - gENROE.Xl) / (gENROE.Xd - gENROE.Xl) - gENROE.XaqIlq) / gENROE.K1q
+gENCLS.p.ir = ((-sin(gENCLS.delta)) * gENCLS.id - cos(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_67(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,67};
-  data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */)) * (data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */) + data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[110] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[100] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * ((data->localData[0]->realVars[102] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[277] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes))) - data->localData[0]->realVars[106] /* gENROE.XaqIlq variable */,data->simulationInfo->realParameter[235] /* gENROE.K1q PARAM */,"gENROE.K1q",equationIndexes);
+  data->localData[0]->realVars[92] /* gENCLS.p.ir variable */ = (((-sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[88] /* gENCLS.id variable */) - ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
 equation index: 68
 type: SIMPLE_ASSIGN
-gENROE.PSIkd = ((gENROE.Epq + (gENROE.Xl - gENROE.Xpd) * gENROE.id) * gENROE.K1d + gENROE.Epq + gENROE.id * (gENROE.Xd - gENROE.Xpd) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppd - eXAC2.XADIFD) / gENROE.K1d
+gENCLS.p.ii = (cos(gENCLS.delta) * gENCLS.id - sin(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_68(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,68};
-  data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */)) * (data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */) + data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->localData[0]->realVars[109] /* gENROE.id variable */) * (data->simulationInfo->realParameter[270] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[100] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[260] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[261] /* gENROE.S12 PARAM */, 1.0, 1.2)) * (data->localData[0]->realVars[101] /* gENROE.PSIppd variable */) - data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */,data->simulationInfo->realParameter[234] /* gENROE.K1d PARAM */,"gENROE.K1d",equationIndexes);
+  data->localData[0]->realVars[91] /* gENCLS.p.ii variable */ = ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[88] /* gENCLS.id variable */) - ((sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
 equation index: 69
 type: SIMPLE_ASSIGN
-gENCLS.p.ir = ((-sin(gENCLS.delta)) * gENCLS.id - cos(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
+gENCLS.vq = gENCLS.eq + (-gENCLS.R_a) * gENCLS.iq - gENCLS.X_d * gENCLS.id
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_69(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,69};
-  data->localData[0]->realVars[93] /* gENCLS.p.ir variable */ = (((-sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[89] /* gENCLS.id variable */) - ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
+  data->localData[0]->realVars[94] /* gENCLS.vq variable */ = data->localData[0]->realVars[6] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
 equation index: 70
 type: SIMPLE_ASSIGN
-gENCLS.p.ii = (cos(gENCLS.delta) * gENCLS.id - sin(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
+gENCLS.vd = gENCLS.X_d * gENCLS.iq - gENCLS.R_a * gENCLS.id
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_70(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,70};
-  data->localData[0]->realVars[92] /* gENCLS.p.ii variable */ = ((cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[89] /* gENCLS.id variable */) - ((sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[194] /* gENCLS.CoB PARAM */);
+  data->localData[0]->realVars[93] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[88] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
 equation index: 71
 type: SIMPLE_ASSIGN
-gENCLS.vq = gENCLS.eq + (-gENCLS.R_a) * gENCLS.iq - gENCLS.X_d * gENCLS.id
+pwLine4.ir.im = (-pwLine1.ir.im) - gENCLS.p.ii
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_71(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,71};
-  data->localData[0]->realVars[95] /* gENCLS.vq variable */ = data->localData[0]->realVars[6] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */));
+  data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[128] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[91] /* gENCLS.p.ii variable */;
   TRACE_POP
 }
 /*
 equation index: 72
 type: SIMPLE_ASSIGN
-gENCLS.vd = gENCLS.X_d * gENCLS.iq - gENCLS.R_a * gENCLS.id
+pwLine4.ir.re = (-pwLine1.ir.re) - gENCLS.p.ir
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_72(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,72};
-  data->localData[0]->realVars[94] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[203] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[90] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[200] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[89] /* gENCLS.id variable */));
+  data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[129] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[92] /* gENCLS.p.ir variable */;
   TRACE_POP
 }
 /*
 equation index: 73
 type: SIMPLE_ASSIGN
-pwLine4.ir.im = (-pwLine1.ir.im) - gENCLS.p.ii
+pwFault.p.ir = (-pwLine3.ir.re) - pwLine4.is.re
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_73(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,73};
-  data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[129] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[92] /* gENCLS.p.ii variable */;
+  data->localData[0]->realVars[113] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[141] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[153] /* pwLine4.is.re variable */;
   TRACE_POP
 }
 /*
 equation index: 74
 type: SIMPLE_ASSIGN
-pwLine4.ir.re = (-pwLine1.ir.re) - gENCLS.p.ir
+pwFault.p.ii = (-pwLine3.ir.im) - pwLine4.is.im
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_74(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,74};
-  data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[130] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[93] /* gENCLS.p.ir variable */;
+  data->localData[0]->realVars[112] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[140] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[152] /* pwLine4.is.im variable */;
   TRACE_POP
 }
 /*
 equation index: 75
 type: SIMPLE_ASSIGN
-pwFault.p.ir = (-pwLine3.ir.re) - pwLine4.is.re
+pwLine.ir.im = (-pwLine1.is.im) - pwLine3.is.im - constantLoad.p.ii
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_75(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,75};
-  data->localData[0]->realVars[114] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[142] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[154] /* pwLine4.is.re variable */;
+  data->localData[0]->realVars[118] /* pwLine.ir.im variable */ = (-data->localData[0]->realVars[130] /* pwLine1.is.im variable */) - data->localData[0]->realVars[142] /* pwLine3.is.im variable */ - data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
   TRACE_POP
 }
 /*
 equation index: 76
 type: SIMPLE_ASSIGN
-pwFault.p.ii = (-pwLine3.ir.im) - pwLine4.is.im
+pwLine1.is.re = (-pwLine.ir.re) - pwLine3.is.re - constantLoad.p.ir
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_76(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,76};
-  data->localData[0]->realVars[113] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[141] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[153] /* pwLine4.is.im variable */;
-  TRACE_POP
-}
-/*
-equation index: 77
-type: SIMPLE_ASSIGN
-pwLine.ir.im = (-pwLine1.is.im) - pwLine3.is.im - constantLoad.p.ii
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_77(DATA *data, threadData_t *threadData)
-{
-  TRACE_PUSH
-  const int equationIndexes[2] = {1,77};
-  data->localData[0]->realVars[119] /* pwLine.ir.im variable */ = (-data->localData[0]->realVars[131] /* pwLine1.is.im variable */) - data->localData[0]->realVars[143] /* pwLine3.is.im variable */ - data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
-  TRACE_POP
-}
-/*
-equation index: 78
-type: SIMPLE_ASSIGN
-pwLine1.is.re = (-pwLine.ir.re) - pwLine3.is.re - constantLoad.p.ir
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_78(DATA *data, threadData_t *threadData)
-{
-  TRACE_PUSH
-  const int equationIndexes[2] = {1,78};
-  data->localData[0]->realVars[132] /* pwLine1.is.re variable */ = (-data->localData[0]->realVars[120] /* pwLine.ir.re variable */) - data->localData[0]->realVars[144] /* pwLine3.is.re variable */ - data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
+  data->localData[0]->realVars[131] /* pwLine1.is.re variable */ = (-data->localData[0]->realVars[119] /* pwLine.ir.re variable */) - data->localData[0]->realVars[143] /* pwLine3.is.re variable */ - data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
   TRACE_POP
 }
 
-void residualFunc105(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc103(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,105};
+  const int equationIndexes[2] = {1,103};
   int i;
   modelica_boolean tmp0;
   modelica_boolean tmp1;
@@ -2782,34 +2782,40 @@ void residualFunc105(void** dataIn, const double* xloc, double* res, const int* 
       return;
     }
   }
-  data->localData[0]->realVars[120] /* pwLine.ir.re variable */ = xloc[0];
+  data->localData[0]->realVars[119] /* pwLine.ir.re variable */ = xloc[0];
   data->localData[0]->realVars[54] /* constantLoad.p.ir variable */ = xloc[1];
-  data->localData[0]->realVars[131] /* pwLine1.is.im variable */ = xloc[2];
+  data->localData[0]->realVars[130] /* pwLine1.is.im variable */ = xloc[2];
   data->localData[0]->realVars[53] /* constantLoad.p.ii variable */ = xloc[3];
-  data->localData[0]->realVars[144] /* pwLine3.is.re variable */ = xloc[4];
-  data->localData[0]->realVars[143] /* pwLine3.is.im variable */ = xloc[5];
-  data->localData[0]->realVars[153] /* pwLine4.is.im variable */ = xloc[6];
-  data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ = xloc[7];
-  data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ = xloc[8];
-  data->localData[0]->realVars[154] /* pwLine4.is.re variable */ = xloc[9];
-  data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ = xloc[10];
-  data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ = xloc[11];
-  data->localData[0]->realVars[90] /* gENCLS.iq variable */ = xloc[12];
-  data->localData[0]->realVars[89] /* gENCLS.id variable */ = xloc[13];
+  data->localData[0]->realVars[143] /* pwLine3.is.re variable */ = xloc[4];
+  data->localData[0]->realVars[142] /* pwLine3.is.im variable */ = xloc[5];
+  data->localData[0]->realVars[152] /* pwLine4.is.im variable */ = xloc[6];
+  data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ = xloc[7];
+  data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ = xloc[8];
+  data->localData[0]->realVars[153] /* pwLine4.is.re variable */ = xloc[9];
+  data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ = xloc[10];
+  data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ = xloc[11];
+  data->localData[0]->realVars[89] /* gENCLS.iq variable */ = xloc[12];
+  data->localData[0]->realVars[88] /* gENCLS.id variable */ = xloc[13];
   data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ = xloc[14];
   data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ = xloc[15];
-  data->localData[0]->realVars[112] /* gENROE.uq variable */ = xloc[16];
-  data->localData[0]->realVars[102] /* gENROE.PSIppq variable */ = xloc[17];
-  data->localData[0]->realVars[110] /* gENROE.iq variable */ = xloc[18];
-  data->localData[0]->realVars[109] /* gENROE.id variable */ = xloc[19];
-  data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ = xloc[20];
-  data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ = xloc[21];
-  data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ = xloc[22];
-  data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ = xloc[23];
-  data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ = xloc[24];
-  data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ = xloc[25];
+  data->localData[0]->realVars[111] /* gENROE.uq variable */ = xloc[16];
+  data->localData[0]->realVars[101] /* gENROE.PSIppq variable */ = xloc[17];
+  data->localData[0]->realVars[109] /* gENROE.iq variable */ = xloc[18];
+  data->localData[0]->realVars[108] /* gENROE.id variable */ = xloc[19];
+  data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ = xloc[20];
+  data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ = xloc[21];
+  data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ = xloc[22];
+  data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ = xloc[23];
+  data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ = xloc[24];
+  data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ = xloc[25];
   /* backup outputs */
   /* pre body */
+  /* local constraints */
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_51(data, threadData);
+
+  /* local constraints */
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_52(data, threadData);
+
   /* local constraints */
   OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_53(data, threadData);
 
@@ -2881,26 +2887,20 @@ void residualFunc105(void** dataIn, const double* xloc, double* res, const int* 
 
   /* local constraints */
   OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_76(data, threadData);
-
-  /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_77(data, threadData);
-
-  /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_78(data, threadData);
   /* body */
   tmp0 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[307] /* pwFault.t1 PARAM */);
   tmp9 = (modelica_boolean)tmp0;
   if(tmp9)
   {
-    tmp10 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */;
+    tmp10 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */;
   }
   else
   {
     tmp1 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[308] /* pwFault.t2 PARAM */);
-    tmp7 = (modelica_boolean)(tmp1 && data->simulationInfo->booleanParameter[70] /* pwFault.ground PARAM */);
+    tmp7 = (modelica_boolean)(tmp1 && data->simulationInfo->booleanParameter[68] /* pwFault.ground PARAM */);
     if(tmp7)
     {
-      tmp8 = data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - 1e-10;
+      tmp8 = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - 1e-10;
     }
     else
     {
@@ -2910,11 +2910,11 @@ void residualFunc105(void** dataIn, const double* xloc, double* res, const int* 
       {
         tmp3 = data->simulationInfo->realParameter[306] /* pwFault.X PARAM */;
         tmp4 = data->simulationInfo->realParameter[305] /* pwFault.R PARAM */;
-        tmp6 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) - ((data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)),(tmp3 * tmp3) + (tmp4 * tmp4),"pwFault.X ^ 2.0 + pwFault.R ^ 2.0",equationIndexes));
+        tmp6 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) - ((data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)),(tmp3 * tmp3) + (tmp4 * tmp4),"pwFault.X ^ 2.0 + pwFault.R ^ 2.0",equationIndexes));
       }
       else
       {
-        tmp6 = data->localData[0]->realVars[113] /* pwFault.p.ii variable */;
+        tmp6 = data->localData[0]->realVars[112] /* pwFault.p.ii variable */;
       }
       tmp8 = tmp6;
     }
@@ -2926,15 +2926,15 @@ void residualFunc105(void** dataIn, const double* xloc, double* res, const int* 
   tmp20 = (modelica_boolean)tmp11;
   if(tmp20)
   {
-    tmp21 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */;
+    tmp21 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */;
   }
   else
   {
     tmp12 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[308] /* pwFault.t2 PARAM */);
-    tmp18 = (modelica_boolean)(tmp12 && data->simulationInfo->booleanParameter[70] /* pwFault.ground PARAM */);
+    tmp18 = (modelica_boolean)(tmp12 && data->simulationInfo->booleanParameter[68] /* pwFault.ground PARAM */);
     if(tmp18)
     {
-      tmp19 = data->localData[0]->realVars[145] /* pwLine3.vr.im variable */;
+      tmp19 = data->localData[0]->realVars[144] /* pwLine3.vr.im variable */;
     }
     else
     {
@@ -2944,11 +2944,11 @@ void residualFunc105(void** dataIn, const double* xloc, double* res, const int* 
       {
         tmp14 = data->simulationInfo->realParameter[305] /* pwFault.R PARAM */;
         tmp15 = data->simulationInfo->realParameter[306] /* pwFault.X PARAM */;
-        tmp17 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) + (data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */),(tmp14 * tmp14) + (tmp15 * tmp15),"pwFault.R ^ 2.0 + pwFault.X ^ 2.0",equationIndexes));
+        tmp17 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */ - (DIVISION_SIM((data->simulationInfo->realParameter[305] /* pwFault.R PARAM */) * (data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) + (data->simulationInfo->realParameter[306] /* pwFault.X PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */),(tmp14 * tmp14) + (tmp15 * tmp15),"pwFault.R ^ 2.0 + pwFault.X ^ 2.0",equationIndexes));
       }
       else
       {
-        tmp17 = data->localData[0]->realVars[114] /* pwFault.p.ir variable */;
+        tmp17 = data->localData[0]->realVars[113] /* pwFault.p.ir variable */;
       }
       tmp19 = tmp17;
     }
@@ -2958,87 +2958,87 @@ void residualFunc105(void** dataIn, const double* xloc, double* res, const int* 
 
   tmp22 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp23 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[2] = ((tmp22 && tmp23)?data->localData[0]->realVars[154] /* pwLine4.is.re variable */:data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[154] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
+  res[2] = ((tmp22 && tmp23)?data->localData[0]->realVars[153] /* pwLine4.is.re variable */:data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
 
-  res[3] = (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[95] /* gENCLS.vq variable */) + ((-cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[94] /* gENCLS.vd variable */) - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */;
+  res[3] = (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENCLS.vq variable */) + ((-cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[93] /* gENCLS.vd variable */) - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */;
 
   tmp24 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp25 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[4] = ((tmp24 && tmp25)?data->localData[0]->realVars[153] /* pwLine4.is.im variable */:data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[154] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
+  res[4] = ((tmp24 && tmp25)?data->localData[0]->realVars[152] /* pwLine4.is.im variable */:data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
 
   tmp26 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp27 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[5] = ((tmp26 && tmp27)?data->localData[0]->realVars[152] /* pwLine4.ir.re variable */:data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
+  res[5] = ((tmp26 && tmp27)?data->localData[0]->realVars[151] /* pwLine4.ir.re variable */:data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) - ((data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))))));
 
   tmp28 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[351] /* pwLine4.t1 PARAM */);
   tmp29 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[352] /* pwLine4.t2 PARAM */);
-  res[6] = ((tmp28 && tmp29)?data->localData[0]->realVars[151] /* pwLine4.ir.im variable */:data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[152] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
+  res[6] = ((tmp28 && tmp29)?data->localData[0]->realVars[150] /* pwLine4.ir.im variable */:data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[350] /* pwLine4.Z.re PARAM */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */))) + (data->simulationInfo->realParameter[349] /* pwLine4.Z.im PARAM */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[347] /* pwLine4.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[348] /* pwLine4.Y.re PARAM */)))));
 
   tmp30 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp31 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[7] = ((tmp30 && tmp31)?data->localData[0]->realVars[144] /* pwLine3.is.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
+  res[7] = ((tmp30 && tmp31)?data->localData[0]->realVars[143] /* pwLine3.is.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
 
   tmp32 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp33 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[8] = ((tmp32 && tmp33)?data->localData[0]->realVars[143] /* pwLine3.is.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[144] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
+  res[8] = ((tmp32 && tmp33)?data->localData[0]->realVars[142] /* pwLine3.is.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
 
   tmp34 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp35 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[9] = ((tmp34 && tmp35)?data->localData[0]->realVars[141] /* pwLine3.ir.im variable */:data->localData[0]->realVars[145] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
+  res[9] = ((tmp34 && tmp35)?data->localData[0]->realVars[140] /* pwLine3.ir.im variable */:data->localData[0]->realVars[144] /* pwLine3.vr.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) + (data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */)))));
 
   tmp36 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[340] /* pwLine3.t1 PARAM */);
   tmp37 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[341] /* pwLine3.t2 PARAM */);
-  res[10] = ((tmp36 && tmp37)?data->localData[0]->realVars[142] /* pwLine3.ir.re variable */:data->localData[0]->realVars[146] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[142] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[146] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[146] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
+  res[10] = ((tmp36 && tmp37)?data->localData[0]->realVars[141] /* pwLine3.ir.re variable */:data->localData[0]->realVars[145] /* pwLine3.vr.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[339] /* pwLine3.Z.re PARAM */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */ + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))) - ((data->simulationInfo->realParameter[338] /* pwLine3.Z.im PARAM */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */ + ((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->simulationInfo->realParameter[336] /* pwLine3.Y.im PARAM */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->simulationInfo->realParameter[337] /* pwLine3.Y.re PARAM */))))));
 
-  res[11] = (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - data->localData[0]->realVars[49] /* constantLoad.Q variable */;
+  res[11] = (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) - data->localData[0]->realVars[49] /* constantLoad.Q variable */;
 
-  res[12] = (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - data->localData[0]->realVars[48] /* constantLoad.P variable */;
+  res[12] = (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[53] /* constantLoad.p.ii variable */) + (data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[54] /* constantLoad.p.ir variable */) - data->localData[0]->realVars[48] /* constantLoad.P variable */;
 
   tmp38 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp39 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[13] = ((tmp38 && tmp39)?data->localData[0]->realVars[131] /* pwLine1.is.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[132] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
+  res[13] = ((tmp38 && tmp39)?data->localData[0]->realVars[130] /* pwLine1.is.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
 
   tmp40 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp41 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[14] = ((tmp40 && tmp41)?data->localData[0]->realVars[132] /* pwLine1.is.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[132] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
+  res[14] = ((tmp40 && tmp41)?data->localData[0]->realVars[131] /* pwLine1.is.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
 
-  res[15] = (cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[95] /* gENCLS.vq variable */) + (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENCLS.vd variable */) - data->localData[0]->realVars[134] /* pwLine1.vr.re variable */;
+  res[15] = (cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENCLS.vq variable */) + (sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[93] /* gENCLS.vd variable */) - data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
 
   tmp42 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp43 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[16] = ((tmp42 && tmp43)?data->localData[0]->realVars[130] /* pwLine1.ir.re variable */:data->localData[0]->realVars[134] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
+  res[16] = ((tmp42 && tmp43)?data->localData[0]->realVars[129] /* pwLine1.ir.re variable */:data->localData[0]->realVars[133] /* pwLine1.vr.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) - ((data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))))));
 
   tmp44 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[329] /* pwLine1.t1 PARAM */);
   tmp45 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[330] /* pwLine1.t2 PARAM */);
-  res[17] = ((tmp44 && tmp45)?data->localData[0]->realVars[129] /* pwLine1.ir.im variable */:data->localData[0]->realVars[133] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[134] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[130] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[133] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
+  res[17] = ((tmp44 && tmp45)?data->localData[0]->realVars[128] /* pwLine1.ir.im variable */:data->localData[0]->realVars[132] /* pwLine1.vr.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[328] /* pwLine1.Z.re PARAM */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */ + ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */))) + (data->simulationInfo->realParameter[327] /* pwLine1.Z.im PARAM */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */ + (data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->simulationInfo->realParameter[325] /* pwLine1.Y.im PARAM */) - ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->simulationInfo->realParameter[326] /* pwLine1.Y.re PARAM */)))));
 
-  res[18] = (data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[240] /* gENROE.K4d PARAM */) + (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */) * (data->simulationInfo->realParameter[238] /* gENROE.K3d PARAM */) - data->localData[0]->realVars[101] /* gENROE.PSIppd variable */;
+  res[18] = (data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[240] /* gENROE.K4d PARAM */) + (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */) * (data->simulationInfo->realParameter[238] /* gENROE.K3d PARAM */) - data->localData[0]->realVars[100] /* gENROE.PSIppd variable */;
 
-  res[19] = data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[109] /* gENROE.id variable */) + (-data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) - ((data->localData[0]->realVars[22] /* der(gENROE.PSIkd) STATE_DER */) * (data->simulationInfo->realParameter[264] /* gENROE.Tppd0 PARAM */));
+  res[19] = data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[272] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */) + (-data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) - ((data->localData[0]->realVars[22] /* der(gENROE.PSIkd) STATE_DER */) * (data->simulationInfo->realParameter[264] /* gENROE.Tppd0 PARAM */));
 
   tmp46 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp47 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[20] = ((tmp46 && tmp47)?data->localData[0]->realVars[122] /* pwLine.is.re variable */:data->localData[0]->realVars[124] /* pwLine.vs.re variable */ - data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[122] /* pwLine.is.re variable */ + (data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[124] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[124] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
+  res[20] = ((tmp46 && tmp47)?data->localData[0]->realVars[121] /* pwLine.is.re variable */:data->localData[0]->realVars[123] /* pwLine.vs.re variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */ + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[123] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
 
   tmp48 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp49 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[21] = ((tmp48 && tmp49)?data->localData[0]->realVars[121] /* pwLine.is.im variable */:data->localData[0]->realVars[123] /* pwLine.vs.im variable */ - data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[124] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[122] /* pwLine.is.re variable */ + (data->localData[0]->realVars[123] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[124] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
+  res[21] = ((tmp48 && tmp49)?data->localData[0]->realVars[120] /* pwLine.is.im variable */:data->localData[0]->realVars[122] /* pwLine.vs.im variable */ - data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */ + ((-data->localData[0]->realVars[123] /* pwLine.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */ + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
 
   tmp50 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp51 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[22] = ((tmp50 && tmp51)?data->localData[0]->realVars[120] /* pwLine.ir.re variable */:data->localData[0]->realVars[136] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[124] /* pwLine.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[120] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
+  res[22] = ((tmp50 && tmp51)?data->localData[0]->realVars[119] /* pwLine.ir.re variable */:data->localData[0]->realVars[135] /* pwLine1.vs.re variable */ - data->localData[0]->realVars[123] /* pwLine.vs.re variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) - ((data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))))));
 
   tmp52 = GreaterEq(data->localData[0]->timeValue,data->simulationInfo->realParameter[318] /* pwLine.t1 PARAM */);
   tmp53 = Less(data->localData[0]->timeValue,data->simulationInfo->realParameter[319] /* pwLine.t2 PARAM */);
-  res[23] = ((tmp52 && tmp53)?data->localData[0]->realVars[119] /* pwLine.ir.im variable */:data->localData[0]->realVars[135] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[123] /* pwLine.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[136] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[120] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[135] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[136] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
+  res[23] = ((tmp52 && tmp53)?data->localData[0]->realVars[118] /* pwLine.ir.im variable */:data->localData[0]->realVars[134] /* pwLine1.vs.im variable */ - data->localData[0]->realVars[122] /* pwLine.vs.im variable */ - ((data->simulationInfo->realParameter[317] /* pwLine.Z.re PARAM */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */ + ((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */))) + (data->simulationInfo->realParameter[316] /* pwLine.Z.im PARAM */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */ + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->simulationInfo->realParameter[314] /* pwLine.Y.im PARAM */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->simulationInfo->realParameter[315] /* pwLine.Y.re PARAM */)))));
 
-  res[24] = data->localData[0]->realVars[102] /* gENROE.PSIppq variable */ - ((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */) * (data->simulationInfo->realParameter[239] /* gENROE.K3q PARAM */)) - ((data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) * (data->simulationInfo->realParameter[241] /* gENROE.K4q PARAM */));
+  res[24] = data->localData[0]->realVars[101] /* gENROE.PSIppq variable */ - ((data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */) * (data->simulationInfo->realParameter[239] /* gENROE.K3q PARAM */)) - ((data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) * (data->simulationInfo->realParameter[241] /* gENROE.K4q PARAM */));
 
-  res[25] = data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[110] /* gENROE.iq variable */) + (-data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) - ((data->localData[0]->realVars[23] /* der(gENROE.PSIkq) STATE_DER */) * (data->simulationInfo->realParameter[265] /* gENROE.Tppq0 PARAM */));
+  res[25] = data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[276] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[271] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) + (-data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) - ((data->localData[0]->realVars[23] /* der(gENROE.PSIkq) STATE_DER */) * (data->simulationInfo->realParameter[265] /* gENROE.Tppq0 PARAM */));
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS105(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS103(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+26] = {0,4,4,4,4,4,4,3,3,3,3,4,4,4,4,2,2,8,8,8,8,7,7,11,11,8,8};
@@ -3089,67 +3089,67 @@ void initializeSparsePatternNLS105(NONLINEAR_SYSTEM_DATA* inSysData)
   inSysData->sparsePattern->colorCols[14] = 10;
   inSysData->sparsePattern->colorCols[15] = 10;
 }
-void initializeStaticDataNLS105(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS103(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
   int i=0;
   /* static nls data for pwLine.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[120].attribute /* pwLine.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[120].attribute /* pwLine.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[120].attribute /* pwLine.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[119].attribute /* pwLine.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[119].attribute /* pwLine.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[119].attribute /* pwLine.ir.re */.max;
   /* static nls data for constantLoad.p.ir */
   sysData->nominal[i] = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.min;
   sysData->max[i++]   = data->modelData->realVarsData[54].attribute /* constantLoad.p.ir */.max;
   /* static nls data for pwLine1.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[131].attribute /* pwLine1.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[130].attribute /* pwLine1.is.im */.max;
   /* static nls data for constantLoad.p.ii */
   sysData->nominal[i] = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.min;
   sysData->max[i++]   = data->modelData->realVarsData[53].attribute /* constantLoad.p.ii */.max;
   /* static nls data for pwLine3.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[144].attribute /* pwLine3.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[143].attribute /* pwLine3.is.re */.max;
   /* static nls data for pwLine3.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[143].attribute /* pwLine3.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[142].attribute /* pwLine3.is.im */.max;
   /* static nls data for pwLine4.is.im */
-  sysData->nominal[i] = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[153].attribute /* pwLine4.is.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[152].attribute /* pwLine4.is.im */.max;
   /* static nls data for pwLine3.ir.im */
-  sysData->nominal[i] = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[141].attribute /* pwLine3.ir.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[140].attribute /* pwLine3.ir.im */.max;
   /* static nls data for pwLine3.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[142].attribute /* pwLine3.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[141].attribute /* pwLine3.ir.re */.max;
   /* static nls data for pwLine4.is.re */
-  sysData->nominal[i] = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[154].attribute /* pwLine4.is.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[153].attribute /* pwLine4.is.re */.max;
   /* static nls data for pwLine1.ir.re */
-  sysData->nominal[i] = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[130].attribute /* pwLine1.ir.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[129].attribute /* pwLine1.ir.re */.max;
   /* static nls data for pwLine1.ir.im */
-  sysData->nominal[i] = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[129].attribute /* pwLine1.ir.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[128].attribute /* pwLine1.ir.im */.max;
   /* static nls data for gENCLS.iq */
-  sysData->nominal[i] = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[90].attribute /* gENCLS.iq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[89].attribute /* gENCLS.iq */.max;
   /* static nls data for gENCLS.id */
-  sysData->nominal[i] = data->modelData->realVarsData[89].attribute /* gENCLS.id */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[89].attribute /* gENCLS.id */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[89].attribute /* gENCLS.id */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[88].attribute /* gENCLS.id */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[88].attribute /* gENCLS.id */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[88].attribute /* gENCLS.id */.max;
   /* static nls data for gENROE.Epq */
   sysData->nominal[i] = data->modelData->realVarsData[8].attribute /* gENROE.Epq */.nominal;
   sysData->min[i]     = data->modelData->realVarsData[8].attribute /* gENROE.Epq */.min;
@@ -3159,202 +3159,202 @@ void initializeStaticDataNLS105(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[7].attribute /* gENROE.Epd */.min;
   sysData->max[i++]   = data->modelData->realVarsData[7].attribute /* gENROE.Epd */.max;
   /* static nls data for gENROE.uq */
-  sysData->nominal[i] = data->modelData->realVarsData[112].attribute /* gENROE.uq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[112].attribute /* gENROE.uq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[112].attribute /* gENROE.uq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[111].attribute /* gENROE.uq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[111].attribute /* gENROE.uq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[111].attribute /* gENROE.uq */.max;
   /* static nls data for gENROE.PSIppq */
-  sysData->nominal[i] = data->modelData->realVarsData[102].attribute /* gENROE.PSIppq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[102].attribute /* gENROE.PSIppq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[102].attribute /* gENROE.PSIppq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[101].attribute /* gENROE.PSIppq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[101].attribute /* gENROE.PSIppq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[101].attribute /* gENROE.PSIppq */.max;
   /* static nls data for gENROE.iq */
-  sysData->nominal[i] = data->modelData->realVarsData[110].attribute /* gENROE.iq */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[110].attribute /* gENROE.iq */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[110].attribute /* gENROE.iq */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[109].attribute /* gENROE.iq */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[109].attribute /* gENROE.iq */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[109].attribute /* gENROE.iq */.max;
   /* static nls data for gENROE.id */
-  sysData->nominal[i] = data->modelData->realVarsData[109].attribute /* gENROE.id */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[109].attribute /* gENROE.id */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[109].attribute /* gENROE.id */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[108].attribute /* gENROE.id */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[108].attribute /* gENROE.id */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[108].attribute /* gENROE.id */.max;
   /* static nls data for pwLine1.vr.re */
-  sysData->nominal[i] = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[134].attribute /* pwLine1.vr.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[133].attribute /* pwLine1.vr.re */.max;
   /* static nls data for pwLine1.vr.im */
-  sysData->nominal[i] = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[133].attribute /* pwLine1.vr.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[132].attribute /* pwLine1.vr.im */.max;
   /* static nls data for pwLine1.vs.im */
-  sysData->nominal[i] = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[135].attribute /* pwLine1.vs.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[134].attribute /* pwLine1.vs.im */.max;
   /* static nls data for pwLine1.vs.re */
-  sysData->nominal[i] = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[136].attribute /* pwLine1.vs.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[135].attribute /* pwLine1.vs.re */.max;
   /* static nls data for pwLine3.vr.im */
-  sysData->nominal[i] = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[145].attribute /* pwLine3.vr.im */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[144].attribute /* pwLine3.vr.im */.max;
   /* static nls data for pwLine3.vr.re */
-  sysData->nominal[i] = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.nominal;
-  sysData->min[i]     = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.min;
-  sysData->max[i++]   = data->modelData->realVarsData[146].attribute /* pwLine3.vr.re */.max;
+  sysData->nominal[i] = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.nominal;
+  sysData->min[i]     = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.min;
+  sysData->max[i++]   = data->modelData->realVarsData[145].attribute /* pwLine3.vr.re */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS105(sysData);
+  initializeSparsePatternNLS103(sysData);
 }
 
-void getIterationVarsNLS105(struct DATA *inData, double *array)
+void getIterationVarsNLS103(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
-  array[0] = data->localData[0]->realVars[120] /* pwLine.ir.re variable */;
+  array[0] = data->localData[0]->realVars[119] /* pwLine.ir.re variable */;
   array[1] = data->localData[0]->realVars[54] /* constantLoad.p.ir variable */;
-  array[2] = data->localData[0]->realVars[131] /* pwLine1.is.im variable */;
+  array[2] = data->localData[0]->realVars[130] /* pwLine1.is.im variable */;
   array[3] = data->localData[0]->realVars[53] /* constantLoad.p.ii variable */;
-  array[4] = data->localData[0]->realVars[144] /* pwLine3.is.re variable */;
-  array[5] = data->localData[0]->realVars[143] /* pwLine3.is.im variable */;
-  array[6] = data->localData[0]->realVars[153] /* pwLine4.is.im variable */;
-  array[7] = data->localData[0]->realVars[141] /* pwLine3.ir.im variable */;
-  array[8] = data->localData[0]->realVars[142] /* pwLine3.ir.re variable */;
-  array[9] = data->localData[0]->realVars[154] /* pwLine4.is.re variable */;
-  array[10] = data->localData[0]->realVars[130] /* pwLine1.ir.re variable */;
-  array[11] = data->localData[0]->realVars[129] /* pwLine1.ir.im variable */;
-  array[12] = data->localData[0]->realVars[90] /* gENCLS.iq variable */;
-  array[13] = data->localData[0]->realVars[89] /* gENCLS.id variable */;
+  array[4] = data->localData[0]->realVars[143] /* pwLine3.is.re variable */;
+  array[5] = data->localData[0]->realVars[142] /* pwLine3.is.im variable */;
+  array[6] = data->localData[0]->realVars[152] /* pwLine4.is.im variable */;
+  array[7] = data->localData[0]->realVars[140] /* pwLine3.ir.im variable */;
+  array[8] = data->localData[0]->realVars[141] /* pwLine3.ir.re variable */;
+  array[9] = data->localData[0]->realVars[153] /* pwLine4.is.re variable */;
+  array[10] = data->localData[0]->realVars[129] /* pwLine1.ir.re variable */;
+  array[11] = data->localData[0]->realVars[128] /* pwLine1.ir.im variable */;
+  array[12] = data->localData[0]->realVars[89] /* gENCLS.iq variable */;
+  array[13] = data->localData[0]->realVars[88] /* gENCLS.id variable */;
   array[14] = data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */;
   array[15] = data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */;
-  array[16] = data->localData[0]->realVars[112] /* gENROE.uq variable */;
-  array[17] = data->localData[0]->realVars[102] /* gENROE.PSIppq variable */;
-  array[18] = data->localData[0]->realVars[110] /* gENROE.iq variable */;
-  array[19] = data->localData[0]->realVars[109] /* gENROE.id variable */;
-  array[20] = data->localData[0]->realVars[134] /* pwLine1.vr.re variable */;
-  array[21] = data->localData[0]->realVars[133] /* pwLine1.vr.im variable */;
-  array[22] = data->localData[0]->realVars[135] /* pwLine1.vs.im variable */;
-  array[23] = data->localData[0]->realVars[136] /* pwLine1.vs.re variable */;
-  array[24] = data->localData[0]->realVars[145] /* pwLine3.vr.im variable */;
-  array[25] = data->localData[0]->realVars[146] /* pwLine3.vr.re variable */;
+  array[16] = data->localData[0]->realVars[111] /* gENROE.uq variable */;
+  array[17] = data->localData[0]->realVars[101] /* gENROE.PSIppq variable */;
+  array[18] = data->localData[0]->realVars[109] /* gENROE.iq variable */;
+  array[19] = data->localData[0]->realVars[108] /* gENROE.id variable */;
+  array[20] = data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
+  array[21] = data->localData[0]->realVars[132] /* pwLine1.vr.im variable */;
+  array[22] = data->localData[0]->realVars[134] /* pwLine1.vs.im variable */;
+  array[23] = data->localData[0]->realVars[135] /* pwLine1.vs.re variable */;
+  array[24] = data->localData[0]->realVars[144] /* pwLine3.vr.im variable */;
+  array[25] = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */;
 }
 
 
 /* inner equations */
 
 /*
-equation index: 16
+equation index: 14
 type: SIMPLE_ASSIGN
 eXAC2.rectifierCommutationVoltageDrop.division.u1 = eXAC2.rectifierCommutationVoltageDrop.gain2.k * eXAC2.XADIFD
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_14(DATA *data, threadData_t *threadData)
+{
+  TRACE_PUSH
+  const int equationIndexes[2] = {1,14};
+  data->localData[0]->realVars[77] /* eXAC2.rectifierCommutationVoltageDrop.division.u1 variable */ = (data->simulationInfo->realParameter[173] /* eXAC2.rectifierCommutationVoltageDrop.gain2.k PARAM */) * (data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */);
+  TRACE_POP
+}
+/*
+equation index: 15
+type: SIMPLE_ASSIGN
+eXAC2.EFD = eXAC2.XADIFD + $DER.gENROE.Epq * gENROE.Tpd0
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_15(DATA *data, threadData_t *threadData)
+{
+  TRACE_PUSH
+  const int equationIndexes[2] = {1,15};
+  data->localData[0]->realVars[62] /* eXAC2.EFD variable */ = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */ + (data->localData[0]->realVars[21] /* der(gENROE.Epq) STATE_DER */) * (data->simulationInfo->realParameter[263] /* gENROE.Tpd0 PARAM */);
+  TRACE_POP
+}
+/*
+equation index: 16
+type: SIMPLE_ASSIGN
+eXAC2.Ifd0 = eXAC2.XADIFD
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_16(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,16};
-  data->localData[0]->realVars[77] /* eXAC2.rectifierCommutationVoltageDrop.division.u1 variable */ = (data->simulationInfo->realParameter[173] /* eXAC2.rectifierCommutationVoltageDrop.gain2.k PARAM */) * (data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */);
+  data->simulationInfo->realParameter[87] /* eXAC2.Ifd0 PARAM */ = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */;
   TRACE_POP
 }
 /*
 equation index: 17
 type: SIMPLE_ASSIGN
-eXAC2.EFD = eXAC2.XADIFD + $DER.gENROE.Epq * gENROE.Tpd0
+eXAC2.VE0 = OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX(eXAC2.K_C, eXAC2.Efd0, eXAC2.Ifd0)
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_17(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,17};
-  data->localData[0]->realVars[62] /* eXAC2.EFD variable */ = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */ + (data->localData[0]->realVars[21] /* der(gENROE.Epq) STATE_DER */) * (data->simulationInfo->realParameter[263] /* gENROE.Tpd0 PARAM */);
+  data->simulationInfo->realParameter[110] /* eXAC2.VE0 PARAM */ = omc_OpenIPSL_Electrical_Controls_PSSE_ES_BaseClasses_invFEX(threadData, data->simulationInfo->realParameter[90] /* eXAC2.K_C PARAM */, data->simulationInfo->realParameter[86] /* eXAC2.Efd0 PARAM */, data->simulationInfo->realParameter[87] /* eXAC2.Ifd0 PARAM */);
   TRACE_POP
 }
 /*
 equation index: 18
 type: SIMPLE_ASSIGN
-eXAC2.Ifd0 = eXAC2.XADIFD
+eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 = eXAC2.VE0
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_18(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,18};
-  data->simulationInfo->realParameter[87] /* eXAC2.Ifd0 PARAM */ = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */;
+  data->simulationInfo->realParameter[176] /* eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 PARAM */ = data->simulationInfo->realParameter[110] /* eXAC2.VE0 PARAM */;
   TRACE_POP
 }
 /*
 equation index: 19
 type: SIMPLE_ASSIGN
-eXAC2.VE0 = OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX(eXAC2.K_C, eXAC2.Efd0, eXAC2.Ifd0)
+eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start = eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_19(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,19};
-  data->simulationInfo->realParameter[110] /* eXAC2.VE0 PARAM */ = omc_OpenIPSL_Electrical_Controls_PSSE_ES_BaseClasses_invFEX(threadData, data->simulationInfo->realParameter[90] /* eXAC2.K_C PARAM */, data->simulationInfo->realParameter[86] /* eXAC2.Efd0 PARAM */, data->simulationInfo->realParameter[87] /* eXAC2.Ifd0 PARAM */);
+  data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */ = data->simulationInfo->realParameter[176] /* eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 PARAM */;
   TRACE_POP
 }
 /*
 equation index: 20
 type: SIMPLE_ASSIGN
-eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 = eXAC2.VE0
+$START.eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y = eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_20(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,20};
-  data->simulationInfo->realParameter[176] /* eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 PARAM */ = data->simulationInfo->realParameter[110] /* eXAC2.VE0 PARAM */;
-  TRACE_POP
-}
-/*
-equation index: 21
-type: SIMPLE_ASSIGN
-eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start = eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_21(DATA *data, threadData_t *threadData)
-{
-  TRACE_PUSH
-  const int equationIndexes[2] = {1,21};
-  data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */ = data->simulationInfo->realParameter[176] /* eXAC2.rotatingExciterWithDemagnetizationLimited.Efd0 PARAM */;
-  TRACE_POP
-}
-/*
-equation index: 22
-type: SIMPLE_ASSIGN
-$START.eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y = eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_22(DATA *data, threadData_t *threadData)
-{
-  TRACE_PUSH
-  const int equationIndexes[2] = {1,22};
   data->modelData->realVarsData[4].attribute /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */.start = data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */;
     data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */ = data->modelData->realVarsData[4].attribute /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */.start;
     infoStreamPrint(LOG_INIT_V, 0, "updated start value: %s(start=%g)", data->modelData->realVarsData[4].info /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y */.name, (modelica_real) data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 23
+equation index: 21
 type: SIMPLE_ASSIGN
 eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y = eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_21(DATA *data, threadData_t *threadData)
+{
+  TRACE_PUSH
+  const int equationIndexes[2] = {1,21};
+  data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */ = data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */;
+  TRACE_POP
+}
+/*
+equation index: 22
+type: SIMPLE_ASSIGN
+eXAC2.rectifierCommutationVoltageDrop.division.y = eXAC2.rectifierCommutationVoltageDrop.division.u1 / eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y
+*/
+void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_22(DATA *data, threadData_t *threadData)
+{
+  TRACE_PUSH
+  const int equationIndexes[2] = {1,22};
+  data->localData[0]->realVars[78] /* eXAC2.rectifierCommutationVoltageDrop.division.y variable */ = DIVISION_SIM(data->localData[0]->realVars[77] /* eXAC2.rectifierCommutationVoltageDrop.division.u1 variable */,data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */,"eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y",equationIndexes);
+  TRACE_POP
+}
+/*
+equation index: 23
+type: SIMPLE_ASSIGN
+eXAC2.rectifierCommutationVoltageDrop.fEX.y = if eXAC2.rectifierCommutationVoltageDrop.division.y <= 0.0 then 1.0 else if eXAC2.rectifierCommutationVoltageDrop.division.y > 0.0 and eXAC2.rectifierCommutationVoltageDrop.division.y <= 0.433 then 1.0 + (-0.577) * eXAC2.rectifierCommutationVoltageDrop.division.y else if eXAC2.rectifierCommutationVoltageDrop.division.y > 0.433 and eXAC2.rectifierCommutationVoltageDrop.division.y < 0.75 then sqrt(0.75 - eXAC2.rectifierCommutationVoltageDrop.division.y ^ 2.0) else if eXAC2.rectifierCommutationVoltageDrop.division.y >= 0.75 and eXAC2.rectifierCommutationVoltageDrop.division.y <= 1.0 then 1.732 * (1.0 - eXAC2.rectifierCommutationVoltageDrop.division.y) else 0.0
 */
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_23(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
   const int equationIndexes[2] = {1,23};
-  data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */ = data->simulationInfo->realParameter[189] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y_start PARAM */;
-  TRACE_POP
-}
-/*
-equation index: 24
-type: SIMPLE_ASSIGN
-eXAC2.rectifierCommutationVoltageDrop.division.y = eXAC2.rectifierCommutationVoltageDrop.division.u1 / eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_24(DATA *data, threadData_t *threadData)
-{
-  TRACE_PUSH
-  const int equationIndexes[2] = {1,24};
-  data->localData[0]->realVars[78] /* eXAC2.rectifierCommutationVoltageDrop.division.y variable */ = DIVISION_SIM(data->localData[0]->realVars[77] /* eXAC2.rectifierCommutationVoltageDrop.division.u1 variable */,data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */,"eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y",equationIndexes);
-  TRACE_POP
-}
-/*
-equation index: 25
-type: SIMPLE_ASSIGN
-eXAC2.rectifierCommutationVoltageDrop.fEX.y = if eXAC2.rectifierCommutationVoltageDrop.division.y <= 0.0 then 1.0 else if eXAC2.rectifierCommutationVoltageDrop.division.y > 0.0 and eXAC2.rectifierCommutationVoltageDrop.division.y <= 0.433 then 1.0 + (-0.577) * eXAC2.rectifierCommutationVoltageDrop.division.y else if eXAC2.rectifierCommutationVoltageDrop.division.y > 0.433 and eXAC2.rectifierCommutationVoltageDrop.division.y < 0.75 then sqrt(0.75 - eXAC2.rectifierCommutationVoltageDrop.division.y ^ 2.0) else if eXAC2.rectifierCommutationVoltageDrop.division.y >= 0.75 and eXAC2.rectifierCommutationVoltageDrop.division.y <= 1.0 then 1.732 * (1.0 - eXAC2.rectifierCommutationVoltageDrop.division.y) else 0.0
-*/
-void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_25(DATA *data, threadData_t *threadData)
-{
-  TRACE_PUSH
-  const int equationIndexes[2] = {1,25};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_boolean tmp2;
@@ -3416,12 +3416,12 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_25(DATA *data, threadDa
   TRACE_POP
 }
 
-void residualFunc27(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc25(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,27};
+  const int equationIndexes[2] = {1,25};
   int i;
   /* iteration variables */
   for (i=0; i<1; i++) {
@@ -3435,6 +3435,12 @@ void residualFunc27(void** dataIn, const double* xloc, double* res, const int* i
   data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */ = xloc[0];
   /* backup outputs */
   /* pre body */
+  /* local constraints */
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_14(data, threadData);
+
+  /* local constraints */
+  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_15(data, threadData);
+
   /* local constraints */
   OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_16(data, threadData);
 
@@ -3458,18 +3464,12 @@ void residualFunc27(void** dataIn, const double* xloc, double* res, const int* i
 
   /* local constraints */
   OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_23(data, threadData);
-
-  /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_24(data, threadData);
-
-  /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_eqFunction_25(data, threadData);
   /* body */
   res[0] = (data->localData[0]->realVars[4] /* eXAC2.rotatingExciterWithDemagnetizationLimited.sISO.y STATE(1) */) * (data->localData[0]->realVars[79] /* eXAC2.rectifierCommutationVoltageDrop.fEX.y variable */) - data->localData[0]->realVars[62] /* eXAC2.EFD variable */;
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS27(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS25(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+1] = {0,1};
@@ -3495,7 +3495,7 @@ void initializeSparsePatternNLS27(NONLINEAR_SYSTEM_DATA* inSysData)
   /* write color array */
   inSysData->sparsePattern->colorCols[0] = 1;
 }
-void initializeStaticDataNLS27(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS25(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
@@ -3505,10 +3505,10 @@ void initializeStaticDataNLS27(void *inData, threadData_t *threadData, void *inS
   sysData->min[i]     = data->modelData->realVarsData[64].attribute /* eXAC2.XADIFD */.min;
   sysData->max[i++]   = data->modelData->realVarsData[64].attribute /* eXAC2.XADIFD */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS27(sysData);
+  initializeSparsePatternNLS25(sysData);
 }
 
-void getIterationVarsNLS27(struct DATA *inData, double *array)
+void getIterationVarsNLS25(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
   array[0] = data->localData[0]->realVars[64] /* eXAC2.XADIFD variable */;
@@ -3521,73 +3521,73 @@ void getIterationVarsNLS27(struct DATA *inData, double *array)
 void OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_initialNonLinearSystem(int nNonLinearSystems, NONLINEAR_SYSTEM_DATA* nonLinearSystemData)
 {
   
-  nonLinearSystemData[4].equationIndex = 889;
+  nonLinearSystemData[4].equationIndex = 465;
   nonLinearSystemData[4].size = 22;
   nonLinearSystemData[4].homotopySupport = 0;
   nonLinearSystemData[4].mixedSystem = 1;
-  nonLinearSystemData[4].residualFunc = residualFunc889;
+  nonLinearSystemData[4].residualFunc = residualFunc465;
   nonLinearSystemData[4].strictTearingFunctionCall = NULL;
   nonLinearSystemData[4].analyticalJacobianColumn = OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_functionJacNLSJac26_column;
   nonLinearSystemData[4].initialAnalyticalJacobian = OpenIPSL_Examples_Controls_PSSE_ES_EXAC2_initialAnalyticJacobianNLSJac26;
   nonLinearSystemData[4].jacobianIndex = 0 /*jacInx*/;
-  nonLinearSystemData[4].initializeStaticNLSData = initializeStaticDataNLS889;
-  nonLinearSystemData[4].getIterationVars = getIterationVarsNLS889;
+  nonLinearSystemData[4].initializeStaticNLSData = initializeStaticDataNLS465;
+  nonLinearSystemData[4].getIterationVars = getIterationVarsNLS465;
   nonLinearSystemData[4].checkConstraints = NULL;
   
   
-  nonLinearSystemData[3].equationIndex = 706;
+  nonLinearSystemData[3].equationIndex = 282;
   nonLinearSystemData[3].size = 26;
   nonLinearSystemData[3].homotopySupport = 0;
   nonLinearSystemData[3].mixedSystem = 1;
-  nonLinearSystemData[3].residualFunc = residualFunc706;
+  nonLinearSystemData[3].residualFunc = residualFunc282;
   nonLinearSystemData[3].strictTearingFunctionCall = NULL;
   nonLinearSystemData[3].analyticalJacobianColumn = NULL;
   nonLinearSystemData[3].initialAnalyticalJacobian = NULL;
   nonLinearSystemData[3].jacobianIndex = -1;
-  nonLinearSystemData[3].initializeStaticNLSData = initializeStaticDataNLS706;
-  nonLinearSystemData[3].getIterationVars = getIterationVarsNLS706;
+  nonLinearSystemData[3].initializeStaticNLSData = initializeStaticDataNLS282;
+  nonLinearSystemData[3].getIterationVars = getIterationVarsNLS282;
   nonLinearSystemData[3].checkConstraints = NULL;
   
   
-  nonLinearSystemData[2].equationIndex = 628;
+  nonLinearSystemData[2].equationIndex = 204;
   nonLinearSystemData[2].size = 1;
   nonLinearSystemData[2].homotopySupport = 0;
   nonLinearSystemData[2].mixedSystem = 1;
-  nonLinearSystemData[2].residualFunc = residualFunc628;
+  nonLinearSystemData[2].residualFunc = residualFunc204;
   nonLinearSystemData[2].strictTearingFunctionCall = NULL;
   nonLinearSystemData[2].analyticalJacobianColumn = NULL;
   nonLinearSystemData[2].initialAnalyticalJacobian = NULL;
   nonLinearSystemData[2].jacobianIndex = -1;
-  nonLinearSystemData[2].initializeStaticNLSData = initializeStaticDataNLS628;
-  nonLinearSystemData[2].getIterationVars = getIterationVarsNLS628;
+  nonLinearSystemData[2].initializeStaticNLSData = initializeStaticDataNLS204;
+  nonLinearSystemData[2].getIterationVars = getIterationVarsNLS204;
   nonLinearSystemData[2].checkConstraints = NULL;
   
   
-  nonLinearSystemData[1].equationIndex = 105;
+  nonLinearSystemData[1].equationIndex = 103;
   nonLinearSystemData[1].size = 26;
   nonLinearSystemData[1].homotopySupport = 0;
   nonLinearSystemData[1].mixedSystem = 1;
-  nonLinearSystemData[1].residualFunc = residualFunc105;
+  nonLinearSystemData[1].residualFunc = residualFunc103;
   nonLinearSystemData[1].strictTearingFunctionCall = NULL;
   nonLinearSystemData[1].analyticalJacobianColumn = NULL;
   nonLinearSystemData[1].initialAnalyticalJacobian = NULL;
   nonLinearSystemData[1].jacobianIndex = -1;
-  nonLinearSystemData[1].initializeStaticNLSData = initializeStaticDataNLS105;
-  nonLinearSystemData[1].getIterationVars = getIterationVarsNLS105;
+  nonLinearSystemData[1].initializeStaticNLSData = initializeStaticDataNLS103;
+  nonLinearSystemData[1].getIterationVars = getIterationVarsNLS103;
   nonLinearSystemData[1].checkConstraints = NULL;
   
   
-  nonLinearSystemData[0].equationIndex = 27;
+  nonLinearSystemData[0].equationIndex = 25;
   nonLinearSystemData[0].size = 1;
   nonLinearSystemData[0].homotopySupport = 0;
   nonLinearSystemData[0].mixedSystem = 1;
-  nonLinearSystemData[0].residualFunc = residualFunc27;
+  nonLinearSystemData[0].residualFunc = residualFunc25;
   nonLinearSystemData[0].strictTearingFunctionCall = NULL;
   nonLinearSystemData[0].analyticalJacobianColumn = NULL;
   nonLinearSystemData[0].initialAnalyticalJacobian = NULL;
   nonLinearSystemData[0].jacobianIndex = -1;
-  nonLinearSystemData[0].initializeStaticNLSData = initializeStaticDataNLS27;
-  nonLinearSystemData[0].getIterationVars = getIterationVarsNLS27;
+  nonLinearSystemData[0].initializeStaticNLSData = initializeStaticDataNLS25;
+  nonLinearSystemData[0].getIterationVars = getIterationVarsNLS25;
   nonLinearSystemData[0].checkConstraints = NULL;
 }
 

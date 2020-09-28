@@ -7,11 +7,13 @@ extern "C" {
 
 
 /* forwarded equations */
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_286(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_287(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_288(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_289(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_290(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_307(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_308(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_305(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_306(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_311(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_312(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_313(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_314(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_315(DATA* data, threadData_t *threadData);
@@ -43,22 +45,24 @@ extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_340(DATA* data, 
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_341(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_342(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_343(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_172(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_344(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_345(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_174(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_346(DATA* data, threadData_t *threadData);
 
 static void functionAlg_system0(DATA *data, threadData_t *threadData)
 {
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_286(data, threadData);
+
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_287(data, threadData);
+
     OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_288(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_289(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_305(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_290(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_306(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_307(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_311(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_308(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_312(data, threadData);
 
     OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_313(data, threadData);
 
@@ -122,13 +126,9 @@ static void functionAlg_system0(DATA *data, threadData_t *threadData)
 
     OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_343(data, threadData);
 
+    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_172(data, threadData);
+
     OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_344(data, threadData);
-
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_345(data, threadData);
-
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_174(data, threadData);
-
-    OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_eqFunction_346(data, threadData);
 }
 /* for continuous time variables */
 int OpenIPSL_Examples_Controls_PSSE_ES_EXAC1_functionAlgebraics(DATA *data, threadData_t *threadData)

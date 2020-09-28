@@ -55,14 +55,16 @@ const char *OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_zeroCrossingDescription(in
   static const int occurEqs17[] = {1,-1};
   static const int occurEqs18[] = {1,-1};
   static const int occurEqs19[] = {1,-1};
-  static const int occurEqs20[] = {1,287};
-  static const int occurEqs21[] = {1,288};
+  static const int occurEqs20[] = {1,285};
+  static const int occurEqs21[] = {1,286};
   static const int *occurEqs[] = {occurEqs0,occurEqs1,occurEqs2,occurEqs3,occurEqs4,occurEqs5,occurEqs6,occurEqs7,occurEqs8,occurEqs9,occurEqs10,occurEqs11,occurEqs12,occurEqs13,occurEqs14,occurEqs15,occurEqs16,occurEqs17,occurEqs18,occurEqs19,occurEqs20,occurEqs21};
   *out_EquationIndexes = (int*) occurEqs[i];
   return res[i];
 }
 
 /* forwarded equations */
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_159(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_160(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_161(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_162(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_163(DATA* data, threadData_t *threadData);
@@ -78,9 +80,9 @@ extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_172(DATA* data,
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_173(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_174(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_175(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_176(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_177(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_268(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_266(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_275(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_276(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_277(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_278(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_279(DATA* data, threadData_t *threadData);
@@ -89,22 +91,24 @@ extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_281(DATA* data,
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_282(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_283(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_284(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_285(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_286(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_290(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_291(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_292(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_293(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_294(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_295(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_296(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_297(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_298(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_299(DATA* data, threadData_t *threadData);
 
 int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_ZeroCrossingsEquations(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
 
   data->simulationInfo->callStatistics.functionZeroCrossingsEquations++;
+
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_159(data, threadData);
+
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_160(data, threadData);
 
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_161(data, threadData);
 
@@ -136,11 +140,11 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_ZeroCrossingsEquations(DA
 
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_175(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_176(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_266(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_177(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_275(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_268(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_276(data, threadData);
 
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_277(data, threadData);
 
@@ -158,9 +162,9 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_ZeroCrossingsEquations(DA
 
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_284(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_285(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_290(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_286(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_291(data, threadData);
 
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_292(data, threadData);
 
@@ -173,10 +177,6 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_ZeroCrossingsEquations(DA
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_296(data, threadData);
 
   OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_297(data, threadData);
-
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_298(data, threadData);
-
-  OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_eqFunction_299(data, threadData);
   
   TRACE_POP
   return 0;
@@ -241,7 +241,7 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_ZeroCrossings(DATA *data,
   tmp11 = LessZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[262] /* pwFault.t1 PARAM */, data->simulationInfo->storedRelations[9]);
   gout[7] = (tmp11) ? 1 : -1;
   tmp12 = LessZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[263] /* pwFault.t2 PARAM */, data->simulationInfo->storedRelations[10]);
-  gout[8] = ((tmp12 && data->simulationInfo->booleanParameter[66] /* pwFault.ground PARAM */)) ? 1 : -1;
+  gout[8] = ((tmp12 && data->simulationInfo->booleanParameter[64] /* pwFault.ground PARAM */)) ? 1 : -1;
   tmp13 = LessZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[263] /* pwFault.t2 PARAM */, data->simulationInfo->storedRelations[10]);
   gout[9] = (tmp13) ? 1 : -1;
   tmp14 = GreaterEqZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[306] /* pwLine4.t1 PARAM */, data->simulationInfo->storedRelations[11]);
@@ -266,10 +266,10 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_ZeroCrossings(DATA *data,
   tmp24 = LessZC(data->localData[0]->realVars[53] /* constantLoad.v variable */, data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */, data->simulationInfo->storedRelations[13]);
   gout[19] = (tmp24) ? 1 : -1;
   tmp25 = GreaterZC(data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, data->simulationInfo->realParameter[251] /* iEEET1.simpleLagLim.outMax PARAM */, data->simulationInfo->storedRelations[14]);
-  tmp26 = LessZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[96] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[15]);
+  tmp26 = LessZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[95] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[15]);
   gout[20] = ((tmp25 && tmp26)) ? 1 : -1;
   tmp27 = LessZC(data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, data->simulationInfo->realParameter[252] /* iEEET1.simpleLagLim.outMin PARAM */, data->simulationInfo->storedRelations[16]);
-  tmp28 = GreaterZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[96] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[17]);
+  tmp28 = GreaterZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[95] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[17]);
   gout[21] = ((tmp27 && tmp28)) ? 1 : -1;
 
 #if !defined(OMC_MINIMAL_RUNTIME)
@@ -356,11 +356,11 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_updateRelations(DATA *dat
     data->simulationInfo->relations[13] = tmp42;
     tmp43 = GreaterZC(data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, data->simulationInfo->realParameter[251] /* iEEET1.simpleLagLim.outMax PARAM */, data->simulationInfo->storedRelations[14]);
     data->simulationInfo->relations[14] = tmp43;
-    tmp44 = LessZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[96] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[15]);
+    tmp44 = LessZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[95] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[15]);
     data->simulationInfo->relations[15] = tmp44;
     tmp45 = LessZC(data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, data->simulationInfo->realParameter[252] /* iEEET1.simpleLagLim.outMin PARAM */, data->simulationInfo->storedRelations[16]);
     data->simulationInfo->relations[16] = tmp45;
-    tmp46 = GreaterZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[96] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[17]);
+    tmp46 = GreaterZC((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[95] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */, 0.0, data->simulationInfo->storedRelations[17]);
     data->simulationInfo->relations[17] = tmp46;
   } else {
     data->simulationInfo->relations[0] = (data->localData[0]->timeValue >= data->simulationInfo->realParameter[273] /* pwLine.t1 PARAM */);
@@ -378,9 +378,9 @@ int OpenIPSL_Examples_Controls_PSSE_ES_IEEET1_function_updateRelations(DATA *dat
     data->simulationInfo->relations[12] = (data->localData[0]->timeValue < data->simulationInfo->realParameter[307] /* pwLine4.t2 PARAM */);
     data->simulationInfo->relations[13] = (data->localData[0]->realVars[53] /* constantLoad.v variable */ < data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */);
     data->simulationInfo->relations[14] = (data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */ > data->simulationInfo->realParameter[251] /* iEEET1.simpleLagLim.outMax PARAM */);
-    data->simulationInfo->relations[15] = ((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[96] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */ < 0.0);
+    data->simulationInfo->relations[15] = ((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[95] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */ < 0.0);
     data->simulationInfo->relations[16] = (data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */ < data->simulationInfo->realParameter[252] /* iEEET1.simpleLagLim.outMin PARAM */);
-    data->simulationInfo->relations[17] = ((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[96] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */ > 0.0);
+    data->simulationInfo->relations[17] = ((data->simulationInfo->realParameter[247] /* iEEET1.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[95] /* iEEET1.simpleLagLim.u variable */) - data->localData[0]->realVars[11] /* iEEET1.simpleLagLim.state STATE(1) */ > 0.0);
   }
   
   TRACE_POP

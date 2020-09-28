@@ -62,62 +62,62 @@ const char *OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_zeroCrossingDescription(in
   static const int occurEqs17[] = {1,-1};
   static const int occurEqs18[] = {1,-1};
   static const int occurEqs19[] = {1,-1};
-  static const int occurEqs20[] = {1,865};
-  static const int occurEqs21[] = {1,877};
-  static const int occurEqs22[] = {1,877};
-  static const int occurEqs23[] = {1,877};
-  static const int occurEqs24[] = {1,877};
+  static const int occurEqs20[] = {1,462};
+  static const int occurEqs21[] = {1,474};
+  static const int occurEqs22[] = {1,474};
+  static const int occurEqs23[] = {1,474};
+  static const int occurEqs24[] = {1,474};
   static const int occurEqs25[] = {1,-1};
-  static const int occurEqs26[] = {1,895};
-  static const int occurEqs27[] = {1,743};
-  static const int occurEqs28[] = {1,743};
+  static const int occurEqs26[] = {1,492};
+  static const int occurEqs27[] = {1,340};
+  static const int occurEqs28[] = {1,340};
   static const int *occurEqs[] = {occurEqs0,occurEqs1,occurEqs2,occurEqs3,occurEqs4,occurEqs5,occurEqs6,occurEqs7,occurEqs8,occurEqs9,occurEqs10,occurEqs11,occurEqs12,occurEqs13,occurEqs14,occurEqs15,occurEqs16,occurEqs17,occurEqs18,occurEqs19,occurEqs20,occurEqs21,occurEqs22,occurEqs23,occurEqs24,occurEqs25,occurEqs26,occurEqs27,occurEqs28};
   *out_EquationIndexes = (int*) occurEqs[i];
   return res[i];
 }
 
 /* forwarded equations */
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_741(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_742(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_743(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_744(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_745(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_746(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_747(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_748(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_749(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_750(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_751(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_842(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_843(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_844(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_845(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_846(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_855(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_856(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_857(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_858(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_859(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_860(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_861(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_862(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_863(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_864(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_865(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_866(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_867(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_868(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_869(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_870(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_874(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_875(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_876(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_877(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_878(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_879(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_894(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_895(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_896(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_338(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_339(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_340(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_341(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_342(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_343(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_344(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_345(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_346(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_347(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_348(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_439(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_440(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_441(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_442(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_443(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_452(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_453(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_454(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_455(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_456(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_457(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_458(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_459(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_460(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_461(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_462(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_463(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_464(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_465(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_466(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_467(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_471(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_472(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_473(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_474(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_475(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_476(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_491(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_492(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_493(DATA* data, threadData_t *threadData);
 
 int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_ZeroCrossingsEquations(DATA *data, threadData_t *threadData)
 {
@@ -125,87 +125,87 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_ZeroCrossingsEquations(DA
 
   data->simulationInfo->callStatistics.functionZeroCrossingsEquations++;
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_741(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_338(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_742(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_339(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_743(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_340(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_744(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_341(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_745(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_342(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_746(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_343(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_747(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_344(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_748(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_345(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_749(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_346(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_750(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_347(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_751(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_348(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_842(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_439(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_843(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_440(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_844(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_441(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_845(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_442(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_846(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_443(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_855(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_452(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_856(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_453(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_857(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_454(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_858(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_455(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_859(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_456(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_860(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_457(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_861(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_458(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_862(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_459(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_863(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_460(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_864(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_461(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_865(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_462(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_866(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_463(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_867(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_464(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_868(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_465(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_869(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_466(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_870(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_467(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_874(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_471(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_875(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_472(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_876(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_473(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_877(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_474(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_878(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_475(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_879(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_476(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_894(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_491(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_895(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_492(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_896(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_eqFunction_493(data, threadData);
   
   TRACE_POP
   return 0;
@@ -288,7 +288,7 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_ZeroCrossings(DATA *data,
   tmp13 = LessZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[273] /* pwFault.t1 PARAM */, data->simulationInfo->storedRelations[9]);
   gout[9] = (tmp13) ? 1 : -1;
   tmp14 = LessZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[274] /* pwFault.t2 PARAM */, data->simulationInfo->storedRelations[10]);
-  gout[10] = ((tmp14 && data->simulationInfo->booleanParameter[77] /* pwFault.ground PARAM */)) ? 1 : -1;
+  gout[10] = ((tmp14 && data->simulationInfo->booleanParameter[73] /* pwFault.ground PARAM */)) ? 1 : -1;
   tmp15 = LessZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[274] /* pwFault.t2 PARAM */, data->simulationInfo->storedRelations[10]);
   gout[11] = (tmp15) ? 1 : -1;
   tmp16 = GreaterEqZC(data->localData[0]->timeValue, data->simulationInfo->realParameter[317] /* pwLine4.t1 PARAM */, data->simulationInfo->storedRelations[7]);
@@ -313,27 +313,27 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_ZeroCrossings(DATA *data,
   tmp27 = GreaterZC(data->localData[0]->realVars[3] /* eSST4B.VR1.y STATE(1) */, data->simulationInfo->realParameter[126] /* eSST4B.VR1.outMax PARAM */, data->simulationInfo->storedRelations[16]);
   tmp28 = GreaterZC((data->simulationInfo->realParameter[125] /* eSST4B.VR1.k PARAM */) * (data->localData[0]->realVars[59] /* eSST4B.Gain1.u variable */), 0.0, data->simulationInfo->storedRelations[17]);
   gout[20] = (((tmp25 && tmp26) || (tmp27 && tmp28))) ? 1 : -1;
-  tmp29 = LessEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[18]);
+  tmp29 = LessEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[18]);
   gout[21] = (tmp29) ? 1 : -1;
-  tmp30 = GreaterZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[19]);
-  tmp31 = LessEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[20]);
+  tmp30 = GreaterZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[19]);
+  tmp31 = LessEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[20]);
   gout[22] = ((tmp30 && tmp31)) ? 1 : -1;
-  tmp32 = GreaterZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[21]);
-  tmp33 = LessZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[22]);
+  tmp32 = GreaterZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[21]);
+  tmp33 = LessZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[22]);
   gout[23] = ((tmp32 && tmp33)) ? 1 : -1;
-  tmp34 = GreaterEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[23]);
-  tmp35 = LessEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 1.0, data->simulationInfo->storedRelations[24]);
+  tmp34 = GreaterEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[23]);
+  tmp35 = LessEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 1.0, data->simulationInfo->storedRelations[24]);
   gout[24] = ((tmp34 && tmp35)) ? 1 : -1;
-  tmp36 = GreaterZC(data->localData[0]->realVars[74] /* eSST4B.lV_Gate.n1 variable */, data->simulationInfo->realParameter[36] /* const1.k PARAM */, data->simulationInfo->storedRelations[25]);
+  tmp36 = GreaterZC(data->localData[0]->realVars[72] /* eSST4B.lV_Gate.n1 variable */, data->simulationInfo->realParameter[36] /* const1.k PARAM */, data->simulationInfo->storedRelations[25]);
   gout[25] = (tmp36) ? 1 : -1;
   tmp37 = LessZC(data->localData[0]->realVars[2] /* eSST4B.VM1.y STATE(1) */, data->simulationInfo->realParameter[120] /* eSST4B.VM1.outMin PARAM */, data->simulationInfo->storedRelations[26]);
   tmp38 = LessZC((data->simulationInfo->realParameter[118] /* eSST4B.VM1.k PARAM */) * (data->localData[0]->realVars[61] /* eSST4B.Gain2.u variable */), 0.0, data->simulationInfo->storedRelations[27]);
   tmp39 = GreaterZC(data->localData[0]->realVars[2] /* eSST4B.VM1.y STATE(1) */, data->simulationInfo->realParameter[119] /* eSST4B.VM1.outMax PARAM */, data->simulationInfo->storedRelations[28]);
   tmp40 = GreaterZC((data->simulationInfo->realParameter[118] /* eSST4B.VM1.k PARAM */) * (data->localData[0]->realVars[61] /* eSST4B.Gain2.u variable */), 0.0, data->simulationInfo->storedRelations[29]);
   gout[26] = (((tmp37 && tmp38) || (tmp39 && tmp40))) ? 1 : -1;
-  tmp41 = GreaterZC(data->localData[0]->realVars[73] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[154] /* eSST4B.limiter1.uMax PARAM */, data->simulationInfo->storedRelations[30]);
+  tmp41 = GreaterZC(data->localData[0]->realVars[71] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[154] /* eSST4B.limiter1.uMax PARAM */, data->simulationInfo->storedRelations[30]);
   gout[27] = (tmp41) ? 1 : -1;
-  tmp42 = LessZC(data->localData[0]->realVars[73] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[155] /* eSST4B.limiter1.uMin PARAM */, data->simulationInfo->storedRelations[31]);
+  tmp42 = LessZC(data->localData[0]->realVars[71] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[155] /* eSST4B.limiter1.uMin PARAM */, data->simulationInfo->storedRelations[31]);
   gout[28] = (tmp42) ? 1 : -1;
 
 #if !defined(OMC_MINIMAL_RUNTIME)
@@ -454,21 +454,21 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_updateRelations(DATA *dat
     data->simulationInfo->relations[16] = tmp59;
     tmp60 = GreaterZC((data->simulationInfo->realParameter[125] /* eSST4B.VR1.k PARAM */) * (data->localData[0]->realVars[59] /* eSST4B.Gain1.u variable */), 0.0, data->simulationInfo->storedRelations[17]);
     data->simulationInfo->relations[17] = tmp60;
-    tmp61 = LessEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[18]);
+    tmp61 = LessEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[18]);
     data->simulationInfo->relations[18] = tmp61;
-    tmp62 = GreaterZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[19]);
+    tmp62 = GreaterZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.0, data->simulationInfo->storedRelations[19]);
     data->simulationInfo->relations[19] = tmp62;
-    tmp63 = LessEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[20]);
+    tmp63 = LessEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[20]);
     data->simulationInfo->relations[20] = tmp63;
-    tmp64 = GreaterZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[21]);
+    tmp64 = GreaterZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.433, data->simulationInfo->storedRelations[21]);
     data->simulationInfo->relations[21] = tmp64;
-    tmp65 = LessZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[22]);
+    tmp65 = LessZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[22]);
     data->simulationInfo->relations[22] = tmp65;
-    tmp66 = GreaterEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[23]);
+    tmp66 = GreaterEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 0.75, data->simulationInfo->storedRelations[23]);
     data->simulationInfo->relations[23] = tmp66;
-    tmp67 = LessEqZC(data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 1.0, data->simulationInfo->storedRelations[24]);
+    tmp67 = LessEqZC(data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */, 1.0, data->simulationInfo->storedRelations[24]);
     data->simulationInfo->relations[24] = tmp67;
-    tmp68 = GreaterZC(data->localData[0]->realVars[74] /* eSST4B.lV_Gate.n1 variable */, data->simulationInfo->realParameter[36] /* const1.k PARAM */, data->simulationInfo->storedRelations[25]);
+    tmp68 = GreaterZC(data->localData[0]->realVars[72] /* eSST4B.lV_Gate.n1 variable */, data->simulationInfo->realParameter[36] /* const1.k PARAM */, data->simulationInfo->storedRelations[25]);
     data->simulationInfo->relations[25] = tmp68;
     tmp69 = LessZC(data->localData[0]->realVars[2] /* eSST4B.VM1.y STATE(1) */, data->simulationInfo->realParameter[120] /* eSST4B.VM1.outMin PARAM */, data->simulationInfo->storedRelations[26]);
     data->simulationInfo->relations[26] = tmp69;
@@ -478,9 +478,9 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_updateRelations(DATA *dat
     data->simulationInfo->relations[28] = tmp71;
     tmp72 = GreaterZC((data->simulationInfo->realParameter[118] /* eSST4B.VM1.k PARAM */) * (data->localData[0]->realVars[61] /* eSST4B.Gain2.u variable */), 0.0, data->simulationInfo->storedRelations[29]);
     data->simulationInfo->relations[29] = tmp72;
-    tmp73 = GreaterZC(data->localData[0]->realVars[73] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[154] /* eSST4B.limiter1.uMax PARAM */, data->simulationInfo->storedRelations[30]);
+    tmp73 = GreaterZC(data->localData[0]->realVars[71] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[154] /* eSST4B.limiter1.uMax PARAM */, data->simulationInfo->storedRelations[30]);
     data->simulationInfo->relations[30] = tmp73;
-    tmp74 = LessZC(data->localData[0]->realVars[73] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[155] /* eSST4B.limiter1.uMin PARAM */, data->simulationInfo->storedRelations[31]);
+    tmp74 = LessZC(data->localData[0]->realVars[71] /* eSST4B.add2.y variable */, data->simulationInfo->realParameter[155] /* eSST4B.limiter1.uMin PARAM */, data->simulationInfo->storedRelations[31]);
     data->simulationInfo->relations[31] = tmp74;
   } else {
     data->simulationInfo->relations[0] = (data->localData[0]->timeValue >= data->simulationInfo->realParameter[284] /* pwLine.t1 PARAM */);
@@ -501,20 +501,20 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST4B_function_updateRelations(DATA *dat
     data->simulationInfo->relations[15] = ((data->simulationInfo->realParameter[125] /* eSST4B.VR1.k PARAM */) * (data->localData[0]->realVars[59] /* eSST4B.Gain1.u variable */) < 0.0);
     data->simulationInfo->relations[16] = (data->localData[0]->realVars[3] /* eSST4B.VR1.y STATE(1) */ > data->simulationInfo->realParameter[126] /* eSST4B.VR1.outMax PARAM */);
     data->simulationInfo->relations[17] = ((data->simulationInfo->realParameter[125] /* eSST4B.VR1.k PARAM */) * (data->localData[0]->realVars[59] /* eSST4B.Gain1.u variable */) > 0.0);
-    data->simulationInfo->relations[18] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ <= 0.0);
-    data->simulationInfo->relations[19] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ > 0.0);
-    data->simulationInfo->relations[20] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ <= 0.433);
-    data->simulationInfo->relations[21] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ > 0.433);
-    data->simulationInfo->relations[22] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ < 0.75);
-    data->simulationInfo->relations[23] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ >= 0.75);
-    data->simulationInfo->relations[24] = (data->localData[0]->realVars[79] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ <= 1.0);
-    data->simulationInfo->relations[25] = (data->localData[0]->realVars[74] /* eSST4B.lV_Gate.n1 variable */ > data->simulationInfo->realParameter[36] /* const1.k PARAM */);
+    data->simulationInfo->relations[18] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ <= 0.0);
+    data->simulationInfo->relations[19] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ > 0.0);
+    data->simulationInfo->relations[20] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ <= 0.433);
+    data->simulationInfo->relations[21] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ > 0.433);
+    data->simulationInfo->relations[22] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ < 0.75);
+    data->simulationInfo->relations[23] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ >= 0.75);
+    data->simulationInfo->relations[24] = (data->localData[0]->realVars[77] /* eSST4B.rectifierCommutationVoltageDrop.division.y variable */ <= 1.0);
+    data->simulationInfo->relations[25] = (data->localData[0]->realVars[72] /* eSST4B.lV_Gate.n1 variable */ > data->simulationInfo->realParameter[36] /* const1.k PARAM */);
     data->simulationInfo->relations[26] = (data->localData[0]->realVars[2] /* eSST4B.VM1.y STATE(1) */ < data->simulationInfo->realParameter[120] /* eSST4B.VM1.outMin PARAM */);
     data->simulationInfo->relations[27] = ((data->simulationInfo->realParameter[118] /* eSST4B.VM1.k PARAM */) * (data->localData[0]->realVars[61] /* eSST4B.Gain2.u variable */) < 0.0);
     data->simulationInfo->relations[28] = (data->localData[0]->realVars[2] /* eSST4B.VM1.y STATE(1) */ > data->simulationInfo->realParameter[119] /* eSST4B.VM1.outMax PARAM */);
     data->simulationInfo->relations[29] = ((data->simulationInfo->realParameter[118] /* eSST4B.VM1.k PARAM */) * (data->localData[0]->realVars[61] /* eSST4B.Gain2.u variable */) > 0.0);
-    data->simulationInfo->relations[30] = (data->localData[0]->realVars[73] /* eSST4B.add2.y variable */ > data->simulationInfo->realParameter[154] /* eSST4B.limiter1.uMax PARAM */);
-    data->simulationInfo->relations[31] = (data->localData[0]->realVars[73] /* eSST4B.add2.y variable */ < data->simulationInfo->realParameter[155] /* eSST4B.limiter1.uMin PARAM */);
+    data->simulationInfo->relations[30] = (data->localData[0]->realVars[71] /* eSST4B.add2.y variable */ > data->simulationInfo->realParameter[154] /* eSST4B.limiter1.uMax PARAM */);
+    data->simulationInfo->relations[31] = (data->localData[0]->realVars[71] /* eSST4B.add2.y variable */ < data->simulationInfo->realParameter[155] /* eSST4B.limiter1.uMin PARAM */);
   }
   
   TRACE_POP

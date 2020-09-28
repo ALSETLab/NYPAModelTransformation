@@ -84,17 +84,17 @@ modelica_metatype boxptr_OpenIPSL_Electrical_SystemBase(threadData_t *threadData
   return mmc_mk_box3(3, &OpenIPSL_Electrical_SystemBase__desc, _S_b, _fn);
 }
 
-OpenIPSL_Electrical_D_SystemBase24SysData omc_OpenIPSL_Electrical_D_SystemBase24SysData(threadData_t *threadData, modelica_real omc_S_b, modelica_real omc_fn)
+OpenIPSL_Electrical__omcQSystemBase_24SysData omc_OpenIPSL_Electrical__omcQSystemBase_24SysData(threadData_t *threadData, modelica_real omc_S_b, modelica_real omc_fn)
 {
-  OpenIPSL_Electrical_D_SystemBase24SysData tmp1;
+  OpenIPSL_Electrical__omcQSystemBase_24SysData tmp1;
   tmp1._S_b = omc_S_b;
   tmp1._fn = omc_fn;
   return tmp1;
 }
 
-modelica_metatype boxptr_OpenIPSL_Electrical_D_SystemBase24SysData(threadData_t *threadData, modelica_metatype _S_b, modelica_metatype _fn)
+modelica_metatype boxptr_OpenIPSL_Electrical__omcQSystemBase_24SysData(threadData_t *threadData, modelica_metatype _S_b, modelica_metatype _fn)
 {
-  return mmc_mk_box3(3, &OpenIPSL_Electrical_D_SystemBase24SysData__desc, _S_b, _fn);
+  return mmc_mk_box3(3, &OpenIPSL_Electrical__omcQSystemBase_24SysData__desc, _S_b, _fn);
 }
 
 DLLExport

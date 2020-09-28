@@ -7,16 +7,18 @@ extern "C" {
 
 
 /* forwarded equations */
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_270(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_271(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_272(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_273(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_274(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_275(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_276(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_277(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_278(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_279(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_303(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_304(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_301(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_302(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_307(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_308(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_309(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_310(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_311(DATA* data, threadData_t *threadData);
@@ -43,13 +45,15 @@ extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_331(DATA* data,
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_332(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_333(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_334(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_163(DATA* data, threadData_t *threadData);
 extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_335(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_336(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_165(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_337(DATA* data, threadData_t *threadData);
 
 static void functionAlg_system0(DATA *data, threadData_t *threadData)
 {
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_270(data, threadData);
+
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_271(data, threadData);
+
     OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_272(data, threadData);
 
     OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_273(data, threadData);
@@ -62,13 +66,13 @@ static void functionAlg_system0(DATA *data, threadData_t *threadData)
 
     OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_277(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_278(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_301(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_279(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_302(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_303(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_307(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_304(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_308(data, threadData);
 
     OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_309(data, threadData);
 
@@ -122,13 +126,9 @@ static void functionAlg_system0(DATA *data, threadData_t *threadData)
 
     OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_334(data, threadData);
 
+    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_163(data, threadData);
+
     OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_335(data, threadData);
-
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_336(data, threadData);
-
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_165(data, threadData);
-
-    OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_eqFunction_337(data, threadData);
 }
 /* for continuous time variables */
 int OpenIPSL_Examples_Controls_PSSE_ES_IEEET2_functionAlgebraics(DATA *data, threadData_t *threadData)

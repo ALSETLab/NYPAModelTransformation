@@ -9,11 +9,11 @@
 
   OPENMODELICAHOME                    = "/usr/bin/.."
 
-  guid                                = "{56da78fb-6065-41a7-9588-83d252c813c7}"
+  guid                                = "{3db4f0ed-de0e-4482-81c0-8242d79afddd}"
 
   description                         = "SMIB model example of GENROU with Excitation System SEXS"
-  generationTool                      = "OpenModelica Compiler OpenModelica 1.16.0~dev-369-gf7aa93e"
-  generationDateAndTime               = "2020-05-20T17:00:21Z"
+  generationTool                      = "OpenModelica Compiler OpenModelica 1.16.0~dev-612-g65daa7a"
+  generationDateAndTime               = "2020-09-28T18:37:39Z"
 
   variableNamingConvention            = "structured"
 
@@ -162,7 +162,7 @@
     alias = "noAlias"
     classIndex = "8" classType = "rSta"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1299" startColumn = "5" endLine = "1299" endColumn = "47" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1186" startColumn = "5" endLine = "1186" endColumn = "47" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -281,7 +281,7 @@
     alias = "noAlias"
     classIndex = "8" classType = "rDer"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1299" startColumn = "5" endLine = "1299" endColumn = "47" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1186" startColumn = "5" endLine = "1186" endColumn = "47" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1504,7 +1504,7 @@
     alias = "noAlias"
     classIndex = "102" classType = "rAlg"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "346" startColumn = "5" endLine = "347" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "315" startColumn = "5" endLine = "316" endColumn = "56" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1516,7 +1516,7 @@
     alias = "noAlias"
     classIndex = "103" classType = "rAlg"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "346" startColumn = "5" endLine = "347" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "315" startColumn = "5" endLine = "316" endColumn = "56" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1544,13 +1544,13 @@
   <ScalarVariable
     name = "sEXS.V_erro.y"
     valueReference = "1126"
-    description = "Connector of Real output signal"
+    description = "Connector of Real output signals"
     variability = "continuous" isDiscrete = "false"
     causality = "local" isValueChangeable = "false"
     alias = "noAlias"
     classIndex = "106" classType = "rAlg"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "977" startColumn = "5" endLine = "978" endColumn = "64" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1059" startColumn = "5" endLine = "1060" endColumn = "64" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1562,7 +1562,7 @@
     alias = "noAlias"
     classIndex = "107" classType = "rAlg"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1290" startColumn = "5" endLine = "1291" endColumn = "66" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1177" startColumn = "5" endLine = "1178" endColumn = "66" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1574,7 +1574,7 @@
     alias = "noAlias"
     classIndex = "108" classType = "rAlg"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "329" startColumn = "5" endLine = "330" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "298" startColumn = "5" endLine = "299" endColumn = "56" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1586,7 +1586,7 @@
     alias = "noAlias"
     classIndex = "109" classType = "rAlg"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "329" startColumn = "5" endLine = "330" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "298" startColumn = "5" endLine = "299" endColumn = "56" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -1623,7 +1623,7 @@
     classIndex = "2" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "FAULT.V_b"
@@ -1719,7 +1719,7 @@
     classIndex = "10" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "GEN1.V_b"
@@ -1815,7 +1815,7 @@
     classIndex = "18" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "GEN2.V_b"
@@ -1911,7 +1911,7 @@
     classIndex = "26" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "LOAD.V_b"
@@ -1983,7 +1983,7 @@
     classIndex = "32" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/SystemBase.mo" startLine = "3" startColumn = "3" endLine = "3" endColumn = "72" fileWritable = "true">
-    <Real start="100000000.0" fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real start="100000000.0" fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "SysData.fn"
@@ -2006,7 +2006,7 @@
     alias = "noAlias"
     classIndex = "34" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "216" startColumn = "5" endLine = "217" endColumn = "102" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Sources.mo" startLine = "237" startColumn = "5" endLine = "237" endColumn = "54" fileWritable = "false">
     <Real start="0.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -2018,7 +2018,7 @@
     alias = "noAlias"
     classIndex = "35" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "269" startColumn = "5" endLine = "270" endColumn = "56" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -2030,7 +2030,7 @@
     alias = "noAlias"
     classIndex = "36" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "216" startColumn = "5" endLine = "217" endColumn = "102" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Sources.mo" startLine = "237" startColumn = "5" endLine = "237" endColumn = "54" fileWritable = "false">
     <Real start="0.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -2042,7 +2042,7 @@
     alias = "noAlias"
     classIndex = "37" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "269" startColumn = "5" endLine = "270" endColumn = "56" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -2174,7 +2174,7 @@
     classIndex = "48" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "constantLoad.S_i.im"
@@ -2587,7 +2587,7 @@
     classIndex = "83" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Machines/PSSE/GENCLS.mo" startLine = "19" startColumn = "3" endLine = "20" endColumn = "52" fileWritable = "true">
-    <Real start="100000000.0" fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real start="100000000.0" fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "gENCLS.P_0"
@@ -2635,7 +2635,7 @@
     classIndex = "87" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "gENCLS.V_b"
@@ -3106,7 +3106,7 @@
     classIndex = "128" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Machines/PSSE/BaseClasses/baseMachine.mo" startLine = "20" startColumn = "3" endLine = "21" endColumn = "52" fileWritable = "true">
-    <Real start="100000000.0" fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real start="100000000.0" fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "gENROU.PMECH"
@@ -3344,7 +3344,7 @@
     classIndex = "148" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Essentials/pfComponent.mo" startLine = "6" startColumn = "3" endLine = "8" endColumn = "67" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "gENROU.Tpd0"
@@ -3942,7 +3942,7 @@
     classIndex = "198" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Branches/PwLine.mo" startLine = "20" startColumn = "3" endLine = "22" endColumn = "63" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "pwLine.X"
@@ -4072,7 +4072,7 @@
     classIndex = "209" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Branches/PwLine.mo" startLine = "20" startColumn = "3" endLine = "22" endColumn = "63" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "pwLine1.X"
@@ -4202,7 +4202,7 @@
     classIndex = "220" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Branches/PwLine.mo" startLine = "20" startColumn = "3" endLine = "22" endColumn = "63" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "pwLine3.X"
@@ -4332,7 +4332,7 @@
     classIndex = "231" classType = "rPar"
     isProtected = "false" hideResult = "false"
     fileName = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Branches/PwLine.mo" startLine = "20" startColumn = "3" endLine = "22" endColumn = "63" fileWritable = "true">
-    <Real fixed="true" useNominal="false" unit="V.A" displayUnit="MVA" />
+    <Real fixed="true" useNominal="false" unit="VA" displayUnit="MVA" />
   </ScalarVariable>
   <ScalarVariable
     name = "pwLine4.X"
@@ -4419,25 +4419,25 @@
   <ScalarVariable
     name = "sEXS.DiffV.k1"
     valueReference = "1369"
-    description = "Gain of input signal 1"
+    description = "Gain of upper input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "239" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "911" startColumn = "5" endLine = "911" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "986" startColumn = "5" endLine = "986" endColumn = "47" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.DiffV.k2"
     valueReference = "1370"
-    description = "Gain of input signal 2"
+    description = "Gain of lower input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "240" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "912" startColumn = "5" endLine = "912" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "987" startColumn = "5" endLine = "987" endColumn = "47" fileWritable = "false">
     <Real start="-1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4449,31 +4449,31 @@
     alias = "noAlias"
     classIndex = "241" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "342" startColumn = "5" endLine = "343" endColumn = "57" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "311" startColumn = "5" endLine = "312" endColumn = "57" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.DiffV1.k1"
     valueReference = "1372"
-    description = "Gain of input signal 1"
+    description = "Gain of upper input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "242" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "911" startColumn = "5" endLine = "911" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "986" startColumn = "5" endLine = "986" endColumn = "47" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.DiffV1.k2"
     valueReference = "1373"
-    description = "Gain of input signal 2"
+    description = "Gain of lower input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "243" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "912" startColumn = "5" endLine = "912" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "987" startColumn = "5" endLine = "987" endColumn = "47" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4485,7 +4485,7 @@
     alias = "noAlias"
     classIndex = "244" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "342" startColumn = "5" endLine = "343" endColumn = "57" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "311" startColumn = "5" endLine = "312" endColumn = "57" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4497,7 +4497,7 @@
     alias = "noAlias"
     classIndex = "245" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "344" startColumn = "5" endLine = "345" endColumn = "59" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "313" startColumn = "5" endLine = "314" endColumn = "59" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4641,49 +4641,49 @@
   <ScalarVariable
     name = "sEXS.V_erro.k1"
     valueReference = "1388"
-    description = "Gain of input signal 1"
+    description = "Gain of upper input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "258" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "968" startColumn = "5" endLine = "968" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1050" startColumn = "5" endLine = "1050" endColumn = "47" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.V_erro.k2"
     valueReference = "1389"
-    description = "Gain of input signal 2"
+    description = "Gain of middle input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "259" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "969" startColumn = "5" endLine = "969" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1051" startColumn = "5" endLine = "1051" endColumn = "48" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.V_erro.k3"
     valueReference = "1390"
-    description = "Gain of input signal 3"
+    description = "Gain of lower input"
     variability = "parameter" isDiscrete = "true"
     causality = "parameter" isValueChangeable = "true"
     alias = "noAlias"
     classIndex = "260" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "970" startColumn = "5" endLine = "970" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1052" startColumn = "5" endLine = "1052" endColumn = "47" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.V_erro.u1"
     valueReference = "1391"
-    description = "Connector of Real input signal 1"
+    description = "Connector 1 of Real input signals"
     variability = "parameter" isDiscrete = "true"
     causality = "calculatedParameter" isValueChangeable = "false"
     alias = "noAlias"
     classIndex = "261" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "971" startColumn = "5" endLine = "972" endColumn = "66" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1053" startColumn = "5" endLine = "1054" endColumn = "66" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4695,7 +4695,7 @@
     alias = "noAlias"
     classIndex = "262" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "216" startColumn = "5" endLine = "217" endColumn = "102" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Sources.mo" startLine = "237" startColumn = "5" endLine = "237" endColumn = "54" fileWritable = "false">
     <Real start="1.0" fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4707,7 +4707,7 @@
     alias = "noAlias"
     classIndex = "263" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "269" startColumn = "5" endLine = "270" endColumn = "56" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4767,7 +4767,7 @@
     alias = "noAlias"
     classIndex = "268" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1277" startColumn = "5" endLine = "1278" endColumn = "90" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1164" startColumn = "5" endLine = "1165" endColumn = "90" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4779,7 +4779,7 @@
     alias = "noAlias"
     classIndex = "269" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1277" startColumn = "5" endLine = "1278" endColumn = "90" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1164" startColumn = "5" endLine = "1165" endColumn = "90" fileWritable = "false">
     <Real start="1.0" fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4790,7 +4790,7 @@
     alias = "noAlias"
     classIndex = "270" classType = "rPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1298" startColumn = "5" endLine = "1298" endColumn = "97" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1185" startColumn = "5" endLine = "1185" endColumn = "97" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4802,7 +4802,7 @@
     alias = "noAlias"
     classIndex = "271" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1275" startColumn = "5" endLine = "1276" endColumn = "88" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1162" startColumn = "5" endLine = "1163" endColumn = "88" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4814,7 +4814,7 @@
     alias = "noAlias"
     classIndex = "272" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1275" startColumn = "5" endLine = "1276" endColumn = "88" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1162" startColumn = "5" endLine = "1163" endColumn = "88" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4825,7 +4825,7 @@
     alias = "noAlias"
     classIndex = "273" classType = "rPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1296" startColumn = "5" endLine = "1296" endColumn = "61" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1183" startColumn = "5" endLine = "1183" endColumn = "61" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4836,7 +4836,7 @@
     alias = "noAlias"
     classIndex = "274" classType = "rPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1296" startColumn = "5" endLine = "1296" endColumn = "61" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1183" startColumn = "5" endLine = "1183" endColumn = "61" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4847,7 +4847,7 @@
     alias = "noAlias"
     classIndex = "275" classType = "rPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1297" startColumn = "5" endLine = "1297" endColumn = "34" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1184" startColumn = "5" endLine = "1184" endColumn = "34" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4859,7 +4859,7 @@
     alias = "noAlias"
     classIndex = "276" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1283" startColumn = "5" endLine = "1285" endColumn = "50" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1170" startColumn = "5" endLine = "1172" endColumn = "50" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4871,7 +4871,7 @@
     alias = "noAlias"
     classIndex = "277" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1286" startColumn = "5" endLine = "1289" endColumn = "31" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1173" startColumn = "5" endLine = "1176" endColumn = "31" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4883,7 +4883,7 @@
     alias = "noAlias"
     classIndex = "278" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "10" startColumn = "5" endLine = "12" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Sources.mo" startLine = "10" startColumn = "5" endLine = "12" endColumn = "56" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4895,7 +4895,7 @@
     alias = "noAlias"
     classIndex = "279" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "10" startColumn = "5" endLine = "12" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Sources.mo" startLine = "10" startColumn = "5" endLine = "12" endColumn = "56" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -4966,7 +4966,7 @@
     alias = "noAlias"
     classIndex = "285" classType = "rPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "10" startColumn = "5" endLine = "12" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Sources.mo" startLine = "10" startColumn = "5" endLine = "12" endColumn = "56" fileWritable = "false">
     <Real fixed="true" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5782,7 +5782,7 @@
     alias = "alias" aliasVariable="sEXS.ECOMP" aliasVariableId="124"
     classIndex = "64" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "344" startColumn = "5" endLine = "345" endColumn = "59" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "313" startColumn = "5" endLine = "314" endColumn = "59" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5800,25 +5800,25 @@
   <ScalarVariable
     name = "sEXS.V_erro.u2"
     valueReference = "1485"
-    description = "Connector of Real input signal 2"
+    description = "Connector 2 of Real input signals"
     variability = "continuous" isDiscrete = "false"
     causality = "local" isValueChangeable = "false"
     alias = "alias" aliasVariable="sEXS.DiffV.y" aliasVariableId="122"
     classIndex = "66" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "973" startColumn = "5" endLine = "974" endColumn = "66" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1055" startColumn = "5" endLine = "1056" endColumn = "66" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
     name = "sEXS.V_erro.u3"
     valueReference = "1486"
-    description = "Connector of Real input signal 3"
+    description = "Connector 3 of Real input signals"
     variability = "continuous" isDiscrete = "false"
     causality = "local" isValueChangeable = "false"
     alias = "alias" aliasVariable="sEXS.DiffV1.y" aliasVariableId="123"
     classIndex = "67" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Math.mo" startLine = "975" startColumn = "5" endLine = "976" endColumn = "68" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Math.mo" startLine = "1057" startColumn = "5" endLine = "1058" endColumn = "68" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5841,7 +5841,7 @@
     alias = "alias" aliasVariable="sEXS.V_erro.y" aliasVariableId="126"
     classIndex = "69" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "327" startColumn = "5" endLine = "328" endColumn = "58" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "296" startColumn = "5" endLine = "297" endColumn = "58" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5853,7 +5853,7 @@
     alias = "alias" aliasVariable="sEXS.V_erro.y" aliasVariableId="126"
     classIndex = "70" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "327" startColumn = "5" endLine = "328" endColumn = "58" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "296" startColumn = "5" endLine = "297" endColumn = "58" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5865,7 +5865,7 @@
     alias = "alias" aliasVariable="sEXS.leadLag.y" aliasVariableId="129"
     classIndex = "71" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "327" startColumn = "5" endLine = "328" endColumn = "58" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "296" startColumn = "5" endLine = "297" endColumn = "58" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5877,7 +5877,7 @@
     alias = "alias" aliasVariable="gENROU.EFD" aliasVariableId="61"
     classIndex = "72" classType = "rAli"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "329" startColumn = "5" endLine = "330" endColumn = "56" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Interfaces.mo" startLine = "298" startColumn = "5" endLine = "299" endColumn = "56" fileWritable = "false">
     <Real fixed="false" useNominal="false" />
   </ScalarVariable>
   <ScalarVariable
@@ -5944,7 +5944,7 @@
     alias = "noAlias"
     classIndex = "5" classType = "iPar"
     isProtected = "false" hideResult = "false"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1279" startColumn = "5" endLine = "1282" endColumn = "31" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1166" startColumn = "5" endLine = "1169" endColumn = "31" fileWritable = "false">
     <Integer start="4" fixed="true" />
   </ScalarVariable>
   <ScalarVariable
@@ -5956,7 +5956,7 @@
     alias = "noAlias"
     classIndex = "6" classType = "iPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1293" startColumn = "5" endLine = "1293" endColumn = "80" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1180" startColumn = "5" endLine = "1180" endColumn = "80" fileWritable = "false">
     <Integer start="2" fixed="true" />
   </ScalarVariable>
   <ScalarVariable
@@ -5968,7 +5968,7 @@
     alias = "noAlias"
     classIndex = "7" classType = "iPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1294" startColumn = "5" endLine = "1294" endColumn = "78" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1181" startColumn = "5" endLine = "1181" endColumn = "78" fileWritable = "false">
     <Integer start="2" fixed="true" />
   </ScalarVariable>
   <ScalarVariable
@@ -5979,7 +5979,7 @@
     alias = "noAlias"
     classIndex = "8" classType = "iPar"
     isProtected = "true" hideResult = "true"
-    fileName = "/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Continuous.mo" startLine = "1295" startColumn = "5" endLine = "1295" endColumn = "40" fileWritable = "false">
+    fileName = "/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Continuous.mo" startLine = "1182" startColumn = "5" endLine = "1182" endColumn = "40" fileWritable = "false">
     <Integer start="1" fixed="true" />
   </ScalarVariable>
   <ScalarVariable

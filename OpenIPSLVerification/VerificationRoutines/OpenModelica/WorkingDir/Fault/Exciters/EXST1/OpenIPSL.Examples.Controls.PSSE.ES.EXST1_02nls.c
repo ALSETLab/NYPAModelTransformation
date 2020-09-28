@@ -7,12 +7,12 @@ extern "C" {
 
 /* inner equations */
 
-void residualFunc828(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc455(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,828};
+  const int equationIndexes[2] = {1,455};
   int i;
   modelica_boolean tmp0;
   modelica_boolean tmp1;
@@ -46,12 +46,12 @@ void residualFunc828(void** dataIn, const double* xloc, double* res, const int* 
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS828(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS455(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   /* no sparsity pattern available */
   inSysData->isPatternAvailable = 0;
 }
-void initializeStaticDataNLS828(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS455(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
@@ -61,10 +61,10 @@ void initializeStaticDataNLS828(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[57].attribute /* eXST1.EFD */.min;
   sysData->max[i++]   = data->modelData->realVarsData[57].attribute /* eXST1.EFD */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS828(sysData);
+  initializeSparsePatternNLS455(sysData);
 }
 
-void getIterationVarsNLS828(struct DATA *inData, double *array)
+void getIterationVarsNLS455(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
   array[0] = data->localData[0]->realVars[57] /* eXST1.EFD variable */;
@@ -74,14 +74,14 @@ void getIterationVarsNLS828(struct DATA *inData, double *array)
 /* inner equations */
 
 /*
-equation index: 809
+equation index: 436
 type: SIMPLE_ASSIGN
 eXST1.imLeadLag.u = smooth(0, if eXST1.feedback.y > eXST1.limiter.uMax then eXST1.limiter.uMax else if eXST1.feedback.y < eXST1.limiter.uMin then eXST1.limiter.uMin else eXST1.feedback.y)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_809(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_436(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,809};
+  const int equationIndexes[2] = {1,436};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_boolean tmp2;
@@ -101,76 +101,76 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_809(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 810
+equation index: 437
 type: SIMPLE_ASSIGN
 eXST1.imLeadLag.TF.y = (eXST1.imLeadLag.TF.bb[2] - eXST1.imLeadLag.TF.a[2] * eXST1.imLeadLag.TF.d) * eXST1.imLeadLag.TF.x[1] + eXST1.imLeadLag.TF.d * eXST1.imLeadLag.u
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_810(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_437(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,810};
+  const int equationIndexes[2] = {1,437};
   data->localData[0]->realVars[68] /* eXST1.imLeadLag.TF.y variable */ = (data->simulationInfo->realParameter[134] /* eXST1.imLeadLag.TF.bb[2] PARAM */ - ((data->simulationInfo->realParameter[129] /* eXST1.imLeadLag.TF.a[2] PARAM */) * (data->simulationInfo->realParameter[135] /* eXST1.imLeadLag.TF.d PARAM */))) * (data->localData[0]->realVars[67] /* eXST1.imLeadLag.TF.x[1] variable */) + (data->simulationInfo->realParameter[135] /* eXST1.imLeadLag.TF.d PARAM */) * (data->localData[0]->realVars[69] /* eXST1.imLeadLag.u variable */);
   TRACE_POP
 }
 /*
-equation index: 811
+equation index: 438
 type: SIMPLE_ASSIGN
 eXST1.K_a.u = if abs(eXST1.imLeadLag.T1 - eXST1.imLeadLag.T2) < 1e-15 then eXST1.imLeadLag.K * eXST1.imLeadLag.u else eXST1.imLeadLag.TF.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_811(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_438(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,811};
+  const int equationIndexes[2] = {1,438};
   modelica_boolean tmp0;
   tmp0 = Less(fabs(data->simulationInfo->realParameter[125] /* eXST1.imLeadLag.T1 PARAM */ - data->simulationInfo->realParameter[126] /* eXST1.imLeadLag.T2 PARAM */),1e-15);
   data->localData[0]->realVars[59] /* eXST1.K_a.u variable */ = (tmp0?(data->simulationInfo->realParameter[124] /* eXST1.imLeadLag.K PARAM */) * (data->localData[0]->realVars[69] /* eXST1.imLeadLag.u variable */):data->localData[0]->realVars[68] /* eXST1.imLeadLag.TF.y variable */);
   TRACE_POP
 }
 /*
-equation index: 812
+equation index: 439
 type: SIMPLE_ASSIGN
 eXST1.K_a.y = eXST1.K_a.k * eXST1.K_a.u
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_812(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_439(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,812};
+  const int equationIndexes[2] = {1,439};
   data->localData[0]->realVars[60] /* eXST1.K_a.y variable */ = (data->simulationInfo->realParameter[86] /* eXST1.K_a.k PARAM */) * (data->localData[0]->realVars[59] /* eXST1.K_a.u variable */);
   TRACE_POP
 }
 /*
-equation index: 813
+equation index: 440
 type: SIMPLE_ASSIGN
 eXST1.Vm1.y = if abs(eXST1.Vm1.T) <= 1e-15 then eXST1.K_a.y * eXST1.Vm1.K else eXST1.Vm1.state
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_813(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_440(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,813};
+  const int equationIndexes[2] = {1,440};
   modelica_boolean tmp0;
   tmp0 = LessEq(fabs(data->simulationInfo->realParameter[110] /* eXST1.Vm1.T PARAM */),1e-15);
   data->localData[0]->realVars[62] /* eXST1.Vm1.y variable */ = (tmp0?(data->localData[0]->realVars[60] /* eXST1.K_a.y variable */) * (data->simulationInfo->realParameter[109] /* eXST1.Vm1.K PARAM */):data->localData[0]->realVars[1] /* eXST1.Vm1.state STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 814
+equation index: 441
 type: SIMPLE_ASSIGN
 eXST1.imDerivativeLag.y = 0.1 * (eXST1.Vm1.y - eXST1.imDerivativeLag.x) / eXST1.imDerivativeLag.T
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_814(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_441(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,814};
+  const int equationIndexes[2] = {1,441};
   data->localData[0]->realVars[66] /* eXST1.imDerivativeLag.y variable */ = (0.1) * (DIVISION_SIM(data->localData[0]->realVars[62] /* eXST1.Vm1.y variable */ - data->localData[0]->realVars[2] /* eXST1.imDerivativeLag.x STATE(1) */,data->simulationInfo->realParameter[120] /* eXST1.imDerivativeLag.T PARAM */,"eXST1.imDerivativeLag.T",equationIndexes));
   TRACE_POP
 }
 
-void residualFunc823(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc450(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,823};
+  const int equationIndexes[2] = {1,450};
   int i;
   /* iteration variables */
   for (i=0; i<1; i++) {
@@ -185,28 +185,28 @@ void residualFunc823(void** dataIn, const double* xloc, double* res, const int* 
   /* backup outputs */
   /* pre body */
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_809(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_436(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_810(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_437(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_811(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_438(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_812(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_439(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_813(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_440(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_814(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_441(data, threadData);
   /* body */
   res[0] = data->localData[0]->realVars[64] /* eXST1.add3_2.y variable */ + (-data->localData[0]->realVars[66] /* eXST1.imDerivativeLag.y variable */) - data->localData[0]->realVars[65] /* eXST1.feedback.y variable */;
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS823(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS450(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+1] = {0,1};
@@ -232,7 +232,7 @@ void initializeSparsePatternNLS823(NONLINEAR_SYSTEM_DATA* inSysData)
   /* write color array */
   inSysData->sparsePattern->colorCols[0] = 1;
 }
-void initializeStaticDataNLS823(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS450(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
@@ -242,10 +242,10 @@ void initializeStaticDataNLS823(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[65].attribute /* eXST1.feedback.y */.min;
   sysData->max[i++]   = data->modelData->realVarsData[65].attribute /* eXST1.feedback.y */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS823(sysData);
+  initializeSparsePatternNLS450(sysData);
 }
 
-void getIterationVarsNLS823(struct DATA *inData, double *array)
+void getIterationVarsNLS450(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
   array[0] = data->localData[0]->realVars[65] /* eXST1.feedback.y variable */;
@@ -255,14 +255,14 @@ void getIterationVarsNLS823(struct DATA *inData, double *array)
 /* inner equations */
 
 /*
-equation index: 693
+equation index: 320
 type: SIMPLE_ASSIGN
 constantLoad.v = sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_693(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_320(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,693};
+  const int equationIndexes[2] = {1,320};
   modelica_real tmp0;
   modelica_real tmp1;
   tmp0 = data->localData[0]->realVars[121] /* pwLine1.vs.re variable */;
@@ -271,14 +271,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_693(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 694
+equation index: 321
 type: SIMPLE_ASSIGN
 constantLoad.kI = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * constantLoad.v ^ (-1.0 + constantLoad.b2) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_694(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_321(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,694};
+  const int equationIndexes[2] = {1,321};
   modelica_boolean tmp0;
   modelica_real tmp1;
   modelica_real tmp2;
@@ -409,28 +409,28 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_694(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 695
+equation index: 322
 type: SIMPLE_ASSIGN
 constantLoad.kP = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a0 + constantLoad.a1 * cos(constantLoad.v * constantLoad.wp) + constantLoad.b1 * sin(constantLoad.v * constantLoad.wp) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_695(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_322(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,695};
+  const int equationIndexes[2] = {1,322};
   modelica_boolean tmp0;
   RELATIONHYSTERESIS(tmp0, data->localData[0]->realVars[53] /* constantLoad.v variable */, data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */, 6, Less);
   data->localData[0]->realVars[50] /* constantLoad.kP variable */ = (tmp0?data->simulationInfo->realParameter[56] /* constantLoad.a0 PARAM */ + (data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (cos((data->localData[0]->realVars[53] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * (sin((data->localData[0]->realVars[53] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):1.0);
   TRACE_POP
 }
 /*
-equation index: 696
+equation index: 323
 type: SIMPLE_ASSIGN
 constantLoad.Q = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_696(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_323(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,696};
+  const int equationIndexes[2] = {1,323};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -454,14 +454,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_696(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 697
+equation index: 324
 type: SIMPLE_ASSIGN
 constantLoad.P = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_697(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_324(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,697};
+  const int equationIndexes[2] = {1,324};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -485,228 +485,228 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_697(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 698
+equation index: 325
 type: SIMPLE_ASSIGN
 gENROE.PSId = gENROE.PSIppd - gENROE.Xppd * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_698(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_325(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,698};
+  const int equationIndexes[2] = {1,325};
   data->localData[0]->realVars[84] /* gENROE.PSId variable */ = data->localData[0]->realVars[86] /* gENROE.PSIppd variable */ - ((data->simulationInfo->realParameter[224] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[94] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 699
+equation index: 326
 type: SIMPLE_ASSIGN
 pwLine.is.re = ($cse7 * gENROE.iq - (-$cse6) * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_699(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_326(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,699};
+  const int equationIndexes[2] = {1,326};
   data->localData[0]->realVars[107] /* pwLine.is.re variable */ = ((data->localData[0]->realVars[29] /* $cse7 variable */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */) - (((-data->localData[0]->realVars[28] /* $cse6 variable */)) * (data->localData[0]->realVars[94] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[170] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 700
+equation index: 327
 type: SIMPLE_ASSIGN
 pwLine.is.im = ($cse6 * gENROE.iq - $cse7 * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_700(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_327(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,700};
+  const int equationIndexes[2] = {1,327};
   data->localData[0]->realVars[106] /* pwLine.is.im variable */ = ((data->localData[0]->realVars[28] /* $cse6 variable */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */) - ((data->localData[0]->realVars[29] /* $cse7 variable */) * (data->localData[0]->realVars[94] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[170] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 701
+equation index: 328
 type: SIMPLE_ASSIGN
 gENROE.uq = gENROE.PSId - gENROE.R_a * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_701(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_328(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,701};
+  const int equationIndexes[2] = {1,328};
   data->localData[0]->realVars[97] /* gENROE.uq variable */ = data->localData[0]->realVars[84] /* gENROE.PSId variable */ - ((data->simulationInfo->realParameter[207] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 702
+equation index: 329
 type: SIMPLE_ASSIGN
 gENROE.PSIq = (-gENROE.PSIppq) - gENROE.Xppq * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_702(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_329(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,702};
+  const int equationIndexes[2] = {1,329};
   data->localData[0]->realVars[88] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[87] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[225] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 703
+equation index: 330
 type: SIMPLE_ASSIGN
 gENROE.ud = (-gENROE.PSIq) - gENROE.R_a * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_703(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_330(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,703};
+  const int equationIndexes[2] = {1,330};
   data->localData[0]->realVars[96] /* gENROE.ud variable */ = (-data->localData[0]->realVars[88] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[207] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[94] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 704
+equation index: 331
 type: SIMPLE_ASSIGN
 pwLine.vs.im = $cse6 * gENROE.uq - $cse7 * gENROE.ud
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_704(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_331(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,704};
+  const int equationIndexes[2] = {1,331};
   data->localData[0]->realVars[108] /* pwLine.vs.im variable */ = (data->localData[0]->realVars[28] /* $cse6 variable */) * (data->localData[0]->realVars[97] /* gENROE.uq variable */) - ((data->localData[0]->realVars[29] /* $cse7 variable */) * (data->localData[0]->realVars[96] /* gENROE.ud variable */));
   TRACE_POP
 }
 /*
-equation index: 705
+equation index: 332
 type: SIMPLE_ASSIGN
 pwLine.vs.re = $cse6 * gENROE.ud + $cse7 * gENROE.uq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_705(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_332(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,705};
+  const int equationIndexes[2] = {1,332};
   data->localData[0]->realVars[109] /* pwLine.vs.re variable */ = (data->localData[0]->realVars[28] /* $cse6 variable */) * (data->localData[0]->realVars[96] /* gENROE.ud variable */) + (data->localData[0]->realVars[29] /* $cse7 variable */) * (data->localData[0]->realVars[97] /* gENROE.uq variable */);
   TRACE_POP
 }
 /*
-equation index: 706
+equation index: 333
 type: SIMPLE_ASSIGN
 gENCLS.p.ir = ((-$cse1) * gENCLS.id - $cse2 * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_706(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_333(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,706};
+  const int equationIndexes[2] = {1,333};
   data->localData[0]->realVars[78] /* gENCLS.p.ir variable */ = (((-data->localData[0]->realVars[24] /* $cse1 variable */)) * (data->localData[0]->realVars[74] /* gENCLS.id variable */) - ((data->localData[0]->realVars[25] /* $cse2 variable */) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[144] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 707
+equation index: 334
 type: SIMPLE_ASSIGN
 gENCLS.p.ii = ($cse2 * gENCLS.id - $cse1 * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_707(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_334(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,707};
+  const int equationIndexes[2] = {1,334};
   data->localData[0]->realVars[77] /* gENCLS.p.ii variable */ = ((data->localData[0]->realVars[25] /* $cse2 variable */) * (data->localData[0]->realVars[74] /* gENCLS.id variable */) - ((data->localData[0]->realVars[24] /* $cse1 variable */) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[144] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 708
+equation index: 335
 type: SIMPLE_ASSIGN
 gENCLS.vq = gENCLS.eq + (-gENCLS.R_a) * gENCLS.iq - gENCLS.X_d * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_708(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_335(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,708};
+  const int equationIndexes[2] = {1,335};
   data->localData[0]->realVars[80] /* gENCLS.vq variable */ = data->localData[0]->realVars[5] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[150] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[153] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[74] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 709
+equation index: 336
 type: SIMPLE_ASSIGN
 gENCLS.vd = gENCLS.X_d * gENCLS.iq - gENCLS.R_a * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_709(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_336(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,709};
+  const int equationIndexes[2] = {1,336};
   data->localData[0]->realVars[79] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[153] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[150] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[74] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 710
+equation index: 337
 type: SIMPLE_ASSIGN
 pwLine4.ir.im = (-pwLine1.ir.im) - gENCLS.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_710(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_337(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,710};
+  const int equationIndexes[2] = {1,337};
   data->localData[0]->realVars[136] /* pwLine4.ir.im variable */ = (-data->localData[0]->realVars[114] /* pwLine1.ir.im variable */) - data->localData[0]->realVars[77] /* gENCLS.p.ii variable */;
   TRACE_POP
 }
 /*
-equation index: 711
+equation index: 338
 type: SIMPLE_ASSIGN
 pwLine4.ir.re = (-pwLine1.ir.re) - gENCLS.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_711(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_338(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,711};
+  const int equationIndexes[2] = {1,338};
   data->localData[0]->realVars[137] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[115] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[78] /* gENCLS.p.ir variable */;
   TRACE_POP
 }
 /*
-equation index: 712
+equation index: 339
 type: SIMPLE_ASSIGN
 pwFault.p.ii = (-pwLine3.ir.im) - pwLine4.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_712(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_339(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,712};
+  const int equationIndexes[2] = {1,339};
   data->localData[0]->realVars[98] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[126] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[138] /* pwLine4.is.im variable */;
   TRACE_POP
 }
 /*
-equation index: 713
+equation index: 340
 type: SIMPLE_ASSIGN
 pwFault.p.ir = (-pwLine3.ir.re) - pwLine4.is.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_713(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_340(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,713};
+  const int equationIndexes[2] = {1,340};
   data->localData[0]->realVars[99] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[127] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[139] /* pwLine4.is.re variable */;
   TRACE_POP
 }
 /*
-equation index: 714
+equation index: 341
 type: SIMPLE_ASSIGN
 constantLoad.p.ii = (-pwLine.ir.im) - pwLine1.is.im - pwLine3.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_714(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_341(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,714};
+  const int equationIndexes[2] = {1,341};
   data->localData[0]->realVars[51] /* constantLoad.p.ii variable */ = (-data->localData[0]->realVars[104] /* pwLine.ir.im variable */) - data->localData[0]->realVars[116] /* pwLine1.is.im variable */ - data->localData[0]->realVars[128] /* pwLine3.is.im variable */;
   TRACE_POP
 }
 /*
-equation index: 715
+equation index: 342
 type: SIMPLE_ASSIGN
 pwLine.ir.re = (-pwLine1.is.re) - pwLine3.is.re - constantLoad.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_715(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_342(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,715};
+  const int equationIndexes[2] = {1,342};
   data->localData[0]->realVars[105] /* pwLine.ir.re variable */ = (-data->localData[0]->realVars[117] /* pwLine1.is.re variable */) - data->localData[0]->realVars[129] /* pwLine3.is.re variable */ - data->localData[0]->realVars[52] /* constantLoad.p.ir variable */;
   TRACE_POP
 }
 
-void residualFunc783(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc410(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,783};
+  const int equationIndexes[2] = {1,410};
   int i;
   modelica_boolean tmp0;
   modelica_boolean tmp1;
@@ -796,73 +796,73 @@ void residualFunc783(void** dataIn, const double* xloc, double* res, const int* 
   /* backup outputs */
   /* pre body */
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_693(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_320(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_694(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_321(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_695(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_322(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_696(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_323(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_697(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_324(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_698(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_325(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_699(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_326(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_700(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_327(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_701(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_328(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_702(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_329(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_703(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_330(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_704(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_331(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_705(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_332(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_706(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_333(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_707(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_334(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_708(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_335(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_709(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_336(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_710(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_337(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_711(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_338(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_712(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_339(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_713(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_340(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_714(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_341(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_715(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_342(data, threadData);
   /* body */
   RELATIONHYSTERESIS(tmp0, data->localData[0]->timeValue, data->simulationInfo->realParameter[279] /* pwLine1.t1 PARAM */, 2, GreaterEq);
   RELATIONHYSTERESIS(tmp1, data->localData[0]->timeValue, data->simulationInfo->realParameter[280] /* pwLine1.t2 PARAM */, 3, Less);
@@ -1006,7 +1006,7 @@ void residualFunc783(void** dataIn, const double* xloc, double* res, const int* 
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS783(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS410(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+22] = {0,4,4,4,4,4,3,3,3,3,4,4,4,4,4,7,7,4,4,11,11,8,8};
@@ -1053,7 +1053,7 @@ void initializeSparsePatternNLS783(NONLINEAR_SYSTEM_DATA* inSysData)
   inSysData->sparsePattern->colorCols[8] = 10;
   inSysData->sparsePattern->colorCols[10] = 10;
 }
-void initializeStaticDataNLS783(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS410(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
@@ -1147,10 +1147,10 @@ void initializeStaticDataNLS783(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[131].attribute /* pwLine3.vr.re */.min;
   sysData->max[i++]   = data->modelData->realVarsData[131].attribute /* pwLine3.vr.re */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS783(sysData);
+  initializeSparsePatternNLS410(sysData);
 }
 
-void getIterationVarsNLS783(struct DATA *inData, double *array)
+void getIterationVarsNLS410(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
   array[0] = data->localData[0]->realVars[52] /* constantLoad.p.ir variable */;
@@ -1181,14 +1181,14 @@ void getIterationVarsNLS783(struct DATA *inData, double *array)
 /* inner equations */
 
 /*
-equation index: 552
+equation index: 179
 type: SIMPLE_ASSIGN
 constantLoad.v = sqrt(pwLine1.vs.re ^ 2.0 + pwLine1.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_552(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_179(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,552};
+  const int equationIndexes[2] = {1,179};
   modelica_real tmp0;
   modelica_real tmp1;
   tmp0 = data->localData[0]->realVars[121] /* pwLine1.vs.re variable */;
@@ -1197,14 +1197,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_552(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 553
+equation index: 180
 type: SIMPLE_ASSIGN
 constantLoad.kI = if constantLoad.v < 0.5 then constantLoad.a2 * constantLoad.b2 * constantLoad.v ^ (-1.0 + constantLoad.b2) * exp((-constantLoad.a2) * constantLoad.v ^ constantLoad.b2) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_553(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_180(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,553};
+  const int equationIndexes[2] = {1,180};
   modelica_boolean tmp0;
   modelica_real tmp1;
   modelica_real tmp2;
@@ -1335,28 +1335,28 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_553(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 554
+equation index: 181
 type: SIMPLE_ASSIGN
 constantLoad.kP = if constantLoad.v < constantLoad.PQBRAK then constantLoad.a0 + constantLoad.a1 * cos(constantLoad.v * constantLoad.wp) + constantLoad.b1 * sin(constantLoad.v * constantLoad.wp) else 1.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_554(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_181(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,554};
+  const int equationIndexes[2] = {1,181};
   modelica_boolean tmp0;
   tmp0 = Less(data->localData[0]->realVars[53] /* constantLoad.v variable */,data->simulationInfo->realParameter[37] /* constantLoad.PQBRAK PARAM */);
   data->localData[0]->realVars[50] /* constantLoad.kP variable */ = (tmp0?data->simulationInfo->realParameter[56] /* constantLoad.a0 PARAM */ + (data->simulationInfo->realParameter[57] /* constantLoad.a1 PARAM */) * (cos((data->localData[0]->realVars[53] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))) + (data->simulationInfo->realParameter[63] /* constantLoad.b1 PARAM */) * (sin((data->localData[0]->realVars[53] /* constantLoad.v variable */) * (data->simulationInfo->realParameter[77] /* constantLoad.wp PARAM */))):1.0);
   TRACE_POP
 }
 /*
-equation index: 555
+equation index: 182
 type: SIMPLE_ASSIGN
 constantLoad.Q = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.im + constantLoad.d_Q) else constantLoad.kI * constantLoad.S_I.im * constantLoad.v + constantLoad.S_Y.im * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_555(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_182(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,555};
+  const int equationIndexes[2] = {1,182};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -1380,14 +1380,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_555(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 556
+equation index: 183
 type: SIMPLE_ASSIGN
 constantLoad.P = if time >= constantLoad.t1 and time <= constantLoad.t1 + constantLoad.d_t then constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * (constantLoad.S_P.re + constantLoad.d_P) else constantLoad.kI * constantLoad.S_I.re * constantLoad.v + constantLoad.S_Y.re * constantLoad.v ^ 2.0 + constantLoad.kP * constantLoad.S_P.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_556(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_183(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,556};
+  const int equationIndexes[2] = {1,183};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_real tmp2;
@@ -1411,264 +1411,264 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_556(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 557
+equation index: 184
 type: SIMPLE_ASSIGN
 eXST1.ECOMP0 = eXST1.ECOMP
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_557(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_184(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,557};
+  const int equationIndexes[2] = {1,184};
   data->simulationInfo->realParameter[81] /* eXST1.ECOMP0 PARAM */ = data->localData[0]->realVars[56] /* eXST1.ECOMP variable */;
   TRACE_POP
 }
 /*
-equation index: 558
+equation index: 185
 type: SIMPLE_ASSIGN
 eXST1.V_REF = eXST1.Efd0 / eXST1.K_A + eXST1.ECOMP0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_558(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_185(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,558};
+  const int equationIndexes[2] = {1,185};
   data->simulationInfo->realParameter[106] /* eXST1.V_REF PARAM */ = DIVISION_SIM(data->simulationInfo->realParameter[82] /* eXST1.Efd0 PARAM */,data->simulationInfo->realParameter[83] /* eXST1.K_A PARAM */,"eXST1.K_A",equationIndexes) + data->simulationInfo->realParameter[81] /* eXST1.ECOMP0 PARAM */;
   TRACE_POP
 }
 /*
-equation index: 559
+equation index: 186
 type: SIMPLE_ASSIGN
 eXST1.VoltageReference.k = eXST1.V_REF
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_559(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_186(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,559};
+  const int equationIndexes[2] = {1,186};
   data->simulationInfo->realParameter[114] /* eXST1.VoltageReference.k PARAM */ = data->simulationInfo->realParameter[106] /* eXST1.V_REF PARAM */;
   TRACE_POP
 }
 /*
-equation index: 560
+equation index: 187
 type: SIMPLE_ASSIGN
 eXST1.TransducerDelay.y_start = eXST1.ECOMP0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_560(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_187(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,560};
+  const int equationIndexes[2] = {1,187};
   data->simulationInfo->realParameter[100] /* eXST1.TransducerDelay.y_start PARAM */ = data->simulationInfo->realParameter[81] /* eXST1.ECOMP0 PARAM */;
   TRACE_POP
 }
 /*
-equation index: 561
+equation index: 188
 type: SIMPLE_ASSIGN
 $START.eXST1.DiffV.u2 = eXST1.TransducerDelay.y_start
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_561(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_188(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,561};
+  const int equationIndexes[2] = {1,188};
   data->modelData->realVarsData[54].attribute /* eXST1.DiffV.u2 variable */.start = data->simulationInfo->realParameter[100] /* eXST1.TransducerDelay.y_start PARAM */;
     data->localData[0]->realVars[54] /* eXST1.DiffV.u2 variable */ = data->modelData->realVarsData[54].attribute /* eXST1.DiffV.u2 variable */.start;
     infoStreamPrint(LOG_INIT_V, 0, "updated start value: %s(start=%g)", data->modelData->realVarsData[54].info /* eXST1.DiffV.u2 */.name, (modelica_real) data->localData[0]->realVars[54] /* eXST1.DiffV.u2 variable */);
   TRACE_POP
 }
 /*
-equation index: 562
+equation index: 189
 type: SIMPLE_ASSIGN
 $START.eXST1.TransducerDelay.state = eXST1.TransducerDelay.y_start
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_562(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_189(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,562};
+  const int equationIndexes[2] = {1,189};
   data->modelData->realVarsData[0].attribute /* eXST1.TransducerDelay.state STATE(1) */.start = data->simulationInfo->realParameter[100] /* eXST1.TransducerDelay.y_start PARAM */;
     data->localData[0]->realVars[0] /* eXST1.TransducerDelay.state STATE(1) */ = data->modelData->realVarsData[0].attribute /* eXST1.TransducerDelay.state STATE(1) */.start;
     infoStreamPrint(LOG_INIT_V, 0, "updated start value: %s(start=%g)", data->modelData->realVarsData[0].info /* eXST1.TransducerDelay.state */.name, (modelica_real) data->localData[0]->realVars[0] /* eXST1.TransducerDelay.state STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 563
+equation index: 190
 type: SIMPLE_ASSIGN
 eXST1.TransducerDelay.state = eXST1.TransducerDelay.y_start
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_563(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_190(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,563};
+  const int equationIndexes[2] = {1,190};
   data->localData[0]->realVars[0] /* eXST1.TransducerDelay.state STATE(1) */ = data->simulationInfo->realParameter[100] /* eXST1.TransducerDelay.y_start PARAM */;
   TRACE_POP
 }
 /*
-equation index: 564
+equation index: 191
 type: SIMPLE_ASSIGN
 eXST1.DiffV.u2 = if abs(eXST1.TransducerDelay.T) <= 1e-15 then eXST1.ECOMP * eXST1.TransducerDelay.K else eXST1.TransducerDelay.state
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_564(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_191(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,564};
+  const int equationIndexes[2] = {1,191};
   modelica_boolean tmp0;
   tmp0 = LessEq(fabs(data->simulationInfo->realParameter[97] /* eXST1.TransducerDelay.T PARAM */),1e-15);
   data->localData[0]->realVars[54] /* eXST1.DiffV.u2 variable */ = (tmp0?(data->localData[0]->realVars[56] /* eXST1.ECOMP variable */) * (data->simulationInfo->realParameter[96] /* eXST1.TransducerDelay.K PARAM */):data->localData[0]->realVars[0] /* eXST1.TransducerDelay.state STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 565
+equation index: 192
 type: SIMPLE_ASSIGN
 eXST1.DiffV.y = eXST1.DiffV.k1 * eXST1.VoltageReference.k + eXST1.DiffV.k2 * eXST1.DiffV.u2
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_565(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_192(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,565};
+  const int equationIndexes[2] = {1,192};
   data->localData[0]->realVars[55] /* eXST1.DiffV.y variable */ = (data->simulationInfo->realParameter[78] /* eXST1.DiffV.k1 PARAM */) * (data->simulationInfo->realParameter[114] /* eXST1.VoltageReference.k PARAM */) + (data->simulationInfo->realParameter[79] /* eXST1.DiffV.k2 PARAM */) * (data->localData[0]->realVars[54] /* eXST1.DiffV.u2 variable */);
   TRACE_POP
 }
 /*
-equation index: 566
+equation index: 193
 type: SIMPLE_ASSIGN
 eXST1.add3_2.y = eXST1.add3_2.k1 * const.k + eXST1.add3_2.k2 * eXST1.DiffV.y + eXST1.add3_2.k3 * eXST1.Limiters.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_566(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_193(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,566};
+  const int equationIndexes[2] = {1,193};
   data->localData[0]->realVars[64] /* eXST1.add3_2.y variable */ = (data->simulationInfo->realParameter[116] /* eXST1.add3_2.k1 PARAM */) * (data->simulationInfo->realParameter[34] /* const.k PARAM */) + (data->simulationInfo->realParameter[117] /* eXST1.add3_2.k2 PARAM */) * (data->localData[0]->realVars[55] /* eXST1.DiffV.y variable */) + (data->simulationInfo->realParameter[118] /* eXST1.add3_2.k3 PARAM */) * (data->localData[0]->realVars[61] /* eXST1.Limiters.y variable */);
   TRACE_POP
 }
 /*
-equation index: 567
+equation index: 194
 type: SIMPLE_ASSIGN
 eXST1.feedback.y = eXST1.add3_2.y - eXST1.imDerivativeLag.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_567(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_194(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,567};
+  const int equationIndexes[2] = {1,194};
   data->localData[0]->realVars[65] /* eXST1.feedback.y variable */ = data->localData[0]->realVars[64] /* eXST1.add3_2.y variable */ - data->localData[0]->realVars[66] /* eXST1.imDerivativeLag.y variable */;
   TRACE_POP
 }
 /*
-equation index: 568
+equation index: 195
 type: SIMPLE_ASSIGN
 eXST1.imLeadLag.u = eXST1.feedback.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_568(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_195(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,568};
+  const int equationIndexes[2] = {1,195};
   data->localData[0]->realVars[69] /* eXST1.imLeadLag.u variable */ = data->localData[0]->realVars[65] /* eXST1.feedback.y variable */;
   TRACE_POP
 }
 /*
-equation index: 569
+equation index: 196
 type: SIMPLE_ASSIGN
 eXST1.K_a.u = if abs(eXST1.imLeadLag.T1 - eXST1.imLeadLag.T2) < 1e-15 then eXST1.imLeadLag.K * eXST1.imLeadLag.u else eXST1.imLeadLag.TF.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_569(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_196(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,569};
+  const int equationIndexes[2] = {1,196};
   modelica_boolean tmp0;
   tmp0 = Less(fabs(data->simulationInfo->realParameter[125] /* eXST1.imLeadLag.T1 PARAM */ - data->simulationInfo->realParameter[126] /* eXST1.imLeadLag.T2 PARAM */),1e-15);
   data->localData[0]->realVars[59] /* eXST1.K_a.u variable */ = (tmp0?(data->simulationInfo->realParameter[124] /* eXST1.imLeadLag.K PARAM */) * (data->localData[0]->realVars[69] /* eXST1.imLeadLag.u variable */):data->localData[0]->realVars[68] /* eXST1.imLeadLag.TF.y variable */);
   TRACE_POP
 }
 /*
-equation index: 570
+equation index: 197
 type: SIMPLE_ASSIGN
 eXST1.K_a.y = eXST1.K_a.k * eXST1.K_a.u
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_570(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_197(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,570};
+  const int equationIndexes[2] = {1,197};
   data->localData[0]->realVars[60] /* eXST1.K_a.y variable */ = (data->simulationInfo->realParameter[86] /* eXST1.K_a.k PARAM */) * (data->localData[0]->realVars[59] /* eXST1.K_a.u variable */);
   TRACE_POP
 }
 /*
-equation index: 571
+equation index: 198
 type: SIMPLE_ASSIGN
 eXST1.Vm1.y = if abs(eXST1.Vm1.T) <= 1e-15 then eXST1.K_a.y * eXST1.Vm1.K else eXST1.Vm1.state
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_571(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_198(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,571};
+  const int equationIndexes[2] = {1,198};
   modelica_boolean tmp0;
   tmp0 = LessEq(fabs(data->simulationInfo->realParameter[110] /* eXST1.Vm1.T PARAM */),1e-15);
   data->localData[0]->realVars[62] /* eXST1.Vm1.y variable */ = (tmp0?(data->localData[0]->realVars[60] /* eXST1.K_a.y variable */) * (data->simulationInfo->realParameter[109] /* eXST1.Vm1.K PARAM */):data->localData[0]->realVars[1] /* eXST1.Vm1.state STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 572
+equation index: 199
 type: SIMPLE_ASSIGN
 eXST1.EFD = eXST1.XADIFD + $DER.gENROE.Epq * gENROE.Tpd0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_572(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_199(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,572};
+  const int equationIndexes[2] = {1,199};
   data->localData[0]->realVars[57] /* eXST1.EFD variable */ = data->localData[0]->realVars[63] /* eXST1.XADIFD variable */ + (data->localData[0]->realVars[19] /* der(gENROE.Epq) STATE_DER */) * (data->simulationInfo->realParameter[213] /* gENROE.Tpd0 PARAM */);
   TRACE_POP
 }
 /*
-equation index: 573
+equation index: 200
 type: SIMPLE_ASSIGN
 pwLine.is.re = (cos(gENROE.delta) * gENROE.iq - (-sin(gENROE.delta)) * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_573(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_200(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,573};
+  const int equationIndexes[2] = {1,200};
   data->localData[0]->realVars[107] /* pwLine.is.re variable */ = ((cos(data->localData[0]->realVars[10] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[95] /* gENROE.iq variable */) - (((-sin(data->localData[0]->realVars[10] /* gENROE.delta STATE(1) */))) * (data->localData[0]->realVars[94] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[170] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 574
+equation index: 201
 type: SIMPLE_ASSIGN
 pwLine.is.im = (sin(gENROE.delta) * gENROE.iq - cos(gENROE.delta) * gENROE.id) * gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_574(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_201(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,574};
+  const int equationIndexes[2] = {1,201};
   data->localData[0]->realVars[106] /* pwLine.is.im variable */ = ((sin(data->localData[0]->realVars[10] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[95] /* gENROE.iq variable */) - ((cos(data->localData[0]->realVars[10] /* gENROE.delta STATE(1) */)) * (data->localData[0]->realVars[94] /* gENROE.id variable */))) * (data->simulationInfo->realParameter[170] /* gENROE.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 575
+equation index: 202
 type: SIMPLE_ASSIGN
 gENROE.PSId = gENROE.PSIppd - gENROE.Xppd * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_575(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_202(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,575};
+  const int equationIndexes[2] = {1,202};
   data->localData[0]->realVars[84] /* gENROE.PSId variable */ = data->localData[0]->realVars[86] /* gENROE.PSIppd variable */ - ((data->simulationInfo->realParameter[224] /* gENROE.Xppd PARAM */) * (data->localData[0]->realVars[94] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 576
+equation index: 203
 type: SIMPLE_ASSIGN
 gENROE.uq = gENROE.PSId - gENROE.R_a * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_576(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_203(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,576};
+  const int equationIndexes[2] = {1,203};
   data->localData[0]->realVars[97] /* gENROE.uq variable */ = data->localData[0]->realVars[84] /* gENROE.PSId variable */ - ((data->simulationInfo->realParameter[207] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 577
+equation index: 204
 type: SIMPLE_ASSIGN
 gENROE.PSIpp = sqrt(gENROE.PSIppd ^ 2.0 + gENROE.PSIppq ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_577(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_204(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,577};
+  const int equationIndexes[2] = {1,204};
   modelica_real tmp0;
   modelica_real tmp1;
   tmp0 = data->localData[0]->realVars[86] /* gENROE.PSIppd variable */;
@@ -1677,180 +1677,180 @@ void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_577(DATA *data, threadD
   TRACE_POP
 }
 /*
-equation index: 578
+equation index: 205
 type: SIMPLE_ASSIGN
 gENROE.PSIq = (-gENROE.PSIppq) - gENROE.Xppq * gENROE.iq
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_578(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_205(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,578};
+  const int equationIndexes[2] = {1,205};
   data->localData[0]->realVars[88] /* gENROE.PSIq variable */ = (-data->localData[0]->realVars[87] /* gENROE.PSIppq variable */) - ((data->simulationInfo->realParameter[225] /* gENROE.Xppq PARAM */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */));
   TRACE_POP
 }
 /*
-equation index: 579
+equation index: 206
 type: SIMPLE_ASSIGN
 gENROE.ud = (-gENROE.PSIq) - gENROE.R_a * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_579(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_206(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,579};
+  const int equationIndexes[2] = {1,206};
   data->localData[0]->realVars[96] /* gENROE.ud variable */ = (-data->localData[0]->realVars[88] /* gENROE.PSIq variable */) - ((data->simulationInfo->realParameter[207] /* gENROE.R_a PARAM */) * (data->localData[0]->realVars[94] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 580
+equation index: 207
 type: SIMPLE_ASSIGN
 gENROE.PSIkq = ((gENROE.Epd + (gENROE.Xpq - gENROE.Xl) * gENROE.iq) * gENROE.K1q + gENROE.Epd + gENROE.iq * (gENROE.Xpq - gENROE.Xq) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppq * (gENROE.Xq - gENROE.Xl) / (gENROE.Xd - gENROE.Xl) - gENROE.XaqIlq) / gENROE.K1q
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_580(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_207(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,580};
+  const int equationIndexes[2] = {1,207};
   data->localData[0]->realVars[9] /* gENROE.PSIkq STATE(1) */ = DIVISION_SIM((data->localData[0]->realVars[6] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[226] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[221] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[95] /* gENROE.iq variable */)) * (data->simulationInfo->realParameter[185] /* gENROE.K1q PARAM */) + data->localData[0]->realVars[6] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[95] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[226] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[227] /* gENROE.Xq PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[85] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[210] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[211] /* gENROE.S12 PARAM */, 1.0, 1.2)) * ((data->localData[0]->realVars[87] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[227] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[221] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[220] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[221] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes))) - data->localData[0]->realVars[91] /* gENROE.XaqIlq variable */,data->simulationInfo->realParameter[185] /* gENROE.K1q PARAM */,"gENROE.K1q",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 581
+equation index: 208
 type: SIMPLE_ASSIGN
 gENROE.Epq = (eXST1.XADIFD - (((gENROE.Xl - gENROE.Xpd) * gENROE.id - gENROE.PSIkd) * gENROE.K1d + gENROE.id * (gENROE.Xd - gENROE.Xpd) + OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2) * gENROE.PSIppd)) / (1.0 + gENROE.K1d)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_581(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_208(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,581};
+  const int equationIndexes[2] = {1,208};
   data->localData[0]->realVars[7] /* gENROE.Epq STATE(1) */ = DIVISION_SIM(data->localData[0]->realVars[63] /* eXST1.XADIFD variable */ - (((data->simulationInfo->realParameter[221] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[222] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[94] /* gENROE.id variable */) - data->localData[0]->realVars[8] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[184] /* gENROE.K1d PARAM */) + (data->localData[0]->realVars[94] /* gENROE.id variable */) * (data->simulationInfo->realParameter[220] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[222] /* gENROE.Xpd PARAM */) + (omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[85] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[210] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[211] /* gENROE.S12 PARAM */, 1.0, 1.2)) * (data->localData[0]->realVars[86] /* gENROE.PSIppd variable */)),1.0 + data->simulationInfo->realParameter[184] /* gENROE.K1d PARAM */,"1.0 + gENROE.K1d",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 582
+equation index: 209
 type: SIMPLE_ASSIGN
 gENCLS.p.ir = ((-sin(gENCLS.delta)) * gENCLS.id - cos(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_582(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_209(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,582};
+  const int equationIndexes[2] = {1,209};
   data->localData[0]->realVars[78] /* gENCLS.p.ir variable */ = (((-sin(data->localData[0]->realVars[4] /* gENCLS.delta STATE(1) */))) * (data->localData[0]->realVars[74] /* gENCLS.id variable */) - ((cos(data->localData[0]->realVars[4] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[144] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 583
+equation index: 210
 type: SIMPLE_ASSIGN
 gENCLS.p.ii = (cos(gENCLS.delta) * gENCLS.id - sin(gENCLS.delta) * gENCLS.iq) * gENCLS.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_583(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_210(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,583};
+  const int equationIndexes[2] = {1,210};
   data->localData[0]->realVars[77] /* gENCLS.p.ii variable */ = ((cos(data->localData[0]->realVars[4] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[74] /* gENCLS.id variable */) - ((sin(data->localData[0]->realVars[4] /* gENCLS.delta STATE(1) */)) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */))) * (data->simulationInfo->realParameter[144] /* gENCLS.CoB PARAM */);
   TRACE_POP
 }
 /*
-equation index: 584
+equation index: 211
 type: SIMPLE_ASSIGN
 gENCLS.vd = gENCLS.X_d * gENCLS.iq - gENCLS.R_a * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_584(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_211(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,584};
+  const int equationIndexes[2] = {1,211};
   data->localData[0]->realVars[79] /* gENCLS.vd variable */ = (data->simulationInfo->realParameter[153] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[150] /* gENCLS.R_a PARAM */) * (data->localData[0]->realVars[74] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 585
+equation index: 212
 type: SIMPLE_ASSIGN
 gENCLS.vq = gENCLS.eq + (-gENCLS.R_a) * gENCLS.iq - gENCLS.X_d * gENCLS.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_585(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_212(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,585};
+  const int equationIndexes[2] = {1,212};
   data->localData[0]->realVars[80] /* gENCLS.vq variable */ = data->localData[0]->realVars[5] /* gENCLS.eq STATE(1) */ + ((-data->simulationInfo->realParameter[150] /* gENCLS.R_a PARAM */)) * (data->localData[0]->realVars[75] /* gENCLS.iq variable */) - ((data->simulationInfo->realParameter[153] /* gENCLS.X_d PARAM */) * (data->localData[0]->realVars[74] /* gENCLS.id variable */));
   TRACE_POP
 }
 /*
-equation index: 586
+equation index: 213
 type: SIMPLE_ASSIGN
 pwLine4.ir.re = (-pwLine1.ir.re) - gENCLS.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_586(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_213(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,586};
+  const int equationIndexes[2] = {1,213};
   data->localData[0]->realVars[137] /* pwLine4.ir.re variable */ = (-data->localData[0]->realVars[115] /* pwLine1.ir.re variable */) - data->localData[0]->realVars[78] /* gENCLS.p.ir variable */;
   TRACE_POP
 }
 /*
-equation index: 587
+equation index: 214
 type: SIMPLE_ASSIGN
 pwLine1.ir.im = (-pwLine4.ir.im) - gENCLS.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_587(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_214(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,587};
+  const int equationIndexes[2] = {1,214};
   data->localData[0]->realVars[114] /* pwLine1.ir.im variable */ = (-data->localData[0]->realVars[136] /* pwLine4.ir.im variable */) - data->localData[0]->realVars[77] /* gENCLS.p.ii variable */;
   TRACE_POP
 }
 /*
-equation index: 588
+equation index: 215
 type: SIMPLE_ASSIGN
 pwFault.p.ir = (-pwLine3.ir.re) - pwLine4.is.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_588(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_215(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,588};
+  const int equationIndexes[2] = {1,215};
   data->localData[0]->realVars[99] /* pwFault.p.ir variable */ = (-data->localData[0]->realVars[127] /* pwLine3.ir.re variable */) - data->localData[0]->realVars[139] /* pwLine4.is.re variable */;
   TRACE_POP
 }
 /*
-equation index: 589
+equation index: 216
 type: SIMPLE_ASSIGN
 pwFault.p.ii = (-pwLine3.ir.im) - pwLine4.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_589(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_216(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,589};
+  const int equationIndexes[2] = {1,216};
   data->localData[0]->realVars[98] /* pwFault.p.ii variable */ = (-data->localData[0]->realVars[126] /* pwLine3.ir.im variable */) - data->localData[0]->realVars[138] /* pwLine4.is.im variable */;
   TRACE_POP
 }
 /*
-equation index: 590
+equation index: 217
 type: SIMPLE_ASSIGN
 constantLoad.p.ii = (-pwLine.ir.im) - pwLine1.is.im - pwLine3.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_590(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_217(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,590};
+  const int equationIndexes[2] = {1,217};
   data->localData[0]->realVars[51] /* constantLoad.p.ii variable */ = (-data->localData[0]->realVars[104] /* pwLine.ir.im variable */) - data->localData[0]->realVars[116] /* pwLine1.is.im variable */ - data->localData[0]->realVars[128] /* pwLine3.is.im variable */;
   TRACE_POP
 }
 /*
-equation index: 591
+equation index: 218
 type: SIMPLE_ASSIGN
 constantLoad.p.ir = (-pwLine.ir.re) - pwLine1.is.re - pwLine3.is.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_591(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_218(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,591};
+  const int equationIndexes[2] = {1,218};
   data->localData[0]->realVars[52] /* constantLoad.p.ir variable */ = (-data->localData[0]->realVars[105] /* pwLine.ir.re variable */) - data->localData[0]->realVars[117] /* pwLine1.is.re variable */ - data->localData[0]->realVars[129] /* pwLine3.is.re variable */;
   TRACE_POP
 }
 
-void residualFunc622(void** dataIn, const double* xloc, double* res, const int* iflag)
+void residualFunc249(void** dataIn, const double* xloc, double* res, const int* iflag)
 {
   TRACE_PUSH
   DATA *data = (DATA*) ((void**)dataIn[0]);
   threadData_t *threadData = (threadData_t*) ((void**)dataIn[1]);
-  const int equationIndexes[2] = {1,622};
+  const int equationIndexes[2] = {1,249};
   int i;
   modelica_boolean tmp0;
   modelica_boolean tmp1;
@@ -1954,124 +1954,124 @@ void residualFunc622(void** dataIn, const double* xloc, double* res, const int* 
   /* backup outputs */
   /* pre body */
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_552(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_179(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_553(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_180(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_554(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_181(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_555(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_182(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_556(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_183(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_557(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_184(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_558(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_185(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_559(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_186(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_560(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_187(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_561(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_188(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_562(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_189(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_563(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_190(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_564(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_191(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_565(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_192(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_566(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_193(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_567(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_194(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_568(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_195(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_569(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_196(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_570(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_197(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_571(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_198(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_572(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_199(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_573(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_200(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_574(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_201(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_575(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_202(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_576(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_203(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_577(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_204(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_578(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_205(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_579(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_206(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_580(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_207(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_581(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_208(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_582(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_209(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_583(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_210(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_584(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_211(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_585(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_212(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_586(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_213(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_587(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_214(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_588(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_215(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_589(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_216(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_590(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_217(data, threadData);
 
   /* local constraints */
-  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_591(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_EXST1_eqFunction_218(data, threadData);
   /* body */
   tmp0 = Greater(data->localData[0]->realVars[57] /* eXST1.EFD variable */,(data->localData[0]->realVars[56] /* eXST1.ECOMP variable */) * (data->simulationInfo->realParameter[107] /* eXST1.V_RMAX PARAM */) - ((data->simulationInfo->realParameter[84] /* eXST1.K_C PARAM */) * (data->localData[0]->realVars[63] /* eXST1.XADIFD variable */)));
   tmp2 = (modelica_boolean)tmp0;
@@ -2244,7 +2244,7 @@ void residualFunc622(void** dataIn, const double* xloc, double* res, const int* 
   /* restore known outputs */
   TRACE_POP
 }
-void initializeSparsePatternNLS622(NONLINEAR_SYSTEM_DATA* inSysData)
+void initializeSparsePatternNLS249(NONLINEAR_SYSTEM_DATA* inSysData)
 {
   int i=0;
   const int colPtrIndex[1+30] = {0,4,4,4,4,3,3,4,4,3,3,4,4,6,6,2,2,6,6,6,6,5,5,7,7,3,2,11,8,8,11};
@@ -2299,7 +2299,7 @@ void initializeSparsePatternNLS622(NONLINEAR_SYSTEM_DATA* inSysData)
   inSysData->sparsePattern->colorCols[15] = 10;
   inSysData->sparsePattern->colorCols[25] = 10;
 }
-void initializeStaticDataNLS622(void *inData, threadData_t *threadData, void *inSystemData)
+void initializeStaticDataNLS249(void *inData, threadData_t *threadData, void *inSystemData)
 {
   DATA* data = (DATA*) inData;
   NONLINEAR_SYSTEM_DATA* sysData = (NONLINEAR_SYSTEM_DATA*) inSystemData;
@@ -2425,10 +2425,10 @@ void initializeStaticDataNLS622(void *inData, threadData_t *threadData, void *in
   sysData->min[i]     = data->modelData->realVarsData[121].attribute /* pwLine1.vs.re */.min;
   sysData->max[i++]   = data->modelData->realVarsData[121].attribute /* pwLine1.vs.re */.max;
   /* initial sparse pattern */
-  initializeSparsePatternNLS622(sysData);
+  initializeSparsePatternNLS249(sysData);
 }
 
-void getIterationVarsNLS622(struct DATA *inData, double *array)
+void getIterationVarsNLS249(struct DATA *inData, double *array)
 {
   DATA* data = (DATA*) inData;
   array[0] = data->localData[0]->realVars[105] /* pwLine.ir.re variable */;
@@ -3771,59 +3771,59 @@ void getIterationVarsNLS96(struct DATA *inData, double *array)
 void OpenIPSL_Examples_Controls_PSSE_ES_EXST1_initialNonLinearSystem(int nNonLinearSystems, NONLINEAR_SYSTEM_DATA* nonLinearSystemData)
 {
   
-  nonLinearSystemData[4].equationIndex = 828;
+  nonLinearSystemData[4].equationIndex = 455;
   nonLinearSystemData[4].size = 1;
   nonLinearSystemData[4].homotopySupport = 0;
   nonLinearSystemData[4].mixedSystem = 0;
-  nonLinearSystemData[4].residualFunc = residualFunc828;
+  nonLinearSystemData[4].residualFunc = residualFunc455;
   nonLinearSystemData[4].strictTearingFunctionCall = NULL;
   nonLinearSystemData[4].analyticalJacobianColumn = NULL;
   nonLinearSystemData[4].initialAnalyticalJacobian = NULL;
   nonLinearSystemData[4].jacobianIndex = -1;
-  nonLinearSystemData[4].initializeStaticNLSData = initializeStaticDataNLS828;
-  nonLinearSystemData[4].getIterationVars = getIterationVarsNLS828;
+  nonLinearSystemData[4].initializeStaticNLSData = initializeStaticDataNLS455;
+  nonLinearSystemData[4].getIterationVars = getIterationVarsNLS455;
   nonLinearSystemData[4].checkConstraints = NULL;
   
   
-  nonLinearSystemData[3].equationIndex = 823;
+  nonLinearSystemData[3].equationIndex = 450;
   nonLinearSystemData[3].size = 1;
   nonLinearSystemData[3].homotopySupport = 0;
   nonLinearSystemData[3].mixedSystem = 1;
-  nonLinearSystemData[3].residualFunc = residualFunc823;
+  nonLinearSystemData[3].residualFunc = residualFunc450;
   nonLinearSystemData[3].strictTearingFunctionCall = NULL;
   nonLinearSystemData[3].analyticalJacobianColumn = OpenIPSL_Examples_Controls_PSSE_ES_EXST1_functionJacNLSJac30_column;
   nonLinearSystemData[3].initialAnalyticalJacobian = OpenIPSL_Examples_Controls_PSSE_ES_EXST1_initialAnalyticJacobianNLSJac30;
   nonLinearSystemData[3].jacobianIndex = 1 /*jacInx*/;
-  nonLinearSystemData[3].initializeStaticNLSData = initializeStaticDataNLS823;
-  nonLinearSystemData[3].getIterationVars = getIterationVarsNLS823;
+  nonLinearSystemData[3].initializeStaticNLSData = initializeStaticDataNLS450;
+  nonLinearSystemData[3].getIterationVars = getIterationVarsNLS450;
   nonLinearSystemData[3].checkConstraints = NULL;
   
   
-  nonLinearSystemData[2].equationIndex = 783;
+  nonLinearSystemData[2].equationIndex = 410;
   nonLinearSystemData[2].size = 22;
   nonLinearSystemData[2].homotopySupport = 0;
   nonLinearSystemData[2].mixedSystem = 1;
-  nonLinearSystemData[2].residualFunc = residualFunc783;
+  nonLinearSystemData[2].residualFunc = residualFunc410;
   nonLinearSystemData[2].strictTearingFunctionCall = NULL;
   nonLinearSystemData[2].analyticalJacobianColumn = OpenIPSL_Examples_Controls_PSSE_ES_EXST1_functionJacNLSJac29_column;
   nonLinearSystemData[2].initialAnalyticalJacobian = OpenIPSL_Examples_Controls_PSSE_ES_EXST1_initialAnalyticJacobianNLSJac29;
   nonLinearSystemData[2].jacobianIndex = 0 /*jacInx*/;
-  nonLinearSystemData[2].initializeStaticNLSData = initializeStaticDataNLS783;
-  nonLinearSystemData[2].getIterationVars = getIterationVarsNLS783;
+  nonLinearSystemData[2].initializeStaticNLSData = initializeStaticDataNLS410;
+  nonLinearSystemData[2].getIterationVars = getIterationVarsNLS410;
   nonLinearSystemData[2].checkConstraints = NULL;
   
   
-  nonLinearSystemData[1].equationIndex = 622;
+  nonLinearSystemData[1].equationIndex = 249;
   nonLinearSystemData[1].size = 30;
   nonLinearSystemData[1].homotopySupport = 0;
   nonLinearSystemData[1].mixedSystem = 1;
-  nonLinearSystemData[1].residualFunc = residualFunc622;
+  nonLinearSystemData[1].residualFunc = residualFunc249;
   nonLinearSystemData[1].strictTearingFunctionCall = NULL;
   nonLinearSystemData[1].analyticalJacobianColumn = NULL;
   nonLinearSystemData[1].initialAnalyticalJacobian = NULL;
   nonLinearSystemData[1].jacobianIndex = -1;
-  nonLinearSystemData[1].initializeStaticNLSData = initializeStaticDataNLS622;
-  nonLinearSystemData[1].getIterationVars = getIterationVarsNLS622;
+  nonLinearSystemData[1].initializeStaticNLSData = initializeStaticDataNLS249;
+  nonLinearSystemData[1].getIterationVars = getIterationVarsNLS249;
   nonLinearSystemData[1].checkConstraints = NULL;
   
   

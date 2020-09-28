@@ -81,74 +81,74 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_setc_function(DATA *data, threadDa
 
 
 /*
-equation index: 786
+equation index: 356
 type: SIMPLE_ASSIGN
 eSST1A.EFD0 = gENROE.efd0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_786(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_356(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,786};
-  data->localData[0]->realVars[60] /* eSST1A.EFD0 variable */ = data->simulationInfo->realParameter[294] /* gENROE.efd0 PARAM */;
+  const int equationIndexes[2] = {1,356};
+  data->localData[0]->realVars[60] /* eSST1A.EFD0 variable */ = data->simulationInfo->realParameter[293] /* gENROE.efd0 PARAM */;
   TRACE_POP
 }
 /*
-equation index: 787
+equation index: 357
 type: SIMPLE_ASSIGN
 $DER.gENCLS.delta = 0.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_787(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_357(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,787};
+  const int equationIndexes[2] = {1,357};
   data->localData[0]->realVars[18] /* der(gENCLS.delta) STATE_DER */ = 0.0;
   TRACE_POP
 }
 /*
-equation index: 788
+equation index: 358
 type: SIMPLE_ASSIGN
 $DER.gENCLS.eq = 0.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_788(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_358(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,788};
+  const int equationIndexes[2] = {1,358};
   data->localData[0]->realVars[19] /* der(gENCLS.eq) STATE_DER */ = 0.0;
   TRACE_POP
 }
 /*
-equation index: 789
+equation index: 359
 type: SIMPLE_ASSIGN
 gENROE.PSIppd = gENROE.Epq * gENROE.K3d + gENROE.PSIkd * gENROE.K4d
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_789(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_359(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,789};
-  data->localData[0]->realVars[100] /* gENROE.PSIppd variable */ = (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */) * (data->simulationInfo->realParameter[242] /* gENROE.K3d PARAM */) + (data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[244] /* gENROE.K4d PARAM */);
+  const int equationIndexes[2] = {1,359};
+  data->localData[0]->realVars[100] /* gENROE.PSIppd variable */ = (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */) * (data->simulationInfo->realParameter[241] /* gENROE.K3d PARAM */) + (data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) * (data->simulationInfo->realParameter[243] /* gENROE.K4d PARAM */);
   TRACE_POP
 }
 /*
-equation index: 790
+equation index: 360
 type: SIMPLE_ASSIGN
 gENROE.PSIppq = gENROE.PSIkq * gENROE.K4q + gENROE.Epd * gENROE.K3q
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_790(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_360(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,790};
-  data->localData[0]->realVars[101] /* gENROE.PSIppq variable */ = (data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) * (data->simulationInfo->realParameter[245] /* gENROE.K4q PARAM */) + (data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */) * (data->simulationInfo->realParameter[243] /* gENROE.K3q PARAM */);
+  const int equationIndexes[2] = {1,360};
+  data->localData[0]->realVars[101] /* gENROE.PSIppq variable */ = (data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) * (data->simulationInfo->realParameter[244] /* gENROE.K4q PARAM */) + (data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */) * (data->simulationInfo->realParameter[242] /* gENROE.K3q PARAM */);
   TRACE_POP
 }
 /*
-equation index: 791
+equation index: 361
 type: SIMPLE_ASSIGN
 gENROE.PSIpp = sqrt(gENROE.PSIppd ^ 2.0 + gENROE.PSIppq ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_791(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_361(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,791};
+  const int equationIndexes[2] = {1,361};
   modelica_real tmp0;
   modelica_real tmp1;
   tmp0 = data->localData[0]->realVars[100] /* gENROE.PSIppd variable */;
@@ -157,162 +157,162 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_791(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 792
+equation index: 362
 type: SIMPLE_ASSIGN
 $cse5 = OpenIPSL.NonElectrical.Functions.SE_exp(gENROE.PSIpp, gENROE.S10, gENROE.S12, 1.0, 1.2)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_792(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_362(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,792};
-  data->localData[0]->realVars[29] /* $cse5 variable */ = omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[99] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[264] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[265] /* gENROE.S12 PARAM */, 1.0, 1.2);
+  const int equationIndexes[2] = {1,362};
+  data->localData[0]->realVars[29] /* $cse5 variable */ = omc_OpenIPSL_NonElectrical_Functions_SE__exp(threadData, data->localData[0]->realVars[99] /* gENROE.PSIpp variable */, data->simulationInfo->realParameter[263] /* gENROE.S10 PARAM */, data->simulationInfo->realParameter[264] /* gENROE.S12 PARAM */, 1.0, 1.2);
   TRACE_POP
 }
 /*
-equation index: 793
+equation index: 363
 type: SIMPLE_ASSIGN
 $DER.gENROE.delta = gENROE.w_b * gENROE.w
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_793(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_363(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,793};
-  data->localData[0]->realVars[24] /* der(gENROE.delta) STATE_DER */ = (data->simulationInfo->realParameter[308] /* gENROE.w_b PARAM */) * (data->localData[0]->realVars[12] /* gENROE.w STATE(1) */);
+  const int equationIndexes[2] = {1,363};
+  data->localData[0]->realVars[24] /* der(gENROE.delta) STATE_DER */ = (data->simulationInfo->realParameter[307] /* gENROE.w_b PARAM */) * (data->localData[0]->realVars[12] /* gENROE.w STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 794
+equation index: 364
 type: SIMPLE_ASSIGN
 eSST1A.imLeadLag.TF.x[1] = eSST1A.imLeadLag.TF.x_scaled[1] / eSST1A.imLeadLag.TF.a_end
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_794(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_364(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,794};
+  const int equationIndexes[2] = {1,364};
   data->localData[0]->realVars[77] /* eSST1A.imLeadLag.TF.x[1] variable */ = DIVISION_SIM(data->localData[0]->realVars[2] /* eSST1A.imLeadLag.TF.x_scaled[1] STATE(1) */,data->simulationInfo->realParameter[155] /* eSST1A.imLeadLag.TF.a_end PARAM */,"eSST1A.imLeadLag.TF.a_end",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 795
+equation index: 365
 type: SIMPLE_ASSIGN
 eSST1A.imLeadLag1.TF.x[1] = eSST1A.imLeadLag1.TF.x_scaled[1] / eSST1A.imLeadLag1.TF.a_end
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_795(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_365(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,795};
+  const int equationIndexes[2] = {1,365};
   data->localData[0]->realVars[80] /* eSST1A.imLeadLag1.TF.x[1] variable */ = DIVISION_SIM(data->localData[0]->realVars[3] /* eSST1A.imLeadLag1.TF.x_scaled[1] STATE(1) */,data->simulationInfo->realParameter[173] /* eSST1A.imLeadLag1.TF.a_end PARAM */,"eSST1A.imLeadLag1.TF.a_end",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 796
+equation index: 366
 type: SIMPLE_ASSIGN
 $cse7 = cos(gENROE.delta)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_796(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_366(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,796};
+  const int equationIndexes[2] = {1,366};
   data->localData[0]->realVars[31] /* $cse7 variable */ = cos(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 797
+equation index: 367
 type: SIMPLE_ASSIGN
 $cse6 = sin(gENROE.delta)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_797(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_367(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,797};
+  const int equationIndexes[2] = {1,367};
   data->localData[0]->realVars[30] /* $cse6 variable */ = sin(data->localData[0]->realVars[11] /* gENROE.delta STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 798
+equation index: 368
 type: SIMPLE_ASSIGN
 $cse2 = cos(gENCLS.delta)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_798(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_368(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,798};
+  const int equationIndexes[2] = {1,368};
   data->localData[0]->realVars[27] /* $cse2 variable */ = cos(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 799
+equation index: 369
 type: SIMPLE_ASSIGN
 $cse1 = sin(gENCLS.delta)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_799(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_369(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,799};
+  const int equationIndexes[2] = {1,369};
   data->localData[0]->realVars[26] /* $cse1 variable */ = sin(data->localData[0]->realVars[5] /* gENCLS.delta STATE(1) */);
   TRACE_POP
 }
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_800(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_801(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_802(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_803(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_804(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_805(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_806(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_807(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_808(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_809(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_810(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_811(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_812(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_813(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_814(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_815(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_816(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_817(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_818(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_819(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_820(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_821(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_822(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_844(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_843(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_842(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_841(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_840(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_839(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_838(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_837(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_836(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_835(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_834(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_833(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_832(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_831(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_830(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_829(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_828(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_827(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_826(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_825(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_824(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_823(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_370(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_371(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_372(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_373(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_374(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_375(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_376(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_377(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_378(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_379(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_380(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_381(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_382(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_383(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_384(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_385(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_386(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_387(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_388(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_389(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_390(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_391(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_392(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_414(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_413(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_412(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_411(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_410(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_409(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_408(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_407(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_406(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_405(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_404(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_403(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_402(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_401(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_400(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_399(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_398(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_397(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_396(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_395(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_394(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_393(DATA*, threadData_t*);
 /*
-equation index: 890
+equation index: 460
 indexNonlinear: 2
 type: NONLINEAR
 
 vars: {pwLine4.is.im, pwLine3.ir.im, pwLine3.ir.re, pwLine4.is.re, pwLine1.is.re, pwLine3.is.re, pwLine3.is.im, constantLoad.p.ii, pwLine.ir.im, pwLine.ir.re, pwLine4.ir.im, pwLine4.ir.re, gENCLS.id, gENCLS.iq, pwLine1.vr.im, pwLine1.vr.re, gENROE.id, gENROE.iq, pwLine3.vr.re, pwLine3.vr.im, pwLine1.vs.im, pwLine1.vs.re}
-eqns: {800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 844, 843, 842, 841, 840, 839, 838, 837, 836, 835, 834, 833, 832, 831, 830, 829, 828, 827, 826, 825, 824, 823}
+eqns: {370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 414, 413, 412, 411, 410, 409, 408, 407, 406, 405, 404, 403, 402, 401, 400, 399, 398, 397, 396, 395, 394, 393}
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_890(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_460(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,890};
+  const int equationIndexes[2] = {1,460};
   int retValue;
   if(ACTIVE_STREAM(LOG_DT))
   {
-    infoStreamPrint(LOG_DT, 1, "Solving nonlinear system 890 (STRICT TEARING SET if tearing enabled) at time = %18.10e", data->localData[0]->timeValue);
+    infoStreamPrint(LOG_DT, 1, "Solving nonlinear system 460 (STRICT TEARING SET if tearing enabled) at time = %18.10e", data->localData[0]->timeValue);
     messageClose(LOG_DT);
   }
   /* get old value */
@@ -341,8 +341,8 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_890(DATA *data, thread
   retValue = solve_nonlinear_system(data, threadData, 2);
   /* check if solution process was successful */
   if (retValue > 0){
-    const int indexes[2] = {1,890};
-    throwStreamPrintWithEquationIndexes(threadData, indexes, "Solving non-linear system 890 failed at time=%.15g.\nFor more information please use -lv LOG_NLS.", data->localData[0]->timeValue);
+    const int indexes[2] = {1,460};
+    throwStreamPrintWithEquationIndexes(threadData, indexes, "Solving non-linear system 460 failed at time=%.15g.\nFor more information please use -lv LOG_NLS.", data->localData[0]->timeValue);
   }
   /* write solution */
   data->localData[0]->realVars[152] /* pwLine4.is.im variable */ = data->simulationInfo->nonlinearSystemData[2].nlsx[0];
@@ -370,62 +370,62 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_890(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 891
+equation index: 461
 type: SIMPLE_ASSIGN
 $DER.gENROE.PSIkd = (gENROE.Epq + (gENROE.Xl - gENROE.Xpd) * gENROE.id - gENROE.PSIkd) / gENROE.Tppd0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_891(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_461(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,891};
-  data->localData[0]->realVars[22] /* der(gENROE.PSIkd) STATE_DER */ = DIVISION_SIM(data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[275] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[276] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */) - data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */,data->simulationInfo->realParameter[268] /* gENROE.Tppd0 PARAM */,"gENROE.Tppd0",equationIndexes);
+  const int equationIndexes[2] = {1,461};
+  data->localData[0]->realVars[22] /* der(gENROE.PSIkd) STATE_DER */ = DIVISION_SIM(data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[274] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */) - data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */,data->simulationInfo->realParameter[267] /* gENROE.Tppd0 PARAM */,"gENROE.Tppd0",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 892
+equation index: 462
 type: SIMPLE_ASSIGN
 eSST1A.XADIFD = gENROE.K1d * (gENROE.Epq + (gENROE.Xl - gENROE.Xpd) * gENROE.id - gENROE.PSIkd) + gENROE.Epq + gENROE.id * (gENROE.Xd - gENROE.Xpd) + $cse5 * gENROE.PSIppd
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_892(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_462(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,892};
-  data->localData[0]->realVars[62] /* eSST1A.XADIFD variable */ = (data->simulationInfo->realParameter[238] /* gENROE.K1d PARAM */) * (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[275] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[276] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */) - data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) + data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->localData[0]->realVars[108] /* gENROE.id variable */) * (data->simulationInfo->realParameter[274] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[276] /* gENROE.Xpd PARAM */) + (data->localData[0]->realVars[29] /* $cse5 variable */) * (data->localData[0]->realVars[100] /* gENROE.PSIppd variable */);
+  const int equationIndexes[2] = {1,462};
+  data->localData[0]->realVars[62] /* eSST1A.XADIFD variable */ = (data->simulationInfo->realParameter[237] /* gENROE.K1d PARAM */) * (data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->simulationInfo->realParameter[274] /* gENROE.Xl PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xpd PARAM */) * (data->localData[0]->realVars[108] /* gENROE.id variable */) - data->localData[0]->realVars[9] /* gENROE.PSIkd STATE(1) */) + data->localData[0]->realVars[8] /* gENROE.Epq STATE(1) */ + (data->localData[0]->realVars[108] /* gENROE.id variable */) * (data->simulationInfo->realParameter[273] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xpd PARAM */) + (data->localData[0]->realVars[29] /* $cse5 variable */) * (data->localData[0]->realVars[100] /* gENROE.PSIppd variable */);
   TRACE_POP
 }
 /*
-equation index: 893
+equation index: 463
 type: SIMPLE_ASSIGN
 eSST1A.add2.y = eSST1A.add2.k1 * eSST1A.Vref1.k + eSST1A.add2.k2 * eSST1A.XADIFD
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_893(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_463(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,893};
+  const int equationIndexes[2] = {1,463};
   data->localData[0]->realVars[63] /* eSST1A.add2.y variable */ = (data->simulationInfo->realParameter[127] /* eSST1A.add2.k1 PARAM */) * (data->simulationInfo->realParameter[125] /* eSST1A.Vref1.k PARAM */) + (data->simulationInfo->realParameter[128] /* eSST1A.add2.k2 PARAM */) * (data->localData[0]->realVars[62] /* eSST1A.XADIFD variable */);
   TRACE_POP
 }
 /*
-equation index: 894
+equation index: 464
 type: SIMPLE_ASSIGN
 eSST1A.imGain.y = eSST1A.imGain.k * eSST1A.add2.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_894(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_464(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,894};
+  const int equationIndexes[2] = {1,464};
   data->localData[0]->realVars[75] /* eSST1A.imGain.y variable */ = (data->simulationInfo->realParameter[145] /* eSST1A.imGain.k PARAM */) * (data->localData[0]->realVars[63] /* eSST1A.add2.y variable */);
   TRACE_POP
 }
 /*
-equation index: 895
+equation index: 465
 type: SIMPLE_ASSIGN
 eSST1A.add3_2.u3 = smooth(0, if eSST1A.imGain.y > eSST1A.imLimited1.uMax then eSST1A.imLimited1.uMax else if eSST1A.imGain.y < eSST1A.imLimited1.uMin then eSST1A.imLimited1.uMin else eSST1A.imGain.y)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_895(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_465(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,895};
+  const int equationIndexes[2] = {1,465};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   modelica_boolean tmp2;
@@ -445,86 +445,86 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_895(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 896
+equation index: 466
 type: SIMPLE_ASSIGN
 eSST1A.add3.u1 = eSST1A.imGain3.k * eSST1A.XADIFD
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_896(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_466(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,896};
+  const int equationIndexes[2] = {1,466};
   data->localData[0]->realVars[64] /* eSST1A.add3.u1 variable */ = (data->simulationInfo->realParameter[148] /* eSST1A.imGain3.k PARAM */) * (data->localData[0]->realVars[62] /* eSST1A.XADIFD variable */);
   TRACE_POP
 }
 /*
-equation index: 897
+equation index: 467
 type: SIMPLE_ASSIGN
 $DER.gENROE.PSIkq = (gENROE.Epd + (gENROE.Xpq - gENROE.Xl) * gENROE.iq - gENROE.PSIkq) / gENROE.Tppq0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_897(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_467(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,897};
-  data->localData[0]->realVars[23] /* der(gENROE.PSIkq) STATE_DER */ = DIVISION_SIM(data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[280] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */,data->simulationInfo->realParameter[269] /* gENROE.Tppq0 PARAM */,"gENROE.Tppq0",equationIndexes);
+  const int equationIndexes[2] = {1,467};
+  data->localData[0]->realVars[23] /* der(gENROE.PSIkq) STATE_DER */ = DIVISION_SIM(data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[279] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[274] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */,data->simulationInfo->realParameter[268] /* gENROE.Tppq0 PARAM */,"gENROE.Tppq0",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 898
+equation index: 468
 type: SIMPLE_ASSIGN
 gENROE.XaqIlq = gENROE.K1q * (gENROE.Epd + (gENROE.Xpq - gENROE.Xl) * gENROE.iq - gENROE.PSIkq) + gENROE.Epd + gENROE.iq * (gENROE.Xpq - gENROE.Xq) + $cse5 * gENROE.PSIppq * (gENROE.Xq - gENROE.Xl) / (gENROE.Xd - gENROE.Xl)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_898(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_468(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,898};
-  data->localData[0]->realVars[105] /* gENROE.XaqIlq variable */ = (data->simulationInfo->realParameter[239] /* gENROE.K1q PARAM */) * (data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[280] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) + data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[109] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[280] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[281] /* gENROE.Xq PARAM */) + (data->localData[0]->realVars[29] /* $cse5 variable */) * ((data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[281] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[274] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[275] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes)));
+  const int equationIndexes[2] = {1,468};
+  data->localData[0]->realVars[105] /* gENROE.XaqIlq variable */ = (data->simulationInfo->realParameter[238] /* gENROE.K1q PARAM */) * (data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->simulationInfo->realParameter[279] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[274] /* gENROE.Xl PARAM */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - data->localData[0]->realVars[10] /* gENROE.PSIkq STATE(1) */) + data->localData[0]->realVars[7] /* gENROE.Epd STATE(1) */ + (data->localData[0]->realVars[109] /* gENROE.iq variable */) * (data->simulationInfo->realParameter[279] /* gENROE.Xpq PARAM */ - data->simulationInfo->realParameter[280] /* gENROE.Xq PARAM */) + (data->localData[0]->realVars[29] /* $cse5 variable */) * ((data->localData[0]->realVars[101] /* gENROE.PSIppq variable */) * (DIVISION_SIM(data->simulationInfo->realParameter[280] /* gENROE.Xq PARAM */ - data->simulationInfo->realParameter[274] /* gENROE.Xl PARAM */,data->simulationInfo->realParameter[273] /* gENROE.Xd PARAM */ - data->simulationInfo->realParameter[274] /* gENROE.Xl PARAM */,"gENROE.Xd - gENROE.Xl",equationIndexes)));
   TRACE_POP
 }
 /*
-equation index: 899
+equation index: 469
 type: SIMPLE_ASSIGN
 $DER.gENROE.Epd = (-gENROE.XaqIlq) / gENROE.Tpq0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_899(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_469(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,899};
-  data->localData[0]->realVars[20] /* der(gENROE.Epd) STATE_DER */ = DIVISION_SIM((-data->localData[0]->realVars[105] /* gENROE.XaqIlq variable */),data->simulationInfo->realParameter[270] /* gENROE.Tpq0 PARAM */,"gENROE.Tpq0",equationIndexes);
+  const int equationIndexes[2] = {1,469};
+  data->localData[0]->realVars[20] /* der(gENROE.Epd) STATE_DER */ = DIVISION_SIM((-data->localData[0]->realVars[105] /* gENROE.XaqIlq variable */),data->simulationInfo->realParameter[269] /* gENROE.Tpq0 PARAM */,"gENROE.Tpq0",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 900
+equation index: 470
 type: SIMPLE_ASSIGN
 gENROE.Te = gENROE.PSId * gENROE.iq - gENROE.PSIq * gENROE.id
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_900(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_470(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,900};
+  const int equationIndexes[2] = {1,470};
   data->localData[0]->realVars[104] /* gENROE.Te variable */ = (data->localData[0]->realVars[98] /* gENROE.PSId variable */) * (data->localData[0]->realVars[109] /* gENROE.iq variable */) - ((data->localData[0]->realVars[102] /* gENROE.PSIq variable */) * (data->localData[0]->realVars[108] /* gENROE.id variable */));
   TRACE_POP
 }
 /*
-equation index: 901
+equation index: 471
 type: SIMPLE_ASSIGN
 $DER.gENROE.w = 0.5 * ((gENROE.pm0 - gENROE.D * gENROE.w) / (1.0 + gENROE.w) - gENROE.Te) / gENROE.H
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_901(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_471(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,901};
-  data->localData[0]->realVars[25] /* der(gENROE.w) STATE_DER */ = (0.5) * (DIVISION_SIM(DIVISION_SIM(data->simulationInfo->realParameter[301] /* gENROE.pm0 PARAM */ - ((data->simulationInfo->realParameter[225] /* gENROE.D PARAM */) * (data->localData[0]->realVars[12] /* gENROE.w STATE(1) */)),1.0 + data->localData[0]->realVars[12] /* gENROE.w STATE(1) */,"1.0 + gENROE.w",equationIndexes) - data->localData[0]->realVars[104] /* gENROE.Te variable */,data->simulationInfo->realParameter[231] /* gENROE.H PARAM */,"gENROE.H",equationIndexes));
+  const int equationIndexes[2] = {1,471};
+  data->localData[0]->realVars[25] /* der(gENROE.w) STATE_DER */ = (0.5) * (DIVISION_SIM(DIVISION_SIM(data->simulationInfo->realParameter[300] /* gENROE.pm0 PARAM */ - ((data->simulationInfo->realParameter[224] /* gENROE.D PARAM */) * (data->localData[0]->realVars[12] /* gENROE.w STATE(1) */)),1.0 + data->localData[0]->realVars[12] /* gENROE.w STATE(1) */,"1.0 + gENROE.w",equationIndexes) - data->localData[0]->realVars[104] /* gENROE.Te variable */,data->simulationInfo->realParameter[230] /* gENROE.H PARAM */,"gENROE.H",equationIndexes));
   TRACE_POP
 }
 /*
-equation index: 902
+equation index: 472
 type: SIMPLE_ASSIGN
 gENROE.I = sqrt(pwLine.is.im ^ 2.0 + pwLine.is.re ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_902(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_472(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,902};
+  const int equationIndexes[2] = {1,472};
   modelica_real tmp4;
   modelica_real tmp5;
   tmp4 = data->localData[0]->realVars[120] /* pwLine.is.im variable */;
@@ -533,62 +533,62 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_902(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 903
+equation index: 473
 type: SIMPLE_ASSIGN
 gENROE.anglei = atan2(-pwLine.is.im, -pwLine.is.re)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_903(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_473(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,903};
+  const int equationIndexes[2] = {1,473};
   data->localData[0]->realVars[106] /* gENROE.anglei variable */ = atan2((-data->localData[0]->realVars[120] /* pwLine.is.im variable */), (-data->localData[0]->realVars[121] /* pwLine.is.re variable */));
   TRACE_POP
 }
 /*
-equation index: 904
+equation index: 474
 type: SIMPLE_ASSIGN
 gENROE.P = pwLine.vs.im * pwLine.is.im + pwLine.vs.re * pwLine.is.re
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_904(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_474(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,904};
+  const int equationIndexes[2] = {1,474};
   data->localData[0]->realVars[96] /* gENROE.P variable */ = (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */) + (data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */);
   TRACE_POP
 }
 /*
-equation index: 905
+equation index: 475
 type: SIMPLE_ASSIGN
 gENROE.PELEC = gENROE.P / gENROE.CoB
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_905(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_475(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,905};
-  data->localData[0]->realVars[97] /* gENROE.PELEC variable */ = DIVISION_SIM(data->localData[0]->realVars[96] /* gENROE.P variable */,data->simulationInfo->realParameter[224] /* gENROE.CoB PARAM */,"gENROE.CoB",equationIndexes);
+  const int equationIndexes[2] = {1,475};
+  data->localData[0]->realVars[97] /* gENROE.PELEC variable */ = DIVISION_SIM(data->localData[0]->realVars[96] /* gENROE.P variable */,data->simulationInfo->realParameter[223] /* gENROE.CoB PARAM */,"gENROE.CoB",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 906
+equation index: 476
 type: SIMPLE_ASSIGN
 gENROE.Q = pwLine.vs.im * pwLine.is.re - pwLine.vs.re * pwLine.is.im
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_906(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_476(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,906};
+  const int equationIndexes[2] = {1,476};
   data->localData[0]->realVars[103] /* gENROE.Q variable */ = (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */));
   TRACE_POP
 }
 /*
-equation index: 907
+equation index: 477
 type: SIMPLE_ASSIGN
 eSST1A.ECOMP = sqrt(pwLine.vs.re ^ 2.0 + pwLine.vs.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_907(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_477(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,907};
+  const int equationIndexes[2] = {1,477};
   modelica_real tmp6;
   modelica_real tmp7;
   tmp6 = data->localData[0]->realVars[123] /* pwLine.vs.re variable */;
@@ -597,105 +597,105 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_907(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 908
+equation index: 478
 type: SIMPLE_ASSIGN
 eSST1A.imGain1.y = eSST1A.imGain1.k * eSST1A.ECOMP
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_908(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_478(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,908};
+  const int equationIndexes[2] = {1,478};
   data->localData[0]->realVars[76] /* eSST1A.imGain1.y variable */ = (data->simulationInfo->realParameter[146] /* eSST1A.imGain1.k PARAM */) * (data->localData[0]->realVars[58] /* eSST1A.ECOMP variable */);
   TRACE_POP
 }
 /*
-equation index: 909
+equation index: 479
 type: SIMPLE_ASSIGN
 eSST1A.add3.u2 = eSST1A.imGain2.k * eSST1A.ECOMP
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_909(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_479(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,909};
+  const int equationIndexes[2] = {1,479};
   data->localData[0]->realVars[65] /* eSST1A.add3.u2 variable */ = (data->simulationInfo->realParameter[147] /* eSST1A.imGain2.k PARAM */) * (data->localData[0]->realVars[58] /* eSST1A.ECOMP variable */);
   TRACE_POP
 }
 /*
-equation index: 910
+equation index: 480
 type: SIMPLE_ASSIGN
 eSST1A.add3.y = eSST1A.add3.k1 * eSST1A.add3.u1 + eSST1A.add3.k2 * eSST1A.add3.u2
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_910(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_480(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,910};
+  const int equationIndexes[2] = {1,480};
   data->localData[0]->realVars[66] /* eSST1A.add3.y variable */ = (data->simulationInfo->realParameter[130] /* eSST1A.add3.k1 PARAM */) * (data->localData[0]->realVars[64] /* eSST1A.add3.u1 variable */) + (data->simulationInfo->realParameter[131] /* eSST1A.add3.k2 PARAM */) * (data->localData[0]->realVars[65] /* eSST1A.add3.u2 variable */);
   TRACE_POP
 }
 /*
-equation index: 911
+equation index: 481
 type: SIMPLE_ASSIGN
 $DER.eSST1A.TransducerDelay.state = (eSST1A.TransducerDelay.K * eSST1A.ECOMP - eSST1A.TransducerDelay.state) / eSST1A.TransducerDelay.T_mod
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_911(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_481(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,911};
+  const int equationIndexes[2] = {1,481};
   data->localData[0]->realVars[13] /* der(eSST1A.TransducerDelay.state) STATE_DER */ = DIVISION_SIM((data->simulationInfo->realParameter[104] /* eSST1A.TransducerDelay.K PARAM */) * (data->localData[0]->realVars[58] /* eSST1A.ECOMP variable */) - data->localData[0]->realVars[0] /* eSST1A.TransducerDelay.state STATE(1) */,data->simulationInfo->realParameter[106] /* eSST1A.TransducerDelay.T_mod PARAM */,"eSST1A.TransducerDelay.T_mod",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 912
+equation index: 482
 type: SIMPLE_ASSIGN
 eSST1A.DiffV.u2 = if abs(eSST1A.TransducerDelay.T) <= 1e-15 then eSST1A.ECOMP * eSST1A.TransducerDelay.K else eSST1A.TransducerDelay.state
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_912(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_482(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,912};
+  const int equationIndexes[2] = {1,482};
   modelica_boolean tmp8;
   tmp8 = LessEq(fabs(data->simulationInfo->realParameter[105] /* eSST1A.TransducerDelay.T PARAM */),1e-15);
   data->localData[0]->realVars[56] /* eSST1A.DiffV.u2 variable */ = (tmp8?(data->localData[0]->realVars[58] /* eSST1A.ECOMP variable */) * (data->simulationInfo->realParameter[104] /* eSST1A.TransducerDelay.K PARAM */):data->localData[0]->realVars[0] /* eSST1A.TransducerDelay.state STATE(1) */);
   TRACE_POP
 }
 /*
-equation index: 913
+equation index: 483
 type: SIMPLE_ASSIGN
 eSST1A.DiffV.y = eSST1A.DiffV.k1 * eSST1A.VoltageReference.k + eSST1A.DiffV.k2 * eSST1A.DiffV.u2
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_913(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_483(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,913};
+  const int equationIndexes[2] = {1,483};
   data->localData[0]->realVars[57] /* eSST1A.DiffV.y variable */ = (data->simulationInfo->realParameter[82] /* eSST1A.DiffV.k1 PARAM */) * (data->simulationInfo->realParameter[123] /* eSST1A.VoltageReference.k PARAM */) + (data->simulationInfo->realParameter[83] /* eSST1A.DiffV.k2 PARAM */) * (data->localData[0]->realVars[56] /* eSST1A.DiffV.u2 variable */);
   TRACE_POP
 }
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_914(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_915(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_916(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_917(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_918(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_919(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_920(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_921(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_922(DATA*, threadData_t*);
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_923(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_484(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_485(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_486(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_487(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_488(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_489(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_490(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_491(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_492(DATA*, threadData_t*);
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_493(DATA*, threadData_t*);
 /*
-equation index: 934
+equation index: 504
 indexNonlinear: 3
 type: NONLINEAR
 
 vars: {eSST1A.add3_1.y}
-eqns: {914, 915, 916, 917, 918, 919, 920, 921, 922, 923}
+eqns: {484, 485, 486, 487, 488, 489, 490, 491, 492, 493}
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_934(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_504(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,934};
+  const int equationIndexes[2] = {1,504};
   int retValue;
   if(ACTIVE_STREAM(LOG_DT))
   {
-    infoStreamPrint(LOG_DT, 1, "Solving nonlinear system 934 (STRICT TEARING SET if tearing enabled) at time = %18.10e", data->localData[0]->timeValue);
+    infoStreamPrint(LOG_DT, 1, "Solving nonlinear system 504 (STRICT TEARING SET if tearing enabled) at time = %18.10e", data->localData[0]->timeValue);
     messageClose(LOG_DT);
   }
   /* get old value */
@@ -703,58 +703,58 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_934(DATA *data, thread
   retValue = solve_nonlinear_system(data, threadData, 3);
   /* check if solution process was successful */
   if (retValue > 0){
-    const int indexes[2] = {1,934};
-    throwStreamPrintWithEquationIndexes(threadData, indexes, "Solving non-linear system 934 failed at time=%.15g.\nFor more information please use -lv LOG_NLS.", data->localData[0]->timeValue);
+    const int indexes[2] = {1,504};
+    throwStreamPrintWithEquationIndexes(threadData, indexes, "Solving non-linear system 504 failed at time=%.15g.\nFor more information please use -lv LOG_NLS.", data->localData[0]->timeValue);
   }
   /* write solution */
   data->localData[0]->realVars[67] /* eSST1A.add3_1.y variable */ = data->simulationInfo->nonlinearSystemData[3].nlsx[0];
   TRACE_POP
 }
 /*
-equation index: 935
+equation index: 505
 type: SIMPLE_ASSIGN
 $DER.eSST1A.imLeadLag.TF.x_scaled[1] = (eSST1A.imLeadLag.TF.a_end * eSST1A.hV_GATE.p - eSST1A.imLeadLag.TF.a[2] * eSST1A.imLeadLag.TF.x_scaled[1]) / eSST1A.imLeadLag.TF.a[1]
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_935(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_505(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,935};
+  const int equationIndexes[2] = {1,505};
   data->localData[0]->realVars[15] /* der(eSST1A.imLeadLag.TF.x_scaled[1]) STATE_DER */ = DIVISION_SIM((data->simulationInfo->realParameter[155] /* eSST1A.imLeadLag.TF.a_end PARAM */) * (data->localData[0]->realVars[72] /* eSST1A.hV_GATE.p variable */) - ((data->simulationInfo->realParameter[154] /* eSST1A.imLeadLag.TF.a[2] PARAM */) * (data->localData[0]->realVars[2] /* eSST1A.imLeadLag.TF.x_scaled[1] STATE(1) */)),data->simulationInfo->realParameter[153] /* eSST1A.imLeadLag.TF.a[1] PARAM */,"eSST1A.imLeadLag.TF.a[1]",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 936
+equation index: 506
 type: SIMPLE_ASSIGN
 $DER.eSST1A.imLeadLag1.TF.x_scaled[1] = (eSST1A.imLeadLag1.TF.a_end * eSST1A.imLeadLag.y - eSST1A.imLeadLag1.TF.a[2] * eSST1A.imLeadLag1.TF.x_scaled[1]) / eSST1A.imLeadLag1.TF.a[1]
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_936(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_506(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,936};
+  const int equationIndexes[2] = {1,506};
   data->localData[0]->realVars[16] /* der(eSST1A.imLeadLag1.TF.x_scaled[1]) STATE_DER */ = DIVISION_SIM((data->simulationInfo->realParameter[173] /* eSST1A.imLeadLag1.TF.a_end PARAM */) * (data->localData[0]->realVars[79] /* eSST1A.imLeadLag.y variable */) - ((data->simulationInfo->realParameter[172] /* eSST1A.imLeadLag1.TF.a[2] PARAM */) * (data->localData[0]->realVars[3] /* eSST1A.imLeadLag1.TF.x_scaled[1] STATE(1) */)),data->simulationInfo->realParameter[171] /* eSST1A.imLeadLag1.TF.a[1] PARAM */,"eSST1A.imLeadLag1.TF.a[1]",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 937
+equation index: 507
 type: SIMPLE_ASSIGN
 $DER.eSST1A.simpleLagLim.state = (eSST1A.simpleLagLim.K * eSST1A.imLeadLag1.y - eSST1A.simpleLagLim.state) / eSST1A.simpleLagLim.T_mod
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_937(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_507(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,937};
+  const int equationIndexes[2] = {1,507};
   data->localData[0]->realVars[17] /* der(eSST1A.simpleLagLim.state) STATE_DER */ = DIVISION_SIM((data->simulationInfo->realParameter[190] /* eSST1A.simpleLagLim.K PARAM */) * (data->localData[0]->realVars[82] /* eSST1A.imLeadLag1.y variable */) - data->localData[0]->realVars[4] /* eSST1A.simpleLagLim.state STATE(1) */,data->simulationInfo->realParameter[192] /* eSST1A.simpleLagLim.T_mod PARAM */,"eSST1A.simpleLagLim.T_mod",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 938
+equation index: 508
 type: SIMPLE_ASSIGN
 $whenCondition2 = eSST1A.simpleLagLim.state > eSST1A.simpleLagLim.outMax and eSST1A.simpleLagLim.K * eSST1A.imLeadLag1.y - eSST1A.simpleLagLim.state < 0.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_938(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_508(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,938};
+  const int equationIndexes[2] = {1,508};
   modelica_boolean tmp0;
   modelica_boolean tmp1;
   RELATIONHYSTERESIS(tmp0, data->localData[0]->realVars[4] /* eSST1A.simpleLagLim.state STATE(1) */, data->simulationInfo->realParameter[194] /* eSST1A.simpleLagLim.outMax PARAM */, 17, Greater);
@@ -763,14 +763,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_938(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 939
+equation index: 509
 type: SIMPLE_ASSIGN
 $whenCondition1 = eSST1A.simpleLagLim.state < eSST1A.simpleLagLim.outMin and eSST1A.simpleLagLim.K * eSST1A.imLeadLag1.y - eSST1A.simpleLagLim.state > 0.0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_939(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_509(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,939};
+  const int equationIndexes[2] = {1,509};
   modelica_boolean tmp2;
   modelica_boolean tmp3;
   RELATIONHYSTERESIS(tmp2, data->localData[0]->realVars[4] /* eSST1A.simpleLagLim.state STATE(1) */, data->simulationInfo->realParameter[195] /* eSST1A.simpleLagLim.outMin PARAM */, 19, Less);
@@ -779,42 +779,42 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_939(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 940
+equation index: 510
 type: SIMPLE_ASSIGN
 eSST1A.hV_GATE1.p = if eSST1A.add3_2.y < const1.k then const1.k else eSST1A.add3_2.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_940(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_510(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,940};
+  const int equationIndexes[2] = {1,510};
   modelica_boolean tmp4;
   RELATIONHYSTERESIS(tmp4, data->localData[0]->realVars[70] /* eSST1A.add3_2.y variable */, data->simulationInfo->realParameter[36] /* const1.k PARAM */, 15, Less);
   data->localData[0]->realVars[73] /* eSST1A.hV_GATE1.p variable */ = (tmp4?data->simulationInfo->realParameter[36] /* const1.k PARAM */:data->localData[0]->realVars[70] /* eSST1A.add3_2.y variable */);
   TRACE_POP
 }
 /*
-equation index: 941
+equation index: 511
 type: SIMPLE_ASSIGN
 eSST1A.lV_GATE.p = if eSST1A.hV_GATE1.p > const2.k then const2.k else eSST1A.hV_GATE1.p
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_941(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_511(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,941};
+  const int equationIndexes[2] = {1,511};
   modelica_boolean tmp5;
   RELATIONHYSTERESIS(tmp5, data->localData[0]->realVars[73] /* eSST1A.hV_GATE1.p variable */, data->simulationInfo->realParameter[38] /* const2.k PARAM */, 16, Greater);
   data->localData[0]->realVars[83] /* eSST1A.lV_GATE.p variable */ = (tmp5?data->simulationInfo->realParameter[38] /* const2.k PARAM */:data->localData[0]->realVars[73] /* eSST1A.hV_GATE1.p variable */);
   TRACE_POP
 }
 /*
-equation index: 942
+equation index: 512
 type: SIMPLE_ASSIGN
 eSST1A.EFD = smooth(0, if eSST1A.lV_GATE.p > eSST1A.add3.y then eSST1A.add3.y else if eSST1A.lV_GATE.p < eSST1A.imGain1.y then eSST1A.imGain1.y else eSST1A.lV_GATE.p)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_942(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_512(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,942};
+  const int equationIndexes[2] = {1,512};
   modelica_boolean tmp6;
   modelica_boolean tmp7;
   modelica_boolean tmp8;
@@ -834,206 +834,206 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_942(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 943
+equation index: 513
 type: SIMPLE_ASSIGN
 $DER.gENROE.Epq = (eSST1A.EFD - eSST1A.XADIFD) / gENROE.Tpd0
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_943(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_513(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,943};
-  data->localData[0]->realVars[21] /* der(gENROE.Epq) STATE_DER */ = DIVISION_SIM(data->localData[0]->realVars[59] /* eSST1A.EFD variable */ - data->localData[0]->realVars[62] /* eSST1A.XADIFD variable */,data->simulationInfo->realParameter[267] /* gENROE.Tpd0 PARAM */,"gENROE.Tpd0",equationIndexes);
+  const int equationIndexes[2] = {1,513};
+  data->localData[0]->realVars[21] /* der(gENROE.Epq) STATE_DER */ = DIVISION_SIM(data->localData[0]->realVars[59] /* eSST1A.EFD variable */ - data->localData[0]->realVars[62] /* eSST1A.XADIFD variable */,data->simulationInfo->realParameter[266] /* gENROE.Tpd0 PARAM */,"gENROE.Tpd0",equationIndexes);
   TRACE_POP
 }
 /*
-equation index: 944
+equation index: 514
 type: SIMPLE_ASSIGN
 $DER.eSST1A.imDerivativeLag.x = eSST1A.imDerivativeLag.y
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_944(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_514(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,944};
+  const int equationIndexes[2] = {1,514};
   data->localData[0]->realVars[14] /* der(eSST1A.imDerivativeLag.x) STATE_DER */ = data->localData[0]->realVars[74] /* eSST1A.imDerivativeLag.y variable */;
   TRACE_POP
 }
 /*
-equation index: 945
+equation index: 515
 type: SIMPLE_ASSIGN
 GEN1.V = eSST1A.ECOMP
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_945(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_515(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,945};
+  const int equationIndexes[2] = {1,515};
   data->localData[0]->realVars[36] /* GEN1.V variable */ = data->localData[0]->realVars[58] /* eSST1A.ECOMP variable */;
   TRACE_POP
 }
 /*
-equation index: 946
+equation index: 516
 type: SIMPLE_ASSIGN
 gENROE.anglev = atan2(pwLine.vs.im, pwLine.vs.re)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_946(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_516(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,946};
+  const int equationIndexes[2] = {1,516};
   data->localData[0]->realVars[107] /* gENROE.anglev variable */ = atan2(data->localData[0]->realVars[122] /* pwLine.vs.im variable */, data->localData[0]->realVars[123] /* pwLine.vs.re variable */);
   TRACE_POP
 }
 /*
-equation index: 947
+equation index: 517
 type: SIMPLE_ASSIGN
 GEN1.angle = 57.29577951308232 * gENROE.anglev
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_947(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_517(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,947};
+  const int equationIndexes[2] = {1,517};
   data->localData[0]->realVars[37] /* GEN1.angle variable */ = (57.29577951308232) * (data->localData[0]->realVars[107] /* gENROE.anglev variable */);
   TRACE_POP
 }
 /*
-equation index: 948
+equation index: 518
 type: SIMPLE_ASSIGN
 pwLine.Q12 = (pwLine.vs.im * pwLine.is.re - pwLine.vs.re * pwLine.is.im) * pwLine.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_948(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_518(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,948};
-  data->localData[0]->realVars[116] /* pwLine.Q12 variable */ = ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */))) * (data->simulationInfo->realParameter[316] /* pwLine.S_b PARAM */);
+  const int equationIndexes[2] = {1,518};
+  data->localData[0]->realVars[116] /* pwLine.Q12 variable */ = ((data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */) - ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */))) * (data->simulationInfo->realParameter[315] /* pwLine.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 949
+equation index: 519
 type: SIMPLE_ASSIGN
 pwLine.P12 = (pwLine.vs.re * pwLine.is.re + pwLine.vs.im * pwLine.is.im) * pwLine.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_949(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_519(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,949};
-  data->localData[0]->realVars[114] /* pwLine.P12 variable */ = ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */) + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */)) * (data->simulationInfo->realParameter[316] /* pwLine.S_b PARAM */);
+  const int equationIndexes[2] = {1,519};
+  data->localData[0]->realVars[114] /* pwLine.P12 variable */ = ((data->localData[0]->realVars[123] /* pwLine.vs.re variable */) * (data->localData[0]->realVars[121] /* pwLine.is.re variable */) + (data->localData[0]->realVars[122] /* pwLine.vs.im variable */) * (data->localData[0]->realVars[120] /* pwLine.is.im variable */)) * (data->simulationInfo->realParameter[315] /* pwLine.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 950
+equation index: 520
 type: SIMPLE_ASSIGN
 LOAD.V = constantLoad.v
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_950(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_520(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,950};
+  const int equationIndexes[2] = {1,520};
   data->localData[0]->realVars[44] /* LOAD.V variable */ = data->localData[0]->realVars[55] /* constantLoad.v variable */;
   TRACE_POP
 }
 /*
-equation index: 951
+equation index: 521
 type: SIMPLE_ASSIGN
 pwLine1.P12 = (pwLine1.vs.re * pwLine1.is.re + pwLine1.vs.im * pwLine1.is.im) * pwLine1.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_951(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_521(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,951};
-  data->localData[0]->realVars[124] /* pwLine1.P12 variable */ = ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */) + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */)) * (data->simulationInfo->realParameter[327] /* pwLine1.S_b PARAM */);
+  const int equationIndexes[2] = {1,521};
+  data->localData[0]->realVars[124] /* pwLine1.P12 variable */ = ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */) + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */)) * (data->simulationInfo->realParameter[326] /* pwLine1.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 952
+equation index: 522
 type: SIMPLE_ASSIGN
 pwLine1.Q12 = (pwLine1.vs.im * pwLine1.is.re - pwLine1.vs.re * pwLine1.is.im) * pwLine1.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_952(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_522(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,952};
-  data->localData[0]->realVars[126] /* pwLine1.Q12 variable */ = ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */))) * (data->simulationInfo->realParameter[327] /* pwLine1.S_b PARAM */);
+  const int equationIndexes[2] = {1,522};
+  data->localData[0]->realVars[126] /* pwLine1.Q12 variable */ = ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[131] /* pwLine1.is.re variable */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[130] /* pwLine1.is.im variable */))) * (data->simulationInfo->realParameter[326] /* pwLine1.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 953
+equation index: 523
 type: SIMPLE_ASSIGN
 pwLine3.P12 = (pwLine1.vs.re * pwLine3.is.re + pwLine1.vs.im * pwLine3.is.im) * pwLine3.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_953(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_523(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,953};
-  data->localData[0]->realVars[136] /* pwLine3.P12 variable */ = ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */) + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */)) * (data->simulationInfo->realParameter[338] /* pwLine3.S_b PARAM */);
+  const int equationIndexes[2] = {1,523};
+  data->localData[0]->realVars[136] /* pwLine3.P12 variable */ = ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */) + (data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */)) * (data->simulationInfo->realParameter[337] /* pwLine3.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 954
+equation index: 524
 type: SIMPLE_ASSIGN
 pwLine3.Q12 = (pwLine1.vs.im * pwLine3.is.re - pwLine1.vs.re * pwLine3.is.im) * pwLine3.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_954(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_524(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,954};
-  data->localData[0]->realVars[138] /* pwLine3.Q12 variable */ = ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */))) * (data->simulationInfo->realParameter[338] /* pwLine3.S_b PARAM */);
+  const int equationIndexes[2] = {1,524};
+  data->localData[0]->realVars[138] /* pwLine3.Q12 variable */ = ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[143] /* pwLine3.is.re variable */) - ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[142] /* pwLine3.is.im variable */))) * (data->simulationInfo->realParameter[337] /* pwLine3.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 955
+equation index: 525
 type: SIMPLE_ASSIGN
 constantLoad.angle = atan2(pwLine1.vs.im, pwLine1.vs.re)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_955(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_525(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,955};
+  const int equationIndexes[2] = {1,525};
   data->localData[0]->realVars[50] /* constantLoad.angle variable */ = atan2(data->localData[0]->realVars[134] /* pwLine1.vs.im variable */, data->localData[0]->realVars[135] /* pwLine1.vs.re variable */);
   TRACE_POP
 }
 /*
-equation index: 956
+equation index: 526
 type: SIMPLE_ASSIGN
 LOAD.angle = 57.29577951308232 * constantLoad.angle
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_956(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_526(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,956};
+  const int equationIndexes[2] = {1,526};
   data->localData[0]->realVars[45] /* LOAD.angle variable */ = (57.29577951308232) * (data->localData[0]->realVars[50] /* constantLoad.angle variable */);
   TRACE_POP
 }
 /*
-equation index: 957
+equation index: 527
 type: SIMPLE_ASSIGN
 pwLine.Q21 = (pwLine1.vs.re * pwLine.ir.im - pwLine1.vs.im * pwLine.ir.re) * pwLine.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_957(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_527(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,957};
-  data->localData[0]->realVars[117] /* pwLine.Q21 variable */ = ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */))) * (data->simulationInfo->realParameter[316] /* pwLine.S_b PARAM */);
+  const int equationIndexes[2] = {1,527};
+  data->localData[0]->realVars[117] /* pwLine.Q21 variable */ = ((data->localData[0]->realVars[135] /* pwLine1.vs.re variable */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */))) * (data->simulationInfo->realParameter[315] /* pwLine.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 958
+equation index: 528
 type: SIMPLE_ASSIGN
 pwLine.P21 = ((-pwLine1.vs.re) * pwLine.ir.re - pwLine1.vs.im * pwLine.ir.im) * pwLine.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_958(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_528(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,958};
-  data->localData[0]->realVars[115] /* pwLine.P21 variable */ = (((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */))) * (data->simulationInfo->realParameter[316] /* pwLine.S_b PARAM */);
+  const int equationIndexes[2] = {1,528};
+  data->localData[0]->realVars[115] /* pwLine.P21 variable */ = (((-data->localData[0]->realVars[135] /* pwLine1.vs.re variable */)) * (data->localData[0]->realVars[119] /* pwLine.ir.re variable */) - ((data->localData[0]->realVars[134] /* pwLine1.vs.im variable */) * (data->localData[0]->realVars[118] /* pwLine.ir.im variable */))) * (data->simulationInfo->realParameter[315] /* pwLine.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 959
+equation index: 529
 type: SIMPLE_ASSIGN
 FAULT.V = sqrt(pwLine3.vr.re ^ 2.0 + pwLine3.vr.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_959(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_529(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,959};
+  const int equationIndexes[2] = {1,529};
   modelica_real tmp10;
   modelica_real tmp11;
   tmp10 = data->localData[0]->realVars[145] /* pwLine3.vr.re variable */;
@@ -1042,110 +1042,110 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_959(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 960
+equation index: 530
 type: SIMPLE_ASSIGN
 $cse4 = atan2(pwLine3.vr.im, pwLine3.vr.re)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_960(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_530(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,960};
+  const int equationIndexes[2] = {1,530};
   data->localData[0]->realVars[28] /* $cse4 variable */ = atan2(data->localData[0]->realVars[144] /* pwLine3.vr.im variable */, data->localData[0]->realVars[145] /* pwLine3.vr.re variable */);
   TRACE_POP
 }
 /*
-equation index: 961
+equation index: 531
 type: SIMPLE_ASSIGN
 FAULT.angle = 57.29577951308232 * $cse4
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_961(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_531(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,961};
+  const int equationIndexes[2] = {1,531};
   data->localData[0]->realVars[33] /* FAULT.angle variable */ = (57.29577951308232) * (data->localData[0]->realVars[28] /* $cse4 variable */);
   TRACE_POP
 }
 /*
-equation index: 962
+equation index: 532
 type: SIMPLE_ASSIGN
 pwLine3.P21 = ((-pwLine3.vr.re) * pwLine3.ir.re - pwLine3.vr.im * pwLine3.ir.im) * pwLine3.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_962(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_532(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,962};
-  data->localData[0]->realVars[137] /* pwLine3.P21 variable */ = (((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */))) * (data->simulationInfo->realParameter[338] /* pwLine3.S_b PARAM */);
+  const int equationIndexes[2] = {1,532};
+  data->localData[0]->realVars[137] /* pwLine3.P21 variable */ = (((-data->localData[0]->realVars[145] /* pwLine3.vr.re variable */)) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */))) * (data->simulationInfo->realParameter[337] /* pwLine3.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 963
+equation index: 533
 type: SIMPLE_ASSIGN
 pwLine3.Q21 = (pwLine3.vr.re * pwLine3.ir.im - pwLine3.vr.im * pwLine3.ir.re) * pwLine3.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_963(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_533(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,963};
-  data->localData[0]->realVars[139] /* pwLine3.Q21 variable */ = ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */))) * (data->simulationInfo->realParameter[338] /* pwLine3.S_b PARAM */);
+  const int equationIndexes[2] = {1,533};
+  data->localData[0]->realVars[139] /* pwLine3.Q21 variable */ = ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->localData[0]->realVars[140] /* pwLine3.ir.im variable */) - ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[141] /* pwLine3.ir.re variable */))) * (data->simulationInfo->realParameter[337] /* pwLine3.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 964
+equation index: 534
 type: SIMPLE_ASSIGN
 pwLine4.P12 = (pwLine3.vr.re * pwLine4.is.re + pwLine3.vr.im * pwLine4.is.im) * pwLine4.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_964(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_534(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,964};
-  data->localData[0]->realVars[146] /* pwLine4.P12 variable */ = ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */) + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */)) * (data->simulationInfo->realParameter[349] /* pwLine4.S_b PARAM */);
+  const int equationIndexes[2] = {1,534};
+  data->localData[0]->realVars[146] /* pwLine4.P12 variable */ = ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */) + (data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */)) * (data->simulationInfo->realParameter[348] /* pwLine4.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 965
+equation index: 535
 type: SIMPLE_ASSIGN
 pwLine4.Q12 = (pwLine3.vr.im * pwLine4.is.re - pwLine3.vr.re * pwLine4.is.im) * pwLine4.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_965(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_535(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,965};
-  data->localData[0]->realVars[148] /* pwLine4.Q12 variable */ = ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */))) * (data->simulationInfo->realParameter[349] /* pwLine4.S_b PARAM */);
+  const int equationIndexes[2] = {1,535};
+  data->localData[0]->realVars[148] /* pwLine4.Q12 variable */ = ((data->localData[0]->realVars[144] /* pwLine3.vr.im variable */) * (data->localData[0]->realVars[153] /* pwLine4.is.re variable */) - ((data->localData[0]->realVars[145] /* pwLine3.vr.re variable */) * (data->localData[0]->realVars[152] /* pwLine4.is.im variable */))) * (data->simulationInfo->realParameter[348] /* pwLine4.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 966
+equation index: 536
 type: SIMPLE_ASSIGN
 pwLine1.P21 = ((-pwLine1.vr.re) * pwLine1.ir.re - pwLine1.vr.im * pwLine1.ir.im) * pwLine1.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_966(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_536(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,966};
-  data->localData[0]->realVars[125] /* pwLine1.P21 variable */ = (((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */))) * (data->simulationInfo->realParameter[327] /* pwLine1.S_b PARAM */);
+  const int equationIndexes[2] = {1,536};
+  data->localData[0]->realVars[125] /* pwLine1.P21 variable */ = (((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */))) * (data->simulationInfo->realParameter[326] /* pwLine1.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 967
+equation index: 537
 type: SIMPLE_ASSIGN
 pwLine1.Q21 = (pwLine1.vr.re * pwLine1.ir.im - pwLine1.vr.im * pwLine1.ir.re) * pwLine1.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_967(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_537(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,967};
-  data->localData[0]->realVars[127] /* pwLine1.Q21 variable */ = ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */))) * (data->simulationInfo->realParameter[327] /* pwLine1.S_b PARAM */);
+  const int equationIndexes[2] = {1,537};
+  data->localData[0]->realVars[127] /* pwLine1.Q21 variable */ = ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->localData[0]->realVars[128] /* pwLine1.ir.im variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[129] /* pwLine1.ir.re variable */))) * (data->simulationInfo->realParameter[326] /* pwLine1.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 968
+equation index: 538
 type: SIMPLE_ASSIGN
 GEN2.V = sqrt(pwLine1.vr.re ^ 2.0 + pwLine1.vr.im ^ 2.0)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_968(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_538(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,968};
+  const int equationIndexes[2] = {1,538};
   modelica_real tmp12;
   modelica_real tmp13;
   tmp12 = data->localData[0]->realVars[133] /* pwLine1.vr.re variable */;
@@ -1154,99 +1154,99 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_968(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 969
+equation index: 539
 type: SIMPLE_ASSIGN
 gENCLS.V = GEN2.V
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_969(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_539(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,969};
+  const int equationIndexes[2] = {1,539};
   data->localData[0]->realVars[86] /* gENCLS.V variable */ = data->localData[0]->realVars[40] /* GEN2.V variable */;
   TRACE_POP
 }
 /*
-equation index: 970
+equation index: 540
 type: SIMPLE_ASSIGN
 gENCLS.anglev = atan2(pwLine1.vr.im, pwLine1.vr.re)
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_970(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_540(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,970};
+  const int equationIndexes[2] = {1,540};
   data->localData[0]->realVars[87] /* gENCLS.anglev variable */ = atan2(data->localData[0]->realVars[132] /* pwLine1.vr.im variable */, data->localData[0]->realVars[133] /* pwLine1.vr.re variable */);
   TRACE_POP
 }
 /*
-equation index: 971
+equation index: 541
 type: SIMPLE_ASSIGN
 GEN2.angle = 57.29577951308232 * gENCLS.anglev
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_971(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_541(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,971};
+  const int equationIndexes[2] = {1,541};
   data->localData[0]->realVars[41] /* GEN2.angle variable */ = (57.29577951308232) * (data->localData[0]->realVars[87] /* gENCLS.anglev variable */);
   TRACE_POP
 }
 /*
-equation index: 972
+equation index: 542
 type: SIMPLE_ASSIGN
 pwLine4.P21 = ((-pwLine1.vr.re) * pwLine4.ir.re - pwLine1.vr.im * pwLine4.ir.im) * pwLine4.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_972(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_542(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,972};
-  data->localData[0]->realVars[147] /* pwLine4.P21 variable */ = (((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */))) * (data->simulationInfo->realParameter[349] /* pwLine4.S_b PARAM */);
+  const int equationIndexes[2] = {1,542};
+  data->localData[0]->realVars[147] /* pwLine4.P21 variable */ = (((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */))) * (data->simulationInfo->realParameter[348] /* pwLine4.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 973
+equation index: 543
 type: SIMPLE_ASSIGN
 pwLine4.Q21 = (pwLine1.vr.re * pwLine4.ir.im - pwLine1.vr.im * pwLine4.ir.re) * pwLine4.S_b
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_973(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_543(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,973};
-  data->localData[0]->realVars[149] /* pwLine4.Q21 variable */ = ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */))) * (data->simulationInfo->realParameter[349] /* pwLine4.S_b PARAM */);
+  const int equationIndexes[2] = {1,543};
+  data->localData[0]->realVars[149] /* pwLine4.Q21 variable */ = ((data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->localData[0]->realVars[150] /* pwLine4.ir.im variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[151] /* pwLine4.ir.re variable */))) * (data->simulationInfo->realParameter[348] /* pwLine4.S_b PARAM */);
   TRACE_POP
 }
 /*
-equation index: 974
+equation index: 544
 type: SIMPLE_ASSIGN
 gENCLS.P = (-pwLine1.vr.re) * gENCLS.p.ir - pwLine1.vr.im * gENCLS.p.ii
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_974(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_544(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,974};
+  const int equationIndexes[2] = {1,544};
   data->localData[0]->realVars[84] /* gENCLS.P variable */ = ((-data->localData[0]->realVars[133] /* pwLine1.vr.re variable */)) * (data->localData[0]->realVars[92] /* gENCLS.p.ir variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[91] /* gENCLS.p.ii variable */));
   TRACE_POP
 }
 /*
-equation index: 975
+equation index: 545
 type: SIMPLE_ASSIGN
 gENCLS.Q = pwLine1.vr.re * gENCLS.p.ii - pwLine1.vr.im * gENCLS.p.ir
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_975(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_545(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,975};
+  const int equationIndexes[2] = {1,545};
   data->localData[0]->realVars[85] /* gENCLS.Q variable */ = (data->localData[0]->realVars[133] /* pwLine1.vr.re variable */) * (data->localData[0]->realVars[91] /* gENCLS.p.ii variable */) - ((data->localData[0]->realVars[132] /* pwLine1.vr.im variable */) * (data->localData[0]->realVars[92] /* gENCLS.p.ir variable */));
   TRACE_POP
 }
 /*
-equation index: 980
+equation index: 550
 type: ALGORITHM
 
   assert(eSST1A.imLimited1.uMax >= eSST1A.imLimited1.uMin, "Limiter: Limits must be consistent. However, uMax (=" + String(eSST1A.imLimited1.uMax, 6, 0, true) + ") < uMin (=" + String(eSST1A.imLimited1.uMin, 6, 0, true) + ")");
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_980(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_550(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,980};
+  const int equationIndexes[2] = {1,550};
   modelica_boolean tmp14;
   static const MMC_DEFSTRINGLIT(tmp15,52,"Limiter: Limits must be consistent. However, uMax (=");
   modelica_string tmp16;
@@ -1265,7 +1265,7 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_980(DATA *data, thread
       tmpMeta[2] = stringAppend(tmpMeta[1],tmp18);
       tmpMeta[3] = stringAppend(tmpMeta[2],(modelica_string) mmc_strings_len1[41]);
       {
-        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Nonlinear.mo",22,9,23,65,1};
+        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Nonlinear.mo",19,9,20,65,1};
         omc_assert_warning(info, "The following assertion has been violated %sat time %f\neSST1A.imLimited1.uMax >= eSST1A.imLimited1.uMin", initial() ? "during initialization " : "", data->localData[0]->timeValue);
         omc_assert_withEquationIndexes(threadData, info, equationIndexes, MMC_STRINGDATA(tmpMeta[3]));
       }
@@ -1274,15 +1274,15 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_980(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 979
+equation index: 549
 type: ALGORITHM
 
   assert(eSST1A.imLimited.uMax >= eSST1A.imLimited.uMin, "Limiter: Limits must be consistent. However, uMax (=" + String(eSST1A.imLimited.uMax, 6, 0, true) + ") < uMin (=" + String(eSST1A.imLimited.uMin, 6, 0, true) + ")");
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_979(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_549(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,979};
+  const int equationIndexes[2] = {1,549};
   modelica_boolean tmp20;
   static const MMC_DEFSTRINGLIT(tmp21,52,"Limiter: Limits must be consistent. However, uMax (=");
   modelica_string tmp22;
@@ -1301,7 +1301,7 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_979(DATA *data, thread
       tmpMeta[2] = stringAppend(tmpMeta[1],tmp24);
       tmpMeta[3] = stringAppend(tmpMeta[2],(modelica_string) mmc_strings_len1[41]);
       {
-        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Nonlinear.mo",22,9,23,65,1};
+        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Nonlinear.mo",19,9,20,65,1};
         omc_assert_warning(info, "The following assertion has been violated %sat time %f\neSST1A.imLimited.uMax >= eSST1A.imLimited.uMin", initial() ? "during initialization " : "", data->localData[0]->timeValue);
         omc_assert_withEquationIndexes(threadData, info, equationIndexes, MMC_STRINGDATA(tmpMeta[3]));
       }
@@ -1310,17 +1310,17 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_979(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 977
+equation index: 547
 type: WHEN
 
 when {$whenCondition2} then
   reinit(eSST1A.simpleLagLim.state,  eSST1A.simpleLagLim.outMax);
 end when;
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_977(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_547(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,977};
+  const int equationIndexes[2] = {1,547};
   if((data->localData[0]->booleanVars[1] /* $whenCondition2 DISCRETE */ && !data->simulationInfo->booleanVarsPre[1] /* $whenCondition2 DISCRETE */ /* edge */))
   {
     data->localData[0]->realVars[4] /* eSST1A.simpleLagLim.state STATE(1) */ = data->simulationInfo->realParameter[194] /* eSST1A.simpleLagLim.outMax PARAM */;
@@ -1336,15 +1336,15 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_977(DATA *data, thread
   TRACE_POP
 }
 /*
-equation index: 976
+equation index: 546
 type: ALGORITHM
 
   assert(eSST1A.add3.y >= eSST1A.imGain1.y, "Input signals are not consistent: limit1 < limit2");
 */
-void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_976(DATA *data, threadData_t *threadData)
+void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_546(DATA *data, threadData_t *threadData)
 {
   TRACE_PUSH
-  const int equationIndexes[2] = {1,976};
+  const int equationIndexes[2] = {1,546};
   modelica_boolean tmp26;
   static const MMC_DEFSTRINGLIT(tmp27,49,"Input signals are not consistent: limit1 < limit2");
   static int tmp28 = 0;
@@ -1353,7 +1353,7 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_976(DATA *data, thread
     if(!tmp26)
     {
       {
-        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.3/Blocks/Nonlinear.mo",146,5,146,82,1};
+        FILE_INFO info = {"/usr/lib/omlibrary/Modelica 3.2.2/Blocks/Nonlinear.mo",116,5,116,82,1};
         omc_assert_warning(info, "The following assertion has been violated %sat time %f\neSST1A.add3.y >= eSST1A.imGain1.y", initial() ? "during initialization " : "", data->localData[0]->timeValue);
         omc_assert_withEquationIndexes(threadData, info, equationIndexes, MMC_STRINGDATA(MMC_REFSTRINGLIT(tmp27)));
       }
@@ -1374,173 +1374,173 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_functionDAE(DATA *data, threadData
   data->simulationInfo->needToIterate = 0;
   data->simulationInfo->discreteCall = 1;
   OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_functionLocalKnownVars(data, threadData);
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_786(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_356(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_787(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_357(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_788(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_358(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_789(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_359(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_790(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_360(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_791(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_361(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_792(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_362(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_793(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_363(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_794(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_364(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_795(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_365(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_796(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_366(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_797(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_367(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_798(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_368(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_799(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_369(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_890(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_460(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_891(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_461(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_892(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_462(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_893(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_463(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_894(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_464(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_895(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_465(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_896(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_466(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_897(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_467(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_898(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_468(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_899(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_469(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_900(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_470(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_901(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_471(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_902(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_472(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_903(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_473(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_904(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_474(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_905(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_475(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_906(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_476(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_907(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_477(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_908(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_478(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_909(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_479(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_910(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_480(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_911(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_481(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_912(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_482(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_913(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_483(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_934(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_504(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_935(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_505(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_936(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_506(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_937(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_507(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_938(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_508(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_939(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_509(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_940(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_510(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_941(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_511(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_942(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_512(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_943(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_513(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_944(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_514(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_945(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_515(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_946(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_516(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_947(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_517(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_948(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_518(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_949(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_519(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_950(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_520(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_951(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_521(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_952(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_522(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_953(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_523(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_954(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_524(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_955(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_525(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_956(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_526(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_957(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_527(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_958(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_528(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_959(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_529(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_960(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_530(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_961(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_531(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_962(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_532(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_963(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_533(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_964(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_534(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_965(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_535(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_966(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_536(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_967(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_537(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_968(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_538(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_969(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_539(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_970(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_540(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_971(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_541(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_972(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_542(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_973(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_543(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_974(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_544(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_975(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_545(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_980(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_550(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_979(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_549(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_977(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_547(data, threadData);
 
-  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_976(data, threadData);
+  OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_546(data, threadData);
   data->simulationInfo->discreteCall = 0;
   
 #if !defined(OMC_MINIMAL_RUNTIME)
@@ -1562,131 +1562,131 @@ int OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_functionLocalKnownVars(DATA *data,
 
 
 /* forwarded equations */
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_787(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_788(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_789(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_790(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_791(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_792(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_793(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_794(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_795(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_796(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_797(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_798(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_799(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_890(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_891(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_892(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_893(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_894(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_895(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_896(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_897(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_898(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_899(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_900(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_901(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_907(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_908(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_909(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_910(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_911(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_912(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_913(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_934(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_935(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_936(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_937(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_940(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_941(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_942(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_943(DATA* data, threadData_t *threadData);
-extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_944(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_357(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_358(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_359(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_360(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_361(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_362(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_363(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_364(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_365(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_366(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_367(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_368(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_369(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_460(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_461(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_462(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_463(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_464(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_465(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_466(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_467(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_468(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_469(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_470(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_471(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_477(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_478(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_479(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_480(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_481(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_482(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_483(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_504(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_505(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_506(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_507(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_510(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_511(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_512(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_513(DATA* data, threadData_t *threadData);
+extern void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_514(DATA* data, threadData_t *threadData);
 
 static void functionODE_system0(DATA *data, threadData_t *threadData)
 {
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_787(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_357(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_788(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_358(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_789(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_359(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_790(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_360(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_791(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_361(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_792(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_362(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_793(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_363(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_794(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_364(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_795(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_365(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_796(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_366(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_797(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_367(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_798(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_368(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_799(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_369(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_890(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_460(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_891(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_461(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_892(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_462(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_893(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_463(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_894(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_464(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_895(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_465(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_896(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_466(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_897(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_467(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_898(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_468(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_899(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_469(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_900(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_470(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_901(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_471(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_907(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_477(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_908(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_478(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_909(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_479(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_910(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_480(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_911(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_481(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_912(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_482(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_913(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_483(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_934(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_504(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_935(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_505(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_936(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_506(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_937(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_507(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_940(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_510(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_941(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_511(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_942(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_512(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_943(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_513(data, threadData);
 
-    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_944(data, threadData);
+    OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_eqFunction_514(data, threadData);
 }
 
 int OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_functionODE(DATA *data, threadData_t *threadData)
@@ -1794,12 +1794,12 @@ static const MMC_DEFSTRINGLIT(_OMC_LIT_RESOURCE_0_name,7,_OMC_LIT_RESOURCE_0_nam
 static const MMC_DEFSTRINGLIT(_OMC_LIT_RESOURCE_0_dir,18,_OMC_LIT_RESOURCE_0_dir_data);
 
 #define _OMC_LIT_RESOURCE_1_name_data "Modelica"
-#define _OMC_LIT_RESOURCE_1_dir_data "/usr/lib/omlibrary/Modelica 3.2.3"
+#define _OMC_LIT_RESOURCE_1_dir_data "/usr/lib/omlibrary/Modelica 3.2.2"
 static const MMC_DEFSTRINGLIT(_OMC_LIT_RESOURCE_1_name,8,_OMC_LIT_RESOURCE_1_name_data);
 static const MMC_DEFSTRINGLIT(_OMC_LIT_RESOURCE_1_dir,33,_OMC_LIT_RESOURCE_1_dir_data);
 
 #define _OMC_LIT_RESOURCE_2_name_data "ModelicaServices"
-#define _OMC_LIT_RESOURCE_2_dir_data "/usr/lib/omlibrary/ModelicaServices 3.2.3"
+#define _OMC_LIT_RESOURCE_2_dir_data "/usr/lib/omlibrary/ModelicaServices 3.2.2"
 static const MMC_DEFSTRINGLIT(_OMC_LIT_RESOURCE_2_name,16,_OMC_LIT_RESOURCE_2_name_data);
 static const MMC_DEFSTRINGLIT(_OMC_LIT_RESOURCE_2_dir,41,_OMC_LIT_RESOURCE_2_dir_data);
 
@@ -1819,7 +1819,7 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_setupDataStruc(DATA *data, thread
   data->modelData->modelFilePrefix = "OpenIPSL.Examples.Controls.PSSE.ES.ESST1A";
   data->modelData->resultFileName = NULL;
   data->modelData->modelDir = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/Controls/PSSE/ES";
-  data->modelData->modelGUID = "{9df821d9-912f-4c50-93b7-3a2a08bf956e}";
+  data->modelData->modelGUID = "{0bab51f1-6e98-47fd-87ef-617763eff2be}";
   #if defined(OPENMODELICA_XML_FROM_FILE_AT_RUNTIME)
   data->modelData->initXMLData = NULL;
   data->modelData->modelDataXml.infoXMLData = NULL;
@@ -1854,14 +1854,14 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_setupDataStruc(DATA *data, thread
   data->modelData->nVariablesInteger = 0;
   data->modelData->nVariablesBoolean = 2;
   data->modelData->nVariablesString = 0;
-  data->modelData->nParametersReal = 357;
-  data->modelData->nParametersInteger = 17;
+  data->modelData->nParametersReal = 356;
+  data->modelData->nParametersInteger = 14;
   data->modelData->nParametersBoolean = 75;
   data->modelData->nParametersString = 0;
   data->modelData->nInputVars = 0;
   data->modelData->nOutputVars = 0;
   
-  data->modelData->nAliasReal = 99;
+  data->modelData->nAliasReal = 96;
   data->modelData->nAliasInteger = 0;
   data->modelData->nAliasBoolean = 0;
   data->modelData->nAliasString = 0;
@@ -1876,7 +1876,7 @@ void OpenIPSL_Examples_Controls_PSSE_ES_ESST1A_setupDataStruc(DATA *data, thread
   data->modelData->modelDataXml.modelInfoXmlLength = 0;
   data->modelData->modelDataXml.nFunctions = 6;
   data->modelData->modelDataXml.nProfileBlocks = 0;
-  data->modelData->modelDataXml.nEquations = 1275;
+  data->modelData->modelDataXml.nEquations = 839;
   data->modelData->nMixedSystems = 0;
   data->modelData->nLinearSystems = 0;
   data->modelData->nNonLinearSystems = 4;
