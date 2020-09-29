@@ -1,3 +1,0 @@
-OpenModelica 1.16.0~dev-612-g65daa7a
-Pulling latest OpenIPSL library version...
-
