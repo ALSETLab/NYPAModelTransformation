@@ -11,6 +11,8 @@ root = Tk()
 
 root.title("NYPA Trasformation")
 
+root.iconbitmap('figures\icon.ico')
+
 title = Label(root, text= "NYPA Transformation and Modelica Mass Simulation Tool", font=("Arial Bold", 17))
 title.pack()
 
