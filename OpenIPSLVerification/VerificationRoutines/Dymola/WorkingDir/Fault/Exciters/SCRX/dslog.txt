@@ -1,5 +1,5 @@
 Log-file of program ./dymosim
-(generated: Wed May 20 16:56:58 2020)
+(generated: Sun Oct  4 13:19:46 2020)
 
 dymosim started
 ... "dsin.txt" loading (dymosim input file)
@@ -8,9 +8,9 @@ dymosim started
 Integration started at T = 0 using integration method RKFIX2
 (One-step solver with fixed stepsize and order 2)
 Integration terminated successfully at T = 10
-   CPU-time for integration      : 1.52 seconds
-   CPU-time for one GRID interval: 0.304 milliseconds
-   CPU-time for initialization   : 0.000542 seconds
+   CPU-time for integration      : 1.27 seconds
+   CPU-time for one GRID interval: 0.253 milliseconds
+   CPU-time for initialization   : 0.000447 seconds
    Number of result points       : 5006
    Number of GRID   points       : 5001
    Number of (successful) steps  : 5000

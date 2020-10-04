@@ -15,30 +15,34 @@ import shutil
 import git
 
 
-# In[2]:
+# get current directory and set it to the beginning of the repository 
+RepoDir = os.getcwd() 
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+
 
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
-OpenIPSL = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
+OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
 #GitHub Location
 GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
-OpenIPSLPackage = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo"
-Dymola = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/"
+OpenIPSLPackage = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/package.mo"
+Dymola = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/"
 #Working Directory
-LVPowerSystemStabilizerWorkingDir = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/PowerSystemStabilizers/"
+LVPowerSystemStabilizersWorkingDir = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/WorkingDir/LoadVariation/PowerSystemStabilizers/"
 #Load Variation Folder Locations
-LoadVariationSource = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
-LoadVariationDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
-LoadVariationDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
+LoadVariationSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
+LoadVariationDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
+LoadVariationDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
 # Power Fault Folder Locations
-PowerFaultSource = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/PwFault.mo"
-PowerFaultDestinationPath = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
-PowerFaultDestination = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
-
-
-# In[3]:
-
+PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/LoadVariation/AuxiliaryModels/PwFault.mo"
+PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
+PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
@@ -100,10 +104,10 @@ psss = { 'names' : ["PSS2A","PSS2B"],
 
 
 #Delete old results
-shutil.rmtree(''+LVPowerSystemStabilizerWorkingDir+'')
+shutil.rmtree(''+LVPowerSystemStabilizersWorkingDir+'')
 #Create Exciters folder
-os.makedirs(''+LVPowerSystemStabilizerWorkingDir+'')
-os.chdir(f""+LVPowerSystemStabilizerWorkingDir+"")
+os.makedirs(''+LVPowerSystemStabilizersWorkingDir+'')
+os.chdir(f""+LVPowerSystemStabilizersWorkingDir+"")
 for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
 
@@ -116,7 +120,7 @@ for pssNumber, pssName in enumerate(psss['names']):
     try:
         print(f"LoadVariation {pssName} Simulation Start...")
         print("Editing SMIB Partial Model for Load Variation Testing...")
-        resultPath = "/"+LVPowerSystemStabilizerWorkingDir+f"/{pssName}/" + pssName
+        resultPath = "/"+LVPowerSystemStabilizersWorkingDir+f"/{pssName}/" + pssName
         dymola.translateModel(psss['path'][pssNumber])
         #Get rid of the Fault
         dymola.ExecuteCommand("pwFault.t1 = 20;")
@@ -136,14 +140,14 @@ for pssNumber, pssName in enumerate(psss['names']):
             log = dymola.getLastErrorLog()
             print(log)
             try:
-                os.chdir(LVPowerSystemStabilizerWorkingDir+f"{pssName}/")
+                os.chdir(LVPowerSystemStabilizersWorkingDir+f"{pssName}/")
                 os.remove("dsin.txt")
             except:
                 pass
         else:
             print(f"{pssName} Simulation OK...")
             print(".csv Writing Start...") 
-            sim = SimRes(""+LVPowerSystemStabilizerWorkingDir+f"{pssName}/{pssName}.mat")
+            sim = SimRes(""+LVPowerSystemStabilizersWorkingDir+f"{pssName}/{pssName}.mat")
             try:
                 print('Verifying if it is a GENROU model...')
                 #Selecting Variables
@@ -163,13 +167,13 @@ for pssNumber, pssName in enumerate(psss['names']):
                             df_variables[var] = first[0] * np.ones(df_variables['Time'].size)
                 print(f"{pssName} Variables OK...")
                 #Changing current directory
-                os.chdir(f""+LVPowerSystemStabilizerWorkingDir+"")
+                os.chdir(f""+LVPowerSystemStabilizersWorkingDir+"")
                 df_variables.to_csv(f'{pssName}.csv', index = False)          
                 print(f"{pssName} Write OK...")
             except:
                 print("Check generator model of the example model...")
         try:
-            shutil.rmtree(LVPowerSystemStabilizerWorkingDir+f"{pssName}/")
+            shutil.rmtree(LVPowerSystemStabilizersWorkingDir+f"{pssName}/")
             print("Delete OK...\n")
         except:
             pass
