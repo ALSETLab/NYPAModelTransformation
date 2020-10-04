@@ -5,6 +5,8 @@ import os
 import subprocess
 
 currentDir = os.getcwd()
+currentDir = os.path.abspath(os.path.join(currentDir, os.pardir))
+currentDir = currentDir + "/OpenIPSLVerification"
 
 
 root = Tk()
