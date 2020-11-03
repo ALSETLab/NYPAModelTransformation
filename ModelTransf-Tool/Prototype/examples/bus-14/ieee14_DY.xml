@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+  <md:FullModel rdf:about="urn:uuid:cee72c8b-1e13-11eb-a653-74e5f963e191">
+    <md:Model.created>2020-11-03T20:33:40.0998155Z</md:Model.created>
+    <md:Model.scenarioTime>2020-11-03T20:33:40.0998155Z</md:Model.scenarioTime>
+    <md:Model.version>1</md:Model.version>
+    <md:Model.description />
+    <md:Model.modelingAuthoritySet>http://www.ieee14.com/ieee14</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/Dynamics/3/1</md:Model.profile>
+    <md:Model.DependentOn rdf:resource="urn:uuid:32ec24a1-1df9-11eb-a653-74e5f963e191" />
+  </md:FullModel>
+  <cim:ExcitationSystemUserDefined rdf:ID="_9f81fb03-1df9-11eb-a653-74e5f963e191">
+    <cim:ExcitationSystemUserDefined.proprietary>true</cim:ExcitationSystemUserDefined.proprietary>
+    <cim:ExcitationSystemDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb02-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>IEEET1</cim:IdentifiedObject.name>
+  </cim:ExcitationSystemUserDefined>
+  <cim:ExcitationSystemUserDefined rdf:ID="_9f81fb15-1df9-11eb-a653-74e5f963e191">
+    <cim:ExcitationSystemUserDefined.proprietary>true</cim:ExcitationSystemUserDefined.proprietary>
+    <cim:ExcitationSystemDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb14-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>IEEET1</cim:IdentifiedObject.name>
+  </cim:ExcitationSystemUserDefined>
+  <cim:ExcitationSystemUserDefined rdf:ID="_9f81fb27-1df9-11eb-a653-74e5f963e191">
+    <cim:ExcitationSystemUserDefined.proprietary>true</cim:ExcitationSystemUserDefined.proprietary>
+    <cim:ExcitationSystemDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb26-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>IEEET1</cim:IdentifiedObject.name>
+  </cim:ExcitationSystemUserDefined>
+  <cim:ExcitationSystemUserDefined rdf:ID="_9f81fb37-1df9-11eb-a653-74e5f963e191">
+    <cim:ExcitationSystemUserDefined.proprietary>true</cim:ExcitationSystemUserDefined.proprietary>
+    <cim:ExcitationSystemDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb36-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>IEEET1</cim:IdentifiedObject.name>
+  </cim:ExcitationSystemUserDefined>
+  <cim:ExcitationSystemUserDefined rdf:ID="_9f81fb47-1df9-11eb-a653-74e5f963e191">
+    <cim:ExcitationSystemUserDefined.proprietary>true</cim:ExcitationSystemUserDefined.proprietary>
+    <cim:ExcitationSystemDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb46-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>IEEET1</cim:IdentifiedObject.name>
+  </cim:ExcitationSystemUserDefined>
+  <cim:GovSteam0 rdf:ID="_9f81fb12-1df9-11eb-a653-74e5f963e191">
+    <cim:GovSteam0.mwbase>100</cim:GovSteam0.mwbase>
+    <cim:GovSteam0.r>0.1</cim:GovSteam0.r>
+    <cim:GovSteam0.t1>0.49</cim:GovSteam0.t1>
+    <cim:GovSteam0.vmax>1</cim:GovSteam0.vmax>
+    <cim:GovSteam0.vmin>0.227</cim:GovSteam0.vmin>
+    <cim:GovSteam0.t2>2.57</cim:GovSteam0.t2>
+    <cim:GovSteam0.t3>9</cim:GovSteam0.t3>
+    <cim:GovSteam0.dt>0.02</cim:GovSteam0.dt>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>TGOV1</cim:IdentifiedObject.name>
+    <cim:TurbineGovernorDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb02-1df9-11eb-a653-74e5f963e191" />
+  </cim:GovSteam0>
+  <cim:GovSteam0 rdf:ID="_9f81fb24-1df9-11eb-a653-74e5f963e191">
+    <cim:GovSteam0.mwbase>100</cim:GovSteam0.mwbase>
+    <cim:GovSteam0.r>0.05</cim:GovSteam0.r>
+    <cim:GovSteam0.t1>0.05</cim:GovSteam0.t1>
+    <cim:GovSteam0.vmax>1.05</cim:GovSteam0.vmax>
+    <cim:GovSteam0.vmin>0.3</cim:GovSteam0.vmin>
+    <cim:GovSteam0.t2>1</cim:GovSteam0.t2>
+    <cim:GovSteam0.t3>2.1</cim:GovSteam0.t3>
+    <cim:GovSteam0.dt>0</cim:GovSteam0.dt>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>TGOV1</cim:IdentifiedObject.name>
+    <cim:TurbineGovernorDynamics.SynchronousMachineDynamics rdf:resource="#_9f81fb14-1df9-11eb-a653-74e5f963e191" />
+  </cim:GovSteam0>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb04-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>0</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb05-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>1</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>50</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb06-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>2</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.02</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb07-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>3</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb08-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>4</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>-1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb09-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>5</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>-0.057</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb0a-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>6</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.541</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb0b-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>7</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.086</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb0c-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>8</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1.02</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb0d-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>9</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb0e-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>10</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>3.082</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb0f-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>11</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.038</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb10-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>12</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>4.109</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb11-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>13</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.3</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb16-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>0</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.06</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb17-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>1</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>20</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb18-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>2</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.01</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb19-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>3</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>5</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb1a-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>4</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>-6</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb1b-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>5</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb1c-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>6</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.67</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb1d-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>7</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb1e-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>8</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb1f-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>9</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb20-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>10</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>3</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb21-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>11</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.09</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb22-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>12</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>4</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb23-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>13</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.368</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb28-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>0</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.06</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb29-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>1</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>20</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb2a-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>2</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.01</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb2b-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>3</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>5</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb2c-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>4</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>-6</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb2d-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>5</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb2e-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>6</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.67</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb2f-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>7</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb30-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>8</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb31-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>9</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb32-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>10</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>3</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb33-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>11</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.09</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb34-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>12</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>4</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb35-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb27-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>13</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.368</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb38-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>0</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.06</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb39-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>1</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>20</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb3a-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>2</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.01</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb3b-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>3</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>5</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb3c-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>4</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>-6</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb3d-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>5</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb3e-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>6</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.67</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb3f-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>7</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb40-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>8</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb41-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>9</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb42-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>10</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>3</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb43-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>11</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.09</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb44-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>12</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>4</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb45-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb37-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>13</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.368</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb48-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>0</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.06</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb49-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>1</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>20</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb4a-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>2</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.01</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb4b-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>3</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>5</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb4c-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>4</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>-6</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb4d-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>5</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb4e-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>6</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.67</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb4f-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>7</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb50-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>8</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>1</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb51-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>9</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb52-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>10</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>3</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb53-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>11</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.09</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb54-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>12</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>4</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:ProprietaryParameterDynamics rdf:ID="_9f81fb55-1df9-11eb-a653-74e5f963e191">
+    <cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined rdf:resource="#_9f81fb47-1df9-11eb-a653-74e5f963e191" />
+    <cim:ProprietaryParameterDynamics.parameterNumber>13</cim:ProprietaryParameterDynamics.parameterNumber>
+    <cim:ProprietaryParameterDynamics.floatParameterValue>0.368</cim:ProprietaryParameterDynamics.floatParameterValue>
+  </cim:ProprietaryParameterDynamics>
+  <cim:PssIEEE2B rdf:ID="_9f81fb13-1df9-11eb-a653-74e5f963e191">
+    <cim:PssIEEE2B.inputSignal1Type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind.rotorAngularFrequencyDeviation" />
+    <cim:PssIEEE2B.inputSignal2Type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind.generatorElectricalPower" />
+    <cim:PssIEEE2B.vsi1max>99</cim:PssIEEE2B.vsi1max>
+    <cim:PssIEEE2B.vsi1min>-99</cim:PssIEEE2B.vsi1min>
+    <cim:PssIEEE2B.tw1>2</cim:PssIEEE2B.tw1>
+    <cim:PssIEEE2B.tw2>2</cim:PssIEEE2B.tw2>
+    <cim:PssIEEE2B.vsi2max>99</cim:PssIEEE2B.vsi2max>
+    <cim:PssIEEE2B.vsi2min>-99</cim:PssIEEE2B.vsi2min>
+    <cim:PssIEEE2B.tw3>2</cim:PssIEEE2B.tw3>
+    <cim:PssIEEE2B.tw4>0</cim:PssIEEE2B.tw4>
+    <cim:PssIEEE2B.t1>0.15</cim:PssIEEE2B.t1>
+    <cim:PssIEEE2B.t2>0.03</cim:PssIEEE2B.t2>
+    <cim:PssIEEE2B.t3>0.15</cim:PssIEEE2B.t3>
+    <cim:PssIEEE2B.t4>0.03</cim:PssIEEE2B.t4>
+    <cim:PssIEEE2B.t6>0</cim:PssIEEE2B.t6>
+    <cim:PssIEEE2B.t7>2</cim:PssIEEE2B.t7>
+    <cim:PssIEEE2B.t8>0.5</cim:PssIEEE2B.t8>
+    <cim:PssIEEE2B.t9>0.1</cim:PssIEEE2B.t9>
+    <cim:PssIEEE2B.t10>0</cim:PssIEEE2B.t10>
+    <cim:PssIEEE2B.t11>0</cim:PssIEEE2B.t11>
+    <cim:PssIEEE2B.ks1>10</cim:PssIEEE2B.ks1>
+    <cim:PssIEEE2B.ks2>0.2</cim:PssIEEE2B.ks2>
+    <cim:PssIEEE2B.ks3>1</cim:PssIEEE2B.ks3>
+    <cim:PssIEEE2B.n>1</cim:PssIEEE2B.n>
+    <cim:PssIEEE2B.m>5</cim:PssIEEE2B.m>
+    <cim:PssIEEE2B.vstmax>0.1</cim:PssIEEE2B.vstmax>
+    <cim:PssIEEE2B.vstmin>-0.1</cim:PssIEEE2B.vstmin>
+    <cim:PowerSystemStabilizerDynamics.ExcitationSystemDynamics rdf:resource="#_9f81fb03-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>PSS2A</cim:IdentifiedObject.name>
+  </cim:PssIEEE2B>
+  <cim:PssIEEE2B rdf:ID="_9f81fb25-1df9-11eb-a653-74e5f963e191">
+    <cim:PssIEEE2B.inputSignal1Type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind.rotorAngularFrequencyDeviation" />
+    <cim:PssIEEE2B.inputSignal2Type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind.generatorElectricalPower" />
+    <cim:PssIEEE2B.vsi1max>99</cim:PssIEEE2B.vsi1max>
+    <cim:PssIEEE2B.vsi1min>-99</cim:PssIEEE2B.vsi1min>
+    <cim:PssIEEE2B.tw1>2</cim:PssIEEE2B.tw1>
+    <cim:PssIEEE2B.tw2>2</cim:PssIEEE2B.tw2>
+    <cim:PssIEEE2B.vsi2max>99</cim:PssIEEE2B.vsi2max>
+    <cim:PssIEEE2B.vsi2min>-99</cim:PssIEEE2B.vsi2min>
+    <cim:PssIEEE2B.tw3>2</cim:PssIEEE2B.tw3>
+    <cim:PssIEEE2B.tw4>4</cim:PssIEEE2B.tw4>
+    <cim:PssIEEE2B.t1>0.052</cim:PssIEEE2B.t1>
+    <cim:PssIEEE2B.t2>0.03</cim:PssIEEE2B.t2>
+    <cim:PssIEEE2B.t3>0.281</cim:PssIEEE2B.t3>
+    <cim:PssIEEE2B.t4>0.03</cim:PssIEEE2B.t4>
+    <cim:PssIEEE2B.t6>0.1</cim:PssIEEE2B.t6>
+    <cim:PssIEEE2B.t7>2</cim:PssIEEE2B.t7>
+    <cim:PssIEEE2B.t8>0.5</cim:PssIEEE2B.t8>
+    <cim:PssIEEE2B.t9>0.1</cim:PssIEEE2B.t9>
+    <cim:PssIEEE2B.t10>0</cim:PssIEEE2B.t10>
+    <cim:PssIEEE2B.t11>0</cim:PssIEEE2B.t11>
+    <cim:PssIEEE2B.ks1>20</cim:PssIEEE2B.ks1>
+    <cim:PssIEEE2B.ks2>0.333</cim:PssIEEE2B.ks2>
+    <cim:PssIEEE2B.ks3>1</cim:PssIEEE2B.ks3>
+    <cim:PssIEEE2B.n>1</cim:PssIEEE2B.n>
+    <cim:PssIEEE2B.m>5</cim:PssIEEE2B.m>
+    <cim:PssIEEE2B.vstmax>0.1</cim:PssIEEE2B.vstmax>
+    <cim:PssIEEE2B.vstmin>-0.1</cim:PssIEEE2B.vstmin>
+    <cim:PowerSystemStabilizerDynamics.ExcitationSystemDynamics rdf:resource="#_9f81fb15-1df9-11eb-a653-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>PSS2A</cim:IdentifiedObject.name>
+  </cim:PssIEEE2B>
+  <cim:SynchronousMachineTimeConstantReactance rdf:ID="_9f81fb02-1df9-11eb-a653-74e5f963e191">
+    <cim:SynchronousMachineTimeConstantReactance.rotorType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor" />
+    <cim:SynchronousMachineTimeConstantReactance.modelType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind.subtransient" />
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSync>2.11</cim:SynchronousMachineTimeConstantReactance.xDirectSync>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectTrans>0.295</cim:SynchronousMachineTimeConstantReactance.xDirectTrans>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>0.23</cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadSync>2.02</cim:SynchronousMachineTimeConstantReactance.xQuadSync>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadTrans>0.505</cim:SynchronousMachineTimeConstantReactance.xQuadTrans>
+    <cim:SynchronousMachineTimeConstantReactance.tpdo>4</cim:SynchronousMachineTimeConstantReactance.tpdo>
+    <cim:SynchronousMachineTimeConstantReactance.tppdo>0.032</cim:SynchronousMachineTimeConstantReactance.tppdo>
+    <cim:SynchronousMachineTimeConstantReactance.tpqo>0.55</cim:SynchronousMachineTimeConstantReactance.tpqo>
+    <cim:SynchronousMachineTimeConstantReactance.tppqo>0.06</cim:SynchronousMachineTimeConstantReactance.tppqo>
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_32ec25d4-1df9-11eb-a653-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>2.05</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0.083</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0.419</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:RotatingMachineDynamics.statorLeakageReactance>0.16</cim:RotatingMachineDynamics.statorLeakageReactance>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENROU</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineTimeConstantReactance>
+  <cim:SynchronousMachineTimeConstantReactance rdf:ID="_9f81fb14-1df9-11eb-a653-74e5f963e191">
+    <cim:SynchronousMachineTimeConstantReactance.rotorType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor" />
+    <cim:SynchronousMachineTimeConstantReactance.modelType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind.subtransient" />
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSync>1.8</cim:SynchronousMachineTimeConstantReactance.xDirectSync>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectTrans>0.6</cim:SynchronousMachineTimeConstantReactance.xDirectTrans>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>0.13</cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadSync>1.75</cim:SynchronousMachineTimeConstantReactance.xQuadSync>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadTrans>0.8</cim:SynchronousMachineTimeConstantReactance.xQuadTrans>
+    <cim:SynchronousMachineTimeConstantReactance.tpdo>6.5</cim:SynchronousMachineTimeConstantReactance.tpdo>
+    <cim:SynchronousMachineTimeConstantReactance.tppdo>0.06</cim:SynchronousMachineTimeConstantReactance.tppdo>
+    <cim:SynchronousMachineTimeConstantReactance.tpqo>0.2</cim:SynchronousMachineTimeConstantReactance.tpqo>
+    <cim:SynchronousMachineTimeConstantReactance.tppqo>0.05</cim:SynchronousMachineTimeConstantReactance.tppqo>
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_32ec25dc-1df9-11eb-a653-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>6.5</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0.09</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0.38</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:RotatingMachineDynamics.statorLeakageReactance>0.15</cim:RotatingMachineDynamics.statorLeakageReactance>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENROU</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineTimeConstantReactance>
+  <cim:SynchronousMachineTimeConstantReactance rdf:ID="_9f81fb26-1df9-11eb-a653-74e5f963e191">
+    <cim:SynchronousMachineTimeConstantReactance.rotorType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor" />
+    <cim:SynchronousMachineTimeConstantReactance.modelType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind.subtransient" />
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSync>1.8</cim:SynchronousMachineTimeConstantReactance.xDirectSync>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectTrans>0.6</cim:SynchronousMachineTimeConstantReactance.xDirectTrans>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>0.13</cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadSync>1.75</cim:SynchronousMachineTimeConstantReactance.xQuadSync>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadTrans>0.8</cim:SynchronousMachineTimeConstantReactance.xQuadTrans>
+    <cim:SynchronousMachineTimeConstantReactance.tpdo>6.5</cim:SynchronousMachineTimeConstantReactance.tpdo>
+    <cim:SynchronousMachineTimeConstantReactance.tppdo>0.06</cim:SynchronousMachineTimeConstantReactance.tppdo>
+    <cim:SynchronousMachineTimeConstantReactance.tpqo>0.2</cim:SynchronousMachineTimeConstantReactance.tpqo>
+    <cim:SynchronousMachineTimeConstantReactance.tppqo>0.05</cim:SynchronousMachineTimeConstantReactance.tppqo>
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_32ec25e5-1df9-11eb-a653-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>5</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0.09</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0.38</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:RotatingMachineDynamics.statorLeakageReactance>0.15</cim:RotatingMachineDynamics.statorLeakageReactance>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENROU</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineTimeConstantReactance>
+  <cim:SynchronousMachineTimeConstantReactance rdf:ID="_9f81fb36-1df9-11eb-a653-74e5f963e191">
+    <cim:SynchronousMachineTimeConstantReactance.rotorType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor" />
+    <cim:SynchronousMachineTimeConstantReactance.modelType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind.subtransient" />
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSync>1.8</cim:SynchronousMachineTimeConstantReactance.xDirectSync>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectTrans>0.6</cim:SynchronousMachineTimeConstantReactance.xDirectTrans>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>0.12</cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadSync>1.75</cim:SynchronousMachineTimeConstantReactance.xQuadSync>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadTrans>0.8</cim:SynchronousMachineTimeConstantReactance.xQuadTrans>
+    <cim:SynchronousMachineTimeConstantReactance.tpdo>6.5</cim:SynchronousMachineTimeConstantReactance.tpdo>
+    <cim:SynchronousMachineTimeConstantReactance.tppdo>0.06</cim:SynchronousMachineTimeConstantReactance.tppdo>
+    <cim:SynchronousMachineTimeConstantReactance.tpqo>0.2</cim:SynchronousMachineTimeConstantReactance.tpqo>
+    <cim:SynchronousMachineTimeConstantReactance.tppqo>0.05</cim:SynchronousMachineTimeConstantReactance.tppqo>
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_32ec25ed-1df9-11eb-a653-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>5</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0.09</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0.38</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:RotatingMachineDynamics.statorLeakageReactance>0.15</cim:RotatingMachineDynamics.statorLeakageReactance>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENROU</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineTimeConstantReactance>
+  <cim:SynchronousMachineTimeConstantReactance rdf:ID="_9f81fb46-1df9-11eb-a653-74e5f963e191">
+    <cim:SynchronousMachineTimeConstantReactance.rotorType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor" />
+    <cim:SynchronousMachineTimeConstantReactance.modelType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind.subtransient" />
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSync>1.8</cim:SynchronousMachineTimeConstantReactance.xDirectSync>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectTrans>0.6</cim:SynchronousMachineTimeConstantReactance.xDirectTrans>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>0.12</cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadSync>1.75</cim:SynchronousMachineTimeConstantReactance.xQuadSync>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadTrans>0.8</cim:SynchronousMachineTimeConstantReactance.xQuadTrans>
+    <cim:SynchronousMachineTimeConstantReactance.tpdo>6.5</cim:SynchronousMachineTimeConstantReactance.tpdo>
+    <cim:SynchronousMachineTimeConstantReactance.tppdo>0.06</cim:SynchronousMachineTimeConstantReactance.tppdo>
+    <cim:SynchronousMachineTimeConstantReactance.tpqo>0.2</cim:SynchronousMachineTimeConstantReactance.tpqo>
+    <cim:SynchronousMachineTimeConstantReactance.tppqo>0.05</cim:SynchronousMachineTimeConstantReactance.tppqo>
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_32ec25f5-1df9-11eb-a653-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>5</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0.09</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0.38</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:RotatingMachineDynamics.statorLeakageReactance>0.15</cim:RotatingMachineDynamics.statorLeakageReactance>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENROU</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineTimeConstantReactance>
+</rdf:RDF>
