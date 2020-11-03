@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pti:RDFID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:pti="http://www.pti-us.com/PTI_CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#">
+  <cim:ModelingAuthoritySet rdf:ID="http://www.ieee14.com/ieee14" />
+  <cim:VoltageLevel rdf:ID="_32ec24b0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec24a9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec24aa-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec24b5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec24a8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec24a6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitType rdf:ID="_32ec24b7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PATL_0</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_32ec24b8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>TATL_7200</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_32ec24b9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>TATL_900</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_32ec24ba-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>HighVoltage_900</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_32ec24bb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>HighVoltage_0</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_32ec24bc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>LowVoltage_900</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_32ec24bd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>LowVoltage_0</pti:PSSEID>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitSet rdf:ID="_32ec24b6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_1</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec24be-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_1_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24bf-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_1_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24c0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_1_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24c1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_1_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec24c8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec24c5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec24c6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec24ca-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec24c4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec24c2-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec24cb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_2</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec24cc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_2_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24cd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_2_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24ce-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_2_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24cf-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_2_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec24d6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec24d3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec24d4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec24d8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec24d2-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec24d0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec24d9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_3</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec24da-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_3_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24db-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_3_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24dc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_3_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24dd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_3_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec24e4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec24e1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec24e2-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec24e6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec24e0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec24de-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec24e7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_4</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec24e8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_4_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24e9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_4_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24ea-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_4_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24eb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_4_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec24f2-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec24ef-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec24f0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec24f4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec24ee-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec24ec-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec24f5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_5</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec24f6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_5_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24f7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_5_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24f8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_5_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec24f9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_5_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec2504-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec24fd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec24fe-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2508-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec24fc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec24fa-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2509-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_6</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec250a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_6_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec250b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_6_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec250c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_6_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec250d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_6_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec2514-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec2511-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec2512-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2516-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec2510-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec250e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2517-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_7</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec2518-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_7_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2519-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_7_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec251a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_7_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec251b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_7_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec2522-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec251f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec2520-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2524-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec251e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec251c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2525-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_8</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec2526-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_8_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2527-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_8_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2528-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_8_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2529-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_8_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec2530-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:Substation rdf:ID="_32ec252d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9</pti:PSSEID>
+  </cim:Substation>
+  <cim:TopologicalNode rdf:ID="_32ec252e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2532-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec252c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec252a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2533-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_9</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec2534-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_9_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2535-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_9_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2536-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_9_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2537-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_9_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLevel rdf:ID="_32ec253e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10</pti:PSSEID>
+  </cim:VoltageLevel>
+  <cim:TopologicalNode rdf:ID="_32ec253c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2540-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec253a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec2538-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2541-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_10</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec2542-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_10_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2543-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_10_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2544-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_10_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2545-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_10_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:TopologicalNode rdf:ID="_32ec254a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>11</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec254d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>11</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec2548-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>11</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec2546-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>11</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec254e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_11</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec254f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_11_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2550-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_11_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2551-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_11_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2552-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_11_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:TopologicalNode rdf:ID="_32ec2557-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec255a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec2555-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec2553-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec255b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_12</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec255c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_12_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec255d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_12_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec255e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_12_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec255f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_12_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:TopologicalNode rdf:ID="_32ec2564-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2567-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec2562-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec2560-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2568-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_13</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec2569-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_13_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec256a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_13_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec256b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_13_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec256c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_13_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:TopologicalNode rdf:ID="_32ec2571-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>14</pti:PSSEID>
+  </cim:TopologicalNode>
+  <cim:SvVoltage rdf:ID="_32ec2574-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>14</pti:PSSEID>
+  </cim:SvVoltage>
+  <cim:ConnectivityNode rdf:ID="_32ec256f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>14</pti:PSSEID>
+  </cim:ConnectivityNode>
+  <cim:BusbarSection rdf:ID="_32ec256d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>14</pti:PSSEID>
+  </cim:BusbarSection>
+  <cim:OperationalLimitSet rdf:ID="_32ec2575-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_14</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:VoltageLimit rdf:ID="_32ec2576-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_14_High_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2577-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_14_Low_Normal</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2578-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_14_High_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_32ec2579-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Bus_VoltageLimit_14_Low_Emergency</pti:PSSEID>
+  </cim:VoltageLimit>
+  <cim:ConformLoad rdf:ID="_32ec257c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec257d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec2580-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_2_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec2583-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec2584-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec2587-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_3_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec258a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec258b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec258e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_4_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec2591-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec2592-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>5_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec2595-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_5_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec2598-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec2599-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec259c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_6_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec259f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec25a0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec25a3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_9_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec25a6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec25a7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec25aa-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_10_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec25ad-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>11_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec25ae-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>11_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec25b1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_11_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec25b4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec25b5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec25b8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_12_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec25bb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec25bc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec25bf-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_13_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ConformLoad rdf:ID="_32ec25c2-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>14_1 </pti:PSSEID>
+  </cim:ConformLoad>
+  <cim:LoadResponseCharacteristic rdf:ID="_32ec25c3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>14_1 </pti:PSSEID>
+  </cim:LoadResponseCharacteristic>
+  <cim:SvPowerFlow rdf:ID="_32ec25c6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>ECPF_14_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:LinearShuntCompensator rdf:ID="_32ec25c7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>BUSSHUNT_9_1 </pti:PSSEID>
+  </cim:LinearShuntCompensator>
+  <cim:SvShuntCompensatorSections rdf:ID="_32ec25c9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>BUSSHUNT_9_1 </pti:PSSEID>
+  </cim:SvShuntCompensatorSections>
+  <cim:SvPowerFlow rdf:ID="_32ec25ca-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>BUSSHUNT_9_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:LinearShuntCompensator rdf:ID="_32ec25cb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>BUSSHUNT_14_1 </pti:PSSEID>
+  </cim:LinearShuntCompensator>
+  <cim:SvShuntCompensatorSections rdf:ID="_32ec25cd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>BUSSHUNT_14_1 </pti:PSSEID>
+  </cim:SvShuntCompensatorSections>
+  <cim:SvPowerFlow rdf:ID="_32ec25ce-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>BUSSHUNT_14_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:GeneratingUnit rdf:ID="_32ec25d0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_1</pti:PSSEID>
+  </cim:GeneratingUnit>
+  <cim:SynchronousMachine rdf:ID="_32ec25d4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_1</pti:PSSEID>
+  </cim:SynchronousMachine>
+  <cim:SvPowerFlow rdf:ID="_32ec25d6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>SMPF_1_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:GeneratingUnit rdf:ID="_32ec25d8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_1</pti:PSSEID>
+  </cim:GeneratingUnit>
+  <cim:SynchronousMachine rdf:ID="_32ec25dc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_1</pti:PSSEID>
+  </cim:SynchronousMachine>
+  <cim:SvPowerFlow rdf:ID="_32ec25de-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>SMPF_2_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ControlAreaGeneratingUnit rdf:ID="_32ec25df-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>SMPF_2_1 </pti:PSSEID>
+  </cim:ControlAreaGeneratingUnit>
+  <cim:GeneratingUnit rdf:ID="_32ec25e1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_1</pti:PSSEID>
+  </cim:GeneratingUnit>
+  <cim:SynchronousMachine rdf:ID="_32ec25e5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_1</pti:PSSEID>
+  </cim:SynchronousMachine>
+  <cim:SvPowerFlow rdf:ID="_32ec25e7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>SMPF_3_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:GeneratingUnit rdf:ID="_32ec25e9-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_1</pti:PSSEID>
+  </cim:GeneratingUnit>
+  <cim:SynchronousMachine rdf:ID="_32ec25ed-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_1</pti:PSSEID>
+  </cim:SynchronousMachine>
+  <cim:SvPowerFlow rdf:ID="_32ec25ef-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>SMPF_6_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:GeneratingUnit rdf:ID="_32ec25f1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8_1</pti:PSSEID>
+  </cim:GeneratingUnit>
+  <cim:SynchronousMachine rdf:ID="_32ec25f5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8_1</pti:PSSEID>
+  </cim:SynchronousMachine>
+  <cim:SvPowerFlow rdf:ID="_32ec25f7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>SMPF_8_1 </pti:PSSEID>
+  </cim:SvPowerFlow>
+  <cim:ACLineSegment rdf:ID="_32ec25f8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec25fc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec25fd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec25fe-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec25ff-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2600-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2601-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_2_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2602-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2606-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2607-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2608-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2609-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec260a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec260b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_5_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec260c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2610-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2611-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2612-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2613-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2614-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2615-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_3_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2616-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec261a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec261b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec261c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec261d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec261e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec261f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_4_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2620-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2624-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2625-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2626-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2627-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2628-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2629-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_5_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec262a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec262e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec262f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2630-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2631-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2632-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2633-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_4_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2634-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2638-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2639-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec263a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec263b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec263c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec263d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_5_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec263e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2642-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2643-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2644-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2645-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2646-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2647-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_11_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2648-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec264c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec264d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec264e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec264f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2650-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2651-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_12_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2652-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2656-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2657-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2658-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2659-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec265a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec265b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_13_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec265c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2660-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2661-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2662-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2663-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2664-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2665-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>7_9_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2666-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec266a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec266b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec266c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec266d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec266e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec266f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_10_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2670-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2674-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2675-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2676-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2677-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2678-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2679-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>9_14_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec267a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec267e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec267f-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2680-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2681-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2682-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2683-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>10_11_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec2684-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2688-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2689-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec268a-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec268b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec268c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec268d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>12_13_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:ACLineSegment rdf:ID="_32ec268e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 </pti:PSSEID>
+  </cim:ACLineSegment>
+  <cim:OperationalLimitSet rdf:ID="_32ec2692-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 From</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2693-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 From_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2694-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 From_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:OperationalLimitSet rdf:ID="_32ec2695-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 To</pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec2696-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 To_Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec2697-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>13_14_1 To_ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:PowerTransformer rdf:ID="_32ec2698-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_7_0_1 </pti:PSSEID>
+  </cim:PowerTransformer>
+  <cim:PowerTransformerEnd rdf:ID="_32ec269b-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_7_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec269c-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_7_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec269d-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_7_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec269e-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_7_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:RatioTapChanger rdf:ID="_32ec26a1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_4_7_0_1 </pti:PSSEID>
+  </cim:RatioTapChanger>
+  <cim:SvTapStep rdf:ID="_32ec26a2-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_4_7_0_1 </pti:PSSEID>
+  </cim:SvTapStep>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26a4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_7_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26a5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_7_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26a6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_7_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26a7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_7_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:PowerTransformer rdf:ID="_32ec26a8-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_9_0_1 </pti:PSSEID>
+  </cim:PowerTransformer>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26ab-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_9_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26ac-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_9_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26ad-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_9_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26ae-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_4_9_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:RatioTapChanger rdf:ID="_32ec26b0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_4_9_0_1 </pti:PSSEID>
+  </cim:RatioTapChanger>
+  <cim:SvTapStep rdf:ID="_32ec26b1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_4_9_0_1 </pti:PSSEID>
+  </cim:SvTapStep>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26b3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_9_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26b4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_9_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26b5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_9_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26b6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_4_9_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:PowerTransformer rdf:ID="_32ec26b7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_5_0_1 </pti:PSSEID>
+  </cim:PowerTransformer>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26ba-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_6_5_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26bb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_6_5_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26bc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_6_5_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26bd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_6_5_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:RatioTapChanger rdf:ID="_32ec26c0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_6_5_0_1 </pti:PSSEID>
+  </cim:RatioTapChanger>
+  <cim:SvTapStep rdf:ID="_32ec26c1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_6_5_0_1 </pti:PSSEID>
+  </cim:SvTapStep>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26c3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_6_5_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26c4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_6_5_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26c5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_6_5_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26c6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_6_5_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:PowerTransformer rdf:ID="_32ec26c7-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8_7_0_1 </pti:PSSEID>
+  </cim:PowerTransformer>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26ca-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_8_7_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26cb-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_8_7_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26cc-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_8_7_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26cd-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Primary_8_7_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:RatioTapChanger rdf:ID="_32ec26d0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_8_7_0_1 </pti:PSSEID>
+  </cim:RatioTapChanger>
+  <cim:SvTapStep rdf:ID="_32ec26d1-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>PrimaryTap_8_7_0_1 </pti:PSSEID>
+  </cim:SvTapStep>
+  <cim:PowerTransformerEnd rdf:ID="_32ec26d3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_8_7_0_1 </pti:PSSEID>
+  </cim:PowerTransformerEnd>
+  <cim:OperationalLimitSet rdf:ID="_32ec26d4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_8_7_0_1 </pti:PSSEID>
+  </cim:OperationalLimitSet>
+  <cim:CurrentLimit rdf:ID="_32ec26d5-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_8_7_0_1 _Normal</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:CurrentLimit rdf:ID="_32ec26d6-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>Secondary_8_7_0_1 _ShortTerm</pti:PSSEID>
+  </cim:CurrentLimit>
+  <cim:GeographicalRegion rdf:ID="_32ec24ae-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:GeographicalRegion>
+  <cim:ControlArea rdf:ID="_32ec24ab-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:ControlArea>
+  <cim:GeographicalRegion rdf:ID="_32ec2502-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:GeographicalRegion>
+  <cim:ControlArea rdf:ID="_32ec24ff-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:ControlArea>
+  <cim:SubGeographicalRegion rdf:ID="_32ec24af-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:SubGeographicalRegion>
+  <cim:SubGeographicalRegion rdf:ID="_32ec2503-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:SubGeographicalRegion>
+  <cim:OperatingParticipant rdf:ID="_32ec24b3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1</pti:PSSEID>
+  </cim:OperatingParticipant>
+  <cim:OperatingParticipant rdf:ID="_32ec2507-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2</pti:PSSEID>
+  </cim:OperatingParticipant>
+  <cim:RegulatingControl rdf:ID="_32ec25d3-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>1_1_2_71.070000_0.000000</pti:PSSEID>
+  </cim:RegulatingControl>
+  <cim:RegulatingControl rdf:ID="_32ec25db-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>2_1_2_71.070000_0.000000</pti:PSSEID>
+  </cim:RegulatingControl>
+  <cim:RegulatingControl rdf:ID="_32ec25e4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>3_1_2_69.690000_0.000000</pti:PSSEID>
+  </cim:RegulatingControl>
+  <cim:TapChangerControl rdf:ID="_32ec26a0-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>4_0_5_69.000000_6.900000</pti:PSSEID>
+  </cim:TapChangerControl>
+  <cim:RegulatingControl rdf:ID="_32ec25ec-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_1_2_142.140000_0.000000</pti:PSSEID>
+  </cim:RegulatingControl>
+  <cim:TapChangerControl rdf:ID="_32ec26bf-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>6_0_5_138.000000_13.800000</pti:PSSEID>
+  </cim:TapChangerControl>
+  <cim:RegulatingControl rdf:ID="_32ec25f4-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8_1_2_71.070000_0.000000</pti:PSSEID>
+  </cim:RegulatingControl>
+  <cim:TapChangerControl rdf:ID="_32ec26cf-1df9-11eb-a653-74e5f963e191">
+    <pti:PSSEID>8_0_5_69.000000_6.900000</pti:PSSEID>
+  </cim:TapChangerControl>
+</pti:RDFID>
