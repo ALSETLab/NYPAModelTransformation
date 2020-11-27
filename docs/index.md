@@ -4,20 +4,26 @@ title: NYPA Model Transformation Tool
 ---
 
 ## Project Overview
- 
 
-## Contact Information
+This is the repository for the 'Model Transformation for High Performing Smart Grid Applications' project.
+Project has been on going since Fall 2018. 
+Joint project between New York Power Authority and Rensselaer Polytechnic Institute.
 
-<ul>
-<li>Giuseppe Laera (laerag at rpi dot edu) </li>
-<li>Luigi Vanfretti (vanfrl at rpi dot edu) </li>  
-<li>Manuel Navarro (navarm2 at rpi dot edu) </li>
-<li>Marcelo de Castro (decasm3 at rpi dot edu) </li>
-</ul>
+## Developers, Roles and Contact Information
+Luigi Vanfretti (vanfrl@rpi.edu) Principal Investigator
 
+Marcelo De Castro (decasm3@rpi.edu)
+- PSS/E Testing
+- CSV Compare
+- Model Translation
+
+Giuseppe Laera (laerag@rpi.edu)
+- Model Translation
+- Technical Design
+
+Manuel Navarro Catalan (navarm2@rpi.edu)
+- Dymola Testing
+- OpenModelica Testing
+- Model Translation
 
 ## List of Resources
-
-
-## Acknowledgements
-
