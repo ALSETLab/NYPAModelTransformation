@@ -1,5 +1,4 @@
 ---
-layout: default
 title: NYPA Model Transformation Tool
 ---
 
