@@ -10,11 +10,13 @@ The project has been on going since Fall 2018.
 Joint project between New York Power Authority and Rensselaer Polytechnic Institute.
 
 ## Developers, Roles and Contact Information
-Luigi Vanfretti (vanfrl@rpi.edu) Principal Investigator
+Luigi Vanfretti (vanfrl@rpi.edu) 
+- Principal Investigator
 
 Marcelo De Castro (decasm3@rpi.edu)
 - PSS/E Testing
 - CSV Compare
+- Modelica Model Developer
 - Model Translation
 
 Giuseppe Laera (laerag@rpi.edu)
@@ -25,5 +27,3 @@ Manuel Navarro Catalan (navarm2@rpi.edu)
 - Dymola Testing
 - OpenModelica Testing
 - Model Translation
-
-## List of Resources
