@@ -5,8 +5,8 @@ title: NYPA Model Transformation Tool
 
 ## Project Overview
 
-This is the repository for the 'Model Transformation for High Performing Smart Grid Applications' project.
-Project has been on going since Fall 2018. 
+This is the website for the 'Model Transformation for High Performing Smart Grid Applications' project.
+The project has been on going since Fall 2018. 
 Joint project between New York Power Authority and Rensselaer Polytechnic Institute.
 
 ## Developers, Roles and Contact Information
