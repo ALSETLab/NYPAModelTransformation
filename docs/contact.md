@@ -2,7 +2,7 @@
 title: Contact Information
 ---
 
-## Developers, Roles and Contact Information
+## Members
 
 ### Rensselaer Polytechnic Institute
 Luigi Vanfretti (vanfrl@rpi.edu) 

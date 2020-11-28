@@ -16,8 +16,8 @@ General results can be found in the table below.
   </tr>
   <tr>
     <td>1. Machines</td>
-    <td>(a)<a href="https://htmlpreview.github.io/?https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/CSV-Compare/ResultReport/Dymola/Fault/Machines/2020-04-27-index.html">Fault Report</a>\
-    	  (b)<a href="https://htmlpreview.github.io/?https://github.com/ALSETLab/NYPAModelTransformation/blob/master/OpenIPSLVerification/VerificationRoutines/CSV-Compare/ResultReport/Dymola/LoadVariation/Machines/2020-04-27-index.html">Load Variation Report</a></td>
+    <td>(a)<a href="../OpenIPSLVerification/VerificationRoutines/CSV-Compare/ResultReport/Dymola/Fault/Machines/2020-04-27-index.html">Fault Report</a><br\>
+    	  (b)<a href="../OpenIPSLVerification/VerificationRoutines/CSV-Compare/ResultReport/Dymola/LoadVariation/Machines/2020-04-27-index.html">Load Variation Report</a></td>
   </tr>
   <tr>
     <td>2. Exciters</td>
