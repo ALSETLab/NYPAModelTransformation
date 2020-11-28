@@ -26,3 +26,18 @@ Manuel Navarro Catalan (navarm2@rpi.edu)
 - Dymola Testing
 - OpenModelica Testing
 - Model Translation
+
+## Resources
+
+This section summarizes some resources that might be useful for someone navigating through this project.
+
+<table>
+  <tr>
+    <th>Resources</th>
+    <th>Links</th>
+  </tr>
+  <tr>
+    <td>1. Validation Results</td>
+    <td>(a) <a href="./reports">CSV Compare Results</a></td>
+  </tr>
+</table>
