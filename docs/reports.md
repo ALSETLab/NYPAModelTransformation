@@ -1,5 +1,5 @@
 ---
-title: Validation Reports
+title: Model Validation
 ---
 
 
@@ -77,3 +77,8 @@ General results for OpenModelica tests can be found in the table below.
     <td>(a)<a href="archive/OpenModelica/Fault/WindTurbines/2020-05-01-index.html">Fault Report</a></td>
   </tr>
 </table>
+
+
+
+
+<a href="./index">Go back</a> 
