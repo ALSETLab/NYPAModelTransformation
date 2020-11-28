@@ -2,9 +2,9 @@
 title: Contact Information
 ---
 
-## Members
+## Roles and Contact Info
 
-### Rensselaer Polytechnic Institute
+### Rensselaer Polytechnic Institute Members
 Luigi Vanfretti (vanfrl@rpi.edu) 
 - Principal Investigator
 
