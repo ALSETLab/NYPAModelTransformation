@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -8,29 +11,65 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
+import git
 
 # get current directory and set it to the beginning of the repository 
-RepoDir = os.getcwd()
+RepoDir = os.getcwd() 
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
+
+
+#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
-OpenIPSL = RepoDir + "/OpenIPSL/"
-OpenIPSLPackage = RepoDir + "/OpenIPSL/OpenIPSL/package.mo"
+OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/"
+#GitHub Location
+GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
+OpenIPSLPackage = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/package.mo"
+OpenModelica = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/"
 #Working Directory
-LVExcitersWorkingDir = RepoDir + "/WorkingDir/LoadVariation/Exciters/"
+LVExcitersWorkingDir = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/WorkingDir/LoadVariation/Exciters/"
 #Load Variation Folder Locations
-LoadVariationSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/Load_variation.mo"
-LoadVariationDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
+LoadVariationSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
+LoadVariationDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
+LoadVariationDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
 # Power Fault Folder Locations
-PowerFaultSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/PwFault.mo"
-PowerFaultDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Events/"
-PowerFaultDestination = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
+PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/PwFault.mo"
+PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/"
+PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 # SMIB Partial Folder Location
-SMIBPartialSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
-SMIBPartialDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Examples/"
-SMIBPartialDestination = RepoDir + "/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
+SMIBPartialSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
+SMIBPartialDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
+SMIBPartialDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
+
+
+# In[3]:
+
+
 print(omc.sendExpression("getVersion()"))
+
+
+# In[4]:
+
+
+#Deleting old OpenIPSL library version
+#Deleting old OpenIPSL library version
+try:
+    shutil.rmtree(f""+OpenIPSL+"")
+except:
+    pass
+#Pulling latest OpenIPSL library version
+print('Pulling latest OpenIPSL library version...\n')
+git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
+print("Fault Open Modelica Exciters Simulation Start...\n")
+
+
+# In[5]:
+
 
 #Adding Auxiliary Files
 try:
@@ -45,6 +84,9 @@ try:
 except:
     print('Error Adding Auxiliary Models...\n') 
 print("Load Variation Open Modelica Machines Simulation Start...\n")
+
+
+# In[6]:
 
 
 #Creation of matrix with names, paths and variables
@@ -71,16 +113,21 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "eXAC1.EFD", "eXAC2.EFD", "eXAC3.EFD", "eXDC2.EFD", "eXPIC1.EFD", "eXST1.EFD", "eXST3.EFD", "iEEET1.EFD", "iEEET2.EFD", 
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
+
+# In[8]:
+
+
 #Delete old results
-try:
-    shutil.rmtree(''+LVExcitersWorkingDir+'')
-except:
-    pass
+shutil.rmtree(''+LVExcitersWorkingDir+'')
 #Create Exciters folder
 os.makedirs(''+LVExcitersWorkingDir+'')
 os.chdir(f""+LVExcitersWorkingDir+"")
 for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
+
+
+# In[9]:
+
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for exciterNumber, exciterName in enumerate(exciters['names']):
@@ -147,6 +194,10 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     shutil.rmtree(""+LVExcitersWorkingDir+f"{exciterName}/")
     print("Delete OK...\n")        
 print('Load Variation Exciter Examples Open Modelica Simulation OK...')
+
+
+# In[ ]:
+
 
 try:
     print("Closing Open Modelica...")

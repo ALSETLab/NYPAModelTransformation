@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[17]:
+
+
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -8,43 +11,90 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
+import git
+
+
+# In[18]:
+
 
 # get current directory and set it to the beginning of the repository 
-RepoDir = os.getcwd()
+RepoDir = os.getcwd() 
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
+
+
+#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
-OpenIPSL = RepoDir + "/OpenIPSL/"
-OpenIPSLPackage = RepoDir + "/OpenIPSL/OpenIPSL/package.mo"
+OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/"
+#GitHub Location
+GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
+OpenIPSLPackage = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/package.mo"
+OpenModelica = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/"
 #Working Directory
-LVMachinesWorkingDir = RepoDir + "/WorkingDir/LoadVariation/Machines/"
+LVMachinesWorkingDir = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/WorkingDir/LoadVariation/Machines/"
 #Load Variation Folder Locations
-LoadVariationSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/Load_variation.mo"
-LoadVariationDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
+LoadVariationSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
+LoadVariationDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
+LoadVariationDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
 # Power Fault Folder Locations
-PowerFaultSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/PwFault.mo"
-PowerFaultDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Events/"
-PowerFaultDestination = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
+PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/PwFault.mo"
+PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/"
+PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 # SMIB Partial Folder Location
-SMIBPartialSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
-SMIBPartialDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Examples/"
-SMIBPartialDestination = RepoDir + "/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
+SMIBPartialSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
+SMIBPartialDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
+SMIBPartialDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
+# SMIB 2 Partial Folder Location
+SMIBPartial2Source = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/SMIBpartial2.mo"
+SMIBPartial2DestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
+SMIBPartial2Destination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial2.mo"
+
+
+# In[19]:
+
+
 print(omc.sendExpression("getVersion()"))
+
+
+# In[4]:
+
+
+#Deleting old OpenIPSL library version
+try:
+    shutil.rmtree(f""+OpenIPSL+"")
+except:
+    pass
+#Pulling latest OpenIPSL library version
+print('Pulling latest OpenIPSL library version...\n')
+git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
+print("Fault Open Modelica Machines Simulation Start...\n")
+
+
+# In[20]:
 
 #Adding Auxiliary Files
 try:
     print('Deleting Auxiliary Models')
     os.chdir(SMIBPartialDestinationPath)
     os.remove("SMIBpartial.mo")
-except: 
+    os.chdir(SMIBPartial2DestinationPath)
+    os.remove("SMIBpartial2.mo")
+except:
     print('Error Deleting Auxiliar Models...')
 try:
     print('Adding Auxiliary models...')
     os.system('cp '+SMIBPartialSource+' '+SMIBPartialDestination)
+    os.system('cp ' + SMIBPartial2Source + ' ' + SMIBPartial2Destination)
 except:
-    print('Error Adding Auxiliary Models...\n') 
+    print('Error Adding Auxiliary Models...\n')
 print("Load Variation Open Modelica Machines Simulation Start...\n")
+
+
 
 #Creation of matrix with names, paths and variables
 machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1"],
@@ -56,16 +106,21 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS2.omega', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
+
+# In[22]:
+
+
 #Delete old results
-try:
-    shutil.rmtree(''+LVMachinesWorkingDir+'')
-except:
-    pass
+shutil.rmtree(''+LVMachinesWorkingDir+'')
 #Create Exciters folder
 os.makedirs(''+LVMachinesWorkingDir+'')
 os.chdir(f""+LVMachinesWorkingDir+"")
 for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
+
+
+# In[23]:
+
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for machineNumber, machineName in enumerate(machines['names']):
@@ -118,6 +173,10 @@ for machineNumber, machineName in enumerate(machines['names']):
     except:
         print("Error...\n")          
 print('Load Variation Machine Examples Open Modelica Simulation OK...')
+
+
+# In[9]:
+
 
 try:
     print("Closing Open Modelica...")
