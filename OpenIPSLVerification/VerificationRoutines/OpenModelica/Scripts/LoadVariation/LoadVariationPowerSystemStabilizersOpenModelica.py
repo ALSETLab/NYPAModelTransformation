@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
-
-
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -11,66 +8,29 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
-
-# In[13]:
 
 # get current directory and set it to the beginning of the repository 
-RepoDir = os.getcwd() 
-RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
-RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
-RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
-RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+RepoDir = os.getcwd()
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
-OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/"
-#GitHub Location
-GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
-OpenIPSLPackage = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/package.mo"
-OpenModelica = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/"
+OpenIPSL = RepoDir + "/OpenIPSL/"
+OpenIPSLPackage = RepoDir + "/OpenIPSL/OpenIPSL/package.mo"
 #Working Directory
-LVPowerSystemStabilizersWorkingDir = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/WorkingDir/LoadVariation/PowerSystemStabilizers/"
+LVPowerSystemStabilizersWorkingDir = RepoDir + "/WorkingDir/LoadVariation/PowerSystemStabilizers/"
 #Load Variation Folder Locations
-LoadVariationSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/Load_variation.mo"
-LoadVariationDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/"
-LoadVariationDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
+LoadVariationSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/Load_variation.mo"
+LoadVariationDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Loads/PSSE/Load_variation.mo"
 # Power Fault Folder Locations
-PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/PwFault.mo"
-PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/"
-PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
+PowerFaultSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/PwFault.mo"
+PowerFaultDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Events/"
+PowerFaultDestination = RepoDir + "/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 # SMIB Partial Folder Location
-SMIBPartialSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
-SMIBPartialDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
-SMIBPartialDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
-
-# In[14]:
-
-
+SMIBPartialSource = RepoDir + "/CI/LoadVariation/AuxiliaryModels/SMIBpartial.mo"
+SMIBPartialDestinationPath = RepoDir + "/OpenIPSL/OpenIPSL/Examples/"
+SMIBPartialDestination = RepoDir + "/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
 print(omc.sendExpression("getVersion()"))
-
-
-# In[15]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
-print("Fault Open Modelica Power System Stabilizers Simulation Start...\n")
-
-
-# In[16]:
-
 
 #Adding Auxiliary Files
 try:
@@ -84,11 +44,7 @@ try:
     os.system('cp '+SMIBPartialSource+' '+SMIBPartialDestination)
 except:
     print('Error Adding Auxiliary Models...\n') 
-print("Load Variation Open Modelica Power System Stabilizers Simulation Start...\n")
-
-
-# In[17]:
-
+print("Load Variation Open Modelica Machines Simulation Start...\n")
 
 #Creation of matrix with names, paths and variables
 psss = { 'names' : ["PSS2A","PSS2B"],
@@ -99,22 +55,17 @@ psss = { 'names' : ["PSS2A","PSS2B"],
             'speed': ['gENROE.SPEED'],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
-
-# In[18]:
-
-
 #Delete old results
-shutil.rmtree(''+LVPowerSystemStabilizersWorkingDir+'')
+try:
+    shutil.rmtree(''+LVPowerSystemStabilizersWorkingDir+'')
+except:
+    pass
 #Create Exciters folder
 os.makedirs(''+LVPowerSystemStabilizersWorkingDir+'')
 os.chdir(f""+LVPowerSystemStabilizersWorkingDir+"")
+
 for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
-
-
-# In[19]:
-
-
 #For loop that will iterate between machines, simulate, and create the .csv file
 for pssNumber, pssName in enumerate(psss['names']):
     print(f"Load Variation {pssName} Simulation Start...")
@@ -159,10 +110,6 @@ for pssNumber, pssName in enumerate(psss['names']):
     shutil.rmtree(""+LVPowerSystemStabilizersWorkingDir+f"{pssName}/")
     print("Delete OK...\n")        
 print('Load Variation Power System Stabilizers Examples Open Modelica Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Open Modelica...")
