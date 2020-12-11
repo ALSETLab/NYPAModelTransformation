@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import platform
 from dymola.dymola_interface import DymolaInterface
 from dymola.dymola_exception import DymolaException
@@ -12,8 +9,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -24,9 +19,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
 #GitHub Location
@@ -44,30 +36,10 @@ PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Veri
 PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
 PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
-
-
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
-
-
-# In[4]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"")
 print("Load Variation Dymola Machines Simulation Start...\n")
-
-
-# In[5]:
-
 
 #Adding Auxiliary Files
 try:
@@ -88,10 +60,6 @@ except:
 dymola.openModel(""+OpenIPSLPackage+"") 
 print("Load Variation Dymola Machines Simulation Start...\n")
 
-
-# In[6]:
-
-
 #Creation of matrix with names, paths and variables
 machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1"],
             'path' : ["OpenIPSL.Examples.Machines.PSSE.GENROU", "OpenIPSL.Examples.Machines.PSSE.GENSAL",
@@ -102,10 +70,6 @@ machines = { 'names' : ["GENROU","GENSAL", "GENCLS", "GENROE", "GENSAE", "CSVGN1
            'speed' : ['gENROU.SPEED', 'gENSAL.SPEED', 'gENCLS2.omega', 'gENROE.SPEED', 'gENSAE.SPEED', 'cSVGN1.SPEED'],
            'pmech' : ['gENROU.PMECH', 'gENSAL.PMECH', 'gENCLS2.P', 'gENROE.PMECH', 'gENSAE.PMECH', 'cSVGN1.PMECH']}
 
-
-# In[7]:
-
-
 #Delete old results
 shutil.rmtree(''+LVMachinesWorkingDir+'')
 #Create Exciters folder
@@ -113,10 +77,6 @@ os.makedirs(''+LVMachinesWorkingDir+'')
 os.chdir(f""+LVMachinesWorkingDir+"")
 for machineNumber, machineName in enumerate(machines['names']):
     os.makedirs(f'{machineName}')
-
-
-# In[8]:
-
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for machineNumber, machineName in enumerate(machines['names']):
@@ -186,10 +146,6 @@ for machineNumber, machineName in enumerate(machines['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Load Variation Dymola Machine Examples Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Dymola...")

@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
-
-
 import platform
 from dymola.dymola_interface import DymolaInterface
 from dymola.dymola_exception import DymolaException
@@ -12,8 +9,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -24,9 +19,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
 #GitHub Location
@@ -44,29 +36,10 @@ PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Veri
 PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
 PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
-
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
-
-
-# In[13]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"")
 print("Load Variation Dymola Exciters Simulation Start...\n")
-
-
-# In[14]:
-
 
 #Adding Auxiliary Files
 try:
@@ -86,10 +59,6 @@ except:
 #Opening OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"") 
 print("Load Variation Dymola Exciters Simulation Start...\n")
-
-
-# In[15]:
-
 
 #Creation of matrix with names, paths and variables
 exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "ESST1A", "ESST3A", "ESST4B", 
@@ -115,10 +84,6 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "eXAC1.EFD", "eXAC2.EFD", "eXAC3.EFD", "eXDC2.EFD", "eXPIC1.EFD", "eXST1.EFD", "eXST3.EFD", "iEEET1.EFD", "iEEET2.EFD", 
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
-
-# In[16]:
-
-
 #Delete old results
 shutil.rmtree(''+LVExcitersWorkingDir+'')
 #Create Exciters folder
@@ -126,10 +91,6 @@ os.makedirs(''+LVExcitersWorkingDir+'')
 os.chdir(f""+LVExcitersWorkingDir+"")
 for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
-
-
-# In[ ]:
-
 
 #For loop that will iterate between exciters, simulate, and create the .csv file
 for exciterNumber, exciterName in enumerate(exciters['names']):
@@ -217,10 +178,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Load Variation Dymola Exciter Examples Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Dymola...")
