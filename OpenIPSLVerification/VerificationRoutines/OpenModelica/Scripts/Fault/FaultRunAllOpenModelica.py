@@ -10,21 +10,9 @@ import os
 import shutil
 import git
 
-#This is intended to be used in the manuelnvro Dell using Dymola 2020
-
-
 RepoDir = os.getcwd() 
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
-
 Fault = RepoDir + "/Fault/"
-
-#OpenIPSL Location
-OpenIPSL = RepoDir + "/OpenIPSL/" 
-#GitHub Location
-GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
-OpenIPSLPackage = RepoDir + "/OpenIPSL/package.mo"
-OpenModelica = RepoDir + "/OpenModelica/"
-
 
 #Run Exciters
 print('---------------------------------------------------------- Fault Open Modelica Exciters Testing ----------------------------------------------------------')

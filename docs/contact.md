@@ -13,7 +13,7 @@ Giuseppe Laera (laerag@rpi.edu)
 Luigi Vanfretti (vanfrl@rpi.edu) 
 - Principal Investigator
 
-Manuel Navarro (navarm2@rpi.edu)
+Manuel Navarro (manuelnavarrocatalan@gmail.com)
 - Dymola Testing
 - OpenModelica Testing
 - Model Translation

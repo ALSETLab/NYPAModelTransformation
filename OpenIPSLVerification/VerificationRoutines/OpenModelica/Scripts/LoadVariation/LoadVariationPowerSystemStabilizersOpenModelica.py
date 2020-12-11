@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
-
-
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -11,10 +8,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
-
-# In[13]:
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -25,9 +18,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/"
 #GitHub Location
@@ -49,28 +39,7 @@ SMIBPartialSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Ver
 SMIBPartialDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
 SMIBPartialDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
 
-# In[14]:
-
-
 print(omc.sendExpression("getVersion()"))
-
-
-# In[15]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
-print("Fault Open Modelica Power System Stabilizers Simulation Start...\n")
-
-
-# In[16]:
-
 
 #Adding Auxiliary Files
 try:
@@ -86,10 +55,6 @@ except:
     print('Error Adding Auxiliary Models...\n') 
 print("Load Variation Open Modelica Power System Stabilizers Simulation Start...\n")
 
-
-# In[17]:
-
-
 #Creation of matrix with names, paths and variables
 psss = { 'names' : ["PSS2A","PSS2B"],
             'path' : ["OpenIPSL.Examples.Controls.PSSE.PSS.PSS2A","OpenIPSL.Examples.Controls.PSSE.PSS.PSS2B"],
@@ -99,10 +64,6 @@ psss = { 'names' : ["PSS2A","PSS2B"],
             'speed': ['gENROE.SPEED'],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
-
-# In[18]:
-
-
 #Delete old results
 shutil.rmtree(''+LVPowerSystemStabilizersWorkingDir+'')
 #Create Exciters folder
@@ -110,10 +71,6 @@ os.makedirs(''+LVPowerSystemStabilizersWorkingDir+'')
 os.chdir(f""+LVPowerSystemStabilizersWorkingDir+"")
 for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
-
-
-# In[19]:
-
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for pssNumber, pssName in enumerate(psss['names']):
@@ -159,10 +116,6 @@ for pssNumber, pssName in enumerate(psss['names']):
     shutil.rmtree(""+LVPowerSystemStabilizersWorkingDir+f"{pssName}/")
     print("Delete OK...\n")        
 print('Load Variation Power System Stabilizers Examples Open Modelica Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Open Modelica...")

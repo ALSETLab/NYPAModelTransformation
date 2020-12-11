@@ -35,7 +35,7 @@ Giuseppe Laera (laerag@rpi.edu)
 - Model Translation
 - Technical Design
 
-Manuel Navarro Catalan (navarm2@rpi.edu)
+Manuel Navarro Catalan (manuelnavarrocatalan@gmail.com)
 - Dymola Testing
 - OpenModelica Testing
 - Model Translation
