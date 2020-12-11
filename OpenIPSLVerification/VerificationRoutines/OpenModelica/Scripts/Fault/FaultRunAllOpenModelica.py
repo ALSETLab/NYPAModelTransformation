@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -13,15 +10,20 @@ import os
 import shutil
 import git
 
-
-# In[3]:
-
-
 #This is intended to be used in the manuelnvro Dell using Dymola 2020
-Fault = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/Fault/"
 
 
-# In[4]:
+RepoDir = os.getcwd() 
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+
+Fault = RepoDir + "/Fault/"
+
+#OpenIPSL Location
+OpenIPSL = RepoDir + "/OpenIPSL/" 
+#GitHub Location
+GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
+OpenIPSLPackage = RepoDir + "/OpenIPSL/package.mo"
+OpenModelica = RepoDir + "/OpenModelica/"
 
 
 #Run Exciters
@@ -34,9 +36,6 @@ except:
     print('Error in Fault Open Modelica Exciters Testing...')
 
 
-# In[ ]:
-
-
 #Run Machines
 print('---------------------------------------------------------- Fault Open Modelica Machines Testing ----------------------------------------------------------')
 try:
@@ -46,10 +45,6 @@ try:
 except:
     print('Error in Fault Open Modelica in Machines Testing...')
 
-
-# In[5]:
-
-
 #Run Turbine Governors
 print('---------------------------------------------------------- Fault Open Modelica Turbine Governors Testing ----------------------------------------------------------')
 try:
@@ -58,9 +53,6 @@ try:
     print('Fault Open Modelica Turbine Governors Testing OK...')
 except:
     print('Error in Fault Open Modelica Turbine Governors Testing...')
-
-
-# In[8]:
 
 
 #Run Power System Stabilizer
@@ -73,9 +65,6 @@ except:
     print('Error in Fault Open Modelica Power System Stabilizer Testing...')
 
 
-# In[6]:
-
-
 #Run Wind Turbines
 print('---------------------------------------------------------- Fault Open Modelica Wind Turbines Testing ----------------------------------------------------------')
 try:
@@ -84,9 +73,6 @@ try:
     print('Fault Open Modelica Wind Turbines Testing OK...')
 except:
     print('Error in Fault Open Modelica Wind Turbines Testing...')
-
-
-# In[ ]:
 
 
 print('---------------------------------------------------------- End of All Fault Open Modelica Simulations ----------------------------------------------------------')

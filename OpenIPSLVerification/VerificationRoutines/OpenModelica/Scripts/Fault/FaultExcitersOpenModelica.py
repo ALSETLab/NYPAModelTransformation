@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -11,8 +8,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -22,8 +17,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
-
-
 
 #By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
@@ -43,28 +36,7 @@ PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Veri
 PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/"
 PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
-# In[3]:
-
-
 print(omc.sendExpression("getVersion()"))
-
-
-# In[4]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
-print("Fault Open Modelica Exciters Simulation Start...\n")
-
-
-# In[4]:
-
 
 #Creation of matrix with names, paths and variables
 exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "ESST1A", "ESST3A", "ESST4B", 
@@ -90,10 +62,6 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "eXAC1.EFD", "eXAC2.EFD", "eXAC3.EFD", "eXDC2.EFD", "eXPIC1.EFD", "eXST1.EFD", "eXST3.EFD", "iEEET1.EFD", "iEEET2.EFD", 
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
-
-# In[5]:
-
-
 #Delete old results
 shutil.rmtree(''+FExcitersWorkingDir+'')
 #Create Exciters folder
@@ -101,10 +69,6 @@ os.makedirs(''+FExcitersWorkingDir+'')
 os.chdir(f""+FExcitersWorkingDir+"")
 for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
-
-
-# In[6]:
-
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for exciterNumber, exciterName in enumerate(exciters['names']):
@@ -118,12 +82,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
         print(f"{exciterName} Simulation Finished...")
     except:
         print(f"{exciterName} simulation error or model not found...\n")
-        # To get error message use this script
-        #try:
-        #    failMsg = omc.sendExpression("getErrorString()")
-        #    print(failMsg)
-        #except:
-        #    pass
     try:
         #Selecting Variables
         print(".csv Writing Start...") 
@@ -177,10 +135,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     shutil.rmtree(""+FExcitersWorkingDir+f"{exciterName}/")
     print("Delete OK...\n")        
 print('Fault Exciter Examples Open Modelica Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Open Modelica...")

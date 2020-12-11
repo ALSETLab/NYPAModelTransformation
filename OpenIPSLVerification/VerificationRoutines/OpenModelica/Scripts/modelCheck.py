@@ -5,14 +5,15 @@
 from OMPython import OMCSessionZMQ
 import os
 import sys
+import git
+import shutil
 
 ###################################################Folder/File Definitions############################################################### 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
-print(RepoDir)
 #OpenIPSL Location
-OpenIPSL = RepoDir 
+OpenIPSL = RepoDir + "/OpenIPSL/"
 #GitHub Location
 GitHubOpenIPSL = "https://github.com/marcelofcastro/OpenIPSL.git"
 OpenIPSLPackage = RepoDir + "/OpenIPSL/package.mo"
@@ -126,13 +127,14 @@ def windturbinesCheck(modelList):
 
 ##########################################################Main Code######################################
 #Deleting old OpenIPSL library version
-#try:
-#    shutil.rmtree(OpenIPSL)
-#except:
-#   pass
-#Pulling latest OpenIPSL library version
-print('Pulled latest OpenIPSL library version...\n')
-#git.Git(RepoDir).clone(""+GitHubOpenIPSL+"")
+try:
+    shutil.rmtree(OpenIPSL)
+    print("Pulling latest version of the OpenIPSL Library...")
+    git.Git(RepoDir).clone(""+GitHubOpenIPSL+"")
+except:
+   pass
+   print("Not pulled, check git...")
+
 print("Model Check Start...\n")
 libraryPath = RepoDir + "/OpenIPSL/OpenIPSL/package.mo"
 libraryName = "OpenIPSL"
