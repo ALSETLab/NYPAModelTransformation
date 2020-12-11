@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[20]:
-
-
 from OMPython import OMCSessionZMQ
 omc = OMCSessionZMQ()
 from modelicares import SimRes
@@ -11,9 +7,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
-
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -24,9 +17,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/"
 #GitHub Location
@@ -48,33 +38,11 @@ SMIBPartialSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Ver
 SMIBPartialDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/"
 SMIBPartialDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Examples/SMIBpartial.mo"
 # Base Exciter Folder Location
-BaseExciterSource = RepoDir + "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/ReferenceStep/AuxiliaryModels/BaseExciter.mo"
-BaseExciterDestinationPath = RepoDir + "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Controls/PSSE/ES/BaseClasses/"
-BaseExciterDestination = RepoDir + "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Controls/PSSE/ES/BaseClasses/BaseExciter.mo"
-
-
-# In[22]:
-
+BaseExciterSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/Scripts/ReferenceStep/AuxiliaryModels/BaseExciter.mo"
+BaseExciterDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Controls/PSSE/ES/BaseClasses/"
+BaseExciterDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenModelica/OpenIPSL/OpenIPSL/Electrical/Controls/PSSE/ES/BaseClasses/BaseExciter.mo"
 
 print(omc.sendExpression("getVersion()"))
-
-
-# In[23]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+OpenModelica+"").clone(""+GitHubOpenIPSL+"")
-print("Reference Step Open Modelica Exciters Simulation Start...\n")
-
-
-# In[24]:
-
 
 #Adding Auxiliary Files
 try:
@@ -92,10 +60,6 @@ try:
 except:
     print('Error Adding Auxiliary Models...\n') 
 print("Reference Step Open Modelica Exciters Simulation Start...\n")
-
-
-# In[25]:
-
 
 #Creation of matrix with names, paths and variables
 exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "ESST1A", "ESST3A", "ESST4B", 
@@ -121,10 +85,6 @@ exciters = { 'names' : ["AC7B","AC8B", "ESAC1A", "ESAC2A", "ESAC6A", "ESDC1A", "
                         "eXAC1.EFD", "eXAC2.EFD", "eXAC3.EFD", "eXDC2.EFD", "eXPIC1.EFD", "eXST1.EFD", "eXST3.EFD", "iEEET1.EFD", "iEEET2.EFD", 
                         "iEEET3.EFD", "iEEET5.EFD", "rEXSYS.EFD", "sCRX.EFD", "sEXS.EFD", "sT6B.EFD"]}
 
-
-# In[26]:
-
-
 #Delete old results
 shutil.rmtree(''+RSExcitersWorkingDir+'')
 #Create Exciters folder
@@ -132,10 +92,6 @@ os.makedirs(''+RSExcitersWorkingDir+'')
 os.chdir(f""+RSExcitersWorkingDir+"")
 for exciterNumber, exciterName in enumerate(exciters['names']):
     os.makedirs(f'{exciterName}')
-
-
-# In[27]:
-
 
 #For loop that will iterate between machines, simulate, and create the .csv file
 for exciterNumber, exciterName in enumerate(exciters['names']):
@@ -202,10 +158,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     shutil.rmtree(""+RSExcitersWorkingDir+f"{exciterName}/")
     print("Delete OK...\n")        
 print('Reference Step Exciter Examples Open Modelica Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Open Modelica...")
