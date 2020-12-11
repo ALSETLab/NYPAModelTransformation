@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(472,32)
+char initialName(404,28)
 SysData.S_b
 SysData.fn
 pwLine.p.vr
@@ -398,185 +398,117 @@ FAULT.p.ir
 FAULT.p.ii
 FAULT.V
 FAULT.angle
-const2.k
-gENROU.S_b
-gENROU.enableS_b
-gENROU.V_b
-gENROU.enableV_b
-gENROU.fn
-gENROU.enablefn
-gENROU.P_0
-gENROU.enableP_0
-gENROU.Q_0
-gENROU.enableQ_0
-gENROU.v_0
-gENROU.enablev_0
-gENROU.angle_0
-gENROU.enableangle_0
-gENROU.displayPF
-gENROU.enabledisplayPF
-gENROU.angle_0rad
-gENROU.M_b
-gENROU.Tpd0
-gENROU.Tppd0
-gENROU.Tppq0
-gENROU.H
-gENROU.D
-gENROU.Xd
-gENROU.Xq
-gENROU.Xpd
-gENROU.Xppd
-gENROU.Xppq
-gENROU.Xl
-gENROU.S10
-gENROU.S12
-gENROU.R_a
-gENROU.ETERM
-gENROU.EFD
-gENROU.PELEC
-gENROU.ISORCE
-gENROU.w
-gENROU.der(w)
-gENROU.delta
-gENROU.der(delta)
-gENROU.anglev
-gENROU.I
-gENROU.anglei
-gENROU.P
-gENROU.Q
-gENROU.Te
-gENROU.id
-gENROU.iq
-gENROU.ud
-gENROU.uq
-gENROU.w_b
-gENROU.CoB
-gENROU.vr0
-gENROU.vi0
-gENROU.ir0
-gENROU.ii0
-gENROU.p0
-gENROU.q0
-gENROU.Xpq
-gENROU.Tpq0
-gENROU.Xpp
-gENROU.Epd
-gENROU.der(Epd)
-gENROU.Epq
-gENROU.der(Epq)
-gENROU.PSIkd
-gENROU.der(PSIkd)
-gENROU.PSIkq
-gENROU.der(PSIkq)
-gENROU.PSId
-gENROU.PSIq
-gENROU.PSIppd
-gENROU.PSIppq
-gENROU.PSIpp
-gENROU.XaqIlq
-gENROU.Zs.re
-gENROU.Zs.im
-gENROU.VT.re
-gENROU.VT.im
-gENROU.S.re
-gENROU.S.im
-gENROU.It.re
-gENROU.It.im
-gENROU.Is.re
-gENROU.Is.im
-gENROU.PSIpp0.re
-gENROU.PSIpp0.im
-gENROU.ang_PSIpp0
-gENROU.ang_It
-gENROU.ang_PSIpp0andIt
-gENROU.abs_PSIpp0
-gENROU.dsat
-gENROU.a
-gENROU.b
-gENROU.delta0
-gENROU.DQ_dq.re
-gENROU.DQ_dq.im
-gENROU.PSIpp0_dq.re
-gENROU.PSIpp0_dq.im
-gENROU.I_dq.re
-gENROU.I_dq.im
-gENROU.PSIppq0
-gENROU.PSIppd0
-gENROU.iq0
-gENROU.id0
-gENROU.ud0
-gENROU.uq0
-gENROU.pm0
-gENROU.efd0
-gENROU.Epq0
-gENROU.Epd0
-gENROU.PSIkd0
-gENROU.PSIkq0
-gENROU.PSId0
-gENROU.PSIq0
-gENROU.K1d
-gENROU.K2d
-gENROU.K1q
-gENROU.K2q
-gENROU.K3d
-gENROU.K4d
-gENROU.K3q
-gENROU.K4q
-sEXS.VoltageReference.k
-sEXS.DiffV.y
-sEXS.DiffV.k1
-sEXS.DiffV.k2
-sEXS.Efd0
-sEXS.V_REF
-sEXS.ECOMP0
-sEXS.T_AT_B
-sEXS.T_B
-sEXS.K
-sEXS.T_E
-sEXS.E_MIN
-sEXS.E_MAX
-sEXS.V_erro.k1
-sEXS.V_erro.k2
-sEXS.V_erro.k3
-sEXS.V_erro.u3
-sEXS.V_erro.y
-sEXS.simpleLagLim.u
-sEXS.simpleLagLim.state
-sEXS.simpleLagLim.der(state)
-sEXS.simpleLagLim.K
-sEXS.simpleLagLim.T
-sEXS.simpleLagLim.y_start
-sEXS.simpleLagLim.outMax
-sEXS.simpleLagLim.outMin
-sEXS.simpleLagLim.T_mod
-sEXS.DiffV1.k1
-sEXS.DiffV1.k2
-sEXS.leadLag.K
-sEXS.leadLag.T1
-sEXS.leadLag.T2
-sEXS.leadLag.y_start
-sEXS.leadLag.x_start
-sEXS.leadLag.TF.y
-sEXS.leadLag.TF.b[1]
-sEXS.leadLag.TF.b[2]
-sEXS.leadLag.TF.a[1]
-sEXS.leadLag.TF.a[2]
-sEXS.leadLag.TF.initType
-sEXS.leadLag.TF.x_start[1]
-sEXS.leadLag.TF.y_start
-sEXS.leadLag.TF.na
-sEXS.leadLag.TF.nb
-sEXS.leadLag.TF.nx
-sEXS.leadLag.TF.bb[1]
-sEXS.leadLag.TF.bb[2]
-sEXS.leadLag.TF.d
-sEXS.leadLag.TF.a_end
-sEXS.leadLag.TF.x_scaled[1]
-sEXS.leadLag.TF.der(x_scaled[1])
-sEXS.leadLag.T2_dummy
-const.k
+gENSAE.S_b
+gENSAE.enableS_b
+gENSAE.V_b
+gENSAE.enableV_b
+gENSAE.fn
+gENSAE.enablefn
+gENSAE.P_0
+gENSAE.enableP_0
+gENSAE.Q_0
+gENSAE.enableQ_0
+gENSAE.v_0
+gENSAE.enablev_0
+gENSAE.angle_0
+gENSAE.enableangle_0
+gENSAE.displayPF
+gENSAE.enabledisplayPF
+gENSAE.angle_0rad
+gENSAE.M_b
+gENSAE.Tpd0
+gENSAE.Tppd0
+gENSAE.Tppq0
+gENSAE.H
+gENSAE.D
+gENSAE.Xd
+gENSAE.Xq
+gENSAE.Xpd
+gENSAE.Xppd
+gENSAE.Xppq
+gENSAE.Xl
+gENSAE.S10
+gENSAE.S12
+gENSAE.R_a
+gENSAE.ETERM
+gENSAE.PELEC
+gENSAE.ISORCE
+gENSAE.w
+gENSAE.der(w)
+gENSAE.delta
+gENSAE.der(delta)
+gENSAE.anglev
+gENSAE.I
+gENSAE.anglei
+gENSAE.P
+gENSAE.Q
+gENSAE.Te
+gENSAE.id
+gENSAE.iq
+gENSAE.ud
+gENSAE.uq
+gENSAE.w_b
+gENSAE.CoB
+gENSAE.vr0
+gENSAE.vi0
+gENSAE.ir0
+gENSAE.ii0
+gENSAE.p0
+gENSAE.q0
+gENSAE.Epq
+gENSAE.der(Epq)
+gENSAE.PSIkd
+gENSAE.der(PSIkd)
+gENSAE.PSIppq
+gENSAE.der(PSIppq)
+gENSAE.PSIppd
+gENSAE.PSId
+gENSAE.PSIq
+gENSAE.PSIpp
+gENSAE.Zs.re
+gENSAE.Zs.im
+gENSAE.Is.re
+gENSAE.Is.im
+gENSAE.PSIpp0.re
+gENSAE.PSIpp0.im
+gENSAE.ang_PSIpp0
+gENSAE.ang_It
+gENSAE.ang_PSIpp0andIt
+gENSAE.abs_PSIpp0
+gENSAE.VT.re
+gENSAE.VT.im
+gENSAE.S.re
+gENSAE.S.im
+gENSAE.It.re
+gENSAE.It.im
+gENSAE.a
+gENSAE.b
+gENSAE.delta0
+gENSAE.DQ_dq.re
+gENSAE.DQ_dq.im
+gENSAE.I_dq.re
+gENSAE.I_dq.im
+gENSAE.iq0
+gENSAE.id0
+gENSAE.ud0
+gENSAE.uq0
+gENSAE.PSIpp0_dq.re
+gENSAE.PSIpp0_dq.im
+gENSAE.PSIppq0
+gENSAE.PSIppd0
+gENSAE.PSIkd0
+gENSAE.PSId0
+gENSAE.PSIq0
+gENSAE.Epq0
+gENSAE.dsat
+gENSAE.efd0
+gENSAE.pm0
+gENSAE.K1d
+gENSAE.K2d
+gENSAE.K3d
+gENSAE.K4d
 
-double initialValue(472,6)
+double initialValue(404,6)
  -1  1.0000000000000000E+08  0  0  1   280   # SysData.S_b
  -1      50                  0  0  1   280   # SysData.fn
   0       0                  0  0  6   260   # pwLine.p.vr
@@ -776,17 +708,17 @@ double initialValue(472,6)
  -1  3.9640000000000000E+00  0  0  1  1304   # constantLoad.wp
   0       1                  0  0  6  1280   # constantLoad.kP
   0       1                  0  0  6  1280   # constantLoad.kI
- -1       0                  0  0  1   280   # constantLoad.d_P
-  0       0                  0  0  6   256   # constantLoad.t1
-  0       0                  0  0  6   256   # constantLoad.d_t
+ -1       1                  0  0  1   280   # constantLoad.d_P
+  0  5.0000000000000000E-01  0  0  6   256   # constantLoad.t1
+  0      20                  0  0  6   256   # constantLoad.d_t
   0       0                  0  0  6  1280   # constantLoad.PF
   0       0                  0  0  6  1280   # constantLoad.d_Q
   0  1.0000000000000001E-15  0  0  6   388   # pwFault.p.ir
   0  1.0000000000000001E-15  0  0  6   388   # pwFault.p.ii
   0       0                  0  0  6   256   # pwFault.R
   0       0                  0  0  6   256   # pwFault.X
-  0       2                  0  0  6   256   # pwFault.t1
-  0  2.1499999999999999E+00  0  0  6   256   # pwFault.t2
+  0      20                  0  0  6   256   # pwFault.t1
+  0  2.0149999999999999E+01  0  0  6   256   # pwFault.t2
   0       1                  0  0  6  1281   # pwFault.ground
   0       0                  0  0  6   256   # GEN1.S_b
   0       0                  0  0  6   257   # GEN1.enableS_b
@@ -872,183 +804,115 @@ double initialValue(472,6)
   0       0                  0  0  6   388   # FAULT.p.ii
   0       0                  0  0  6   256   # FAULT.V
   0       0                  0  0  6   256   # FAULT.angle
- -1       0                  0  0  1   280   # const2.k
-  0       0                  0  0  6   256   # gENROU.S_b
-  0       1                  0  0  6   257   # gENROU.enableS_b
- -1  4.0000000000000000E+05  0  0  1   280   # gENROU.V_b
-  0       0                  0  0  6   257   # gENROU.enableV_b
-  0       0                  0  0  6   256   # gENROU.fn
-  0       0                  0  0  6   257   # gENROU.enablefn
- -1  4.0000000000000000E+07  0  0  1   280   # gENROU.P_0
-  0       1                  0  0  6   257   # gENROU.enableP_0
- -1  5.4165820000000000E+06  0  0  1   280   # gENROU.Q_0
-  0       1                  0  0  6   257   # gENROU.enableQ_0
- -1       1                  0  0  1   280   # gENROU.v_0
-  0       1                  0  0  6   257   # gENROU.enablev_0
- -1  4.0462759999999998E+00  0  0  1   280   # gENROU.angle_0
-  0       1                  0  0  6   257   # gENROU.enableangle_0
- -1       0                  0  0  1   281   # gENROU.displayPF
-  0       0                  0  0  6   257   # gENROU.enabledisplayPF
-  0       0                  0  0  6  1280   # gENROU.angle_0rad
- -1  1.0000000000000000E+08  0  0  1   280   # gENROU.M_b
- -1       5                  0  0  1   280   # gENROU.Tpd0
- -1  7.0000000000000007E-02  0  0  1   280   # gENROU.Tppd0
- -1  8.9999999999999997E-02  0  0  1   280   # gENROU.Tppq0
- -1  4.2800000000000002E+00  0  0  1   280   # gENROU.H
- -1       0                  0  0  1   280   # gENROU.D
- -1  1.8400000000000001E+00  0  0  1   280   # gENROU.Xd
- -1  1.7500000000000000E+00  0  0  1   280   # gENROU.Xq
- -1  4.0999999999999998E-01  0  0  1   280   # gENROU.Xpd
- -1  2.0000000000000001E-01  0  0  1   280   # gENROU.Xppd
- -1  2.0000000000000001E-01  0  0  1   280   # gENROU.Xppq
- -1  1.2000000000000000E-01  0  0  1   280   # gENROU.Xl
- -1  1.1000000000000000E-01  0  0  1   280   # gENROU.S10
- -1  3.9000000000000001E-01  0  0  1   280   # gENROU.S12
- -1       0                  0  0  1   280   # gENROU.R_a
-  0       0                  0  0  6   256   # gENROU.ETERM
-  0       0                  0  0  6   256   # gENROU.EFD
-  0       0                  0  0  6   256   # gENROU.PELEC
-  0       0                  0  0  6   256   # gENROU.ISORCE
- -1       0                  0  0  2   272   # gENROU.w
-  0       0                  0  0  3   256   # gENROU.der(w)
- -1       0                  0  0  2   272   # gENROU.delta
-  0       0                  0  0  3   256   # gENROU.der(delta)
-  0       0                  0  0  6   256   # gENROU.anglev
-  0       0                  0  0  6   256   # gENROU.I
-  0       0                  0  0  6   256   # gENROU.anglei
-  0       0                  0  0  6   256   # gENROU.P
-  0       0                  0  0  6   256   # gENROU.Q
-  0       0                  0  0  6   256   # gENROU.Te
-  0       0                  0  0  6   256   # gENROU.id
-  0       0                  0  0  6   256   # gENROU.iq
-  0       0                  0  0  6   256   # gENROU.ud
-  0       0                  0  0  6   256   # gENROU.uq
-  0       0                  0  0  6  1280   # gENROU.w_b
-  0       0                  0  0  6  1280   # gENROU.CoB
-  0       0                  0  0  6  1280   # gENROU.vr0
-  0       0                  0  0  6  1280   # gENROU.vi0
-  0       0                  0  0  6  1280   # gENROU.ir0
-  0       0                  0  0  6  1280   # gENROU.ii0
-  0       0                  0  0  6  1280   # gENROU.p0
-  0       0                  0  0  6  1280   # gENROU.q0
- -1  5.9999999999999998E-01  0  0  1   280   # gENROU.Xpq
- -1  9.0000000000000002E-01  0  0  1   280   # gENROU.Tpq0
- -1  2.0000000000000001E-01  0  0  1   280   # gENROU.Xpp
- -1       0                  0  0  2   272   # gENROU.Epd
-  0       0                  0  0  3   256   # gENROU.der(Epd)
- -1       0                  0  0  2   272   # gENROU.Epq
-  0       0                  0  0  3   256   # gENROU.der(Epq)
- -1       0                  0  0  2   272   # gENROU.PSIkd
-  0       0                  0  0  3   256   # gENROU.der(PSIkd)
- -1       0                  0  0  2   272   # gENROU.PSIkq
-  0       0                  0  0  3   256   # gENROU.der(PSIkq)
-  0       0                  0  0  6   256   # gENROU.PSId
-  0       0                  0  0  6   256   # gENROU.PSIq
-  0       0                  0  0  6   256   # gENROU.PSIppd
-  0       0                  0  0  6   256   # gENROU.PSIppq
-  0       0                  0  0  6   256   # gENROU.PSIpp
-  0       0                  0  0  6   256   # gENROU.XaqIlq
-  0       0                  0  0  6  1280   # gENROU.Zs.re
-  0       0                  0  0  6  1280   # gENROU.Zs.im
-  0       0                  0  0  6  1280   # gENROU.VT.re
-  0       0                  0  0  6  1280   # gENROU.VT.im
-  0       0                  0  0  6  1280   # gENROU.S.re
-  0       0                  0  0  6  1280   # gENROU.S.im
-  0       0                  0  0  6  1280   # gENROU.It.re
-  0       0                  0  0  6  1280   # gENROU.It.im
-  0       0                  0  0  6  1280   # gENROU.Is.re
-  0       0                  0  0  6  1280   # gENROU.Is.im
-  0       0                  0  0  6  1280   # gENROU.PSIpp0.re
-  0       0                  0  0  6  1280   # gENROU.PSIpp0.im
-  0       0                  0  0  6  1280   # gENROU.ang_PSIpp0
-  0       0                  0  0  6  1280   # gENROU.ang_It
-  0       0                  0  0  6  1280   # gENROU.ang_PSIpp0andIt
-  0       0                  0  0  6  1280   # gENROU.abs_PSIpp0
-  0       0                  0  0  6  1280   # gENROU.dsat
-  0       0                  0  0  6  1280   # gENROU.a
-  0       0                  0  0  6  1280   # gENROU.b
-  0       0                  0  0  6  1280   # gENROU.delta0
-  0       0                  0  0  6  1280   # gENROU.DQ_dq.re
-  0       0                  0  0  6  1280   # gENROU.DQ_dq.im
-  0       0                  0  0  6  1280   # gENROU.PSIpp0_dq.re
-  0       0                  0  0  6  1280   # gENROU.PSIpp0_dq.im
-  0       0                  0  0  6  1280   # gENROU.I_dq.re
-  0       0                  0  0  6  1280   # gENROU.I_dq.im
-  0       0                  0  0  6  1280   # gENROU.PSIppq0
-  0       0                  0  0  6  1280   # gENROU.PSIppd0
-  0       0                  0  0  6  1280   # gENROU.iq0
-  0       0                  0  0  6  1280   # gENROU.id0
-  0       0                  0  0  6  1280   # gENROU.ud0
-  0       0                  0  0  6  1280   # gENROU.uq0
-  0       0                  0  0  6  1280   # gENROU.pm0
-  0       0                  0  0  6  1280   # gENROU.efd0
-  0       0                  0  0  6  1280   # gENROU.Epq0
-  0       0                  0  0  6  1280   # gENROU.Epd0
-  0       0                  0  0  6  1280   # gENROU.PSIkd0
-  0       0                  0  0  6  1280   # gENROU.PSIkq0
-  0       0                  0  0  6  1280   # gENROU.PSId0
-  0       0                  0  0  6  1280   # gENROU.PSIq0
-  0       0                  0  0  6  1280   # gENROU.K1d
-  0       0                  0  0  6  1280   # gENROU.K2d
-  0       0                  0  0  6  1280   # gENROU.K1q
-  0       0                  0  0  6  1280   # gENROU.K2q
-  0       0                  0  0  6  1280   # gENROU.K3d
-  0       0                  0  0  6  1280   # gENROU.K4d
-  0       0                  0  0  6  1280   # gENROU.K3q
-  0       0                  0  0  6  1280   # gENROU.K4q
-  0       1                  0  0  6   256   # sEXS.VoltageReference.k
-  0       0                  0  0  6   256   # sEXS.DiffV.y
- -1       1                  0  0  1   280   # sEXS.DiffV.k1
- -1      -1                  0  0  1   280   # sEXS.DiffV.k2
-  0       0                  0  0  6  1280   # sEXS.Efd0
-  0       1                  0  0  6  1280   # sEXS.V_REF
-  0       0                  0  0  6  1280   # sEXS.ECOMP0
- -1  1.0000000000000001E-01  0  0  1   280   # sEXS.T_AT_B
- -1       1                  0  0  1   280   # sEXS.T_B
- -1     100                  0  0  1   280   # sEXS.K
- -1  1.0000000000000001E-01  0  0  1   280   # sEXS.T_E
- -1     -10                  0  0  1   280   # sEXS.E_MIN
- -1      10                  0  0  1   280   # sEXS.E_MAX
- -1       1                  0  0  1   280   # sEXS.V_erro.k1
- -1       1                  0  0  1   280   # sEXS.V_erro.k2
- -1       1                  0  0  1   280   # sEXS.V_erro.k3
-  0       0                  0  0  6   256   # sEXS.V_erro.u3
-  0       0                  0  0  6   256   # sEXS.V_erro.y
-  0       0                  0  0  6   256   # sEXS.simpleLagLim.u
- -1       0                  0  0  2   272   # sEXS.simpleLagLim.state
-  0       0                  0  0  3   256   # sEXS.simpleLagLim.der(state)
-  0       0                  0  0  6   256   # sEXS.simpleLagLim.K
-  0       0                  0  0  6   256   # sEXS.simpleLagLim.T
-  0       0                  0  0  6   256   # sEXS.simpleLagLim.y_start
-  0       0                  0  0  6   256   # sEXS.simpleLagLim.outMax
-  0       0                  0  0  6   256   # sEXS.simpleLagLim.outMin
-  0       0                  0  0  6  1280   # sEXS.simpleLagLim.T_mod
- -1       1                  0  0  1   280   # sEXS.DiffV1.k1
- -1       1                  0  0  1   280   # sEXS.DiffV1.k2
- -1       1                  0  0  1   280   # sEXS.leadLag.K
-  0       0                  0  0  6   256   # sEXS.leadLag.T1
-  0       0                  0  0  6   256   # sEXS.leadLag.T2
-  0       0                  0  0  6   256   # sEXS.leadLag.y_start
-  0       0                  0  0  6   256   # sEXS.leadLag.x_start
-  0       0                  0  0  6   256   # sEXS.leadLag.TF.y
-  0       0                  0  0  6   256   # sEXS.leadLag.TF.b[1]
-  0       0                  0  0  6   256   # sEXS.leadLag.TF.b[2]
-  0       0                  0  0  6   256   # sEXS.leadLag.TF.a[1]
-  0       1                  0  0  6   256   # sEXS.leadLag.TF.a[2]
-  0       4                  1  4  6   258   # sEXS.leadLag.TF.initType
-  0       0                  0  0  6   256   # sEXS.leadLag.TF.x_start[1]
-  0       0                  0  0  6   256   # sEXS.leadLag.TF.y_start
-  0       2                  0  0  6  1282   # sEXS.leadLag.TF.na
-  0       2                  0  0  6  1282   # sEXS.leadLag.TF.nb
-  0       1                  0  0  6  1282   # sEXS.leadLag.TF.nx
-  0       0                  0  0  6  1280   # sEXS.leadLag.TF.bb[1]
-  0       0                  0  0  6  1280   # sEXS.leadLag.TF.bb[2]
-  0       0                  0  0  6  1280   # sEXS.leadLag.TF.d
-  0       1                  0  0  6  1280   # sEXS.leadLag.TF.a_end
- -1       0                  0  0  2  1296   # sEXS.leadLag.TF.x_scaled[1]
-  0       0                  0  0  3  1280   # sEXS.leadLag.TF.der(x_scaled[1])
-  0       0                  0  0  6  1280   # sEXS.leadLag.T2_dummy
- -1       0                  0  0  1   280   # const.k
+  0       0                  0  0  6   256   # gENSAE.S_b
+  0       1                  0  0  6   257   # gENSAE.enableS_b
+ -1  4.0000000000000000E+05  0  0  1   280   # gENSAE.V_b
+  0       0                  0  0  6   257   # gENSAE.enableV_b
+  0       0                  0  0  6   256   # gENSAE.fn
+  0       0                  0  0  6   257   # gENSAE.enablefn
+ -1  4.0000000000000000E+07  0  0  1   280   # gENSAE.P_0
+  0       1                  0  0  6   257   # gENSAE.enableP_0
+ -1  5.4165820000000000E+06  0  0  1   280   # gENSAE.Q_0
+  0       1                  0  0  6   257   # gENSAE.enableQ_0
+ -1       1                  0  0  1   280   # gENSAE.v_0
+  0       1                  0  0  6   257   # gENSAE.enablev_0
+ -1  4.0462759999999998E+00  0  0  1   280   # gENSAE.angle_0
+  0       1                  0  0  6   257   # gENSAE.enableangle_0
+ -1       0                  0  0  1   281   # gENSAE.displayPF
+  0       0                  0  0  6   257   # gENSAE.enabledisplayPF
+  0       0                  0  0  6  1280   # gENSAE.angle_0rad
+ -1  1.0000000000000000E+08  0  0  1   280   # gENSAE.M_b
+ -1       5                  0  0  1   280   # gENSAE.Tpd0
+ -1  7.0000000000000007E-02  0  0  1   280   # gENSAE.Tppd0
+ -1  8.9999999999999997E-02  0  0  1   280   # gENSAE.Tppq0
+ -1  4.2800000000000002E+00  0  0  1   280   # gENSAE.H
+ -1       0                  0  0  1   280   # gENSAE.D
+ -1  1.8400000000000001E+00  0  0  1   280   # gENSAE.Xd
+ -1  1.7500000000000000E+00  0  0  1   280   # gENSAE.Xq
+ -1  4.0999999999999998E-01  0  0  1   280   # gENSAE.Xpd
+ -1  2.0000000000000001E-01  0  0  1   280   # gENSAE.Xppd
+ -1  2.0000000000000001E-01  0  0  1   280   # gENSAE.Xppq
+ -1  1.2000000000000000E-01  0  0  1   280   # gENSAE.Xl
+ -1  1.1000000000000000E-01  0  0  1   280   # gENSAE.S10
+ -1  3.9000000000000001E-01  0  0  1   280   # gENSAE.S12
+ -1       0                  0  0  1   280   # gENSAE.R_a
+  0       0                  0  0  6   256   # gENSAE.ETERM
+  0       0                  0  0  6   256   # gENSAE.PELEC
+  0       0                  0  0  6   256   # gENSAE.ISORCE
+ -1       0                  0  0  2   272   # gENSAE.w
+  0       0                  0  0  3   256   # gENSAE.der(w)
+ -1       0                  0  0  2   272   # gENSAE.delta
+  0       0                  0  0  3   256   # gENSAE.der(delta)
+  0       0                  0  0  6   256   # gENSAE.anglev
+  0       0                  0  0  6   256   # gENSAE.I
+  0       0                  0  0  6   256   # gENSAE.anglei
+  0       0                  0  0  6   256   # gENSAE.P
+  0       0                  0  0  6   256   # gENSAE.Q
+  0       0                  0  0  6   256   # gENSAE.Te
+  0       0                  0  0  6   256   # gENSAE.id
+  0       0                  0  0  6   256   # gENSAE.iq
+  0       0                  0  0  6   256   # gENSAE.ud
+  0       0                  0  0  6   256   # gENSAE.uq
+  0       0                  0  0  6  1280   # gENSAE.w_b
+  0       0                  0  0  6  1280   # gENSAE.CoB
+  0       0                  0  0  6  1280   # gENSAE.vr0
+  0       0                  0  0  6  1280   # gENSAE.vi0
+  0       0                  0  0  6  1280   # gENSAE.ir0
+  0       0                  0  0  6  1280   # gENSAE.ii0
+  0       0                  0  0  6  1280   # gENSAE.p0
+  0       0                  0  0  6  1280   # gENSAE.q0
+ -1       0                  0  0  2   272   # gENSAE.Epq
+  0       0                  0  0  3   256   # gENSAE.der(Epq)
+ -1       0                  0  0  2   272   # gENSAE.PSIkd
+  0       0                  0  0  3   256   # gENSAE.der(PSIkd)
+ -1       0                  0  0  2   272   # gENSAE.PSIppq
+  0       0                  0  0  3   256   # gENSAE.der(PSIppq)
+  0       0                  0  0  6   256   # gENSAE.PSIppd
+  0       0                  0  0  6   256   # gENSAE.PSId
+  0       0                  0  0  6   256   # gENSAE.PSIq
+  0       0                  0  0  6   256   # gENSAE.PSIpp
+  0       0                  0  0  6  1280   # gENSAE.Zs.re
+  0       0                  0  0  6  1280   # gENSAE.Zs.im
+  0       0                  0  0  6  1280   # gENSAE.Is.re
+  0       0                  0  0  6  1280   # gENSAE.Is.im
+  0       0                  0  0  6  1280   # gENSAE.PSIpp0.re
+  0       0                  0  0  6  1280   # gENSAE.PSIpp0.im
+  0       0                  0  0  6  1280   # gENSAE.ang_PSIpp0
+  0       0                  0  0  6  1280   # gENSAE.ang_It
+  0       0                  0  0  6  1280   # gENSAE.ang_PSIpp0andIt
+  0       0                  0  0  6  1280   # gENSAE.abs_PSIpp0
+  0       0                  0  0  6  1280   # gENSAE.VT.re
+  0       0                  0  0  6  1280   # gENSAE.VT.im
+  0       0                  0  0  6  1280   # gENSAE.S.re
+  0       0                  0  0  6  1280   # gENSAE.S.im
+  0       0                  0  0  6  1280   # gENSAE.It.re
+  0       0                  0  0  6  1280   # gENSAE.It.im
+  0       0                  0  0  6  1280   # gENSAE.a
+  0       0                  0  0  6  1280   # gENSAE.b
+  0       0                  0  0  6  1280   # gENSAE.delta0
+  0       0                  0  0  6  1280   # gENSAE.DQ_dq.re
+  0       0                  0  0  6  1280   # gENSAE.DQ_dq.im
+  0       0                  0  0  6  1280   # gENSAE.I_dq.re
+  0       0                  0  0  6  1280   # gENSAE.I_dq.im
+  0       0                  0  0  6  1280   # gENSAE.iq0
+  0       0                  0  0  6  1280   # gENSAE.id0
+  0       0                  0  0  6  1280   # gENSAE.ud0
+  0       0                  0  0  6  1280   # gENSAE.uq0
+  0       0                  0  0  6  1280   # gENSAE.PSIpp0_dq.re
+  0       0                  0  0  6  1280   # gENSAE.PSIpp0_dq.im
+  0       0                  0  0  6  1280   # gENSAE.PSIppq0
+  0       0                  0  0  6  1280   # gENSAE.PSIppd0
+  0       0                  0  0  6  1280   # gENSAE.PSIkd0
+  0       0                  0  0  6  1280   # gENSAE.PSId0
+  0       0                  0  0  6  1280   # gENSAE.PSIq0
+  0       0                  0  0  6  1280   # gENSAE.Epq0
+  0       0                  0  0  6  1280   # gENSAE.dsat
+  0       0                  0  0  6  1280   # gENSAE.efd0
+  0       0                  0  0  6  1280   # gENSAE.pm0
+  0       0                  0  0  6  1280   # gENSAE.K1d
+  0       0                  0  0  6  1280   # gENSAE.K2d
+  0       0                  0  0  6  1280   # gENSAE.K3d
+  0       0                  0  0  6  1280   # gENSAE.K4d
 
 
 # Matrix with 6 columns defining the initial value calculation
@@ -1099,7 +963,7 @@ double initialValue(472,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(472,127)
+char initialDescription(404,69)
 System base [VA|MVA]
 System frequency [Hz]
 Real part of the voltage [1]
@@ -1214,26 +1078,26 @@ Initial angle in rad [rad|deg]
 Real part of the current [1]
 Imaginary part of the current [1]
 Machine base power rating [VA|MVA]
-Inertia constant (s) [s]
+Inertia constant [s]
 Damping coefficient
-Amature resistance (pu) [1]
-d-axis transient reactance (pu) [1]
-Rotor angle (deg) [rad]
-der(Rotor angle (deg)) [rad/s]
-Rotor speed (pu) [1]
-Bus voltage magnitude (pu) [1]
-Bus voltage angle (rad) [rad|deg]
-Constant emf behind transient reactance (pu) [1]
-der(Constant emf behind transient reactance (pu)) [s-1]
-d-axis voltage (pu) [1]
-q-axis voltage (pu) [1]
-d-axis current (pu) [1]
-q-axis current (pu) [1]
-Active power (pu, system base) [1]
-Reactive power (pu, system base) [1]
+Amature resistance [1]
+d-axis transient reactance [1]
+Rotor angle [rad|deg]
+der(Rotor angle) [rad/s]
+Rotor speed [1]
+Bus voltage magnitude [1]
+Bus voltage angle [rad|deg]
+Constant emf behind transient reactance [1]
+der(Constant emf behind transient reactance) [s-1]
+d-axis voltage [1]
+q-axis voltage [1]
+d-axis current [1]
+q-axis current [1]
+Active power (system base) [1]
+Reactive power (system base) [1]
 Change from system to machine base [1]
-Initial active power (pu, machine base) [1]
-Initial reactive power (pu, machine base) [1]
+Initial active power (machine base) [1]
+Initial reactive power (machine base) [1]
 [1]
 [1]
 [1]
@@ -1395,7 +1259,6 @@ Real part of the current [1]
 Imaginary part of the current [1]
 Bus voltage magnitude (pu) [1]
 Bus voltage angle [deg]
-Constant output value
 System base power [VA|MVA]
 Enable S_b in parameter list [:#(type=Boolean)]
 Base voltage of the bus [V|kV]
@@ -1429,7 +1292,6 @@ Saturation factor at 1.0 pu [1]
 Saturation factor at 1.2 pu [1]
 Armature resistance [1]
 Machine terminal voltage (pu) [1]
-Generator main field voltage (pu) [1]
 Machine electrical power (pu, machine base) [1]
 Machine source current (pu) [1]
 Machine speed deviation (pu) [1]
@@ -1454,122 +1316,56 @@ Real component of initial armature current (pu, system base) [1]
 Imaginary component of initial armature current (pu, system base) [1]
 Initial active power generation (pu, machine base) [1]
 Initial reactive power generation (pu, machine base) [1]
-q-axis transient reactance (pu) [1]
-q-axis transient open-circuit time constant [s]
-Sub-transient reactance (pu) [1]
-d-axis voltage behind transient reactance (pu) [1]
-der(d-axis voltage behind transient reactance (pu)) [s-1]
-q-axis voltage behind transient reactance  [1]
-der(q-axis voltage behind transient reactance ) [s-1]
+q-axis voltage behind transient reactance (pu) [1]
+der(q-axis voltage behind transient reactance (pu)) [s-1]
 d-axis rotor flux linkage (pu) [1]
 der(d-axis rotor flux linkage (pu)) [s-1]
-q-axis rotor flux linkage (pu) [1]
-der(q-axis rotor flux linkage (pu)) [s-1]
+q-axis subtransient flux linkage (pu) [1]
+der(q-axis subtransient flux linkage (pu)) [s-1]
+d-axis subtransient flux linkage (pu) [1]
 d-axis flux linkage (pu) [1]
 q-axis flux linkage (pu) [1]
-d-axis subtransient flux linkage (pu) [1]
-q-axis subtransient flux linkage (pu) [1]
 Air-gap flux (pu) [1]
-q-axis Machine field current (pu) [1]
 Real part of complex number
 Imaginary part of complex number
 Real part of complex number
 Imaginary part of complex number
 Real part of complex number
 Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-flux angle [rad|deg]
-current angle [rad|deg]
-angle difference [rad|deg]
+flux angle [rad]
+current angle [rad]
+angle difference [rad]
 magnitude of sub-transient flux linkage [1]
-To include saturation of during initialization
+Real part of complex number
+Imaginary part of complex number
+Real part of complex number
+Imaginary part of complex number
+Real part of complex number
+Imaginary part of complex number
 [1]
 
-initial rotor angle in radians [rad|deg]
+initial rotor angle in radians [rad]
 Real part of complex number
 Imaginary part of complex number
 Real part of complex number
 Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-q-axis component of the sub-transient flux linkage [1]
-d-axis component of the sub-transient flux linkage [1]
 q-axis component of initial current [1]
 d-axis component of initial current [1]
 d-axis component of initial voltage [1]
 q-axis component of initial voltage [1]
-Initial mechanical power (pu, machine base) [1]
-Initial field voltage magnitude [1]
-[1]
-[1]
+Real part of complex number
+Imaginary part of complex number
+q-axis component of the sub-transient flux linkage [1]
+d-axis component of the sub-transient flux linkage [1]
 d-axis initial rotor flux linkage [1]
-q-axis initial rotor flux linkage [1]
+[1]
+[1]
+[1]
+To include saturation of during initialization
+Initial field voltage magnitude [1]
+Initial mechanical power (pu machine base) [1]
 [1]
 [1]
 [1]
 [1]
-[1]
-[1]
-[1]
-[1]
-[1]
-[1]
-Constant output value [1]
-Connector of Real output signal
-Gain of upper input
-Gain of lower input
-[1]
-[1]
-[1]
-Ratio between regulator numerator (lead) and denominator (lag) time constants [1]
-Regulator denominator (lag) time constant [s]
-Excitation power source output gain
-Excitation power source output time constant [s]
-Minimum exciter output [1]
-Maximum exciter output [1]
-Gain of upper input
-Gain of middle input
-Gain of lower input
-Connector 3 of Real input signals
-Connector of Real output signals
-Connector of Real input signal
-[1]
-[s-1]
-Gain
-Lag time constant [s]
-Output start value [1]
-Maximum output value [1]
-Minimum output value [1]
-[s]
-Gain of upper input
-Gain of lower input
-Gain
-Lead time constant [s]
-Lag time constant [s]
-Output start value
-Start value of state variable
-Connector of Real output signal
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-Initial or guess values of states
-Initial value of output (derivatives of y are zero up to nx-1-th derivative)
-Size of Denominator of transfer function. [:#(type=Integer)]
-Size of Numerator of transfer function. [:#(type=Integer)]
-[:#(type=Integer)]
-
-
-
-
-Scaled vector x
-der(Scaled vector x)
-Lead time constant [s]
-Constant output value
 

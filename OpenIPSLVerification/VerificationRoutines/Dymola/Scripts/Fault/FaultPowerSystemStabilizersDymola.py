@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
-
-
 import platform
 from dymola.dymola_interface import DymolaInterface
 from dymola.dymola_exception import DymolaException
@@ -12,7 +9,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -23,9 +19,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
 #GitHub Location
@@ -43,30 +36,10 @@ PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Veri
 PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
 PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
-
-
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
-
-
-# In[13]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"") 
 print("Fault Dymola Power System Stabilizers Simulation Start...\n")
-
-
-# In[14]:
-
 
 #Creation of matrix with names, paths and variables
 psss = { 'names' : ["PSS2A","PSS2B"],
@@ -77,10 +50,6 @@ psss = { 'names' : ["PSS2A","PSS2B"],
             'speed': ['gENROE.SPEED'],
            'vothsg' : ["pSS2A.VOTHSG","pSS2B.VOTHSG"]}
 
-
-# In[15]:
-
-
 #Delete old results
 shutil.rmtree(''+FPowerSystemStabilizersWorkingDir+'')
 #Create Power System Stabilizers folder
@@ -88,10 +57,6 @@ os.makedirs(''+FPowerSystemStabilizersWorkingDir+'')
 os.chdir(f""+FPowerSystemStabilizersWorkingDir+"")
 for pssNumber, pssName in enumerate(psss['names']):
     os.makedirs(f'{pssName}')
-
-
-# In[16]:
-
 
 #For loop that will iterate between power system stabilizers, simulate, and create the .csv fileurb
 for pssNumber, pssName in enumerate(psss['names']):
@@ -150,10 +115,6 @@ for pssNumber, pssName in enumerate(psss['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Fault Dymola Power System Stabilizers Simulation OK...')
-
-
-# In[ ]:
-
 
 try:
     print("Closing Dymola...")

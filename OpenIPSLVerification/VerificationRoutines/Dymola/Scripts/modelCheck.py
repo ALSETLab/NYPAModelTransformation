@@ -126,27 +126,13 @@ def windturbinesCheck(modelList):
 
 ##########################################################Main Code######################################
 #Deleting old OpenIPSL library version
-#try:
-#    shutil.rmtree(OpenIPSL)
-#except:
-#   pass
-#Pulling latest OpenIPSL library version
-print('Pulled latest OpenIPSL library version...\n')
-#git.Git(RepoDir).clone(""+GitHubOpenIPSL+"")
-print("Model Check Start...\n")
-libraryPath = RepoDir + "/OpenIPSL/OpenIPSL/package.mo"
-libraryName = "OpenIPSL"
-#Initialization
-omc = OMCSessionZMQ()
-if omc.sendExpression('loadFile("%s")' % (libraryPath)):
-	print("Load success: %s" % libraryName + "\n")
-else:
-	errorMessage = libraryName + " was not loaded! Check the library path:\n" + libraryPath
-	print(errorMessage)
-	raise Exception(errorMessage)
-
-
-#loadLibrary("OpenIPSL", RepoDir + "/OpenIPSL/OpenIPSL/package.mo")
+try:
+    shutil.rmtree(OpenIPSL)
+    print("Pulling latest version of the OpenIPSL Library...")
+    git.Git(RepoDir).clone(""+GitHubOpenIPSL+"")
+except:
+   pass
+   print("Not pulled, check git...")
 
 excitersFail = excitersCheck(testList['exciters'])
 

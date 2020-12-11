@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import platform
 from dymola.dymola_interface import DymolaInterface
 from dymola.dymola_exception import DymolaException
@@ -13,16 +10,9 @@ import numpy as np
 import os
 import shutil
 
-
-# In[2]:
-
-
-#This is intended to be used in the manuelnvro Dell using Dymola 2020
-Fault = "/home/manuelnvro/dev/Gitted/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/Scripts/Fault/"
-
-
-# In[3]:
-
+RepoDir = os.getcwd() 
+RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
+Fault = RepoDir + "/Fault/"
 
 #Run Exciters
 print('---------------------------------------------------------- Fault Dymola Exciters Testing ----------------------------------------------------------')
@@ -33,10 +23,6 @@ try:
 except:
     print('Error in Fault Dymola Exciters Testing...')
 
-
-# In[4]:
-
-
 #Run Machines
 print('---------------------------------------------------------- Fault Dymola Machines Testing ----------------------------------------------------------')
 try:
@@ -45,10 +31,6 @@ try:
     print('Fault Dymola Machines Testing OK...')
 except:
     print('Error in Fault Dymola in Machines Testing...')
-
-
-# In[5]:
-
 
 #Run Turbine Governors
 print('---------------------------------------------------------- Fault Dymola Turbine Governors Testing ----------------------------------------------------------')
@@ -59,10 +41,6 @@ try:
 except:
     print('Error in Fault Dymola Turbine Governors Testing...')
 
-
-# In[8]:
-
-
 #Run Power System Stabilizer
 print('---------------------------------------------------------- Fault Dymola Power System Stabilizers Testing ----------------------------------------------------------')
 try:
@@ -72,10 +50,6 @@ try:
 except:
     print('Error in Fault Dymola Power System Stabilizer Testing...')
 
-
-# In[6]:
-
-
 #Run Wind Turbines
 print('---------------------------------------------------------- Fault Dymola Wind Turbines Testing ----------------------------------------------------------')
 try:
@@ -84,10 +58,6 @@ try:
     print('Fault Dymola Wind Turbines Testing OK...')
 except:
     print('Error in Fault Dymola Wind Turbines Testing...')
-
-
-# In[ ]:
-
 
 print('---------------------------------------------------------- End of All Fault Dymola Simulations ----------------------------------------------------------')
 

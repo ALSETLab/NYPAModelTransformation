@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import platform
 from dymola.dymola_interface import DymolaInterface
 from dymola.dymola_exception import DymolaException
@@ -12,8 +9,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -24,9 +19,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
 #GitHub Location
@@ -44,29 +36,10 @@ PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Veri
 PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
 PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
-
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
-
-
-# In[4]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"") 
 print("Fault Dymola Turbine Governors Simulation Start...\n")
-
-
-# In[5]:
-
 
 #Creation of matrix with names, paths and variables
 tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1", "IEESGO", "TGOV1", "WEHGOV", 
@@ -85,10 +58,6 @@ tgovernors = { 'names' : ["BBGOV1","GAST", "GAST2A", "GGOV1", "HYGOV", "IEEEG1",
                        "iEESGO.PMECH", "tGOV1.PMECH", "wEHGOV.PMECH", "wESGOV.PMECH", "wSHYDD.PMECH", 
                       "wSHYGP.PMECH"]}
 
-
-# In[6]:
-
-
 #Delete old results
 shutil.rmtree(''+FTurbineGovernorsWorkingDir+'')
 #Create folder
@@ -96,10 +65,6 @@ os.makedirs(''+FTurbineGovernorsWorkingDir+'')
 os.chdir(f""+FTurbineGovernorsWorkingDir+"")
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     os.makedirs(f'{tgovernorName}')
-
-
-# In[7]:
-
 
 #For loop that will iterate between turbine governors, simulate, and create the .csv fileurb
 for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
@@ -208,10 +173,6 @@ for tgovernorNumber, tgovernorName in enumerate(tgovernors['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Fault Dymola Turbine Governor Examples Simulation OK...')
-
-
-# In[8]:
-
 
 try:
     print("Closing Dymola...")

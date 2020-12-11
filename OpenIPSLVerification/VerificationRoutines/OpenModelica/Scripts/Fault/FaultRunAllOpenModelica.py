@@ -8,7 +8,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
 
 RepoDir = os.getcwd() 
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))

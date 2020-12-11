@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import platform
 from dymola.dymola_interface import DymolaInterface
 from dymola.dymola_exception import DymolaException
@@ -12,8 +9,6 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
-import git
-
 
 # get current directory and set it to the beginning of the repository 
 RepoDir = os.getcwd() 
@@ -24,9 +19,6 @@ RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 RepoDir = os.path.abspath(os.path.join(RepoDir, os.pardir))
 
-
-
-#By default, the code runs in manuelnvro Dell using Dymola 2020. To change the computer change the following folders.
 #OpenIPSL Location
 OpenIPSL = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/"
 #GitHub Location
@@ -44,40 +36,16 @@ PowerFaultSource = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/Veri
 PowerFaultDestinationPath = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/"
 PowerFaultDestination = RepoDir + "/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/Dymola/OpenIPSL/OpenIPSL/Electrical/Events/PwFault.mo"
 
-
-
 #Setting Dymola Interface
 dymola = DymolaInterface("/opt/dymola-2019FD01-x86_64/bin64/dymola.sh")
-
-
-# In[4]:
-
-
-#Deleting old OpenIPSL library version
-try:
-    shutil.rmtree(f""+OpenIPSL+"")
-except:
-    pass
-#Pulling latest OpenIPSL library version
-print('Pulling latest OpenIPSL library version...\n')
-git.Git(""+Dymola+"").clone(""+GitHubOpenIPSL+"")
-#Setting OpenIPSL library
 dymola.openModel(""+OpenIPSLPackage+"") 
 print("Fault Dymola Wind Turbine Simulation Start...\n")
-
-
-# In[5]:
-
 
 #Creation of matrix with names, paths and variables
 wturbines = { 'names' : ["WT4G1","WT4E1"],
             'path' : ["OpenIPSL.Examples.Wind.PSSE.WT4G.WT4G1","OpenIPSL.Examples.Wind.PSSE.WT4G.WT4E1"],
             'p' : ['wT4G1.P', 'wT4E1.P'],
            'q' : ['wT4G1.Q', 'wT4E1.Q']}
-
-
-# In[6]:
-
 
 #Delete old results
 shutil.rmtree(''+FWindTurbinesWorkingDir+'')
@@ -86,10 +54,6 @@ os.makedirs(''+FWindTurbinesWorkingDir+'')
 os.chdir(f""+FWindTurbinesWorkingDir+"")
 for wturbineNumber, wturbineName in enumerate(wturbines['names']):
     os.makedirs(f'{wturbineName}')
-
-
-# In[7]:
-
 
 #For loop that will iterate between Wind Turbines, simulate, and create the .csv fileurb
 for wturbineNumber, wturbineName in enumerate(wturbines['names']):
@@ -138,9 +102,14 @@ for wturbineNumber, wturbineName in enumerate(wturbines['names']):
         print("Error: " + str(ex))
 print('Fault Wind Turbines Simulation OK...')
 
-
-# In[ ]:
-
+try:
+    print("Closing Dymola...")
+    dymola.close()
+    print("Dymola Close OK...")
+except:
+    print("Dymola closing error. Below is the log:")
+    log = dymola.getLastErrorLog()
+    print(log)
 
 
 
