@@ -20,3 +20,5 @@ In order to present an example, suppose that you want to perform the comparison 
 ```
 mono Compare.exe --mode csvTreeCompare --delimiter "," --reportdir "ResultReport/Dymola/Fault/Exciters" --tolerance 1e-2 "../Dymola/WorkingDir/Fault/Exciters" "../PSSE/WorkingDir/Fault/Exciters"
 ```
+## Python Scripts 
+In this folder you can find 2 Python scripts that automatically run the commands above for both Dymola and OpenModelica. By running each script you can run the CSV verification for all of the models (exciters, machines, power system stabilizers, turbine governors and wind turbines) and all of the simulation types (Fault, Load Variation and Reference Step). In addition the program will deliver the results in their respective folder and will provide analytics on each of the comparison and how many passed/failed. 
