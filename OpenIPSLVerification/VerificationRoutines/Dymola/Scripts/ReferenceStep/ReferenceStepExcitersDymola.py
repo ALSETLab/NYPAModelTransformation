@@ -189,7 +189,6 @@ for exciterNumber, exciterName in enumerate(exciters['names']):
     except DymolaException as ex:
         print("Error: " + str(ex))
 print('Reference Step Dymola Exciter Examples Simulation OK...')
-
 try:
     print("Closing Dymola...")
     dymola.close()

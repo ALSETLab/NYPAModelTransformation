@@ -34,11 +34,6 @@ PSSEDir = compareDir
 PSSEDir = os.path.abspath(os.path.join(PSSEDir, os.pardir))
 PSSEDir = PSSEDir + "/PSSE/"
 
-# print(SimResultDir)
-# print(compareDir)
-# print(ReportDir)
-# print(PSSEDir)
-
 models = { 'exciters' : ["ESAC1A", "ESAC2A", "ESDC1A", "ESST1A", "ESST4B", 
                         "EXAC1", "EXAC2", "EXST1", "IEEET1", "IEEET2", 
                         "SCRX", "SEXS"],
@@ -52,14 +47,11 @@ def modelsCompare(modelList, modelType, simulationType):
     testsPassed = 0
     totalTests = 0
     modelDir = SimResultDir + ""+simulationType+"/"+modelType+"/"
-    #Fault
     for modelNumber, modelName in enumerate(modelList):  
         totalTests += 1
         OpenModelicaDir = modelDir + modelName+".csv"
         PSSE = PSSEDir + "/WorkingDir/"+simulationType+"/"+modelType+"/"+modelName+".csv"
         Report = ReportDir + simulationType+"/"+modelType+"/"
-        # print(Report)
-        #print("mono "+compareDir+"/Compare.exe --mode CsvFileCompare --delimiter " +comma+ " --reportdir " + ReportDir + " --tolerance 1e-2 " +OpenModelicaDir+ " " +PSSEDir)
         compare = os.system("mono "+compareDir+"/Compare.exe --override --mode CsvFileCompare --delimiter " +comma+ " --reportdir " + Report + " --tolerance 1e-2 " +OpenModelicaDir+ " " +PSSE)
         if compare == 0:
             testsPassed += 1
@@ -70,7 +62,6 @@ def modelsCompare(modelList, modelType, simulationType):
     print("--Failed -> " + str(testsFailed))
     print("--Total -> " + str(totalTests) + "\n")
     return testsFailed
-
 
 #Fault
 #Run Exciters
