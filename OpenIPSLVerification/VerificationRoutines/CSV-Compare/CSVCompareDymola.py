@@ -89,7 +89,7 @@ except:
 #Run Power System Stabilizer
 print('---------------------------------------------------------- Fault Open Modelica Power System Stabilizers CSV Comparison ----------------------------------------------------------')
 try:
-    powersystemstabilizersFailed = modelsCompare(models['powersystemstabilizers'], "PowerSystemsStabilizers","Fault")
+    powersystemstabilizersFailed = modelsCompare(models['powersystemstabilizers'], "PowerSystemStabilizers","Fault")
 except:
     print('Error in Fault Open Modelica Exciters CSV Comparison...')
 
@@ -138,7 +138,7 @@ except:
 #Run Power System Stabilizer
 print('---------------------------------------------------------- Load Variation Open Modelica Power System Stabilizers CSV Comparison ----------------------------------------------------------')
 try:
-    powersystemstabilizersFailed = modelsCompare(models['powersystemstabilizers'], "PowerSystemsStabilizers","LoadVariation")
+    powersystemstabilizersFailed = modelsCompare(models['powersystemstabilizers'], "PowerSystemStabilizers","LoadVariation")
 except:
     print('Error in Load Variation Open Modelica Exciters CSV Comparison...')
 
