@@ -155,12 +155,12 @@ def includeModel(Model):
         # - Load URST5T exciter:
         psspy.add_plant_model(1,r"1",6,r"URST5T",0,"",0,[],[],10,[0.025,0.1,0.2,1.0,1.0,1.0,10.0,-10.0,0.58,0.3])
     elif Model == 'SEXS':
-        # - Load GENROE generator:
+        # - Load GENROU generator:
         psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load SEXS exciter:
         psspy.add_plant_model(1,r"1",6,r"SEXS",0,"",0,[],[],6,[0.1,1.0,100.0,0.1,-10.0,10.0])
     elif Model == 'SCRX':
-        # - Load GENROE generator:
+        # - Load GENROU generator:
         psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load SCRX generator:
         psspy.add_plant_model(1,r"1",6,r"SCRX",0,"",0,[],[],8,[0.1,1.0,100.0,0.005,-10.0,10.0,0.0,0.0])
