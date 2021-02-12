@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+  <md:FullModel rdf:about="urn:uuid:7c6f98e1-6d35-11eb-a65a-74e5f963e191">
+    <md:Model.created>2021-02-12T13:23:55</md:Model.created>
+    <md:Model.scenarioTime>2021-02-12T13:23:55</md:Model.scenarioTime>
+    <md:Model.version>1</md:Model.version>
+    <md:Model.description />
+    <md:Model.modelingAuthoritySet>http://www.smib_esst4b.com/smib_esst4b</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/Dynamics/3/1</md:Model.profile>
+    <md:Model.DependentOn rdf:resource="urn:uuid:3b92bd93-6d35-11eb-a65a-74e5f963e191" />
+  </md:FullModel>
+  <cim:ExcIEEEST4B rdf:ID="_65d18235-6d35-11eb-a65a-74e5f963e191">
+    <cim:ExcIEEEST4B.kpr>2.97</cim:ExcIEEEST4B.kpr>
+    <cim:ExcIEEEST4B.kir>2.97</cim:ExcIEEEST4B.kir>
+    <cim:ExcIEEEST4B.ta>0.01</cim:ExcIEEEST4B.ta>
+    <cim:ExcIEEEST4B.vrmax>1</cim:ExcIEEEST4B.vrmax>
+    <cim:ExcIEEEST4B.vrmin>-0.87</cim:ExcIEEEST4B.vrmin>
+    <cim:ExcIEEEST4B.kpm>1</cim:ExcIEEEST4B.kpm>
+    <cim:ExcIEEEST4B.kim>0.2</cim:ExcIEEEST4B.kim>
+    <cim:ExcIEEEST4B.vmmax>1</cim:ExcIEEEST4B.vmmax>
+    <cim:ExcIEEEST4B.vmmin>-0.87</cim:ExcIEEEST4B.vmmin>
+    <cim:ExcIEEEST4B.kg>0.1</cim:ExcIEEEST4B.kg>
+    <cim:ExcIEEEST4B.kp>6.73</cim:ExcIEEEST4B.kp>
+    <cim:ExcIEEEST4B.thetap>0</cim:ExcIEEEST4B.thetap>
+    <cim:ExcIEEEST4B.ki>0.1</cim:ExcIEEEST4B.ki>
+    <cim:ExcIEEEST4B.kc>0.1</cim:ExcIEEEST4B.kc>
+    <cim:ExcIEEEST4B.xl>0</cim:ExcIEEEST4B.xl>
+    <cim:ExcIEEEST4B.vbmax>8.41</cim:ExcIEEEST4B.vbmax>
+    <cim:ExcitationSystemDynamics.SynchronousMachineDynamics rdf:resource="#_65d18234-6d35-11eb-a65a-74e5f963e191" />
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>ESST4B</cim:IdentifiedObject.name>
+  </cim:ExcIEEEST4B>
+  <cim:SynchronousMachineSimplified rdf:ID="_65d18236-6d35-11eb-a65a-74e5f963e191">
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_3b92bdf1-6d35-11eb-a65a-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>0</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENCLS</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineSimplified>
+  <cim:SynchronousMachineTimeConstantReactance rdf:ID="_65d18234-6d35-11eb-a65a-74e5f963e191">
+    <cim:SynchronousMachineTimeConstantReactance.rotorType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor" />
+    <cim:SynchronousMachineTimeConstantReactance.modelType rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind.subtransient" />
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSync>1.41</cim:SynchronousMachineTimeConstantReactance.xDirectSync>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectTrans>0.3</cim:SynchronousMachineTimeConstantReactance.xDirectTrans>
+    <cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>0.2</cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadSync>1.35</cim:SynchronousMachineTimeConstantReactance.xQuadSync>
+    <cim:SynchronousMachineTimeConstantReactance.xQuadTrans>0.6</cim:SynchronousMachineTimeConstantReactance.xQuadTrans>
+    <cim:SynchronousMachineTimeConstantReactance.tpdo>5</cim:SynchronousMachineTimeConstantReactance.tpdo>
+    <cim:SynchronousMachineTimeConstantReactance.tppdo>0.05</cim:SynchronousMachineTimeConstantReactance.tppdo>
+    <cim:SynchronousMachineTimeConstantReactance.tpqo>0.7</cim:SynchronousMachineTimeConstantReactance.tpqo>
+    <cim:SynchronousMachineTimeConstantReactance.tppqo>0.1</cim:SynchronousMachineTimeConstantReactance.tppqo>
+    <cim:SynchronousMachineDynamics.SynchronousMachine rdf:resource="#_3b92bde9-6d35-11eb-a65a-74e5f963e191" />
+    <cim:RotatingMachineDynamics.damping>0</cim:RotatingMachineDynamics.damping>
+    <cim:RotatingMachineDynamics.inertia>4</cim:RotatingMachineDynamics.inertia>
+    <cim:RotatingMachineDynamics.saturationFactor>0.1</cim:RotatingMachineDynamics.saturationFactor>
+    <cim:RotatingMachineDynamics.saturationFactor120>0.5</cim:RotatingMachineDynamics.saturationFactor120>
+    <cim:RotatingMachineDynamics.statorLeakageReactance>0.12</cim:RotatingMachineDynamics.statorLeakageReactance>
+    <cim:DynamicsFunctionBlock.enabled>true</cim:DynamicsFunctionBlock.enabled>
+    <cim:IdentifiedObject.name>GENROU</cim:IdentifiedObject.name>
+  </cim:SynchronousMachineTimeConstantReactance>
+</rdf:RDF>
