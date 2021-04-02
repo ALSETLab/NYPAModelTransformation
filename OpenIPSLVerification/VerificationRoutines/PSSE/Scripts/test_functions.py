@@ -28,7 +28,7 @@ def createDir(dirpath):
 # ----- Create directory:   
 def needDir(event,mdlclass,dirpath):
     if event == 'LoadVariation':
-        if mdlclass == 'Wind':
+        if mdlclass == 'RenewableSources':
             errmessage = "Model class %s does not participate in %s event test" % (mdlclass, event)
             print(errmessage)
         else:
@@ -55,8 +55,8 @@ def modelsToTest(mdlclass,testlists):
         models_to_test = testlists.TGovExamples
     elif mdlclass == 'PowerSystemStabilizers':
         models_to_test = testlists.PsstExamples
-    elif mdlclass == 'Wind':
-        models_to_test = testlists.WindExamples
+    elif mdlclass == 'RenewableSources':
+        models_to_test = testlists.RwbsExamples
     else:
         # Print error for class without models:
         print('Error. There is no model listed in the class of models named:')
@@ -70,8 +70,8 @@ def modelsToTest(mdlclass,testlists):
 # ----- Load the correct system (there are three possibilites):
 def initTest(model,mdlclass,pathname):
     # Load raw file depending on model/model-class:
-    if mdlclass == 'Wind':
-        rawfile=os.path.join(pathname,"SMIB_Wind.raw")
+    if mdlclass == 'RenewableSources':
+        rawfile=os.path.join(pathname,"SMIB_Rwb.raw")
     elif mdlclass == 'ShuntElement':
         rawfile=os.path.join(pathname,"SMIB_Shunt.raw")
     else:
@@ -112,7 +112,7 @@ def prepareDynSim(dyrfile,mdlclass):
     # Load .dyr file:
     ierr = psspy.dyre_new([1,1,1,1],dyrfile,"","","")
     # Transform Generator One into a wind machine if model class is Wind:
-    if mdlclass == 'Wind':
+    if mdlclass == 'RenewableSources':
         ierr = psspy.machine_chng_2(1,r"1",[_i,_i,_i,_i,_i,1],[_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f])
 # =============================================================================================================================================
 # Function: includeModel
@@ -155,12 +155,12 @@ def includeModel(Model):
         # - Load URST5T exciter:
         psspy.add_plant_model(1,r"1",6,r"URST5T",0,"",0,[],[],10,[0.025,0.1,0.2,1.0,1.0,1.0,10.0,-10.0,0.58,0.3])
     elif Model == 'SEXS':
-        # - Load GENROU generator:
+        # - Load GENROE generator:
         psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load SEXS exciter:
         psspy.add_plant_model(1,r"1",6,r"SEXS",0,"",0,[],[],6,[0.1,1.0,100.0,0.1,-10.0,10.0])
     elif Model == 'SCRX':
-        # - Load GENROU generator:
+        # - Load GENROE generator:
         psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load SCRX generator:
         psspy.add_plant_model(1,r"1",6,r"SCRX",0,"",0,[],[],8,[0.1,1.0,100.0,0.005,-10.0,10.0,0.0,0.0])
@@ -219,6 +219,53 @@ def includeModel(Model):
         psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
         # - Load EXNI exciter:
         psspy.add_plant_model(1,r"1",6,r"EXNI",0,"",0,[],[],10,[0.06,150.0,0.0,4.0,-4.0,0.011,0.4,0.7,0.0,10.0])
+    elif Model == 'EXAC3':
+        # - Load GENROE generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
+        # - Load EXAC3 exciter:
+        psspy.add_plant_model(1,r"1",6,r"EXAC3",0,"",0,[],[],22,[0.0,0.0,0.0,78.04,0.013,1,-0.95,3.71,0.167,6.99,0.143,1,0.05,1.603,0.14,1.02,1,0.46,4.64,0.186,6.19,1.391])
+    elif Model == 'AC7B':
+        # - Load GENROU generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[3.9,0.031,0.495,0.158,2.12,0.0,1.68,1.62,0.245,0.455,0.175,0.145,0.0859,0.4286])
+        # - Load AC7B exciter:
+        psspy.add_plant_model(1,r"1",6,r"AC7B",0,"",0,[],[],27,[0.0,4.06,4.06,0.0,0.0,5.41,-5.41,47.56,25.16,1.0,-0.95,12.31,10.0,0.203,0.0,0.0,10.0,0.10,0.49,1.0,1.89,5.9,0.0,4.37,0.134,5.82,0.342])
+    elif Model == 'AC8B':
+        # - Load GENROU generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[3.9,0.031,0.495,0.158,2.12,0.0,1.68,1.62,0.245,0.455,0.175,0.145,0.0859,0.4286])
+        # - Load AC8B exciter:
+        psspy.add_plant_model(1,r"1",6,r"AC8B",0,"",0,[],[],21,[0.02,160.0,6.0,8.0,0.08,999.0,-999.0,1.0,0.01,7.76,-6.96,0.2,0.2,1.0,1.0,8.0,0.0,1.0,0.05,2.0,0.5])
+    elif Model == 'DC4B':
+        # - Load GENROU generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.5,0.035,0.75,0.07,2.71,0.0,1.9,1.8,0.27,0.6,0.15,0.101,0.11,0.48])
+        # - Load DC4B exciter:
+        psspy.add_plant_model(1,r"1",6,r"DC4B",0,"",2,[1,1],["",""],18,[0.01,40.0,14.0,15.0,0.01,10.9,0.0,0.15,0.01,1.0,1.0,0.0,1.0,0.0,1.5,0.03,3.0,1.2])
+    elif Model == 'ST6B':
+        # - Load GENROE generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
+        # - Load ST6B exciter:
+        psspy.add_plant_model(1,r"1",6,r"ST6B",0,"",1,[1],[""],16,[0.012,18.038,45.094,0.0,1.0,4.81,-3.85,1.0,1.0,1.0577,17.33,4.164,4.81,-3.85,1.0,0.02])
+    elif Model == 'IEEET3':
+        # - Load GENROU generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.05,0.7,0.1,4.0,0.0,1.41,1.35,0.3,0.6,0.2,0.12,0.1,0.5])
+        # - Load IEEET3 exciter:
+        psspy.add_plant_model(1,r"1",6,r"IEEET3",0,"",0,[],[],12,[0.0,120.0,0.15,1.2,-1.2,0.5,0.02,0.53,1.19,1.86,2.82,1.0])
+    elif Model == 'REXSYS':
+        # - Load GENROE generator:
+        psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
+        # - Load ST6B exciter:
+        psspy.add_plant_model(1,r"1",6,r"REXSYS",0,"",1,[1],[""],31,[0.028,350.0,0.0,999.0,0.02,0.0,0.0,0.0,0.0,101.6,-101.6,0.0487,2.0,0.0,0.0,1,1.0,0.0,0.0,999.0,-999.0,0.0,1.0,0.55,0.0,0.0,3.06,0.1,4.08,0.3,0])
+    elif Model == 'IEEEVC':
+        # - Load GENSAL generator:
+        psspy.add_plant_model(1,r"1",1,r"GENSAL",0,"",0,[],[],12,[7.0,0.035,0.03,3,0.0,1.16,0.81,0.42,0.36,0.136,0.16,0.61])
+        # - Load IEEEVC Voltage Compensator:
+        psspy.add_plant_model(1,r"1",2,r"IEEEVC",0,"",0,[],[],2,[0.0,0.08])
+        # - Load ESDC1A turbine/governor:
+        psspy.add_plant_model(1,r"1",6,r"ESDC1A",0,"",0,[],[],16,[0.01,50.0,0.02,0.0,0.0,22.5,-22.5,0.0,0.7,0.03,0.45,0.0,2.322,0.221,3.096,0.549])
+    elif Model == 'IEEEG2':
+        # - Load GENSAL generator:
+        psspy.add_plant_model(1,r"1",1,r"GENSAL",0,"",0,[],[],12,[4.1,0.05,0.06,1.4631,0.0,0.852,0.61,0.395,0.293,0.237,0.11,0.48])
+        # - Load IEEEG2 turbine/governor:
+        psspy.add_plant_model(1,r"1",6,r"IEEEG2",0,"",0,[],[],7,[20.0,50.0,5.0,1.0,1.19,0.0,1.0])
     elif Model == 'IEESGO':
         # - Load GENSAL generator:
         psspy.add_plant_model(1,r"1",1,r"GENSAL",0,"",0,[],[],12,[6.7,0.028,0.0358,4.41,0.0,1.22,0.76,0.297,0.2,0.12,0.186,0.802])
@@ -233,11 +280,11 @@ def includeModel(Model):
         psspy.add_plant_model(1,r"1",6,r"SCRX",0,"",0,[],[],8,[0.1,10.0,100.0,0.05,0.0,5.0,0.0,0.0])
         # - Load HYGOV turbine/governor:
         psspy.add_plant_model(1,r"1",7,r"HYGOV",0,"",0,[],[],12,[0.05,0.3,5.0,0.05,0.5,0.02,0.415,0.0,1.25,1.2,0.2,0.08])
-    elif Model == 'GGOV':
+    elif Model == 'GGOV1':
         # - Load GENROU generator:
         psspy.add_plant_model(1,r"1",1,r"GENROU",0,"",0,[],[],14,[5.0,0.05,0.7,0.1,4.0,0.0,1.41,1.35,0.3,0.6,0.2,0.12,0.1,0.5])
-        # - Load GGOV turbine/governor:
-        psspy.add_plant_model(1,r"1",7,r"GGOV1",0,"",2,[0,0],["",""],33,[0.04,1.0,0.05,-0.05,10.0,2.0,0.0,1.0,1.0,0.15,0.5,1.5,0.2,0.1,0.0,0.0,3.0,2.0,0.67,1.0,0.0,0.1,-0.1,0.0,0.1,10.0,0.1,0.0,0.0,4.0,5.0,99.0,-99.0])
+        # - Load GGOV1 turbine/governor:
+        psspy.add_plant_model(1,r"1",7,r"GGOV1",0,"",2,[0,0],["",""],33,[0.0,1.0,0.05,-0.05,10.0,2.0,0.0,1.0,1.0,0.15,0.5,1.5,0.2,0.1,0.0,0.0,3.0,2.0,0.67,1.0,0.0,0.1,-0.1,0.0,0.1,10.0,0.1,0.0,0.0,4.0,5.0,99.0,-99.0])
     elif Model == 'TGOV1':
         # - Load GENROE generator:
         psspy.add_plant_model(1,r"1",1,r"GENROE",0,"",0,[],[],14,[5.0,0.07,0.9,0.09,4.28,0.0,1.84,1.75,0.41,0.6,0.2,0.12,0.11,0.39])
@@ -286,6 +333,16 @@ def includeModel(Model):
         psspy.add_wind_model(1,r"1",1,r"WT4G1",0,[],[],9,[0.02,0.02,0.4,0.9,1.11,1.2,2.0,2.0,0.02])
         # - Load WT4E1 wind electrical control:
         psspy.add_wind_model(1,r"1",2,r"WT4E1",4,[0,0,1,0],["","","",""],23,[0.15,18.0,5.0,0.05,0.15,0.0,0.08,0.48,-0.47,1.1,0.1,0.5,-0.5,0.05,0.15,0.9,1.1,120,0.05,0.05,1.7,1.11,1.11])
+    elif Model == 'REECBU1':
+        # - Load RECGAU1 general inverter-based generator:
+        psspy.add_wind_model(1,r"1",1,r"REGCAU1",1,[1],[""],14,[0.02,10.0,0.9,0.5,1.22,1.2,0.8,0.4,-1.3,0.02,0.7,9999.0,-9999.0,1.0])
+        # - Load REECBU1 solar electrical control:
+        psspy.add_wind_model(1,r"1",2,r"REECBU1",5,[0,0,1,1,0],["","","","",""],25,[-99.0,99.0,0.0,-0.05,-0.05,0.0,1.05,-1.05,0.0,0.05,0.436,-0.436,1.1,0.9,0.0,0.1,0.0,40.0,0.02,99.0,-99.0,1.0,0.0,1.82,0.02])
+    elif Model == 'REECCU1':
+        # - Load RECGAU1 general inverter-based generator:
+        psspy.add_wind_model(1,r"1",1,r"REGCAU1",1,[1],[""],14,[0.017,10.0,0.1,0.05,1.22,1.2,0.2,0.05,-1.3,0.02,0.7,99.0,-99.0,0.7])
+        # - Load REECCU1 battery electrical control:
+        psspy.add_wind_model(1,r"1",2,r"REECCU1",5,[0,1,1,0,0],["","","","",""],45,[-99.0,99.0,0.01,-0.05,0.05,15.0,0.75,-0.75,1.0,0.05,0.75,-0.75,1.1,0.9,0.0,1.0,0.0,1.0,0.017,99.0,-99.0,1.0,-0.667,1.11,0.017,0.0,0.75,0.2,0.75,0.5,0.75,1.0,0.75,0.2,1.11,0.5,1.11,0.75,1.11,1.0,1.11,999.0,0.5,0.8,0.2])
     elif Model == 'CSVGN1':
         # - Load GENSAL generator on bus 1:
         psspy.add_plant_model(1,r"1",1,r"GENSAL",0,"",0,[],[],12,[5.0,0.07,0.09,4.28,0.0,1.84,1.75,0.41,0.2,0.12,0.11,0.39])
@@ -319,22 +376,34 @@ def defineOutput(mdlclass,Model,pathname):
         ierr = psspy.chsb(0,1,[-1,-1,-1,1,7,0])
         ierr = psspy.chsb(0,1,[-1,-1,-1,1,10,0])
         ierr = psspy.chsb(0,1,[-1,-1,-1,1,13,0])
-    elif mdlclass == 'Wind':
-        ierr = psspy.chsb(0,1,[-1,-1,-1,1,2,0])
-        ierr = psspy.chsb(0,1,[-1,-1,-1,1,3,0])
-        ierr = psspy.chsb(0,1,[-1,-1,-1,1,13,0])
-        ierr = psspy.chsb(0,1,[-1,-1,-1,1,35,0])
-        ierr = psspy.chsb(0,1,[-1,-1,-1,1,36,0])
+    elif mdlclass == 'RenewableSources':
+        if Model == 'REECBU1' or Model == 'REECCU1':
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,2,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,3,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,13,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,35,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,36,0])
+        else:
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,2,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,3,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,13,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,35,0])
+            ierr = psspy.chsb(0,1,[-1,-1,-1,1,36,0])
     return outfile
 # ================================================================================================================================================
 # Function: simulateEvent
 # Description: This function simulates the model according to the event and model class
 # ----- Selecting correct event to be simulated using correct parameters.
-def simulateEvent(event,mdlclass,outfile):
+def simulateEvent(event,model,mdlclass,outfile):
     # Prepare dynamic simulation:
-    ierr = psspy.strt_2([0,0],outfile)
+    if model == 'REECBU1' or model == 'REECCU1':
+        # Start dynamic simulation - initialize
+        ierr = psspy.strt_2([0,1],outfile)
+    else:
+        # Start dynamic simulation - initialize
+        ierr = psspy.strt_2([0,0],outfile)
     # Set time steps:
-    step1 = 0.001 # time step before disturbance to 5ms
+    step1 = 0.001 # time step before disturbance to 1ms
     step2 = 0.00001 # time step during disturbance to 0.01ms
     step3 = 0.00005 # time step a bit after disturbance to 0.05ms
     step4 = 0.0001 # time step at the end of simulation to 0.1ms
@@ -353,7 +422,7 @@ def simulateEvent(event,mdlclass,outfile):
         # Run simulation from 1.9 to 2.0, print every 50 and save every 20 time steps into output file:
         ierr = psspy.run(0,2,50,20,0)
         # Stop simulation and include fault at bus 22:
-        if mdlclass == 'Wind':
+        if mdlclass == 'RenewableSources':
             ierr = psspy.dist_bus_fault(2,3,100.0,[50,50])
         else:
             psspy.dist_bus_fault(22,1,100.0,[0.0,-0.2E+10])
@@ -373,7 +442,7 @@ def simulateEvent(event,mdlclass,outfile):
         ierr = psspy.run(0,10.0,10,10,0)
     elif event == 'LoadVariation':
         # Check if model class should be tested under this event:
-        if mdlclass == 'Wind':
+        if mdlclass == 'RenewableSources':
             # Set flag - Simulation will not occur:
             SimOccur = False
         else:
@@ -463,8 +532,12 @@ def outputCsv(Model,mdlclass,result,outfilenameu):
     elif mdlclass == 'PowerSystemStabilizers':
         result.csvout(channels=[1,3,7,9,11,13,14,15,16], csvfile=outfilenameu)
     # Set channels to be saved in csv file when Wind:
-    elif mdlclass == 'Wind':
-        result.csvout(channels=[1,3,5,6,7], csvfile=outfilenameu)
+    elif mdlclass == 'RenewableSources':
+        if Model == 'REECBU1' or Model == 'REECCU1':
+            result.csvout(channels=[1,3,7,8,9], csvfile=outfilenameu)
+        else:
+            result.csvout(channels=[1,3,5,6,7], csvfile=outfilenameu)
+        
     # Retunrs new outfilenameu (unedited csv file):
     return outfilenameu
 # ================================================================================================================================================
@@ -517,12 +590,30 @@ def editCsv(Model,outfilenameu,outfilename):
         titles = ['Time','gENROE.delta','gENROE.PELEC','iEEET1.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'EXNI':
         titles = ['Time','gENROE.delta','gENROE.PELEC','eXNI.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'EXAC3':
+        titles = ['Time','gENROE.delta','gENROE.PELEC','eXAC3.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'AC7B':
+        titles = ['Time','gENROU.delta','gENROU.PELEC','aC7B.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'AC8B':
+        titles = ['Time','gENROU.delta','gENROU.PELEC','aC8B.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'DC4B':
+        titles = ['Time','gENROU.delta','gENROU.PELEC','dC4B.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'ST6B':
+        titles = ['Time','gENROE.delta','gENROE.PELEC','sT6B.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'IEEET3':
+        titles = ['Time','gENROU.delta','gENROU.PELEC','iEEET3.EFD','gENROU.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'REXSYS':
+        titles = ['Time','gENROE.delta','gENROE.PELEC','rEXSYS.EFD','gENROE.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'IEEEVC':
+        titles = ['Time','gENSAL.delta','gENSAL.PELEC','eSDC1A.EFD','gENSAL.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'IEEEG2':
+        titles = ['Time','gENSAL.delta','gENSAL.PELEC','iEEEG2.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEESGO':
         titles = ['Time','gENSAL.delta','gENSAL.PELEC','iEESGO.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'HYGOV':
         titles = ['Time','gENSAL.delta','gENSAL.PELEC','hYGOV.PMECH','gENSAL.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
-    elif Model == 'GGOV':
-        titles = ['Time','gENROU.delta','gENROU.PELEC','gGOV.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
+    elif Model == 'GGOV1':
+        titles = ['Time','gENROU.delta','gENROU.PELEC','gGOV1.PMECH','gENROU.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'TGOV1':
         titles = ['Time','gENROE.delta','gENROE.PELEC','tGOV1.PMECH','gENROE.SPEED','GEN1.V','LOAD.V','GEN2.V','FAULT.V']
     elif Model == 'IEEEG1':
@@ -539,6 +630,10 @@ def editCsv(Model,outfilenameu,outfilename):
         titles = ['Time','wT4G1.P','wT4G1.Q','GEN1.V','FAULT.V','GEN2.V']
     elif Model == 'WT4E1':
         titles = ['Time','wT4G1.P','wT4G1.Q','GEN1.V','FAULT.V','GEN2.V']
+    elif Model == 'REECBU1':
+        titles = ['Time','rECGAU1.P','rECGAU1.Q','GEN1.V','FAULT.V','GEN2.V']
+    elif Model == 'REECCU1':
+        titles = ['Time','rECGAU1.P','rECGAU1.Q','GEN1.V','FAULT.V','GEN2.V']
     elif Model == 'CSVGN1':
         titles = ['Time','cSVGN1.Q','GEN1.V','LOAD.V','GEN2.V','SHUNT.V','FAULT.V']
     # Edit the u-csv file to include correct titles and set delimiter as ',':

@@ -64,7 +64,7 @@ for event in EventType:
             outfile = test_functions.defineOutput(mdlclass,model,pathname)
             # Simulate model under desired perturbation:
             SimOccur = False
-            [SimOccur,outfile] = test_functions.simulateEvent(event,mdlclass,outfile)
+            [SimOccur,outfile] = test_functions.simulateEvent(event,model,mdlclass,outfile)
             # Edit and save output files, halt psse for next simulations:
             test_functions.completeOut(SimOccur,pathname,outfile,classdirectory,model,mdlclass)
             
