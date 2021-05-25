@@ -5,3 +5,6 @@
 # Compiled source #
 ###################
 .pyc
+# Compiled folders #
+####################
+__pycache__/
