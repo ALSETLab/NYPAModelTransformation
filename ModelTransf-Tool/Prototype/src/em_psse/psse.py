@@ -107,7 +107,7 @@ def read_twodc(lines,records):
 	return dfs
 
 
-def parse_raw(in_file_name):
+def parse_raw(in_file_name,encode_flag):
 	"""
 	This function will parse a RAW file and return a PyPSA model
 	"""
@@ -140,8 +140,14 @@ def parse_raw(in_file_name):
 		'key': 'header'
 	}
 
+	# encode flag:
+	if int(encode_flag) == 1:
+		interpret = 'latin1'
+	else:
+		interpret = 'utf-8'
+
 	# Read file and store in container
-	with open(in_file_name,'r') as in_file:
+	with open(in_file_name,'r',encoding=interpret) as in_file:
 		line = in_file.readline()
 		line_num = 0
 		while line:

@@ -399,12 +399,14 @@
     - name: STATUS
       description: |
         Status of shunt device
-    - name: UK1
-      description: Unknown 1
+    - name: G
+      description: |
+        Conductance value entered in MW at unity voltage. 
+        G = 0.0 by default.
     - name: B
       description: |
-        Admittance increment for each of N1 steps in block i; entered in Mvar at unity
-        voltage. B1 = 0.0 by default.
+        Susceptance value entered in Mvar at unity voltage.
+        B1 = 0.0 by default.
 - name: Transformer
   key: transformer
   signal:

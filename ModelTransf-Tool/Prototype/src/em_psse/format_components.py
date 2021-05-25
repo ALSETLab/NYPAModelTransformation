@@ -5,50 +5,50 @@ logger = logging.getLogger('em.format_components')
 import pandas as pd
 
 def format_load(df):
-	print('Formatting load {}'.format(len(df)))
+	#print('Formatting load {}'.format(len(df)))
 	df.index = 'load'+df['I'].astype(str) + '_' + df['ID'].str.replace(' ','').str.replace("'",'')
 	df = df.rename(index=str,columns={'I':'bus','PL':'p_set','QL':'q_set','STATUS':'status'})
 	return df[['bus','p_set','q_set','status']]
 
 def format_bus(df):
-	print('Formatting bus {}'.format(len(df)))		
+	#print('Formatting bus {}'.format(len(df)))		
 	df = df.rename(index=str,columns={'I':'bus','BASKV':'v_nom','NAME':'psse_name','IDE':'bus_type','ZONE':'zone','OWNER':'owner','AREA':'area','VM':'vmag','VA':'vang'})
 	df.index = df['bus']
 	return df[['bus','psse_name','v_nom','bus_type','vmag','vang','zone','owner','area']]
 
 def format_branch(df):
-	print('Formatting branch {}'.format(len(df)))		
+	#print('Formatting branch {}'.format(len(df)))		
 	df.index = 'branch'+df['I'].astype(str) + '_'+df['J'].astype(str) + '_' + df['CKT'].str.replace(' ','').str.replace("'",'')
 	df = df.rename(index=str,columns={'I':'bus0','J':'bus1','X':'x','R':'r','B':'b','RATEA':'s_nom_A','RATEB':'s_nom_B','RATEC':'s_nom_C','CKT':'circuit','LEN':'length','ST':'status'})
 	return df[['bus0','bus1','x','r','b','s_nom_A','s_nom_B','s_nom_C','length','circuit','status']]
 
 def format_gen(df):
-	print('Formatting gen {}'.format(len(df)))
+	#print('Formatting gen {}'.format(len(df)))
 	df.index = 'gen'+df['I'].astype(str) + '_' +df['ID'].str.replace(' ','').str.replace("'",'')
 	df['ID'] = df['ID'].str.replace(' ','').str.replace("'",'')
 	df = df.rename(index=str,columns={'I':'bus','PT':'p_max','PG':'p_gen','PB':'p_min','QG':'q_gen','QT':'q_max','QB':'q_min','STAT':'status','ID':'circuit','MBASE':'mbase'})
 	return df[['bus','p_max','p_gen','p_min','q_gen','q_max','q_min','status','circuit','mbase']]
 
 def format_area(df):
-	print('Formatting area {}'.format(len(df)))
+	#print('Formatting area {}'.format(len(df)))
 	df.index = 'area'+df['I'].astype(str)
 	df = df.rename(index=str,columns={'I':'area','ARNAME':'area_name','ISW':'slack_bus','PDES':'desired_net_export','PTOL':'interchange_tolerance_bandwidth'})
 	return df[['area','area_name','slack_bus','desired_net_export','interchange_tolerance_bandwidth']]
 
 def format_zone(df):
-	print('Formatting zone {}'.format(len(df)))
+	#print('Formatting zone {}'.format(len(df)))
 	df.index = 'zone'+df['I'].astype(str)
 	df = df.rename(index=str,columns={'I':'zone','ZONAME':'zone_name'})
 	return df[['zone','zone_name']]
 
 def format_owner(df):
-	print('Formatting owner {}'.format(len(df)))
+	#print('Formatting owner {}'.format(len(df)))
 	df.index = 'owner'+df['I'].astype(str)
 	df = df.rename(index=str,columns={'I':'owner','OWNAME':'owner_name'})
 	return df[['owner','owner_name']]
 
 def format_twodc(df):
-	print('Formatting twodc {}'.format(len(df)))
+	#print('Formatting twodc {}'.format(len(df)))
 	df.index = 'dc'+df['IPR'].astype(str)+'_'+df['IPI'].astype(str)+'_'+df['I'].str.replace(' ','').str.replace("'",'')
 	df = df.rename(index=str,columns={'IPR':'bus0','IPI':'bus1'})
 	df['p_nom']=1500
@@ -56,7 +56,7 @@ def format_twodc(df):
 	return df[['bus0','bus1','p_nom','p_min_pu']]
 
 def format_switchedshunt(df):
-	print('Formatting switchedshunt {}'.format(len(df)))
+	#print('Formatting switchedshunt {}'.format(len(df)))
 	df.index = 'sshunt'+df['I'].astype(str) # this appears to be unique, if not, we have to add some ID that is not in PSSE Raw file
 	# use binit as b, this removes switched behavior, which is not ideal
 	# however, incorporating switching into pypsa seems nontrivial
@@ -66,16 +66,16 @@ def format_switchedshunt(df):
 	return df[['bus','b']]
 
 def format_fixedshunt(df):
-	print('Formatting fixedshunt {}'.format(len(df)))
+	#print('Formatting fixedshunt {}'.format(len(df)))
 	df.index = 'fshunt'+df['I'].astype(str) # this appears to be unique, if not, we have to add some ID that is not in PSSE Raw file
 
 	# it actually seems like B defined in RAW is in MVar and b in pypsa is Siemens, need to figure out different implementation
-	df = df.rename(index=str,columns={'I':'bus','B':'b','STATUS':'status'})
-	return df[['bus','b','status']]
+	df = df.rename(index=str,columns={'I':'bus','ID':'shunt_id','G':'g','B':'b','STATUS':'status'})
+	return df[['bus','shunt_id','g','b','status']]
 
 
 def format_transformer(df,s_system=100):
-	print('Formatting transformers {}'.format(len(df)))
+	#print('Formatting transformers {}'.format(len(df)))
 
 	## PSSE Raw file
 	## 
@@ -175,7 +175,10 @@ def format_transformer(df,s_system=100):
 			if cw == 1 or cw == 3:
 				return wind 
 			elif cw == 2:
-				return wind / nom
+				if nom == 0:
+					return wind
+				else:
+					return wind / nom
 			else:
 				raise Exception('Unknown')
 		return _get_winding
@@ -198,7 +201,7 @@ def format_transformer(df,s_system=100):
 		t2['x'] = t2.apply(get_x_field('x','SBASE1-2'),axis=1)
 		trans_cols=['bus0','bus1','r','x','name','s_nom','s_nom_A','s_nom_B','s_nom_C','phase_shift','v0','v1','wind0','wind1','status']
 		t2=t2[trans_cols]
-		print('Created {} 2 winding transformers'.format(len(t2)))
+		#print('Created {} 2 winding transformers'.format(len(t2)))
 
 	## Three winding transformers, perform delta to wye conversion
 	if len(t3)>0:
@@ -284,7 +287,7 @@ def format_transformer(df,s_system=100):
 		t3_3=t3_3[trans_cols]
 		
 
-		print('Created {} transformers from {} 3 winding transformers'.format(len(t3)*3,len(t3)))
+		#print('Created {} transformers from {} 3 winding transformers'.format(len(t3)*3,len(t3)))
 
 		nt = pd.concat([t2,t3_1,t3_2,t3_3],axis=0,sort=False)
 	else:

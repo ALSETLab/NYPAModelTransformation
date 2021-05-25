@@ -34,7 +34,10 @@ def to_number(s):
         try:
             ret = float(ret)
         except ValueError:
-            pass
+            try:
+                ret = str(ret)
+            except ValueError:
+                pass
 
     return ret
 
@@ -63,8 +66,17 @@ def parse_dyr(file):
 
             single_list = single_line.split("'")
 
+            list_length = len(single_list)
+            
             psse_model = single_list[1].strip()
-            input_concat_dict[psse_model].append(single_list[0] + single_list[2])
+            # this code was added in order to be able to process different ways of declaring DYR data:
+            if list_length == 5:
+                input_concat_dict[psse_model].append(single_list[0] + single_list[3] + single_list[4])
+            elif list_length == 7:
+                input_concat_dict[psse_model].append(single_list[0] + single_list[3] + single_list[4] + single_list[5] + single_list[6])
+            else:
+                input_concat_dict[psse_model].append(single_list[0] + single_list[2])
+                
             multi_line = list()
 
     # construct pandas dataframe for all models

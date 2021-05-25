@@ -41,7 +41,7 @@ def createDir(userpath):
 	workingdirectory = userpath + "/Translation" # name of main folder
 	systemdirectory = userpath + "/Translation/System" # name of test system folder
 	sysdatadirectory = userpath + "/Translation/System/Data" # name of data folder
-	sysgensdirectory = userpath + "/Translation/System/Machines" # name of plant data folder
+	sysgensdirectory = userpath + "/Translation/System/Generators" # name of plant data folder
 	# ----- Creation of working directory called Translation:
 	try:
 		if os.path.exists(workingdirectory):
