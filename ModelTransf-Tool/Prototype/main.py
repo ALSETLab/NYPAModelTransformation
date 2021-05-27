@@ -21,7 +21,7 @@ import sys, os, time
 homedir= os.getcwd()
 # ----- Adding paths for new modules:
 srcdir = homedir + "/src"
-auxdir = homedir + "/aux"
+auxdir = homedir + "/fcn"
 imgdir = homedir + "/img" # create img dir path
 sys.path.insert(1, srcdir)
 sys.path.insert(2, auxdir)
