@@ -1,0 +1,49 @@
+Processing file C:\utv\NYPAModelTransformation-master\ModelTransf-Tool\Prototype\examples\nordic-44\N44_BC.dyr
+Input string was not in a correct format.
+Error: The STAB2A model on bus 3000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 3000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 3000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+Input string was not in a correct format.
+Error: The STAB2A model on bus 7000 has an unknown parent with a type of ExcitationSystemDynamics
+========== Processing N44_BC_DY.xml ==========
+Header ID   : urn:uuid:89d3f27f-220c-11eb-a653-74e5f963e191
+Created     : 2020-11-08T21:51:26.0000000Z
+Warning: md:Model.version is not found or cannot be parsed.
+Profile     : http://entsoe.eu/CIM/Dynamics/3/1
+==============================================
+
+22:51:26 : User STATNETT\sveinols (1) connected to [N44_BC] (CIM16v28) on SQL Server 14.0.1000.169 (RTM) Developer Edition (64-bit) on SN10767
+22:51:35 : User STATNETT\sveinols (1) connected to [N44_BC] (CIM16v28) on SQL Server 14.0.1000.169 (RTM) Developer Edition (64-bit) on SN10767
+22:51:35 : Performing pre-import operations...
+Warning: The model does not contain ModelingAuthoritySets or recognized Models.  Skipping pre-import operations.
+Information: No config file found, performing standard import
+Processing file C:\Users\sveinols\AppData\Local\PTI\ODMS\temp\89d3f280-220c-11eb-a653-74e5f963e191\N44_BC_DY.xml on 08.11.2020 22:51:35
+Indexed 597 fragments in 0 minutes and 0 seconds
+22:51:35 : Importing class cim:ExcSCRX                                        (    54 instances)
+22:51:35 : Importing class cim:ExcSEXS                                        (    14 instances)
+22:51:35 : Importing class cim:GovHydro1                                      (    50 instances)
+22:51:35 : Importing class cim:GovSteamSGO                                    (    30 instances)
+22:51:35 : Importing class cim:PowerSystemStabilizerUserDefined               (    41 instances)
+22:51:35 : Importing class cim:ProprietaryParameterDynamics                   (   328 instances)
+22:51:35 : Importing class cim:SynchronousMachineTimeConstantReactance        (    80 instances)
+22:51:35 : Performing post import operations...
+
+22:51:39 : Import completed successfully

@@ -1,0 +1,51 @@
+model SM1_1_
+		OpenIPSL.Interfaces.PwPin n;
+
+OpenIPSL.Electrical.Machines.PSSE.GENROU SM1_1_ (Tpd0 = 4, Tppdo = 0.032, Tppqo = 0.06, Xd = 2.11, Xpd = 0.295, Xppd = 0.23, Xq = 2.02, Xppq = 0.505, Tpqo = 0.55, D = 0, H = 2.05, S10 = 0.083, S12 = 0.419, Xl = 0.16);
+equation
+  connect(SM1_1_.PMECH,SM1_1_.PMECH0);
+  connect(SM1_1_.EFD,SM1_1_.EFD0);
+  connect(SM1_1_.p,SM1_1_.n);
+
+end SM1_1_;
+			model SM2_1_
+		OpenIPSL.Interfaces.PwPin n;
+
+OpenIPSL.Electrical.Machines.PSSE.GENROU SM2_1_ (Tpd0 = 6.5, Tppdo = 0.06, Tppqo = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.13, Xq = 1.75, Xppq = 0.8, Tpqo = 0.2, D = 0, H = 6.5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+equation
+  connect(SM2_1_.PMECH,SM2_1_.PMECH0);
+  connect(SM2_1_.EFD,SM2_1_.EFD0);
+  connect(SM2_1_.p,SM2_1_.n);
+
+end SM2_1_;
+			model SM3_1_
+		OpenIPSL.Interfaces.PwPin n;
+
+OpenIPSL.Electrical.Machines.PSSE.GENROU SM3_1_ (Tpd0 = 6.5, Tppdo = 0.06, Tppqo = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.13, Xq = 1.75, Xppq = 0.8, Tpqo = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+equation
+  connect(SM3_1_.PMECH,SM3_1_.PMECH0);
+  connect(SM3_1_.EFD,SM3_1_.EFD0);
+  connect(SM3_1_.p,SM3_1_.n);
+
+end SM3_1_;
+			model SM6_1_
+		OpenIPSL.Interfaces.PwPin n;
+
+OpenIPSL.Electrical.Machines.PSSE.GENROU SM6_1_ (Tpd0 = 6.5, Tppdo = 0.06, Tppqo = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.12, Xq = 1.75, Xppq = 0.8, Tpqo = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+equation
+  connect(SM6_1_.PMECH,SM6_1_.PMECH0);
+  connect(SM6_1_.EFD,SM6_1_.EFD0);
+  connect(SM6_1_.p,SM6_1_.n);
+
+end SM6_1_;
+			model SM8_1_
+		OpenIPSL.Interfaces.PwPin n;
+
+OpenIPSL.Electrical.Machines.PSSE.GENROU SM8_1_ (Tpd0 = 6.5, Tppdo = 0.06, Tppqo = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.12, Xq = 1.75, Xppq = 0.8, Tpqo = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+equation
+  connect(SM8_1_.PMECH,SM8_1_.PMECH0);
+  connect(SM8_1_.EFD,SM8_1_.EFD0);
+  connect(SM8_1_.p,SM8_1_.n);
+
+end SM8_1_;
+			

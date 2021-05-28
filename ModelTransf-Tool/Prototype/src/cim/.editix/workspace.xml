@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\CompleteMO.xsl" type="XSLT">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\CompleteMO.xsl"/>
+<param name="xslt.result.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\CompleteResult.txt"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.openFile" value="false"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\GenMO.xsl" type="XSLT">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\GenMO.xsl"/>
+<param name="xslt.result.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\GenResult.txt"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.openFile" value="false"/>
+</file>
+</root>

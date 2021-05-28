@@ -1,0 +1,137 @@
+========== Processing nypa_500_no_IEEET2_DY.xml ==========
+Header ID   : urn:uuid:61a42dde-6d10-11eb-a65a-74e5f963e191
+Created     : 2021-02-12T08:57:57
+Warning: md:Model.version is not found or cannot be parsed.
+Profile     : http://entsoe.eu/CIM/Dynamics/3/1
+==========================================================
+
+09:57:57 : User STATNETT\sveinols (1) connected to [nypa_500_cleaned] (CIM16v28) on SQL Server 14.0.1000.169 (RTM) Developer Edition (64-bit) on SN10767
+09:58:05 : User STATNETT\sveinols (1) connected to [nypa_500_cleaned] (CIM16v28) on SQL Server 14.0.1000.169 (RTM) Developer Edition (64-bit) on SN10767
+09:58:05 : Performing pre-import operations...
+Warning: The model does not contain ModelingAuthoritySets or recognized Models.  Skipping pre-import operations.
+Information: No config file found, performing standard import
+Processing file C:\Users\sveinols\AppData\Local\PTI\ODMS\temp\61a42ddf-6d10-11eb-a65a-74e5f963e191\nypa_500_no_IEEET2_DY.xml on 12.02.2021 09:58:05
+Indexed 771 fragments in 0 minutes and 0 seconds
+09:58:06 : Importing class cim:ExcAC1A                                        (    12 instances)
+WARNING: Instance rdf:ID="_61a42ddb-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42dda-6d10-11eb-a65a-74e5f963e191 - instance "_61a42ddb-6d10-11eb-a65a-74e5f963e191" removed
+09:58:06 : Importing class cim:ExcAC2A                                        (     7 instances)
+09:58:06 : Importing class cim:ExcIEEEAC1A                                    (     5 instances)
+WARNING: Instance rdf:ID="_61a42d1c-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42d1b-6d10-11eb-a65a-74e5f963e191 - instance "_61a42d1c-6d10-11eb-a65a-74e5f963e191" removed
+09:58:06 : Importing class cim:ExcIEEEAC2A                                    (    15 instances)
+09:58:06 : Importing class cim:ExcIEEEAC7B                                    (     1 instances)
+WARNING: Instance rdf:ID="_61a42d0d-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42d0c-6d10-11eb-a65a-74e5f963e191 - instance "_61a42d0d-6d10-11eb-a65a-74e5f963e191" removed
+09:58:06 : Importing class cim:ExcIEEEDC1A                                    (     9 instances)
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b11-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b11-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b1c-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b1c-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b1f-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b1f-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b21-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b21-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b24-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42b24-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42d75-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42d75-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42d84-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42d84-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42dc0-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42dc0-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42dc2-6d10-11eb-a65a-74e5f963e191" - using True instead
+Warning: could not parse boolean value "1" for rdf:ID="_61a42dc2-6d10-11eb-a65a-74e5f963e191" - using True instead
+09:58:06 : Importing class cim:ExcIEEEST1A                                    (    20 instances)
+WARNING: Instance rdf:ID="_61a42d1a-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42d19-6d10-11eb-a65a-74e5f963e191 - instance "_61a42d1a-6d10-11eb-a65a-74e5f963e191" removed
+09:58:06 : Importing class cim:ExcIEEEST4B                                    (    32 instances)
+WARNING: Instance rdf:ID="_61a42dd9-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42dd8-6d10-11eb-a65a-74e5f963e191 - instance "_61a42dd9-6d10-11eb-a65a-74e5f963e191" removed
+09:58:06 : Importing class cim:ExcitationSystemUserDefined                    (    25 instances)
+WARNING: Instance rdf:ID="_61a42bcf-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42bce-6d10-11eb-a65a-74e5f963e191 - instance "_61a42bcf-6d10-11eb-a65a-74e5f963e191" removed
+WARNING: Instance rdf:ID="_61a42bdf-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42bde-6d10-11eb-a65a-74e5f963e191 - instance "_61a42bdf-6d10-11eb-a65a-74e5f963e191" removed
+WARNING: Instance rdf:ID="_61a42bef-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42bee-6d10-11eb-a65a-74e5f963e191 - instance "_61a42bef-6d10-11eb-a65a-74e5f963e191" removed
+WARNING: Instance rdf:ID="_61a42bff-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ExcitationSystemDynamics.SynchronousMachineDynamics to _61a42bfe-6d10-11eb-a65a-74e5f963e191 - instance "_61a42bff-6d10-11eb-a65a-74e5f963e191" removed
+09:58:06 : Importing class cim:ExcSEXS                                        (     4 instances)
+09:58:06 : Importing class cim:GovGAST                                        (    18 instances)
+Warning: could not parse float value 87,5 - setting to 0.0...
+Warning: could not parse float value 87,5 - setting to 0.0...
+Warning: could not parse float value 46,5 - setting to 0.0...
+Warning: could not parse float value 46,5 - setting to 0.0...
+Warning: could not parse float value 78,3 - setting to 0.0...
+Warning: could not parse float value 602,35 - setting to 0.0...
+Warning: could not parse float value 473,6 - setting to 0.0...
+09:58:06 : Importing class cim:GovHydro1                                      (    19 instances)
+Warning: could not parse float value 46,5 - setting to 0.0...
+Warning: could not parse float value 29,3 - setting to 0.0...
+Warning: could not parse float value 29,3 - setting to 0.0...
+09:58:06 : Importing class cim:GovSteam0                                      (     5 instances)
+Warning: could not parse float value 74,6 - setting to 0.0...
+Warning: could not parse float value 72,8 - setting to 0.0...
+Warning: could not parse float value 72,8 - setting to 0.0...
+Warning: could not parse float value 110,8 - setting to 0.0...
+09:58:06 : Importing class cim:GovSteamSGO                                    (     6 instances)
+Warning: could not parse float value 46,5 - setting to 0.0...
+Warning: could not parse float value 132,3 - setting to 0.0...
+WARNING: Reference cim:TurbineGovernorDynamics.SynchronousMachineDynamics to "_61a42d1b-6d10-11eb-a65a-74e5f963e191" is invalid
+09:58:06 : Importing class cim:ProprietaryParameterDynamics                   (   350 instances)
+WARNING: Instance rdf:ID="_61a42bd0-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd1-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd2-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd3-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd4-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd5-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd6-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd7-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd8-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bd9-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bda-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bdb-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bdc-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bdd-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bcf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be0-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be1-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be2-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be3-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be4-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be5-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be6-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be7-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be8-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42be9-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bea-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42beb-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bec-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bed-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bdf-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf0-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf1-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf2-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf3-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf4-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf5-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf6-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf7-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf8-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bf9-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bfa-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bfb-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bfc-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42bfd-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bef-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c00-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c01-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c02-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c03-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c04-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c05-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c06-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c07-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c08-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c09-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c0a-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c0b-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c0c-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+WARNING: Instance rdf:ID="_61a42c0d-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined to _61a42bff-6d10-11eb-a65a-74e5f963e191
+09:58:06 : Importing class cim:PssIEEE2B                                      (    21 instances)
+09:58:06 : Importing class cim:SynchronousMachineSimplified                   (    76 instances)
+09:58:06 : Importing class cim:SynchronousMachineTimeConstantReactance        (   145 instances)
+09:58:06 : Importing class cim:VCompIEEEType1                                 (     1 instances)
+WARNING: Instance rdf:ID="_61a42d0e-6d10-11eb-a65a-74e5f963e191" contains an invalid reference for cim:VoltageCompensatorDynamics.ExcitationSystemDynamics to _61a42d0d-6d10-11eb-a65a-74e5f963e191 - instance "_61a42d0e-6d10-11eb-a65a-74e5f963e191" removed
+09:58:07 : Performing post import operations...
+
+09:58:09 : Import completed successfully
