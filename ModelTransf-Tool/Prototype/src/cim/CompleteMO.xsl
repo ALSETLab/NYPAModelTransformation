@@ -19,7 +19,8 @@
 	<xsl:key name="voltagelevel" match="cim:VoltageLevel" use="@rdf:ID"/>
 	<xsl:key name="tapchanger" match="cim:RatioTapChanger/cim:RatioTapChanger.TransformerEnd" use="substring(@rdf:resource,2)"/>
 	<xsl:key name="regulator" match="cim:RegulatingControl" use="@rdf:ID"/>
-	<xsl:function name="gkh:transformerName" as="xs:string">
+	
+	<xsl:function name="gkh:compliantName" as="xs:string">
 		<xsl:param name="input" as="xs:string"/>
 			<xsl:choose>
 				<xsl:when test ="matches($input,'^[0-9]{1}[a-zA-Z0-9]')">
@@ -30,6 +31,15 @@
 				</xsl:otherwise>
 			</xsl:choose>
 	</xsl:function>
+	
+	<xsl:template name="gkh:equipmentLookup">
+		<xsl:param name="prefix" as="xs:string"/>
+		<xsl:param name="keyCode" as="xs:string"/>
+					<xsl:if test="key($keyCode,cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
+						<xsl:value-of select="gkh:compliantName(concat($prefix,key($keyCode,cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
+					</xsl:if>
+	</xsl:template>
+	
 	<xsl:function name="gkh:defaultNumbers" as="xs:decimal">
 		<xsl:param name="input" as="xs:decimal?"/>
 		<xsl:param name="default" as="xs:decimal" />
@@ -65,13 +75,13 @@
 		</xsl:text>
 		<xsl:for-each select="cim:BusbarSection">
 			<xsl:text>OpenIPSL.Electrical.Buses.Bus </xsl:text>
-			<xsl:value-of select="gkh:transformerName(cim:IdentifiedObject.name)"/>
+			<xsl:value-of select="gkh:compliantName(cim:IdentifiedObject.name)"/>
 			<xsl:text>;
 			</xsl:text>
 		</xsl:for-each>
 		<xsl:for-each select="cim:LinearShuntCompensator">
 			<xsl:text>OpenIPSL.Electrical.Banks.PSSE.Shunt </xsl:text>
-			<xsl:value-of select="gkh:transformerName(concat('SH-',cim:IdentifiedObject.name,entsoe:IdentifiedObject.shortName))"/>
+			<xsl:value-of select="gkh:compliantName(concat('SH-',cim:IdentifiedObject.name))"/>
 			<xsl:text>(B = </xsl:text>
 			<xsl:value-of select="cim:LinearShuntCompensator.bPerSection"/>
 			<xsl:text>, G = </xsl:text>
@@ -82,7 +92,7 @@
 		</xsl:for-each>
 		<xsl:for-each select="cim:ACLineSegment">
 			<xsl:text>OpenIPSL.Electrical.Branches.PwLine </xsl:text>
-			<xsl:value-of select="gkh:transformerName(concat('PL-',cim:IdentifiedObject.name))"/>
+			<xsl:value-of select="gkh:compliantName(concat('PL-',cim:IdentifiedObject.name))"/>
 			<xsl:text>(R =</xsl:text>
 			<xsl:value-of select="cim:ACLineSegment.r"/>
 			<xsl:text>, X =</xsl:text>
@@ -103,7 +113,7 @@
 		</xsl:for-each>
 		<xsl:for-each select="cim:ConformLoad">
 			<xsl:text>OpenIPSL.Electrical.Loads.PSSE.Load </xsl:text>
-			<xsl:value-of select="gkh:transformerName(concat('CL-',cim:IdentifiedObject.name))"/>
+			<xsl:value-of select="gkh:compliantName(concat('CL-',cim:IdentifiedObject.name))"/>
 			<xsl:text>(angle_0 = 0</xsl:text><!--
 need this-->
 			<xsl:text>, v_0=</xsl:text>
@@ -117,7 +127,7 @@ need this-->
 		</xsl:for-each>
 		<xsl:for-each select="cim:PowerTransformer">
 			<xsl:text>OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer </xsl:text>
-			<xsl:value-of select="gkh:transformerName(concat('XF-',cim:IdentifiedObject.description))"/>
+			<xsl:value-of select="gkh:compliantName(concat('XF_',cim:IdentifiedObject.description))"/>
 			<xsl:text>(CZ = </xsl:text>
 			<xsl:value-of select="gkh:defaultNumbers(pti:PowerTransformer.cz,1.0)"/>
 			<xsl:text>, CW = </xsl:text>
@@ -134,28 +144,33 @@ need this-->
 				<xsl:when test="key('busbar',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))"/>
 				<xsl:otherwise>
 					<xsl:text>connect(</xsl:text>
-					<xsl:value-of select="gkh:transformerName(normalize-space(key('node',cim:Terminal.ConnectivityNode/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
+					<xsl:value-of select="gkh:compliantName(normalize-space(key('node',cim:Terminal.ConnectivityNode/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
 					<xsl:text>.p, </xsl:text>
 					<xsl:if test="key('powertrans',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
-						<xsl:value-of select="gkh:transformerName(concat('XF-',key('powertrans',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.description))"/>
+						<xsl:value-of select="gkh:compliantName(concat('XF_',key('powertrans',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.description))"/>
 					</xsl:if>
-					<xsl:if test="key('acsection',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
-						<xsl:value-of select="gkh:transformerName(concat('PL-',key('acsection',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
-					</xsl:if>
-					<xsl:if test="key('conformload',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
-						<xsl:value-of select="gkh:transformerName(concat('CL-',key('conformload',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
-					</xsl:if>
-					<xsl:if test="key('syncmachine',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
-						<xsl:value-of select="gkh:transformerName(concat('SM',key('syncmachine',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
-					</xsl:if>
-					<xsl:if test="key('nonconformload',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
-						<xsl:value-of select="gkh:transformerName(concat('NL-',key('nonconformload',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
-					</xsl:if>
-					<xsl:if test="key('shunt',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))">
-						<xsl:value-of select="gkh:transformerName(concat('SH-',key('shunt',cim:Terminal.ConductingEquipment/substring(@rdf:resource,2))/cim:IdentifiedObject.name))"/>
-					</xsl:if>
+					<xsl:call-template name="gkh:equipmentLookup">
+						<xsl:with-param name="prefix" select="'PL-'"/>
+						<xsl:with-param name="keyCode" select="'acsection'"/>
+					</xsl:call-template>
+					<xsl:call-template name="gkh:equipmentLookup">
+						<xsl:with-param name="prefix" select="'CL-'"/>
+						<xsl:with-param name="keyCode" select="'conformload'"/>
+					</xsl:call-template>
+					<xsl:call-template name="gkh:equipmentLookup">
+						<xsl:with-param name="prefix" select="'SM-'"/>
+						<xsl:with-param name="keyCode" select="'syncmachine'"/>
+					</xsl:call-template>
+					<xsl:call-template name="gkh:equipmentLookup">
+						<xsl:with-param name="prefix" select="'NL-'"/>
+						<xsl:with-param name="keyCode" select="'nonconformload'"/>
+					</xsl:call-template>
+					<xsl:call-template name="gkh:equipmentLookup">
+						<xsl:with-param name="prefix" select="'SH-'"/>
+						<xsl:with-param name="keyCode" select="'shunt'"/>
+					</xsl:call-template>
 					<xsl:choose>
-						<xsl:when test="cim:IdentifiedObject.name='T1'">
+						<xsl:when test="cim:IdentifiedObject.name='T2'">
 							<xsl:text>.n);</xsl:text>
 						</xsl:when>
 						<xsl:otherwise>

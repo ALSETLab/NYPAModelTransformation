@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- New XSLT document created with EditiX XML Editor (http://www.editix.com) at Sat Jan 16 11:54:55 CST 2021 --><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:err="http://www.w3.org/2005/xqt-errors" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:gkh="https://gkhsoftware.github.io/g#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:pti="http://www.pti-us.com/PTI_CIM-schema-cim16#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xdt="http://www.w3.org/2005/xpath-datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xdt err fn" version="2.0">
 	<xsl:output indent="no" method="text"/>
 	<xsl:variable name="dynamic" select="document('examples\bus-14\ieee14_DY.xml')"/>
-	<xsl:function as="xs:string" name="gkh:transformerName">
-		<xsl:param as="xs:string" name="input"/>
-		<xsl:choose>
-			<xsl:when test="matches($input,'^[0-9]{1}[a-zA-Z0-9]')">
-				<xsl:value-of select="concat('B',replace($input,'[^a-zA-Z0-9]','_'))"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="replace($input,'[^a-zA-Z0-9]','_')"/>
-			</xsl:otherwise>
-		</xsl:choose>
+		
+	<xsl:function name="gkh:compliantName" as="xs:string">
+		<xsl:param name="input" as="xs:string"/>
+			<xsl:value-of select="concat('SM_',replace($input,'[^a-zA-Z0-9]','_'))"/>
 	</xsl:function>
+	
 	<xsl:template match="/rdf:RDF">
 		<xsl:apply-templates select="cim:SynchronousMachine"/>
 	</xsl:template>
 	<xsl:template match="cim:SynchronousMachine">
 		<xsl:variable name="GName">
-			<xsl:text>SM</xsl:text>
-			<xsl:value-of select="gkh:transformerName(cim:IdentifiedObject.name)"/>
+			<xsl:value-of select="gkh:compliantName(cim:IdentifiedObject.name)"/>
 		</xsl:variable>
 		<xsl:text>model </xsl:text>
 		<xsl:copy-of select="$GName"/>
@@ -91,9 +85,9 @@ OpenIPSL.Electrical.Machines.PSSE.</xsl:text>
 		<xsl:copy-of select="$MainName"/>
 		<xsl:text> (Tpd0 = </xsl:text>
 		<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.tpdo"/>
-		<xsl:text>, Tppdo = </xsl:text>
+		<xsl:text>, Tppd0 = </xsl:text>
 		<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.tppdo"/>
-		<xsl:text>, Tppqo = </xsl:text>
+		<xsl:text>, Tppq0 = </xsl:text>
 		<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.tppqo"/>
 		<xsl:text>, Xd = </xsl:text>
 		<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.xDirectSync"/>
@@ -106,7 +100,7 @@ OpenIPSL.Electrical.Machines.PSSE.</xsl:text>
 		<xsl:if test="$GenType='GENROU'">
 			<xsl:text>, Xppq = </xsl:text>
 			<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.xQuadTrans"/>
-			<xsl:text>, Tpqo = </xsl:text>
+			<xsl:text>, Tpq0 = </xsl:text>
 			<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.tpqo"/>
 		</xsl:if>
 		<xsl:text>, D = </xsl:text>
@@ -135,8 +129,8 @@ equation
   connect(</xsl:text>
 		<xsl:copy-of select="$MainName"/>
 		<xsl:text>.p,</xsl:text>
-		<xsl:copy-of select="$MainName" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/>
-		<xsl:text xmlns:xsl="http://www.w3.org/1999/XSL/Transform">.n);
+		<xsl:copy-of select="$MainName"/>
+		<xsl:text xmlns:xsl="http://www.w3.org/1999/XSL/Transform">.p);
 </xsl:text>
 	</xsl:template>
 </xsl:stylesheet>
