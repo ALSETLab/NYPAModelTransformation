@@ -163,7 +163,7 @@ def writeSysMo(sdir,pkg_name,pkg_ordr,networkname,sysdata,system_frequency,syste
 	system_file.write("within System;\n")
 	system_file.write("model %s\n" % (str(networkname)))
 	system_file.write("  inner OpenIPSL.Electrical.SystemBase SysData(S_b = %.0f, fn = %.2f) annotation (Placement(transformation(extent={{-94,80},{-60,100}})));\n" % (float(system_base)*1000000,float(system_frequency)))
-	system_file.write("  inner System.Data.pfdata flowdata (redeclare replaceable record voltages = Data.voltage_data, redeclare replaceable record powers = Data.power_data)  annotation (Placement(transformation(extent={{-88,60},{-68,80}})));\n")
+	system_file.write("  inner System.Data.pfdata flowdata  annotation (Placement(transformation(extent={{-88,60},{-68,80}})));\n")
 	# LISTING BUSES in the modelica file:
 	system_file.write("// -- Buses:\n")
 	if len(buses) != 0:
@@ -285,8 +285,10 @@ def writeDataMo(ddir,pkg_name,pkg_ordr,sysdata):
 	pfdatamo.write("within System.Data;\n")
 	pfdatamo.write("record pfdata \" Translated and calculated power flow data.\"\n")
 	pfdatamo.write("  extends Modelica.Icons.Record;\n")
-	pfdatamo.write("  replaceable record voltages = voltage_data constrainedby voltage_data annotation (choicesAllMatching);\n")
-	pfdatamo.write("  replaceable record powers = power_data constrainedby power_data annotation (choicesAllMatching);\n")
+	pfdatamo.write("  replaceable record Voltages = voltage_data constrainedby voltage_data annotation (choicesAllMatching);\n")
+	pfdatamo.write("  Voltages voltages;\n")
+	pfdatamo.write("  replaceable record Powers = power_data constrainedby power_data annotation (choicesAllMatching);\n")
+	pfdatamo.write("  Powers powers;\n")
 	pfdatamo.write("end pfdata;")
 	pfdatamo.close()
 	# ----- Writing voltage record:
