@@ -1063,9 +1063,9 @@ def connectPss(dyrdata,result,file):
 		# check flag for input:
 		inp_flag = int(stlist.iloc[row,2])
 		if inp_flag == 1: # 1- rotor speed deviation
-			file.write("  connect(machine.SPEED, pss.V_S) annotation (Line(points={{41,7},{46,7},{46,50},{-84,50},{-84,-4},{-72,-4}}, color={0,0,127}));;\n")
+			file.write("  connect(machine.SPEED, pss.V_S) annotation (Line(points={{41,7},{46,7},{46,50},{-84,50},{-84,-4},{-72,-4}}, color={0,0,127}));\n")
 		elif inp_flag == 3: # generator electrical power in machine base power
-			file.write("  connect(machine.PELEC, pss.V_S) annotation (Line(points={{41,3},{54,3},{54,70},{-84,70},{-84,-4},{-71,-4}}, color={0,0,127}));;\n")
+			file.write("  connect(machine.PELEC, pss.V_S) annotation (Line(points={{41,3},{54,3},{54,70},{-84,70},{-84,-4},{-71,-4}}, color={0,0,127}));\n")
 		elif inp_flag == 4: # accelerating power:
 			file.write("  connect(governor.PMECH, getAccPot.u1) annotation (Line(points={{-9,29.8},{10,29.8},{10,14},{-40,14},{-40,22},{-48,22}}, color={0,0,127}));\n")
 			file.write("  connect(getAccPot.u2, machine.PELEC) annotation (Line(points={{-48,34},{-44,34},{-44,70},{54,70},{54,3},{41,3}}, color={0,0,127}));\n")
