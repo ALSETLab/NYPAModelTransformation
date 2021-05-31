@@ -1,6 +1,5 @@
 model ieee14
-		import Modelica.Constants.pi;
-		inner OpenIPSL.Electrical.SystemBase SysData(S_b =100, fn = 60) annotation(Placement(transformation(origin = {-188, 120}, extent = {{-12, -10}, {12, 10}}, rotation = 0), visible = true));
+		inner OpenIPSL.Electrical.SystemBase SysData(S_b =100000000, fn = 60) annotation(Placement(transformation(origin = {-188, 120}, extent = {{-12, -10}, {12, 10}}, rotation = 0), visible = true));
 		OpenIPSL.Electrical.Buses.Bus BUS1;
 			OpenIPSL.Electrical.Buses.Bus BUS2;
 			OpenIPSL.Electrical.Buses.Bus BUS3;
@@ -15,26 +14,26 @@ model ieee14
 			OpenIPSL.Electrical.Buses.Bus BUS12;
 			OpenIPSL.Electrical.Buses.Bus BUS13;
 			OpenIPSL.Electrical.Buses.Bus BUS14;
+			OpenIPSL.Electrical.Branches.PwLine PL_1_2_1(R =0.9226818, X =2.8170837,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_1_5_1(R =2.5723683, X =10.6189344,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_2_3_1(R =2.2371939, X =9.4253517,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_2_4_1(R =2.7666171, X =8.3945952,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_2_5_1(R =2.7113895, X =8.2784268,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_3_4_1(R =3.1903461, X =8.1427383,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_4_5_1(R =0.6355935, X =2.0048571,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_6_11_1(R =18.0879912, X =37.878516,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_6_12_1(R =23.4069804, X =48.7164564,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_6_13_1(R =12.597606, X =24.8086188,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_7_9_1(R =0, X =20.9503044,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_9_10_1(R =6.0578964, X =16.09218,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_9_14_1(R =24.2068284, X =51.4911672,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_10_11_1(R =15.625602, X =36.5778108,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_12_13_1(R =42.0720048, X =38.0651472,G = 0, B =0.0);
+			OpenIPSL.Electrical.Branches.PwLine PL_13_14_1(R =32.5519092, X =66.2769288,G = 0, B =0.0);
 			OpenIPSL.Electrical.Banks.PSSE.Shunt SH_BUS9(B = 0.0009976896, G = 0)
 ;
 			OpenIPSL.Electrical.Banks.PSSE.Shunt SH_BUS14(B = 0.0007879647, G = 0)
 ;
-			OpenIPSL.Electrical.Branches.PwLine PL_1_2_1(R =0.9226818, X =2.8170837, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_1_5_1(R =2.5723683, X =10.6189344, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_2_3_1(R =2.2371939, X =9.4253517, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_2_4_1(R =2.7666171, X =8.3945952, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_2_5_1(R =2.7113895, X =8.2784268, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_3_4_1(R =3.1903461, X =8.1427383, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_4_5_1(R =0.6355935, X =2.0048571, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_6_11_1(R =18.0879912, X =37.878516, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_6_12_1(R =23.4069804, X =48.7164564, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_6_13_1(R =12.597606, X =24.8086188, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_7_9_1(R =0, X =20.9503044, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_9_10_1(R =6.0578964, X =16.09218, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_9_14_1(R =24.2068284, X =51.4911672, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_10_11_1(R =15.625602, X =36.5778108, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_12_13_1(R =42.0720048, X =38.0651472, G = Modelica.Constants.eps, B =0.0);
-			OpenIPSL.Electrical.Branches.PwLine PL_13_14_1(R =32.5519092, X =66.2769288, G = Modelica.Constants.eps, B =0.0);
 			OpenIPSL.Electrical.Loads.PSSE.Load CL_2_1_(angle_0 = 0, v_0=69, P_0 = 21.7, Q_0 = 12.7);
 			OpenIPSL.Electrical.Loads.PSSE.Load CL_3_1_(angle_0 = 0, v_0=69, P_0 = 50, Q_0 = 25);
 			OpenIPSL.Electrical.Loads.PSSE.Load CL_4_1_(angle_0 = 0, v_0=69, P_0 = 47.8, Q_0 = 10);

@@ -68,15 +68,28 @@
 		<xsl:text>model </xsl:text>
 			<xsl:value-of select="gkh:substring-after-last-match(md:FullModel/md:Model.modelingAuthoritySet,'/')"/>
 		<xsl:text>
-		import Modelica.Constants.pi;
 		inner OpenIPSL.Electrical.SystemBase SysData(S_b =</xsl:text>
-		<xsl:value-of select="gkh:defaultNumbers(cim:BasePower/cim:BasePower.basePower,100.0)"/>
+		<xsl:value-of select="gkh:defaultNumbers(cim:BasePower/cim:BasePower.basePower,100000000)"/>
 		<xsl:text>, fn = 60) annotation(Placement(transformation(origin = {-188, 120}, extent = {{-12, -10}, {12, 10}}, rotation = 0), visible = true));
 		</xsl:text>
 		<xsl:for-each select="cim:BusbarSection">
-			<xsl:text>OpenIPSL.Electrical.Buses.Bus </xsl:text>
+<xsl:text>OpenIPSL.Electrical.Buses.Bus </xsl:text>
 			<xsl:value-of select="gkh:compliantName(cim:IdentifiedObject.name)"/>
 			<xsl:text>;
+			</xsl:text>
+		</xsl:for-each>
+		<xsl:for-each select="cim:ACLineSegment">
+			<xsl:text>OpenIPSL.Electrical.Branches.PwLine </xsl:text>
+			<xsl:value-of select="gkh:compliantName(concat('PL-',cim:IdentifiedObject.name))"/>
+			<xsl:text>(R =</xsl:text>
+			<xsl:value-of select="cim:ACLineSegment.r"/>
+			<xsl:text>, X =</xsl:text>
+			<xsl:value-of select="cim:ACLineSegment.x"/>
+			<xsl:text>,G = </xsl:text>
+			<xsl:value-of select="gkh:defaultNumbers(cim:ACLineSegment.gch,0.0)"/>
+			<xsl:text>, B =</xsl:text>
+			<xsl:value-of select="format-number(cim:ACLineSegment.bch,'0.0#')"/>
+			<xsl:text>);
 			</xsl:text>
 		</xsl:for-each>
 		<xsl:for-each select="cim:LinearShuntCompensator">
@@ -88,27 +101,6 @@
 			<xsl:value-of select="cim:LinearShuntCompensator.gPerSection"/>
 			<xsl:text>)
 ;
-			</xsl:text>
-		</xsl:for-each>
-		<xsl:for-each select="cim:ACLineSegment">
-			<xsl:text>OpenIPSL.Electrical.Branches.PwLine </xsl:text>
-			<xsl:value-of select="gkh:compliantName(concat('PL-',cim:IdentifiedObject.name))"/>
-			<xsl:text>(R =</xsl:text>
-			<xsl:value-of select="cim:ACLineSegment.r"/>
-			<xsl:text>, X =</xsl:text>
-			<xsl:value-of select="cim:ACLineSegment.x"/>
-			<xsl:choose>
-				<xsl:when test="cim:ACLineSegment.gch">
-					<xsl:text>,G = </xsl:text>
-					<xsl:value-of select="cim:ACLineSegment.gch"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:text>, G = Modelica.Constants.eps</xsl:text>
-				</xsl:otherwise>
-			</xsl:choose>
-			<xsl:text>, B =</xsl:text>
-			<xsl:value-of select="format-number(cim:ACLineSegment.bch,'0.0#')"/>
-			<xsl:text>);
 			</xsl:text>
 		</xsl:for-each>
 		<xsl:for-each select="cim:ConformLoad">
