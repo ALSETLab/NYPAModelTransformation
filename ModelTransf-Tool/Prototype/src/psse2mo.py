@@ -1083,6 +1083,8 @@ def writeGov(genpdata,index,dyrdata,result,file):
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
+	# ----- List of governors:
+	gov_list = ['IEEEG1']
 	# ----- Extract list of models that match:
 	if model != 'None':
 		tglist = dyrdata[model]
@@ -1192,6 +1194,8 @@ def writeGov(genpdata,index,dyrdata,result,file):
 		file.write("   D_turb = %.4f,\n" % float(tglist.iloc[row,12]))
 		file.write("   q_NL = %.4f)\n" % float(tglist.iloc[row,13]))
 	elif model == 'IEEEG1':
+		# ----- Adding powers:
+		file.write("  Modelica.Blocks.Math.Add add_pwr annotation(Placement(transformation(extent={{-16,20},{4,40}})));\n")
 		# Find P0 in per unit:
 		# ----- Extract Mb:
 		Mb = float(genpdata.iloc[index,9])
@@ -1244,7 +1248,10 @@ def writeGov(genpdata,index,dyrdata,result,file):
 		file.write("   T_3 = %.4f,\n" % float(tglist.iloc[row,7]))
 		file.write("   D_t = %.4f)\n" % float(tglist.iloc[row,8]))
 	# placing turbine governors:
-	file.write("    annotation(Placement(transformation(extent = {{-30, 20}, {-10, 40}})));\n")
+	if model not in gov_list:
+		file.write("    annotation(Placement(transformation(extent = {{-30, 20}, {-10, 40}})));\n")
+	else:
+		file.write("    annotation(Placement(transformation(extent = {{-46, 20}, {-26, 40}})));\n")
 #=========================================================================================      
 # Function: connectGov
 # Authors: marcelofcastro        
@@ -1254,10 +1261,18 @@ def connectGov(dyrdata,result,file):
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
+	# ----- List of governors:
+	gov_list = ['IEEEG1']
 	# ----- Connect TG:
-	file.write("  connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0,0,127}));\n")
-	file.write("  connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points={{41,7},{46,7},{46,50},{-34.805,50},{-34.805,35.396},{-28,35.396},{-28,36}},color = {0,0,127}));\n")
-	file.write("  connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));\n")
+	if model not in gov_list:
+		file.write("  connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0,0,127}));\n")
+		file.write("  connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points={{41,7},{46,7},{46,50},{-34.805,50},{-34.805,35.396},{-28,35.396},{-28,36}},color = {0,0,127}));\n")
+		file.write("  connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));\n")
+	else:
+		file.write("  connect(governor.SPEED_HP, pss.V_S1) annotation (Line(points={{-44,30},{-54,30},{-54,50},{-76,50},{-76,4},{-71,4}}, color={0,0,127}));\n")
+		file.write("  connect(governor.PMECH_HP, add_pwr.u1) annotation (Line(points={{-25,34},{-22,34},{-22,36},{-18,36}}, color={0,0,127}));\n")
+		file.write("  connect(governor.PMECH_LP, add_pwr.u2) annotation (Line(points={{-25,26},{-22,26},{-22,24},{-18,24}}, color={0,0,127}));\n")
+		file.write("  connect(add_pwr.y, machine.PMECH) annotation (Line(points={{5,30},{10,30},{10,5},{18,5}}, color={0,0,127}));\n")
 #=========================================================================================      
 # Function: writeWnd
 # Authors: marcelofcastro        
