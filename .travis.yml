@@ -14,9 +14,9 @@ before_script:
   - ls
   - cd /home/travis/build/ALSETLab/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/
   - ls
-  - cd /home/travis/build/ALSETLab/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenIPSL/
+  #- cd /home/travis/build/ALSETLab/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenIPSL/
   #- ls 
-  - ls 
+  #- ls 
   - cd /home/travis/build/ALSETLab/NYPAModelTransformation/
   - sudo docker pull manuelnvro/dockertraining:1.9
   - sudo docker build -t manuelnvro/dockertraining:1.9 .
