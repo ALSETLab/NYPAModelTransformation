@@ -10,14 +10,14 @@ services: docker
 before_script:
   - pwd
   - ls
-  - cd /home/travis/build/ManuelNvro/DockerTraining/OpenIPSLVerification/
+  - cd /home/travis/build/ManuelNvro/NYPAModelTransformation/OpenIPSLVerification/
   - ls
-  - cd /home/travis/build/ManuelNvro/DockerTraining/OpenIPSLVerification/VerificationRoutines/
+  - cd /home/travis/build/ManuelNvro/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/
   - ls
-  - cd /home/travis/build/ManuelNvro/DockerTraining/OpenIPSLVerification/VerificationRoutines/OpenIPSL/
+  - cd /home/travis/build/ManuelNvro/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenIPSL/
   #- ls 
   - ls 
-  - cd /home/travis/build/ManuelNvro/DockerTraining/
+  - cd /home/travis/build/ManuelNvro/NYPAModelTransformation/
   - sudo docker pull manuelnvro/dockertraining:1.9
   - sudo docker build -t manuelnvro/dockertraining:1.9 .
   
