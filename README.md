@@ -1,3 +1,8 @@
+
+[![Build Status](https://travis-ci.com/ALSETLab/NYPAModelTransformation.svg?token=J4R24XzVypVPe2KCRyTM&branch=master)
+
+
+
 # NYPA Model Transformation
 
 This is the repository for the 'Model Transformation for High Performing Smart Grid Applications' project.
