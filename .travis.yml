@@ -6,11 +6,10 @@ git:
   depth: false
 
 services: docker
-  - name: Docker Login
-  - uses: docker/login-action@v1.9.0
-  - with:
-      username: ${{manuelnvro}}
-      password: ${{49c06f85-2bfa-4ed3-95e5-f693e32efa5a}}
+
+- name: Docker Login
+  uses: docker/login-action@v1.9.0
+
 
 before_script:
   - pwd
