@@ -1,0 +1,123 @@
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_01exo.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_01exo.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_02nls.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_02nls.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_03lsy.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_03lsy.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_04set.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_04set.c
+clang  -Os -fPIC -mfpmath=sse -fno-dollars-in-identifiers     -I"/usr/bin/../include/omc/c" -I. -DOPENMODELICA_XML_FROM_FILE_AT_RUNTIME -DOMC_MODEL_PREFIX=OpenIPSL_Examples_Controls_PSSE_ES_ESAC1A -DOMC_NUM_MIXED_SYSTEMS=0 -DOMC_NUM_LINEAR_SYSTEMS=0 -DOMC_NUM_NONLINEAR_SYSTEMS=5 -DOMC_NDELAY_EXPRESSIONS=0 -DOMC_NVAR_STRING=0  -c -o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_05evt.o OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_05evt.c
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_03lsy.c:2:
+In file included from ./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_model.h:24:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_01exo.c:2:
+In file included from ./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_model.h:24:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+1 error generated.
+1 error generated.
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_03lsy.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_03lsy.o] Error 1
+make: *** Waiting for unfinished jobs....
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_01exo.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_01exo.o] Error 1
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_02nls.c:2:
+In file included from ./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_model.h:24:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_05evt.c:2:
+In file included from ./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_model.h:24:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+1 error generated.
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_05evt.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_05evt.o] Error 1
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A.c:7:
+In file included from ./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_model.h:24:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:2:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:35:11: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if((_y0 == 0.0))
+      ~~~~^~~~~~
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:35:11: note: remove extraneous parentheses around the comparison to silence this warning
+  if((_y0 == 0.0))
+     ~    ^     ~
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:35:11: note: use '=' to turn this equality comparison into an assignment
+  if((_y0 == 0.0))
+          ^~
+          =
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:345:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower(threadData_t *threadData, modelica_real omc_re, modelica_real omc_im)
+^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:347:3: error: use of undeclared identifier 'OpenIPSL_Types_ComplexPower'; did you mean 'omc_OpenIPSL_Types_ComplexPower'?
+  OpenIPSL_Types_ComplexPower tmp1;
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+  omc_OpenIPSL_Types_ComplexPower
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:29: note: 'omc_OpenIPSL_Types_ComplexPower' declared here
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+                            ^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:348:3: error: use of undeclared identifier 'tmp1'
+  tmp1._re = omc_re;
+  ^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:349:3: error: use of undeclared identifier 'tmp1'
+  tmp1._im = omc_im;
+  ^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:350:10: error: use of undeclared identifier 'tmp1'
+  return tmp1;
+         ^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.c:355:26: error: use of undeclared identifier 'OpenIPSL_Types_ComplexPower__desc'
+  return mmc_mk_box3(3, &OpenIPSL_Types_ComplexPower__desc, _re, _im);
+                         ^
+1 warning and 7 errors generated.
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.o' failed
+In file included from make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.o] Error 1
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_04set.c:2:
+In file included from ./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_model.h:24:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+1 error generated.
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_04set.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_04set.o] Error 1
+In file included from OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.c:5:
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:1: error: unknown type name 'OpenIPSL_Types_ComplexPower'
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+^
+1 error generated.
+1 error generated.
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.c:80:3: error: use of undeclared identifier 'OpenIPSL_Types_ComplexPower'; did you mean 'omc_OpenIPSL_Types_ComplexPower'?
+  OpenIPSL_Types_ComplexPower* ths = (OpenIPSL_Types_ComplexPower*)(v_ths);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+  omc_OpenIPSL_Types_ComplexPower
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:169:29: note: 'omc_OpenIPSL_Types_ComplexPower' declared here
+OpenIPSL_Types_ComplexPower omc_OpenIPSL_Types_ComplexPower (threadData_t *threadData, modelica_real omc_re, modelica_real omc_im);
+                            ^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.c:80:32: error: use of undeclared identifier 'ths'
+  OpenIPSL_Types_ComplexPower* ths = (OpenIPSL_Types_ComplexPower*)(v_ths);
+                               ^
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A.o] Error 1
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_02nls.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_02nls.o] Error 1
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.c:80:67: error: expected expression
+  OpenIPSL_Types_ComplexPower* ths = (OpenIPSL_Types_ComplexPower*)(v_ths);
+                                                                  ^
+OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.c:80:39: error: use of undeclared identifier 'OpenIPSL_Types_ComplexPower'; did you mean 'boxptr_OpenIPSL_Types_ComplexPower'?
+  OpenIPSL_Types_ComplexPower* ths = (OpenIPSL_Types_ComplexPower*)(v_ths);
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                      boxptr_OpenIPSL_Types_ComplexPower
+./OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_functions.h:172:19: note: 'boxptr_OpenIPSL_Types_ComplexPower' declared here
+modelica_metatype boxptr_OpenIPSL_Types_ComplexPower(threadData_t *threadData, modelica_metatype _re, modelica_metatype _im);
+                  ^
+5 errors generated.
+<builtin>: recipe for target 'OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.o' failed
+make: *** [OpenIPSL.Examples.Controls.PSSE.ES.ESAC1A_records.o] Error 1

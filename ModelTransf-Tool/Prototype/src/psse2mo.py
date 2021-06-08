@@ -14,6 +14,7 @@ from andes_dyr import * # importing dyr PARSER
 import argparse # importing additional libraries
 import logging # importing additional libraries
 import time, datetime # importing time libraries
+import math
 #=========================================================================================      
 # Function: getRawBase
 # Authors: marcelofcastro        
@@ -191,7 +192,9 @@ def writeSysMo(sdir,pkg_name,pkg_ordr,networkname,sysdata,system_frequency,syste
 	if len(loads) != 0:
 		for ii in range(len(loads)):
 			bn = int(loads.iloc[ii,0])
-			system_file.write("  OpenIPSL.Electrical.Loads.PSSE.Load load%d_bus%d (V_b = flowdata.voltages.BaseVoltage%d, v_0 = flowdata.voltages.V%d, angle_0 = flowdata.voltages.A%d, P_0 = %.4f, Q_0 = %.4f); \n" % ((ii+1),bn,bn,bn,bn,float(loads.iloc[ii,1]),float(loads.iloc[ii,2])))
+			P = float(loads.iloc[ii,1])*1000000
+			Q = float(loads.iloc[ii,2])*1000000
+			system_file.write("  OpenIPSL.Electrical.Loads.PSSE.Load load%d_bus%d (V_b = flowdata.voltages.BaseVoltage%d, v_0 = flowdata.voltages.V%d, angle_0 = flowdata.voltages.A%d, P_0 = %.1f, Q_0 = %.1f, PQBRAK=0.7, characteristic=2); \n" % ((ii+1),bn,bn,bn,bn,P,Q))
 	else:
 		system_file.write("// system has no load\n")
 	# LISTING SHUNT in modelica file:
@@ -298,9 +301,10 @@ def writeDataMo(ddir,pkg_name,pkg_ordr,sysdata):
 	vdatamo.write("  extends Modelica.Icons.Record;\n")
 	for ii in range(len(buses)):
 		vdatamo.write("  //Bus %d - %s \n" % (int(buses.iloc[ii,0]),buses.iloc[ii,1]))
-		vdatamo.write("  parameter Real BaseVoltage%d = %.0f;\n" % (int(buses.iloc[ii,0]),float(buses.iloc[ii,2])*1000))# I need to change the unit here to what's used in OpenIPSL
-		vdatamo.write("  parameter Real V%d = %.4f;\n" % (int(buses.iloc[ii,0]), float(buses.iloc[ii,4])))# I need to change the unit here to what's used in OpenIPSL
-		vdatamo.write("  parameter Real A%d = %.4f;\n" % (int(buses.iloc[ii,0]), float(buses.iloc[ii,5]))) # I need to change the unit here to what's used in OpenIPSL
+		vdatamo.write("  parameter Real BaseVoltage%d = %.0f;\n" % (int(buses.iloc[ii,0]),float(buses.iloc[ii,2])*1000))# base voltage
+		vdatamo.write("  parameter Real V%d = %.4f;\n" % (int(buses.iloc[ii,0]), float(buses.iloc[ii,4])))# voltage in pu
+		angle = float(buses.iloc[ii,5])*math.pi/180 # angle is declared in radians
+		vdatamo.write("  parameter Real A%d = %.4f;\n" % (int(buses.iloc[ii,0]), angle)) # angle in record
 	vdatamo.write("end voltage_data;")
 	# ----- Writing power record:
 	pdatamo = open("power_data.mo","w+")
@@ -309,8 +313,8 @@ def writeDataMo(ddir,pkg_name,pkg_ordr,sysdata):
 	pdatamo.write("  extends Modelica.Icons.Record;\n")
 	for ii in range(len(gens)):
 		pdatamo.write("  //Generator in Bus %d\n" % (int(gens.iloc[ii,0])))
-		pdatamo.write("  parameter Real P%d_%d = %.0f;\n" % ((ii+1),int(gens.iloc[ii,0]), float(gens.iloc[ii,2])*1000000))# I need to change the unit here to what's used in OpenIPSL
-		pdatamo.write("  parameter Real Q%d_%d = %.0f;\n" % ((ii+1),int(gens.iloc[ii,0]), float(gens.iloc[ii,4])*1000000)) # I need to change the unit here to what's used in OpenIPSL
+		pdatamo.write("  parameter Real P%d_%d = %.0f;\n" % ((ii+1),int(gens.iloc[ii,0]), float(gens.iloc[ii,2])*1000000))# P in MW
+		pdatamo.write("  parameter Real Q%d_%d = %.0f;\n" % ((ii+1),int(gens.iloc[ii,0]), float(gens.iloc[ii,4])*1000000)) # Q in Mvar
 	pdatamo.write("end power_data;")
 #=========================================================================================      
 # Function: writeMac
@@ -493,8 +497,8 @@ def writeExc(dyrdata,result,file):
 		file.write("  Modelica.Blocks.Sources.Constant oel(k=0) annotation(Placement(transformation(extent={{-40,-94},{-20,-74}})));\n")
 		file.write("  OpenIPSL.Electrical.Controls.PSSE.ES.ConstantExcitation exciter\n")
 	elif model == 'ESAC1A':
-		file.write("  Modelica.Blocks.Sources.Constant uel(k=0) annotation(Placement(transformation(extent={{-40,-62},{-20,-42}})));\n")
-		file.write("  Modelica.Blocks.Sources.Constant oel(k=0) annotation(Placement(transformation(extent={{-40,-94},{-20,-74}})));\n")
+		file.write("  Modelica.Blocks.Sources.Constant uel(k=-Modelica.Constants.inf) annotation(Placement(transformation(extent={{-40,-62},{-20,-42}})));\n")
+		file.write("  Modelica.Blocks.Sources.Constant oel(k=Modelica.Constants.inf) annotation(Placement(transformation(extent={{-40,-94},{-20,-74}})));\n")
 		file.write("  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC1A exciter(\n")
 		file.write("   T_R = %.4f,\n" % float(eslist.iloc[row,2]))
 		file.write("   T_B = %.4f,\n" % float(eslist.iloc[row,3]))
@@ -516,8 +520,8 @@ def writeExc(dyrdata,result,file):
 		file.write("   V_RMAX = %.4f,\n" % float(eslist.iloc[row,19]))
 		file.write("   V_RMIN = %.4f)\n" % float(eslist.iloc[row,20]))
 	elif model == 'ESAC2A':
-		file.write("  Modelica.Blocks.Sources.Constant uel(k=0) annotation(Placement(transformation(extent={{-40,-62},{-20,-42}})));\n")
-		file.write("  Modelica.Blocks.Sources.Constant oel(k=0) annotation(Placement(transformation(extent={{-40,-94},{-20,-74}})));\n")
+		file.write("  Modelica.Blocks.Sources.Constant uel(k=-Modelica.Constants.inf) annotation(Placement(transformation(extent={{-40,-62},{-20,-42}})));\n")
+		file.write("  Modelica.Blocks.Sources.Constant oel(k=Modelica.Constants.inf) annotation(Placement(transformation(extent={{-40,-94},{-20,-74}})));\n")
 		file.write("  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A exciter(\n")
 		file.write("   T_R = %.4f,\n" % float(eslist.iloc[row,2]))
 		file.write("   T_B = %.4f,\n" % float(eslist.iloc[row,3]))

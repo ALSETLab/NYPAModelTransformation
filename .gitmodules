@@ -1,0 +1,3 @@
+[submodule "OpenIPSL"]
+	path = OpenIPSL
+	url = https://github.com/OpenIPSL/OpenIPSL

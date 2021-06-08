@@ -1,0 +1,46 @@
+language: bash
+python:
+  - "3.7"
+  
+git:
+  depth: false
+
+services: docker
+
+before_script:
+  - pwd
+  - ls
+  - cd /home/travis/build/ALSETLab/NYPAModelTransformation/OpenIPSLVerification/
+  - ls
+  - cd /home/travis/build/ALSETLab/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/
+  - ls
+  #- cd /home/travis/build/ALSETLab/NYPAModelTransformation/OpenIPSLVerification/VerificationRoutines/OpenIPSL/
+  #- ls 
+  #- ls 
+  - cd /home/travis/build/ALSETLab/NYPAModelTransformation/
+  - sudo docker pull manuelnvro/dockertraining:1.9
+  - sudo docker build -t manuelnvro/dockertraining:1.9 .
+  
+  #- pwd
+  #- cd ..
+  #- pwd
+  #- ls
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "pwd"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd .."
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd OpenIPSL/"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd OpenIPSL/"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "pwd"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
+  - sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
+  # copy openipsl from github
+
+
+script:
+#- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
+- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 PythonRunAllOpenModelica.py"
+#- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd LoadVariation; python3.7 LoadVariationRunAllOpenModelica.py"
+#- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd ReferenceStep; python3.7 ReferenceStepExcitersOpenModelica.py"
