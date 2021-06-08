@@ -126,68 +126,85 @@ end ieee14;
 
 package Generators "Library of machine models translated automatically from PSSE CIM using XSLT_OpenIPSL."
 
-	model Gen1_1
+model Gen1_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
 	// Writing machine;
-OpenIPSL.Electrical.Machines.PSSE.GENROU 1_1 (Tpd0 = 4, Tppd0 = 0.032, Tppq0 = 0.06, Xd = 2.11, Xpd = 0.295, Xppd = 0.23, Xq = 2.02, Xppq = 0.505, Tpq0 = 0.55, D = 0, H = 2.05, S10 = 0.083, S12 = 0.419, Xl = 0.16);
+	OpenIPSL.Electrical.Machines.PSSE.GENROU machine(Tpd0 = 4, Tppd0 = 0.032, Tppq0 = 0.06, Xd = 2.11, Xpd = 0.295, Xppd = 0.23, Xq = 2.02, Xppq = 0.505, Tpq0 = 0.55, D = 0, H = 2.05, S10 = 0.083, S12 = 0.419, Xl = 0.16);
+	Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
+	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+
+	OpenIPSL.Electrical.Controls.PSSE.TG.TGOV1 governor(R = 0.10000,T_1 = 0.49000,V_MAX = 1.00000,V_MIN = 0.22700,T_2 = 2.57000,T_3 = 9.00000,D_t = 0.02000)
+	OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 exciter(T_R = 0.00000,K_A = 50.00000,T_A = 0.02000,V_RMAX = 1.00000,V_RMIN = -1.00000,K_E = -0.05700,T_E = 0.54100,K_F = 0.08600,T_F = 1.02000,????????? = 0.00000,E_1 = 3.08200,S_EE_1 = 0.03800,E_2 = 4.10900,S_EE_2 = 0.30000)
 equation
   connect(1_1.PMECH,1_1.PMECH0);
   connect(1_1.EFD,1_1.EFD0);
   connect(1_1.p,1_1.p);
 
-end 1_1;
-			Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
-Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
-	model Gen2_1
+end Gen1_1;
+			
+model Gen2_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
 	// Writing machine;
-OpenIPSL.Electrical.Machines.PSSE.GENROU 2_1 (Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.13, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 6.5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	OpenIPSL.Electrical.Machines.PSSE.GENROU machine(Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.13, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 6.5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
+	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+
+	OpenIPSL.Electrical.Controls.PSSE.TG.TGOV1 governor(R = 0.05000,T_1 = 0.05000,V_MAX = 1.05000,V_MIN = 0.30000,T_2 = 1.00000,T_3 = 2.10000,D_t = 0.00000)
+	OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 exciter(T_R = 0.06000,K_A = 20.00000,T_A = 0.01000,V_RMAX = 5.00000,V_RMIN = -6.00000,K_E = 1.00000,T_E = 0.67000,K_F = 0.10000,T_F = 1.00000,????????? = 0.00000,E_1 = 3.00000,S_EE_1 = 0.09000,E_2 = 4.00000,S_EE_2 = 0.36800)
 equation
   connect(2_1.PMECH,2_1.PMECH0);
   connect(2_1.EFD,2_1.EFD0);
   connect(2_1.p,2_1.p);
 
-end 2_1;
-			Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
-Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
-	model Gen3_1
+end Gen2_1;
+			
+model Gen3_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
 	// Writing machine;
-OpenIPSL.Electrical.Machines.PSSE.GENROU 3_1 (Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.13, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	OpenIPSL.Electrical.Machines.PSSE.GENROU machine(Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.13, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
+	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+
+	OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 exciter(T_R = 0.06000,K_A = 20.00000,T_A = 0.01000,V_RMAX = 5.00000,V_RMIN = -6.00000,K_E = 1.00000,T_E = 0.67000,K_F = 0.10000,T_F = 1.00000,????????? = 0.00000,E_1 = 3.00000,S_EE_1 = 0.09000,E_2 = 4.00000,S_EE_2 = 0.36800)
 equation
   connect(3_1.PMECH,3_1.PMECH0);
   connect(3_1.EFD,3_1.EFD0);
   connect(3_1.p,3_1.p);
 
-end 3_1;
-			Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
-Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
-	model Gen6_1
+end Gen3_1;
+			
+model Gen6_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
 	// Writing machine;
-OpenIPSL.Electrical.Machines.PSSE.GENROU 6_1 (Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.12, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	OpenIPSL.Electrical.Machines.PSSE.GENROU machine(Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.12, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
+	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+
+	OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 exciter(T_R = 0.06000,K_A = 20.00000,T_A = 0.01000,V_RMAX = 5.00000,V_RMIN = -6.00000,K_E = 1.00000,T_E = 0.67000,K_F = 0.10000,T_F = 1.00000,????????? = 0.00000,E_1 = 3.00000,S_EE_1 = 0.09000,E_2 = 4.00000,S_EE_2 = 0.36800)
 equation
   connect(6_1.PMECH,6_1.PMECH0);
   connect(6_1.EFD,6_1.EFD0);
   connect(6_1.p,6_1.p);
 
-end 6_1;
-			Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
-Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
-	model Gen8_1
+end Gen6_1;
+			
+model Gen8_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
 	// Writing machine;
-OpenIPSL.Electrical.Machines.PSSE.GENROU 8_1 (Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.12, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	OpenIPSL.Electrical.Machines.PSSE.GENROU machine(Tpd0 = 6.5, Tppd0 = 0.06, Tppq0 = 0.05, Xd = 1.8, Xpd = 0.6, Xppd = 0.12, Xq = 1.75, Xppq = 0.8, Tpq0 = 0.2, D = 0, H = 5, S10 = 0.09, S12 = 0.38, Xl = 0.15);
+	Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
+	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+
+	OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 exciter(T_R = 0.06000,K_A = 20.00000,T_A = 0.01000,V_RMAX = 5.00000,V_RMIN = -6.00000,K_E = 1.00000,T_E = 0.67000,K_F = 0.10000,T_F = 1.00000,????????? = 0.00000,E_1 = 3.00000,S_EE_1 = 0.09000,E_2 = 4.00000,S_EE_2 = 0.36800)
 equation
   connect(8_1.PMECH,8_1.PMECH0);
   connect(8_1.EFD,8_1.EFD0);
   connect(8_1.p,8_1.p);
 
-end 8_1;
-			Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
-Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+end Gen8_1;
+			

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:err="http://www.w3.org/2005/xqt-errors" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:gkh="https://gkhsoftware.github.io/g#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:pti="http://www.pti-us.com/PTI_CIM-schema-cim16#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xdt="http://www.w3.org/2005/xpath-datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xdt err fn" version="2.0">
 	<xsl:output indent="yes" method="text"/>
+	
+<xsl:variable name="dynamic" select="document('examples\bus-14\ieee14_DY.xml')"/>
+
 	<xsl:key match="cim:ConnectivityNode" name="node" use="@rdf:ID"/>
 	<xsl:key match="cim:BusbarSection" name="busbar" use="@rdf:ID"/>
 	<xsl:key match="cim:Terminal" name="terminal" use="@rdf:ID"/>
@@ -16,8 +19,9 @@
 	<xsl:key match="cim:RatioTapChanger/cim:RatioTapChanger.TransformerEnd" name="tapchanger" use="substring(@rdf:resource,2)"/>
 	<xsl:key match="cim:RegulatingControl" name="regulator" use="@rdf:ID"/>
 	
-	
-<xsl:variable name="dynamic" select="document('examples\bus-14\ieee14_DY.xml')"/>
+<xsl:key match="cim:GovSteam0/cim:TurbineGovernorDynamics.SynchronousMachineDynamics" name="governor" use="substring(@rdf:resource,2)"/>
+<xsl:key match="cim:ExcitationSystemUserDefined/cim:ExcitationSystemDynamics.SynchronousMachineDynamics" name="execsysuser" use="substring(@rdf:resource,2)"/>
+<xsl:key match="cim:ProprietaryParameterDynamics/cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined" name="ppdynamics" use="substring(@rdf:resource,2)"/>
 	
 	<xsl:function as="xs:string" name="gkh:compliantName">
 		<xsl:param as="xs:string" name="input"/>
@@ -56,7 +60,7 @@
 	  <xsl:param as="xs:string?" name="arg"/>
 	  <xsl:param as="xs:string" name="regex"/>
 	
-	  <xsl:sequence select="     replace($arg,concat('^.*',$regex),'')   "/>
+	  <xsl:sequence select="replace($arg,concat('^.*',$regex),'')   "/>
 	
 	</xsl:function>
   	
@@ -262,7 +266,7 @@ end </xsl:text>
 			<xsl:value-of select="gkh:compliantName(cim:IdentifiedObject.name)"/>
 		</xsl:variable>
 <xsl:text>
-	model Gen</xsl:text>
+model Gen</xsl:text>
 <xsl:copy-of select="$GName"/>
 <xsl:text>
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
@@ -272,9 +276,8 @@ end </xsl:text>
 			<xsl:with-param name="code" select="concat('#',@rdf:ID)"/>
 			<xsl:with-param name="GenName" select="$GName"/>
 		</xsl:call-template>
-<xsl:text>Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
-Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));</xsl:text>
 	</xsl:template>
+	
 	<xsl:template name="MakeMachineForCode">
 		<xsl:param name="code"/>
 		<xsl:param name="GenName"/>
@@ -294,7 +297,7 @@ Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(
 			</xsl:otherwise>
 		</xsl:choose>
 		<xsl:text>
-end </xsl:text>
+end Gen</xsl:text>
 <xsl:copy-of select="$GenName"/>
 <xsl:text>;
 			</xsl:text>
@@ -302,9 +305,7 @@ end </xsl:text>
 	<xsl:template match="cim:SynchronousMachineSimplified">
 		<xsl:param name="MainName"/>
 		<xsl:variable name="GenType"/>
-		<xsl:text>OpenIPSL.Electrical.Machines.PSSE.</xsl:text><!--<xsl:if test="cim:SynchronousMachineTimeConstantReactance.rotorType/@rdf:resource='http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator'">-->
-		<xsl:text>GENCLS </xsl:text>
-		<xsl:copy-of select="$MainName"/>
+		<xsl:text>OpenIPSL.Electrical.Machines.PSSE.GENCLS machine</xsl:text>
 		<xsl:text>(H = </xsl:text>
 		<xsl:value-of select="cim:RotatingMachineDynamics.inertia"/>
 		<xsl:text>, D = </xsl:text>
@@ -331,11 +332,9 @@ end </xsl:text>
 			</xsl:if>
 		</xsl:variable>
 		<xsl:text>
-OpenIPSL.Electrical.Machines.PSSE.</xsl:text>
+	OpenIPSL.Electrical.Machines.PSSE.</xsl:text>
 		<xsl:copy-of select="$GenType"/>
-		<xsl:text> </xsl:text>
-		<xsl:copy-of select="$MainName"/>
-		<xsl:text> (Tpd0 = </xsl:text>
+		<xsl:text> machine(Tpd0 = </xsl:text>
 		<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.tpdo"/>
 		<xsl:text>, Tppd0 = </xsl:text>
 		<xsl:value-of select="cim:SynchronousMachineTimeConstantReactance.tppdo"/>
@@ -365,8 +364,17 @@ OpenIPSL.Electrical.Machines.PSSE.</xsl:text>
 		<xsl:value-of select="cim:RotatingMachineDynamics.saturationFactor120"/>
 		<xsl:text>, Xl = </xsl:text>
 		<xsl:value-of select="cim:RotatingMachineDynamics.statorLeakageReactance"/>
-		<xsl:text>);</xsl:text>
-		<xsl:text>
+		<xsl:text>);
+	Modelica.Blocks.Sources.Constant uel(k = 0) annotation(Placement(transformation(extent = {{-40, -62}, {-20, -42}})));
+	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
+</xsl:text>
+	<xsl:if test="key('governor',@rdf:ID)">
+		<xsl:apply-templates select="key('governor',@rdf:ID)"/>
+	</xsl:if>
+	<xsl:if test="key('execsysuser',@rdf:ID)">
+		<xsl:apply-templates select="key('execsysuser',@rdf:ID)"/>
+	</xsl:if>
+<xsl:text>
 equation
   connect(</xsl:text>
 		<xsl:copy-of select="$MainName"/>
@@ -386,4 +394,51 @@ equation
 </xsl:text>
 	</xsl:template>
 	
+	<xsl:template match="cim:GovSteam0/cim:TurbineGovernorDynamics.SynchronousMachineDynamics">
+		<xsl:text>
+	OpenIPSL.Electrical.Controls.PSSE.TG.TGOV1 governor(R = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.r,'0.00000#')"/>
+		<xsl:text>,T_1 = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.t1,'0.00000#')"/>
+		<xsl:text>,V_MAX = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.vmax,'0.00000#')"/>
+		<xsl:text>,V_MIN = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.vmin,'0.00000#')"/>
+		<xsl:text>,T_2 = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.t2,'0.00000#')"/>
+		<xsl:text>,T_3 = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.t3,'0.00000#')"/>
+		<xsl:text>,D_t = </xsl:text>
+<xsl:value-of select="format-number(../cim:GovSteam0.dt,'0.00000#')"/>
+<xsl:text>)</xsl:text>
+	</xsl:template>
+	
+	<xsl:template match="cim:ExcitationSystemUserDefined/cim:ExcitationSystemDynamics.SynchronousMachineDynamics">
+		<xsl:text>
+	OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 exciter(</xsl:text>
+		<xsl:apply-templates select="key('ppdynamics',../@rdf:ID)"/>
+	</xsl:template>
+	
+
+	<xsl:template match="cim:ProprietaryParameterDynamics/cim:ProprietaryParameterDynamics.ExcitationSystemUserDefined">
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='0'"><xsl:text>T_R</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='1'"><xsl:text>K_A</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='2'"><xsl:text>T_A</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='3'"><xsl:text>V_RMAX</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='4'"><xsl:text>V_RMIN</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='5'"><xsl:text>K_E</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='6'"><xsl:text>T_E</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='7'"><xsl:text>K_F</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='8'"><xsl:text>T_F</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='9'"><xsl:text>?????????</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='10'"><xsl:text>E_1</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='11'"><xsl:text>S_EE_1</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='12'"><xsl:text>E_2</xsl:text></xsl:if>
+	<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='13'"><xsl:text>S_EE_2</xsl:text></xsl:if>
+	<xsl:text> = </xsl:text><xsl:value-of select="format-number(../cim:ProprietaryParameterDynamics.floatParameterValue,'0.00000#')"/>
+	<xsl:choose>
+		<xsl:when test="../cim:ProprietaryParameterDynamics.parameterNumber='13'"><xsl:text>)</xsl:text></xsl:when>
+		<xsl:otherwise><xsl:text>,</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	</xsl:template>
 </xsl:stylesheet>
