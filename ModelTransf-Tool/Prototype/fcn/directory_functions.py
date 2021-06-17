@@ -40,7 +40,11 @@ def createDir(userpath):
 	# ----- Getting paths and naming directories:
 	workingdirectory = userpath + "/Translation" # name of main folder
 	systemdirectory = userpath + "/Translation/System" # name of test system folder
-	sysdatadirectory = userpath + "/Translation/System/Data" # name of data folder
+	sysdatadirectory = userpath + "/Translation/System/PF_Data" # name of data folder
+	bdatadirectory = userpath + "/Translation/System/PF_Data/Bus_Data" # name of bus data folder
+	ldatadirectory = userpath + "/Translation/System/PF_Data/Loads_Data" # name of load data folder
+	mdatadirectory = userpath + "/Translation/System/PF_Data/Machines_Data" # name of machines data folder
+	tdatadirectory = userpath + "/Translation/System/PF_Data/Trafos_Data" # name of trafos data folder
 	sysgensdirectory = userpath + "/Translation/System/Generators" # name of plant data folder
 	# ----- Creation of working directory called Translation:
 	try:
@@ -59,12 +63,45 @@ def createDir(userpath):
 		errmessage = "Creation of the directory %s failed" % systemdirectory
 		tkMessageBox.showinfo("Error in creating directory", errmessage)
 	# ----- Creation of systems data directory:
+	# Main folder:
 	try:
 		if os.path.exists(sysdatadirectory):
 			shutil.rmtree(sysdatadirectory)
 		os.mkdir(sysdatadirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % sysdatadirectory
+		tkMessageBox.showinfo("Error in creating directory", errmessage)
+	# Bus Data folder:
+	try:
+		if os.path.exists(bdatadirectory):
+			shutil.rmtree(bdatadirectory)
+		os.mkdir(bdatadirectory)
+	except OSError:
+		errmessage = "Creation of the directory %s failed" % bdatadirectory
+		tkMessageBox.showinfo("Error in creating directory", errmessage)
+	# Load Data folder:
+	try:
+		if os.path.exists(ldatadirectory):
+			shutil.rmtree(ldatadirectory)
+		os.mkdir(ldatadirectory)
+	except OSError:
+		errmessage = "Creation of the directory %s failed" % ldatadirectory
+		tkMessageBox.showinfo("Error in creating directory", errmessage)
+	# Machines Data folder:
+	try:
+		if os.path.exists(mdatadirectory):
+			shutil.rmtree(mdatadirectory)
+		os.mkdir(mdatadirectory)
+	except OSError:
+		errmessage = "Creation of the directory %s failed" % mdatadirectory
+		tkMessageBox.showinfo("Error in creating directory", errmessage)
+	# Transformer Data folder:
+	try:
+		if os.path.exists(tdatadirectory):
+			shutil.rmtree(tdatadirectory)
+		os.mkdir(tdatadirectory)
+	except OSError:
+		errmessage = "Creation of the directory %s failed" % tdatadirectory
 		tkMessageBox.showinfo("Error in creating directory", errmessage)
 	# ----- Creation of systems generators directory:
 	try:

@@ -26,8 +26,8 @@ def format_gen(df):
 	#print('Formatting gen {}'.format(len(df)))
 	df.index = 'gen'+df['I'].astype(str) + '_' +df['ID'].str.replace(' ','').str.replace("'",'')
 	df['ID'] = df['ID'].str.replace(' ','').str.replace("'",'')
-	df = df.rename(index=str,columns={'I':'bus','PT':'p_max','PG':'p_gen','PB':'p_min','QG':'q_gen','QT':'q_max','QB':'q_min','STAT':'status','ID':'circuit','MBASE':'mbase'})
-	return df[['bus','p_max','p_gen','p_min','q_gen','q_max','q_min','status','circuit','mbase']]
+	df = df.rename(index=str,columns={'I':'bus','PT':'p_max','PG':'p_gen','PB':'p_min','QG':'q_gen','QT':'q_max','QB':'q_min','STAT':'status','ID':'circuit','MBASE':'mbase','ZR':'ra','ZX':'xd'})
+	return df[['bus','p_max','p_gen','p_min','q_gen','q_max','q_min','status','circuit','mbase','ra','xd']]
 
 def format_area(df):
 	#print('Formatting area {}'.format(len(df)))

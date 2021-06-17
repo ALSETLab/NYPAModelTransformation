@@ -38,10 +38,7 @@ def donothing():
     filewin = Toplevel(root)
     button = Button(filewin, text="Do nothing button")
     button.pack()
-def debug():
-    print(srcdir)
-    print(auxdir)
-def frompsse(rawfile,dyrfile,encode_flag,userpath):
+def frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo):
     # ----- RAW file reader:
     #rawfile = directory_functions.askRawfile() 
     start_readraw = time.time() # initial time for raw.
@@ -57,18 +54,18 @@ def frompsse(rawfile,dyrfile,encode_flag,userpath):
     # ----- Translation to Modelica:
     start_trans = time.time() # initial time.
     [wdir,sdir,ddir,gdir] = directory_functions.createDir(userpath) # creates folders for placement of results   
-    psse2mo.writeMo(wdir,sdir,ddir,gdir,system_base,system_frequency,sysdata,dyrdata) # writes models
+    psse2mo.writeMo(wdir,sdir,ddir,gdir,system_base,system_frequency,sysdata,dyrdata,fault_flag,faultinfo) # writes models
     time_trans = time.time()- start_trans # calculate execution time
     # ----- Updating parameters and writing log:
     total_time = time_trans + time_readraw + time_readdyr
     times = [time_readraw,time_readdyr,time_trans,total_time]
-    psse2mo.writeLog(wdir,system_base,system_frequency,psse_version,sysdata,dyrdata,times) 
+    psse2mo.writeLog(wdir,system_base,system_frequency,psse_version,sysdata,dyrdata,times,fault_flag,faultinfo) 
     # ----- Message for confirming data is correct:
     message = " PSS(R)E version: %.0f.\n System power base: %.1f MVA.\n System frequency: %.0f Hz." % (psse_version,system_base,system_frequency)
     tkMessageBox.showinfo("PSSE File Translated", message) # displays psse version, base power and system frequency
 def menu_from_psse():
 	# ----- Create widget window:
-	window = Tk()
+	window = Toplevel()
 	window.title("Translation Settings")
 	window.geometry('900x250')
 	# ----- Raw file path:
@@ -94,12 +91,11 @@ def menu_from_psse():
 	# ----- Configure RAW:
 	config = Label(window, text=".RAW interpreter:")
 	config.grid(column=0, row=2)
-	selected = IntVar()
-	rad1 = Radiobutton(window,text='utf-8', value=0, variable=selected)
-	rad2 = Radiobutton(window,text='latin1', value=1, variable=selected)
-	rad1.grid(column=1, row=2)
-	rad2.grid(column=1, row=3)
-	interp = selected.get()
+	var = IntVar()
+	def printvar():
+		var.get()
+	rad1 = Radiobutton(window, text='utf-8', variable=var, value=0, command=printvar).grid(column=1, row=2)
+	rad2 = Radiobutton(window, text='latin1', variable=var, value=1, command=printvar).grid(column=1, row=3)
 	# ----- Translation destination:
 	trn = Label(window, text="Translation dir:")
 	trn.grid(column=0, row=4)
@@ -110,12 +106,83 @@ def menu_from_psse():
 	    txt3.insert (0,userpath)
 	btn3 = Button(window, text="Find", command=usrpath)
 	btn3.grid(column=2, row=4)
+	# ----- Add event to system:
+	addevent = Label(window, text="Add fault event:")
+	addevent.grid(column=0,row=5)
+	fault_flag = IntVar()
+	busn = IntVar()
+	r = DoubleVar()
+	x = DoubleVar()
+	te = DoubleVar()
+	ts = DoubleVar()
+	fault_info = []
+	def add_fault():
+		if fault_flag.get() == 1:
+			fault_window = Toplevel(window)
+			fault_window.title("Fault Event Settings")
+			fault_window.geometry('300x200')
+			# ----- Bus number:
+			FaultBus = Label(fault_window, text="Fault bus number:")
+			FaultBus.grid(column=0, row=0)
+			BusNmbrTxt = Entry(fault_window,width=15)
+			BusNmbrTxt.grid(column=1, row=0)
+			# ----- R and X:
+			FaultR = Label(fault_window, text="R (pu, system's base):")
+			FaultR.grid(column=0, row=1)
+			FaultRTxt = Entry(fault_window,width=15)
+			FaultRTxt.grid(column=1, row=1)
+			FaultX = Label(fault_window, text="X (pu, system's base):")
+			FaultX.grid(column=0, row=2)
+			FaultXTxt = Entry(fault_window,width=15)
+			FaultXTxt.grid(column=1, row=2)
+			# ----- initial and end times:
+			FaultTs = Label(fault_window, text="Fault time (s):")
+			FaultTs.grid(column=0, row=3)
+			FaultTsTxt = Entry(fault_window,width=15)
+			FaultTsTxt.grid(column=1, row=3)
+			FaultTe = Label(fault_window, text="Clearing time (s):")
+			FaultTe.grid(column=0, row=4)
+			FaultTeTxt = Entry(fault_window,width=15)
+			FaultTeTxt.grid(column=1, row=4)
+			# ----- assembling array:
+			def getFaultInfo():
+				# ----- get data:
+				try:
+					busn.set(int(BusNmbrTxt.get()))
+				except:
+					print('Invalid input. Please enter an integer as a bus number.')
+				try:
+					r.set(float(FaultRTxt.get()))
+					x.set(float(FaultXTxt.get()))
+				except:
+					print('Invalid input. Please enter R and X as real numbers.')
+				try:
+					ts.set(float(FaultTsTxt.get()))
+					te.set(float(FaultTeTxt.get()))
+				except:
+					print('Invalid input. Please enter time instants as real numbers.')
+				# ----- create data vector
+				fault_window.destroy()
+			# ----- closing window button:
+			closebtn = Button(fault_window, text="Add Event", command=getFaultInfo)
+			closebtn.grid(column=1,row=5)
+		else:
+			# ----- Set zero to every value:
+			busn.set(0)
+			r.set(0)
+			x.set(0)
+			ts.set(0)
+			te.set(0)
+	# ----- buttons
+	opt1 = Radiobutton(window, text='yes', variable=fault_flag, value=1, command=add_fault).grid(column=1, row=5)
+	opt2 = Radiobutton(window, text='no', variable=fault_flag, value=0, command=add_fault).grid(column=1, row=6)
 	# ----- Translation start button:
 	def startTranslation():
-		frompsse(txt1.get(),txt2.get(),interp,txt3.get())
+		fault_info = [int(busn.get()),float(r.get()),float(x.get()),float(ts.get()),float(te.get())]
+		frompsse(txt1.get(),txt2.get(),var.get(),txt3.get(),fault_flag.get(),fault_info)
 		window.destroy()
 	strtbtn = Button(window, text="Start Translation", command=startTranslation)
-	strtbtn.grid(column=1, row=5)
+	strtbtn.grid(column=1, row=7)
     
 #==================================================================================
 # Code Part: Graphical User Interface   
@@ -156,7 +223,6 @@ compmenu.add_command(label="Compare folders of files",command = donothing)
 filemenu.add_separator()
 filemenu.add_command(label="Exit", command=root.quit)
 helpmenu = Menu(menubar, tearoff=0)
-helpmenu.add_command(label="Debug Function", command=debug)
 helpmenu.add_command(label="Help Index", command=donothing)
 helpmenu.add_command(label="About...", command=donothing)
 menubar.add_cascade(label="Help", menu=helpmenu)
