@@ -69,7 +69,7 @@
 <xsl:text>package CimSystem "System automattically translated from PSSE CIM using XSLT_OpenIPSL."
 	model </xsl:text>
 			<xsl:value-of select="gkh:substring-after-last-match(md:FullModel/md:Model.modelingAuthoritySet,'/')"/>
-		<xsl:text>
+		parameter Real m(quantity="Mass", unit="kg") "Mass";<xsl:text>
 		inner OpenIPSL.Electrical.SystemBase SysData(S_b =</xsl:text>
 		<xsl:value-of select="gkh:defaultNumbers(cim:BasePower/cim:BasePower.basePower,100000000)"/>
 		<xsl:text>, fn = 50.00) annotation(Placement(transformation(extent = {{-94, 80}, {-60, 100}})));

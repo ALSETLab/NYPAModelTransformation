@@ -1,5 +1,6 @@
 package CimSystem "System automattically translated from PSSE CIM using XSLT_OpenIPSL."
 	model ieee14
+		parameter Real m(quantity="Mass", unit="kg") "Mass";
 		inner OpenIPSL.Electrical.SystemBase SysData(S_b =100000000, fn = 50.00) annotation(Placement(transformation(extent = {{-94, 80}, {-60, 100}})));
 		inner System.Data.pfdata flowdata annotation(Placement(transformation(extent = {{-88, 60}, {-68, 80}})));
 // -- Buses:

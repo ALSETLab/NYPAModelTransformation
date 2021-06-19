@@ -19,11 +19,38 @@
 <param name="xslt.openFile" value="false"/>
 </file>
 <file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\CompleteMO_old.xsl" type="XSLT"/>
-<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\OneMO.xsl" type="XSLT"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\OneMO.xsl" type="XSLT2">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\OneMO.xsl"/>
+<param name="xslt.result.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\OneResult.txt"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.openFile" value="false"/>
+</file>
 <file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples" type="XML"/>
-<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_EQ.xml" type="XML"/>
-<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_EQ.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14" type="XML"/>
 <file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\result.txt" type="TEXT">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_DY.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\500-bus\nypa_500_cleaned_DY.xml" type="XML"/>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\500-bus"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\OneResult.txt" type="TEXT">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_SV.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_TP.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\src\cim\examples\bus-14\ieee14_SSH.xml" type="XML">
 <param name="lastView" value="Source"/>
 </file>
 </root>
