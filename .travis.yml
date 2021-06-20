@@ -35,12 +35,12 @@ before_script:
   #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
   #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "pwd"
   #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "ls"
-  - sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
+  #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
   # copy openipsl from github
 
 
 script:
-#- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
-- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 PythonRunAllOpenModelica.py"
+- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
+#- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 PythonRunAllOpenModelica.py"
 #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd LoadVariation; python3.7 LoadVariationRunAllOpenModelica.py"
 #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd ReferenceStep; python3.7 ReferenceStepExcitersOpenModelica.py"
