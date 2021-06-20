@@ -27,6 +27,14 @@ In this website you can find the following:
     <td><a href="./reports">CSV Compare Results</a></td>
   </tr>
   <tr>
+    <td>Tool Description</td>
+    <td><a href="./tool">About the Tool</a></td>
+  </tr>
+  <tr>
+    <td>Tool Guide</td>
+    <td><a href="./guide">Using the Tool</a></td>
+  </tr>
+  <tr>
     <td>About us</td>
     <td><a href="./contact">Contact Info</a></td>
   </tr>

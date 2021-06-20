@@ -5,6 +5,14 @@ title: Model Validation
 
 The validation of models from the  <a href="https://github.com/OpenIPSL/OpenIPSL">OpenIPSL</a> can be found here. The models were validated using simulation results obtained in Dymola and OpenModelica. Base results were produced using PSSE software version 33. 
 
+## Why to Validate Models?
+
+The Model Transformation tool proposed in this project is based upon the underlying concept that the behavior of a model in one tool should be the same behavior observed in the other tool. Since PSSE is used as a source model and Modelica is used as a target model, the results obtained from the Modelica implementation must be compared with the ones obtained from PSSE in order to provide us, users, the confidence that a model translation will, in fact, be able to maintain all the main aspects from the original source model. 
+
+In order to provide that confidence, a model verification is then, absolutely necessary. Hence, small scale test systems were assembled and simulated under different disturbances in order to generate results from individual (or at least the smallest possible set of) components. The results coming from the Modelica implementation of these small test systems are then compared with the results that are obtained with PSSE. In this project, a tool called CSV Compare was used to create this regression tests and verification procedures.
+
+Note that here, the results coming from two Modelica-compliant tools are provided. This is because different tools are available and they can handle differently with difficulties during Model interpretation and compilation. In addition to that, one tool is a proprietary software and, therefore, a license should be purchased, while the other is an open-source alternative. 
+
 ## Dymola Reports
 
 General results for Dymola tests can be found in the table below.
