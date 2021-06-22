@@ -1,0 +1,6296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  fmiVersion="2.0"
+  modelName="CSVGN1_ME"
+  guid="{598f0e41-f9a9-4112-946b-6a175159b7fd}"
+  version="2.0.0-beta.1"
+  generationTool="Dymola Version 2021 (64-bit), 2020-05-13"
+  generationDateAndTime="2021-06-18T02:37:37Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="16">
+  <ModelExchange
+    modelIdentifier="CSVGN1_ME"
+    canGetAndSetFMUstate="true"
+    canSerializeFMUstate="true"
+    providesDirectionalDerivative="true">
+    <SourceFiles>
+      <File
+        name="all.c"/>
+    </SourceFiles>
+  </ModelExchange>
+  <UnitDefinitions>
+    <Unit
+      name="1"/>
+    <Unit
+      name="Hz">
+      <BaseUnit s="-1"/>
+    </Unit>
+    <Unit
+      name="V">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"
+        A="-1"/>
+      <DisplayUnit
+        name="kV"
+        factor="0.001"/>
+    </Unit>
+    <Unit
+      name="VA">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"/>
+    </Unit>
+    <Unit
+      name="W">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"/>
+      <DisplayUnit
+        name="MW"
+        factor="1E-06"/>
+    </Unit>
+    <Unit
+      name="deg">
+      <BaseUnit rad="1"
+        factor="0.017453292519943295"/>
+    </Unit>
+    <Unit
+      name="rad">
+      <BaseUnit rad="1"/>
+      <DisplayUnit
+        name="deg"
+        factor="57.29577951308232"/>
+    </Unit>
+    <Unit
+      name="rad/s">
+      <BaseUnit s="-1"
+        rad="1"/>
+    </Unit>
+    <Unit
+      name="s">
+      <BaseUnit s="1"/>
+    </Unit>
+    <Unit
+      name="s-1">
+      <BaseUnit s="-1"/>
+    </Unit>
+    <Unit
+      name="var">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"/>
+    </Unit>
+  </UnitDefinitions>
+  <TypeDefinitions>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealInput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealOutput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.ActivePower">
+      <Real
+        quantity="Power"
+        unit="W"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Conversions.NonSIunits.Angle_deg">
+      <Real
+        quantity="Angle"
+        unit="deg"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.ReactivePower">
+      <Real
+        quantity="Power"
+        unit="var"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.ActivePower">
+      <Real
+        quantity="Power"
+        unit="W"
+        displayUnit="MW"
+        nominal="100000000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.Angle">
+      <Real
+        quantity="Angle"
+        unit="rad"
+        displayUnit="deg"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.AngularVelocity">
+      <Real
+        quantity="AngularVelocity"
+        unit="rad/s"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.ApparentPower">
+      <Real
+        quantity="Power"
+        unit="VA"
+        nominal="100000000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.Frequency">
+      <Real
+        quantity="Frequency"
+        unit="Hz"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.PerUnit">
+      <Real
+        unit="1"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.ReactivePower">
+      <Real
+        quantity="Power"
+        unit="var"
+        nominal="100000000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.Time">
+      <Real
+        quantity="Time"
+        unit="s"/>
+    </SimpleType>
+    <SimpleType
+      name="OpenIPSL.Types.Voltage">
+      <Real
+        quantity="ElectricPotential"
+        unit="V"
+        displayUnit="kV"
+        nominal="10000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Types.Init">
+      <Enumeration>
+        <Item name="NoInit"
+          value="1"
+          description="No initialization (start values are used as guess values with fixed=false)"/>
+        <Item name="SteadyState"
+          value="2"
+          description="Steady state initialization (derivatives of states are zero)"/>
+        <Item name="InitialState"
+          value="3"
+          description="Initialization with initial states"/>
+        <Item name="InitialOutput"
+          value="4"
+          description="Initialization with initial outputs (and steady state of the states if possible)"/>
+      </Enumeration>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Types.LimiterHomotopy">
+      <Enumeration>
+        <Item name="NoHomotopy"
+          value="1"
+          description="Homotopy is not used"/>
+        <Item name="Linear"
+          value="2"
+          description="Simplified model without limits"/>
+        <Item name="UpperLimit"
+          value="3"
+          description="Simplified model fixed at upper limit"/>
+        <Item name="LowerLimit"
+          value="4"
+          description="Simplified model fixed at lower limit"/>
+      </Enumeration>
+    </SimpleType>
+  </TypeDefinitions>
+  <DefaultExperiment startTime="0.0"
+    stopTime="10.0"
+    tolerance="0.0001"/>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+      name="SysData.S_b"
+      valueReference="100663296"
+      description="System base"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+      name="SysData.fn"
+      valueReference="100663297"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+      name="pwLine.p.vr"
+      valueReference="637534210"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+      name="pwLine.p.vi"
+      valueReference="637534211"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 5 -->
+    <ScalarVariable
+      name="pwLine.p.ir"
+      valueReference="637534212"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 6 -->
+    <ScalarVariable
+      name="pwLine.p.ii"
+      valueReference="637534213"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 7 -->
+    <ScalarVariable
+      name="pwLine.n.vr"
+      valueReference="637534214"
+      description="Real part of the voltage"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.8317883626129"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 8 -->
+    <ScalarVariable
+      name="pwLine.n.vi"
+      valueReference="637534215"
+      description="Imaginary part of the voltage"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.5405360523258377"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 9 -->
+    <ScalarVariable
+      name="pwLine.n.ir"
+      valueReference="637534216"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 10 -->
+    <ScalarVariable
+      name="pwLine.n.ii"
+      valueReference="637534217"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 11 -->
+    <ScalarVariable
+      name="pwLine.R"
+      valueReference="100663306"
+      description="Resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.001"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 12 -->
+    <ScalarVariable
+      name="pwLine.X"
+      valueReference="100663307"
+      description="Reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 13 -->
+    <ScalarVariable
+      name="pwLine.G"
+      valueReference="100663308"
+      description="Shunt half conductance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 14 -->
+    <ScalarVariable
+      name="pwLine.B"
+      valueReference="100663309"
+      description="Shunt half susceptance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 15 -->
+    <ScalarVariable
+      name="pwLine.S_b"
+      valueReference="100663310"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 16 -->
+    <ScalarVariable
+      name="pwLine.t1"
+      valueReference="100663311"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 17 -->
+    <ScalarVariable
+      name="pwLine.t2"
+      valueReference="100663312"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 18 -->
+    <ScalarVariable
+      name="pwLine.opening"
+      valueReference="100663313"
+      variability="constant">
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 19 -->
+    <ScalarVariable
+      name="pwLine.displayPF"
+      valueReference="100663314"
+      description="Display power flow results:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 20 -->
+    <ScalarVariable
+      name="pwLine.P12"
+      valueReference="905969683">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 21 -->
+    <ScalarVariable
+      name="pwLine.P21"
+      valueReference="905969684">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 22 -->
+    <ScalarVariable
+      name="pwLine.Q12"
+      valueReference="905969685">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 23 -->
+    <ScalarVariable
+      name="pwLine.Q21"
+      valueReference="905969686">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 24 -->
+    <ScalarVariable
+      name="pwLine.vs.re"
+      valueReference="637534210"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 25 -->
+    <ScalarVariable
+      name="pwLine.vs.im"
+      valueReference="637534211"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 26 -->
+    <ScalarVariable
+      name="pwLine.is.re"
+      valueReference="637534212"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 27 -->
+    <ScalarVariable
+      name="pwLine.is.im"
+      valueReference="637534213"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 28 -->
+    <ScalarVariable
+      name="pwLine.vr.re"
+      valueReference="637534214"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 29 -->
+    <ScalarVariable
+      name="pwLine.vr.im"
+      valueReference="637534215"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 30 -->
+    <ScalarVariable
+      name="pwLine.ir.re"
+      valueReference="637534216"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 31 -->
+    <ScalarVariable
+      name="pwLine.ir.im"
+      valueReference="637534217"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 32 -->
+    <ScalarVariable
+      name="pwLine.Y.re"
+      valueReference="100663319"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 33 -->
+    <ScalarVariable
+      name="pwLine.Y.im"
+      valueReference="100663320"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 34 -->
+    <ScalarVariable
+      name="pwLine.Z.re"
+      valueReference="100663321"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.001"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 35 -->
+    <ScalarVariable
+      name="pwLine.Z.im"
+      valueReference="100663322"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 36 -->
+    <ScalarVariable
+      name="pwLine3.p.vr"
+      valueReference="637534214"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 37 -->
+    <ScalarVariable
+      name="pwLine3.p.vi"
+      valueReference="637534215"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 38 -->
+    <ScalarVariable
+      name="pwLine3.p.ir"
+      valueReference="637534235"
+      description="Real part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 39 -->
+    <ScalarVariable
+      name="pwLine3.p.ii"
+      valueReference="637534236"
+      description="Imaginary part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 40 -->
+    <ScalarVariable
+      name="pwLine3.n.vr"
+      valueReference="637534237"
+      description="Real part of the voltage"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 41 -->
+    <ScalarVariable
+      name="pwLine3.n.vi"
+      valueReference="637534238"
+      description="Imaginary part of the voltage"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 42 -->
+    <ScalarVariable
+      name="pwLine3.n.ir"
+      valueReference="637534239"
+      description="Real part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 43 -->
+    <ScalarVariable
+      name="pwLine3.n.ii"
+      valueReference="637534240"
+      description="Imaginary part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 44 -->
+    <ScalarVariable
+      name="pwLine3.R"
+      valueReference="100663329"
+      description="Resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 45 -->
+    <ScalarVariable
+      name="pwLine3.X"
+      valueReference="100663330"
+      description="Reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 46 -->
+    <ScalarVariable
+      name="pwLine3.G"
+      valueReference="100663331"
+      description="Shunt half conductance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 47 -->
+    <ScalarVariable
+      name="pwLine3.B"
+      valueReference="100663332"
+      description="Shunt half susceptance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 48 -->
+    <ScalarVariable
+      name="pwLine3.S_b"
+      valueReference="100663333"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 49 -->
+    <ScalarVariable
+      name="pwLine3.t1"
+      valueReference="100663334"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 50 -->
+    <ScalarVariable
+      name="pwLine3.t2"
+      valueReference="100663335"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 51 -->
+    <ScalarVariable
+      name="pwLine3.opening"
+      valueReference="100663336"
+      variability="constant">
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 52 -->
+    <ScalarVariable
+      name="pwLine3.displayPF"
+      valueReference="100663337"
+      description="Display power flow results:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 53 -->
+    <ScalarVariable
+      name="pwLine3.P12"
+      valueReference="905969706">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 54 -->
+    <ScalarVariable
+      name="pwLine3.P21"
+      valueReference="905969707">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 55 -->
+    <ScalarVariable
+      name="pwLine3.Q12"
+      valueReference="905969708">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 56 -->
+    <ScalarVariable
+      name="pwLine3.Q21"
+      valueReference="905969709">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 57 -->
+    <ScalarVariable
+      name="pwLine3.vs.re"
+      valueReference="637534214"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 58 -->
+    <ScalarVariable
+      name="pwLine3.vs.im"
+      valueReference="637534215"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 59 -->
+    <ScalarVariable
+      name="pwLine3.is.re"
+      valueReference="637534235"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 60 -->
+    <ScalarVariable
+      name="pwLine3.is.im"
+      valueReference="637534236"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 61 -->
+    <ScalarVariable
+      name="pwLine3.vr.re"
+      valueReference="637534237"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 62 -->
+    <ScalarVariable
+      name="pwLine3.vr.im"
+      valueReference="637534238"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 63 -->
+    <ScalarVariable
+      name="pwLine3.ir.re"
+      valueReference="637534239"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 64 -->
+    <ScalarVariable
+      name="pwLine3.ir.im"
+      valueReference="637534240"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 65 -->
+    <ScalarVariable
+      name="pwLine3.Y.re"
+      valueReference="100663342"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 66 -->
+    <ScalarVariable
+      name="pwLine3.Y.im"
+      valueReference="100663343"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 67 -->
+    <ScalarVariable
+      name="pwLine3.Z.re"
+      valueReference="100663344"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 68 -->
+    <ScalarVariable
+      name="pwLine3.Z.im"
+      valueReference="100663345"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 69 -->
+    <ScalarVariable
+      name="pwLine4.p.vr"
+      valueReference="637534237"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 70 -->
+    <ScalarVariable
+      name="pwLine4.p.vi"
+      valueReference="637534238"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 71 -->
+    <ScalarVariable
+      name="pwLine4.p.ir"
+      valueReference="637534258"
+      description="Real part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 72 -->
+    <ScalarVariable
+      name="pwLine4.p.ii"
+      valueReference="637534259"
+      description="Imaginary part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 73 -->
+    <ScalarVariable
+      name="pwLine4.n.vr"
+      valueReference="637534260"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 74 -->
+    <ScalarVariable
+      name="pwLine4.n.vi"
+      valueReference="637534261"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 75 -->
+    <ScalarVariable
+      name="pwLine4.n.ir"
+      valueReference="637534262"
+      description="Real part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 76 -->
+    <ScalarVariable
+      name="pwLine4.n.ii"
+      valueReference="637534263"
+      description="Imaginary part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 77 -->
+    <ScalarVariable
+      name="pwLine4.R"
+      valueReference="100663352"
+      description="Resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 78 -->
+    <ScalarVariable
+      name="pwLine4.X"
+      valueReference="100663353"
+      description="Reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 79 -->
+    <ScalarVariable
+      name="pwLine4.G"
+      valueReference="100663354"
+      description="Shunt half conductance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 80 -->
+    <ScalarVariable
+      name="pwLine4.B"
+      valueReference="100663355"
+      description="Shunt half susceptance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 81 -->
+    <ScalarVariable
+      name="pwLine4.S_b"
+      valueReference="100663356"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 82 -->
+    <ScalarVariable
+      name="pwLine4.t1"
+      valueReference="100663357"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 83 -->
+    <ScalarVariable
+      name="pwLine4.t2"
+      valueReference="100663358"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 84 -->
+    <ScalarVariable
+      name="pwLine4.opening"
+      valueReference="100663359"
+      variability="constant">
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 85 -->
+    <ScalarVariable
+      name="pwLine4.displayPF"
+      valueReference="100663360"
+      description="Display power flow results:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 86 -->
+    <ScalarVariable
+      name="pwLine4.P12"
+      valueReference="905969729">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 87 -->
+    <ScalarVariable
+      name="pwLine4.P21"
+      valueReference="905969730">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 88 -->
+    <ScalarVariable
+      name="pwLine4.Q12"
+      valueReference="905969731">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 89 -->
+    <ScalarVariable
+      name="pwLine4.Q21"
+      valueReference="905969732">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 90 -->
+    <ScalarVariable
+      name="pwLine4.vs.re"
+      valueReference="637534237"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 91 -->
+    <ScalarVariable
+      name="pwLine4.vs.im"
+      valueReference="637534238"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 92 -->
+    <ScalarVariable
+      name="pwLine4.is.re"
+      valueReference="637534258"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 93 -->
+    <ScalarVariable
+      name="pwLine4.is.im"
+      valueReference="637534259"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 94 -->
+    <ScalarVariable
+      name="pwLine4.vr.re"
+      valueReference="637534260"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 95 -->
+    <ScalarVariable
+      name="pwLine4.vr.im"
+      valueReference="637534261"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 96 -->
+    <ScalarVariable
+      name="pwLine4.ir.re"
+      valueReference="637534262"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 97 -->
+    <ScalarVariable
+      name="pwLine4.ir.im"
+      valueReference="637534263"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 98 -->
+    <ScalarVariable
+      name="pwLine4.Y.re"
+      valueReference="100663365"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 99 -->
+    <ScalarVariable
+      name="pwLine4.Y.im"
+      valueReference="100663366"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 100 -->
+    <ScalarVariable
+      name="pwLine4.Z.re"
+      valueReference="100663367"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 101 -->
+    <ScalarVariable
+      name="pwLine4.Z.im"
+      valueReference="100663368"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 102 -->
+    <ScalarVariable
+      name="gENCLS.S_b"
+      valueReference="100663369"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 103 -->
+    <ScalarVariable
+      name="gENCLS.enableS_b"
+      valueReference="100663370"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 104 -->
+    <ScalarVariable
+      name="gENCLS.V_b"
+      valueReference="100663371"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 105 -->
+    <ScalarVariable
+      name="gENCLS.enableV_b"
+      valueReference="100663372"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 106 -->
+    <ScalarVariable
+      name="gENCLS.fn"
+      valueReference="100663373"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 107 -->
+    <ScalarVariable
+      name="gENCLS.enablefn"
+      valueReference="100663374"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 108 -->
+    <ScalarVariable
+      name="gENCLS.P_0"
+      valueReference="100663375"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="10017110"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 109 -->
+    <ScalarVariable
+      name="gENCLS.enableP_0"
+      valueReference="100663376"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 110 -->
+    <ScalarVariable
+      name="gENCLS.Q_0"
+      valueReference="100663377"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="8006544"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 111 -->
+    <ScalarVariable
+      name="gENCLS.enableQ_0"
+      valueReference="100663378"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 112 -->
+    <ScalarVariable
+      name="gENCLS.v_0"
+      valueReference="100663379"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 113 -->
+    <ScalarVariable
+      name="gENCLS.enablev_0"
+      valueReference="100663380"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 114 -->
+    <ScalarVariable
+      name="gENCLS.angle_0"
+      valueReference="100663381"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 115 -->
+    <ScalarVariable
+      name="gENCLS.enableangle_0"
+      valueReference="100663382"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 116 -->
+    <ScalarVariable
+      name="gENCLS.displayPF"
+      valueReference="100663383"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 117 -->
+    <ScalarVariable
+      name="gENCLS.enabledisplayPF"
+      valueReference="100663384"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 118 -->
+    <ScalarVariable
+      name="gENCLS.p.vr"
+      valueReference="637534260"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 119 -->
+    <ScalarVariable
+      name="gENCLS.p.vi"
+      valueReference="637534261"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 120 -->
+    <ScalarVariable
+      name="gENCLS.p.ir"
+      valueReference="637534297"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 121 -->
+    <ScalarVariable
+      name="gENCLS.p.ii"
+      valueReference="637534298"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 122 -->
+    <ScalarVariable
+      name="gENCLS.M_b"
+      valueReference="100663387"
+      description="Machine base power rating"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 123 -->
+    <ScalarVariable
+      name="gENCLS.H"
+      valueReference="100663388"
+      description="Inertia constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 124 -->
+    <ScalarVariable
+      name="gENCLS.D"
+      valueReference="100663389"
+      description="Damping coefficient"
+      variability="constant">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 125 -->
+    <ScalarVariable
+      name="gENCLS.R_a"
+      valueReference="100663390"
+      description="Armature resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 126 -->
+    <ScalarVariable
+      name="gENCLS.X_d"
+      valueReference="100663391"
+      description="d-axis transient reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 127 -->
+    <ScalarVariable
+      name="gENCLS.delta"
+      valueReference="33554432"
+      description="Rotor angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 128 -->
+    <ScalarVariable
+      name="der(gENCLS.delta)"
+      valueReference="587202560"
+      description="der(Rotor angle)">
+      <Real
+        unit="rad/s"
+        derivative="127"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 129 -->
+    <ScalarVariable
+      name="gENCLS.omega"
+      valueReference="33554433"
+      description="Rotor speed"
+      initial="exact">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 130 -->
+    <ScalarVariable
+      name="der(gENCLS.omega)"
+      valueReference="587202561"
+      description="der(Rotor speed)">
+      <Real
+        unit="s-1"
+        derivative="129"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 131 -->
+    <ScalarVariable
+      name="gENCLS.V"
+      valueReference="905969760"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 132 -->
+    <ScalarVariable
+      name="gENCLS.anglev"
+      valueReference="905969761"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 133 -->
+    <ScalarVariable
+      name="gENCLS.eq"
+      valueReference="33554434"
+      description="Constant emf behind transient reactance">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 134 -->
+    <ScalarVariable
+      name="der(gENCLS.eq)"
+      valueReference="587202562"
+      description="der(Constant emf behind transient reactance)">
+      <Real
+        unit="s-1"
+        derivative="133"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 135 -->
+    <ScalarVariable
+      name="gENCLS.vd"
+      valueReference="637534306"
+      description="d-axis voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 136 -->
+    <ScalarVariable
+      name="gENCLS.vq"
+      valueReference="637534307"
+      description="q-axis voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 137 -->
+    <ScalarVariable
+      name="gENCLS.id"
+      valueReference="637534308"
+      description="d-axis current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 138 -->
+    <ScalarVariable
+      name="gENCLS.iq"
+      valueReference="637534309"
+      description="q-axis current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 139 -->
+    <ScalarVariable
+      name="gENCLS.P"
+      valueReference="905969766"
+      description="Active power (system base)">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 140 -->
+    <ScalarVariable
+      name="gENCLS.Q"
+      valueReference="905969767"
+      description="Reactive power (system base)">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 141 -->
+    <ScalarVariable
+      name="gENCLS.CoB"
+      valueReference="100663400"
+      description="Change from system to machine base"
+      variability="constant">
+      <Real
+        unit="1"
+        start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 142 -->
+    <ScalarVariable
+      name="gENCLS.p0"
+      valueReference="100663401"
+      description="Initial active power (machine base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1001711"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 143 -->
+    <ScalarVariable
+      name="gENCLS.q0"
+      valueReference="100663402"
+      description="Initial reactive power (machine base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.08006544"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 144 -->
+    <ScalarVariable
+      name="gENCLS.vr0"
+      valueReference="100663403"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 145 -->
+    <ScalarVariable
+      name="gENCLS.vi0"
+      valueReference="100663404"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 146 -->
+    <ScalarVariable
+      name="gENCLS.ir0"
+      valueReference="100663405"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1001711"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 147 -->
+    <ScalarVariable
+      name="gENCLS.ii0"
+      valueReference="100663406"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.08006544"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 148 -->
+    <ScalarVariable
+      name="gENCLS.delta0"
+      valueReference="100663407"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0.01971591142633359"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 149 -->
+    <ScalarVariable
+      name="gENCLS.vd0"
+      valueReference="100663408"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0197146341322988"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 150 -->
+    <ScalarVariable
+      name="gENCLS.vq0"
+      valueReference="100663409"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9998056477141093"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 151 -->
+    <ScalarVariable
+      name="gENCLS.id0"
+      valueReference="100663410"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.08202471568584507"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 152 -->
+    <ScalarVariable
+      name="gENCLS.iq0"
+      valueReference="100663411"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.09857317066149329"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 153 -->
+    <ScalarVariable
+      name="gENCLS.vf0"
+      valueReference="100663412"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.0162105908512784"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 154 -->
+    <ScalarVariable
+      name="constantLoad.S_b"
+      valueReference="100663413"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 155 -->
+    <ScalarVariable
+      name="constantLoad.enableS_b"
+      valueReference="100663414"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 156 -->
+    <ScalarVariable
+      name="constantLoad.V_b"
+      valueReference="100663415"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 157 -->
+    <ScalarVariable
+      name="constantLoad.enableV_b"
+      valueReference="100663416"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 158 -->
+    <ScalarVariable
+      name="constantLoad.fn"
+      valueReference="100663417"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 159 -->
+    <ScalarVariable
+      name="constantLoad.enablefn"
+      valueReference="100663418"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 160 -->
+    <ScalarVariable
+      name="constantLoad.P_0"
+      valueReference="100663419"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="50000000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 161 -->
+    <ScalarVariable
+      name="constantLoad.enableP_0"
+      valueReference="100663420"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 162 -->
+    <ScalarVariable
+      name="constantLoad.Q_0"
+      valueReference="100663421"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="10000000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 163 -->
+    <ScalarVariable
+      name="constantLoad.enableQ_0"
+      valueReference="100663422"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 164 -->
+    <ScalarVariable
+      name="constantLoad.v_0"
+      valueReference="100663423"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9919935"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 165 -->
+    <ScalarVariable
+      name="constantLoad.enablev_0"
+      valueReference="100663424"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 166 -->
+    <ScalarVariable
+      name="constantLoad.angle_0"
+      valueReference="100663425"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="-0.5762684"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 167 -->
+    <ScalarVariable
+      name="constantLoad.enableangle_0"
+      valueReference="100663426"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 168 -->
+    <ScalarVariable
+      name="constantLoad.displayPF"
+      valueReference="100663427"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 169 -->
+    <ScalarVariable
+      name="constantLoad.enabledisplayPF"
+      valueReference="100663428"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 170 -->
+    <ScalarVariable
+      name="constantLoad.S_p.re"
+      valueReference="100663429"
+      description="Real part of complex power (active power)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.ActivePower"
+        displayUnit="MW"
+        nominal="100000000.0"
+        start="50000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 171 -->
+    <ScalarVariable
+      name="constantLoad.S_p.im"
+      valueReference="100663430"
+      description="Imaginary part of complex power (reactive power)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.ReactivePower"
+        nominal="100000000.0"
+        start="10000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 172 -->
+    <ScalarVariable
+      name="constantLoad.S_i.re"
+      valueReference="100663431"
+      description="Real part of complex power (active power)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.ActivePower"
+        displayUnit="MW"
+        nominal="100000000.0"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 173 -->
+    <ScalarVariable
+      name="constantLoad.S_i.im"
+      valueReference="100663432"
+      description="Imaginary part of complex power (reactive power)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.ReactivePower"
+        nominal="100000000.0"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 174 -->
+    <ScalarVariable
+      name="constantLoad.S_y.re"
+      valueReference="100663433"
+      description="Real part of complex power (active power)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.ActivePower"
+        displayUnit="MW"
+        nominal="100000000.0"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 175 -->
+    <ScalarVariable
+      name="constantLoad.S_y.im"
+      valueReference="100663434"
+      description="Imaginary part of complex power (reactive power)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.ReactivePower"
+        nominal="100000000.0"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 176 -->
+    <ScalarVariable
+      name="constantLoad.a.re"
+      valueReference="100663435"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 177 -->
+    <ScalarVariable
+      name="constantLoad.a.im"
+      valueReference="100663436"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 178 -->
+    <ScalarVariable
+      name="constantLoad.b.re"
+      valueReference="100663437"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 179 -->
+    <ScalarVariable
+      name="constantLoad.b.im"
+      valueReference="100663438"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 180 -->
+    <ScalarVariable
+      name="constantLoad.PQBRAK"
+      valueReference="100663439"
+      description="Constant power characteristic threshold"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.7"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 181 -->
+    <ScalarVariable
+      name="constantLoad.characteristic"
+      valueReference="100663440"
+      variability="constant">
+      <Integer start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 182 -->
+    <ScalarVariable
+      name="constantLoad.p.vr"
+      valueReference="637534214"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 183 -->
+    <ScalarVariable
+      name="constantLoad.p.vi"
+      valueReference="637534215"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 184 -->
+    <ScalarVariable
+      name="constantLoad.p.ir"
+      valueReference="637534353"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 185 -->
+    <ScalarVariable
+      name="constantLoad.p.ii"
+      valueReference="637534354"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 186 -->
+    <ScalarVariable
+      name="constantLoad.angle"
+      valueReference="905969811"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 187 -->
+    <ScalarVariable
+      name="constantLoad.v"
+      valueReference="637534356"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 188 -->
+    <ScalarVariable
+      name="constantLoad.P"
+      valueReference="905969813"
+      description="Active power consumption">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 189 -->
+    <ScalarVariable
+      name="constantLoad.Q"
+      valueReference="905969814"
+      description="Reactive power consumption">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 190 -->
+    <ScalarVariable
+      name="constantLoad.p0"
+      valueReference="100663447"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.5"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 191 -->
+    <ScalarVariable
+      name="constantLoad.q0"
+      valueReference="100663448"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 192 -->
+    <ScalarVariable
+      name="constantLoad.vr0"
+      valueReference="100663449"
+      description="Initial real voltage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.8317883626129"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 193 -->
+    <ScalarVariable
+      name="constantLoad.vi0"
+      valueReference="100663450"
+      description="Initial imaginary voltage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.5405360523258377"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 194 -->
+    <ScalarVariable
+      name="constantLoad.ir0"
+      valueReference="100663451"
+      description="Initial real current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.36770506591325436"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 195 -->
+    <ScalarVariable
+      name="constantLoad.ii0"
+      valueReference="100663452"
+      description="Initial imaginary current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.35917531210760545"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 196 -->
+    <ScalarVariable
+      name="constantLoad.S_P.re"
+      valueReference="100663453"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 197 -->
+    <ScalarVariable
+      name="constantLoad.S_P.im"
+      valueReference="100663454"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 198 -->
+    <ScalarVariable
+      name="constantLoad.S_I.re"
+      valueReference="100663455"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.5040355607168797"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 199 -->
+    <ScalarVariable
+      name="constantLoad.S_I.im"
+      valueReference="100663456"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 200 -->
+    <ScalarVariable
+      name="constantLoad.S_Y.re"
+      valueReference="100663457"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 201 -->
+    <ScalarVariable
+      name="constantLoad.S_Y.im"
+      valueReference="100663458"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.10162073858687173"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 202 -->
+    <ScalarVariable
+      name="constantLoad.a2"
+      valueReference="100663459"
+      variability="constant">
+      <Real start="1.502"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 203 -->
+    <ScalarVariable
+      name="constantLoad.b2"
+      valueReference="100663460"
+      variability="constant">
+      <Real start="1.769"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 204 -->
+    <ScalarVariable
+      name="constantLoad.a0"
+      valueReference="100663461"
+      variability="constant">
+      <Real start="0.4881"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 205 -->
+    <ScalarVariable
+      name="constantLoad.a1"
+      valueReference="100663462"
+      variability="constant">
+      <Real start="-0.4999"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 206 -->
+    <ScalarVariable
+      name="constantLoad.b1"
+      valueReference="100663463"
+      variability="constant">
+      <Real start="0.1389"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 207 -->
+    <ScalarVariable
+      name="constantLoad.wp"
+      valueReference="100663464"
+      variability="constant">
+      <Real start="3.964"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 208 -->
+    <ScalarVariable
+      name="constantLoad.kP"
+      valueReference="905969833">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 209 -->
+    <ScalarVariable
+      name="constantLoad.kI"
+      valueReference="637534378">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 210 -->
+    <ScalarVariable
+      name="constantLoad.d_P"
+      valueReference="100663467"
+      description="Active Load Variation"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 211 -->
+    <ScalarVariable
+      name="constantLoad.t1"
+      valueReference="100663468"
+      description="Time of Load Variation"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 212 -->
+    <ScalarVariable
+      name="constantLoad.d_t"
+      valueReference="100663469"
+      description="Time duration of load variation"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 213 -->
+    <ScalarVariable
+      name="constantLoad.PF"
+      valueReference="100663470"
+      description="Ration between active and reactive power; Not Power Factor"
+      variability="constant">
+      <Real
+        unit="1"
+        start="5.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 214 -->
+    <ScalarVariable
+      name="constantLoad.d_Q"
+      valueReference="100663471"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 215 -->
+    <ScalarVariable
+      name="pwFault.p.vr"
+      valueReference="637534237"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 216 -->
+    <ScalarVariable
+      name="pwFault.p.vi"
+      valueReference="637534238"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 217 -->
+    <ScalarVariable
+      name="pwFault.p.ir"
+      valueReference="637534384"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 218 -->
+    <ScalarVariable
+      name="pwFault.p.ii"
+      valueReference="637534385"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 219 -->
+    <ScalarVariable
+      name="pwFault.R"
+      valueReference="100663474"
+      description="Resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 220 -->
+    <ScalarVariable
+      name="pwFault.X"
+      valueReference="100663475"
+      description="Reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 221 -->
+    <ScalarVariable
+      name="pwFault.t1"
+      valueReference="100663476"
+      description="Start time of the fault"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 222 -->
+    <ScalarVariable
+      name="pwFault.t2"
+      valueReference="100663477"
+      description="End time of the fault"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="2.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 223 -->
+    <ScalarVariable
+      name="pwFault.ground"
+      valueReference="100663478"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 224 -->
+    <ScalarVariable
+      name="GEN1.S_b"
+      valueReference="100663479"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 225 -->
+    <ScalarVariable
+      name="GEN1.enableS_b"
+      valueReference="100663480"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 226 -->
+    <ScalarVariable
+      name="GEN1.V_b"
+      valueReference="100663481"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 227 -->
+    <ScalarVariable
+      name="GEN1.enableV_b"
+      valueReference="100663482"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 228 -->
+    <ScalarVariable
+      name="GEN1.fn"
+      valueReference="100663483"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 229 -->
+    <ScalarVariable
+      name="GEN1.enablefn"
+      valueReference="100663484"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 230 -->
+    <ScalarVariable
+      name="GEN1.P_0"
+      valueReference="100663485"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 231 -->
+    <ScalarVariable
+      name="GEN1.enableP_0"
+      valueReference="100663486"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 232 -->
+    <ScalarVariable
+      name="GEN1.Q_0"
+      valueReference="100663487"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 233 -->
+    <ScalarVariable
+      name="GEN1.enableQ_0"
+      valueReference="100663488"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 234 -->
+    <ScalarVariable
+      name="GEN1.v_0"
+      valueReference="100663489"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 235 -->
+    <ScalarVariable
+      name="GEN1.enablev_0"
+      valueReference="100663490"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 236 -->
+    <ScalarVariable
+      name="GEN1.angle_0"
+      valueReference="100663491"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 237 -->
+    <ScalarVariable
+      name="GEN1.enableangle_0"
+      valueReference="100663492"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 238 -->
+    <ScalarVariable
+      name="GEN1.displayPF"
+      valueReference="100663493"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 239 -->
+    <ScalarVariable
+      name="GEN1.enabledisplayPF"
+      valueReference="100663494"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 240 -->
+    <ScalarVariable
+      name="GEN1.p.vr"
+      valueReference="637534210"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 241 -->
+    <ScalarVariable
+      name="GEN1.p.vi"
+      valueReference="637534211"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 242 -->
+    <ScalarVariable
+      name="GEN1.p.ir"
+      valueReference="100663495"
+      description="Real part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 243 -->
+    <ScalarVariable
+      name="GEN1.p.ii"
+      valueReference="100663496"
+      description="Imaginary part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 244 -->
+    <ScalarVariable
+      name="GEN1.V"
+      valueReference="905969865"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 245 -->
+    <ScalarVariable
+      name="GEN1.angle"
+      valueReference="905969866"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 246 -->
+    <ScalarVariable
+      name="GEN1.angleDisplay"
+      valueReference="905969867"
+      description="Angle in degrees for display purposes">
+      <Real
+        declaredType="Modelica.SIunits.Conversions.NonSIunits.Angle_deg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 247 -->
+    <ScalarVariable
+      name="LOAD.S_b"
+      valueReference="100663500"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 248 -->
+    <ScalarVariable
+      name="LOAD.enableS_b"
+      valueReference="100663501"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 249 -->
+    <ScalarVariable
+      name="LOAD.V_b"
+      valueReference="100663502"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 250 -->
+    <ScalarVariable
+      name="LOAD.enableV_b"
+      valueReference="100663503"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 251 -->
+    <ScalarVariable
+      name="LOAD.fn"
+      valueReference="100663504"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 252 -->
+    <ScalarVariable
+      name="LOAD.enablefn"
+      valueReference="100663505"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 253 -->
+    <ScalarVariable
+      name="LOAD.P_0"
+      valueReference="100663506"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 254 -->
+    <ScalarVariable
+      name="LOAD.enableP_0"
+      valueReference="100663507"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 255 -->
+    <ScalarVariable
+      name="LOAD.Q_0"
+      valueReference="100663508"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 256 -->
+    <ScalarVariable
+      name="LOAD.enableQ_0"
+      valueReference="100663509"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 257 -->
+    <ScalarVariable
+      name="LOAD.v_0"
+      valueReference="100663510"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9919935"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 258 -->
+    <ScalarVariable
+      name="LOAD.enablev_0"
+      valueReference="100663511"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 259 -->
+    <ScalarVariable
+      name="LOAD.angle_0"
+      valueReference="100663512"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="-0.5762684"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 260 -->
+    <ScalarVariable
+      name="LOAD.enableangle_0"
+      valueReference="100663513"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 261 -->
+    <ScalarVariable
+      name="LOAD.displayPF"
+      valueReference="100663514"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 262 -->
+    <ScalarVariable
+      name="LOAD.enabledisplayPF"
+      valueReference="100663515"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 263 -->
+    <ScalarVariable
+      name="LOAD.p.vr"
+      valueReference="637534214"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 264 -->
+    <ScalarVariable
+      name="LOAD.p.vi"
+      valueReference="637534215"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 265 -->
+    <ScalarVariable
+      name="LOAD.p.ir"
+      valueReference="100663516"
+      description="Real part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 266 -->
+    <ScalarVariable
+      name="LOAD.p.ii"
+      valueReference="100663517"
+      description="Imaginary part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 267 -->
+    <ScalarVariable
+      name="LOAD.V"
+      valueReference="905969886"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 268 -->
+    <ScalarVariable
+      name="LOAD.angle"
+      valueReference="905969887"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 269 -->
+    <ScalarVariable
+      name="LOAD.angleDisplay"
+      valueReference="905969888"
+      description="Angle in degrees for display purposes">
+      <Real
+        declaredType="Modelica.SIunits.Conversions.NonSIunits.Angle_deg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 270 -->
+    <ScalarVariable
+      name="GEN2.S_b"
+      valueReference="100663521"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 271 -->
+    <ScalarVariable
+      name="GEN2.enableS_b"
+      valueReference="100663522"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 272 -->
+    <ScalarVariable
+      name="GEN2.V_b"
+      valueReference="100663523"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 273 -->
+    <ScalarVariable
+      name="GEN2.enableV_b"
+      valueReference="100663524"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 274 -->
+    <ScalarVariable
+      name="GEN2.fn"
+      valueReference="100663525"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 275 -->
+    <ScalarVariable
+      name="GEN2.enablefn"
+      valueReference="100663526"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 276 -->
+    <ScalarVariable
+      name="GEN2.P_0"
+      valueReference="100663527"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 277 -->
+    <ScalarVariable
+      name="GEN2.enableP_0"
+      valueReference="100663528"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 278 -->
+    <ScalarVariable
+      name="GEN2.Q_0"
+      valueReference="100663529"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 279 -->
+    <ScalarVariable
+      name="GEN2.enableQ_0"
+      valueReference="100663530"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 280 -->
+    <ScalarVariable
+      name="GEN2.v_0"
+      valueReference="100663531"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 281 -->
+    <ScalarVariable
+      name="GEN2.enablev_0"
+      valueReference="100663532"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 282 -->
+    <ScalarVariable
+      name="GEN2.angle_0"
+      valueReference="100663533"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 283 -->
+    <ScalarVariable
+      name="GEN2.enableangle_0"
+      valueReference="100663534"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 284 -->
+    <ScalarVariable
+      name="GEN2.displayPF"
+      valueReference="100663535"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 285 -->
+    <ScalarVariable
+      name="GEN2.enabledisplayPF"
+      valueReference="100663536"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 286 -->
+    <ScalarVariable
+      name="GEN2.p.vr"
+      valueReference="637534260"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 287 -->
+    <ScalarVariable
+      name="GEN2.p.vi"
+      valueReference="637534261"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 288 -->
+    <ScalarVariable
+      name="GEN2.p.ir"
+      valueReference="100663537"
+      description="Real part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 289 -->
+    <ScalarVariable
+      name="GEN2.p.ii"
+      valueReference="100663538"
+      description="Imaginary part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 290 -->
+    <ScalarVariable
+      name="GEN2.V"
+      valueReference="905969907"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 291 -->
+    <ScalarVariable
+      name="GEN2.angle"
+      valueReference="905969908"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 292 -->
+    <ScalarVariable
+      name="GEN2.angleDisplay"
+      valueReference="905969909"
+      description="Angle in degrees for display purposes">
+      <Real
+        declaredType="Modelica.SIunits.Conversions.NonSIunits.Angle_deg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 293 -->
+    <ScalarVariable
+      name="FAULT.S_b"
+      valueReference="100663542"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 294 -->
+    <ScalarVariable
+      name="FAULT.enableS_b"
+      valueReference="100663543"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 295 -->
+    <ScalarVariable
+      name="FAULT.V_b"
+      valueReference="100663544"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 296 -->
+    <ScalarVariable
+      name="FAULT.enableV_b"
+      valueReference="100663545"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 297 -->
+    <ScalarVariable
+      name="FAULT.fn"
+      valueReference="100663546"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 298 -->
+    <ScalarVariable
+      name="FAULT.enablefn"
+      valueReference="100663547"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 299 -->
+    <ScalarVariable
+      name="FAULT.P_0"
+      valueReference="100663548"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 300 -->
+    <ScalarVariable
+      name="FAULT.enableP_0"
+      valueReference="100663549"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 301 -->
+    <ScalarVariable
+      name="FAULT.Q_0"
+      valueReference="100663550"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 302 -->
+    <ScalarVariable
+      name="FAULT.enableQ_0"
+      valueReference="100663551"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 303 -->
+    <ScalarVariable
+      name="FAULT.v_0"
+      valueReference="100663552"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 304 -->
+    <ScalarVariable
+      name="FAULT.enablev_0"
+      valueReference="100663553"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 305 -->
+    <ScalarVariable
+      name="FAULT.angle_0"
+      valueReference="100663554"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 306 -->
+    <ScalarVariable
+      name="FAULT.enableangle_0"
+      valueReference="100663555"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 307 -->
+    <ScalarVariable
+      name="FAULT.displayPF"
+      valueReference="100663556"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 308 -->
+    <ScalarVariable
+      name="FAULT.enabledisplayPF"
+      valueReference="100663557"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 309 -->
+    <ScalarVariable
+      name="FAULT.p.vr"
+      valueReference="637534237"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 310 -->
+    <ScalarVariable
+      name="FAULT.p.vi"
+      valueReference="637534238"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 311 -->
+    <ScalarVariable
+      name="FAULT.p.ir"
+      valueReference="100663558"
+      description="Real part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 312 -->
+    <ScalarVariable
+      name="FAULT.p.ii"
+      valueReference="100663559"
+      description="Imaginary part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 313 -->
+    <ScalarVariable
+      name="FAULT.V"
+      valueReference="905969928"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 314 -->
+    <ScalarVariable
+      name="FAULT.angle"
+      valueReference="905969929"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 315 -->
+    <ScalarVariable
+      name="FAULT.angleDisplay"
+      valueReference="905969930"
+      description="Angle in degrees for display purposes">
+      <Real
+        declaredType="Modelica.SIunits.Conversions.NonSIunits.Angle_deg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 316 -->
+    <ScalarVariable
+      name="pwLine1.p.vr"
+      valueReference="637534214"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 317 -->
+    <ScalarVariable
+      name="pwLine1.p.vi"
+      valueReference="637534215"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 318 -->
+    <ScalarVariable
+      name="pwLine1.p.ir"
+      valueReference="637534475"
+      description="Real part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 319 -->
+    <ScalarVariable
+      name="pwLine1.p.ii"
+      valueReference="637534476"
+      description="Imaginary part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 320 -->
+    <ScalarVariable
+      name="pwLine1.n.vr"
+      valueReference="637534477"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 321 -->
+    <ScalarVariable
+      name="pwLine1.n.vi"
+      valueReference="637534478"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 322 -->
+    <ScalarVariable
+      name="pwLine1.n.ir"
+      valueReference="637534479"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 323 -->
+    <ScalarVariable
+      name="pwLine1.n.ii"
+      valueReference="637534480"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 324 -->
+    <ScalarVariable
+      name="pwLine1.R"
+      valueReference="100663569"
+      description="Resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 325 -->
+    <ScalarVariable
+      name="pwLine1.X"
+      valueReference="100663570"
+      description="Reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 326 -->
+    <ScalarVariable
+      name="pwLine1.G"
+      valueReference="100663571"
+      description="Shunt half conductance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 327 -->
+    <ScalarVariable
+      name="pwLine1.B"
+      valueReference="100663572"
+      description="Shunt half susceptance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 328 -->
+    <ScalarVariable
+      name="pwLine1.S_b"
+      valueReference="100663573"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 329 -->
+    <ScalarVariable
+      name="pwLine1.t1"
+      valueReference="100663574"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 330 -->
+    <ScalarVariable
+      name="pwLine1.t2"
+      valueReference="100663575"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 331 -->
+    <ScalarVariable
+      name="pwLine1.opening"
+      valueReference="100663576"
+      variability="constant">
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 332 -->
+    <ScalarVariable
+      name="pwLine1.displayPF"
+      valueReference="100663577"
+      description="Display power flow results:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 333 -->
+    <ScalarVariable
+      name="pwLine1.P12"
+      valueReference="905969946">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 334 -->
+    <ScalarVariable
+      name="pwLine1.P21"
+      valueReference="905969947">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 335 -->
+    <ScalarVariable
+      name="pwLine1.Q12"
+      valueReference="905969948">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 336 -->
+    <ScalarVariable
+      name="pwLine1.Q21"
+      valueReference="905969949">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 337 -->
+    <ScalarVariable
+      name="pwLine1.vs.re"
+      valueReference="637534214"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 338 -->
+    <ScalarVariable
+      name="pwLine1.vs.im"
+      valueReference="637534215"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 339 -->
+    <ScalarVariable
+      name="pwLine1.is.re"
+      valueReference="637534475"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 340 -->
+    <ScalarVariable
+      name="pwLine1.is.im"
+      valueReference="637534476"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 341 -->
+    <ScalarVariable
+      name="pwLine1.vr.re"
+      valueReference="637534477"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 342 -->
+    <ScalarVariable
+      name="pwLine1.vr.im"
+      valueReference="637534478"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 343 -->
+    <ScalarVariable
+      name="pwLine1.ir.re"
+      valueReference="637534479"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 344 -->
+    <ScalarVariable
+      name="pwLine1.ir.im"
+      valueReference="637534480"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 345 -->
+    <ScalarVariable
+      name="pwLine1.Y.re"
+      valueReference="100663582"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 346 -->
+    <ScalarVariable
+      name="pwLine1.Y.im"
+      valueReference="100663583"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 347 -->
+    <ScalarVariable
+      name="pwLine1.Z.re"
+      valueReference="100663584"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 348 -->
+    <ScalarVariable
+      name="pwLine1.Z.im"
+      valueReference="100663585"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 349 -->
+    <ScalarVariable
+      name="pwLine2.p.vr"
+      valueReference="637534477"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 350 -->
+    <ScalarVariable
+      name="pwLine2.p.vi"
+      valueReference="637534478"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 351 -->
+    <ScalarVariable
+      name="pwLine2.p.ir"
+      valueReference="637534498"
+      description="Real part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 352 -->
+    <ScalarVariable
+      name="pwLine2.p.ii"
+      valueReference="637534499"
+      description="Imaginary part of the current"
+      initial="approx">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 353 -->
+    <ScalarVariable
+      name="pwLine2.n.vr"
+      valueReference="637534260"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 354 -->
+    <ScalarVariable
+      name="pwLine2.n.vi"
+      valueReference="637534261"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 355 -->
+    <ScalarVariable
+      name="pwLine2.n.ir"
+      valueReference="637534500"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 356 -->
+    <ScalarVariable
+      name="pwLine2.n.ii"
+      valueReference="637534501"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 357 -->
+    <ScalarVariable
+      name="pwLine2.R"
+      valueReference="100663590"
+      description="Resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 358 -->
+    <ScalarVariable
+      name="pwLine2.X"
+      valueReference="100663591"
+      description="Reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 359 -->
+    <ScalarVariable
+      name="pwLine2.G"
+      valueReference="100663592"
+      description="Shunt half conductance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 360 -->
+    <ScalarVariable
+      name="pwLine2.B"
+      valueReference="100663593"
+      description="Shunt half susceptance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 361 -->
+    <ScalarVariable
+      name="pwLine2.S_b"
+      valueReference="100663594"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 362 -->
+    <ScalarVariable
+      name="pwLine2.t1"
+      valueReference="100663595"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 363 -->
+    <ScalarVariable
+      name="pwLine2.t2"
+      valueReference="100663596"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 364 -->
+    <ScalarVariable
+      name="pwLine2.opening"
+      valueReference="100663597"
+      variability="constant">
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 365 -->
+    <ScalarVariable
+      name="pwLine2.displayPF"
+      valueReference="100663598"
+      description="Display power flow results:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 366 -->
+    <ScalarVariable
+      name="pwLine2.P12"
+      valueReference="905969967">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 367 -->
+    <ScalarVariable
+      name="pwLine2.P21"
+      valueReference="905969968">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 368 -->
+    <ScalarVariable
+      name="pwLine2.Q12"
+      valueReference="905969969">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 369 -->
+    <ScalarVariable
+      name="pwLine2.Q21"
+      valueReference="905969970">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 370 -->
+    <ScalarVariable
+      name="pwLine2.vs.re"
+      valueReference="637534477"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 371 -->
+    <ScalarVariable
+      name="pwLine2.vs.im"
+      valueReference="637534478"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 372 -->
+    <ScalarVariable
+      name="pwLine2.is.re"
+      valueReference="637534498"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 373 -->
+    <ScalarVariable
+      name="pwLine2.is.im"
+      valueReference="637534499"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 374 -->
+    <ScalarVariable
+      name="pwLine2.vr.re"
+      valueReference="637534260"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 375 -->
+    <ScalarVariable
+      name="pwLine2.vr.im"
+      valueReference="637534261"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 376 -->
+    <ScalarVariable
+      name="pwLine2.ir.re"
+      valueReference="637534500"
+      description="Real part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 377 -->
+    <ScalarVariable
+      name="pwLine2.ir.im"
+      valueReference="637534501"
+      description="Imaginary part of complex number">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 378 -->
+    <ScalarVariable
+      name="pwLine2.Y.re"
+      valueReference="100663603"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 379 -->
+    <ScalarVariable
+      name="pwLine2.Y.im"
+      valueReference="100663604"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 380 -->
+    <ScalarVariable
+      name="pwLine2.Z.re"
+      valueReference="100663605"
+      description="Real part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 381 -->
+    <ScalarVariable
+      name="pwLine2.Z.im"
+      valueReference="100663606"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 382 -->
+    <ScalarVariable
+      name="SHUNT.S_b"
+      valueReference="100663607"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 383 -->
+    <ScalarVariable
+      name="SHUNT.enableS_b"
+      valueReference="100663608"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 384 -->
+    <ScalarVariable
+      name="SHUNT.V_b"
+      valueReference="100663609"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 385 -->
+    <ScalarVariable
+      name="SHUNT.enableV_b"
+      valueReference="100663610"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 386 -->
+    <ScalarVariable
+      name="SHUNT.fn"
+      valueReference="100663611"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 387 -->
+    <ScalarVariable
+      name="SHUNT.enablefn"
+      valueReference="100663612"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 388 -->
+    <ScalarVariable
+      name="SHUNT.P_0"
+      valueReference="100663613"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 389 -->
+    <ScalarVariable
+      name="SHUNT.enableP_0"
+      valueReference="100663614"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 390 -->
+    <ScalarVariable
+      name="SHUNT.Q_0"
+      valueReference="100663615"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 391 -->
+    <ScalarVariable
+      name="SHUNT.enableQ_0"
+      valueReference="100663616"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 392 -->
+    <ScalarVariable
+      name="SHUNT.v_0"
+      valueReference="100663617"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 393 -->
+    <ScalarVariable
+      name="SHUNT.enablev_0"
+      valueReference="100663618"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 394 -->
+    <ScalarVariable
+      name="SHUNT.angle_0"
+      valueReference="100663619"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 395 -->
+    <ScalarVariable
+      name="SHUNT.enableangle_0"
+      valueReference="100663620"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 396 -->
+    <ScalarVariable
+      name="SHUNT.displayPF"
+      valueReference="100663621"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 397 -->
+    <ScalarVariable
+      name="SHUNT.enabledisplayPF"
+      valueReference="100663622"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 398 -->
+    <ScalarVariable
+      name="SHUNT.p.vr"
+      valueReference="637534477"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 399 -->
+    <ScalarVariable
+      name="SHUNT.p.vi"
+      valueReference="637534478"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 400 -->
+    <ScalarVariable
+      name="SHUNT.p.ir"
+      valueReference="100663623"
+      description="Real part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 401 -->
+    <ScalarVariable
+      name="SHUNT.p.ii"
+      valueReference="100663624"
+      description="Imaginary part of the current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 402 -->
+    <ScalarVariable
+      name="SHUNT.V"
+      valueReference="637534537"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 403 -->
+    <ScalarVariable
+      name="SHUNT.angle"
+      valueReference="905969994"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 404 -->
+    <ScalarVariable
+      name="SHUNT.angleDisplay"
+      valueReference="905969995"
+      description="Angle in degrees for display purposes">
+      <Real
+        declaredType="Modelica.SIunits.Conversions.NonSIunits.Angle_deg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 405 -->
+    <ScalarVariable
+      name="gENSAL.S_b"
+      valueReference="100663628"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 406 -->
+    <ScalarVariable
+      name="gENSAL.enableS_b"
+      valueReference="100663629"
+      description="Enable S_b in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 407 -->
+    <ScalarVariable
+      name="gENSAL.V_b"
+      valueReference="100663630"
+      description="Base voltage of the bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Voltage"
+        start="400000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 408 -->
+    <ScalarVariable
+      name="gENSAL.enableV_b"
+      valueReference="100663631"
+      description="Enable V_b in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 409 -->
+    <ScalarVariable
+      name="gENSAL.fn"
+      valueReference="100663632"
+      description="System frequency"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Frequency"
+        start="50.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 410 -->
+    <ScalarVariable
+      name="gENSAL.enablefn"
+      valueReference="100663633"
+      description="Enable fn in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 411 -->
+    <ScalarVariable
+      name="gENSAL.P_0"
+      valueReference="100663634"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="40000000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 412 -->
+    <ScalarVariable
+      name="gENSAL.enableP_0"
+      valueReference="100663635"
+      description="Enable P_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 413 -->
+    <ScalarVariable
+      name="gENSAL.Q_0"
+      valueReference="100663636"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="4402877"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 414 -->
+    <ScalarVariable
+      name="gENSAL.enableQ_0"
+      valueReference="100663637"
+      description="Enable Q_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 415 -->
+    <ScalarVariable
+      name="gENSAL.v_0"
+      valueReference="100663638"
+      description="Initial voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 416 -->
+    <ScalarVariable
+      name="gENSAL.enablev_0"
+      valueReference="100663639"
+      description="Enable v_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 417 -->
+    <ScalarVariable
+      name="gENSAL.angle_0"
+      valueReference="100663640"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="0.070492225331847"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 418 -->
+    <ScalarVariable
+      name="gENSAL.enableangle_0"
+      valueReference="100663641"
+      description="Enable angle_0 in parameter list"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 419 -->
+    <ScalarVariable
+      name="gENSAL.displayPF"
+      valueReference="100663642"
+      description="Display power flow:"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 420 -->
+    <ScalarVariable
+      name="gENSAL.enabledisplayPF"
+      valueReference="100663643"
+      description="Enable displayPF in parameter list"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 421 -->
+    <ScalarVariable
+      name="gENSAL.M_b"
+      valueReference="100663644"
+      description="Machine base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 422 -->
+    <ScalarVariable
+      name="gENSAL.Tpd0"
+      valueReference="100663645"
+      description="d-axis transient open-circuit time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="5"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 423 -->
+    <ScalarVariable
+      name="gENSAL.Tppd0"
+      valueReference="100663646"
+      description="d-axis sub-transient open-circuit time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0.07"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 424 -->
+    <ScalarVariable
+      name="gENSAL.Tppq0"
+      valueReference="100663647"
+      description="q-axis sub-transient open-circuit time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0.09"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 425 -->
+    <ScalarVariable
+      name="gENSAL.H"
+      valueReference="100663648"
+      description="Inertia constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="4.28"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 426 -->
+    <ScalarVariable
+      name="gENSAL.D"
+      valueReference="100663649"
+      description="Speed damping"
+      variability="constant">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 427 -->
+    <ScalarVariable
+      name="gENSAL.Xd"
+      valueReference="100663650"
+      description="d-axis reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.84"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 428 -->
+    <ScalarVariable
+      name="gENSAL.Xq"
+      valueReference="100663651"
+      description="q-axis reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.75"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 429 -->
+    <ScalarVariable
+      name="gENSAL.Xpd"
+      valueReference="100663652"
+      description="d-axis transient reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.41"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 430 -->
+    <ScalarVariable
+      name="gENSAL.Xppd"
+      valueReference="100663653"
+      description="d-axis sub-transient reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 431 -->
+    <ScalarVariable
+      name="gENSAL.Xppq"
+      valueReference="100663654"
+      description="q-axis sub-transient reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 432 -->
+    <ScalarVariable
+      name="gENSAL.Xl"
+      valueReference="100663655"
+      description="leakage reactance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.12"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 433 -->
+    <ScalarVariable
+      name="gENSAL.S10"
+      valueReference="100663656"
+      description="Saturation factor at 1.0 pu"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.11"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 434 -->
+    <ScalarVariable
+      name="gENSAL.S12"
+      valueReference="100663657"
+      description="Saturation factor at 1.2 pu"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.39"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 435 -->
+    <ScalarVariable
+      name="gENSAL.R_a"
+      valueReference="100663658"
+      description="Armature resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 436 -->
+    <ScalarVariable
+      name="gENSAL.w0"
+      valueReference="100663659"
+      description="Initial speed deviation from nominal"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        min="-0.999999999999999"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 437 -->
+    <ScalarVariable
+      name="gENSAL.p.vr"
+      valueReference="637534210"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 438 -->
+    <ScalarVariable
+      name="gENSAL.p.vi"
+      valueReference="637534211"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 439 -->
+    <ScalarVariable
+      name="gENSAL.p.ir"
+      valueReference="637534572"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 440 -->
+    <ScalarVariable
+      name="gENSAL.p.ii"
+      valueReference="637534573"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 441 -->
+    <ScalarVariable
+      name="gENSAL.SPEED"
+      valueReference="33554435"
+      description="Machine speed deviation from nominal [pu]">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 442 -->
+    <ScalarVariable
+      name="gENSAL.PMECH"
+      valueReference="100663662"
+      description="Turbine mechanical power (machine base)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 443 -->
+    <ScalarVariable
+      name="gENSAL.PMECH0"
+      valueReference="100663663"
+      description="Initial value of machine electrical power (machine base)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 444 -->
+    <ScalarVariable
+      name="gENSAL.ETERM"
+      valueReference="905970032"
+      description="Machine terminal voltage [pu]">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 445 -->
+    <ScalarVariable
+      name="gENSAL.EFD"
+      valueReference="100663665"
+      description="Generator main field voltage [pu]"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"
+        start="1.3609227014803216"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 446 -->
+    <ScalarVariable
+      name="gENSAL.EFD0"
+      valueReference="100663666"
+      description="Initial generator main field voltage [pu]"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"
+        start="1.3609227014803216"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 447 -->
+    <ScalarVariable
+      name="gENSAL.PELEC"
+      valueReference="905970035"
+      description="Machine electrical power (machine base)">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 448 -->
+    <ScalarVariable
+      name="gENSAL.ISORCE"
+      valueReference="637534580"
+      description="Machine source current [pu]">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 449 -->
+    <ScalarVariable
+      name="gENSAL.XADIFD"
+      valueReference="637534580"
+      description="Machine field current [pu]">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 450 -->
+    <ScalarVariable
+      name="gENSAL.w"
+      valueReference="33554435"
+      description="Machine speed deviation">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 451 -->
+    <ScalarVariable
+      name="der(gENSAL.w)"
+      valueReference="587202563"
+      description="der(Machine speed deviation)">
+      <Real
+        unit="s-1"
+        derivative="450"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 452 -->
+    <ScalarVariable
+      name="gENSAL.delta"
+      valueReference="33554436"
+      description="Rotor angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 453 -->
+    <ScalarVariable
+      name="der(gENSAL.delta)"
+      valueReference="587202564"
+      description="der(Rotor angle)">
+      <Real
+        unit="rad/s"
+        derivative="452"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 454 -->
+    <ScalarVariable
+      name="gENSAL.Vt"
+      valueReference="905970032"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 455 -->
+    <ScalarVariable
+      name="gENSAL.anglev"
+      valueReference="905970037"
+      description="Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 456 -->
+    <ScalarVariable
+      name="gENSAL.I"
+      valueReference="905970038"
+      description="Terminal current magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 457 -->
+    <ScalarVariable
+      name="gENSAL.anglei"
+      valueReference="905970039"
+      description="Terminal current angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 458 -->
+    <ScalarVariable
+      name="gENSAL.P"
+      valueReference="905970035"
+      description="Active power (system base)">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 459 -->
+    <ScalarVariable
+      name="gENSAL.Q"
+      valueReference="905970040"
+      description="Reactive power (system base)">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 460 -->
+    <ScalarVariable
+      name="gENSAL.Te"
+      valueReference="637534585"
+      description="Electrical torque [pu]">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 461 -->
+    <ScalarVariable
+      name="gENSAL.id"
+      valueReference="637534586"
+      description="d-axis armature current [pu]">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 462 -->
+    <ScalarVariable
+      name="gENSAL.iq"
+      valueReference="637534587"
+      description="q-axis armature current [pu]">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 463 -->
+    <ScalarVariable
+      name="gENSAL.ud"
+      valueReference="637534588"
+      description="d-axis terminal voltage [pu]">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 464 -->
+    <ScalarVariable
+      name="gENSAL.uq"
+      valueReference="637534589"
+      description="q-axis terminal voltage [pu]">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 465 -->
+    <ScalarVariable
+      name="gENSAL.w_b"
+      valueReference="100663678"
+      description="System base speed"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.AngularVelocity"
+        start="314.1592653589793"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 466 -->
+    <ScalarVariable
+      name="gENSAL.CoB"
+      valueReference="100663679"
+      variability="constant">
+      <Real
+        unit="1"
+        start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 467 -->
+    <ScalarVariable
+      name="gENSAL.vr0"
+      valueReference="100663680"
+      description="Real component of initial terminal voltage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9975164517672215"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 468 -->
+    <ScalarVariable
+      name="gENSAL.vi0"
+      valueReference="100663681"
+      description="Imaginary component of initial terminal voltage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.07043385871676049"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 469 -->
+    <ScalarVariable
+      name="gENSAL.ir0"
+      valueReference="100663682"
+      description="Real component of initial armature current (system base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.40210769687254133"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 470 -->
+    <ScalarVariable
+      name="gENSAL.ii0"
+      valueReference="100663683"
+      description="Imaginary component of initial armature current (system base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.015745878939370895"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 471 -->
+    <ScalarVariable
+      name="gENSAL.p0"
+      valueReference="100663684"
+      description="Initial active power generation (machine base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 472 -->
+    <ScalarVariable
+      name="gENSAL.q0"
+      valueReference="100663685"
+      description="Initial reactive power generation (machine base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.04402877"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 473 -->
+    <ScalarVariable
+      name="gENSAL.Epq"
+      valueReference="33554437"
+      description="q-axis voltage behind transient reactance">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 474 -->
+    <ScalarVariable
+      name="der(gENSAL.Epq)"
+      valueReference="587202565"
+      description="der(q-axis voltage behind transient reactance)">
+      <Real
+        unit="s-1"
+        derivative="473"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 475 -->
+    <ScalarVariable
+      name="gENSAL.PSIkd"
+      valueReference="33554438"
+      description="d-axis rotor flux linkage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 476 -->
+    <ScalarVariable
+      name="der(gENSAL.PSIkd)"
+      valueReference="587202566"
+      description="der(d-axis rotor flux linkage)">
+      <Real
+        unit="s-1"
+        derivative="475"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 477 -->
+    <ScalarVariable
+      name="gENSAL.PSIppq"
+      valueReference="33554439"
+      description="q-axis subtransient flux linkage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 478 -->
+    <ScalarVariable
+      name="der(gENSAL.PSIppq)"
+      valueReference="587202567"
+      description="der(q-axis subtransient flux linkage)">
+      <Real
+        unit="s-1"
+        derivative="477"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 479 -->
+    <ScalarVariable
+      name="gENSAL.PSIppd"
+      valueReference="637534598"
+      description="d-axis subtransient flux linkage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 480 -->
+    <ScalarVariable
+      name="gENSAL.PSId"
+      valueReference="637534589"
+      description="d-axis flux linkage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 481 -->
+    <ScalarVariable
+      name="gENSAL.PSIq"
+      valueReference="637534599"
+      description="q-axis flux linkage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 482 -->
+    <ScalarVariable
+      name="gENSAL.XadIfd"
+      valueReference="637534580"
+      description="Machine field current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 483 -->
+    <ScalarVariable
+      name="gENSAL.Zs.re"
+      valueReference="100663688"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 484 -->
+    <ScalarVariable
+      name="gENSAL.Zs.im"
+      valueReference="100663689"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 485 -->
+    <ScalarVariable
+      name="gENSAL.Is.re"
+      valueReference="100663690"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.7542769904563438"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 486 -->
+    <ScalarVariable
+      name="gENSAL.Is.im"
+      valueReference="100663691"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="-5.003328137775478"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 487 -->
+    <ScalarVariable
+      name="gENSAL.PSIpp0.re"
+      valueReference="100663692"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="1.0006656275550956"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 488 -->
+    <ScalarVariable
+      name="gENSAL.PSIpp0.im"
+      valueReference="100663693"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.15085539809126877"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 489 -->
+    <ScalarVariable
+      name="gENSAL.a.re"
+      valueReference="100663694"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 490 -->
+    <ScalarVariable
+      name="gENSAL.a.im"
+      valueReference="100663695"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="1.55"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 491 -->
+    <ScalarVariable
+      name="gENSAL.Epqp.re"
+      valueReference="100663696"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="1.0250717399111204"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 492 -->
+    <ScalarVariable
+      name="gENSAL.Epqp.im"
+      valueReference="100663697"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.7741223282437079"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 493 -->
+    <ScalarVariable
+      name="gENSAL.delta0"
+      valueReference="100663698"
+      description="rotor angle in radians"
+      variability="constant">
+      <Real
+        unit="rad"
+        start="0.6468134490847058"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 494 -->
+    <ScalarVariable
+      name="gENSAL.VT.re"
+      valueReference="100663699"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.9975164517672215"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 495 -->
+    <ScalarVariable
+      name="gENSAL.VT.im"
+      valueReference="100663700"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.07043385871676049"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 496 -->
+    <ScalarVariable
+      name="gENSAL.S.re"
+      valueReference="100663701"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 497 -->
+    <ScalarVariable
+      name="gENSAL.S.im"
+      valueReference="100663702"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.04402877"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 498 -->
+    <ScalarVariable
+      name="gENSAL.It.re"
+      valueReference="100663703"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.40210769687254133"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 499 -->
+    <ScalarVariable
+      name="gENSAL.It.im"
+      valueReference="100663704"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="-0.015745878939370895"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 500 -->
+    <ScalarVariable
+      name="gENSAL.DQ_dq.re"
+      valueReference="100663705"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.7980082108240418"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 501 -->
+    <ScalarVariable
+      name="gENSAL.DQ_dq.im"
+      valueReference="100663706"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="-0.6026465759111318"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 502 -->
+    <ScalarVariable
+      name="gENSAL.I_dq.re"
+      valueReference="100663707"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.3113960437123098"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 503 -->
+    <ScalarVariable
+      name="gENSAL.I_dq.im"
+      valueReference="100663708"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="0.2548941673480077"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 504 -->
+    <ScalarVariable
+      name="gENSAL.iq0"
+      valueReference="100663709"
+      description="q-axis component of initial current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.3113960437123098"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 505 -->
+    <ScalarVariable
+      name="gENSAL.id0"
+      valueReference="100663710"
+      description="d-axis component of initial current"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.2548941673480077"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 506 -->
+    <ScalarVariable
+      name="gENSAL.ud0"
+      valueReference="100663711"
+      description="d-axis component of initial voltage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.5449430764965424"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 507 -->
+    <ScalarVariable
+      name="gENSAL.uq0"
+      valueReference="100663712"
+      description="q-axis component of initial voltage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.8384730427261712"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 508 -->
+    <ScalarVariable
+      name="gENSAL.PSIpp0_dq.re"
+      valueReference="100663713"
+      description="Real part of complex number"
+      variability="constant">
+      <Real start="0.8894518761957726"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 509 -->
+    <ScalarVariable
+      name="gENSAL.PSIpp0_dq.im"
+      valueReference="100663714"
+      description="Imaginary part of complex number"
+      variability="constant">
+      <Real start="-0.48266386775408027"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 510 -->
+    <ScalarVariable
+      name="gENSAL.PSIppq0"
+      valueReference="100663715"
+      description="q-axis component of the sub-transient flux linkage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.48266386775408027"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 511 -->
+    <ScalarVariable
+      name="gENSAL.PSIppd0"
+      valueReference="100663716"
+      description="d-axis component of the sub-transient flux linkage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.8894518761957726"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 512 -->
+    <ScalarVariable
+      name="gENSAL.PSIkd0"
+      valueReference="100663717"
+      description="d-axis initial rotor flux linkage"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.869060342807932"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 513 -->
+    <ScalarVariable
+      name="gENSAL.PSId0"
+      valueReference="100663718"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.8384730427261711"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 514 -->
+    <ScalarVariable
+      name="gENSAL.PSIq0"
+      valueReference="100663719"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.5449430764965422"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 515 -->
+    <ScalarVariable
+      name="gENSAL.Epq0"
+      valueReference="100663720"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9429796513388543"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 516 -->
+    <ScalarVariable
+      name="gENSAL.dsat"
+      valueReference="100663721"
+      variability="constant">
+      <Real start="0.056676080717049646"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 517 -->
+    <ScalarVariable
+      name="gENSAL.efd0"
+      valueReference="100663722"
+      description="Initial field voltage magnitude"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.3609227014803216"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 518 -->
+    <ScalarVariable
+      name="gENSAL.pm0"
+      valueReference="100663723"
+      description="Initial mechanical power (machine base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 519 -->
+    <ScalarVariable
+      name="gENSAL.K1d"
+      valueReference="100663724"
+      variability="constant">
+      <Real
+        unit="1"
+        start="3.570749108204518"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 520 -->
+    <ScalarVariable
+      name="gENSAL.K2d"
+      valueReference="100663725"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.1104761904761905"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 521 -->
+    <ScalarVariable
+      name="gENSAL.K3d"
+      valueReference="100663726"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.2758620689655173"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 522 -->
+    <ScalarVariable
+      name="gENSAL.K4d"
+      valueReference="100663727"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.7241379310344827"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 523 -->
+    <ScalarVariable
+      name="cSVGN1.S_b"
+      valueReference="100663728"
+      description="System base power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="100000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 524 -->
+    <ScalarVariable
+      name="cSVGN1.P_0"
+      valueReference="100663729"
+      description="Initial active power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ActivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 525 -->
+    <ScalarVariable
+      name="cSVGN1.Q_0"
+      valueReference="100663730"
+      description="Initial reactive power"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="6009897"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 526 -->
+    <ScalarVariable
+      name="cSVGN1.v_0"
+      valueReference="100663731"
+      description="Initial voltage magnitude at terminal bus"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 527 -->
+    <ScalarVariable
+      name="cSVGN1.angle_0"
+      valueReference="100663732"
+      description="Initial voltage angle"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="-0.0050614548307836"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 528 -->
+    <ScalarVariable
+      name="cSVGN1.ra"
+      valueReference="100663733"
+      description="Armature resistance"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 529 -->
+    <ScalarVariable
+      name="cSVGN1.x1d"
+      valueReference="100663734"
+      description="d-axis transient reactance, should be set to 9999"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="9999"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 530 -->
+    <ScalarVariable
+      name="cSVGN1.K"
+      valueReference="100663735"
+      variability="constant">
+      <Real start="5"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 531 -->
+    <ScalarVariable
+      name="cSVGN1.T1"
+      valueReference="100663736"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 532 -->
+    <ScalarVariable
+      name="cSVGN1.T2"
+      valueReference="100663737"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 533 -->
+    <ScalarVariable
+      name="cSVGN1.T3"
+      valueReference="100663738"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="10"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 534 -->
+    <ScalarVariable
+      name="cSVGN1.T4"
+      valueReference="100663739"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 535 -->
+    <ScalarVariable
+      name="cSVGN1.T5"
+      valueReference="100663740"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 536 -->
+    <ScalarVariable
+      name="cSVGN1.RMIN"
+      valueReference="100663741"
+      description="Reactor minmum var output"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 537 -->
+    <ScalarVariable
+      name="cSVGN1.VMAX"
+      valueReference="100663742"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 538 -->
+    <ScalarVariable
+      name="cSVGN1.VMIN"
+      valueReference="100663743"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 539 -->
+    <ScalarVariable
+      name="cSVGN1.CBASE"
+      valueReference="100663744"
+      description="Capacitor output"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ReactivePower"
+        start="40000000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 540 -->
+    <ScalarVariable
+      name="cSVGN1.MBASE"
+      valueReference="100663745"
+      description="Power range of SVC"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.ApparentPower"
+        start="80000000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 541 -->
+    <ScalarVariable
+      name="cSVGN1.v"
+      valueReference="905970114"
+      description="Bus voltage magnitude">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 542 -->
+    <ScalarVariable
+      name="cSVGN1.anglev"
+      valueReference="905970115"
+      description=" Bus voltage angle">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 543 -->
+    <ScalarVariable
+      name="cSVGN1.P"
+      valueReference="905970116">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 544 -->
+    <ScalarVariable
+      name="cSVGN1.Q"
+      valueReference="905970117">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 545 -->
+    <ScalarVariable
+      name="cSVGN1.vd"
+      valueReference="637534662"
+      description="voltage direct axis">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 546 -->
+    <ScalarVariable
+      name="cSVGN1.vq"
+      valueReference="637534663"
+      description="voltage quadrature axis">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 547 -->
+    <ScalarVariable
+      name="cSVGN1.id"
+      valueReference="637534664"
+      description="current direct axis">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 548 -->
+    <ScalarVariable
+      name="cSVGN1.iq"
+      valueReference="637534665"
+      description="current quadrature axis">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 549 -->
+    <ScalarVariable
+      name="cSVGN1.product1.u1"
+      valueReference="100663754"
+      description="Connector of Real input signal 1"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"
+        start="0.8"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 550 -->
+    <ScalarVariable
+      name="cSVGN1.product1.u2"
+      valueReference="637534667"
+      description="Connector of Real input signal 2">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 551 -->
+    <ScalarVariable
+      name="cSVGN1.product1.y"
+      valueReference="637534668"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 552 -->
+    <ScalarVariable
+      name="cSVGN1.add.u1"
+      valueReference="100663757"
+      description="Connector of Real input signal 1"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 553 -->
+    <ScalarVariable
+      name="cSVGN1.add.u2"
+      valueReference="637534668"
+      description="Connector of Real input signal 2">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 554 -->
+    <ScalarVariable
+      name="cSVGN1.add.y"
+      valueReference="637534672"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 555 -->
+    <ScalarVariable
+      name="cSVGN1.add.k1"
+      valueReference="100663758"
+      description="Gain of input signal 1"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 556 -->
+    <ScalarVariable
+      name="cSVGN1.add.k2"
+      valueReference="100663759"
+      description="Gain of input signal 2"
+      variability="constant">
+      <Real start="-1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 557 -->
+    <ScalarVariable
+      name="cSVGN1.Y"
+      valueReference="637534672">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 558 -->
+    <ScalarVariable
+      name="cSVGN1.V"
+      valueReference="637534537">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 559 -->
+    <ScalarVariable
+      name="cSVGN1.add1.u1"
+      valueReference="100663776"
+      description="Connector of Real input signal 1"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 560 -->
+    <ScalarVariable
+      name="cSVGN1.add1.u2"
+      valueReference="637534537"
+      description="Connector of Real input signal 2">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 561 -->
+    <ScalarVariable
+      name="cSVGN1.add1.y"
+      valueReference="637534673"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 562 -->
+    <ScalarVariable
+      name="cSVGN1.add1.k1"
+      valueReference="100663762"
+      description="Gain of input signal 1"
+      variability="constant">
+      <Real start="-1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 563 -->
+    <ScalarVariable
+      name="cSVGN1.add1.k2"
+      valueReference="100663763"
+      description="Gain of input signal 2"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 564 -->
+    <ScalarVariable
+      name="cSVGN1.const.k"
+      valueReference="100663764"
+      description="Constant output value"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.8"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 565 -->
+    <ScalarVariable
+      name="cSVGN1.const.y"
+      valueReference="100663765"
+      description="Connector of Real output signal"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"
+        start="0.8"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 566 -->
+    <ScalarVariable
+      name="cSVGN1.const1.k"
+      valueReference="100663766"
+      description="Constant output value"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 567 -->
+    <ScalarVariable
+      name="cSVGN1.const1.y"
+      valueReference="100663767"
+      description="Connector of Real output signal"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"
+        start="0.4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 568 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.u"
+      valueReference="637534680"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 569 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.y"
+      valueReference="637534667"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 570 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.const.y"
+      valueReference="100663769"
+      description="Value of Real output"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="s"
+        start="0.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 571 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.state"
+      valueReference="33554440">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 572 -->
+    <ScalarVariable
+      name="der(cSVGN1.LagLim.state)"
+      valueReference="587202568">
+      <Real
+        unit="s-1"
+        derivative="571"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 573 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.K"
+      valueReference="100663770"
+      description="Gain"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 574 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.T"
+      valueReference="100663771"
+      description="Lag time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 575 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.y_start"
+      valueReference="100663772"
+      description="Output start value"
+      variability="fixed">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 576 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.outMax"
+      valueReference="100663773"
+      description="Maximum output value"
+      variability="constant">
+      <Real
+        unit="1"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 577 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.outMin"
+      valueReference="100663774"
+      description="Minimum output value"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 578 -->
+    <ScalarVariable
+      name="cSVGN1.LagLim.T_mod"
+      valueReference="100663775"
+      variability="constant">
+      <Real
+        unit="s"
+        start="0.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 579 -->
+    <ScalarVariable
+      name="cSVGN1.const2.k"
+      valueReference="100663776"
+      description="Constant output value"
+      variability="fixed">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 580 -->
+    <ScalarVariable
+      name="cSVGN1.const2.y"
+      valueReference="100663776"
+      description="Connector of Real output signal"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 581 -->
+    <ScalarVariable
+      name="cSVGN1.p.vr"
+      valueReference="637534477"
+      description="Real part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 582 -->
+    <ScalarVariable
+      name="cSVGN1.p.vi"
+      valueReference="637534478"
+      description="Imaginary part of the voltage">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 583 -->
+    <ScalarVariable
+      name="cSVGN1.p.ir"
+      valueReference="637534689"
+      description="Real part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 584 -->
+    <ScalarVariable
+      name="cSVGN1.p.ii"
+      valueReference="637534690"
+      description="Imaginary part of the current">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 585 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.u"
+      valueReference="637534673"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 586 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.y"
+      valueReference="637534691"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 587 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.K"
+      valueReference="100663780"
+      description="Gain"
+      variability="constant">
+      <Real start="5.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 588 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.T1"
+      valueReference="100663781"
+      description="Lead time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="0.010000000000001"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 589 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.T2"
+      valueReference="100663782"
+      description="Lag time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="10.000000000000002"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 590 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.y_start"
+      valueReference="100663783"
+      description="Output start value"
+      variability="fixed">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 591 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.x_start"
+      valueReference="100663784"
+      description="Start value of state variable"
+      variability="constant">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 592 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.par1.y"
+      valueReference="100663785"
+      description="Value of Real output"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="s"
+        start="0.010000000000001"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 593 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.par2.y"
+      valueReference="100663786"
+      description="Value of Real output"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="s"
+        start="10.000000000000002"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 594 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.u"
+      valueReference="637534673"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 595 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.y"
+      valueReference="637534691"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 596 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.b[1]"
+      valueReference="100663787"
+      description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
+      variability="constant">
+      <Real start="0.050000000000005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 597 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.b[2]"
+      valueReference="100663788"
+      description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
+      variability="constant">
+      <Real start="5.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 598 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.a[1]"
+      valueReference="100663789"
+      description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
+      variability="constant">
+      <Real
+        unit="s"
+        start="10.000000000000002"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 599 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.a[2]"
+      valueReference="100663790"
+      description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
+      variability="constant">
+      <Real
+        unit="s"
+        start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 600 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.initType"
+      valueReference="100663791"
+      description="Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Blocks.Types.Init"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 601 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.x_start[1]"
+      valueReference="100663792"
+      description="Initial or guess values of states"
+      variability="constant">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 602 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.y_start"
+      valueReference="100663793"
+      description="Initial value of output (derivatives of y are zero up to nx-1-th derivative)"
+      variability="fixed">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 603 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.x[1]"
+      valueReference="33554441"
+      description="State of transfer function from controller canonical form">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 604 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.na"
+      valueReference="100663794"
+      description="Size of Denominator of transfer function."
+      variability="constant">
+      <Integer start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 605 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.nb"
+      valueReference="100663795"
+      description="Size of Numerator of transfer function."
+      variability="constant">
+      <Integer start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 606 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.nx"
+      valueReference="100663796"
+      variability="constant">
+      <Integer start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 607 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.bb[1]"
+      valueReference="100663797"
+      variability="constant">
+      <Real start="0.050000000000005"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 608 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.bb[2]"
+      valueReference="100663798"
+      variability="constant">
+      <Real start="5.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 609 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.d"
+      valueReference="100663799"
+      variability="constant">
+      <Real start="0.005000000000000499"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 610 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.a_end"
+      valueReference="100663800"
+      variability="constant">
+      <Real start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 611 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.TF.x_scaled[1]"
+      valueReference="33554441"
+      description="Scaled vector x">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 612 -->
+    <ScalarVariable
+      name="der(cSVGN1.leadLag.TF.x_scaled[1])"
+      valueReference="587202569"
+      description="der(Scaled vector x)">
+      <Real derivative="611"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 613 -->
+    <ScalarVariable
+      name="cSVGN1.leadLag.T2_dummy"
+      valueReference="100663801"
+      description="Lead time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="10.000000000000002"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 614 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.u"
+      valueReference="637534691"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 615 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.y"
+      valueReference="637534680"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 616 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.K"
+      valueReference="100663802"
+      description="Gain"
+      variability="constant">
+      <Real start="5.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 617 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.T1"
+      valueReference="100663803"
+      description="Lead time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 618 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.T2"
+      valueReference="100663804"
+      description="Lag time constant"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Time"
+        start="1E-15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 619 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.outMax"
+      valueReference="100663805"
+      description="Maximum output value"
+      variability="constant">
+      <Real
+        unit="1"
+        start="1.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 620 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.outMin"
+      valueReference="100663806"
+      description="Minimum output value"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 621 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.y_start"
+      valueReference="100663807"
+      description="Output start value"
+      variability="fixed">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 622 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add2.u1"
+      valueReference="637534691"
+      description="Connector of Real input signal 1">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 623 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add2.u2"
+      valueReference="100663808"
+      description="Connector of Real input signal 2"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 624 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add2.y"
+      valueReference="637534691"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 625 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add2.k1"
+      valueReference="100663809"
+      description="Gain of input signal 1"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 626 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add2.k2"
+      valueReference="100663810"
+      description="Gain of input signal 2"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 627 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.gain.k"
+      valueReference="100663811"
+      description="Gain value multiplied with input signal"
+      variability="constant">
+      <Real
+        unit="1"
+        start="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 628 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.gain.u"
+      valueReference="637534691"
+      description="Input signal connector">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 629 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.gain.y"
+      valueReference="637534691"
+      description="Output signal connector">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 630 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add3.u1"
+      valueReference="637534680"
+      description="Connector of Real input signal 1">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 631 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add3.u2"
+      valueReference="33554442"
+      description="Connector of Real input signal 2">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 632 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add3.y"
+      valueReference="637534724"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 633 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add3.k1"
+      valueReference="100663813"
+      description="Gain of input signal 1"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 634 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.add3.k2"
+      valueReference="100663814"
+      description="Gain of input signal 2"
+      variability="constant">
+      <Real start="-1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 635 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.integrator.k"
+      valueReference="100663815"
+      description="Integrator gain"
+      variability="constant">
+      <Real
+        unit="1"
+        start="999999999999999.9"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 636 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.integrator.initType"
+      valueReference="100663818"
+      description="Type of initialization (1: no init, 2: steady state, 3,4: initial output)"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Blocks.Types.Init"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 637 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.integrator.y_start"
+      valueReference="100663819"
+      description="Initial or guess value of output (= state)"
+      variability="fixed">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 638 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.integrator.u"
+      valueReference="637534724"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 639 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.integrator.y"
+      valueReference="33554442"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 640 -->
+    <ScalarVariable
+      name="der(cSVGN1.leadLagLim.integrator.y)"
+      valueReference="587202570"
+      description="der(Connector of Real output signal)">
+      <Real
+        unit="s-1"
+        derivative="639"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 641 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.gain1.k"
+      valueReference="100663822"
+      description="Gain value multiplied with input signal"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 642 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.gain1.u"
+      valueReference="33554442"
+      description="Input signal connector">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 643 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.gain1.y"
+      valueReference="100663823"
+      description="Output signal connector"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 644 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.uMax"
+      valueReference="100663824"
+      description="Upper limits of input signals"
+      variability="constant">
+      <Real
+        unit="1"
+        start="1.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 645 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.uMin"
+      valueReference="100663825"
+      description="Lower limits of input signals"
+      variability="constant">
+      <Real
+        unit="1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 646 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.strict"
+      valueReference="100663826"
+      description="= true, if strict limits with noEvent(..)"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 647 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.homotopyType"
+      valueReference="100663827"
+      description="Simplified model for homotopy-based initialization"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Blocks.Types.LimiterHomotopy"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 648 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.limitsAtInit"
+      valueReference="100663828"
+      description="Has no longer an effect and is only kept for backwards compatibility (the implementation uses now the homotopy operator)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 649 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.u"
+      valueReference="637534691"
+      description="Connector of Real input signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 650 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.y"
+      valueReference="637534680"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 651 -->
+    <ScalarVariable
+      name="cSVGN1.leadLagLim.limiter.simplifiedExpr"
+      valueReference="637534691"
+      description="Simplified expression for homotopy-based initialization">
+      <Real
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 652 -->
+    <ScalarVariable
+      name="cSVGN1.VOTHSG"
+      valueReference="100663829"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 653 -->
+    <ScalarVariable
+      name="cSVGN1.add2.u1"
+      valueReference="637534673"
+      description="Connector of Real input signal 1">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 654 -->
+    <ScalarVariable
+      name="cSVGN1.add2.u2"
+      valueReference="100663830"
+      description="Connector of Real input signal 2"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 655 -->
+    <ScalarVariable
+      name="cSVGN1.add2.y"
+      valueReference="637534673"
+      description="Connector of Real output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 656 -->
+    <ScalarVariable
+      name="cSVGN1.add2.k1"
+      valueReference="100663831"
+      description="Gain of input signal 1"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 657 -->
+    <ScalarVariable
+      name="cSVGN1.add2.k2"
+      valueReference="100663832"
+      description="Gain of input signal 2"
+      variability="constant">
+      <Real start="-1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 658 -->
+    <ScalarVariable
+      name="cSVGN1.p0"
+      valueReference="100663833"
+      description="Active power (system base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 659 -->
+    <ScalarVariable
+      name="cSVGN1.q0"
+      valueReference="100663834"
+      description="Reactive power (system base)"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.06009897"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 660 -->
+    <ScalarVariable
+      name="cSVGN1.Y0"
+      valueReference="100663835"
+      description="Capacitor output"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.06009897"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 661 -->
+    <ScalarVariable
+      name="cSVGN1.vr0"
+      valueReference="100663836"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9999871908648437"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 662 -->
+    <ScalarVariable
+      name="cSVGN1.vi0"
+      valueReference="100663837"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.0050614332198121404"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 663 -->
+    <ScalarVariable
+      name="cSVGN1.ir0"
+      valueReference="100663838"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.0003041869232344933"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 664 -->
+    <ScalarVariable
+      name="cSVGN1.ii0"
+      valueReference="100663839"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-0.060098200184170524"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 665 -->
+    <ScalarVariable
+      name="cSVGN1.delta0"
+      valueReference="100663840"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.Angle"
+        start="-0.0050614548307836"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 666 -->
+    <ScalarVariable
+      name="cSVGN1.vd0"
+      valueReference="100663841"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="-2.3418766925686896E-17"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 667 -->
+    <ScalarVariable
+      name="cSVGN1.vq0"
+      valueReference="100663842"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.9999999999999999"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 668 -->
+    <ScalarVariable
+      name="cSVGN1.id0"
+      valueReference="100663843"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="0.06009897"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 669 -->
+    <ScalarVariable
+      name="cSVGN1.iq0"
+      valueReference="100663844"
+      description="Initialization"
+      variability="constant">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"
+        start="1.4094628242311558E-18"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 670 -->
+    <ScalarVariable
+      name="cSVGN1.k50"
+      valueReference="100663845"
+      causality="calculatedParameter"
+      variability="fixed">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 671 -->
+    <ScalarVariable
+      name="cSVGN1.k30"
+      valueReference="100663846"
+      causality="calculatedParameter"
+      variability="fixed">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 672 -->
+    <ScalarVariable
+      name="cSVGN1.k0"
+      valueReference="100663847"
+      causality="calculatedParameter"
+      variability="fixed">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 673 -->
+    <ScalarVariable
+      name="cSVGN1.Vref"
+      valueReference="100663848"
+      causality="calculatedParameter"
+      variability="fixed">
+      <Real
+        declaredType="OpenIPSL.Types.PerUnit"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 674 -->
+    <ScalarVariable
+      name="realExpression.y"
+      valueReference="637534537"
+      description="Value of Real output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 675 -->
+    <ScalarVariable
+      name="const.k"
+      valueReference="100663849"
+      description="Constant output value"
+      variability="constant">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 676 -->
+    <ScalarVariable
+      name="const.y"
+      valueReference="100663850"
+      description="Connector of Real output signal"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        start="0.0"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Derivatives>
+      <Unknown index="128"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="130"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="134"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="451"
+        dependencies="127 133 450 452 473 475 477 571"
+        dependenciesKind="dependent dependent dependent dependent fixed fixed dependent dependent"/>
+      <Unknown index="453"
+        dependencies="450"
+        dependenciesKind="fixed"/>
+      <Unknown index="474"
+        dependencies="127 133 452 473 475 477 571"
+        dependenciesKind="dependent dependent dependent dependent dependent dependent dependent"/>
+      <Unknown index="476"
+        dependencies="127 133 452 473 475 477 571"
+        dependenciesKind="dependent dependent dependent fixed fixed dependent dependent"/>
+      <Unknown index="478"
+        dependencies="127 133 452 473 475 477 571"
+        dependenciesKind="dependent dependent dependent fixed fixed dependent dependent"/>
+      <Unknown index="572"
+        dependencies="127 133 452 473 475 477 571 611"
+        dependenciesKind="dependent dependent dependent fixed fixed dependent dependent fixed"/>
+      <Unknown index="612"
+        dependencies="127 133 452 473 475 477 571 611"
+        dependenciesKind="dependent dependent dependent fixed fixed dependent dependent fixed"/>
+      <Unknown index="640"
+        dependencies="127 133 452 473 475 477 571 611 639"
+        dependenciesKind="dependent dependent dependent fixed fixed dependent dependent fixed fixed"/>
+    </Derivatives>
+    <InitialUnknowns>
+      <Unknown index="127"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="128"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="130"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="133"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="134"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="450"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="451"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="452"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="453"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="473"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="474"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="475"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="476"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="477"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="478"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="571"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="572"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="611"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="612"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="639"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="640"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="670"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="671"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="672"
+        dependencies=""
+        dependenciesKind=""/>
+      <Unknown index="673"
+        dependencies=""
+        dependenciesKind=""/>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

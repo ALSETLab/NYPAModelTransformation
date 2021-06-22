@@ -1,0 +1,110 @@
+﻿// ----- Lists of models
+MachExamples = [["GENCLS"],["GENSAL"],["GENSAE"],["GENROU"],["GENROE"]];
+BankExamples = ["CSVGN1"];
+EsysExamples = ["ESAC1A","ESAC2A","ESDC1A","ESDC2A","ESST1A","ESST4B","EXAC1","EXAC2","EXNI","EXST1","IEEET1","IEEET2","IEEEX1","SCRX","SEXS","ST5B","URST5T"];
+TGovExamples = ["GAST","GGOV1","HYGOV","IEEEG1","IEESGO","TGOV1"];
+PsstExamples = ["IEEEST","PSS2A","PSS2B"];
+WindExamples = ["WT4G1","WT4E1"];
+
+// ----- Getting working directory:
+working_dir = "/home/marcelo/Documents/ListFMU";
+cd(working_dir)
+// ----- Activate code export license
+Advanced.EnableCodeExport = true;
+Evaluate = true;
+
+// ----- Machine Directory:
+macdir = working_dir + "/Machines";
+cd(macdir)
+// Machines:
+MacPath = "OpenIPSL.Examples.Machines.PSSE."; 
+nmach = size(MachExamples,2)
+// Loop over machines
+for kk in 1:nmach loop
+  Model = MachExamples[1,kk]; // get name
+  ModelToExport = MacPath+Model; // model name to export
+  ModelCS = Model+"_CS"; 
+  translateModelFMU(ModelToExport, false, ModelCS, "2", "cs", true, 0);
+  ModelME = Model+"_ME";
+  translateModelFMU(ModelToExport, false, ModelME, "2", "me", true, 0);
+end for;
+// Get CSVGN:
+BankPath = "OpenIPSL.Examples.Banks.PSSE.";
+Model = BankExamples[1,1]; // get name
+ModelToExport = BankPath+Model; // model name to export
+ModelCS = Model+"_CS"; 
+translateModelFMU(ModelToExport, false, ModelCS, "2", "cs", true, 0);
+ModelME = Model+"_ME";
+translateModelFMU(ModelToExport, false, ModelME, "2", "me", true, 0);
+
+// ----- Exciter Directory:
+cd(working_dir)
+excdir = working_dir + "/Exciters";
+cd(excdir)
+// Exciters:
+ExcPath = "OpenIPSL.Examples.Controls.PSSE.ES."; 
+nexc = size(EsysExamples,2)
+// Loop over exciters
+for kk in 1:nexc loop
+  Model = EsysExamples[1,kk]; // get name
+  ModelToExport = ExcPath+Model; // model name to export
+  ModelCS = Model+"_CS"; 
+  translateModelFMU(ModelToExport, false, ModelCS, "2", "cs", true, 0);
+  ModelME = Model+"_ME";
+  translateModelFMU(ModelToExport, false, ModelME, "2", "me", true, 0);
+end for;
+
+// ----- Stabilizers Directory:
+cd(working_dir)
+pssdir = working_dir + "/Stabilizers";
+cd(pssdir)
+// Stabilizers:
+PssPath = "OpenIPSL.Examples.Controls.PSSE.PSS."; 
+nstab = size(PsstExamples,2)
+// Loop over Stabilizers
+for kk in 1:nstab loop
+  Model = PsstExamples[1,kk]; // get name
+  ModelToExport = PssPath+Model; // model name to export
+  ModelCS = Model+"_CS"; 
+  translateModelFMU(ModelToExport, false, ModelCS, "2", "cs", true, 0);
+  ModelME = Model+"_ME";
+  translateModelFMU(ModelToExport, false, ModelME, "2", "me", true, 0);
+end for;
+
+// ----- Turbine Governors Directory:
+cd(working_dir)
+govdir = working_dir + "/TurbineGovernors";
+cd(govdir)
+// Turbine Governors:
+GovPath = "OpenIPSL.Examples.Controls.PSSE.TG."; 
+ntgov = size(TGovExamples,2)
+// Loop over turbine governors
+for kk in 1:ntgov loop
+  Model = TGovExamples[1,kk]; // get name
+  ModelToExport = GovPath+Model; // model name to export
+  ModelCS = Model+"_CS"; 
+  translateModelFMU(ModelToExport, false, ModelCS, "2", "cs", true, 0);
+  ModelME = Model+"_ME";
+  translateModelFMU(ModelToExport, false, ModelME, "2", "me", true, 0);
+end for;
+
+// ----- Wind Directory:
+cd(working_dir)
+wnddir = working_dir + "/Wind";
+cd(wnddir)
+// Wind:
+WndPath = "OpenIPSL.Examples.Wind.PSSE.WT4G."; 
+nwind = size(WindExamples,2)
+// Loop over machines
+for kk in 1:nwind loop
+  Model = WindExamples[1,kk]; // get name
+  ModelToExport = WndPath+Model; // model name to export
+  ModelCS = Model+"_CS"; 
+  translateModelFMU(ModelToExport, false, ModelCS, "2", "cs", true, 0);
+  ModelME = Model+"_ME";
+  translateModelFMU(ModelToExport, false, ModelME, "2", "me", true, 0);
+end for;
+
+// ----- Deactivate code export license
+Evaluate = false;
+Advanced.EnableCodeExport = false;
