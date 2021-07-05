@@ -1,65 +1,65 @@
-package CimSystem "System automattically translated from PSSE CIM using XSLT_OpenIPSL."
+)package CimSystem "System automatically translated from PSSE CIM using XSLT_OpenIPSL."
 	model ieee14
 		inner OpenIPSL.Electrical.SystemBase SysData(S_b =100000000, fn = 50.00) annotation(Placement(transformation(extent = {{-94, 80}, {-60, 100}})));
-		inner System.Data.pfdata flowdata annotation(Placement(transformation(extent = {{-88, 60}, {-68, 80}})));
+		inner System.PF_Data.Power_Flow pf(redeclare record PowerFlow = System.PF_Data.PF_00000) annotation(Placement(transformation(extent = {{-88, 60}, {-68, 80}})));
 // -- Buses:
-OpenIPSL.Electrical.Buses.Bus BUS1(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS2(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS3(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS4(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS5(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS6(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS7(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS8(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS9(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS10(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS11(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS12(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS13(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
-OpenIPSL.Electrical.Buses.Bus BUS14(V_b = flowdata.voltages.BaseVoltage1, v_0 = flowdata.voltages.V1, angle_0 = flowdata.voltages.A1);
+OpenIPSL.Electrical.Buses.Bus BUS1(V_b = 69000, v_0 = pf.powerflow.bus.VBUS1, angle_0 = pf.powerflow.bus.ABUS1);
+OpenIPSL.Electrical.Buses.Bus BUS2(V_b = 69000, v_0 = pf.powerflow.bus.VBUS2, angle_0 = pf.powerflow.bus.ABUS2);
+OpenIPSL.Electrical.Buses.Bus BUS3(V_b = 69000, v_0 = pf.powerflow.bus.VBUS3, angle_0 = pf.powerflow.bus.ABUS3);
+OpenIPSL.Electrical.Buses.Bus BUS4(V_b = 69000, v_0 = pf.powerflow.bus.VBUS4, angle_0 = pf.powerflow.bus.ABUS4);
+OpenIPSL.Electrical.Buses.Bus BUS5(V_b = 69000, v_0 = pf.powerflow.bus.VBUS5, angle_0 = pf.powerflow.bus.ABUS5);
+OpenIPSL.Electrical.Buses.Bus BUS6(V_b = 138000, v_0 = pf.powerflow.bus.VBUS6, angle_0 = pf.powerflow.bus.ABUS6);
+OpenIPSL.Electrical.Buses.Bus BUS7(V_b = 138000, v_0 = pf.powerflow.bus.VBUS7, angle_0 = pf.powerflow.bus.ABUS7);
+OpenIPSL.Electrical.Buses.Bus BUS8(V_b = 69000, v_0 = pf.powerflow.bus.VBUS8, angle_0 = pf.powerflow.bus.ABUS8);
+OpenIPSL.Electrical.Buses.Bus BUS9(V_b = 138000, v_0 = pf.powerflow.bus.VBUS9, angle_0 = pf.powerflow.bus.ABUS9);
+OpenIPSL.Electrical.Buses.Bus BUS10(V_b = 138000, v_0 = pf.powerflow.bus.VBUS10, angle_0 = pf.powerflow.bus.ABUS10);
+OpenIPSL.Electrical.Buses.Bus BUS11(V_b = 138000, v_0 = pf.powerflow.bus.VBUS11, angle_0 = pf.powerflow.bus.ABUS11);
+OpenIPSL.Electrical.Buses.Bus BUS12(V_b = 138000, v_0 = pf.powerflow.bus.VBUS12, angle_0 = pf.powerflow.bus.ABUS12);
+OpenIPSL.Electrical.Buses.Bus BUS13(V_b = 138000, v_0 = pf.powerflow.bus.VBUS13, angle_0 = pf.powerflow.bus.ABUS13);
+OpenIPSL.Electrical.Buses.Bus BUS14(V_b = 138000, v_0 = pf.powerflow.bus.VBUS14, angle_0 = pf.powerflow.bus.ABUS14);
 // -- Lines:
-OpenIPSL.Electrical.Branches.PwLine line1_2_1(R =0.9226818, X =2.8170837,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line1_5_1(R =2.5723683, X =10.6189344,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line2_3_1(R =2.2371939, X =9.4253517,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line2_4_1(R =2.7666171, X =8.3945952,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line2_5_1(R =2.7113895, X =8.2784268,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line3_4_1(R =3.1903461, X =8.1427383,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line4_5_1(R =0.6355935, X =2.0048571,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line6_11_1(R =18.0879912, X =37.878516,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line6_12_1(R =23.4069804, X =48.7164564,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line6_13_1(R =12.597606, X =24.8086188,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line7_9_1(R =0, X =20.9503044,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line9_10_1(R =6.0578964, X =16.09218,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line9_14_1(R =24.2068284, X =51.4911672,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line10_11_1(R =15.625602, X =36.5778108,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line12_13_1(R =42.0720048, X =38.0651472,G = 0, B =0.0);
-OpenIPSL.Electrical.Branches.PwLine line13_14_1(R =32.5519092, X =66.2769288,G = 0, B =0.0);
+OpenIPSL.Electrical.Branches.PwLine line1_2_1(R =0.9226818000, X =2.8170837000,G = 0, B =0.0011090107);
+OpenIPSL.Electrical.Branches.PwLine line1_5_1(R =2.5723683000, X =10.6189344000,G = 0, B =0.0010333963);
+OpenIPSL.Electrical.Branches.PwLine line2_3_1(R =2.2371939000, X =9.4253517000,G = 0, B =0.0009199748);
+OpenIPSL.Electrical.Branches.PwLine line2_4_1(R =2.7666171000, X =8.3945952000,G = 0, B =0.0007141357);
+OpenIPSL.Electrical.Branches.PwLine line2_5_1(R =2.7113895000, X =8.2784268000,G = 0, B =0.0007267381);
+OpenIPSL.Electrical.Branches.PwLine line3_4_1(R =3.1903461000, X =8.1427383000,G = 0, B =0.0002688511);
+OpenIPSL.Electrical.Branches.PwLine line4_5_1(R =0.6355935000, X =2.0048571000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line6_11_1(R =18.0879912000, X =37.8785160000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line6_12_1(R =23.4069804000, X =48.7164564000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line6_13_1(R =12.5976060000, X =24.8086188000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line7_9_1(R =0.0000000000, X =20.9503044000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line9_10_1(R =6.0578964000, X =16.0921800000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line9_14_1(R =24.2068284000, X =51.4911672000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line10_11_1(R =15.6256020000, X =36.5778108000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line12_13_1(R =42.0720048000, X =38.0651472000,G = 0, B =0.0000000000);
+OpenIPSL.Electrical.Branches.PwLine line13_14_1(R =32.5519092000, X =66.2769288000,G = 0, B =0.0000000000);
 // -- Transformers:
-OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer XF_4_7_0__1__(R = 0.0, X = 39.82, G = 0.0, B = 0.0, t1=1.0, t2=1.0);
-OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer XF_4_9_0__1__(R = 0.0, X = 105.92, G = 0.0, B = 0.0, t1=1.0, t2=1.0);
-OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer XF_6_5_0__1__(R = 0.0, X = 48.0, G = 0.0, B = 0.0, t1=0.64725, t2=0.64725);
-OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer XF_8_7_0__1__(R = 0.0, X = 33.55, G = 0.0, B = 0.0, t1=1.0, t2=1.0);
+OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twTransformer470_1_(R = 0.0, X = 0.0, G = 0.0, B = 0.0,t1 = pf.powerflow.trafos.470_1_T1,t2 = pf.powerflow.trafos.470_1_T2);
+OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twTransformer490_1_(R = 0.0, X = 0.0, G = 0.0, B = 0.0,t1 = pf.powerflow.trafos.490_1_T1,t2 = pf.powerflow.trafos.490_1_T2);
+OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twTransformer650_1_(R = 0.0, X = 48.0, G = 0.0, B = 0.0,t1 = pf.powerflow.trafos.650_1_T1,t2 = pf.powerflow.trafos.650_1_T2);
+OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twTransformer870_1_(R = 0.0, X = 0.0, G = 0.0, B = 0.0,t1 = pf.powerflow.trafos.870_1_T1,t2 = pf.powerflow.trafos.870_1_T2);
 // -- Linear Shunt Compensators:
 OpenIPSL.Electrical.Banks.PSSE.Shunt SH_BUS9(B = 0.0009976896, G = 0);
 OpenIPSL.Electrical.Banks.PSSE.Shunt SH_BUS14(B = 0.0007879647, G = 0);
 // -- Conform Loads:
-OpenIPSL.Electrical.Loads.PSSE.Load CL_2_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 21.7, Q_0 = 12.7);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_3_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 50, Q_0 = 25);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_4_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 47.8, Q_0 = 10);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_5_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 7.6, Q_0 = 1.6);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_6_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 15, Q_0 = 7.5);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_9_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 29.5, Q_0 = 16.6);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_10_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 9, Q_0 = 5.8);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_11_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 3.5, Q_0 = 1.8);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_12_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 6.1, Q_0 = 1.6);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_13_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 13.5, Q_0 = 5.8);
-OpenIPSL.Electrical.Loads.PSSE.Load CL_14_1(V_b = flowdata.voltages.BaseVoltage2, v_0 = flowdata.voltages.V2, angle_0 = flowdata.voltages.A2, , P_0 = 20, Q_0 = 7);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_2_1(V_b = BUS2.V_b, v_0 = pf.powerflow.bus.VBUS2, angle_0 = pf.powerflow.bus.ABUS2, P2_1  = 21.7, Q2_1  = 12.7);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_3_1(V_b = BUS3.V_b, v_0 = pf.powerflow.bus.VBUS3, angle_0 = pf.powerflow.bus.ABUS3, P3_1  = 50, Q3_1  = 25);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_4_1(V_b = BUS4.V_b, v_0 = pf.powerflow.bus.VBUS4, angle_0 = pf.powerflow.bus.ABUS4, P4_1  = 47.8, Q4_1  = 10);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_5_1(V_b = BUS5.V_b, v_0 = pf.powerflow.bus.VBUS5, angle_0 = pf.powerflow.bus.ABUS5, P5_1  = 7.6, Q5_1  = 1.6);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_6_1(V_b = BUS6.V_b, v_0 = pf.powerflow.bus.VBUS6, angle_0 = pf.powerflow.bus.ABUS6, P6_1  = 15, Q6_1  = 7.5);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_9_1(V_b = BUS9.V_b, v_0 = pf.powerflow.bus.VBUS9, angle_0 = pf.powerflow.bus.ABUS9, P9_1  = 29.5, Q9_1  = 16.6);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_10_1(V_b = BUS10.V_b, v_0 = pf.powerflow.bus.VBUS10, angle_0 = pf.powerflow.bus.ABUS10, P10_1  = 9, Q10_1  = 5.8);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_11_1(V_b = BUS11.V_b, v_0 = pf.powerflow.bus.VBUS11, angle_0 = pf.powerflow.bus.ABUS11, P11_1  = 3.5, Q11_1  = 1.8);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_12_1(V_b = BUS12.V_b, v_0 = pf.powerflow.bus.VBUS12, angle_0 = pf.powerflow.bus.ABUS12, P12_1  = 6.1, Q12_1  = 1.6);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_13_1(V_b = BUS13.V_b, v_0 = pf.powerflow.bus.VBUS13, angle_0 = pf.powerflow.bus.ABUS13, P13_1  = 13.5, Q13_1  = 5.8);
+OpenIPSL.Electrical.Loads.PSSE.Load CL_14_1(V_b = BUS14.V_b, v_0 = pf.powerflow.bus.VBUS14, angle_0 = pf.powerflow.bus.ABUS14, P14_1  = 20, Q14_1  = 7);
 // -- Generator Units:
-CimSystem.Generators.GEN1_1 gen1_1(V_b = flowdata.voltages.BaseVoltage1_1, v_0 = flowdata.voltages.V1_1, angle_0 = flowdata.voltages.A1_1, P_0 = flowdata.powers.P1_1, Q_0 = flowdata.powers.Q1_1);
-CimSystem.Generators.GEN2_1 gen2_1(V_b = flowdata.voltages.BaseVoltage2_1, v_0 = flowdata.voltages.V2_1, angle_0 = flowdata.voltages.A2_1, P_0 = flowdata.powers.P2_1, Q_0 = flowdata.powers.Q2_1);
-CimSystem.Generators.GEN3_1 gen3_1(V_b = flowdata.voltages.BaseVoltage3_1, v_0 = flowdata.voltages.V3_1, angle_0 = flowdata.voltages.A3_1, P_0 = flowdata.powers.P3_1, Q_0 = flowdata.powers.Q3_1);
-CimSystem.Generators.GEN6_1 gen6_1(V_b = flowdata.voltages.BaseVoltage6_1, v_0 = flowdata.voltages.V6_1, angle_0 = flowdata.voltages.A6_1, P_0 = flowdata.powers.P6_1, Q_0 = flowdata.powers.Q6_1);
-CimSystem.Generators.GEN8_1 gen8_1(V_b = flowdata.voltages.BaseVoltage8_1, v_0 = flowdata.voltages.V8_1, angle_0 = flowdata.voltages.A8_1, P_0 = flowdata.powers.P8_1, Q_0 = flowdata.powers.Q8_1);
+CimSystem.Generators.GEN1_1 gen1_1(V_b = BUS1.V_b, v_0 = flowdata.voltages.VBUS1, angle_0 = flowdata.voltages.ABUS1, P_0 = flowdata.powers.P1_1, Q_0 = flowdata.powers.Q1_1);
+CimSystem.Generators.GEN2_1 gen2_1(V_b = BUS2.V_b, v_0 = flowdata.voltages.VBUS2, angle_0 = flowdata.voltages.ABUS2, P_0 = flowdata.powers.P2_1, Q_0 = flowdata.powers.Q2_1);
+CimSystem.Generators.GEN3_1 gen3_1(V_b = BUS3.V_b, v_0 = flowdata.voltages.VBUS3, angle_0 = flowdata.voltages.ABUS3, P_0 = flowdata.powers.P3_1, Q_0 = flowdata.powers.Q3_1);
+CimSystem.Generators.GEN6_1 gen6_1(V_b = BUS6.V_b, v_0 = flowdata.voltages.VBUS6, angle_0 = flowdata.voltages.ABUS6, P_0 = flowdata.powers.P6_1, Q_0 = flowdata.powers.Q6_1);
+CimSystem.Generators.GEN8_1 gen8_1(V_b = BUS8.V_b, v_0 = flowdata.voltages.VBUS8, angle_0 = flowdata.voltages.ABUS8, P_0 = flowdata.powers.P8_1, Q_0 = flowdata.powers.Q8_1);
 equation
 connect(BUS2.p, CL_2_1.p);
 connect(BUS3.p, CL_3_1.p);
@@ -111,19 +111,17 @@ connect(BUS12.p, line12_13_1.p);
 connect(BUS13.p, line12_13_1.n);
 connect(BUS13.p, line13_14_1.p);
 connect(BUS14.p, line13_14_1.n);
-connect(BUS4.p, twTransformer4_7_0__1__.p);
-connect(BUS7.p, twTransformer4_7_0__1__.n);
-connect(BUS9.p, twTransformer4_9_0__1__.n);
-connect(BUS6.p, twTransformer6_5_0__1__.p);
-connect(BUS5.p, twTransformer6_5_0__1__.n);
-connect(BUS8.p, twTransformer8_7_0__1__.p);
-connect(BUS7.p, twTransformer8_7_0__1__.n);
-connect(BUS4.p, twTransformer4_9_0__1__.p);
+connect(BUS4.p, twTransformer470_1_.p);
+connect(BUS7.p, twTransformer470_1_.n);
+connect(BUS9.p, twTransformer490_1_.n);
+connect(BUS6.p, twTransformer650_1_.p);
+connect(BUS5.p, twTransformer650_1_.n);
+connect(BUS8.p, twTransformer870_1_.p);
+connect(BUS7.p, twTransformer870_1_.n);
+connect(BUS4.p, twTransformer490_1_.p);
 
 end ieee14;
-
 package Generators "Library of machine models translated automatically from PSSE CIM using XSLT_OpenIPSL."
-
 model Gen1_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
@@ -148,9 +146,7 @@ equation
       connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0, 0, 127}));
       connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points = {{41, 7}, {46, 7}, {46, 50}, {-34.805, 50}, {-34.805, 35.396}, {-28, 35.396}, {-28, 36}}, color = {0, 0, 127}));
       connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));
-      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));
-end Gen1_1;
-
+      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));end Gen1_1;
 model Gen2_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
@@ -175,9 +171,7 @@ equation
       connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0, 0, 127}));
       connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points = {{41, 7}, {46, 7}, {46, 50}, {-34.805, 50}, {-34.805, 35.396}, {-28, 35.396}, {-28, 36}}, color = {0, 0, 127}));
       connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));
-      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));
-end Gen2_1;
-
+      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));end Gen2_1;
 model Gen3_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
@@ -204,9 +198,7 @@ equation
       connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0, 0, 127}));
       connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points = {{41, 7}, {46, 7}, {46, 50}, {-34.805, 50}, {-34.805, 35.396}, {-28, 35.396}, {-28, 36}}, color = {0, 0, 127}));
       connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));
-      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));
-end Gen3_1;
-
+      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));end Gen3_1;
 model Gen6_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
@@ -233,9 +225,7 @@ equation
       connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0, 0, 127}));
       connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points = {{41, 7}, {46, 7}, {46, 50}, {-34.805, 50}, {-34.805, 35.396}, {-28, 35.396}, {-28, 36}}, color = {0, 0, 127}));
       connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));
-      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));
-end Gen6_1;
-
+      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));end Gen6_1;
 model Gen8_1
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
 	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
@@ -262,120 +252,138 @@ equation
       connect(governor.PMECH, machine.PMECH) annotation(Line(visible = true, points = {{-9, 30}, {10, 30}, {10, 5}, {18, 5}}, color = {0, 0, 127}));
       connect(machine.SPEED, governor.SPEED) annotation(Line(visible = true, points = {{41, 7}, {46, 7}, {46, 50}, {-34.805, 50}, {-34.805, 35.396}, {-28, 35.396}, {-28, 36}}, color = {0, 0, 127}));
       connect(machine.PMECH0, governor.PMECH0) annotation(Line(visible = true, points = {{41, 5}, {50, 5}, {50, 60}, {-40, 60}, {-40, 24}, {-28, 24}}, color = {0, 0, 127}));
-      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));
-end Gen8_1;
-
+      annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, grid = {1, 1}), graphics = {Line(points = {{-76, -26}, {-28, 52}, {27, -52}, {74, 23}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Ellipse(extent = {{-100, -100}, {100, 100}}, lineColor = {0, 0, 255})}));end Gen8_1;
 end Generators;
-  package Data "Modelica records for power flow data."
-    record pfdata " Translated and calculated power flow data."
-      extends Modelica.Icons.Record;
-      replaceable record Voltages = voltage_data constrainedby voltage_data annotation(choicesAllMatching);
-      Voltages voltages;
-      replaceable record Powers = power_data constrainedby power_data annotation(choicesAllMatching);
-      Powers powers;
-    end pfdata;
 
-    record voltage_data
-      extends Modelica.Icons.Record;
+package PF_Data "Modelica records for power flow data."
+record Power_Flow " Translated and calculated power flow data."
+  	extends Modelica.Icons.Record;
+  	replaceable record PowerFlow = System.PF_Data.Power_Flow_Template constrainedby System.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
+  	PowerFlow powerflow;
+end Power_Flow;
+record PowerFlow = System.PF_Data.Power_Flow_Template;
+record Power_Flow_Template "Template for power flow"
+	 extends Modelica.Icons.Record;
+end Power_Flow_Template;  
 
-	// BUS2
-	parameter Real BaseVBUS2=69
-	parameter Real MeasuredBUS2=70.36137
-	parameter Real ABUS2=-1.6036
-	// BUS3
-	parameter Real BaseVBUS3=69
-	parameter Real MeasuredBUS3=69.03933
-	parameter Real ABUS3=-3.4446
-	// BUS4
-	parameter Real BaseVBUS4=69
-	parameter Real MeasuredBUS4=68.91375
-	parameter Real ABUS4=-4.282
-	// BUS5
-	parameter Real BaseVBUS5=69
-	parameter Real MeasuredBUS5=69.29601
-	parameter Real ABUS5=-3.6844
-	// BUS6
-	parameter Real BaseVBUS6=138
-	parameter Real MeasuredBUS6=137.96412
-	parameter Real ABUS6=-6.3307
-	// BUS1
-	parameter Real BaseVBUS1=69
-	parameter Real MeasuredBUS1=71.07
-	parameter Real ABUS1=0
-	// BUS7
-	parameter Real BaseVBUS7=138
-	parameter Real MeasuredBUS7=138.66102
-	parameter Real ABUS7=-4.8207
-	// BUS8
-	parameter Real BaseVBUS8=69
-	parameter Real MeasuredBUS8=70.39725
-	parameter Real ABUS8=-1.3736
-	// BUS9
-	parameter Real BaseVBUS9=138
-	parameter Real MeasuredBUS9=138.05796
-	parameter Real ABUS9=-7.2987
-	// BUS10
-	parameter Real BaseVBUS10=138
-	parameter Real MeasuredBUS10=136.95534
-	parameter Real ABUS10=-7.4585
-	// BUS11
-	parameter Real BaseVBUS11=138
-	parameter Real MeasuredBUS11=136.9512
-	parameter Real ABUS11=-7.0556
-	// BUS12
-	parameter Real BaseVBUS12=138
-	parameter Real MeasuredBUS12=136.2405
-	parameter Real ABUS12=-7.4126
-	// BUS13
-	parameter Real BaseVBUS13=138
-	parameter Real MeasuredBUS13=135.8886
-	parameter Real ABUS13=-7.6859
-	// BUS14
-	parameter Real BaseVBUS14=138
-	parameter Real MeasuredBUS14=136.62552
-	parameter Real ABUS14=-9.5696
-	end voltage_data;
-	
-	record power_data
-		extends Modelica.Icons.Record;
-	parameter Real P2__1__ = 21.7
-	parameter Real Q2__1__ = 12.7
-	parameter Real P3__1__ = 50
-	parameter Real Q3__1__ = 25
-	parameter Real P4__1__ = 47.8
-	parameter Real Q4__1__ = 10
-	parameter Real P5__1__ = 7.6
-	parameter Real Q5__1__ = 1.6
-	parameter Real P6__1__ = 15
-	parameter Real Q6__1__ = 7.5
-	parameter Real P9__1__ = 29.5
-	parameter Real Q9__1__ = 16.6
-	parameter Real PB10__1__ = 9
-	parameter Real QB10__1__ = 5.8
-	parameter Real PB11__1__ = 3.5
-	parameter Real QB11__1__ = 1.8
-	parameter Real PB12__1__ = 6.1
-	parameter Real QB12__1__ = 1.6
-	parameter Real PB13__1__ = 13.5
-	parameter Real QB13__1__ = 5.8
-	parameter Real PB14__1__ = 20
-	parameter Real QB14__1__ = 7
-	parameter Real PBusShunt = 0
-	parameter Real QBusShunt = -19.0159606934
-	parameter Real PBusShunt = 0
-	parameter Real QBusShunt = -14.708568573
-	parameter Real P1__1__ = -81.442
-	parameter Real Q1__1__ = -1.973
-	parameter Real P2__1__ = -40
-	parameter Real Q2__1__ = -15
-	parameter Real P3__1__ = -40
-	parameter Real Q3__1__ = -15
-	parameter Real P6__1__ = -30
-	parameter Real Q6__1__ = -10
-	parameter Real P8__1__ = -35
-	parameter Real Q8__1__ = -10
+record Bus_Data
 
-	end power_data;
-end Data;
-  annotation(uses(Modelica(version = "3.2.3"), Complex, OpenIPSL(version = "2.0.0-dev")), Documentation(info = "<HTML> This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.<HTML>"));
+partial record Bus_Template
+// BUS2
+parameter OpenIPSL.Types.PerUnit VBUS2
+parameter OpenIPSL.Types.Angle ABUS2
+// BUS3
+parameter OpenIPSL.Types.PerUnit VBUS3
+parameter OpenIPSL.Types.Angle ABUS3
+// BUS4
+parameter OpenIPSL.Types.PerUnit VBUS4
+parameter OpenIPSL.Types.Angle ABUS4
+// BUS5
+parameter OpenIPSL.Types.PerUnit VBUS5
+parameter OpenIPSL.Types.Angle ABUS5
+// BUS6
+parameter OpenIPSL.Types.PerUnit VBUS6
+parameter OpenIPSL.Types.Angle ABUS6
+// BUS1
+parameter OpenIPSL.Types.PerUnit VBUS1
+parameter OpenIPSL.Types.Angle ABUS1
+// BUS7
+parameter OpenIPSL.Types.PerUnit VBUS7
+parameter OpenIPSL.Types.Angle ABUS7
+// BUS8
+parameter OpenIPSL.Types.PerUnit VBUS8
+parameter OpenIPSL.Types.Angle ABUS8
+// BUS9
+parameter OpenIPSL.Types.PerUnit VBUS9
+parameter OpenIPSL.Types.Angle ABUS9
+// BUS10
+parameter OpenIPSL.Types.PerUnit VBUS10
+parameter OpenIPSL.Types.Angle ABUS10
+// BUS11
+parameter OpenIPSL.Types.PerUnit VBUS11
+parameter OpenIPSL.Types.Angle ABUS11
+// BUS12
+parameter OpenIPSL.Types.PerUnit VBUS12
+parameter OpenIPSL.Types.Angle ABUS12
+// BUS13
+parameter OpenIPSL.Types.PerUnit VBUS13
+parameter OpenIPSL.Types.Angle ABUS13
+// BUS14
+parameter OpenIPSL.Types.PerUnit VBUS14
+parameter OpenIPSL.Types.Angle ABUS14
+end Bus_Template;
+record PF_Bus_00000
+	extends System.PF_Data.Bus_Data.Bus_Template(VBUS2=1.0197299999999998,ABUS2=-0.05597615248888888,VBUS3=1.0005700000000002,ABUS3=-0.12023912126666665,VBUS4=0.9987499999999999,ABUS4=-0.14946987088888888,VBUS5=1.00429,ABUS5=-0.12860971328888887,VBUS6=0.9997400000000001,ABUS6=-0.22098293125555557,VBUS1=1.0299999999999998,ABUS1=0,VBUS7=1.00479,ABUS7=-0.1682740323666667,VBUS8=1.02025,ABUS8=-0.04794764471111111,VBUS9=1.00042,ABUS9=-0.25477247703333333,VBUS10=0.99243,ABUS10=-0.26035054461111107,VBUS11=0.9924,ABUS11=-0.24628669337777778,VBUS12=0.98725,ABUS12=-0.2587483337111111,VBUS13=0.9847,ABUS13=-0.2682882953444444,VBUS14=0.9900399999999999,ABUS14=-0.3340417740444444,)
+end PF_Bus_00000;
+end Bus_Data;
+
+record Loads_Data
+
+partial record Load_Template
+parameter OpenIPSL.Types.ActivePower P2_1 ;
+parameter OpenIPSL.Types.ReactivePower Q2_1 ;
+parameter OpenIPSL.Types.ActivePower P3_1 ;
+parameter OpenIPSL.Types.ReactivePower Q3_1 ;
+parameter OpenIPSL.Types.ActivePower P4_1 ;
+parameter OpenIPSL.Types.ReactivePower Q4_1 ;
+parameter OpenIPSL.Types.ActivePower P5_1 ;
+parameter OpenIPSL.Types.ReactivePower Q5_1 ;
+parameter OpenIPSL.Types.ActivePower P6_1 ;
+parameter OpenIPSL.Types.ReactivePower Q6_1 ;
+parameter OpenIPSL.Types.ActivePower P9_1 ;
+parameter OpenIPSL.Types.ReactivePower Q9_1 ;
+parameter OpenIPSL.Types.ActivePower P11_1 ;
+parameter OpenIPSL.Types.ReactivePower Q11_1 ;
+parameter OpenIPSL.Types.ActivePower P12_1 ;
+parameter OpenIPSL.Types.ReactivePower Q12_1 ;
+parameter OpenIPSL.Types.ActivePower P13_1 ;
+parameter OpenIPSL.Types.ReactivePower Q13_1 ;
+parameter OpenIPSL.Types.ActivePower P14_1 ;
+parameter OpenIPSL.Types.ReactivePower Q14_1 ;
+parameter OpenIPSL.Types.ActivePower PBUS9;
+parameter OpenIPSL.Types.ReactivePower QBUS9;
+parameter OpenIPSL.Types.ActivePower PBUS14;
+parameter OpenIPSL.Types.ReactivePower QBUS14;
+parameter OpenIPSL.Types.ActivePower P1_1 ;
+parameter OpenIPSL.Types.ReactivePower Q1_1 ;
+parameter OpenIPSL.Types.ActivePower P2_1 ;
+parameter OpenIPSL.Types.ReactivePower Q2_1 ;
+parameter OpenIPSL.Types.ActivePower P3_1 ;
+parameter OpenIPSL.Types.ReactivePower Q3_1 ;
+parameter OpenIPSL.Types.ActivePower P6_1 ;
+parameter OpenIPSL.Types.ReactivePower Q6_1 ;
+parameter OpenIPSL.Types.ActivePower P8_1 ;
+parameter OpenIPSL.Types.ReactivePower Q8_1 ;
+parameter OpenIPSL.Types.ActivePower P10_1 ;
+parameter OpenIPSL.Types.ReactivePower Q10_1 ;
+end Loads_Template;
+
+record PF_Loads_00000
+	extends System.PF_Data.Loads_Data.Loads_Template(P2_1  = 2.17E7,Q2_1  = 1.27E7,P3_1  = 5.0E7,Q3_1  = 2.5E7,P4_1  = 4.78E7,Q4_1  = 1.0E7,P5_1  = 7.6E6,Q5_1  = 1.6E6,P6_1  = 1.5E7,Q6_1  = 7.5E6,P9_1  = 2.95E7,Q9_1  = 1.6600000000000002E7,P11_1  = 3.5E6,Q11_1  = 1.8E6,P12_1  = 6.1E6,Q12_1  = 1.6E6,P13_1  = 1.35E7,Q13_1  = 5.8E6,P14_1  = 2.0E7,Q14_1  = 7.0E6,PBUS9 = 0,QBUS9 = -1.90159606934E7,PBUS14 = 0,QBUS14 = -1.4708568573E7,P1_1  = -8.1442E7,Q1_1  = -1.973E6,P2_1  = -4.0E7,Q2_1  = -1.5E7,P3_1  = -4.0E7,Q3_1  = -1.5E7,P6_1  = -3.0E7,Q6_1  = -1.0E7,P8_1  = -3.5E7,Q8_1  = -1.0E7,P10_1  = 9.0E6,Q10_1  = 5.8E6,)
+end PF_Loads_00000;
+
+end Loads_Data;
+
+record Trafos_Data
+
+partial record Trafos_Template
+parameter Real 470_1_T1;
+parameter Real 470_1_T2;
+parameter Real 490_1_T1;
+parameter Real 490_1_T2;
+parameter Real 650_1_T1;
+parameter Real 650_1_T2;
+parameter Real 870_1_T1;
+parameter Real 870_1_T2;
+end Trafos_Template;
+
+record PF_Trafos_00000
+  extends System.PF_Data.Trafos_Data.Trafos_Template(,470_1_T1=68.777,470_1_T2=138.0,490_1_T1=68.777,490_1_T2=138.0,650_1_T1=137.55,650_1_T2=69.0,870_1_T1=68.777,870_1_T2=138.0)
+end PF_Trafos_00000;
+
+end Trafos_Data;
+
+end PF_Data;
+
+  annotation(uses(Modelica(version = "3.2.3"), Complex, OpenIPSL(version = "2.0.0-dev")), Documentation(info = "HTML This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.HTML"));
 end CimSystem;
