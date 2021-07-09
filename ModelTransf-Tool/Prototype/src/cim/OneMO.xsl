@@ -73,8 +73,13 @@
 		<xsl:param as="xs:string" name="terminalCode"/>
 		<xsl:variable name="conducting" select="$rdf/cim:Terminal[@rdf:ID=$terminalCode]/cim:Terminal.ConductingEquipment/substring(@rdf:resource,2)"/>
 		<xsl:value-of select="$rdf/cim:ConformLoad[@rdf:ID=$conducting]/cim:IdentifiedObject.name"/>
-		<xsl:value-of select="$rdf/cim:SynchronousMachine[@rdf:ID=$conducting]/cim:IdentifiedObject.name"/>
 		<xsl:value-of select="$rdf/cim:LinearShuntCompensator[@rdf:ID=$conducting]/cim:IdentifiedObject.name"/>
+	</xsl:function>
+	
+		<xsl:function name="gkh:machinesName"><!--Machines parameters name for SV Load-->
+		<xsl:param as="xs:string" name="terminalCode"/>
+		<xsl:variable name="conducting" select="$rdf/cim:Terminal[@rdf:ID=$terminalCode]/cim:Terminal.ConductingEquipment/substring(@rdf:resource,2)"/>
+		<xsl:value-of select="$rdf/cim:SynchronousMachine[@rdf:ID=$conducting]/cim:IdentifiedObject.name"/>
 	</xsl:function>
 	
 	<xsl:template name="gkh:equipmentLookup">
@@ -86,14 +91,14 @@
 	</xsl:template>
 	
 	<xsl:template match="/rdf:RDF">
-		<xsl:text>)package CimSystem "System automatically translated from PSSE CIM using XSLT_OpenIPSL."
+		<xsl:text>package CimSystem "System automatically translated from PSSE CIM using XSLT_OpenIPSL."
 	model </xsl:text>
 		<xsl:value-of select="gkh:substring-after-last-match(md:FullModel/md:Model.modelingAuthoritySet,'/')"/>
 		<xsl:text>
 		inner OpenIPSL.Electrical.SystemBase SysData(S_b =</xsl:text>
 		<xsl:value-of select="gkh:defaultNumbers(cim:BasePower/cim:BasePower.basePower,100000000)"/>
 		<xsl:text>, fn = 50.00) annotation(Placement(transformation(extent = {{-94, 80}, {-60, 100}})));
-		inner System.PF_Data.Power_Flow pf(redeclare record PowerFlow = System.PF_Data.PF_00000) annotation(Placement(transformation(extent = {{-88, 60}, {-68, 80}})));
+		inner CimSystem.PF_Data.Power_Flow pf(redeclare record PowerFlow = CimSystem.PF_Data.PF_00000) annotation(Placement(transformation(extent = {{-88, 60}, {-68, 80}})));
 // -- Buses:
 </xsl:text>
 		<xsl:for-each select="cim:BusbarSection">
@@ -159,16 +164,14 @@
 			<xsl:text>OpenIPSL.Electrical.Loads.PSSE.Load </xsl:text>
 			<xsl:value-of select="gkh:compliantName(concat('CL-',cim:IdentifiedObject.name))"/>
 			<xsl:text>(V_b = </xsl:text>
-			<xsl:copy-of select="$bus"/>
+<xsl:copy-of select="$bus"/>
 			<xsl:text>.V_b, v_0 = pf.powerflow.bus.V</xsl:text>
-			<xsl:copy-of select="$bus"/>
-			<xsl:text>, angle_0 = pf.powerflow.bus.A</xsl:text>
-			<xsl:copy-of select="$bus"/>
-			<xsl:text>, P</xsl:text><xsl:value-of select="cim:IdentifiedObject.name"/><xsl:text> = </xsl:text>
-			<xsl:value-of select="cim:EnergyConsumer.pfixed"/>
-			<xsl:text>, Q</xsl:text><xsl:value-of select="cim:IdentifiedObject.name"/><xsl:text> = </xsl:text>
-			<xsl:value-of select="cim:EnergyConsumer.qfixed"/>
-<xsl:text>);
+<xsl:copy-of select="$bus"/>
+			<xsl:text>,angle_0 = pf.powerflow.bus.A</xsl:text>
+<xsl:copy-of select="$bus"/>
+			<xsl:text>,P_0 = pf.powerflow.loads.P</xsl:text><xsl:value-of select="cim:IdentifiedObject.name"/>
+			<xsl:text>,Q_0 = pf.powerflow.loads.Q</xsl:text><xsl:value-of select="cim:IdentifiedObject.name"/>
+<xsl:text>, PQBRAK = 0.7, characteristic = 2);
 </xsl:text>
 		</xsl:for-each>
 		<xsl:text>// -- Generator Units:</xsl:text>
@@ -182,13 +185,13 @@ CimSystem.Generators.</xsl:text>
 			<xsl:value-of select="concat('gen',$gName)"/>
 			<xsl:text>(V_b = </xsl:text>
 			<xsl:value-of select="$gBus"/>
-			<xsl:text>.V_b, v_0 = flowdata.voltages.V</xsl:text>
+			<xsl:text>.V_b, v_0 = pf.powerflow.bus.V</xsl:text>
 			<xsl:value-of select="$gBus"/>
-			<xsl:text>, angle_0 = flowdata.voltages.A</xsl:text>
+			<xsl:text>, angle_0 = pf.powerflow.bus.A</xsl:text>
 			<xsl:value-of select="$gBus"/>
-			<xsl:text>, P_0 = flowdata.powers.P</xsl:text>
+			<xsl:text>, P_0 = pf.powerflow.machines.GP</xsl:text>
 			<xsl:value-of select="$gName"/>
-			<xsl:text>, Q_0 = flowdata.powers.Q</xsl:text>
+			<xsl:text>, Q_0 = pf.powerflow.machines.GQ</xsl:text>
 			<xsl:value-of select="$gName"/>
 			<xsl:text>);</xsl:text>
 		</xsl:for-each>
@@ -251,10 +254,9 @@ end Generators;
 package PF_Data "Modelica records for power flow data."
 record Power_Flow " Translated and calculated power flow data."
   	extends Modelica.Icons.Record;
-  	replaceable record PowerFlow = System.PF_Data.Power_Flow_Template constrainedby System.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
+  	replaceable record PowerFlow = CimSystem.PF_Data.Power_Flow_Template constrainedby CimSystem.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
   	PowerFlow powerflow;
 end Power_Flow;
-record PowerFlow = System.PF_Data.Power_Flow_Template;
 record Power_Flow_Template "Template for power flow"
 	 extends Modelica.Icons.Record;
 end Power_Flow_Template;  
@@ -270,33 +272,34 @@ partial record Bus_Template
 			<xsl:text>
 parameter OpenIPSL.Types.PerUnit V</xsl:text>
 			<xsl:copy-of select="$name"/>
-			<xsl:text>
+			<xsl:text>;
 parameter OpenIPSL.Types.Angle A</xsl:text>
 			<xsl:copy-of select="$name"/>
-			<xsl:text>
+			<xsl:text>;
 </xsl:text>
 		</xsl:for-each>
 		<xsl:text>end Bus_Template;
 record PF_Bus_00000
-	extends System.PF_Data.Bus_Data.Bus_Template(</xsl:text>
+	extends CimSystem.PF_Data.Bus_Data.Bus_Template(</xsl:text>
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
 			<xsl:call-template name="InitialVoltage">
 				<xsl:with-param name="code" select="concat('#',@rdf:ID)"/>
 				<xsl:with-param name="name" select="gkh:compliantName(cim:IdentifiedObject.description)"/>
 				<xsl:with-param name="base" select="gkh:baseVoltage(substring(cim:TopologicalNode.BaseVoltage/@rdf:resource,2))"/>
 			</xsl:call-template>
-			<xsl:text>,</xsl:text>
+			<xsl:if test="position()!=last()">,</xsl:if>
 		</xsl:for-each>
-		<xsl:text>)
+		<xsl:text>);
 end PF_Bus_00000;
 end Bus_Data;
 
 record Loads_Data
 
-partial record Load_Template
+partial record Loads_Template
 </xsl:text>
 		<xsl:for-each select="$SV/rdf:RDF/cim:SvPowerFlow">
 			<xsl:variable name="load" select="gkh:conformloadName(cim:SvPowerFlow.Terminal/substring(@rdf:resource,2))"/>
+			<xsl:if test="$load!=''">
 <xsl:text>parameter OpenIPSL.Types.ActivePower P</xsl:text>
 <xsl:copy-of select="$load"/>
 <xsl:text>;
@@ -305,15 +308,17 @@ partial record Load_Template
 <xsl:copy-of select="$load"/>
 <xsl:text>;
 </xsl:text>
+</xsl:if>
 		</xsl:for-each>
 <xsl:text>end Loads_Template;
 
 record PF_Loads_00000
-	extends System.PF_Data.Loads_Data.Loads_Template(</xsl:text>
+	extends CimSystem.PF_Data.Loads_Data.Loads_Template(</xsl:text>
 <xsl:choose>
 	<xsl:when test="$SV/rdf:RDF/cim:SvPowerFlow">
 		<xsl:for-each select="$SV/rdf:RDF/cim:SvPowerFlow">
 			<xsl:variable name="load" select="gkh:conformloadName(cim:SvPowerFlow.Terminal/substring(@rdf:resource,2))"/>
+	<xsl:if test="$load!=''">
 	<xsl:text>P</xsl:text>
 <xsl:copy-of select="$load"/>
 <xsl:text> = </xsl:text>
@@ -322,18 +327,21 @@ record PF_Loads_00000
 <xsl:copy-of select="$load"/>
 <xsl:text> = </xsl:text>
 	<xsl:value-of select="cim:SvPowerFlow.q*1000000"/>
-	<xsl:text>,</xsl:text>
+	<xsl:if test="position()!=last()">,</xsl:if>
+	</xsl:if>
 		</xsl:for-each>
 	</xsl:when>
 	<xsl:otherwise>
 		<xsl:for-each select="cim:ConformLoad">
 			<xsl:variable name="cload" select="gkh:compliantName(cim:IdentifiedObject.name)"/>
+			<xsl:if test="$cload!=''">
 			<xsl:text>P</xsl:text><xsl:copy-of select="$cload"/><xsl:text> = </xsl:text><xsl:value-of select="cim:EnergyConsumer.pfixed"/>
 			<xsl:text>Q</xsl:text><xsl:copy-of select="$cload"/><xsl:text> = </xsl:text><xsl:value-of select="cim:EnergyConsumer.qfixed"/>
+			</xsl:if>
 		</xsl:for-each>
 	</xsl:otherwise>
 </xsl:choose>
-<xsl:text>)
+<xsl:text>);
 end PF_Loads_00000;
 
 end Loads_Data;
@@ -345,19 +353,18 @@ partial record Trafos_Template</xsl:text>
 			<xsl:variable name="name" select="gkh:compliantName(key('powertransformer',cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,2))/cim:IdentifiedObject.description)" />
 			<xsl:variable name="term" select="key('terminal',cim:TransformerEnd.Terminal/substring(@rdf:resource,2))/cim:IdentifiedObject.name"/>
 <xsl:text>
-parameter Real </xsl:text><xsl:value-of select="concat($name,$term)"/><xsl:text>;</xsl:text>
+parameter Real </xsl:text><xsl:value-of select="concat('T',$name,$term)"/><xsl:text>;</xsl:text>
 	</xsl:for-each>
 <xsl:text>
 end Trafos_Template;
 
 record PF_Trafos_00000
-  extends System.PF_Data.Trafos_Data.Trafos_Template(</xsl:text>
+  extends CimSystem.PF_Data.Trafos_Data.Trafos_Template(</xsl:text>
 
 			<xsl:for-each select="cim:PowerTransformerEnd">
 				<xsl:variable name="name" select="gkh:compliantName(key('powertransformer',cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,2))/cim:IdentifiedObject.description)" />
 				<xsl:variable name="term" select="key('terminal',cim:TransformerEnd.Terminal/substring(@rdf:resource,2))/cim:IdentifiedObject.name"/>
-				<xsl:text>,</xsl:text>
-				<xsl:value-of select="concat($name,$term)"/><xsl:text>=</xsl:text>
+				<xsl:value-of select="concat('T',$name,$term)"/><xsl:text>=</xsl:text>
 				<xsl:choose>
 					<xsl:when test="not(key('tapchanger',@rdf:ID))">
 						<xsl:value-of select="format-number(cim:PowerTransformerEnd.ratedU,'0.0#')"/>
@@ -366,12 +373,81 @@ record PF_Trafos_00000
 						<xsl:apply-templates select="key('tapchanger',@rdf:ID)"/>
 					</xsl:otherwise>
 				</xsl:choose>
+				<xsl:if test="position()!=last()">,</xsl:if>
 			</xsl:for-each>
-<xsl:text>)
+<xsl:text>);
 end PF_Trafos_00000;
 
 end Trafos_Data;
 
+record Machines_Data
+
+partial record Machines_Template
+</xsl:text>
+
+		<xsl:for-each select="$SV/rdf:RDF/cim:SvPowerFlow">
+			<xsl:variable name="load" select="gkh:machinesName(cim:SvPowerFlow.Terminal/substring(@rdf:resource,2))"/>
+			<xsl:if test="$load!=''">
+<xsl:text>parameter OpenIPSL.Types.ActivePower GP</xsl:text>
+<xsl:copy-of select="$load"/>
+<xsl:text>;
+</xsl:text>
+<xsl:text>parameter OpenIPSL.Types.ReactivePower GQ</xsl:text>
+<xsl:copy-of select="$load"/>
+<xsl:text>;
+</xsl:text>
+</xsl:if>
+		</xsl:for-each>
+
+<xsl:text>
+end Machines_Template;
+
+record PF_Machines_00000
+
+	extends CimSystem.PF_Data.Machines_Data.Machines_Template(</xsl:text>
+<xsl:choose>
+	<xsl:when test="$SV/rdf:RDF/cim:SvPowerFlow">
+		<xsl:for-each select="$SV/rdf:RDF/cim:SvPowerFlow">
+			<xsl:variable name="flow" select="gkh:machinesName(cim:SvPowerFlow.Terminal/substring(@rdf:resource,2))"/>
+			<xsl:if test="$flow!=''">
+	<xsl:text>GP</xsl:text>
+<xsl:copy-of select="$flow"/>
+<xsl:text> = </xsl:text>
+	
+<xsl:value-of select="cim:SvPowerFlow.p*1000000"/>
+	<xsl:text>,GQ</xsl:text>
+<xsl:copy-of select="$flow"/>
+<xsl:text> = </xsl:text>
+	<xsl:value-of select="cim:SvPowerFlow.q*1000000"/>
+	<xsl:if test="position()!=last()">,</xsl:if>
+	</xsl:if>
+		</xsl:for-each>
+	</xsl:when>
+	<xsl:otherwise>
+		<xsl:for-each select="cim:ConformLoad">
+			<xsl:variable name="cload" select="gkh:compliantName(cim:IdentifiedObject.name)"/>
+			<xsl:text>P</xsl:text><xsl:copy-of select="$cload"/><xsl:text> = </xsl:text><xsl:value-of select="cim:EnergyConsumer.pfixed"/>
+			<xsl:text>Q</xsl:text><xsl:copy-of select="$cload"/><xsl:text> = </xsl:text><xsl:value-of select="cim:EnergyConsumer.qfixed"/>
+		</xsl:for-each>
+	</xsl:otherwise>
+</xsl:choose>
+<xsl:text>);
+
+end PF_Machines_00000;
+
+end Machines_Data;
+
+record PF_00000
+  extends System.PF_Data.Power_Flow_Template;
+  replaceable record Bus = CimSystem.PF_Data.Bus_Data.PF_Bus_00000 constrainedby CimSystem.PF_Data.Bus_Data.Bus_Template "Bus power flow result";
+  Bus bus;
+  replaceable record Loads = CimSystem.PF_Data.Loads_Data.PF_Loads_00000 constrainedby CimSystem.PF_Data.Loads_Data.Loads_Template "Loads power flow result";
+  Loads loads;
+  replaceable record Machines = CimSystem.PF_Data.Machines_Data.PF_Machines_00000 constrainedby CimSystem.PF_Data.Machines_Data.Machines_Template "Machines power flow result";
+  Machines machines;
+  replaceable record Trafos = CimSystem.PF_Data.Trafos_Data.PF_Trafos_00000 constrainedby CimSystem.PF_Data.Trafos_Data.Trafos_Template "Trafos power flow result";
+  Trafos trafos;
+end PF_00000;
 end PF_Data;
 
   annotation(uses(Modelica(version = "3.2.3"), Complex, OpenIPSL(version = "2.0.0-dev")), Documentation(info = "HTML This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.HTML"));
@@ -411,9 +487,10 @@ end CimSystem;</xsl:text>
 				<xsl:text>Synchronous GLEN</xsl:text>
 			</xsl:otherwise>
 		</xsl:choose>
-		<xsl:text>end Gen</xsl:text>
-		<xsl:copy-of select="$GenName"/>
-		<xsl:text>;</xsl:text>
+<xsl:text>
+end GEN</xsl:text>
+<xsl:copy-of select="$GenName"/>
+<xsl:text>;</xsl:text>
 	</xsl:template>
 	
 	<xsl:template match="cim:RatioTapChanger">
@@ -437,12 +514,12 @@ end CimSystem;</xsl:text>
 				<xsl:value-of select="format-number(../cim:PowerTransformerEnd.b,'0.0#')"/>
 				<xsl:text>,</xsl:text><xsl:value-of select="lower-case($term)"/>
 				<xsl:text> = pf.powerflow.trafos.</xsl:text>
-<xsl:value-of select="concat($Name,$term)"/>
+<xsl:value-of select="concat('T',$Name,$term)"/>
 			</xsl:when>
 			<xsl:otherwise>
 <xsl:text>,</xsl:text><xsl:value-of select="lower-case($term)"/>
 <xsl:text> = pf.powerflow.trafos.</xsl:text>
-<xsl:value-of select="concat($Name,$term)"/>
+<xsl:value-of select="concat('T',$Name,$term)"/>
 <xsl:text>);
 </xsl:text>
 			</xsl:otherwise>
@@ -456,11 +533,11 @@ end CimSystem;</xsl:text>
 			<xsl:value-of select="gkh:compliantName(cim:IdentifiedObject.name)"/>
 		</xsl:variable>
 		<xsl:text>
-model Gen</xsl:text>
+model GEN</xsl:text>
 		<xsl:copy-of select="$GName"/>
 		<xsl:text>
 	extends OpenIPSL.Electrical.Essentials.pfComponent;
-	OpenIPSL.Interfaces.PwPin pin annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
+	OpenIPSL.Interfaces.PwPin p annotation(Placement(transformation(extent = {{100, -10}, {120, 10}})));
 	// Writing machine;</xsl:text>
 		<xsl:call-template name="MakeMachineForCode">
 			<xsl:with-param name="code" select="concat('#',@rdf:ID)"/>
@@ -548,7 +625,7 @@ model Gen</xsl:text>
 		</xsl:if>
 		<xsl:text>
 equation
-      connect(machine.p, pin) annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));
+      connect(machine.p, p) annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));
       connect(pss.VOTHSG, exciter.VOTHSG) annotation(Line(points = {{-49, 0}, {-40, 0}, {-40, -5.663}, {-17, -5.663}, {-17, -6}}, color = {0, 0, 127}));
       connect(machine.XADIFD, exciter.XADIFD) annotation(Line(points = {{41, -9}, {43.537, -9}, {43.537, -24.895}, {2, -24.895}, {2, -21}}, color = {0, 0, 127}));
       connect(machine.EFD0, exciter.EFD0) annotation(Line(points = {{41, -5}, {46.015, -5}, {46.015, -27.845}, {-20, -27.845}, {-20, -14}, {-17, -14}}, color = {0, 0, 127}));
@@ -591,9 +668,9 @@ equation
 	<xsl:template match="cim:PssIEEE2B/cim:PowerSystemStabilizerDynamics.ExcitationSystemDynamics">
 		<xsl:text>
 	OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2A pss(M = </xsl:text>
-		<xsl:value-of select="format-number(../cim:PssIEEE2B.m,'0.00000#')"/>
+		<xsl:value-of select="../cim:PssIEEE2B.m"/>
 		<xsl:text>,N = </xsl:text>
-		<xsl:value-of select="format-number(../cim:PssIEEE2B.n,'0.00000#')"/>
+		<xsl:value-of select="../cim:PssIEEE2B.n"/>
 		<xsl:text>,T_w1 = </xsl:text>
 		<xsl:value-of select="format-number(../cim:PssIEEE2B.tw1,'0.00000#')"/>
 		<xsl:text>,T_w2 = </xsl:text>
@@ -635,53 +712,47 @@ equation
 			<xsl:text>T_R</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='1'">
-			<xsl:text>K_A</xsl:text>
+			<xsl:text>,K_A</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='2'">
-			<xsl:text>T_A</xsl:text>
+			<xsl:text>,T_A</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='3'">
-			<xsl:text>V_RMAX</xsl:text>
+			<xsl:text>,V_RMAX</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='4'">
-			<xsl:text>V_RMIN</xsl:text>
+			<xsl:text>,V_RMIN</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='5'">
-			<xsl:text>K_E</xsl:text>
+			<xsl:text>,K_E</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='6'">
-			<xsl:text>T_E</xsl:text>
+			<xsl:text>,T_E</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='7'">
-			<xsl:text>K_F</xsl:text>
+			<xsl:text>,K_F</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='8'">
-			<xsl:text>T_F</xsl:text>
-		</xsl:if>
-		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='9'">
-			<xsl:text>?????????</xsl:text>
+			<xsl:text>,T_F</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='10'">
-			<xsl:text>E_1</xsl:text>
+			<xsl:text>,E_1</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='11'">
-			<xsl:text>S_EE_1</xsl:text>
+			<xsl:text>,S_EE_1</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='12'">
-			<xsl:text>E_2</xsl:text>
+			<xsl:text>,E_2</xsl:text>
 		</xsl:if>
 		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='13'">
-			<xsl:text>S_EE_2</xsl:text>
+			<xsl:text>,S_EE_2</xsl:text>
 		</xsl:if>
-		<xsl:text> = </xsl:text>
-		<xsl:value-of select="format-number(../cim:ProprietaryParameterDynamics.floatParameterValue,'0.00000#')"/>
-		<xsl:choose>
-			<xsl:when test="../cim:ProprietaryParameterDynamics.parameterNumber='13'">
-				<xsl:text>) annotation(Placement(transformation(extent = {{-16, -20}, {4, 0}})));</xsl:text>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>,</xsl:text>
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:if test="not(../cim:ProprietaryParameterDynamics.parameterNumber=9)">
+			<xsl:text> = </xsl:text>
+			<xsl:value-of select="format-number(../cim:ProprietaryParameterDynamics.floatParameterValue,'0.00000#')"/>
+		</xsl:if>
+		<xsl:if test="../cim:ProprietaryParameterDynamics.parameterNumber='13'">
+			<xsl:text>) annotation(Placement(transformation(extent = {{-16, -20}, {4, 0}})));</xsl:text>
+		</xsl:if>
 	</xsl:template>
 </xsl:stylesheet>
