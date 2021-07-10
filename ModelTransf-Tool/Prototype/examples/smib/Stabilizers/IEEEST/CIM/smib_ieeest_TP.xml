@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+  <md:FullModel rdf:about="urn:uuid:d2d1c955-e18b-11eb-a668-74e5f963e191">
+    <md:Model.created>2021-07-10T14:33:48Z</md:Model.created>
+    <md:Model.scenarioTime>2021-07-10T14:31:49Z</md:Model.scenarioTime>
+    <md:Model.version>0</md:Model.version>
+    <md:Model.description />
+    <md:Model.modelingAuthoritySet>http://www.smib_ieeest.com/smib_ieeest</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/Topology/4/1</md:Model.profile>
+  </md:FullModel>
+  <cim:ConnectivityNode rdf:about="#_8f67df9e-e18b-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_8f67dfa0-e18b-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:about="#_8f67dfbb-e18b-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_8f67dfbd-e18b-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:about="#_8f67dfca-e18b-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_8f67dfcc-e18b-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:about="#_8f67dfd8-e18b-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_8f67dfda-e18b-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:Terminal rdf:about="#_8f67df9d-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfa0-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dfba-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfbd-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dfc9-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfcc-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dfd7-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfda-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dfe9-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfbd-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dff2-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfa0-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dffa-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfcc-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dffe-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfa0-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67dfff-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfbd-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67e002-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfbd-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67e003-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfcc-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67e006-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfbd-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67e007-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfda-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67e00a-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfcc-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_8f67e00b-e18b-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_8f67dfda-e18b-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:TopologicalNode rdf:ID="_8f67dfa0-e18b-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_8f67dfa7-e18b-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_8f67dfa6-e18b-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>GEN01</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>GEN01</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+  <cim:TopologicalNode rdf:ID="_8f67dfbd-e18b-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_8f67dfa7-e18b-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_8f67dfbf-e18b-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>LOAD</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>LOAD</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+  <cim:TopologicalNode rdf:ID="_8f67dfcc-e18b-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_8f67dfa7-e18b-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_8f67dfa6-e18b-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>GEN02</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>GEN02</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+  <cim:TopologicalNode rdf:ID="_8f67dfda-e18b-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_8f67dfa7-e18b-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_8f67dfdc-e18b-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>FAULT</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>FAULT</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+</rdf:RDF>

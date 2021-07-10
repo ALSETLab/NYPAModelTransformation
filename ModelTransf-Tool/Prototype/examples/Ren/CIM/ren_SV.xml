@@ -1,0 +1,3273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:pti="http://www.pti-us.com/PTI_CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+  <md:FullModel rdf:about="urn:uuid:e94ba906-e17c-11eb-a668-74e5f963e191">
+    <md:Model.created>2021-07-10T12:46:58Z</md:Model.created>
+    <md:Model.scenarioTime>2021-07-10T12:46:58Z</md:Model.scenarioTime>
+    <pti:Model.createdBy>Siemens PTI PSS®ODMS</pti:Model.createdBy>
+    <md:Model.version>0</md:Model.version>
+    <md:Model.description />
+    <md:Model.modelingAuthoritySet>http://www.ren.com/ren</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/StateVariables/4/1</md:Model.profile>
+    <md:Model.profile>http://www.pti-us.com/PTIExtensions/1</md:Model.profile>
+  </md:FullModel>
+  <cim:SvVoltage rdf:ID="_e94ba917-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>425.012</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-27.4831</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba90c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba92e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.212</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.8077</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba929-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba93d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>415.312</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.5446</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba939-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba94e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>238.1082</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.5104</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba948-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba95c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>234.641</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.8956</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba959-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba96c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>236.4846</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.4767</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba967-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba981-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.915</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5895</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba977-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba990-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.751</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8665</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba98c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba99f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.4245</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.8773</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba99b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba9ae-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.0555</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.2494</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba9aa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba9bd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.024</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8191</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba9b9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba9cc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.883</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.3883</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba9c8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba9db-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>150.9855</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.8331</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba9d7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba9ea-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.0495</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.8576</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba9e6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94ba9f9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.423</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.7043</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94ba9f5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa08-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.1885</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.3184</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa04-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa17-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.55</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.7782</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa13-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa26-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.7615</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.789</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa22-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa35-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.505</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.9219</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa31-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa44-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.2245</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8438</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa40-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa53-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>154.233</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.9225</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa4f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa62-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.7795</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.1066</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa5e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa71-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.09</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8125</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa6d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa80-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.3775</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6893</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa7c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa8f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.57</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.9435</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa8b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baa9e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>149.1</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6947</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baa9a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baaad-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.1995</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.2547</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baaa9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baabc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.301</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.4495</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baab8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baacb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.214</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1139</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baac7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baad9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>154.0125</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.965</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baad6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baae8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>154.2675</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8164</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baae4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baaf7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.6055</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.7349</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baaf3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab06-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>151.242</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.2321</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab02-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab15-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.04</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab11-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab24-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.565</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.3289</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab20-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab33-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.6775</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.6239</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab2f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab42-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.552</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.4351</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab3e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab50-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.946</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.9536</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab4d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab5f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.6238</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.995</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab5b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab6e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.5756</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.7047</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab6a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab7e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab79-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab8d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.669</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9232</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab89-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bab9c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>233.4112</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3759</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bab98-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94babab-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.2666</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.23</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baba7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94babba-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.0716</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.142</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94babb6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94babc9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.0938</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8064</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94babc5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94babd8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.3326</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.9083</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94babd4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94babe7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.4798</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.1398</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94babe3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94babf6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.8242</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6413</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94babf2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac05-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.8</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.9989</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac01-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac14-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.7636</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3591</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac10-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac23-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.4942</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.3235</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac1f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac32-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.7076</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.5714</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac2e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac41-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.7868</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5538</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac3d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac50-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.9022</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.5491</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac4c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac5f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.625</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6028</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac5b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac6e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.8604</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.099</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac6a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac7d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.1962</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.4106</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac79-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac8c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>232.067</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.7476</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac88-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bac9a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.2368</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9988</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bac97-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baca9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.887</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4271</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baca5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bacb8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.7274</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.331</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bacb4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bacc7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.0608</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.0775</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bacc3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bacd7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bacd2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bace6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.3952</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.2273</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bace2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bacf5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.9</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3108</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bacf1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad04-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.338</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9273</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad00-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad12-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>231.5412</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.311</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad0f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad21-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.3038</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.7065</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad1d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad30-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.7558</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.497</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad2c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad3e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.8</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.4496</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad3b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad4d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.756</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.348</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad49-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad5d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad58-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad6c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.5524</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.429</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad68-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad7b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.5964</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.0897</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad77-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad8a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.9924</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.0011</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad86-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bad99-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>225.3152</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.7127</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bad95-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bada8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>233.7258</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.7581</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bada4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94badb6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.2478</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.7229</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94badb3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94badc5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.7218</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94badc1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94badd5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94badd0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bade4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>232.9756</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.6693</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bade0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94badf3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.2048</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.0307</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94badef-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae02-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94badfe-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae11-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>417.836</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.3186</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae0d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae21-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae1c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae30-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>417.24</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.3441</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae2c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae3f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>417.764</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.7123</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae3b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae4f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae4a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae5e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.12</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.6711</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae5a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae6d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.236</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.0621</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae69-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae7c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>418.22</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.1184</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae78-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae8b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>418.044</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-33.7683</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae87-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bae9a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.548</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1774</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bae96-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baeaa-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baea5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baeba-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baeb5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baec9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.744</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.1154</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baec5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baed8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.596</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.4853</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baed4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baee7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>421.044</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-29.7431</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baee3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baef6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.432</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.2291</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baef2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf05-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.82</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3492</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf01-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf13-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.008</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1798</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf10-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf22-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>417.704</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.859</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf1e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf31-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.372</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-32.2631</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf2d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf40-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>415.888</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1303</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf3c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf50-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>130.0598</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9171</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf4b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf5f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>131.0569</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.4893</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf5b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf70-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.56845</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6146</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf6a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf7f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.49392</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.1934</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf7b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf8e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.71001</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8126</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf8a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baf9d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.15939</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.517</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baf99-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bafac-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.41725</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6569</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bafa8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bafbb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.22995</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2885</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bafb7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bafca-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.33327</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.7658</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bafc6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bafd9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.86562</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-49.5841</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bafd5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bafe8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.80218</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.2238</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bafe4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94baff7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.54306</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6933</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94baff3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb006-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.8379</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9582</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb002-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb015-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87003</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.4821</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb011-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb024-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.33094</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2887</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb020-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb033-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.59157</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4382</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb02f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb042-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.79462</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4893</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb03e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb051-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.97776</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6059</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb04d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb060-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.93618</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4617</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb05c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb06f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.09765</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.2549</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb06b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb07e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.71694</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.9235</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb07a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb08d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.17577</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9813</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb089-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb09c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.47124</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.262</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb098-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb0ab-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.96957</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.1169</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb0a7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb0ba-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.38241</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9122</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb0b6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb0c9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.85699</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6933</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb0c5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb0d8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.42903</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9577</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb0d4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb0e7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.47124</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.332</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb0e3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb0f6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.3654</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9366</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb0f2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb105-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.52794</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.2188</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb101-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb113-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.72891</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.0144</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb110-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb122-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82971</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.2484</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb11e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb132-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb12d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb141-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.65394</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.5548</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb13d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb150-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.46872</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.9445</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb14c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb15f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.37819</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.6791</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb15b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb16d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.83494</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9676</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb16a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb17d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb178-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb18d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb188-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb19c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.14049</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.2022</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb198-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb1ab-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.53865</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.8663</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb1a7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb1ba-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82152</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.5085</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb1b6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb1c9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.0567</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1216</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb1c5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb1d7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.62515</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.8601</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb1d4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb1e6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.14049</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.2017</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb1e2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb1f5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.15876</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.8093</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb1f1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb204-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.94204</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.1169</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb200-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb212-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.64386</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.6492</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb20f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb221-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.37674</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.3948</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb21d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb22f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.0378</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6182</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb22c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb23d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.99162</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6488</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb23a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb24c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.26794</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-53.0063</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb248-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb25b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.61488</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.7324</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb257-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb26a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.55837</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9762</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb266-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb279-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.78939</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.7419</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb275-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb288-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.10584</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.5676</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb284-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb297-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.16695</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.4796</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb293-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb2a6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.41958</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.8072</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2a2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb2b5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>61.89813</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.669</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2b1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb2c4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87066</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.9015</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2c0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb2d2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.37989</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.3768</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2cf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb2e1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82719</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1686</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2dd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb2f1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2ec-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb300-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.15435</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.3616</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb2fc-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb30e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.25263</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-50.1712</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb30b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb31d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb319-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb32c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.591</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.3202</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb328-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb33b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.264</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.3876</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb337-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb34a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.3001</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb346-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb359-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.5425</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.7143</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb355-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb368-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.718</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.586</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb364-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb377-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.7051</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb373-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb385-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.9685</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.038</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb382-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb394-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.1095</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6698</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb390-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3a2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.162</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.2519</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb39f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3b1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.651</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.3659</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb3ad-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3c0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.6385</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8097</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb3bc-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3cf-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.718</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.586</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb3cb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3df-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb3da-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3ee-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.75</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-32.7757</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb3ea-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb3fd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.003</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.2991</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb3f9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb40d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb408-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb41b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.018</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.0345</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb418-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb42a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.8085</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.9029</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb426-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb439-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.6525</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9649</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb435-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb448-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.961</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.4379</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb444-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb457-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.9865</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.9126</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb453-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb465-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.9865</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.901</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb462-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb474-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.904</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8407</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb470-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb482-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.6216</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9949</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb47f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb490-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.6084</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9847</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb48d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb49e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.6216</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9949</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb49b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb4ad-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.5768</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1365</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb4a9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb4bc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>231.5742</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.5465</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb4b8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb4cb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>232.9976</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.5814</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb4c7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb4da-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.7252</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.4452</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb4d6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb4e8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.559</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.7873</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb4e5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb4f7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.7152</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9386</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb4f3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb506-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>233.3848</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3406</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb502-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb515-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.9044</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.6064</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb511-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb524-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.614</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6169</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb520-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb534-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb52f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb543-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.8428</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.1535</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb53f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb552-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.3292</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9275</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb54e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb560-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.2874</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8887</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb55d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb56f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.0916</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8359</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb56b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb57f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb57a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb58f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb58a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb59e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb59a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb5ad-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.9442</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8142</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb5a9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb5bc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.6318</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1274</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb5b8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb5cb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.4194</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9311</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb5c7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb5da-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.5866</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.7014</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb5d6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb5e8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.5932</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6928</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb5e5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb5f6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.591</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6993</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb5f3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb604-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.5932</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.693</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb601-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb613-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb60f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb623-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb61e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb631-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.107</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.014</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb62e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb640-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.8</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8809</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb63c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb64e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.7934</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.9421</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb64b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb65d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.8396</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.9579</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb659-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb66c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.5106</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9748</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb668-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb67b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.7196</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9389</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb677-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb68a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.3378</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9232</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb686-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb698-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.3466</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9303</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb695-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6a7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.2498</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8691</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6a3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6b5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.2476</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.876</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6b2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6c4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.6714</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.126</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6c0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6d2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.6714</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.1206</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6cf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6e1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.3676</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9374</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6dd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6f0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.8978</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.5439</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6ec-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb6ff-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.56</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.267</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb6fb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb70e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>415.84</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.118</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb70a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb71d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb719-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb72d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb728-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb73c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.228</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.0623</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb738-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb74a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.232</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.0623</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb747-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb758-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.236</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.0624</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb755-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb766-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.228</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.0623</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb763-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb774-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>419.056</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.8065</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb771-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb782-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>417.388</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.7597</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb77f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb790-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>417.392</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.7616</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb78d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb79f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.82</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3492</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb79b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb7ad-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.82</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.3492</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb7aa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb7bc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1682</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb7b8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb7ca-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.008</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1798</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb7c7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb7d9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.62</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.4856</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb7d5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb7e7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>416.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.0588</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb7e4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb7f6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.904</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8408</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb7f2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb805-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>151.5135</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.1707</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb801-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb814-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.1425</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.3713</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb810-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb823-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.639</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9839</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb81f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb832-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.0165</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.8766</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb82e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb841-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.958</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.4662</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb83d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb850-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.985</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.9164</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb84c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb85f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.5965</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.7509</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb85b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb86e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.0915</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6964</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb86a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb87e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>155.5275</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.8367</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb879-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb88d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.4756</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.2063</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb889-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb89c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.3466</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9352</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb898-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb8ab-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.7218</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9442</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb8a7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb8ba-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>230.2476</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8764</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb8b6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb8c9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>225.3262</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.1471</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb8c5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb8d8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>227.6714</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.127</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb8d4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb8e8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb8e3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb8f6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.86562</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-49.5841</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb8f3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb904-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.86562</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-49.5841</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb901-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb913-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.01556</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8975</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb90f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb921-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82782</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9154</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb91e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb92f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82719</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9103</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb92c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb93e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.21294</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2866</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb93a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb94c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.0899</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.7179</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb949-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb95a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.09746</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.7246</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb957-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb968-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.11006</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.7076</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb965-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb977-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.82574</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.0567</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb973-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb986-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.96516</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.4493</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb982-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb994-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.96516</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.4491</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb991-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9a2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.59302</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1264</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb99f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9b0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.61885</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1307</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb9ad-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9be-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.94519</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.5268</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb9bb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9cd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.89</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.7859</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb9c9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9dc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.78057</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5418</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb9d8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9ea-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.76986</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.531</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb9e7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bb9f8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.75852</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5501</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bb9f5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba06-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.73773</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5434</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba03-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba15-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.18881</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6589</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba11-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba24-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.47691</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2637</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba20-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba34-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba2f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba43-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.72116</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6512</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba3f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba52-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.26</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.4805</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba4e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba62-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.56845</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6146</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba5d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba71-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.56908</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6123</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba6d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba81-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.56845</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6125</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba7c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba8f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.49392</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.1916</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba8c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bba9d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.71001</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8124</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bba9a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbaae-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbaa8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbabc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.16128</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5023</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbab9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbaca-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.15939</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.517</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbac7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbad9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbad5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbae7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.41725</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6569</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbae4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbaf6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbaf2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb04-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.23058</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2884</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb01-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb12-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.22995</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2883</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb0f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb20-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.22995</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2875</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb1d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb2e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.33327</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.7658</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb2b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb3c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.86625</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-49.5822</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb39-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb4a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.86625</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-49.5816</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb47-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb58-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.80218</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.2232</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb55-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb66-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.54432</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6919</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb63-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb74-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.54369</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6931</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb71-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb83-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb7f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbb92-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb8e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbba0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87066</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.4812</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbb9d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbbae-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87129</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.481</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbbab-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbbbd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbbb9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbbcc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbbc8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbbda-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.59157</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4381</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbbd7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbbe8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.59157</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4381</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbbe5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbbf7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbbf3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc05-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.79462</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4893</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc02-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc13-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.93618</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4617</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc10-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc21-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.09828</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.2549</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc1e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc2f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.71757</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.9212</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc2c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc3e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc3a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc4c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.1764</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9791</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc49-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc5a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.17766</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9737</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc57-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc69-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc65-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc77-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.47187</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2615</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc74-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc85-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.4725</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2587</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc82-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbc93-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.47187</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.262</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc90-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbca2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbc9e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbcb0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.38304</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9114</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbcad-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbcbe-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.38304</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9087</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbcbb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbccc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.85762</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6901</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbcc9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbcda-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.47187</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.3299</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbcd7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbce8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.36603</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9354</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbce5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbcf6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.36666</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9307</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbcf3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd04-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.52857</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.2175</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd01-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd13-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd0f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd21-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82971</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.2484</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd1e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd30-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd2c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd3f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd3b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd4d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.83494</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9667</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd4a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd5c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd58-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd6a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82467</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.4929</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd67-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd78-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82215</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.5071</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd75-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd87-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd83-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbd95-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.14049</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.2017</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbd92-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbda3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.14049</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.1999</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbda0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbdb2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbdae-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbdc0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.15876</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.8087</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbdbd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbdce-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.15876</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.8075</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbdcb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbddc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.94267</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.1164</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbdd9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbdea-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.37674</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.3948</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbde7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbdf9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbdf5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe07-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.0378</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6177</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe04-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe15-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.99162</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6483</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe12-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe23-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.26794</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-53.0063</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe20-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe31-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.79002</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.7397</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe2e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe3f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.16695</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.4796</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe3c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe4e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>131.0569</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.4893</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe4a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe5d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe59-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe6b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>61.89813</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.6687</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe68-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe7a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe76-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe88-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.37989</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.3764</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe85-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbe96-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.05733</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1203</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbe93-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbea7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>15.583545</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-11.995</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbea1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbeb5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>15.06135</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.5759</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbeb2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbec3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>15.583545</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-11.9949</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbec0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbed3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.75554</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>173.6799</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbece-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbee1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.75554</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>173.6799</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbede-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbeef-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.75554</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>173.6799</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbeec-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbefd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>10.419945</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>179.514</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbefa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf0b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.77768</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-0.5857</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf08-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf19-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.775425</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-0.3807</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf16-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf27-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.694775</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>169.7</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf24-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf35-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.95409</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>174.3134</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf32-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf43-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.8189875</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>178.4738</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf40-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf51-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.8183725</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>178.547</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf4e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf61-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>5.66892</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>169.2859</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf5c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf6f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.02802</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>172.4026</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf6c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf7f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.30865</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.7476</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf7a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf8d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>13.55595</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-1.5218</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf8a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbf9b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.30865</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.7476</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbf98-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbfa9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>12.87795</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>1.8374</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbfa6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbfb7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.04885</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.5465</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbfb4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbfc5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.04885</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.5465</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbfc2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbfd3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.18115</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.5465</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbfd0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbfe1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.4837</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.5814</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbfde-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbfef-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.4837</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.5814</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbfec-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bbffd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>13.9545</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-0.4326</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bbffa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc00d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.4652</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>173.4141</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc008-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc01d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>11.26367</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.1832</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc018-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc02b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>11.26323</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.2361</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc028-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc03a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.9749</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-9.4496</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc036-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc048-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>10.0213</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-6.0617</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc045-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc056-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>10.0196</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.7499</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc053-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc064-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.7756</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>172.9621</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc061-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc072-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.7761</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-7.038</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc06f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc080-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.9641</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-4.2698</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc07d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc08e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.5876</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.3108</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc08b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc09c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.9649</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-4.4016</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc099-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc0aa-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.2554</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-16.2519</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0a7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc0b8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.251</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-16.2519</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0b5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc0c6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.251</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-16.2519</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0c3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc0d4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.5881</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-7.7873</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0d1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc0e2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>8.9204</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-0.0328</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0df-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc0f0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.5959</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-7.7873</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0ed-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc100-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>12.5622</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-11.9386</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc0fb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc10e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>12.56268</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-11.9386</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc10b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc11c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>12.56268</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-11.9386</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc119-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc12c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>3.36119</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-14.2866</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc127-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc13a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>3.36119</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-14.2866</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc137-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc148-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.5631</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-4.1622</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc145-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc156-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.5658</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-4.3012</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc153-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc164-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>9.7524</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.3406</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc161-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc173-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>5.8053</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.7313</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc16f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc181-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>5.64198</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-13.0567</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc17e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc18f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>5.8062</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.5911</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc18c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc19d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>10.0611</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-9.2273</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc19a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc1ab-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>10.0611</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-9.2273</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc1a8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc1bb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.25938</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.2569</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc1b6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc1c9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>17.65422</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>5.3189</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc1c6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc1d7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.2424</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-1.8166</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc1d4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc1e5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.02388</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-17.2022</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc1e2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc1f5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.327846</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-17.2022</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc1f0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc203-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.34494</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-13.0555</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc200-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc212-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>14.7621</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-5.3576</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc20e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc220-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>15.25245</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-9.118</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc21d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc22e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>11.95752</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-0.9951</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc22b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc23c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>11.4258</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-6.3659</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc239-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc24b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.51924</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-7.0317</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc247-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc259-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>6.545448</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-6.6825</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc256-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc269-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc264-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc278-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc274-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc287-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc283-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc296-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc292-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2a5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2a1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2b4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2b0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2c5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2bf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2d4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2d0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2e3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.07506</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.0623</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2df-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2f1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.05796</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.0623</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2ee-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc2ff-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.07488</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.0624</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc2fc-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc30d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.07506</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.0623</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc30a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc31c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.32706</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>2.4786</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc318-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc32a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.54</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc327-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc338-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>17.32932</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.9781</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc335-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc346-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>17.3304</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.9452</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc343-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc354-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.91944</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-3.1506</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc351-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc362-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>19.56816</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-8.3492</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc35f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc372-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.97102</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-1.2198</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc36d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc381-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc37d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc38f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.97207</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-1.2536</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc38c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc39d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>21.02289</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-2.1941</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc39a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc3ab-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.8593</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-2.0218</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc3a8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc3b9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.34921</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-1.6015</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc3b6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc3ca-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc3c4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc3d8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>19.47082</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.3333</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc3d5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc3e8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2814</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.0924</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc3e3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc3f7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.28098</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.1952</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc3f3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc405-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.3446</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6918</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc402-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc413-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.35973</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.7472</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc410-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc422-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.602</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.7849</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc41e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc430-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.6014</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.7511</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc42d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc43f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87633</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.8928</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc43b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc44d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.4398</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.4217</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc44a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc45b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.88956</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.4621</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc458-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc469-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.2524</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.8472</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc466-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc477-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.41725</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.1886</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc474-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc485-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.501</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4383</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc482-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc493-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.4598</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4406</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc490-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4a1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.59157</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4383</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc49e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4af-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.59976</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4406</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc4ac-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4bd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5078</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6067</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc4ba-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4cb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5096</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.608</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc4c8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4d9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.98028</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6067</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc4d6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4e7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.98532</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.608</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc4e4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc4f5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>22.0548</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4638</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc4f2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc503-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.94374</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4638</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc500-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc511-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2988</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.4415</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc50e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc51f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.24759</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.0813</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc51c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc52e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5068</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.2285</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc52a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc53c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5148</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.1647</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc539-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc54a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.534</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.6589</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc547-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc559-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87696</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.5889</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc555-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc567-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.90846</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.5187</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc564-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc575-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.92988</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.4745</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc572-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc583-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.2392</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9444</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc580-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc591-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.19656</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9702</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc58e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc59f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.3202</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2645</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc59c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc5ad-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.48006</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2644</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc5aa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc5bb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.5102</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8326</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc5b8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc5c9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.40257</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8866</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc5c6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc5d8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.357</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.3102</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc5d4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc5e7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.4851</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.3287</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc5e3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc5f5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.393</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1295</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc5f2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc603-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.3978</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.0332</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc600-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc611-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.53739</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.5704</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc60e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc620-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc61c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc62f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc62b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc63e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.9324</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8195</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc63a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc64d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc649-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc65c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc658-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc66b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.192</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8195</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc667-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc67b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc676-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc689-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.3942</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.5982</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc686-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc697-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.407</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.417</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc694-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6a5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.61047</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.7266</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6a2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6b4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.8144</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.1036</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6b0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6c2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.8222</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.0097</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6bf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6d0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.8182</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.1154</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6cd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6de-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4274</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.9659</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6db-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6ec-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4346</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.7831</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6e9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc6fb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>153.3885</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.1683</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc6f7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc70a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.19215</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-47.1124</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc706-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc719-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>21.1584</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4241</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc715-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc727-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.3786</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.9065</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc724-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc736-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>228.558</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.8066</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc732-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc745-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.45612</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.9657</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc741-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc753-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.211</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9213</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc750-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc761-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.03654</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9213</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc75e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc76f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2452</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.323</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc76c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc77d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.10143</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4963</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc77a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc78b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.568</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.1388</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc788-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc799-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5372</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.4926</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc796-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7a7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.1529</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.3509</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7a4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7b5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.03005</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.5849</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7b2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7c4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>18.4168</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.5945</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7c0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7d3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>62.99559</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8854</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7cf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7e1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4784</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6126</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7de-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7ef-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4784</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6126</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7ec-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc7fd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4636</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6304</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc7fa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc80b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87633</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6673</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc808-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc819-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.87633</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6673</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc816-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc827-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.82278</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.6893</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc824-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc835-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2466</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4487</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc832-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc843-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2468</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4487</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc840-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc851-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2514</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.397</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc84e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc85f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2524</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4064</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc85c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc86d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2624</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.3448</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc86a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc87b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.307</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.8839</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc878-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc889-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.12159</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.5419</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc886-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc897-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.14742</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4995</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc894-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8a5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.17766</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.4068</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8a2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8b4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.7272</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.1917</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8b0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8c2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.419</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.2468</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8bf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8d1-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>152.7105</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.2638</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8cd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8e0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.21483</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.398</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8dc-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8ee-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>21.1732</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.0925</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8eb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc8fc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>156.957</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.1118</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc8f9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc90a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4946</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-33.5373</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc907-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc918-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5022</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-33.1017</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc915-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc926-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.78939</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.927</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc923-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc934-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>22.6264</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.5323</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc931-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc942-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>22.5582</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.4554</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc93f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc950-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.06155</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.4666</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc94d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc95e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.91476</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.8603</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc95b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc96c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4654</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.2658</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc969-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc97a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.4636</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.2494</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc977-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc988-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.4095</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.3314</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc985-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc996-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5178</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.2887</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc993-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9a4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.5196</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.2162</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9a1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9b2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.6716</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.8474</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9af-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9c0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.90657</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.9961</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9bd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9ce-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>64.39545</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.8779</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9cb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9de-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9d9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9ed-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9e9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bc9fd-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bc9f8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca0c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca08-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca1a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>21.1054</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.4696</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca17-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca28-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>21.1056</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.486</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca25-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca36-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>20.2726</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.1724</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca33-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca45-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>229.5216</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8223</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca41-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca53-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>63.19845</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.284</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca50-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca62-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca5e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca71-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca6d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca80-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca7c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca8f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca8b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bca9f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7002603</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.8994</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bca9a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcaad-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7019991</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.6534</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcaaa-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcabb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.711045</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.6903</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcab8-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcac9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.710976</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.6747</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcac6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcad7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6362421</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.3951</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcad4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcae5-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6316812</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.0662</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcae2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcaf3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7072845</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4383</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcaf0-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb01-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6368631</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4406</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcafe-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb0f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7075191</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.6067</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb0c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb1d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7075812</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.608</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb1a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb2b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7608906</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.4638</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb28-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb39-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7013367</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.0825</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb36-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb47-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7081746</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.9895</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb44-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb55-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7084437</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.9277</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb52-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb63-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7095891</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.2553</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb60-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb71-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6295836</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.8174</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb6e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb7f-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6320469</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-44.2645</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb7c-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb8d-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.638664</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.8085</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb8a-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcb9b-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7023579</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.2957</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcb98-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcba9-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7044003</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.8355</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcba6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcbb7-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7045452</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.7484</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcbb4-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcbc6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcbc2-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcbd4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6531678</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-37.8195</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcbd1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcbe3-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcbdf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcbf2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcbee-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc00-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7051662</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.0465</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcbfd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc0e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7044486</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-40.2757</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc0b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc1c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.718221</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.0611</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc19-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc2a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7186695</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.9056</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc27-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc38-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7183314</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.0807</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc35-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc46-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.705042</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.8619</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc43-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc54-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.705663</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.5525</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc51-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc62-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7306893</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.181</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc5f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc70-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7052283</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.1376</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc6d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc7e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6972795</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.9213</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc7b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc8c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6987975</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.2062</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc89-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcc9a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7099479</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.0194</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcc97-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcca8-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7087956</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.402</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcca5-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bccb6-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6386433</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-39.2882</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bccb3-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bccc4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7066152</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5749</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bccc1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bccd2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7066152</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5749</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcccf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcce0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7061046</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.5908</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bccdd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bccee-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6986871</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.3875</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcceb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bccfc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6987078</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.381</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bccf9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd0a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6988596</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.3324</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd07-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd18-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6988941</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.3414</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd15-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd26-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.699177</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-42.3025</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd23-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd34-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7046004</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-38.4175</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd31-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd42-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7152264</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-45.1439</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd3f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd50-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7047522</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-46.145</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd4d-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd5e-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7323729</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.447</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd5b-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd6c-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7104447</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-32.3242</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd69-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd7a-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7106586</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-31.9073</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd77-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd88-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7826601</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-33.8792</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd85-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcd96-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7804728</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-34.7473</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcd93-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcda4-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7062495</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.1994</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcda1-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcdb2-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7062219</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.1709</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcdaf-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcdc0-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7096305</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.6703</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcdbd-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcdce-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7096788</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-36.6027</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcdcb-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcddc-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7152885</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-35.1095</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcdd9-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcdeb-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcde7-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bcdfa-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bcdf6-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bce08-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7288125</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.2421</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bce05-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bce16-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.7288125</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-41.2609</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bce13-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bce24-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.6996186</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>-43.0973</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bce21-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bce33-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bce2f-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+  <cim:SvVoltage rdf:ID="_e94bce42-e17c-11eb-a668-74e5f963e191">
+    <cim:SvVoltage.v>0.0</cim:SvVoltage.v>
+    <cim:SvVoltage.angle>0.0</cim:SvVoltage.angle>
+    <cim:SvVoltage.TopologicalNode rdf:resource="#_e94bce3e-e17c-11eb-a668-74e5f963e191" />
+  </cim:SvVoltage>
+</rdf:RDF>

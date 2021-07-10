@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+  <md:FullModel rdf:about="urn:uuid:5501d662-e18a-11eb-a668-74e5f963e191">
+    <md:Model.created>2021-07-10T14:23:02Z</md:Model.created>
+    <md:Model.scenarioTime>2021-07-10T14:20:23Z</md:Model.scenarioTime>
+    <md:Model.version>0</md:Model.version>
+    <md:Model.description />
+    <md:Model.modelingAuthoritySet>http://www.smib_gensae.com/smib_gensae</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/EquipmentCore/3/1</md:Model.profile>
+    <md:Model.profile>http://entsoe.eu/CIM/EquipmentOperation/3/1</md:Model.profile>
+  </md:FullModel>
+  <cim:ACLineSegment rdf:ID="_f691455a-e189-11eb-a668-74e5f963e191">
+    <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+    <cim:ACLineSegment.r>0.1</cim:ACLineSegment.r>
+    <cim:ACLineSegment.x>20</cim:ACLineSegment.x>
+    <cim:Conductor.length>0</cim:Conductor.length>
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>1 2 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>1_2_1</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:ACLineSegment>
+  <cim:ACLineSegment rdf:ID="_f691455e-e189-11eb-a668-74e5f963e191">
+    <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+    <cim:ACLineSegment.r>0.1</cim:ACLineSegment.r>
+    <cim:ACLineSegment.x>20</cim:ACLineSegment.x>
+    <cim:Conductor.length>0</cim:Conductor.length>
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>2 3 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>2_3_1</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:ACLineSegment>
+  <cim:ACLineSegment rdf:ID="_f6914562-e189-11eb-a668-74e5f963e191">
+    <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+    <cim:ACLineSegment.r>0.05</cim:ACLineSegment.r>
+    <cim:ACLineSegment.x>10</cim:ACLineSegment.x>
+    <cim:Conductor.length>0</cim:Conductor.length>
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>2 22 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>2_22_1</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:ACLineSegment>
+  <cim:ACLineSegment rdf:ID="_f6914566-e189-11eb-a668-74e5f963e191">
+    <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+    <cim:ACLineSegment.r>0.05</cim:ACLineSegment.r>
+    <cim:ACLineSegment.x>10</cim:ACLineSegment.x>
+    <cim:Conductor.length>0</cim:Conductor.length>
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>3 22 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>3_22_1</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:ACLineSegment>
+  <cim:BaseVoltage rdf:ID="_f6914504-e189-11eb-a668-74e5f963e191">
+    <cim:BaseVoltage.nominalVoltage>100</cim:BaseVoltage.nominalVoltage>
+    <cim:IdentifiedObject.name>100.0</cim:IdentifiedObject.name>
+  </cim:BaseVoltage>
+  <cim:BusbarSection rdf:ID="_f69144f9-e189-11eb-a668-74e5f963e191">
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f6914503-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>GEN01</cim:IdentifiedObject.name>
+  </cim:BusbarSection>
+  <cim:BusbarSection rdf:ID="_f6914516-e189-11eb-a668-74e5f963e191">
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f691451c-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>LOAD</cim:IdentifiedObject.name>
+  </cim:BusbarSection>
+  <cim:BusbarSection rdf:ID="_f6914525-e189-11eb-a668-74e5f963e191">
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f6914503-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>GEN02</cim:IdentifiedObject.name>
+  </cim:BusbarSection>
+  <cim:BusbarSection rdf:ID="_f6914533-e189-11eb-a668-74e5f963e191">
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f6914539-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>FAULT</cim:IdentifiedObject.name>
+  </cim:BusbarSection>
+  <cim:BusNameMarker rdf:ID="_f6914509-e189-11eb-a668-74e5f963e191">
+    <cim:IdentifiedObject.name>1</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>GEN01       </entsoe:IdentifiedObject.shortName>
+  </cim:BusNameMarker>
+  <cim:BusNameMarker rdf:ID="_f691451f-e189-11eb-a668-74e5f963e191">
+    <cim:IdentifiedObject.name>2</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>LOAD        </entsoe:IdentifiedObject.shortName>
+  </cim:BusNameMarker>
+  <cim:BusNameMarker rdf:ID="_f691452d-e189-11eb-a668-74e5f963e191">
+    <cim:IdentifiedObject.name>3</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>GEN02       </entsoe:IdentifiedObject.shortName>
+  </cim:BusNameMarker>
+  <cim:BusNameMarker rdf:ID="_f691453c-e189-11eb-a668-74e5f963e191">
+    <cim:IdentifiedObject.name>22</cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>FAULT       </entsoe:IdentifiedObject.shortName>
+  </cim:BusNameMarker>
+  <cim:ConformLoad rdf:ID="_f6914544-e189-11eb-a668-74e5f963e191">
+    <cim:ConformLoad.LoadGroup rdf:resource="#_f6914543-e189-11eb-a668-74e5f963e191" />
+    <cim:EnergyConsumer.LoadResponse rdf:resource="#_f6914545-e189-11eb-a668-74e5f963e191" />
+    <cim:EnergyConsumer.pfixed>50</cim:EnergyConsumer.pfixed>
+    <cim:EnergyConsumer.qfixed>10</cim:EnergyConsumer.qfixed>
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f691451c-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>2 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>2_1 </cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:ConformLoad>
+  <cim:ConformLoadGroup rdf:ID="_f6914543-e189-11eb-a668-74e5f963e191">
+    <cim:LoadGroup.SubLoadArea rdf:resource="#_f6914500-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>2_1 </cim:IdentifiedObject.name>
+  </cim:ConformLoadGroup>
+  <cim:ConnectivityNode rdf:ID="_f69144fb-e189-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_f6914503-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>GEN01       </cim:IdentifiedObject.name>
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:ID="_f6914518-e189-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_f691451c-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>LOAD        </cim:IdentifiedObject.name>
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:ID="_f6914527-e189-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_f6914503-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>GEN02       </cim:IdentifiedObject.name>
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:ID="_f6914535-e189-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_f6914539-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>FAULT       </cim:IdentifiedObject.name>
+  </cim:ConnectivityNode>
+  <cim:ControlArea rdf:ID="_f69144fe-e189-11eb-a668-74e5f963e191">
+    <cim:ControlArea.EnergyArea rdf:resource="#_f69144ff-e189-11eb-a668-74e5f963e191" />
+    <cim:ControlArea.type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaTypeKind.Interchange" />
+    <cim:IdentifiedObject.name>Area 1</cim:IdentifiedObject.name>
+  </cim:ControlArea>
+  <cim:ControlAreaGeneratingUnit rdf:ID="_f6914559-e189-11eb-a668-74e5f963e191">
+    <cim:ControlAreaGeneratingUnit.ControlArea rdf:resource="#_f69144fe-e189-11eb-a668-74e5f963e191" />
+    <cim:ControlAreaGeneratingUnit.GeneratingUnit rdf:resource="#_f6914552-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>SMPF_3_1 </cim:IdentifiedObject.name>
+  </cim:ControlAreaGeneratingUnit>
+  <cim:GeographicalRegion rdf:ID="_f6914501-e189-11eb-a668-74e5f963e191">
+    <cim:IdentifiedObject.name>Area 1</cim:IdentifiedObject.name>
+  </cim:GeographicalRegion>
+  <cim:HydroGeneratingUnit rdf:ID="_f691454a-e189-11eb-a668-74e5f963e191">
+    <cim:GeneratingUnit.initialP>40</cim:GeneratingUnit.initialP>
+    <cim:GeneratingUnit.maxOperatingP>80</cim:GeneratingUnit.maxOperatingP>
+    <cim:GeneratingUnit.minOperatingP>0</cim:GeneratingUnit.minOperatingP>
+    <cim:GeneratingUnit.nominalP>40</cim:GeneratingUnit.nominalP>
+    <cim:GeneratingUnit.ratedGrossMaxP>80</cim:GeneratingUnit.ratedGrossMaxP>
+    <cim:GeneratingUnit.ratedGrossMinP>0</cim:GeneratingUnit.ratedGrossMinP>
+    <cim:GeneratingUnit.ratedNetMaxP>80</cim:GeneratingUnit.ratedNetMaxP>
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f69144fc-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>1 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>1_1 </cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:HydroGeneratingUnit>
+  <cim:HydroGeneratingUnit rdf:ID="_f6914552-e189-11eb-a668-74e5f963e191">
+    <cim:GeneratingUnit.initialP>10.017</cim:GeneratingUnit.initialP>
+    <cim:GeneratingUnit.maxOperatingP>80</cim:GeneratingUnit.maxOperatingP>
+    <cim:GeneratingUnit.minOperatingP>0</cim:GeneratingUnit.minOperatingP>
+    <cim:GeneratingUnit.nominalP>10.017</cim:GeneratingUnit.nominalP>
+    <cim:GeneratingUnit.ratedGrossMaxP>80</cim:GeneratingUnit.ratedGrossMaxP>
+    <cim:GeneratingUnit.ratedGrossMinP>0</cim:GeneratingUnit.ratedGrossMinP>
+    <cim:GeneratingUnit.ratedNetMaxP>80</cim:GeneratingUnit.ratedNetMaxP>
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f69144fc-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:IdentifiedObject.description>3 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>3_1 </cim:IdentifiedObject.name>
+    <entsoe:IdentifiedObject.shortName>1 </entsoe:IdentifiedObject.shortName>
+  </cim:HydroGeneratingUnit>
+  <cim:LoadArea rdf:ID="_f69144ff-e189-11eb-a668-74e5f963e191">
+    <cim:IdentifiedObject.name>Area 1</cim:IdentifiedObject.name>
+  </cim:LoadArea>
+  <cim:LoadResponseCharacteristic rdf:ID="_f6914545-e189-11eb-a668-74e5f963e191">
+    <cim:LoadResponseCharacteristic.exponentModel>false</cim:LoadResponseCharacteristic.exponentModel>
+    <cim:LoadResponseCharacteristic.pConstantCurrent>0</cim:LoadResponseCharacteristic.pConstantCurrent>
+    <cim:LoadResponseCharacteristic.pConstantImpedance>0</cim:LoadResponseCharacteristic.pConstantImpedance>
+    <cim:LoadResponseCharacteristic.pConstantPower>1</cim:LoadResponseCharacteristic.pConstantPower>
+    <cim:LoadResponseCharacteristic.qConstantCurrent>0</cim:LoadResponseCharacteristic.qConstantCurrent>
+    <cim:LoadResponseCharacteristic.qConstantImpedance>0</cim:LoadResponseCharacteristic.qConstantImpedance>
+    <cim:LoadResponseCharacteristic.qConstantPower>1</cim:LoadResponseCharacteristic.qConstantPower>
+    <cim:IdentifiedObject.name>2_1 </cim:IdentifiedObject.name>
+  </cim:LoadResponseCharacteristic>
+  <cim:OperationalLimitSet rdf:ID="_f691450a-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitSet.Terminal rdf:resource="#_f69144fa-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>Limits &lt;Default&gt;</cim:IdentifiedObject.name>
+  </cim:OperationalLimitSet>
+  <cim:OperationalLimitSet rdf:ID="_f6914520-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitSet.Terminal rdf:resource="#_f6914517-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>Limits &lt;Default&gt;</cim:IdentifiedObject.name>
+  </cim:OperationalLimitSet>
+  <cim:OperationalLimitSet rdf:ID="_f691452e-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitSet.Terminal rdf:resource="#_f6914526-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>Limits &lt;Default&gt;</cim:IdentifiedObject.name>
+  </cim:OperationalLimitSet>
+  <cim:OperationalLimitSet rdf:ID="_f691453d-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitSet.Terminal rdf:resource="#_f6914534-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>Limits &lt;Default&gt;</cim:IdentifiedObject.name>
+  </cim:OperationalLimitSet>
+  <cim:OperationalLimitType rdf:ID="_f691450b-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>0</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.patl" />
+    <cim:IdentifiedObject.name>PATL</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_f691450c-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>7200</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.tatl" />
+    <cim:IdentifiedObject.name>TATL</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_f691450d-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>900</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.tatl" />
+    <cim:IdentifiedObject.name>TATL</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_f691450e-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>900</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.high" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.highVoltage" />
+    <cim:IdentifiedObject.name>HighVoltage</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_f691450f-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>0</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.high" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.highVoltage" />
+    <cim:IdentifiedObject.name>HighVoltage</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_f6914510-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>900</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.low" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.lowVoltage" />
+    <cim:IdentifiedObject.name>LowVoltage</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:OperationalLimitType rdf:ID="_f6914511-e189-11eb-a668-74e5f963e191">
+    <cim:OperationalLimitType.acceptableDuration>0</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.low" />
+    <entsoe:OperationalLimitType.limitType rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.lowVoltage" />
+    <cim:IdentifiedObject.name>LowVoltage</cim:IdentifiedObject.name>
+  </cim:OperationalLimitType>
+  <cim:RegulatingControl rdf:ID="_f691454d-e189-11eb-a668-74e5f963e191">
+    <cim:RegulatingControl.Terminal rdf:resource="#_f69144fa-e189-11eb-a668-74e5f963e191" />
+    <cim:RegulatingControl.mode rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage" />
+    <cim:IdentifiedObject.name>1</cim:IdentifiedObject.name>
+  </cim:RegulatingControl>
+  <cim:RegulatingControl rdf:ID="_f6914555-e189-11eb-a668-74e5f963e191">
+    <cim:RegulatingControl.Terminal rdf:resource="#_f6914526-e189-11eb-a668-74e5f963e191" />
+    <cim:RegulatingControl.mode rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage" />
+    <cim:IdentifiedObject.name>3</cim:IdentifiedObject.name>
+  </cim:RegulatingControl>
+  <cim:SubGeographicalRegion rdf:ID="_f6914502-e189-11eb-a668-74e5f963e191">
+    <cim:SubGeographicalRegion.Region rdf:resource="#_f6914501-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>1</cim:IdentifiedObject.name>
+  </cim:SubGeographicalRegion>
+  <cim:SubLoadArea rdf:ID="_f6914500-e189-11eb-a668-74e5f963e191">
+    <cim:SubLoadArea.LoadArea rdf:resource="#_f69144ff-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>Area 1</cim:IdentifiedObject.name>
+  </cim:SubLoadArea>
+  <cim:Substation rdf:ID="_f69144fc-e189-11eb-a668-74e5f963e191">
+    <cim:Substation.Region rdf:resource="#_f6914502-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>GEN</cim:IdentifiedObject.name>
+  </cim:Substation>
+  <cim:Substation rdf:ID="_f6914519-e189-11eb-a668-74e5f963e191">
+    <cim:Substation.Region rdf:resource="#_f6914502-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>LOAD</cim:IdentifiedObject.name>
+  </cim:Substation>
+  <cim:Substation rdf:ID="_f6914536-e189-11eb-a668-74e5f963e191">
+    <cim:Substation.Region rdf:resource="#_f6914502-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>FAULT</cim:IdentifiedObject.name>
+  </cim:Substation>
+  <cim:SynchronousMachine rdf:ID="_f691454e-e189-11eb-a668-74e5f963e191">
+    <cim:SynchronousMachine.maxQ>60</cim:SynchronousMachine.maxQ>
+    <cim:SynchronousMachine.minQ>0</cim:SynchronousMachine.minQ>
+    <cim:SynchronousMachine.qPercent>100</cim:SynchronousMachine.qPercent>
+    <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator" />
+    <cim:RotatingMachine.GeneratingUnit rdf:resource="#_f691454a-e189-11eb-a668-74e5f963e191" />
+    <cim:RotatingMachine.ratedS>100</cim:RotatingMachine.ratedS>
+    <cim:RegulatingCondEq.RegulatingControl rdf:resource="#_f691454d-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f6914503-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>1 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>1_1 </cim:IdentifiedObject.name>
+  </cim:SynchronousMachine>
+  <cim:SynchronousMachine rdf:ID="_f6914556-e189-11eb-a668-74e5f963e191">
+    <cim:SynchronousMachine.maxQ>60</cim:SynchronousMachine.maxQ>
+    <cim:SynchronousMachine.minQ>0</cim:SynchronousMachine.minQ>
+    <cim:SynchronousMachine.qPercent>100</cim:SynchronousMachine.qPercent>
+    <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator" />
+    <cim:RotatingMachine.GeneratingUnit rdf:resource="#_f6914552-e189-11eb-a668-74e5f963e191" />
+    <cim:RotatingMachine.ratedS>100</cim:RotatingMachine.ratedS>
+    <cim:RegulatingCondEq.RegulatingControl rdf:resource="#_f6914555-e189-11eb-a668-74e5f963e191" />
+    <cim:Equipment.EquipmentContainer rdf:resource="#_f6914503-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>3 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>3_1 </cim:IdentifiedObject.name>
+  </cim:SynchronousMachine>
+  <cim:Terminal rdf:ID="_f69144fa-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f69144f9-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f69144fb-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.BusNameMarker rdf:resource="#_f6914509-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914517-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914516-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914518-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.BusNameMarker rdf:resource="#_f691451f-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914526-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914525-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914527-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.BusNameMarker rdf:resource="#_f691452d-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914534-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914533-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914535-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.BusNameMarker rdf:resource="#_f691453c-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914546-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914544-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914518-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>2 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f691454f-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f691454e-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f69144fb-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>1 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914557-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914556-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914527-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>3 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f691455b-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f691455a-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f69144fb-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>1 2 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f691455c-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f691455a-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914518-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>1 2 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T2</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f691455f-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f691455e-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914518-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>2 3 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914560-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f691455e-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914527-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>2 3 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T2</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914563-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914562-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914518-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>2 22 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914564-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914562-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914535-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>2 22 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T2</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914567-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914566-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914527-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>3 22 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T1</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:Terminal rdf:ID="_f6914568-e189-11eb-a668-74e5f963e191">
+    <cim:Terminal.ConductingEquipment rdf:resource="#_f6914566-e189-11eb-a668-74e5f963e191" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_f6914535-e189-11eb-a668-74e5f963e191" />
+    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
+    <cim:IdentifiedObject.description>3 22 '1 '</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>T2</cim:IdentifiedObject.name>
+  </cim:Terminal>
+  <cim:VoltageLevel rdf:ID="_f6914503-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:VoltageLevel.Substation rdf:resource="#_f69144fc-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>GEN_100</cim:IdentifiedObject.name>
+  </cim:VoltageLevel>
+  <cim:VoltageLevel rdf:ID="_f691451c-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:VoltageLevel.Substation rdf:resource="#_f6914519-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>LOA_100</cim:IdentifiedObject.name>
+  </cim:VoltageLevel>
+  <cim:VoltageLevel rdf:ID="_f6914539-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#_f6914504-e189-11eb-a668-74e5f963e191" />
+    <cim:VoltageLevel.Substation rdf:resource="#_f6914536-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>FAU_100</cim:IdentifiedObject.name>
+  </cim:VoltageLevel>
+  <cim:VoltageLimit rdf:ID="_f6914512-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691450a-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450f-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914513-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691450a-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914511-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914514-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691450a-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450e-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914515-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691450a-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914510-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914521-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f6914520-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450f-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914522-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f6914520-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914511-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914523-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f6914520-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450e-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914524-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f6914520-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914510-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f691452f-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691452e-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450f-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914530-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691452e-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914511-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914531-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691452e-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450e-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914532-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691452e-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914510-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f691453e-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691453d-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450f-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f691453f-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691453d-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914511-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>NVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914540-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>110</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691453d-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f691450e-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVHI</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+  <cim:VoltageLimit rdf:ID="_f6914541-e189-11eb-a668-74e5f963e191">
+    <cim:VoltageLimit.value>90</cim:VoltageLimit.value>
+    <cim:OperationalLimit.OperationalLimitSet rdf:resource="#_f691453d-e189-11eb-a668-74e5f963e191" />
+    <cim:OperationalLimit.OperationalLimitType rdf:resource="#_f6914510-e189-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.name>EVLO</cim:IdentifiedObject.name>
+  </cim:VoltageLimit>
+</rdf:RDF>

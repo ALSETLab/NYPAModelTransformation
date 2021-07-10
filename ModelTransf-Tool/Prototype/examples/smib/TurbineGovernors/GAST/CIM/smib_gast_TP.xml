@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:entsoe2="http://entsoe.eu/CIM/SchemaExtension/3/2#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+  <md:FullModel rdf:about="urn:uuid:7276cd97-e18d-11eb-a668-74e5f963e191">
+    <md:Model.created>2021-07-10T14:45:25Z</md:Model.created>
+    <md:Model.scenarioTime>2021-07-10T14:42:00Z</md:Model.scenarioTime>
+    <md:Model.version>0</md:Model.version>
+    <md:Model.description />
+    <md:Model.modelingAuthoritySet>http://www.smib_gast.com/smib_gast</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/Topology/4/1</md:Model.profile>
+  </md:FullModel>
+  <cim:ConnectivityNode rdf:about="#_fbaf103d-e18c-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_fbaf103f-e18c-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:about="#_fbaf105a-e18c-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_fbaf105c-e18c-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:about="#_fbaf1069-e18c-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_fbaf106b-e18c-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:ConnectivityNode rdf:about="#_fbaf1077-e18c-11eb-a668-74e5f963e191">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_fbaf1079-e18c-11eb-a668-74e5f963e191" />
+  </cim:ConnectivityNode>
+  <cim:Terminal rdf:about="#_fbaf103c-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf103f-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf1059-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf105c-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf1068-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf106b-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf1076-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf1079-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf1088-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf105c-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf1091-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf103f-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf1099-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf106b-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf109d-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf103f-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf109e-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf105c-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf10a1-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf105c-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf10a2-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf106b-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf10a5-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf105c-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf10a6-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf1079-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf10a9-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf106b-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:Terminal rdf:about="#_fbaf10aa-e18c-11eb-a668-74e5f963e191">
+    <cim:Terminal.TopologicalNode rdf:resource="#_fbaf1079-e18c-11eb-a668-74e5f963e191" />
+  </cim:Terminal>
+  <cim:TopologicalNode rdf:ID="_fbaf103f-e18c-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_fbaf1046-e18c-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_fbaf1045-e18c-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>GEN01</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>GEN01</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+  <cim:TopologicalNode rdf:ID="_fbaf105c-e18c-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_fbaf1046-e18c-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_fbaf105e-e18c-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>LOAD</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>LOAD</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+  <cim:TopologicalNode rdf:ID="_fbaf106b-e18c-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_fbaf1046-e18c-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_fbaf1045-e18c-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>GEN02</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>GEN02</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+  <cim:TopologicalNode rdf:ID="_fbaf1079-e18c-11eb-a668-74e5f963e191">
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_fbaf1046-e18c-11eb-a668-74e5f963e191" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_fbaf107b-e18c-11eb-a668-74e5f963e191" />
+    <cim:IdentifiedObject.description>FAULT</cim:IdentifiedObject.description>
+    <cim:IdentifiedObject.name>FAULT</cim:IdentifiedObject.name>
+  </cim:TopologicalNode>
+</rdf:RDF>
