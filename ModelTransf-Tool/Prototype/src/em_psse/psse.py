@@ -200,7 +200,7 @@ def parse_raw(in_file_name,encode_flag):
 		
 		if 'read_table' in output[i]['parse']:
 			text = StringIO(''.join(lines))
-			output[i]['df'] = pd.read_table(text,sep=',')
+			output[i]['df'] = pd.read_table(text,sep=',',error_bad_lines=False)
 		
 		if 'read_transformer' in output[i]['parse']:
 			output[i]['dfs']=read_transformer(lines,output[i]['records'])
