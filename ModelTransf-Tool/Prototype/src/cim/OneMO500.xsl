@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet exclude-result-prefixes="xs xdt err fn" version="2.0" xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:err="http://www.w3.org/2005/xqt-errors" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:gkh="https://gkhsoftware.github.io/g#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:pti="http://www.pti-us.com/PTI_CIM-schema-cim16#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xdt="http://www.w3.org/2005/xpath-datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output indent="yes" method="text"/>
-	<xsl:variable name="DY" select="document('examples\bus-14\ieee14_DY.xml')"/>
-	<xsl:variable name="TP" select="document('examples\bus-14\ieee14_TP.xml')"/>
-	<xsl:variable name="SV" select="document('examples\bus-14\ieee14_SV.xml')"/>
+	<xsl:variable name="DY" select="document('examples\500-bus\nypa_500_cleaned_DY.xml')"/>
+	<xsl:variable name="TP" select="document('examples\500-bus\nypa_500_cleaned_TP.xml')"/>
+	<xsl:variable name="SV" select="document('examples\500-bus\nypa_500_cleaned_SV.xml')"/>
 	<xsl:variable name="rdf" select="/rdf:RDF"/>
 	
 	<xsl:key name="acsection" match="cim:ACLineSegment" use="@rdf:ID"/>
@@ -35,7 +35,7 @@
 				<xsl:value-of select="concat('B',replace(normalize-space($input),'[^a-zA-Z0-9]','_'))"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="replace(replace($input,' ',''),'[^a-zA-Z0-9]','_')"/>
+				<xsl:value-of select="replace(replace(normalize-space($input),' ',''),'[^a-zA-Z0-9]','_')"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
@@ -74,15 +74,17 @@
 	<xsl:template name="gkh:connectivityNodeBus">
 <!--Conform Load 'Bus' for SV Load-->
 		<xsl:param as="xs:string" name="equipmentContainerCode" />
+<!-- cim:ConformLoad/@rdf:ID -->
 		<xsl:variable name="cNcode" select="key('terminalequip',$equipmentContainerCode)/../cim:Terminal.ConnectivityNode/substring(@rdf:resource,2)"/>
-		<xsl:value-of select="normalize-space(key('node',$cNcode)/cim:IdentifiedObject.name)"/>
+		<!-- cim:Terminal/cim:Terminal.ConductingEquipment -->
+		<xsl:value-of select="key('node',$cNcode)/gkh:compliantName(cim:IdentifiedObject.name)"/>
 	</xsl:template>
 	
 	<xsl:function name="gkh:conformloadName"><!--Conform Load parameters name for SV Load-->
 		<xsl:param as="xs:string" name="terminalCode"/>
 		<xsl:variable name="conducting" select="$rdf/cim:Terminal[@rdf:ID=$terminalCode]/cim:Terminal.ConductingEquipment/substring(@rdf:resource,2)"/>
-		<xsl:value-of select="$rdf/cim:ConformLoad[@rdf:ID=$conducting]/cim:IdentifiedObject.name"/>
-		<xsl:value-of select="$rdf/cim:LinearShuntCompensator[@rdf:ID=$conducting]/cim:IdentifiedObject.name"/>
+		<xsl:value-of select="$rdf/cim:ConformLoad[@rdf:ID=$conducting]/gkh:compliantName(cim:IdentifiedObject.name)"/>
+		<xsl:value-of select="$rdf/cim:LinearShuntCompensator[@rdf:ID=$conducting]/gkh:compliantName(cim:IdentifiedObject.name)"/>
 	</xsl:function>
 	
 		<xsl:function name="gkh:machinesName"><!--Machines parameters name for SV Load-->
