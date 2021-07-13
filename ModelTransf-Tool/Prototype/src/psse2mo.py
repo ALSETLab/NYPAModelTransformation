@@ -269,7 +269,7 @@ def writeSysMo(sdir,pkg_name,pkg_ordr,networkname,sysdata,dyrdata,system_frequen
 			# Test
 			if macresult[0] != 'None':
 				# Write machine in .order file
-				system_file.write("  connect(gen%d_%d.pin,bus_%d.p); \n" % ((ii+1),int(gens.iloc[ii,0]),int(gens.iloc[ii,0])))
+				system_file.write("  connect(gen%d_%d.p,bus_%d.p); \n" % ((ii+1),int(gens.iloc[ii,0]),int(gens.iloc[ii,0])))
 	else:
 		system_file.write("// No generator to connect.\n")
 	# Connecting fault:
@@ -1664,7 +1664,7 @@ def writeGenMo(gdir,pkg_name,pkg_ordr,sysdata,dyrdata):
 			genmo.write("within System.Generators;\n")
 			genmo.write("model %s\n" % genname)
 			genmo.write("  extends OpenIPSL.Electrical.Essentials.pfComponent;\n")
-			genmo.write("  OpenIPSL.Interfaces.PwPin pin  annotation (Placement(transformation(extent={{100,-10},{120,10}})));\n")
+			genmo.write("  OpenIPSL.Interfaces.PwPin p  annotation (Placement(transformation(extent={{100,-10},{120,10}})));\n")
 			# Declaring machines:
 			writeMac(gens,ii,dyrdata,macresult,genmo)
 			# List of special machines:
@@ -1690,19 +1690,19 @@ def writeGenMo(gdir,pkg_name,pkg_ordr,sysdata,dyrdata):
 			if macresult[0] not in special_mac:
 				if excresult[0] in list_exc:
 					genmo.write("  connect(machine.p, exciter.Gen_terminal) annotation (Line(points={{40,0},{63,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
-					genmo.write("  connect(exciter.Bus, pin) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
+					genmo.write("  connect(exciter.Bus, p) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
 				else:
-					genmo.write("  connect(machine.p,pin)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if no voltage compensator is present
+					genmo.write("  connect(machine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if no voltage compensator is present
 			else:
 				if macresult[0] == 'CSVGN1':
-					genmo.write("  BusV = sqrt(pin.vr*pin.vr + pin.vi*pin.vi);\n")
+					genmo.write("  BusV = sqrt(p.vr*p.vr + p.vi*p.vi);\n")
 					genmo.write("  connect(ConstantPSS.y, statcomp.VOTHSG) annotation (Line(points={{-19,-30},{0,-30},{0,-5},{18,-5}}, color={0,0,127}));\n")
 					genmo.write("  connect(BusVoltageMagnitude.y, statcomp.V) annotation (Line(points={{-19,30},{0,30},{0,5},{18,5}}, color={0,0,127}));\n")
-					genmo.write("  connect(statcomp.p,pin)  annotation (Line(points={{30,10},{30,32},{60,32},{60,0},{110,0}}, color={0,0,255}));\n") # connecting machine to pin if CSVGN
+					genmo.write("  connect(statcomp.p,p)  annotation (Line(points={{30,10},{30,32},{60,32},{60,0},{110,0}}, color={0,0,255}));\n") # connecting machine to pin if CSVGN
 				elif macresult[0] == 'WT4G1':
-					genmo.write("  connect(windmachine.p,pin)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if WT4G1
+					genmo.write("  connect(windmachine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if WT4G1
 				else:
-					genmo.write("  connect(machine.p,pin)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if GENCLS
+					genmo.write("  connect(machine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if GENCLS
 				
 			
 			if macresult[0] not in special_mac:
