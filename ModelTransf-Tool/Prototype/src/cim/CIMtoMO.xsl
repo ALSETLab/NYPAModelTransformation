@@ -5,17 +5,17 @@
 	<xsl:variable name="TP" select="document('examples\500-bus\CIM\nypa_500_cleaned_TP.xml')"/>
 	<xsl:variable name="SV" select="document('examples\500-bus\CIM\nypa_500_cleaned_SV.xml')"/>
 -->
-<!--	<xsl:variable name="DY" select="document('examples\nordic-44\CIM_new\N44_BC_DY.xml')"/>
+	<xsl:variable name="DY" select="document('examples\nordic-44\CIM_new\N44_BC_DY.xml')"/>
 	<xsl:variable name="TP" select="document('examples\nordic-44\CIM_new\N44_BC_TP.xml')"/>
 	<xsl:variable name="SV" select="document('examples\nordic-44\CIM_new\N44_BC_SV.xml')"/>
--->
 <!--	<xsl:variable name="DY" select="document('examples\bus-14\ieee14_DY.xml')"/>
 	<xsl:variable name="TP" select="document('examples\bus-14\ieee14_TP.xml')"/>
 	<xsl:variable name="SV" select="document('examples\bus-14\ieee14_SV.xml')"/>
 -->
-	<xsl:variable name="DY" select="document('examples\smib\Machines\GENROE\CIM\smib_genroe_DY.xml')"/>
+<!--	<xsl:variable name="DY" select="document('examples\smib\Machines\GENROE\CIM\smib_genroe_DY.xml')"/>
 	<xsl:variable name="TP" select="document('examples\smib\Machines\GENROE\CIM\smib_genroe_TP.xml')"/>
 	<xsl:variable name="SV" select="document('examples\smib\Machines\GENROE\CIM\smib_genroe_SV.xml')"/>
+-->
 	<xsl:variable name="rdf" select="/rdf:RDF"/>
 	
 	<xsl:key name="acsection" match="cim:ACLineSegment" use="@rdf:ID"/>
@@ -27,6 +27,7 @@
 	<xsl:key name="node" match="cim:ConnectivityNode" use="@rdf:ID"/>
 	<xsl:key name="execsysuser" match="cim:ExcitationSystemUserDefined/cim:ExcitationSystemDynamics.SynchronousMachineDynamics" use="substring(@rdf:resource,2)"/>
 	<xsl:key name="governor" match="cim:GovSteam0/cim:TurbineGovernorDynamics.SynchronousMachineDynamics" use="substring(@rdf:resource,2)"/>
+	<xsl:key name="governorSG" match="cim:GovSteamSGO/cim:TurbineGovernorDynamics.SynchronousMachineDynamics" use="substring(@rdf:resource,2)"/>
 	<xsl:key name="shunt" match="cim:LinearShuntCompensator" use="@rdf:ID"/>
 	<xsl:key name="nonconformload" match="cim:NonConformLoad" use="@rdf:ID"/>
 	<xsl:key name="powertransformer" match="cim:PowerTransformer" use="@rdf:ID"/>
@@ -65,7 +66,7 @@
 		<xsl:param as="xs:string?" name="code"/>
 		<xsl:param as="xs:decimal?" name="basePower" />
 		<xsl:param as="xs:decimal?" name="baseVoltage"/>
-			<xsl:variable name="voltage" select="gkh:defaultNumbers(gkh:baseVoltage($code),$baseVoltage)"/>
+		<xsl:variable name="voltage" select="gkh:defaultNumbers(gkh:baseVoltage($code),$baseVoltage)"/>
 		<xsl:value-of select="$voltage * $voltage div gkh:defaultNumbers($basePower,100)" />
 	</xsl:function>
 	
@@ -108,7 +109,7 @@
 		<xsl:param as="xs:string" name="terminalCode"/>
 		<xsl:variable name="topoTerminal" select="$TP/rdf:RDF/cim:Terminal[@rdf:about=$terminalCode]/cim:Terminal.TopologicalNode/substring(@rdf:resource,2)"/>
 		<xsl:variable name="topo" select="$TP/rdf:RDF/cim:TopologicalNode[@rdf:ID=$topoTerminal]"/>
-		<xsl:value-of select="gkh:compliantName(concat($topo/cim:IdentifiedObject.name,$topo/substring(@rdf:ID,6,4)))"/>
+		<xsl:value-of select="gkh:compliantName(concat($topo/cim:IdentifiedObject.name,'_',$topo/substring(@rdf:ID,6,4)))"/>
 	</xsl:function>
 	
 	<xsl:function name="gkh:busName">
@@ -116,7 +117,7 @@
 		<xsl:variable name="EQterminal" select="$rdf/cim:Terminal/cim:Terminal.ConductingEquipment[substring(@rdf:resource,2)=$equipmentCode]/../@rdf:ID"/>
 		<xsl:variable name="TPterminal" select="$TP/rdf:RDF/cim:Terminal[substring(@rdf:about,2)=$EQterminal]/cim:Terminal.TopologicalNode/substring(@rdf:resource,2)"/>
 		<xsl:variable name="node" select="$TP/rdf:RDF/cim:TopologicalNode[@rdf:ID=$TPterminal]"/>
-		<xsl:value-of select="gkh:compliantName(concat($node/cim:IdentifiedObject.name,$node/substring(@rdf:ID,6,4)))"/>
+		<xsl:value-of select="gkh:compliantName(concat($node/cim:IdentifiedObject.name,'_',$node/substring(@rdf:ID,6,4)))"/>
 	</xsl:function>
 
 
@@ -211,48 +212,48 @@
 		<xsl:when test="$excieeeAC2A">
 			<xsl:value-of select="$excieeeAC2A/../cim:IdentifiedObject.name"/><xsl:text> exciter(</xsl:text>
 			<xsl:text>T_B=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.tb"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.tb,'0.00000#')"/>
 			<xsl:text>,T_C=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.tc"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.tc,'0.00000#')"/>
 			<xsl:text>,K_A=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.ka"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.ka,'0.00000#')"/>
 			<xsl:text>,T_A=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.ta"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.ta,'0.00000#')"/>
 			<xsl:text>,V_AMAX=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.vamax"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.vamax,'0.00000#')"/>
 			<xsl:text>,V_AMIN=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.vamin"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.vamin,'0.00000#')"/>
 			<xsl:text>,K_B=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.kb"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.kb,'0.00000#')"/>
 			<xsl:text>,V_RMAX=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.vrmax"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.vrmax,'0.00000#')"/>
 			<xsl:text>,V_RMIN=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.vrmin"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.vrmin,'0.00000#')"/>
 			<xsl:text>,T_E=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.te"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.te,'0.00000#')"/>
 			<xsl:text>,V_FEMAX=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.vfemax"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.vfemax,'0.00000#')"/>
 			<xsl:text>,K_H=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.kh"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.kh,'0.00000#')"/>
 			<xsl:text>,K_F=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.kf"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.kf,'0.00000#')"/>
 			<xsl:text>,T_F=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.tf"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.tf,'0.00000#')"/>
 			<xsl:text>,K_C=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.kc"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.kc,'0.00000#')"/>
 			<xsl:text>,K_D=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.kd"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.kd,'0.00000#')"/>
 			<xsl:text>,K_E=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.ke"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.ke,'0.00000#')"/>
 			<xsl:text>,E_1=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.ve1"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.ve1,'0.00000#')"/>
 			<xsl:text>,E_2=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.ve2"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.ve2,'0.00000#')"/>
 			<xsl:text>,S_EE_1=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.seve1"/>
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.seve1,'0.00000#')"/>
 			<xsl:text>,S_EE_2=</xsl:text>
-			<xsl:value-of select="$excieeeAC2A/../cim:ExcIEEEAC2A.seve2"/>
-			<xsl:text>);
+			<xsl:value-of select="format-number($excieeeAC2A/../cim:ExcIEEEAC2A.seve2,'0.00000#')"/>
+			<xsl:text>) annotation(Placement(transformation(extent = {{-16, -20}, {4, 0}})));
 			</xsl:text>
 		</xsl:when>
 		<xsl:when test="$execsysuser">
@@ -267,8 +268,8 @@
 			</xsl:if>
 		</xsl:when>
 	<xsl:when test="key('excscrx',$generatorCode)">
-		<xsl:value-of select="key('excscrx',$generatorCode)/../cim:IdentifiedObject.name"/><xsl:text> exciter(</xsl:text>
-		</xsl:when>
+		<xsl:apply-templates select="key('excscrx',$generatorCode)"/><xsl:text> exciter(</xsl:text>
+	</xsl:when>
 		</xsl:choose>
 	<!--</xsl:variable>-->
 </xsl:template>
@@ -285,7 +286,7 @@
 // -- Buses:
 </xsl:text>
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
-			<xsl:variable name="bus" select="gkh:compliantName(concat(cim:IdentifiedObject.name,substring(@rdf:ID,6,4)))"/>
+			<xsl:variable name="bus" select="gkh:compliantName(concat(cim:IdentifiedObject.name,'_',substring(@rdf:ID,6,4)))"/>
 			<xsl:text>OpenIPSL.Electrical.Buses.Bus </xsl:text>
 			<xsl:copy-of select="$bus"/>
 			<xsl:text>(V_b = </xsl:text>
@@ -300,7 +301,7 @@
 <xsl:text>// -- Lines:
 </xsl:text>
 		<xsl:for-each select="cim:ACLineSegment">
-			<xsl:variable name="baseImpedance" select="gkh:baseImpedance(cim:ConductingEquipment.BaseVoltage/substring(@rdf:resource,2),../cim:BasePower/cim:BasePower.basePower,0)"/>
+			<xsl:variable name="baseImpedance" select="gkh:baseImpedance(cim:ConductingEquipment.BaseVoltage/substring(@rdf:resource,2),0,0)"/>
 			<xsl:text>OpenIPSL.Electrical.Branches.PwLine </xsl:text>
 			<xsl:value-of select="gkh:compliantName(concat('line',cim:IdentifiedObject.name,substring(@rdf:ID,6,4)))"/>
 			<xsl:text>(R =</xsl:text>
@@ -317,12 +318,36 @@
 		</xsl:for-each>
 <xsl:text>// -- Transformers:
 </xsl:text>
-		<xsl:for-each select="cim:PowerTransformer">
+<xsl:for-each select="cim:PowerTransformerEnd">
+	<xsl:sort select="cim:PowerTransformerEnd.PowerTransformer/@rdf:resource"/>
+	<xsl:sort select="cim:TransformerEnd.endNumber"/>
+	<xsl:variable name="baseImpedance" select="gkh:baseImpedance('',cim:PowerTransformerEnd.ratedS,cim:PowerTransformerEnd.ratedU)"/>
+	<xsl:variable name="transformerCode" select="cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,2)" />
+	<xsl:variable name="terminalCode" select="cim:TransformerEnd.Terminal/substring(@rdf:resource,2)" />
+	<xsl:choose>
+		<xsl:when test="cim:TransformerEnd.endNumber=1">
 			<xsl:text>OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer </xsl:text>
-			<xsl:value-of select="gkh:compliantName(concat(gkh:transformerName(@rdf:ID,''),substring(@rdf:ID,6,4)))"/>
+			<xsl:value-of select="gkh:compliantName(concat(gkh:transformerName($transformerCode,''),cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,7,4)))"/>
 			<xsl:text>(</xsl:text>
-			<xsl:apply-templates select="key('PTend',@rdf:ID)"/>
-		</xsl:for-each>
+				<xsl:text>R = </xsl:text>
+				<xsl:value-of select="format-number(cim:PowerTransformerEnd.r div $baseImpedance,'0.00000000#')"/>
+				<xsl:text>, X = </xsl:text>
+				<xsl:value-of select="format-number(cim:PowerTransformerEnd.x div $baseImpedance,'0.00000000#')"/>
+				<xsl:text>, G = </xsl:text>
+				<xsl:value-of select="format-number(cim:PowerTransformerEnd.g * $baseImpedance div 2,'0.00000000#')"/>
+				<xsl:text>, B = </xsl:text>
+				<xsl:value-of select="format-number(cim:PowerTransformerEnd.b * $baseImpedance div 2,'0.00000000#')"/>
+				<xsl:text>,t2 = pf.powerflow.trafos.</xsl:text>
+				<xsl:value-of select="gkh:transformerName($transformerCode,$terminalCode)"/>
+		</xsl:when>
+		<xsl:otherwise>
+<xsl:text>,t1 = pf.powerflow.trafos.</xsl:text>
+<xsl:value-of select="gkh:transformerName($transformerCode,$terminalCode)"/>
+<xsl:text>);
+</xsl:text>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:for-each>
 <xsl:text>// -- Linear Shunt Compensators:
 </xsl:text>
 		<xsl:for-each select="cim:LinearShuntCompensator">
@@ -446,7 +471,7 @@ record Bus_Data
 partial record Bus_Template
 </xsl:text>
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
-			<xsl:variable name="name" select="gkh:compliantName(concat(cim:IdentifiedObject.name,substring(@rdf:ID,6,4)))"/>
+			<xsl:variable name="name" select="gkh:compliantName(concat(cim:IdentifiedObject.name,'_',substring(@rdf:ID,6,4)))"/>
 			<xsl:text>// </xsl:text>
 			<xsl:copy-of select="$name"/>
 			<xsl:text>
@@ -464,7 +489,7 @@ record PF_Bus_00000
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
 			<xsl:call-template name="InitialVoltage">
 				<xsl:with-param name="code" select="concat('#',@rdf:ID)"/>
-				<xsl:with-param name="name" select="gkh:compliantName(concat(cim:IdentifiedObject.name,substring(@rdf:ID,6,4)))"/>
+				<xsl:with-param name="name" select="gkh:compliantName(concat(cim:IdentifiedObject.name,'_',substring(@rdf:ID,6,4)))"/>
 				<xsl:with-param name="base" select="gkh:baseVoltage(substring(cim:TopologicalNode.BaseVoltage/@rdf:resource,2))"/>
 			</xsl:call-template>
 			<xsl:if test="position()!=last()">,</xsl:if>
@@ -505,11 +530,11 @@ record PF_Loads_00000
 	<xsl:text>P</xsl:text>
 <xsl:copy-of select="$load"/>
 <xsl:text> = </xsl:text>
-	<xsl:value-of select="cim:SvPowerFlow.p*1000000"/>
+	<xsl:value-of select="abs(cim:SvPowerFlow.p*1000000)"/>
 	<xsl:text>,Q</xsl:text>
 <xsl:copy-of select="$load"/>
 <xsl:text> = </xsl:text>
-	<xsl:value-of select="cim:SvPowerFlow.q*1000000"/>
+	<xsl:value-of select="abs(cim:SvPowerFlow.q*1000000)"/>
 	<xsl:if test="position()!=last()">,</xsl:if>
 </xsl:if>
 		</xsl:for-each>
@@ -577,7 +602,7 @@ replaceable record Trafos = CimSystem.PF_Data.Trafos_Data.PF_Trafos_00000 constr
 end PF_00000;
 end PF_Data;
 
-  annotation(uses(Modelica(version = "3.2.3"), Complex, OpenIPSL(version = "2.0.0-dev")), Documentation(info = "HTML This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.HTML"));
+  annotation(uses(Modelica(version = "3.2.3"), Complex, OpenIPSL(version = "2.0.0-beta.1")), Documentation(info = "HTML This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.HTML"));
 end CimSystem;</xsl:text>
 	</xsl:template>
 	
@@ -594,7 +619,7 @@ end CimSystem;</xsl:text>
 			<xsl:text>,A</xsl:text>
 			<xsl:copy-of select="$name"/>
 			<xsl:text>=</xsl:text>
-			<xsl:value-of select="format-number($voltNode/../cim:SvVoltage.angle*2*3.14159 div 180,'0.00000#')"/>
+			<xsl:value-of select="format-number($voltNode/../cim:SvVoltage.angle*3.14159 div 180,'0.00000#')"/>
 		</xsl:if>
 	</xsl:template>
 	<xsl:template name="MakeMachineForCode">
@@ -627,34 +652,7 @@ end </xsl:text>
 		<xsl:value-of select="cim:TapChanger.neutralU + ($position - cim:TapChanger.neutralStep) * cim:RatioTapChanger.stepVoltageIncrement div 100"></xsl:value-of>
 	</xsl:template>
 	
-	<xsl:template match="cim:PowerTransformerEnd/cim:PowerTransformerEnd.PowerTransformer">
-		<xsl:variable name="transformerCode" select="../cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,2)" />
-		<xsl:variable name="terminalCode" select="../cim:TransformerEnd.Terminal/substring(@rdf:resource,2)" />
-		<xsl:variable name="baseImpedance" select="gkh:baseImpedance(../cim:TransformerEnd.BaseVoltage/substring(@rdf:resource,2),../cim:BasePower/cim:BasePower.basePower,0)"/>
-		<xsl:variable name="term" select="key('terminal',$terminalCode)/cim:IdentifiedObject.name"/>
-		<xsl:choose>
-			<xsl:when test="$term='T1'">
-				<xsl:text>R = </xsl:text>
-				<xsl:value-of select="format-number(../cim:PowerTransformerEnd.r div $baseImpedance,'0.00000#')"/>
-				<xsl:text>, X = </xsl:text>
-				<xsl:value-of select="format-number(../cim:PowerTransformerEnd.x div $baseImpedance,'0.00000#')"/>
-				<xsl:text>, G = </xsl:text>
-				<xsl:value-of select="format-number(../cim:PowerTransformerEnd.g * $baseImpedance div 2,'0.00000#')"/>
-				<xsl:text>, B = </xsl:text>
-				<xsl:value-of select="format-number(../cim:PowerTransformerEnd.b * $baseImpedance div 2,'0.00000#')"/>
-				<xsl:text>,</xsl:text><xsl:value-of select="lower-case($term)"/>
-				<xsl:text> = pf.powerflow.trafos.</xsl:text>
-				<xsl:value-of select="gkh:transformerName($transformerCode,$terminalCode)"/>
-			</xsl:when>
-			<xsl:otherwise>
-<xsl:text>,</xsl:text><xsl:value-of select="lower-case($term)"/>
-<xsl:text> = pf.powerflow.trafos.</xsl:text>
-<xsl:value-of select="gkh:transformerName($transformerCode,$terminalCode)"/>
-<xsl:text>);
-</xsl:text>
-			</xsl:otherwise>
-			</xsl:choose>
-	</xsl:template>
+
 	<xsl:template match="cim:RatioTapChanger/cim:RatioTapChanger.TransformerEnd">
 		<xsl:value-of select="../cim:TapChanger.neutralU + (../cim:TapChanger.normalStep - ../cim:TapChanger.neutralStep) * ../cim:RatioTapChanger.stepVoltageIncrement div 100"></xsl:value-of>
 	</xsl:template>
@@ -693,13 +691,18 @@ model </xsl:text>
 	</xsl:template>
 	<xsl:template match="cim:SynchronousMachineTimeConstantReactance">
 		<xsl:param name="MainName"/>
+		<xsl:variable name="gSG"  select="key('governorSG',@rdf:ID)"/>
+		<xsl:variable name="gov"  select="key('governor',@rdf:ID)"/>
 		<xsl:variable name="GenType">
 			<xsl:if test="cim:SynchronousMachineTimeConstantReactance.rotorType/@rdf:resource='http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor'">
-			<xsl:choose>
-			<xsl:when test="key('governor',@rdf:ID)"><xsl:text>GENROU</xsl:text>
-</xsl:when>
-			<xsl:otherwise><xsl:text>GENROE</xsl:text></xsl:otherwise>
-			</xsl:choose>
+				<xsl:choose>
+				<xsl:when test="$gSG or $gov">
+					<xsl:text>GENROU</xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>GENROE</xsl:text>
+				</xsl:otherwise>
+				</xsl:choose>
 			</xsl:if>
 			<xsl:if test="cim:SynchronousMachineTimeConstantReactance.rotorType/@rdf:resource='http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.salientPole'">
 				<xsl:text>GENSAL</xsl:text>
@@ -709,41 +712,41 @@ model </xsl:text>
 	OpenIPSL.Electrical.Machines.PSSE.</xsl:text>
 		<xsl:copy-of select="$GenType"/>
 		<xsl:text> machine(Tpd0 = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tpdo,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tpdo,'0.0000000#')"/>
 		<xsl:text>, Tppd0 = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tppdo,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tppdo,'0.0000000#')"/>
 		<xsl:if test="$GenType='GENROU' or $GenType='GENROE'">
 			<xsl:text>, Tpq0 = </xsl:text>
-			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tpqo,'0.0000#')"/>
+			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tpqo,'0.0000000#')"/>
 		</xsl:if>
 		<xsl:text>, Tppq0 = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tppqo,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.tppqo,'0.0000000#')"/>
 		<xsl:text>, H = </xsl:text>
-		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.inertia,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.inertia,'0.0000000#')"/>
 		<xsl:text>, D = </xsl:text>
-		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.damping,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.damping,'0.0000000#')"/>
 
 		<xsl:text>, Xd = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSync,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSync,'0.0000000#')"/>
 		<xsl:text>, Xq = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xQuadSync,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xQuadSync,'0.0000000#')"/>
 		<xsl:text>, Xpd = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectTrans,'0.000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectTrans,'0.000000#')"/>
 		<xsl:if test="$GenType='GENROU' or $GenType='GENROE'">
 			<xsl:text>, Xpq = </xsl:text>
-			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xQuadTrans,'0.000#')"/>
+			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xQuadTrans,'0.000000#')"/>
 		</xsl:if>
 		<xsl:text>, Xppd = </xsl:text>
-		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans,'0.0000000#')"/>
 		<xsl:text>, Xl = </xsl:text>
-		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.statorLeakageReactance,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.statorLeakageReactance,'0.0000000#')"/>
 		<xsl:text>, S10 = </xsl:text>
-		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.saturationFactor,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.saturationFactor,'0.0000000#')"/>
 		<xsl:text>, S12 = </xsl:text>
-		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.saturationFactor120,'0.0000#')"/>
+		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.saturationFactor120,'0.0000000#')"/>
 		<xsl:if test="$GenType='GENROU' or $GenType='GENROE'">
 			<xsl:text>, Xppq = </xsl:text>
-			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans,'0.0000#')"/>
+			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans,'0.0000000#')"/>
 		</xsl:if>
 		<xsl:text>, R_a = </xsl:text>
 		<xsl:value-of select="gkh:defaultNumbers(cim:SynchronousMachineTimeConstantReactance.statorResistance,0.0)"/>
@@ -752,8 +755,11 @@ model </xsl:text>
 	Modelica.Blocks.Sources.Constant oel(k = 0) annotation(Placement(transformation(extent = {{-40, -94}, {-20, -74}})));
 	</xsl:text>
 		<xsl:choose>
-			<xsl:when test="key('governor',@rdf:ID)">
-				<xsl:apply-templates select="key('governor',@rdf:ID)"/>
+			<xsl:when test="$gov">
+				<xsl:apply-templates select="$gov"/>
+			</xsl:when>
+			<xsl:when test="$gSG">
+				<xsl:apply-templates select="$gSG"/>
 			</xsl:when>
 			<xsl:otherwise>
 	<xsl:text>// No stabilizer, so disabled will be used
@@ -798,6 +804,50 @@ equation
 		<xsl:text>,D_t = </xsl:text>
 		<xsl:value-of select="format-number(../cim:GovSteam0.dt,'0.00000#')"/>
 		<xsl:text>) annotation(Placement(transformation(extent = {{-30, 20}, {-10, 40}})));</xsl:text>
+	</xsl:template>
+	
+<xsl:template match="cim:GovSteamSGO/cim:TurbineGovernorDynamics.SynchronousMachineDynamics">
+		<xsl:text>OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO governor(T_1 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.t1,'0.00000#')"/>
+		<xsl:text>,T_2 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.t2,'0.00000#')"/>
+		<xsl:text>,T_3 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.t3,'0.00000#')"/>
+		<xsl:text>,T_4 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.t4,'0.00000#')"/>
+		<xsl:text>,T_5 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.t5,'0.00000#')"/>
+		<xsl:text>,T_6 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.t6,'0.00000#')"/>
+		<xsl:text>,K_1 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.k1,'0.00000#')"/>
+		<xsl:text>,K_2 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.k2,'0.00000#')"/>
+		<xsl:text>,K_3 = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.k3,'0.00000#')"/>
+		<xsl:text>,P_MAX = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.pmax,'0.00000#')"/>
+		<xsl:text>,P_MIN = </xsl:text>
+		<xsl:value-of select="format-number(../cim:GovSteamSGO.pmin,'0.00000#')"/>
+		<xsl:text>) annotation(Placement(transformation(extent = {{-30, 20}, {-10, 40}})));</xsl:text>
+	</xsl:template>
+	
+<xsl:template match="cim:ExcSCRX/cim:ExcitationSystemDynamics.SynchronousMachineDynamics">
+		<xsl:text>OpenIPSL.Electrical.Controls.PSSE.ES.SCRX exciter(T_AT_B = </xsl:text>
+		<xsl:value-of select="format-number(../ExcSCRX.tatb,'0.00000#')"/>
+		<xsl:text>,T_B = </xsl:text>
+		<xsl:value-of select="format-number(../ExcSCRX.tb,'0.00000#')"/>
+		<xsl:text>,K = </xsl:text>
+		<xsl:value-of select="format-number(../cim:ExcSCRX.k,'0.00000#')"/>
+		<xsl:text>,T_E = </xsl:text>
+		<xsl:value-of select="format-number(../cim:ExcSCRX.te,'0.00000#')"/>
+		<xsl:text>,E_MIN = </xsl:text>
+		<xsl:value-of select="format-number(../cim:ExcSCRX.emin,'0.00000#')"/>
+		<xsl:text>,E_MAX = </xsl:text>
+		<xsl:value-of select="format-number(../cim:ExcSCRX.cswitch,'0.00000#')"/>
+		<xsl:text>,C_SWITCH = </xsl:text>
+		<xsl:value-of select="../cim:DynamicsFunctionBlock.enabled"/>
+		<xsl:text>,r_cr_fd = 0.00000) annotation(Placement(transformation(extent = {{-30, 20}, {-10, 40}})));</xsl:text>
 	</xsl:template>
 	
 	<xsl:template match="cim:PssIEEE2B/cim:PowerSystemStabilizerDynamics.ExcitationSystemDynamics">
