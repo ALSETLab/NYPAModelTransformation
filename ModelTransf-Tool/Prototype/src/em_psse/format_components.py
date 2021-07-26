@@ -129,7 +129,7 @@ def format_transformer(df,s_system=100):
 			x = item[field]
 			if cz == 1:
 				# In system base, convert to 1 MVA base
-				x = x/s_system
+				x = x/s_unit
 			elif cz  == 2:
 				# in unit base, convert to 1 MVA base
 				x = x/s_unit
@@ -152,7 +152,7 @@ def format_transformer(df,s_system=100):
 			r = item[field]
 			if cz == 1:
 				# In system base, convert to 1 MVA base
-				r = r/s_system
+				r = r/s_unit
 			elif cz  == 2:
 				# in unit base, convert to 1 MVA base
 				r = r/s_unit

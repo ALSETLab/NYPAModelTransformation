@@ -183,7 +183,9 @@ def writeSysMo(sdir,pkg_name,pkg_ordr,networkname,sysdata,dyrdata,system_frequen
 	if len(transf) != 0:
 		for ii in range(len(transf)):
 			ix = ii+1
-			system_file.write("  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twTransformer%d (R = %.6f, X = %.6f, G = 0.0, B = 0.0, t1 = pf.powerflow.trafos.t1_trafo_%d, t2 = pf.powerflow.trafos.t2_trafo_%d); \n" % (ix,float(transf.iloc[ii,2]),float(transf.iloc[ii,3]),ix,ix))
+			r = float(transf.iloc[ii,2])*float(system_base)
+			x = float(transf.iloc[ii,3])*float(system_base)
+			system_file.write("  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twTransformer%d (R = %.6f, X = %.6f, G = 0.0, B = 0.0, t1 = pf.powerflow.trafos.t1_trafo_%d, t2 = pf.powerflow.trafos.t2_trafo_%d); \n" % (ix,r,x,ix,ix))
 	else:
 		system_file.write("// system has no transformer\n")
 	# LISTING LOADS in modelica file:
