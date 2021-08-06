@@ -1,3 +1,5 @@
+**Preliminary**
+
 # Introduction
   The direct route of translating proprietary files from PSS/E or PSAT to Modelica is not the best way since the process is transient. Software vendor's file formats can be changed at any moment without notification or accountability.
   
@@ -134,3 +136,42 @@ Power Transformer End  Modelica PF_Trafos_00000
 TP/TopologicalNode – bus connections
 TP/TopologicalNode – bus voltages
 SV/SvPowerFlow – load flow
+
+## Synchronous Machine
+The equipment PSS/E file (ending in EQ) contains static triples. The dynamic PSS/E file (ending in DY) contains dynamic triples. Let us work through the OpenIPSL PSSE GENROU Machine (Solid Rotor Generator represented by equal mutual inductance rotor modeling). Table 1 is from the DY file.
+
+Table 1. Map from Modelica OpenIPSL GENROU parameters to PSS/E predicatefor the dynamic triples of resource 'SynchronousMachineTimeConstantReactance'. The predicates used in this table have a prefix with the same name as the resource; for example 'RotatingMachineDynamics'. A period separates the prefix from the able PSS/E predicate name. For example, the table shows 'RotatingMachineDynamics.damping' as 'damping'.
+
+**Modelica parameter description (name) unit|PSS/E Predicate**
+d-axis transient open-circuit time constant (Tpd0) s|tpdo
+d-axis sub-transient open-circuit time constant (Tppd0) s|tppdo
+q-axis sub-transient open-circuit time constant (Tppq0) s|tppqo
+Inertia constant (H) s|inertia
+Speed damping (D)|damping
+d-axis reactance (Xd)|xDirectSync
+q-axis reactance (Xq)|xQuadSync
+d-axis transient reactance (Xpd)|xDirectTrans
+d-axis sub-transient reactance (Xppd)|xDirectSubtrans
+q-axis sub-transient reactance (Xppq)|
+leakage reactance (Xl)|statorLeakageReactance
+Saturation factor at 1.0 pu (S10)|saturationFactor
+Saturation factor at 1.2 pu (S12)|saturationFactor120
+Armature resistance (R_a)|
+q-axis transient reactance (Xpq)|xQuadTrans
+q-axis transient open-circuit time constant (Tpq0)|tpqo
+Sub-transient reactance (Xpp)|equal to Xppd by default
+
+###Modelica parameters compared with CIM triples
+Modelica OpenIPSL Directory Path: Examples -> Machines -> PSSE -> GENROU
+
+CIM file: *_DY.xml
+Top Element: cim:SynchronousMachineTimeConstantReactance
+Sub-element: cim:SynchronousMachineTimeConstantReactance.modelType is equal to http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind.roundRotor
+
+#Tools
+An API engine translates XSLT. Common programming languages such as .NET or Python have their own API for XSLT version 1.0. The file size of the 500 bus CIM model has forced the use of XSLT version 2.0. For XSLT (and XML) development, JAPISOFT provides an IDE called EditiX. It uses the Saxonica engine. Ultimately creation of a .NET interface by using the home edition API downloaded from http://saxon.sourceforge.net/ .
+
+#Summary
+Understanding CGMES CIM in terms of database modeling techniques simplifies the paradigm for translating the CIM to Modelica. This paper relates the XSLT commands to data modeling structures which can systematically be used to map CIM to Modelica.
+Many of these database modeling techniques could be used in something other than a XSLT such as Python or .NET. However, most languages support XSLT version 1.0 and can use it with existing commands with their own XSLT engine.
+Rapid translation of ENTSO-E CIM will provide system planners the advantages of Modelica in their work.
