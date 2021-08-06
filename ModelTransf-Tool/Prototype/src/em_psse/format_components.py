@@ -19,15 +19,15 @@ def format_bus(df):
 def format_branch(df):
 	#print('Formatting branch {}'.format(len(df)))		
 	df.index = 'branch'+df['I'].astype(str) + '_'+df['J'].astype(str) + '_' + df['CKT'].str.replace(' ','').str.replace("'",'')
-	df = df.rename(index=str,columns={'I':'bus0','J':'bus1','X':'x','R':'r','B':'b','RATEA':'s_nom_A','RATEB':'s_nom_B','RATEC':'s_nom_C','CKT':'circuit','LEN':'length','ST':'status'})
-	return df[['bus0','bus1','x','r','b','s_nom_A','s_nom_B','s_nom_C','length','circuit','status']]
+	df = df.rename(index=str,columns={'I':'bus0','J':'bus1','X':'x','R':'r','B':'b','RATEA':'s_nom_A','RATEB':'s_nom_B','RATEC':'s_nom_C','CKT':'circuit','LEN':'length','ST':'status','GI':'g_bus0','BI':'b_bus0','GJ':'g_bus1','BJ':'b_bus1'})
+	return df[['bus0','bus1','x','r','b','s_nom_A','s_nom_B','s_nom_C','length','circuit','status','g_bus0','b_bus0','g_bus1','b_bus1']]
 
 def format_gen(df):
 	#print('Formatting gen {}'.format(len(df)))
 	df.index = 'gen'+df['I'].astype(str) + '_' +df['ID'].str.replace(' ','').str.replace("'",'')
 	df['ID'] = df['ID'].str.replace(' ','').str.replace("'",'')
-	df = df.rename(index=str,columns={'I':'bus','PT':'p_max','PG':'p_gen','PB':'p_min','QG':'q_gen','QT':'q_max','QB':'q_min','STAT':'status','ID':'circuit','MBASE':'mbase','ZR':'ra','ZX':'xd'})
-	return df[['bus','p_max','p_gen','p_min','q_gen','q_max','q_min','status','circuit','mbase','ra','xd']]
+	df = df.rename(index=str,columns={'I':'bus','PT':'p_max','PG':'p_gen','PB':'p_min','QG':'q_gen','QT':'q_max','QB':'q_min','STAT':'status','ID':'circuit','MBASE':'mbase','ZR':'ra','ZX':'xd','RT':'rt','XT':'xt','GTAP':'gt'})
+	return df[['bus','p_max','p_gen','p_min','q_gen','q_max','q_min','status','circuit','mbase','ra','xd','rt','xt','gt']]
 
 def format_area(df):
 	#print('Formatting area {}'.format(len(df)))

@@ -567,8 +567,17 @@ def writeMac(genpdata,index,dyrdata,result,file):
 	genlist = dyrdata[model]
 	# ----- Extract Mb:
 	Mb = float(genpdata.iloc[index,9])*1000000
+	# ----- Extract armature reactance and resistance:
 	ra = float(genpdata.iloc[index,10])
 	xppd = float(genpdata.iloc[index,11])
+	# ----- Extract transformer info:
+	rt = float(genpdata.iloc[index,12])
+	xt = float(genpdata.iloc[index,13])
+	gtap = float(genpdata.iloc[index,14])
+	if xt > 1e-6:
+		stepup_transformer_flag = True
+	else:
+		stepup_transformer_flag = False
 	# ----- Writing Parameters for models:
 	file.write("  // Writing machine:\n")
 	if model == 'GENCLS':
@@ -724,6 +733,10 @@ def writeMac(genpdata,index,dyrdata,result,file):
 		file.write("   angle_0 = angle_0)\n")
 
 	file.write("  annotation(Placement(transformation(extent={{20,-10},{40,10}})));\n")
+	# If there is any transformer, add it to model:
+	if stepup_transformer_flag == True:
+		file.write("  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer transformer (R = %.6f, X = %.6f, G = 0.0, B = 0.0, t1 = %.6f, t2 = 1.0000, S_n = %.2f)" % (rt,xt,gtap,Mb))
+		file.write(" annotation(Placement(transformation(extent={{60,-10},{80,10}})));\n")
 #=========================================================================================      
 # Function: writeExc
 # Authors: marcelofcastro        
@@ -1221,10 +1234,10 @@ def writePss(dyrdata,result,file):
 		file.write("   K_S1 = %.6f,\n" % float(stlist.iloc[row,18]))
 		file.write("   T_1 = %.6f,\n" % float(stlist.iloc[row,19]))
 		file.write("   T_2 = %.6f,\n" % float(stlist.iloc[row,20]))
-		file.write("   T_3 = %.6f,\n" % float(stlist.iloc[row,17]))
-		file.write("   T_4 = %.6f,\n" % float(stlist.iloc[row,18]))
-		file.write("   V_STMAX = %.6f,\n" % float(stlist.iloc[row,19]))
-		file.write("   V_STMIN = %.6f)\n" % float(stlist.iloc[row,20]))
+		file.write("   T_3 = %.6f,\n" % float(stlist.iloc[row,21]))
+		file.write("   T_4 = %.6f,\n" % float(stlist.iloc[row,22]))
+		file.write("   V_STMAX = %.6f,\n" % float(stlist.iloc[row,23]))
+		file.write("   V_STMIN = %.6f)\n" % float(stlist.iloc[row,24]))
 	elif model == 'PSS2B':
 		# check flag for input 1:
 		inp_1_flag = int(stlist.iloc[row,2])
@@ -1254,12 +1267,12 @@ def writePss(dyrdata,result,file):
 		file.write("   T_4 = %.6f,\n" % float(stlist.iloc[row,18]))
 		file.write("   T_10 = %.6f,\n" % float(stlist.iloc[row,19]))
 		file.write("   T_11 = %.6f,\n" % float(stlist.iloc[row,20]))
-		file.write("   V_S1MAX = %.6f,\n" % float(stlist.iloc[row,19]))
-		file.write("   V_S1MIN = %.6f,\n" % float(stlist.iloc[row,20]))
-		file.write("   V_S2MAX = %.6f,\n" % float(stlist.iloc[row,21]))
-		file.write("   V_S2MIN = %.6f,\n" % float(stlist.iloc[row,22]))
-		file.write("   V_STMAX = %.6f,\n" % float(stlist.iloc[row,23]))
-		file.write("   V_STMIN = %.6f)\n" % float(stlist.iloc[row,24]))
+		file.write("   V_S1MAX = %.6f,\n" % float(stlist.iloc[row,21]))
+		file.write("   V_S1MIN = %.6f,\n" % float(stlist.iloc[row,22]))
+		file.write("   V_S2MAX = %.6f,\n" % float(stlist.iloc[row,23]))
+		file.write("   V_S2MIN = %.6f,\n" % float(stlist.iloc[row,24]))
+		file.write("   V_STMAX = %.6f,\n" % float(stlist.iloc[row,25]))
+		file.write("   V_STMIN = %.6f)\n" % float(stlist.iloc[row,26]))
 	elif model == 'STAB2A':
 		file.write("  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A pss(\n")
 		file.write("   K_2 = %.6f,\n" % float(stlist.iloc[row,2]))
@@ -1470,26 +1483,26 @@ def writeGov(genpdata,index,dyrdata,result,file):
 		p0_pu = P0/Mb;
 		file.write("  OpenIPSL.Electrical.Controls.PSSE.TG.IEEEG1 governor(\n")
 		file.write("   P0 = %.6f,\n" % p0_pu)
-		file.write("   K = %.6f,\n" % float(tglist.iloc[row,2]))
-		file.write("   T_1 = %.6f,\n" % float(tglist.iloc[row,3]))
-		file.write("   T_2 = %.6f,\n" % float(tglist.iloc[row,4]))
-		file.write("   T_3 = %.6f,\n" % float(tglist.iloc[row,5]))
-		file.write("   U_o = %.6f,\n" % float(tglist.iloc[row,6]))
-		file.write("   U_c = %.6f,\n" % float(tglist.iloc[row,7]))
-		file.write("   P_MAX = %.6f,\n" % float(tglist.iloc[row,8]))
-		file.write("   P_MIN = %.6f,\n" % float(tglist.iloc[row,9]))
-		file.write("   T_4 = %.6f,\n" % float(tglist.iloc[row,10]))
-		file.write("   K_1 = %.6f,\n" % float(tglist.iloc[row,11]))
-		file.write("   K_2 = %.6f,\n" % float(tglist.iloc[row,12]))
-		file.write("   T_5 = %.6f,\n" % float(tglist.iloc[row,13]))
-		file.write("   K_3 = %.6f,\n" % float(tglist.iloc[row,14]))
-		file.write("   K_4 = %.6f,\n" % float(tglist.iloc[row,15]))
-		file.write("   T_6 = %.6f,\n" % float(tglist.iloc[row,16]))
-		file.write("   K_5 = %.6f,\n" % float(tglist.iloc[row,17]))
-		file.write("   K_6 = %.6f,\n" % float(tglist.iloc[row,18]))
-		file.write("   T_7 = %.6f,\n" % float(tglist.iloc[row,19]))
-		file.write("   K_7 = %.6f,\n" % float(tglist.iloc[row,20]))
-		file.write("   K_8 = %.6f)\n" % float(tglist.iloc[row,21]))
+		file.write("   K = %.6f,\n" % float(tglist.iloc[row,4])) #2
+		file.write("   T_1 = %.6f,\n" % float(tglist.iloc[row,5]))
+		file.write("   T_2 = %.6f,\n" % float(tglist.iloc[row,6]))
+		file.write("   T_3 = %.6f,\n" % float(tglist.iloc[row,7]))
+		file.write("   U_o = %.6f,\n" % float(tglist.iloc[row,8]))
+		file.write("   U_c = %.6f,\n" % float(tglist.iloc[row,9]))
+		file.write("   P_MAX = %.6f,\n" % float(tglist.iloc[row,10]))
+		file.write("   P_MIN = %.6f,\n" % float(tglist.iloc[row,11]))
+		file.write("   T_4 = %.6f,\n" % float(tglist.iloc[row,12]))
+		file.write("   K_1 = %.6f,\n" % float(tglist.iloc[row,13]))
+		file.write("   K_2 = %.6f,\n" % float(tglist.iloc[row,14]))
+		file.write("   T_5 = %.6f,\n" % float(tglist.iloc[row,15]))
+		file.write("   K_3 = %.6f,\n" % float(tglist.iloc[row,16]))
+		file.write("   K_4 = %.6f,\n" % float(tglist.iloc[row,17]))
+		file.write("   T_6 = %.6f,\n" % float(tglist.iloc[row,18]))
+		file.write("   K_5 = %.6f,\n" % float(tglist.iloc[row,19]))
+		file.write("   K_6 = %.6f,\n" % float(tglist.iloc[row,20]))
+		file.write("   T_7 = %.6f,\n" % float(tglist.iloc[row,21]))
+		file.write("   K_7 = %.6f,\n" % float(tglist.iloc[row,22]))
+		file.write("   K_8 = %.6f)\n" % float(tglist.iloc[row,23]))
 	elif model == 'IEESGO':
 		file.write("  OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO governor(\n")
 		file.write("   T_1 = %.6f,\n" % float(tglist.iloc[row,2]))
@@ -1686,15 +1699,30 @@ def writeGenMo(gdir,pkg_name,pkg_ordr,sysdata,dyrdata):
 				wndresult = lookFor('wind',gens.iloc[ii,0],gens.iloc[ii,8],dyrdata)
 				writeWnd(dyrdata,wndresult,genmo)
 
+			# Getting step-up transformer:
+			xt = float(gens.iloc[ii,13])
+			if xt > 1e-6:
+				stepup_transformer_flag = True
+			else:
+				stepup_transformer_flag = False
 			# Starting connection:
 			list_exc = ['ESST4B'] # list of exciters with an integrated voltage compensator
 			genmo.write("equation\n")
 			if macresult[0] not in special_mac:
 				if excresult[0] in list_exc:
-					genmo.write("  connect(machine.p, exciter.Gen_terminal) annotation (Line(points={{40,0},{63,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
-					genmo.write("  connect(exciter.Bus, p) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
+					if stepup_transformer_flag == True:
+						genmo.write("  connect(machine.p, exciter.Gen_terminal) annotation (Line(points={{40,0},{63,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
+						genmo.write("  connect(exciter.Bus, transformer.p);\n") # connecting machine to pin if exciter has an integrated voltage compensator
+						genmo.write("  connect(transformer.n, p) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting transformer to output
+					else:
+						genmo.write("  connect(machine.p, exciter.Gen_terminal) annotation (Line(points={{40,0},{63,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
+						genmo.write("  connect(exciter.Bus, p) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting machine to pin if exciter has an integrated voltage compensator
 				else:
-					genmo.write("  connect(machine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if no voltage compensator is present
+					if stepup_transformer_flag == True:
+						genmo.write("  connect(machine.p, transformer.p) annotation (Line(points={{40,0},{59,0}}, color={0,0,255}));\n") # connecting machine to transformer
+						genmo.write("  connect(transformer.n, p) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting transformer to output
+					else:
+						genmo.write("  connect(machine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if no voltage compensator is present		
 			else:
 				if macresult[0] == 'CSVGN1':
 					genmo.write("  BusV = sqrt(p.vr*p.vr + p.vi*p.vi);\n")
@@ -1704,7 +1732,11 @@ def writeGenMo(gdir,pkg_name,pkg_ordr,sysdata,dyrdata):
 				elif macresult[0] == 'WT4G1':
 					genmo.write("  connect(windmachine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if WT4G1
 				else:
-					genmo.write("  connect(machine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting machine to pin if GENCLS
+					if stepup_transformer_flag == True:
+						genmo.write("  connect(machine.p, transformer.p) annotation (Line(points={{40,0},{59,0}}, color={0,0,255}));\n") # connecting GENCLS to transformer
+						genmo.write("  connect(transformer.n, p) annotation (Line(points={{81,0},{110,0}}, color={0,0,255}));\n") # connecting transformer to output
+					else:
+						genmo.write("  connect(machine.p,p)  annotation(Line(origin = {75, 0}, points = {{40, 0}, {110, 0}}, color = {0, 0, 255}));\n") # connecting GENCLS to pin if no voltage compensator is present	
 				
 			
 			if macresult[0] not in special_mac:
