@@ -24,19 +24,18 @@ Therefore, this project has basically three steps:
 
 ## Documentation
 
-More about this project can be found in the [website](https://alsetlab.github.io/NYPAModelTransformation/index).
+You can find more about this project, like results and instructions for using the model transformation tool prototype in the public website available [here](https://alsetlab.github.io/NYPAModelTransformation/index). 
 
+If the user wants to download the repository with all its files they will have basically two options. 
 
-
-## How to clone?
-In order to clone or download all of the files and testing scripts, there are two ways:
-- Using GitHub website:
+- The first one is if the user just wants to dowload and promptly use all the content. If this is the main goal, they should:
 	1. Go to the GitHub page [here](https://github.com/ALSETLab/NYPAModelTransformation).
 	2. Click the green 'Code' button.
 	3. Clock on the 'Download ZIP'.
 	4. Extract the files inthe desired directory.
 	5. You should see the files downloaded in the desired directory.
-- Using Git:
+
+- On the other hand, if the user aims at contributing to the project via modificaitons and pull requests, then they are welcome to use git tools for working with the repository. They should:
 	1. Go to the GitHub page [here](https://github.com/ALSETLab/NYPAModelTransformation).	
 	2. In terminal, navigate to the desired directory.
 	3. Type the command: git clone "https://github.com/ALSETLab/NYPAModelTransformation.git".
@@ -50,12 +49,13 @@ Luigi Vanfretti (vanfrl@rpi.edu)
 
 Marcelo De Castro (decasm3@rpi.edu)
 - PSS/E Testing
-- CSV Compare
+- Automation of Model Verification
 - Model Transformation Tool Design and Implementation
 
 Giuseppe Laera (laerag@rpi.edu)
 - Technical Design
-- Modelica Models Implementation
+- Modelica Model Implementation
+- Modelica Model Verification
 
 Manuel Navarro Catalan (manuelnavarrocatalan@gmail.com)
 - Dymola Testing
