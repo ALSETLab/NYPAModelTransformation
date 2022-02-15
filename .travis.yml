@@ -40,7 +40,7 @@ before_script:
 
 
 script:
-- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
+#- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 modelCheck.py"
 #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "python3.7 PythonRunAllOpenModelica.py"
 #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd LoadVariation; python3.7 LoadVariationRunAllOpenModelica.py"
 #- sudo docker run manuelnvro/dockertraining:1.9 sh -c "cd ReferenceStep; python3.7 ReferenceStepExcitersOpenModelica.py"
