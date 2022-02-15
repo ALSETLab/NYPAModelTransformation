@@ -24,7 +24,7 @@ Therefore, this project has basically three steps:
 
 ## Documentation
 
-More about this project can be found in the [website](https://marcelofcastro.github.io/Python_OpenIPSL/index).
+More about this project can be found in the [website](https://alsetlab.github.io/NYPAModelTransformation/index).
 
 
 

@@ -18,8 +18,8 @@ before_script:
   #- ls 
   #- ls 
   - cd /home/travis/build/ALSETLab/NYPAModelTransformation/
-  - sudo docker pull manuelnvro/dockertraining:1.9
-  - sudo docker build -t manuelnvro/dockertraining:1.9 .
+  #- sudo docker pull manuelnvro/dockertraining:1.9
+  #- sudo docker build -t manuelnvro/dockertraining:1.9 .
   
   #- pwd
   #- cd ..
