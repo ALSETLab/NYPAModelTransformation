@@ -1,7 +1,0 @@
-22:30:18 07/09/21:0000002 Converting "C:\Users\sveinols\NYPAModelTransformation\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\500-bus\nypa_500_cleaned.raw" to CIM/XML...
-22:30:18 07/09/21:0000003 No rdf:ID map file specified
-22:30:18 07/09/21:0000004 Warning: Zone-Area association conflict for Bus 180819; reassigning bus Area from 104 to 107
-22:30:18 07/09/21:0000005 Warning: Zone-Area association conflict for Bus 181025; reassigning bus Area from 104 to 107
-22:30:18 07/09/21:0000006 Warning: Zone-Area association conflict for Bus 181508; reassigning bus Area from 104 to 107
-22:30:18 07/09/21:0000007 Bus I not defined for Load record: 107430 EQ
-22:30:18 07/09/21:0000008 Data conversion to CIM/XML completed
