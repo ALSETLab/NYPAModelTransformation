@@ -4,25 +4,45 @@ title: Contact Information
 
 ## Roles and Contact Info
 
-### Rensselaer Polytechnic Institute Members
+### New York Power Authority
 
-Giuseppe Laera (laerag@rpi.edu)
-- Model Translation
-- Technical Design
+George Stefopoulos
+- Principal Investigator
+
+Rahul Kadavil
+- Investigator
+
+Behnam Khaki
+- Investigator
+
+### Rensselaer Polytechnic Institute Members
 
 Luigi Vanfretti (vanfrl@rpi.edu) 
 - Principal Investigator
 
+Marcelo de Castro (decasm3@rpi.edu)
+- PSS/E Testing
+- Automation of Model Verification
+- Model Transformation Tool Design and Implementation
+
+Giuseppe Laera (laerag@rpi.edu)
+- Technical Design
+- Modelica Models Implementation
+
 Manuel Navarro (manuelnavarrocatalan@gmail.com)
 - Dymola Testing
 - OpenModelica Testing
-- Model Translation
 
-Marcelo de Castro (decasm3@rpi.edu)
-- PSS/E Testing
-- CSV Compare
-- Modelica Model Developer
-- Model Translation
+### External Members
+
+Glen  Halley (City Utilities of Springfield) (Glen@gkhsoftware.com)
+- Model Transformation Tool Design and Implementation
+
+Dietmar Winkler (University of South-Eastern Norway)
+- Technical Support with Modelica
+
+Svein Harald Olsen (Stattnet SF)
+- Technical Support with Common Information Models (CIMs)
 
 
 
