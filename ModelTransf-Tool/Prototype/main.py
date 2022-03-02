@@ -197,7 +197,7 @@ root.geometry("350x700")
 rightframe = Frame(master=root, width=400, height=700, bg="white")
 rightframe.pack(side=RIGHT)
 introtxt = "Model Translation Tool"
-copytxt = "AlsetLab and New York Power Authority \n 2021"
+copytxt = "AlsetLab and New York Power Authority \n version 1.0.0 \n 2022"
 canvas = Canvas(rightframe, width = 400, height = 700, bg="white")
 canvas.pack(fill = BOTH, expand = True)
 icon = PhotoImage(file = imgdir+'/icon.png')
