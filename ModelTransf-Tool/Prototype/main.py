@@ -41,6 +41,7 @@ def donothing():
 def frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo):
 	"""
 	Function that takes PSS/E files and translates them into a Modelica package.
+	This function is used for automating model generation using the graphical interface.
 
 	The function uses PSS/E RAW and DYR files as inputs as well as the encoder type, a flag indicating the presence of a fault event, and the parameters for the fault event.
 	Another input for this function is a direcotry path in which the user wants their translation files to be located.
@@ -75,7 +76,14 @@ def frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo):
     tkMessageBox.showinfo("PSSE File Translated", message) # displays psse version, base power and system frequency
 def menu_from_psse():
 	"""
-	Function that 
+	Function that creates the interactive user interface for model translation using PSS/E as the source model.
+
+	The function does not need any inputs because it creates a widget that asks for all inputs. 
+	The user should fill all entries in order for a model to be translated.
+
+	This function uses frompsse() function for writing the ouput Modelica package.
+
+	Usage: ``menu_from_psse()`` or ``...command = menu_from_psse)``
 	"""
 	# ----- Create widget window:
 	window = Toplevel()
