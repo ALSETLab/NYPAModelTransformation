@@ -12,7 +12,14 @@ import tkinter.messagebox as tkMessageBox # functions for meassage box
 # Authors: marcelofcastro and ManuelNvro          
 # Description: this function ask for directories.
 #====================================================================================
-def askDir(): # note that here the dir stands for directory
+def askDir():
+	"""
+	Asks the user for a directory using tk library.
+
+	Might be obsolete in this application.
+
+	Usage: ``path = directory_function.askDir()``
+	"""
 	userpath = tkFileDialog.askdirectory()
 	return userpath
 #====================================================================================      
@@ -21,6 +28,13 @@ def askDir(): # note that here the dir stands for directory
 # Description: this function ask for raw files.
 #====================================================================================
 def askRawfile():
+	"""
+	Function that asks user for RAW files.
+
+	Used to get the path of a file with .raw extenstion.
+
+	Usage: ``rawfile = directory_function.askRawfile()``
+	"""
 	rawfile = tkFileDialog.askopenfilename(filetypes=[("Raw files", ".raw")])
 	return rawfile
 #====================================================================================      
@@ -28,7 +42,14 @@ def askRawfile():
 # Authors: marcelofcastro and ManuelNvro          
 # Description: this function ask for dyr files.
 #====================================================================================
-def askDyrfile(): # note that here dyr stands for dynamic raw file
+def askDyrfile(): 
+	"""
+	Function that asks user for DYR (dynamic RAW) files.
+
+	Used to get the path of a file with .dyr extenstion.
+
+	Usage: ``dyrfile = directory_function.askDyrfile()``
+	"""
 	dyrfile = tkFileDialog.askopenfilename(filetypes=[("Dyr files", ".dyr")])
 	return dyrfile
 #====================================================================================      
@@ -37,6 +58,15 @@ def askDyrfile(): # note that here dyr stands for dynamic raw file
 # Description: this function creates the folder and subfolders for model translation
 #====================================================================================
 def createDir(userpath):
+	"""
+	Function that creates the nested folder structure used when writing the Modelica package.
+	The nested folder structure created with this function is only used when an entire system is translated from PSSE.
+
+	This function takes userpath, the translation destination directory selected by the user, as input.
+	It returns folder's paths that are populated with models by other auxiliary functions.
+
+	Usage: ``[main_work_dir,translated_sys_dir,sys_data_dir,sys_generator_dir] = createDir(userpath)``
+	"""
 	# ----- Getting paths and naming directories:
 	workingdirectory = userpath + "/Translation" # name of main folder
 	systemdirectory = userpath + "/Translation/System" # name of test system folder
