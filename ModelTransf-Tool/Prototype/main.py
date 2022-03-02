@@ -39,6 +39,16 @@ def donothing():
     button = Button(filewin, text="Do nothing button")
     button.pack()
 def frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo):
+	"""
+	Function that takes PSS/E files and translates them into a Modelica package.
+
+	The function uses PSS/E RAW and DYR files as inputs as well as the encoder type, a flag indicating the presence of a fault event, and the parameters for the fault event.
+	Another input for this function is a direcotry path in which the user wants their translation files to be located.
+
+	The function creates the modelica model based on a nested package structure, using the directory path provided as input.
+
+	Usage: ``frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo)``
+	"""
     # ----- RAW file reader:
     #rawfile = directory_functions.askRawfile() 
     start_readraw = time.time() # initial time for raw.
@@ -64,6 +74,9 @@ def frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo):
     message = " PSS(R)E version: %.0f.\n System power base: %.1f MVA.\n System frequency: %.0f Hz." % (psse_version,system_base,system_frequency)
     tkMessageBox.showinfo("PSSE File Translated", message) # displays psse version, base power and system frequency
 def menu_from_psse():
+	"""
+	Function that 
+	"""
 	# ----- Create widget window:
 	window = Toplevel()
 	window.title("Translation Settings")
