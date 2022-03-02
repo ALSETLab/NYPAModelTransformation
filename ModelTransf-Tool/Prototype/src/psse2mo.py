@@ -19,6 +19,14 @@ import math # importing math library for PI constant
 # The function also extracts info about the system so it can be confirmed by user.
 #=========================================================================================
 def getRawBase(rawfile,encode_flag):
+	"""
+	This function asks for the raw file, together with the encoding information and extracts information from th file.
+	Results are organized in an object list and include system's base power, base frequency and PSS/E's version.
+
+	The encode flag code is: 1 for latin1 and 0 for utf-8. No other encoder is supported at the moment.
+
+	Usage: ``[sys_power_base,sys_freq_base,psse_version] = getRawBase(raw_file,encode_flag)``
+	"""
 	if int(encode_flag) == 1:
 		interpret = 'latin1'
 	else:
@@ -43,6 +51,15 @@ def getRawBase(rawfile,encode_flag):
 # addition, the code also extracts information about the system.
 #=========================================================================================
 def readRaw(rawfile,encode_flag):
+	"""
+	This function uses the PSSE RAW parser developed in https://github.com/anderson-optimization/em-psse to extract a list of objects that represents the information in a RAW file.
+	The function also uses getRawBase() to extract basic information about the RAW file.
+
+	The encoder flag code legend can be found in the documentation of getRawBase().
+	This function is an adaptation of the one developed by https://github.com/anderson-optimization.
+
+	Usage: ``[sys_power_base,sys_freq_base,sys_data,psse_version] = readRaw(raw_file,encode_flag)``
+	"""
 	raw_data=parse_raw(rawfile,encode_flag)
 	sysdata=format_all(raw_data)
 	[system_base,system_frequency,psse_version] = getRawBase(rawfile,encode_flag)
@@ -57,10 +74,18 @@ def readRaw(rawfile,encode_flag):
 # Function: readDyr
 # Authors: cuihantao and marcelofcastro          
 # Description: It uses the PSSE DYR parser developed by https://github.com/cuihantao
-# The expanded by marcelofcastro to be compatible with OpenIPSL models. 
+# It was expanded by marcelofcastro to be compatible with OpenIPSL models. 
 # The function returns each model and the data used in each model.
 #=========================================================================================
 def readDyr(dyrfile):
+	"""
+	This function is based on the PSSE DYR parser developed by https://github.com/cuihantao.
+	It was expanded for compatibility with OpenIPSL models.
+
+	The function uses the DYR file as input to create an object list with all models and data used in the PSSE file.
+
+	Usage: ``[sys_dyr_data] = readDyr(dyr_file)``
+	"""
 	dyrdata=parse_dyr(dyrfile)
 	return dyrdata
 #=========================================================================================      
@@ -69,6 +94,17 @@ def readDyr(dyrfile):
 # Description: It finds models connected to a particular bus and circuit.
 #=========================================================================================
 def lookFor(modeltype,bus,circuit,dyrdata):	
+	"""
+	This function finds a model in the DYR data list from a given model-type, that it is connected to a given bus and which has a give circuit ID.
+	The function then returns the model's parameter list and an identifier that allows other funtions to know the position of such model in the DYR list file.
+
+	The function uses the searched model type, the bus where it should be connected and its circuit, alongside the DYR file for finding the model.
+	After finding the model, it returns its data in an appropriate object list.
+
+	The function allows iterative methods to be applied for searching models that compose a substation connected to a particular bus.
+
+	Usage: ``[model_data,model_index] = lookFor(model_type,bus_number,circuit_id,dyr_data)``
+	"""
 	# ----- Lists of models:
 	macmodels = ['GENCLS','GENSAL','GENSAE','GENROU','GENROE','CSVGN1','WT4G1']
 	excmodels = ['ESAC1A','ESAC2A','ESDC1A','ESDC2A','ESST1A','ESST4B','EXAC1','EXAC2','EXNI','EXST1','IEEET1','IEEET2','IEEEX1','SCRX','SEXS','ST5B','URST5T']
@@ -116,6 +152,15 @@ def lookFor(modeltype,bus,circuit,dyrdata):
 # Description: It writes the files needed for system package and the network file.
 #=========================================================================================
 def writeSysMo(sdir,pkg_name,pkg_ordr,networkname,sysdata,dyrdata,system_frequency,system_base,fault_flag,faultinfo):
+	"""
+	This function writes the Modelica files that are needed in an entire system translation procedure.
+	The files are written in a nested package structure.
+
+	Writings are hard-coded and they have low flexibility for now. 
+	Subfunctions are used to write a data sub-package and a machine sub-package.
+
+	Usage: ``writeSysMo(translated_sys_dir,pkg_name,pkg_ordr,network_name,sys_data,dyr_data,sys_frequency,sys_base,fault_flag,fault_info)``
+	"""
 	# ----- Extracting information from system
 	try:
 		buses = sysdata['bus'] # getting bus data 
@@ -289,6 +334,14 @@ def writeSysMo(sdir,pkg_name,pkg_ordr,networkname,sysdata,dyrdata,system_frequen
 # Description: It writes the files needed for data package.
 #=========================================================================================
 def writeDataMo(ddir,pkg_name,pkg_ordr,sysdata):
+	"""
+	This function writes the data sub-package that is used to store the power flow solutions allowing proper initialization to Modelica models.
+	It takes the path where the data directory is placed, and creates and populates records that are referenced in the Modelica model.
+
+	The function has the data directory, strings `package.mo` and `package.order`, and the system data coming from the RAW file as inputs.
+
+	Usage: ``writeDataMo(data_dir,"package.mo","package.order",sys_data)``
+	"""
 	# ----- Extracting information from system
 	# buses
 	try:
@@ -560,6 +613,14 @@ def writeDataMo(ddir,pkg_name,pkg_ordr,sysdata):
 # Description: It writes machine model.
 #=========================================================================================
 def writeMac(genpdata,index,dyrdata,result,file):
+	"""
+	This function writes the Modelica models for machines, according to OpenIPSL models' syntax and parameters.
+	The machine written with this function has visual display through Modelica annotations.
+
+	It takes as inputs the machine's power data, the index location on the DYR list, the DYR parameter list, and the file where the machine should be written.
+
+	Usage: ``writeMac(gen_power_data,index,dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -743,6 +804,14 @@ def writeMac(genpdata,index,dyrdata,result,file):
 # Description: It writes exciter model.
 #=========================================================================================
 def writeExc(dyrdata,result,file):
+	"""
+	This function writes the Modelica models for exciters, according to OpenIPSL models' syntax and parameters.
+	The exciter written with this function has visual display through Modelica annotations.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the exciter should be written.
+
+	Usage: ``writeExc(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1102,6 +1171,13 @@ def writeExc(dyrdata,result,file):
 # Description: It connects exciters to machines.
 #=========================================================================================
 def connectExc(dyrdata,result,file):
+	"""
+	This function writes the Modelica connections for exciters, according to OpenIPSL models' inputs and outputs.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the exciter's connections should be written.
+
+	Usage: ``connectExc(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1175,6 +1251,14 @@ def connectExc(dyrdata,result,file):
 # Description: It writes stabilizers model.
 #=========================================================================================
 def writePss(dyrdata,result,file):
+	"""
+	This function writes the Modelica models for stablizers, according to OpenIPSL models' syntax and parameters.
+	The stabilizer written with this function has visual display through Modelica annotations.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the stabilizer should be written.
+
+	Usage: ``writePss(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1291,6 +1375,13 @@ def writePss(dyrdata,result,file):
 # Description: It connects stabilizers to machines and exciters.
 #=========================================================================================
 def connectPss(dyrdata,result,file):
+	"""
+	This function writes the Modelica connections for stabilizers, according to OpenIPSL models' inputs and outputs.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the stabilizers's connections should be written.
+
+	Usage: ``connectPss(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1358,6 +1449,14 @@ def connectPss(dyrdata,result,file):
 # Description: It writes turbine-governor models.
 #=========================================================================================
 def writeGov(genpdata,index,dyrdata,result,file):
+	"""
+	This function writes the Modelica models for turbine/governors, according to OpenIPSL models' syntax and parameters.
+	The turbine/governor written with this function has visual display through Modelica annotations.
+
+	It takes as inputs the machine's power, its index, the data from the DYR file, the results from the lookFor function, and the file where the turbine/governor should be written.
+
+	Usage: ``writeGov(gen_power_data,gen_index,dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1536,6 +1635,13 @@ def writeGov(genpdata,index,dyrdata,result,file):
 # Description: It connects turbine-governors to machines.
 #=========================================================================================
 def connectGov(dyrdata,result,file):
+	"""
+	This function writes the Modelica connections for turbine/governors, according to OpenIPSL models' inputs and outputs.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the turbine/governor's connections should be written.
+
+	Usage: ``connectGov(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1562,6 +1668,14 @@ def connectGov(dyrdata,result,file):
 # Description: It writes wind machine electrical control models.
 #=========================================================================================
 def writeWnd(dyrdata,result,file):
+	"""
+	This function writes the Modelica models for wind machines, according to OpenIPSL models' syntax and parameters.
+	The wind machines written with this function has visual display through Modelica annotations.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the wind machine should be written.
+
+	Usage: ``writeWnd(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1626,6 +1740,13 @@ def writeWnd(dyrdata,result,file):
 # Description: It connects electrical control to wind machines.
 #=========================================================================================
 def connectWnd(dyrdata,result,file):
+	"""
+	This function writes the Modelica connections for wind machines, according to OpenIPSL models' inputs and outputs.
+
+	It takes as inputs the data from the DYR file, the results from the lookFor function, and the file where the wind machine's connections should be written.
+
+	Usage: ``connectWnd(dyr_data,result_from_lookFor,file_tobe_written)``
+	"""
 	# ----- Extract results:
 	model = result[0]
 	row = result[1]
@@ -1645,6 +1766,14 @@ def connectWnd(dyrdata,result,file):
 # Description: It writes the generators package.
 #=========================================================================================
 def writeGenMo(gdir,pkg_name,pkg_ordr,sysdata,dyrdata):
+	"""
+	This function creates and populates the Modelica models for entire generation units. 
+	It uses different functions to write the Modelica models and to connect them.
+
+	The function has as inputs the generation units directory, strings "package.mo" and "package.order", system's data and dyr's data lists.
+
+	Usage: ``writeGenMo(gen_unit_dir,"package.mo","package.order",sys_data,dyr_data)``
+	"""
 	# ----- Extracting information from system
 	gens = sysdata['gen'] # getting generator data
 	ngens = len(gens) # getting number of generators
@@ -1765,6 +1894,12 @@ def writeGenMo(gdir,pkg_name,pkg_ordr,sysdata,dyrdata):
 # Description: It uses the data from readRaw and readDyr to build the system in Modelica.
 #=========================================================================================
 def writeMo(wdir,sdir,ddir,gdir,system_base,system_frequency,sysdata,dyrdata,fault_flag,faultinfo):
+	"""
+	This function creates and populates the Modelica package using OpenIPSL as a mapping resource between PSSE and Modelica. 
+	It uses a pre-defined nested structure and different functions to write the Modelica files that populate the folders.
+
+	Usage: ``writeMo(translation_dir,system_dir,data_dir,gen_dir,system_base,system_frequency,sys_data,dyr_data,fault_flag,fault_info)``
+	"""
 	# ----- Initializing file name:
 	networkname = "power_grid" # name of the network
 	pkg_name = "package.mo" # package name (modelica standard)
@@ -1782,6 +1917,15 @@ def writeMo(wdir,sdir,ddir,gdir,system_base,system_frequency,sysdata,dyrdata,fau
 # that can be used to extract information from the translation procedure.
 #=========================================================================================
 def writeLog(wdir,system_base,system_frequency,psse_version,sysdata,dyrdata,times,fault_flag,faultinfo):
+	"""
+	This function creates the translation log file, which is written in .txt format.
+	It places the log file in the translation directory path.
+
+	The log file contain information about the time taken to execute the different tasks of the model translation.
+	It also displays some basic information about the power system model itself, together with some options selected by the user.
+
+	Usage: ``writeLog(translation_dir,system_base,system_frequency,psse_version,sys_data,dyr_data,times,fault_flag,fault_info)``
+	"""
 	logname = "tlog.txt" # output log name
 	# ----- Changing directory to working directory
 	os.chdir(wdir)
