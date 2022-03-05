@@ -4,7 +4,7 @@
 #====================================================================================
 # ----- Init. libraries:
 import os # importing operational system
-import shutil	# importing library to overwrite folders
+import errno, shutil, stat # importing library to overwrite folders
 import tkinter.filedialog as tkFileDialog # functions for asking for dirs and files
 import tkinter.messagebox as tkMessageBox # functions for meassage box
 #====================================================================================      
@@ -22,6 +22,30 @@ def askDir():
 	"""
 	userpath = tkFileDialog.askdirectory()
 	return userpath
+#====================================================================================      
+# Function: 
+# Authors: marcelofcastro, adapted from stackoverflow. Link below:
+# https://stackoverflow.com/questions/1213706/what-user-do-python-scripts-run-as-in-windows         
+# Description: this function tries to fix the error related to executing shutil on 
+# windows machines.
+#====================================================================================
+def handleRemoveReadonly(func, path, exc):
+	"""
+    Error handler for ``shutil.rmtree``.
+
+    If the error is due to an access error (read only file)
+    it attempts to add write permission and then retries.
+
+    If the error is for another reason it re-raises the error.
+    
+    Usage : ``shutil.rmtree(path,ignore_errors=False,onerror=handleRemoveReadonly)``
+    """
+	excvalue = exc[1]
+  if func in (os.rmdir, os.remove) and excvalue.errno == errno.EACCES:
+      os.chmod(path, stat.S_IRWXU| stat.S_IRWXG| stat.S_IRWXO) # 0777
+      func(path)
+  else:
+      raise
 #====================================================================================      
 # Function: askRaw
 # Authors: marcelofcastro and ManuelNvro          
@@ -79,7 +103,7 @@ def createDir(userpath):
 	# ----- Creation of working directory called Translation:
 	try:
 		if os.path.exists(workingdirectory):
-			shutil.rmtree(workingdirectory)
+			shutil.rmtree(workingdirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(workingdirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % workingdirectory
@@ -87,7 +111,7 @@ def createDir(userpath):
 	# ----- Creation of package directory:
 	try:
 		if os.path.exists(systemdirectory):
-			shutil.rmtree(systemdirectory)
+			shutil.rmtree(systemdirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(systemdirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % systemdirectory
@@ -96,7 +120,7 @@ def createDir(userpath):
 	# Main folder:
 	try:
 		if os.path.exists(sysdatadirectory):
-			shutil.rmtree(sysdatadirectory)
+			shutil.rmtree(sysdatadirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(sysdatadirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % sysdatadirectory
@@ -104,7 +128,7 @@ def createDir(userpath):
 	# Bus Data folder:
 	try:
 		if os.path.exists(bdatadirectory):
-			shutil.rmtree(bdatadirectory)
+			shutil.rmtree(bdatadirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(bdatadirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % bdatadirectory
@@ -112,7 +136,7 @@ def createDir(userpath):
 	# Load Data folder:
 	try:
 		if os.path.exists(ldatadirectory):
-			shutil.rmtree(ldatadirectory)
+			shutil.rmtree(ldatadirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(ldatadirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % ldatadirectory
@@ -120,7 +144,7 @@ def createDir(userpath):
 	# Machines Data folder:
 	try:
 		if os.path.exists(mdatadirectory):
-			shutil.rmtree(mdatadirectory)
+			shutil.rmtree(mdatadirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(mdatadirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % mdatadirectory
@@ -128,7 +152,7 @@ def createDir(userpath):
 	# Transformer Data folder:
 	try:
 		if os.path.exists(tdatadirectory):
-			shutil.rmtree(tdatadirectory)
+			shutil.rmtree(tdatadirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(tdatadirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % tdatadirectory
@@ -136,7 +160,7 @@ def createDir(userpath):
 	# ----- Creation of systems generators directory:
 	try:
 		if os.path.exists(sysgensdirectory):
-			shutil.rmtree(sysgensdirectory)
+			shutil.rmtree(sysgensdirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(sysgensdirectory)
 	except OSError:
 		errmessage = "Creation of the directory %s failed" % sysgensdirectory
