@@ -50,30 +50,25 @@ def frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo):
 
 	Usage: ``frompsse(rawfile,dyrfile,encode_flag,userpath,fault_flag,faultinfo)``
 	"""
-    # ----- RAW file reader:
-    #rawfile = directory_functions.askRawfile() 
-    start_readraw = time.time() # initial time for raw.
-    [system_base,system_frequency,sysdata,psse_version] = psse2mo.readRaw(rawfile,encode_flag) # parse and format rawfile for sysdata
-    time_readraw = time.time() - start_readraw # time for raw.
-    # ----- DYR file reader:
-    #dyrfile = directory_functions.askDyrfile() 
-    start_readdyr = time.time() # initial time for dyr.
-    dyrdata = psse2mo.readDyr(dyrfile)
-    time_readdyr = time.time() - start_readdyr # time for dyr.
-    # ----- Creating directories:
-    #userpath = directory_functions.askDir() 
-    # ----- Translation to Modelica:
-    start_trans = time.time() # initial time.
-    [wdir,sdir,ddir,gdir] = directory_functions.createDir(userpath) # creates folders for placement of results   
-    psse2mo.writeMo(wdir,sdir,ddir,gdir,system_base,system_frequency,sysdata,dyrdata,fault_flag,faultinfo) # writes models
-    time_trans = time.time()- start_trans # calculate execution time
-    # ----- Updating parameters and writing log:
-    total_time = time_trans + time_readraw + time_readdyr
-    times = [time_readraw,time_readdyr,time_trans,total_time]
-    psse2mo.writeLog(wdir,system_base,system_frequency,psse_version,sysdata,dyrdata,times,fault_flag,faultinfo) 
-    # ----- Message for confirming data is correct:
-    message = " PSS(R)E version: %.0f.\n System power base: %.1f MVA.\n System frequency: %.0f Hz." % (psse_version,system_base,system_frequency)
-    tkMessageBox.showinfo("PSSE File Translated", message) # displays psse version, base power and system frequency
+	start_readraw = time.time() # initial time for raw.
+	[system_base,system_frequency,sysdata,psse_version] = psse2mo.readRaw(rawfile,encode_flag) # parse and format rawfile for sysdata
+	time_readraw = time.time() - start_readraw # time for raw.
+	# ----- DYR file reader
+	start_readdyr = time.time() # initial time for dyr.
+	dyrdata = psse2mo.readDyr(dyrfile)
+	time_readdyr = time.time() - start_readdyr # time for dyr.
+	# ----- Translation to Modelica:
+	start_trans = time.time() # initial time.
+	[wdir,sdir,ddir,gdir] = directory_functions.createDir(userpath) # creates folders for placement of results   
+	psse2mo.writeMo(wdir,sdir,ddir,gdir,system_base,system_frequency,sysdata,dyrdata,fault_flag,faultinfo) # writes models
+	time_trans = time.time()- start_trans # calculate execution time
+	# ----- Updating parameters and writing log:
+	total_time = time_trans + time_readraw + time_readdyr
+	times = [time_readraw,time_readdyr,time_trans,total_time]
+	psse2mo.writeLog(wdir,system_base,system_frequency,psse_version,sysdata,dyrdata,times,fault_flag,faultinfo) 
+	# ----- Message for confirming data is correct:
+	message = " PSS(R)E version: %.0f.\n System power base: %.1f MVA.\n System frequency: %.0f Hz." % (psse_version,system_base,system_frequency)
+	tkMessageBox.showinfo("PSSE File Translated", message) # displays psse version, base power and system frequency
 def menu_from_psse():
 	"""
 	Function that creates the interactive user interface for model translation using PSS/E as the source model.
