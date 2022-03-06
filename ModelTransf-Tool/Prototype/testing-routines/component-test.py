@@ -73,7 +73,7 @@ for comptype in os.listdir(smibdir):
 				shutil.rmtree(translationdir,ignore_errors=False,onerror=directory_functions.handleRemoveReadonly)
 			os.mkdir(translationdir)
 		except OSError:
-			errmessage = "Creation of the directory %s failed. Trying again." % resultsdir
+			errmessage = "Creation of the directory %s failed. Fixing folder permitions and trying again." % resultsdir
 			print(errmessage)
 		[wdir,sdir,ddir,gdir] = directory_functions.createDir(translationdir) # creates folders for placement of results  
 		# ----- Writing translation:
