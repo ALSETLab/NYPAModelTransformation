@@ -13,15 +13,6 @@ import numpy as np
 scriptdir = os.getcwd() # initial dir, scripts dir
 toolsdir = os.path.abspath(os.path.join(scriptdir, os.pardir)) # parent dir, model transf tools dir
 homedir = os.path.abspath(os.path.join(toolsdir, os.pardir)) # parent parent dir, first dir out from tool
-# ----- Creating directory for storing results:
-resultsdir = homedir + "/performance-results"
-try:
-	if os.path.exists(resultsdir):
-		shutil.rmtree(resultsdir)
-	os.mkdir(resultsdir)
-except OSError:
-	errmessage = "Creation of the directory %s failed" % resultsdir
-	print(errmessage)
 # ----- Adding paths for new modules:
 srcdir = toolsdir + "/src" 
 auxdir = toolsdir + "/fcn"
@@ -30,6 +21,15 @@ sys.path.insert(2, auxdir) # add fcn directory to tools path, for importing func
 # ----- Importing functions:
 import directory_functions
 import psse2mo
+# ----- Creating directory for storing results:
+resultsdir = homedir + "/performance-results"
+try:
+	if os.path.exists(resultsdir):
+		shutil.rmtree(resultsdir,ignore_errors=False,onerror=directory_functions.handleRemoveReadonly)
+	os.mkdir(resultsdir)
+except OSError:
+	errmessage = "Creation of the directory %s failed. Fixing folder permitions and trying again." % resultsdir
+	print(errmessage)
 # ----- Defining parameters for translation and making systems to be simulation-ready:
 numberoftests = 20 # define the number of translation to be performed in each model.
 encode_flag = 1 # determining the encoding reader (0 - utf8, 1 - latin1):
@@ -50,10 +50,10 @@ for examplesys in os.listdir(exdir):
 		exsysdir = resultsdir + "/" + examplesys
 		try:
 			if os.path.exists(exsysdir):
-				shutil.rmtree(exsysdir)
+				shutil.rmtree(exsysdir,ignore_errors=False,onerror=directory_functions.handleRemoveReadonly)
 			os.mkdir(exsysdir)
 		except OSError:
-			errmessage = "Creation of the directory %s failed" % exsysdir
+			errmessage = "Creation of the directory %s failed. Fixing folder permitions and trying again." % exsysdir
 			print(errmessage)
 		# adding component type to path for search:
 		networkdir = exdir + examplesys

@@ -10,15 +10,6 @@ import sys, os, time, shutil
 scriptdir = os.getcwd() # initial dir, scripts dir
 toolsdir = os.path.abspath(os.path.join(scriptdir, os.pardir)) # parent dir, model transf tools dir
 homedir = os.path.abspath(os.path.join(toolsdir, os.pardir)) # parent parent dir, first dir out from tool
-# ----- Creating directory for storing results:
-resultsdir = homedir + "/smib-results"
-try:
-	if os.path.exists(resultsdir):
-		shutil.rmtree(resultsdir)
-	os.mkdir(resultsdir)
-except OSError:
-	errmessage = "Creation of the directory %s failed" % resultsdir
-	print(errmessage)
 # ----- Adding paths for new modules:
 srcdir = toolsdir + "/src" 
 auxdir = toolsdir + "/fcn"
@@ -27,6 +18,15 @@ sys.path.insert(2, auxdir) # add fcn directory to tools path, for importing func
 # ----- Importing functions:
 import directory_functions
 import psse2mo
+# ----- Creating directory for storing results:
+resultsdir = homedir + "/smib-results"
+try:
+	if os.path.exists(resultsdir):
+		shutil.rmtree(resultsdir,ignore_errors=False,onerror=directory_functions.handleRemoveReadonly)
+	os.mkdir(resultsdir)
+except OSError:
+	errmessage = "Creation of the directory %s failed. Fixing folder permitions and trying again." % resultsdir
+	print(errmessage)
 # ----- Adding path for single-machine infinite-bus (smib) systems to be tested:
 smibdir = toolsdir + "/examples/smib/"
 # ----- Defining parameters for translation and making systems to be simulation-ready:
@@ -40,10 +40,10 @@ for comptype in os.listdir(smibdir):
 	comptypedir = resultsdir + "/" + comptype
 	try:
 		if os.path.exists(comptypedir):
-			shutil.rmtree(comptypedir)
+			shutil.rmtree(comptypedir,ignore_errors=False,onerror=directory_functions.handleRemoveReadonly)
 		os.mkdir(comptypedir)
 	except OSError:
-		errmessage = "Creation of the directory %s failed" % comptypedir
+		errmessage = "Creation of the directory %s failed. Fixing folder permitions and trying again." % resultsdir
 		print(errmessage)
 	# adding component type to path for search:
 	compdir = smibdir + comptype
@@ -70,10 +70,10 @@ for comptype in os.listdir(smibdir):
 		translationdir = comptypedir + "/" + model
 		try:
 			if os.path.exists(translationdir):
-				shutil.rmtree(translationdir)
+				shutil.rmtree(translationdir,ignore_errors=False,onerror=directory_functions.handleRemoveReadonly)
 			os.mkdir(translationdir)
 		except OSError:
-			errmessage = "Creation of the directory %s failed" % translationdir
+			errmessage = "Creation of the directory %s failed. Fixing folder permitions and trying again." % resultsdir
 			print(errmessage)
 		[wdir,sdir,ddir,gdir] = directory_functions.createDir(translationdir) # creates folders for placement of results  
 		# ----- Writing translation:
@@ -84,6 +84,3 @@ for comptype in os.listdir(smibdir):
 		total_time = time_trans + time_readraw + time_readdyr
 		times = [time_readraw,time_readdyr,time_trans,total_time]
 		psse2mo.writeLog(wdir,system_base,system_frequency,psse_version,sysdata,dyrdata,times,fault_flag,faultinfo) 
-
-
-	 
