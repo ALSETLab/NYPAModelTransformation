@@ -23,7 +23,7 @@ def askDir():
 	userpath = tkFileDialog.askdirectory()
 	return userpath
 #====================================================================================      
-# Function: 
+# Function: handleRemoveReadonly
 # Authors: marcelofcastro, adapted from stackoverflow. Link below:
 # https://stackoverflow.com/questions/1213706/what-user-do-python-scripts-run-as-in-windows         
 # Description: this function tries to fix the error related to executing shutil on 
@@ -41,11 +41,11 @@ def handleRemoveReadonly(func, path, exc):
     Usage : ``shutil.rmtree(path,ignore_errors=False,onerror=handleRemoveReadonly)``
     """
 	excvalue = exc[1]
-  if func in (os.rmdir, os.remove) and excvalue.errno == errno.EACCES:
-      os.chmod(path, stat.S_IRWXU| stat.S_IRWXG| stat.S_IRWXO) # 0777
-      func(path)
-  else:
-      raise
+	if func in (os.rmdir, os.remove) and excvalue.errno == errno.EACCES:
+	    os.chmod(path, stat.S_IRWXU| stat.S_IRWXG| stat.S_IRWXO) # 0777
+	    func(path)
+	else:
+	    raise
 #====================================================================================      
 # Function: askRaw
 # Authors: marcelofcastro and ManuelNvro          
@@ -106,8 +106,8 @@ def createDir(userpath):
 			shutil.rmtree(workingdirectory,ignore_errors=False,onerror=handleRemoveReadonly)
 		os.mkdir(workingdirectory)
 	except OSError:
-		errmessage = "Creation of the directory %s failed" % workingdirectory
-		tkMessageBox.showinfo("Error in creating directory", errmessage)
+		errmessage = "Error in creating directory. Creation of the directory %s failed. Fixing folder permitions and trying again." % workingdirectory
+		print(errmessage)
 	# ----- Creation of package directory:
 	try:
 		if os.path.exists(systemdirectory):
