@@ -1145,7 +1145,7 @@ def writeExc(dyrdata,result,file):
 		file.write("   T_OC1 = %.6f,\n" % float(eslist.iloc[row,16]))
 		file.write("   T_OB1 = %.6f,\n" % float(eslist.iloc[row,17]))
 		file.write("   T_OC2 = %.6f,\n" % float(eslist.iloc[row,18]))
-		file.write("   I_OB2 = %.6f)\n" % float(eslist.iloc[row,19]))
+		file.write("   T_OB2 = %.6f)\n" % float(eslist.iloc[row,19]))
 	elif model == 'URST5T':
 		file.write("  Modelica.Blocks.Sources.Constant uel(k=-Modelica.Constants.inf) annotation(Placement(transformation(extent={{-40,-62},{-20,-42}})));\n")
 		file.write("  Modelica.Blocks.Sources.Constant oel(k=Modelica.Constants.inf) annotation(Placement(transformation(extent={{-40,-94},{-20,-74}})));\n")
