@@ -29,6 +29,17 @@ sys.path.insert(3, imgdir) # add img dir to home path
 # ----- Importing auxiliary functions:
 import directory_functions
 import psse2mo
+from src import cim2mo
+
+#==================================================================================
+# Code Part: Functions for GUI
+# Author: glenkhalley
+# Description: Definition of functions for reading files.
+#==================================================================================
+def fromCim():
+    translation = cim2mo.Cimtomo()
+    translation.Window()
+
 #==================================================================================
 # Code Part: Functions for GUI 
 # Author: marcelofcastro         
@@ -231,7 +242,7 @@ menubar.add_cascade(label="File", menu=filemenu)
 newmenu = Menu(menubar,tearoff=0)
 filemenu.add_cascade(label="New Translation", menu=newmenu)
 newmenu.add_command(label="From PSS/E File",command = menu_from_psse)
-newmenu.add_command(label="From CIM File",command = donothing)
+newmenu.add_command(label="From CIM File",command = fromCim)
 compmenu = Menu(menubar,tearoff=0)
 filemenu.add_cascade(label="New Comparison", menu=compmenu)
 compmenu.add_command(label="Compare files",command = donothing)

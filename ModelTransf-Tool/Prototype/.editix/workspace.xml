@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\CIMtoMO.xsl" type="XSLT">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\CIMtoMO.xsl"/>
+<param name="xslt.result.file" value="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\result.txt"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.param.value.0" value="ieee14"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.param.name.0" value="gkh:filename"/>
+<param name="xslt.openFile" value="false"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\ieee14_EQ.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\result.txt" type="TEXT"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\ieee14_SSH.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\ieee14_SV.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\ieee14_TP.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\ieee14_DY.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\nordic-44\CIM_new\N44_BC_EQ.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\nordic-44\CIM_new"/>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\nordic-44"/>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\nordic-44\CIM_new\N44_BC_SSH.xml" type="XML"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\nordic-44\CIM_new\N44_BC_SV.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\Ren\ren.dyr" type="">
+<param name="lastView" value="Source"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\Ren"/>
+<file open="false" path="C:\Users\glen\Dropbox\20210813\cim\examples\500-bus\nypa_500_cleaned_EQ.xml">
+<param name="encoding" value="AUTOMATIC"/>
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\brazil-7bus\CIM\Brazilian_7_bus_Equiv_Model_DY.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\brazil-7bus\CIM"/>
+<file path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\brazil-7bus"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\brazil-7bus\CIM\Brazilian_7_bus_Equiv_Model_EQ.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\NYPAModelTransformation\ModelTransf-Tool\Prototype\examples\nordic-44\CIM_new\N44_BC_DY.xml" type="XML"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\CIMtoMO.xsl" type="XSLT">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\examples\bus-14\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\CIMtoMO.xsl"/>
+<param name="xslt.result.file" value="C:\Users\glen\Desktop\ieee14.mo"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.openFile" value="false"/>
+<param name="xslt.param.value.0" value="5"/>
+<param name="xslt.param.name.1" value="resistance"/>
+<param name="xslt.param.name.2" value="reactance"/>
+<param name="xslt.param.value.5" value="examples/bus-14/ieee14"/>
+<param name="xslt.param.name.0" value="bus"/>
+<param name="xslt.param.value.2" value="0"/>
+<param name="xslt.param.name.5" value="filename"/>
+<param name="xslt.param.value.1" value="0"/>
+<param name="xslt.param.name.3" value="time"/>
+<param name="xslt.param.value.4" value="0.2"/>
+<param name="xslt.param.value.3" value="0.5"/>
+<param name="xslt.param.name.4" value="duration"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\Glen.mo">
+<param name="lastView" value="Source"/>
+</file>
+<file open="false" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\ieee14_EQ.xml" type="XML">
+<param name="lastView" value="Source"/>
+</file>
+<file open="true" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\ieee14_DY.xml" type="XML"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\img" type="XML"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\src" type="XML"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\src\cim2mo\CIMtoMO.xsl" type="XSLT">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\examples\bus-14\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\src\cim2mo\CIMtoMO.xsl"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.result.file" value="C:\Users\glen\Desktop\IEEE14.mo"/>
+<param name="xslt.param.value.0" value="5"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.param.name.1" value="resistance"/>
+<param name="xslt.param.name.2" value="reactance"/>
+<param name="xslt.param.value.5" value="0.5"/>
+<param name="xslt.param.name.0" value="bus"/>
+<param name="xslt.param.value.2" value="0"/>
+<param name="xslt.param.name.5" value="duration"/>
+<param name="xslt.openFile" value="false"/>
+<param name="xslt.param.value.1" value="0"/>
+<param name="xslt.param.name.3" value="time"/>
+<param name="xslt.param.value.4" value="../../examples/bus-14/ieee14"/>
+<param name="xslt.param.value.3" value="0.2"/>
+<param name="xslt.param.name.4" value="filename"/>
+</file>
+<file path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\src\cim2mo"/>
+<file open="true" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\xsl" type="XML"/>
+<file open="false" path="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\xsl\CIMtoMO.xsl" type="XSLT">
+<param name="xslt.data.file" value="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\examples\bus-14\ieee14_EQ.xml"/>
+<param name="xslt.xslt.file" value="C:\Users\glen\Documents\GitHub\GlenModelTransformation\ModelTransf-Tool\Prototype\xsl\CIMtoMO.xsl"/>
+<param name="xslt.fop" value="false"/>
+<param name="xslt.displayFile" value="false"/>
+<param name="xslt.result.file" value="C:\Users\glen\Desktop\IEEE14.mo"/>
+<param name="xslt.param.value.0" value="5"/>
+<param name="xslt.ok" value="true"/>
+<param name="xslt.param.name.1" value="resistance"/>
+<param name="xslt.param.name.2" value="reactance"/>
+<param name="xslt.param.value.5" value="../examples/bus-14/ieee14"/>
+<param name="xslt.param.name.0" value="bus"/>
+<param name="xslt.param.value.2" value="0"/>
+<param name="xslt.param.name.5" value="filename"/>
+<param name="xslt.openFile" value="false"/>
+<param name="xslt.param.value.1" value="0"/>
+<param name="xslt.param.name.3" value="time"/>
+<param name="xslt.param.value.4" value="0.2"/>
+<param name="xslt.param.value.3" value="0.5"/>
+<param name="xslt.param.name.4" value="duration"/>
+</file>
+</root>

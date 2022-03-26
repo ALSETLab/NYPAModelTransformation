@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: cim2mo
+Version: 0.1
+Summary: API used for CGMES CIM to Modelica (MO) translation.
+Home-page: https://github.com/ALSETLab/NYPAModelTransformation/tree/master/ModelTransf-Tool/Prototype/src/cim2mo
+Author: Glen K. Halley
+Author-email: Glen@GKHSoftware.com
+License: https://github.com/ALSETLab
+Description: UNKNOWN
+Keywords: CGMES,ENTSO-E,Modelica,System Modeler
+Platform: UNKNOWN
