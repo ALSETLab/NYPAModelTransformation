@@ -67,6 +67,9 @@ ieee14_package.Generators.GEN6_1_25ed gen6_1_25ed(V_b = BUS6_24fe.V_b, v_0 = pf.
 			
 ieee14_package.Generators.GEN8_1_25f5 gen8_1_25f5(V_b = BUS8_2520.V_b, v_0 = pf.powerflow.bus.VBUS8_2520, angle_0 = pf.powerflow.bus.ABUS8_2520, P_0 = pf.powerflow.loads.PGEN8_1_25f5, Q_0 = pf.powerflow.loads.QGEN8_1_25f5);
 			
+// -- Fault Event
+OpenIPSL.Electrical.Events.PwFault Fault(R = 0, X = 0, t1 = 0.5, t2 = 0.2);
+
 equation
 connect(BUS2_24c6.p, CL2_1_257c.p);
 connect(BUS3_24d4.p, CL3_1_2583.p);
@@ -126,6 +129,9 @@ connect(BUS5_24f0.p, T650_1_26b7.n);
 connect(BUS8_2520.p, T870_1_26c7.p);
 connect(BUS7_2512.p, T870_1_26c7.n);
 connect(BUS4_24e2.p, T490_1_26a8.p);
+
+// -- Connect fault event:
+connect(Fault.p, bus_5.p);
 
 end ieee14;package Generators "Library of machine models translated automatically from PSSE CIM using XSLT_OpenIPSL."
 model GEN1_1_25d4
@@ -283,7 +289,7 @@ end Generators;
 package PF_Data "Modelica records for power flow data."
 record Power_Flow " Translated and calculated power flow data."
   	extends Modelica.Icons.Record;
-  	replaceable record PowerFlow = ieee14.PF_Data.Power_Flow_Template constrainedby ieee14.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
+  	replaceable record PowerFlow = ieee14_package.PF_Data.Power_Flow_Template constrainedby ieee14_package.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
   	PowerFlow powerflow;
 end Power_Flow;
 record Power_Flow_Template "Template for power flow"
@@ -322,7 +328,7 @@ parameter OpenIPSL.Types.Angle ABUS13_2564;// BUS14_2571
 parameter OpenIPSL.Types.PerUnit VBUS14_2571;
 parameter OpenIPSL.Types.Angle ABUS14_2571;end Bus_Template;
 record PF_Bus_00000
-	extends ieee14.PF_Data.Bus_Data.Bus_Template(VBUS2_24c6=1.01973,ABUS2_24c6=-0.027988,VBUS3_24d4=1.00057,ABUS3_24d4=-0.06012,VBUS4_24e2=0.99875,ABUS4_24e2=-0.074735,VBUS5_24f0=1.00429,ABUS5_24f0=-0.064305,VBUS6_24fe=0.99974,ABUS6_24fe=-0.110491,VBUS1_24aa=1.03000,ABUS1_24aa=0.00000,VBUS7_2512=1.00479,ABUS7_2512=-0.084137,VBUS8_2520=1.02025,ABUS8_2520=-0.023974,VBUS9_252e=1.00042,ABUS9_252e=-0.127386,VBUS10_253c=0.99243,ABUS10_253c=-0.130175,VBUS11_254a=0.99240,ABUS11_254a=-0.123143,VBUS12_2557=0.98725,ABUS12_2557=-0.129374,VBUS13_2564=0.98470,ABUS13_2564=-0.134144,VBUS14_2571=0.99004,ABUS14_2571=-0.167021);
+	extends ieee14_package.PF_Data.Bus_Data.Bus_Template(VBUS2_24c6=1.01973,ABUS2_24c6=-0.027988,VBUS3_24d4=1.00057,ABUS3_24d4=-0.06012,VBUS4_24e2=0.99875,ABUS4_24e2=-0.074735,VBUS5_24f0=1.00429,ABUS5_24f0=-0.064305,VBUS6_24fe=0.99974,ABUS6_24fe=-0.110491,VBUS1_24aa=1.03000,ABUS1_24aa=0.00000,VBUS7_2512=1.00479,ABUS7_2512=-0.084137,VBUS8_2520=1.02025,ABUS8_2520=-0.023974,VBUS9_252e=1.00042,ABUS9_252e=-0.127386,VBUS10_253c=0.99243,ABUS10_253c=-0.130175,VBUS11_254a=0.99240,ABUS11_254a=-0.123143,VBUS12_2557=0.98725,ABUS12_2557=-0.129374,VBUS13_2564=0.98470,ABUS13_2564=-0.134144,VBUS14_2571=0.99004,ABUS14_2571=-0.167021);
 end PF_Bus_00000;
 end Bus_Data;
 
@@ -368,7 +374,7 @@ parameter OpenIPSL.Types.ReactivePower QCL10_1_25a6;
 end Loads_Template;
 
 record PF_Loads_00000
-	extends ieee14.PF_Data.Loads_Data.Loads_Template(PCL2_1_257c = 2.17E7,QCL2_1_257c = 1.27E7,PCL3_1_2583 = 5.0E7,QCL3_1_2583 = 2.5E7,PCL4_1_258a = 4.78E7,QCL4_1_258a = 1.0E7,PCL5_1_2591 = 7.6E6,QCL5_1_2591 = 1.6E6,PCL6_1_2598 = 1.5E7,QCL6_1_2598 = 7.5E6,PCL9_1_259f = 2.95E7,QCL9_1_259f = 1.6600000000000002E7,PCL11_1_25ad = 3.5E6,QCL11_1_25ad = 1.8E6,PCL12_1_25b4 = 6.1E6,QCL12_1_25b4 = 1.6E6,PCL13_1_25bb = 1.35E7,QCL13_1_25bb = 5.8E6,PCL14_1_25c2 = 2.0E7,QCL14_1_25c2 = 7.0E6,PSHBUS925c7 = 0,QSHBUS925c7 = 1.90159606934E7,PSHBUS1425cb = 0,QSHBUS1425cb = 1.4708568573E7,PGEN1_1_25d4 = 8.1442E7,QGEN1_1_25d4 = 1.973E6,PGEN2_1_25dc = 4.0E7,QGEN2_1_25dc = 1.5E7,PGEN3_1_25e5 = 4.0E7,QGEN3_1_25e5 = 1.5E7,PGEN6_1_25ed = 3.0E7,QGEN6_1_25ed = 1.0E7,PGEN8_1_25f5 = 3.5E7,QGEN8_1_25f5 = 1.0E7,PCL10_1_25a6 = 9.0E6,QCL10_1_25a6 = 5.8E6);
+	extends ieee14_package.PF_Data.Loads_Data.Loads_Template(PCL2_1_257c = 2.17E7,QCL2_1_257c = 1.27E7,PCL3_1_2583 = 5.0E7,QCL3_1_2583 = 2.5E7,PCL4_1_258a = 4.78E7,QCL4_1_258a = 1.0E7,PCL5_1_2591 = 7.6E6,QCL5_1_2591 = 1.6E6,PCL6_1_2598 = 1.5E7,QCL6_1_2598 = 7.5E6,PCL9_1_259f = 2.95E7,QCL9_1_259f = 1.6600000000000002E7,PCL11_1_25ad = 3.5E6,QCL11_1_25ad = 1.8E6,PCL12_1_25b4 = 6.1E6,QCL12_1_25b4 = 1.6E6,PCL13_1_25bb = 1.35E7,QCL13_1_25bb = 5.8E6,PCL14_1_25c2 = 2.0E7,QCL14_1_25c2 = 7.0E6,PSHBUS925c7 = 0,QSHBUS925c7 = 1.90159606934E7,PSHBUS1425cb = 0,QSHBUS1425cb = 1.4708568573E7,PGEN1_1_25d4 = 8.1442E7,QGEN1_1_25d4 = 1.973E6,PGEN2_1_25dc = 4.0E7,QGEN2_1_25dc = 1.5E7,PGEN3_1_25e5 = 4.0E7,QGEN3_1_25e5 = 1.5E7,PGEN6_1_25ed = 3.0E7,QGEN6_1_25ed = 1.0E7,PGEN8_1_25f5 = 3.5E7,QGEN8_1_25f5 = 1.0E7,PCL10_1_25a6 = 9.0E6,QCL10_1_25a6 = 5.8E6);
 		end PF_Loads_00000;
 	end Loads_Data;
 
@@ -385,17 +391,17 @@ parameter Real T870_1_T2;
 		end Trafos_Template;
 
 	record PF_Trafos_00000
-		extends ieee14.PF_Data.Trafos_Data.Trafos_Template(T470_1_T1=1,T470_1_T2=1,T490_1_T1=1,T490_1_T2=1,T650_1_T1=1,T650_1_T2=1,T870_1_T1=1,T870_1_T2=1);
+		extends ieee14_package.PF_Data.Trafos_Data.Trafos_Template(T470_1_T1=1,T470_1_T2=1,T490_1_T1=1,T490_1_T2=1,T650_1_T1=1,T650_1_T2=1,T870_1_T1=1,T870_1_T2=1);
 	end PF_Trafos_00000;
 end Trafos_Data;
 
 	record PF_00000
-  		extends ieee14.PF_Data.Power_Flow_Template;
-  		replaceable record Bus = ieee14.PF_Data.Bus_Data.PF_Bus_00000 constrainedby ieee14.PF_Data.Bus_Data.Bus_Template "Bus power flow result";
+  		extends ieee14_package.PF_Data.Power_Flow_Template;
+  		replaceable record Bus = ieee14_package.PF_Data.Bus_Data.PF_Bus_00000 constrainedby ieee14_package.PF_Data.Bus_Data.Bus_Template "Bus power flow result";
   		Bus bus;
-  		replaceable record Loads = ieee14.PF_Data.Loads_Data.PF_Loads_00000 constrainedby ieee14.PF_Data.Loads_Data.Loads_Template "Loads power flow result";
+  		replaceable record Loads = ieee14_package.PF_Data.Loads_Data.PF_Loads_00000 constrainedby ieee14_package.PF_Data.Loads_Data.Loads_Template "Loads power flow result";
   		Loads loads;
-		replaceable record Trafos = ieee14.PF_Data.Trafos_Data.PF_Trafos_00000 constrainedby ieee14.PF_Data.Trafos_Data.Trafos_Template "Trafos power flow result";
+		replaceable record Trafos = ieee14_package.PF_Data.Trafos_Data.PF_Trafos_00000 constrainedby ieee14_package.PF_Data.Trafos_Data.Trafos_Template "Trafos power flow result";
   		Trafos trafos;
 	end PF_00000;
 end PF_Data;

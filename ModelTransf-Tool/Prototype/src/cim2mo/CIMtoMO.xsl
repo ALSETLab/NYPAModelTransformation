@@ -332,7 +332,15 @@
 			</xsl:text>
 		</xsl:for-each>
 		<xsl:text>
-equation
+// -- Fault Event
+OpenIPSL.Electrical.Events.PwFault Fault(R = </xsl:text><xsl:value-of select="$resistance"/>
+<xsl:text>, X = </xsl:text><xsl:value-of select="$reactance"/>
+<xsl:text>, t1 = </xsl:text><xsl:value-of select="$time"/>
+<xsl:text>, t2 = </xsl:text><xsl:value-of select="$duration"/>
+<xsl:text>);
+
+</xsl:text>
+<xsl:text>equation
 </xsl:text>
 		<xsl:for-each select="cim:Terminal">
 			<xsl:choose>
@@ -356,6 +364,9 @@ equation
 			</xsl:choose>
 		</xsl:for-each>
 		<xsl:text>
+// -- Connect fault event:
+connect(Fault.p, bus_5.p);
+
 end </xsl:text>
 		<xsl:value-of select="$SystemName"/>
 		<xsl:text>;</xsl:text>
@@ -367,7 +378,7 @@ end Generators;
 package PF_Data "Modelica records for power flow data."
 record Power_Flow " Translated and calculated power flow data."
   	extends Modelica.Icons.Record;
-  	replaceable record PowerFlow = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Power_Flow_Template constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
+  	replaceable record PowerFlow = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Power_Flow_Template constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Power_Flow_Template annotation(choicesAllMatching);
   	PowerFlow powerflow;
 end Power_Flow;
 record Power_Flow_Template "Template for power flow"
@@ -391,7 +402,7 @@ parameter OpenIPSL.Types.Angle A</xsl:text>
 		</xsl:for-each>
 		<xsl:text>end Bus_Template;
 record PF_Bus_00000
-	extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Bus_Data.Bus_Template(</xsl:text>
+	extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Bus_Data.Bus_Template(</xsl:text>
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
 			<xsl:call-template name="InitialVoltage">
 				<xsl:with-param name="code" select="concat('#',@rdf:ID)"/>
@@ -424,7 +435,7 @@ partial record Loads_Template
 		<xsl:text>end Loads_Template;
 
 record PF_Loads_00000
-	extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Loads_Data.Loads_Template(</xsl:text>
+	extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Loads_Data.Loads_Template(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="$SV/rdf:RDF/cim:SvPowerFlow">
 				<xsl:for-each select="$SV/rdf:RDF/cim:SvPowerFlow">
@@ -480,7 +491,7 @@ record PF_Loads_00000
 <xsl:text>		end Trafos_Template;
 
 	record PF_Trafos_00000
-		extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Trafos_Data.Trafos_Template(</xsl:text>
+		extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Trafos_Data.Trafos_Template(</xsl:text>
 		<xsl:for-each select="cim:PowerTransformerEnd">
 			<xsl:variable name="transformerCode" select="cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,2)"/>
 			<xsl:variable name="terminalCode" select="cim:TransformerEnd.Terminal/substring(@rdf:resource,2)"/>
@@ -505,12 +516,12 @@ record PF_Loads_00000
 end Trafos_Data;
 
 	record PF_00000
-  		extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Power_Flow_Template;
-  		replaceable record Bus = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Bus_Data.PF_Bus_00000 constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Bus_Data.Bus_Template "Bus power flow result";
+  		extends </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Power_Flow_Template;
+  		replaceable record Bus = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Bus_Data.PF_Bus_00000 constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Bus_Data.Bus_Template "Bus power flow result";
   		Bus bus;
-  		replaceable record Loads = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Loads_Data.PF_Loads_00000 constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Loads_Data.Loads_Template "Loads power flow result";
+  		replaceable record Loads = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Loads_Data.PF_Loads_00000 constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Loads_Data.Loads_Template "Loads power flow result";
   		Loads loads;
-		replaceable record Trafos = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Trafos_Data.PF_Trafos_00000 constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>.PF_Data.Trafos_Data.Trafos_Template "Trafos power flow result";
+		replaceable record Trafos = </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Trafos_Data.PF_Trafos_00000 constrainedby </xsl:text><xsl:value-of select="$SystemName"/><xsl:text>_package.PF_Data.Trafos_Data.Trafos_Template "Trafos power flow result";
   		Trafos trafos;
 	end PF_00000;
 end PF_Data;
