@@ -1,5 +1,19 @@
 **Preliminary**
 
+# Quick Introduction for EditiX
+  XSLT/XQuery -> Transform a document with XSLT
+
+	XSLT Document(*.xsl *.xslt) :: ~\src\cim2mo\CIMtoMO.xsl
+	Document source (*.xml, *.json) :: ~\examples\bus-14\ieee14_EQ.xml
+	Result document (*.html) :: C:\Users\<name>\Desktop\Result.MO
+
+	Parameters <tab>
+	bus	5
+	resistance	0
+	reactance	0
+	time	0.5
+	duration	0.5
+	filename ../../examples/bus-14/ieee14
 # Introduction
   The direct route of translating proprietary files from PSS/E or PSAT to Modelica is not the best way since the process is transient. Software vendor's file formats can be changed at any moment without notification or accountability.
   
