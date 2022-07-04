@@ -68,7 +68,7 @@ ieee14_package.Generators.GEN6_1_25ed gen6_1_25ed(V_b = BUS6_24fe.V_b, v_0 = pf.
 ieee14_package.Generators.GEN8_1_25f5 gen8_1_25f5(V_b = BUS8_2520.V_b, v_0 = pf.powerflow.bus.VBUS8_2520, angle_0 = pf.powerflow.bus.ABUS8_2520, P_0 = pf.powerflow.loads.PGEN8_1_25f5, Q_0 = pf.powerflow.loads.QGEN8_1_25f5);
 			
 // -- Fault Event
-OpenIPSL.Electrical.Events.PwFault Fault(R = 0, X = 0, t1 = 0.5, t2 = 0.2);
+OpenIPSL.Electrical.Events.PwFault Fault(R = 0, X = 0, t1 = 0.5, t2 = 0.505);
 
 equation
 connect(BUS2_24c6.p, CL2_1_257c.p);
@@ -131,7 +131,7 @@ connect(BUS7_2512.p, T870_1_26c7.n);
 connect(BUS4_24e2.p, T490_1_26a8.p);
 
 // -- Connect fault event:
-connect(Fault.p, bus_5.p);
+connect(Fault.p, BUS14_2571.p);
 
 end ieee14;package Generators "Library of machine models translated automatically from PSSE CIM using XSLT_OpenIPSL."
 model GEN1_1_25d4
