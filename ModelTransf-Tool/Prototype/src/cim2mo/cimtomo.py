@@ -76,7 +76,7 @@ class Cimtomo(object):
         xsl_button.grid(column=2, row=1)
 
         # ----- Translation destination:
-        Label(CIMwindow, text="Translation dir:").grid(column=0, row=4)
+        Label(CIMwindow, text="Translation dir (_package.mo):").grid(column=0, row=4)
         Destinationdirectory = Entry(CIMwindow, width=75)
         Destinationdirectory.insert(0, self.__userpath)
         Destinationdirectory.grid(column=1, row=4)
@@ -99,7 +99,7 @@ class Cimtomo(object):
         def startTranslation():
             start_readxml = time.time()  # initial time
             [output, system_frequency, psse_version] = self.__Translate()
-            packagemo = open(self.__base + "_package.mo", "w+")
+            packagemo = open(self.__userpath + "/" + self.__basename + "_package.mo", "w+")
             packagemo.write(output)
             time_readxml = time.time() - start_readxml  # total time
             tkinter.messagebox.showinfo("CIM File Translated", output.split("annotation")[0])  # take everything before 'annotation'
