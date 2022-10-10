@@ -11,14 +11,14 @@
 	<xsl:param name="resistance" as="xs:double"/>
 	<xsl:param name="reactance" as="xs:double"/>
 	<xsl:param name="time" as="xs:double"/>
-	<xsl:param name="duration" as="xs:double"/>
+	<xsl:param name="time2" as="xs:double"/>
 	<xsl:param name="filename" as="xs:string"/>
 	
 	<xsl:variable name="DY" select="document(concat($filename,'_DY.xml'))"/>
 	<xsl:variable name="TP" select="document(concat($filename,'_TP.xml'))"/>
 	<xsl:variable name="SV" select="document(concat($filename,'_SV.xml'))"/>
-	
 	<xsl:variable name="rdf" select="/rdf:RDF"/>
+	
 	<xsl:key match="cim:ACLineSegment" name="acsection" use="@rdf:ID"/>
 	<xsl:key match="cim:BasePower" name="basepower" use="@rdf:ID"/>
 	<xsl:key match="cim:BusbarSection" name="busbar" use="@rdf:ID"/>
@@ -327,7 +327,7 @@
 OpenIPSL.Electrical.Events.PwFault Fault(R = </xsl:text><xsl:value-of select="$resistance"/>
 <xsl:text>, X = </xsl:text><xsl:value-of select="$reactance"/>
 <xsl:text>, t1 = </xsl:text><xsl:value-of select="$time"/>
-<xsl:text>, t2 = </xsl:text><xsl:value-of select="$duration"/>
+<xsl:text>, t2 = </xsl:text><xsl:value-of select="$time2"/>
 <xsl:text>);
 
 </xsl:text>
@@ -381,7 +381,8 @@ record Bus_Data
 partial record Bus_Template</xsl:text>
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
 			<xsl:variable name="name" select="gkh:compliantName(concat(cim:IdentifiedObject.name,'_',substring(@rdf:ID,6,4)))"/>
-<xsl:text>// </xsl:text>
+<xsl:text>
+// </xsl:text>
 			<xsl:copy-of select="$name"/>
 <xsl:text>
 parameter OpenIPSL.Types.PerUnit V</xsl:text>
@@ -517,7 +518,7 @@ end Trafos_Data;
 	end PF_00000;
 end PF_Data;
 
-  annotation(uses(Modelica(version = "3.2.3"), Complex, OpenIPSL(version = "2.0.0-beta.1")), Documentation(info = "HTML This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.HTML"));
+  annotation(uses(Modelica(version = "4.0.0"), Complex, OpenIPSL(version = "3.1.0-dev")), Documentation(info = "HTML This package contains power system models translated from CGMES CIM using XSLT_OpenIPSL.HTML"));
 end </xsl:text><xsl:value-of select="$SystemName"/>
 <xsl:text>_package;</xsl:text>
 	</xsl:template>

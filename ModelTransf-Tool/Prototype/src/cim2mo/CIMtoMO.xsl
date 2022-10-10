@@ -793,7 +793,7 @@ equation
 		<xsl:text>OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV governor(R = </xsl:text>
 		<xsl:value-of select="format-number(../cim:GovHydro1.rperm,'0.00000#')"/>
 		<xsl:text>,r = </xsl:text>
-		<xsl:value-of select="format-number(../GovHydro1.rtemp,'0.00000#')"/>
+		<xsl:value-of select="format-number(../cim:GovHydro1.rtemp,'0.00000#')"/>
 		<xsl:text>,T_r = </xsl:text>
 		<xsl:value-of select="format-number(../cim:GovHydro1.tr,'0.00000#')"/>
 		<xsl:text>,T_f = </xsl:text>
@@ -813,7 +813,7 @@ equation
 		<xsl:text>,D_turb = </xsl:text>
 		<xsl:value-of select="format-number(../cim:GovHydro1.dturb,'0.00000#')"/>
 		<xsl:text>,q_NL= </xsl:text>
-		<xsl:value-of select="format-number(../cim:GovHydro1.gnl,'0.00000#')"/>
+		<xsl:value-of select="format-number(../cim:GovHydro1.qnl,'0.00000#')"/>
 		<xsl:text>,h0 = </xsl:text>
 		<xsl:value-of select="format-number(../cim:GovHydro1.hdam,'0.00000#')"/>
 		<xsl:text>) annotation(Placement(transformation(extent = {{-30, 20}, {-10, 40}})));</xsl:text>

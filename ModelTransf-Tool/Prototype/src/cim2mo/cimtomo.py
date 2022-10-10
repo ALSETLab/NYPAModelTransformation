@@ -9,7 +9,7 @@ import time
 
 class Cimtomo(object):
     __Fault = Faultinfo
-    __userpath = "%HOMEPATH%\\desktop"
+    __userpath = os.environ['USERPROFILE'] + "\\desktop"
     @property
     def __basepath(self):
         return os.path.dirname(self.__EQxmlfile)
@@ -25,8 +25,8 @@ class Cimtomo(object):
 
     def __init__(self):
         self.__CIMWindow = Toplevel()
-        self.__EQxmlfile = os.getcwd() + "\\examples\\bus-14\\ieee14_EQ.xml"
-        self.__xslfile = os.getcwd() + "\\src\\cim2mo\\CIMtoMO.xsl"
+        self.__EQxmlfile = os.getcwd() + "\\examples\\nordic-44\\CIM_new\\N44_BC_EQ.xml"
+        self.__xslfile = os.getcwd() + "\\src\\cim2mo\\v2\\CIMtoMO2.xsl"
 
     def __Translate(self):  # EQ file, XSL file, Path of all files
         if os.path.exists(self.__basepath) and os.path.exists(self.__xslpath) and len(self.__basename) > 0:
@@ -39,7 +39,7 @@ class Cimtomo(object):
                     xsltproc.set_parameter("resistance", proc.make_double_value(self.__Fault.resistance))
                     xsltproc.set_parameter("reactance", proc.make_double_value(self.__Fault.reactance))
                     xsltproc.set_parameter("time", proc.make_double_value(self.__Fault.time))
-                    xsltproc.set_parameter("duration", proc.make_double_value(self.__Fault.duration))
+                    xsltproc.set_parameter("time2", proc.make_double_value(self.__Fault.time2))
                 results = xsltproc.transform_to_string(source_file=self.__EQxmlfile,
                                                        stylesheet_file=self.__xslfile)  # Translate
                 print(results)

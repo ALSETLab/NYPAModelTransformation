@@ -102,10 +102,8 @@
 		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.saturationFactor,'0.0000000#')"/>
 		<xsl:text>, S12 = </xsl:text>
 		<xsl:value-of select="format-number(cim:RotatingMachineDynamics.saturationFactor120,'0.0000000#')"/>
-		<xsl:if test="$GenType='GENROU' or $GenType='GENROE'">
-			<xsl:text>, Xppq = </xsl:text>
-			<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans,'0.0000000#')"/>
-		</xsl:if>
+		<xsl:text>, Xppq = </xsl:text>
+		<xsl:value-of select="format-number(cim:SynchronousMachineTimeConstantReactance.xDirectSubtrans,'0.0000000#')"/>
 		<xsl:text>, R_a = </xsl:text>
 		<xsl:value-of select="gkh:defaultNumbers(cim:SynchronousMachineTimeConstantReactance.statorResistance,0.0000)"/>
 		<xsl:text>, M_b = 100000000.00, V_b = V_b, P_0 = P_0, Q_0 = Q_0, v_0 = v_0, angle_0 = angle_0) annotation(Placement(transformation(extent = {{20, -10}, {40, 10}})));
