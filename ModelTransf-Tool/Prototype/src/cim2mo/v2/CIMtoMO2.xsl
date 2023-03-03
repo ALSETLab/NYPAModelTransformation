@@ -5,7 +5,11 @@
 	
 	<xsl:include href="SynchronousMachineTimeConstantReactance.xsl"/>
 	<xsl:include href="SynchronousMachine.xsl"/>
+	<xsl:include href="ACLineSegment.xsl"/>
+	<xsl:include href="PowerTransformerEnd.xsl"/>
 	<xsl:include href="SynchronousMachineSimplified.xsl"/>
+	<xsl:include href="LinearShuntCompensator.xsl"/>
+	<xsl:include href="ConformLoad.xsl"/>
 	
 	<xsl:param name="bus" as="xs:double"/>
 	<xsl:param name="resistance" as="xs:double"/>
@@ -126,9 +130,6 @@
 				<xsl:when test="$rdf/cim:PowerTransformer[@rdf:ID=$conducting]">
 					<xsl:value-of select="gkh:transformerName($conducting,'')"/>
 				</xsl:when>
-				<xsl:when test="$rdf/cim:LinearShuntCompensator[@rdf:ID=$conducting]">
-					<xsl:value-of select="concat('SH',$rdf/cim:LinearShuntCompensator[@rdf:ID=$conducting]/cim:IdentifiedObject.name)"/>
-				</xsl:when>
 				<xsl:otherwise>
 					<xsl:value-of select="'NOT DEFINED'"/>
 				</xsl:otherwise>
@@ -185,6 +186,7 @@
 </xsl:text>
 		<xsl:for-each select="$TP/rdf:RDF/cim:TopologicalNode">
 			<xsl:variable name="bus" select="gkh:compliantName(concat(cim:IdentifiedObject.name,'_',substring(@rdf:ID,6,4)))"/>
+			<xsl:variable name="glen" select="@rdf:ID"/>
 <xsl:text>OpenIPSL.Electrical.Buses.Bus </xsl:text>
 			<xsl:copy-of select="$bus"/>
 <xsl:text>(V_b = </xsl:text>
@@ -193,91 +195,26 @@
 			<xsl:copy-of select="$bus"/>
 <xsl:text>, angle_0 = pf.powerflow.bus.A</xsl:text>
 			<xsl:copy-of select="$bus"/>
-			<xsl:text>);
-			</xsl:text>
+<xsl:text>);
+</xsl:text>
 		</xsl:for-each>
 <xsl:text>// -- Lines:
 </xsl:text>
-		<xsl:for-each select="cim:ACLineSegment">
-			<xsl:variable name="baseImpedance" select="gkh:baseImpedance(cim:ConductingEquipment.BaseVoltage/substring(@rdf:resource,2),0,0)"/>
-<xsl:text>OpenIPSL.Electrical.Branches.PwLine </xsl:text>
-			<xsl:value-of select="gkh:compliantName(concat('line',cim:IdentifiedObject.name,substring(@rdf:ID,6,4)))"/>
-<xsl:text>(R =</xsl:text>
-			<xsl:value-of select="format-number(cim:ACLineSegment.r div $baseImpedance,'0.000000000#')"/><!-- -->
-<xsl:text>, X =</xsl:text>
-			<xsl:value-of select="format-number(cim:ACLineSegment.x div $baseImpedance,'0.0000000000#')"/>
-<xsl:text>,G = </xsl:text>
-			<xsl:value-of select="gkh:defaultNumbers(cim:ACLineSegment.gch * $baseImpedance div 2,0.00)"/>
-<xsl:text>, B =</xsl:text>
-			<xsl:value-of select="format-number(cim:ACLineSegment.bch * $baseImpedance div 2,'0.0000000000#')"/>
-<xsl:text>);
-			</xsl:text>
-		</xsl:for-each>
+		<xsl:apply-templates select="cim:ACLineSegment"/>
+		
 <xsl:text>// -- Transformers:
 </xsl:text>
-		<xsl:for-each select="cim:PowerTransformerEnd">
+		<xsl:apply-templates select="cim:PowerTransformerEnd">
 			<xsl:sort select="cim:PowerTransformerEnd.PowerTransformer/@rdf:resource"/>
 			<xsl:sort select="cim:TransformerEnd.endNumber"/>
-			<xsl:variable name="baseImpedance" select="gkh:baseImpedance('',cim:PowerTransformerEnd.ratedS,cim:PowerTransformerEnd.ratedU)"/>
-			<xsl:variable name="transformerCode" select="cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,2)"/>
-			<xsl:variable name="terminalCode" select="cim:TransformerEnd.Terminal/substring(@rdf:resource,2)"/>
-			<xsl:choose>
-				<xsl:when test="cim:TransformerEnd.endNumber=1">
-<xsl:text>OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer </xsl:text>
-					<xsl:value-of select="gkh:compliantName(concat(gkh:transformerName($transformerCode,''),cim:PowerTransformerEnd.PowerTransformer/substring(@rdf:resource,7,4)))"/>
-<xsl:text>(</xsl:text>
-<xsl:text>R = </xsl:text>
-					<xsl:value-of select="format-number(cim:PowerTransformerEnd.r div $baseImpedance,'0.00000000#')"/>
-<xsl:text>, X = </xsl:text>
-					<xsl:value-of select="format-number(cim:PowerTransformerEnd.x div $baseImpedance,'0.00000000#')"/>
-<xsl:text>, G = </xsl:text>
-					<xsl:value-of select="format-number(cim:PowerTransformerEnd.g * $baseImpedance div 2,'0.00000000#')"/>
-<xsl:text>, B = </xsl:text>
-					<xsl:value-of select="format-number(cim:PowerTransformerEnd.b * $baseImpedance div 2,'0.00000000#')"/>
-<xsl:text>,t2 = pf.powerflow.trafos.</xsl:text>
-					<xsl:value-of select="gkh:transformerName($transformerCode,$terminalCode)"/>
-				</xsl:when>
-				<xsl:otherwise>
-<xsl:text>,t1 = pf.powerflow.trafos.</xsl:text>
-					<xsl:value-of select="gkh:transformerName($transformerCode,$terminalCode)"/>
-					<xsl:text>);
-					</xsl:text>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
+		</xsl:apply-templates>
+		
 <xsl:text>// -- Linear Shunt Compensators:
 </xsl:text>
-		<xsl:for-each select="cim:LinearShuntCompensator">
-			<xsl:variable name="baseImpedance" select="gkh:baseImpedance(cim:Equipment.EquipmentContainer/substring(@rdf:resource,2),../cim:BasePower/cim:BasePower.basePower,cim:ShuntCompensator.nomU)"/>
-<xsl:text>OpenIPSL.Electrical.Banks.PSSE.Shunt </xsl:text>
-			<xsl:value-of select="gkh:equipmentLoadName(@rdf:ID)"/>
-<xsl:text>(G = </xsl:text>
-			<xsl:value-of select="format-number(cim:LinearShuntCompensator.gPerSection * $baseImpedance,'0.0000000000#')"/>
-<xsl:text>,B = </xsl:text>
-			<xsl:value-of select="format-number(cim:LinearShuntCompensator.bPerSection * $baseImpedance,'0.0000000000#')"/>
-			<xsl:text>);
-			</xsl:text>
-		</xsl:for-each>
+		<xsl:apply-templates select="cim:LinearShuntCompensator"/>
 <xsl:text>// -- Conform Loads:
 </xsl:text>
-		<xsl:for-each select="cim:ConformLoad">
-			<xsl:variable name="equipment" select="gkh:compliantName(concat('CL',cim:IdentifiedObject.name,substring(@rdf:ID,6,4)))"/>
-			<xsl:variable name="bus" select="gkh:busName(@rdf:ID)"/>
-<xsl:text>OpenIPSL.Electrical.Loads.PSSE.Load </xsl:text>
-			<xsl:copy-of select="$equipment"/>
-<xsl:text>(V_b = </xsl:text>
-			<xsl:copy-of select="$bus"/>
-<xsl:text>.V_b, v_0 = pf.powerflow.bus.V</xsl:text>
-			<xsl:copy-of select="$bus"/>
-<xsl:text>,angle_0 = pf.powerflow.bus.A</xsl:text>
-			<xsl:copy-of select="$bus"/>
-<xsl:text>,P_0 = pf.powerflow.loads.P</xsl:text>
-			<xsl:value-of select="$equipment"/>
-<xsl:text>,Q_0 = pf.powerflow.loads.Q</xsl:text>
-			<xsl:value-of select="$equipment"/>
-<xsl:text>, PQBRAK = 0.7, characteristic = 2);
-			</xsl:text>
-		</xsl:for-each>
+		<xsl:apply-templates select="cim:ConformLoad"/>
 <xsl:text>// -- Non Conform Loads:
 </xsl:text>
 		<xsl:for-each select="cim:NonConformLoad">
